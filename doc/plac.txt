@@ -10,75 +10,71 @@ Plac, the Easiest Command Line Arguments Parser in the World
 
 .. contents::
 
-Introduction
+The importance of scaling down
 ------------------------------------------------
 
 There is no want of command line arguments parsers in the Python
-world. The standard library alone contains three different modules for
-the parsing of command line options: getopt_ (from the stone age),
+world. The standard library alone contains three different modules:
+getopt_ (from the stone age),
 optparse_ (from Python 2.3) and argparse_ (from Python 2.7).  All of
 them are quite powerful and especially argparse_ is an industrial
 strength solution; unfortunately, all of them feature a non-zero learning
 curve and a certain verbosity.
 
-Enters plac_. plac_ is designed to be downwardly scalable, i.e. to
-be trivially simple to use for trivial use cases, and to have a
-next-to-zero learning curve. Technically plac_ is just a simple
-wrapper over argparse_, hiding most of the complexity while retaining
-most of the power.  plac_ is surprisingly scalable upwards even for
-non-trivial use cases, but it is not intended to be an industrial
-strength command line parsing module. Its capabilities are limited by
-design. If you need more power, by all means use the parsing modules
-in the standard library. Still, I have been using Python for 8 years
-and never once I had to use the full power of the standard library
-modules.
-
-Actually I am pretty much convinced that features provided by ``plac``
-are more than enough for 99.9% of the typical use cases of a scripter.
-I am targetting here programmers, sys-admins, scientists and in
-general people writing throw-away scripts for themselves, choosing to
-use a command line interface because it is the quick and simple. Such
-users are not interested in features, they just want to be able to
-write a simple command line tool from a simple specification, not to
-build a command line parser by hand. Unfortunately, the current
-modules in the standard library forces them to go the hard way. They
-are designed to implement power user tools for programmers or system
-administrators, and they have a non-trivial learning curve.
-
-The importance of scaling down
-------------------------------------
-
 An ex-coworker of mine, David Welton, once wrote a nice article about
-the import<ance of `scaling down`_: most people are concerned with the
+the importance of `scaling down`_: most people are concerned with the
 possibility of scaling up, but we should also be concerned with the
-issue of scaling down. In other worlds, simple things should be kept
-simple, and programs should address the common cases in an easy way,
-hopefully without loosing too much power and keeping difficult things
-possible. plac_ adhere as much as possible to this philosophy and it
-is designed to handle well the trivial case, while retaining the
-ability to handle complex cases relying on the underlying power of
-argparse_.
+issue of scaling down. In other words, programs should address the
+common cases simply, simple things should be kept simple, while at the
+same keeping difficult things possible. plac_ adhere as much as
+possible to this philosophy and it is designed to handle well the
+trivial case, while retaining the ability to handle complex cases
+relying on the underlying power of argparse_.
 
-To be concrete, let me start with the simplest possible
-thing: a script that takes a single argument and does something to it.
-It cannot get more trivial than that (discarding the possibility of
-a script without command line arguments, where there is nothing to parse),
-nevertheless it is a use case *extremely common*:
-I need to write scripts like that nearly every day, I wrote hundreds
-of them in the last few years and I have never been happy. Here is
-a typical example of code I have been writing by hand for years:
+Technically plac_ is just a simple wrapper over argparse_, hiding most
+of its complexity while retaining most of its power.  plac_ is
+surprisingly scalable upwards to non-trivial use cases, even without
+using the underlying argparse_, which however can always be accessed
+if you really need more power.  However, I have been using Python for
+8 years and in my experience it is extremely unlikely that you will
+ever need to go beyond the features provided by plac_ directly.
+
+I am pretty much convinced that features provided by ``plac``
+are more than enough for 99.9% of the typical use cases.  I am
+targetting here programmers, sys-admins, scientists and in general
+people writing throw-away scripts for themselves, choosing to use a
+command line interface because it is the quick and simple. Such users
+are not interested in features, they are interested in a small
+learning curve: they just want to be able to write a simple command
+line tool from a simple specification, not to build a command line
+parser by hand. Unfortunately, the modules in the standard
+library forces them to go the hard way. They are designed to implement
+power user tools for programmers or system administrators, and they
+have a non-trivial learning curve.
+
+Positional required arguments
+---------------------------------------------
+
+Let me start with the simplest possible thing: a script that takes a
+single argument and does something to it.  It cannot get more trivial
+than that (discarding the possibility of a script without command line
+arguments, where there is nothing to parse), nevertheless it is a use
+case *extremely common*: I need to write scripts like that nearly
+every day, I wrote hundreds of them in the last few years and I have
+never been happy. Here is a typical example of code I have been
+writing by hand for years:
 
  .. include:: example1.py
     :literal:
 
 As you see the whole ``if __name__ == '__main__'`` block (nine lines) is
 essentially boilerplate that should not exists.  Actually I think the
-Python language should recognize the main function and perform trivial
-arguments parsing behind the scenes; unfortunaly this is unlikely to
+Python language should recognize the main function and pass to it the
+command line arguments behind the scenes; unfortunaly this is unlikely to
 happen. I have been writing boilerplate like this in hundreds of
 scripts for years, and every time I *hate* it. The purpose of using a
 scripting language is convenience and trivial things should be
-trivial. Unfortunately the standard library modules do not help for
+trivial. Unfortunately the standard library does not help for
 this use case, which may be trivial, but it is still incredibly
 common. Using getopt_ and optparse_ does not help, since they are
 intended to manage options and not positional arguments; the argparse_
@@ -171,7 +167,7 @@ Options and flags
 
 It is surprising how few command line scripts with options I have
 written over the years (probably less than a hundred), compared to the
-number of scripts with positional arguments (I certainly have written
+number of scripts with positional arguments I have written (certainly
 more than a thousand of them).  Still, this use case is quite common
 and cannot be neglected.  The standard library modules (all of them)
 are quite verbose when it comes to specifying the options and frankly
@@ -179,7 +175,7 @@ I have never used them directly. Instead, I have always relied on an
 old recipe of mine, the optionparse_ recipe, which provides a
 convenient wrapper over optionparse_. Alternatively, in the simplest
 cases, I have just performed the parsing by hand, instead of manually
-building a suitable OptionParser.
+building a suitable OptionParser_.
 
 plac_ is inspired to the optionparse_ recipe, in the sense that it
 delivers the programmer from the burden of writing the parser, but is
@@ -198,9 +194,9 @@ As you see, the argument ``command`` has been annotated with the
 tuple ``("SQL query", 'option', 'c')``: the first string is the
 help string which will appear in the usage message, whereas the
 second and third strings tell plac_ that ``command`` is an option and that
-it can be abbreviated with the letter ``c``. Of course, it also
-possible to use the long option format, by prefixing the option
-with ``--command=``. The resulting usage message is the following::
+it can be abbreviated with the letter ``c``. Of course, the long option 
+format (``--command=``) comes from the argument name.
+The resulting usage message is the following::
 
  $ python3 example8.py -h
  usage: example8.py [-h] [-c COMMAND] dsn
@@ -242,7 +238,7 @@ Positional argument can be annotated too::
 
 Of course explicit is better than implicit, an no special cases are
 special enough, but sometimes practicality beats purity, so plac_ is
-smart enough to convert help messages into tuples internally; in other
+smart enough to convert help messages into tuples; in other
 words, you can just write "Database dsn" instead of ``("Database dsn",
 'positional', None)``::
 
@@ -394,7 +390,7 @@ to the usage message. Here are a couple of examples of use::
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
-A more realistic example
+A somewhat realistic example
 ---------------------------------------
 
 Here is a more realistic script using most of the features of plac_ to
@@ -429,7 +425,7 @@ plac_ relies on a argparse_ for all of the heavy lifting work and it is
 possible to leverage on argparse_ features directly or indirectly.
 
 For instance, you can make invisible an argument in the usage message
-simply by using ``'==SUPPRESS==`'` as help string (or
+simply by using ``'==SUPPRESS=='`` as help string (or
 ``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
 directly.
 
@@ -450,13 +446,13 @@ instance
 
 disable the recognition of the help flag ``-h, --help``. This is not
 particularly elegant, but I assume the typical user of plac_ will be
-happy with the default message and would not want to go at this level
-of detail; still it is possible if she wants to. For instance, by
-setting the ``description`` attribute, it is possible to add a comment to the
-usage message (by default the docstring of the ``main`` function is
-used as description). It is also possible to change the option prefix;
-for instance if your script must run under Windows and you want to use
-"/" as option prefix you can add the lines::
+happy with the defaults and would not want to change them; still it is
+possible if she wants to. For instance, by setting the ``description``
+attribute, it is possible to add a comment to the usage message (by
+default the docstring of the ``main`` function is used as
+description). It is also possible to change the option prefix; for
+instance if your script must run under Windows and you want to use "/"
+as option prefix you can add the lines::
 
   main.prefix_chars='-/'
   main.short_prefix = '/'
@@ -561,6 +557,10 @@ of the following limitations/differences.
   that the ability to define your own annotation objects may mitigate the
   need for custom actions.
 
+- plac does not support the destination concept. In other words, the
+  destination coincides with the name of the argument, always.
+
+
 I should stress again that if you want to access all of the argparse_ features
 from plac_ you can use ``plac.parser_from`` and you will get
 the underlying ArgumentParser_ object. The the full power of argparse_
@@ -606,7 +606,7 @@ I made a research on PyPI and the name clap (Command Line Arguments Parser)
 was not taken, so I renamed everything to clap. After two days 
 a Clap_ module appeared on PyPI! <expletives deleted>
 
-Having little fantasy, I decided to rename everything again to plac, as
+Having little imagination, I decided to rename everything again to plac, as
 an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
 

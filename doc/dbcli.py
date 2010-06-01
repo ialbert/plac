@@ -1,8 +1,8 @@
 # dbcli.py
-import clap
+import plac
 from sqlalchemy.ext.sqlsoup import SqlSoup
 
-@clap.annotations(
+@plac.annotations(
     db=("Connection string", 'positional', None, SqlSoup),
     header=("Header", 'flag', 'H'),
     sqlcmd=("SQL command", 'option', 'c', str, None, "SQL"),
@@ -23,4 +23,4 @@ def main(db, header, sqlcmd, delimiter="|", *scripts):
         db.bind.execute(file(script).read())
 
 if __name__ == '__main__':
-    clap.call(main)
+    plac.call(main)
