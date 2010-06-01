@@ -1,0 +1,4 @@
+HISTORY
+----------
+
+0.3.0 Initial version. (2010-06-02)

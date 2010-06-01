@@ -1,3 +1,4 @@
+# example8.py
 def main(command: ("SQL query", 'option', 'c'), dsn):
     if command:
         print('executing %s on %s' % (command, dsn))

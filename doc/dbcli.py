@@ -1,3 +1,4 @@
+# dbcli.py
 import clap
 from sqlalchemy.ext.sqlsoup import SqlSoup
 
@@ -19,7 +20,7 @@ def main(db, header, sqlcmd, delimiter="|", *scripts):
             print(delimiter.join(map(str, row)))
 
     for script in scripts:
-        db.execute(file(script).read())
+        db.bind.execute(file(script).read())
 
 if __name__ == '__main__':
     clap.call(main)

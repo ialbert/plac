@@ -13,7 +13,7 @@ Plac, the Easiest Command Line Arguments Parser in the World
 Introduction
 ------------------------------------------------
 
-There is no want of command line arguments parsers in Python
+There is no want of command line arguments parsers in the Python
 world. The standard library alone contains three different modules for
 the parsing of command line options: getopt_ (from the stone age),
 optparse_ (from Python 2.3) and argparse_ (from Python 2.7).  All of
@@ -143,7 +143,7 @@ the usage message for free::
 
 plac_ manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
-on a database a series of ``.sql`` scripts:
+on a database a series of SQL scripts:
 
  .. include:: example6.py
     :literal:
@@ -394,15 +394,44 @@ to the usage message. Here are a couple of examples of use::
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
+A more realistic example
+---------------------------------------
+
+Here is a more realistic script using most of the features of plac_ to
+run SQL queries on a database by relying on SQLAlchemy_. Notice the usage
+of the ``type`` feature to automagically convert a SQLAlchemy connection
+string into a SqlSoup_ object:
+
+ .. include:: dbcli.py
+    :literal:
+
+Here is the usage message::
+
+ $ python article/dbcli.py -h
+ usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
+
+ A script to run queries and SQL scripts on a database
+ 
+ positional arguments:
+   db                    Connection string
+   scripts               SQL scripts
+ 
+ optional arguments:
+   -h, --help            show this help message and exit
+   -H, --header          Header
+   -c SQL, --sqlcmd SQL  SQL command
+   -d |, --delimiter |   Column separator
+
 A few notes on the underlying implementation
 ----------------------------------------------------
 
 plac_ relies on a argparse_ for all of the heavy lifting work and it is
 possible to leverage on argparse_ features directly or indirectly.
 
-For instance, you can make invisible an argument in the usage message simply by
-using '==SUPPRESS==' as help string (or ``argparse.SUPPRESS``). Similarly, you can
-use ``argparse.FileType`` directly.
+For instance, you can make invisible an argument in the usage message
+simply by using ``'==SUPPRESS==`'` as help string (or
+``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
+directly.
 
 It is also possible to pass options to the underlying
 ``argparse.ArgumentParser`` object (currently it accepts the default
@@ -433,13 +462,13 @@ for instance if your script must run under Windows and you want to use
   main.short_prefix = '/'
 
 The recognition of the ``short_prefix`` attribute is a plac_
-extension; there is also a companion ``long_prefix``
-attribute with default value of ``--``. ``prefix_chars`` is an argparse_ feature. 
-Interested readers should read the documentation of argparse_ to understand the
-meaning of the other options. If there is a set of options that you
-use very often, you may consider writing a decorator adding such
-options to the ``main`` function for you. For simplicity, plac_ does
-not perform any magic of that kind.
+extension; there is also a companion ``long_prefix`` attribute with
+default value of ``--``. ``prefix_chars`` is an argparse_ feature.
+Interested readers should read the documentation of argparse_ to
+understand the meaning of the other options. If there is a set of
+options that you use very often, you may consider writing a decorator
+adding such options to the ``main`` function for you. For simplicity,
+plac_ does not perform any magic of that kind.
 
 It is possible to access directly the underlying ArgumentParser_ object, by
 invoking the ``plac.parser_from`` utility function:
@@ -539,32 +568,6 @@ is then available to you: you can use ``add_argument``, ``add_subparsers()``,
 etc. In other words, while some features are not supported directly,
 *all* features are supported indirectly.
 
-A final example
----------------------------------------
-
-Here is a more realistic script using all of the features of plac_ to run SQL queries
-on a database by relying on SQLAlchemy.
-
- .. include:: dbcli.py
-    :literal:
-
-Here is the usage message::
-
- $ python article/dbcli.py -h
- usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
-
- A script to run queries and SQL scripts on a database
- 
- positional arguments:
-   db                    Connection string
-   scripts               SQL scripts
- 
- optional arguments:
-   -h, --help            show this help message and exit
-   -H, --header          Header
-   -c SQL, --sqlcmd SQL  SQL command
-   -d |, --delimiter |   Column separator
-
 The future
 -------------------------------
 
@@ -585,7 +588,7 @@ easy_installable my old optionparse_ recipe, and to publish it on PyPI.
 The original name of plac_ was optionparser and the idea behind it was
 to build an OptionParser_ object from the docstring of the module.
 However, before doing that, I decided to check out the argparse_ module,
-since I new it was going into Python 2.7 and Python 2.7 was coming out.
+since I knew it was going into Python 2.7 and Python 2.7 was coming out.
 Soon enough I realized two things:
 
 1. the single greatest idea of argparse_ was unifying the positional arguments
@@ -601,11 +604,11 @@ since the typical usage was completely different from the argparse_ usage.
 
 I made a research on PyPI and the name clap (Command Line Arguments Parser)
 was not taken, so I renamed everything to clap. After two days 
-a Clap_ module appeared on PyPI! <expletive deleted>
+a Clap_ module appeared on PyPI! <expletives deleted>
 
 Having little fantasy, I decided to rename everything again to plac, as
 an anagram of clap: since it is a non-existing English name, I hope nobody
-will stole it from me!
+will steal it from me!
 
 .. _argparse: http://argparse.googlecode.com
 .. _optparse: http://docs.python.org/library/optparse.html
@@ -614,5 +617,8 @@ will stole it from me!
 .. _plac: http://pypi.python.org/pypi/plac
 .. _scaling down: http://www.welton.it/articles/scalable_systems
 .. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
+.. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
 .. _Clap: http://pypi.python.org/pypi/Clap/0.7
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
+.. _SQLAlchemy: http://www.sqlalchemy.org/
+.. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html

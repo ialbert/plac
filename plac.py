@@ -29,7 +29,7 @@ See plac/doc.html for the documentation.
 """
 # this module should be kept Python 2.3 compatible
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 import re, sys, inspect, argparse
 
@@ -73,9 +73,10 @@ def is_annotation(obj):
 class Annotation(object):
     def __init__(self, help="", kind="positional", abbrev=None, type=str,
                  choices=None, metavar=None):
+        assert kind in ('positional', 'option', 'flag'), kind
         if kind == "positional":
             assert abbrev is None, abbrev
-        else:
+        else: # option, flag
             assert isinstance(abbrev, str) and len(abbrev) == 1, abbrev
         self.help = help
         self.kind = kind

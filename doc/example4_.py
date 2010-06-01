@@ -1,3 +1,4 @@
+# example4_.py
 from datetime import datetime
 
 def main(dsn, table='product', today=datetime.today()):

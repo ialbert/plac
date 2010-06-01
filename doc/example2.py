@@ -1,3 +1,4 @@
+# example2.py
 def main(dsn):
     "Do something on the database"
     print(dsn)
