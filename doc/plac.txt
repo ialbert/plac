@@ -1,5 +1,5 @@
-Plac, the Easiest Command Line Arguments Parser in the World
-================================================================
+Parsing the Command Line the Easy Way: Introducing plac, the EasiestArgument Parser in the Python World
+==========================================================================================================
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
@@ -24,35 +24,35 @@ curve and a certain verbosity.
 An ex-coworker of mine, David Welton, once wrote a nice article about
 the importance of `scaling down`_: most people are concerned with the
 possibility of scaling up, but we should also be concerned with the
-issue of scaling down. In other words, programs should address the
-common cases simply, simple things should be kept simple, while at the
-same keeping difficult things possible. plac_ adhere as much as
-possible to this philosophy and it is designed to handle well the
-trivial case, while retaining the ability to handle complex cases
-relying on the underlying power of argparse_.
+issue of scaling down. This is an old meme in the computing world:
+programs should address the common cases simply, simple things should
+be kept simple, while at the same keeping difficult things
+possible. plac_ adhere as much as possible to this philosophy and it
+is designed to handle well the simple cases, while retaining the
+ability to handle complex cases by relying on the underlying power of
+argparse_.
 
 Technically plac_ is just a simple wrapper over argparse_, hiding most
-of its complexity while retaining most of its power.  plac_ is
-surprisingly scalable upwards to non-trivial use cases, even without
-using the underlying argparse_, which however can always be accessed
-if you really need more power.  However, I have been using Python for
+of its complexity while retaining most of its power. The complexity is
+removed by using a declarative interface instead of an imperative one.
+Still, plac_ is surprisingly scalable upwards, even without
+using the underlying argparse_. I have been using Python for
 8 years and in my experience it is extremely unlikely that you will
-ever need to go beyond the features provided by plac_ directly.
+ever need to go beyond the features provided by the declarative interface
+of plac_: they should be more than enough for 99.9% of the typical use cases. 
 
-I am pretty much convinced that features provided by ``plac``
-are more than enough for 99.9% of the typical use cases.  I am
-targetting here programmers, sys-admins, scientists and in general
-people writing throw-away scripts for themselves, choosing to use a
-command line interface because it is the quick and simple. Such users
-are not interested in features, they are interested in a small
+plac_ is targetting programmers, sys-admins, scientists and in
+general people writing throw-away scripts for themselves, choosing to
+use a command line interface because it is the quick and simple. Such
+users are not interested in features, they are interested in a small
 learning curve: they just want to be able to write a simple command
 line tool from a simple specification, not to build a command line
-parser by hand. Unfortunately, the modules in the standard
-library forces them to go the hard way. They are designed to implement
-power user tools for programmers or system administrators, and they
-have a non-trivial learning curve.
+parser by hand. Unfortunately, the modules in the standard library
+forces them to go the hard way. They are designed to implement power
+user tools for programmers or system administrators, and they have a
+non-trivial learning curve.
 
-Positional required arguments
+Scripts with required positional arguments
 ---------------------------------------------
 
 Let me start with the simplest possible thing: a script that takes a
@@ -111,7 +111,7 @@ underlying argparse_ module) a nice usage message::
 
 This is only the tip of the iceberg: plac_ is able to do much more than that.
 
-Positional default arguments
+Scritps with default arguments
 --------------------------------------------------
 
 I have encountered this use case at work hundreds of times:
@@ -238,17 +238,11 @@ Positional argument can be annotated too::
 
 Of course explicit is better than implicit, an no special cases are
 special enough, but sometimes practicality beats purity, so plac_ is
-smart enough to convert help messages into tuples; in other
-words, you can just write "Database dsn" instead of ``("Database dsn",
-'positional', None)``::
-
- def main(command: ("SQL query", 'option', 'c'), dsn: "Database dsn"):
-     ...
-
-In both cases
-the usage message will show a nice help string on the right hand side
-of the ``dsn`` positional argument. varargs (starred-arguments) can also
-be annotated::
+smart enough to convert help messages into tuples; in other words, you
+can just write ``"Database dsn"`` instead of ``("Database dsn",
+'positional', None)``. In both cases the usage message will show a
+nice help string on the right hand side of the ``dsn`` positional
+argument. varargs (starred-arguments) can also be annotated::
 
   def main(dsn: "Database dsn", *scripts: "SQL scripts"):
       ...
@@ -418,7 +412,7 @@ Here is the usage message::
    -c SQL, --sqlcmd SQL  SQL command
    -d |, --delimiter |   Column separator
 
-A few notes on the underlying implementation
+A few notes about the underlying implementation
 ----------------------------------------------------
 
 plac_ relies on a argparse_ for all of the heavy lifting work and it is
@@ -523,13 +517,23 @@ plac vs argparse
 
 plac_ is opinionated and by design it does not try to make available
 all of the features of argparse_.  In particular you should be aware
-of the following limitations/differences.
+of the following limitations/differences (the following assumes knowledge
+of argparse_):
 
 - plac_ automatically defines both a long and short form for each options,
   just like optparse_. argparse_ allows you to define only a long form,
   or only a short form, if you like. However, since I have always been
   happy with the behavior of optparse_, which I feel is pretty much
   consistent, I have decided not to support this feature.
+
+- plac does not support the destination concept: the destination
+  coincides with the name of the argument, always. This restriction
+  has some drawbacks. For instance, suppose you want to define a long
+  option called ``--yield``. In this case the destination would be ``yield``,
+  which is a Python keyword, and since you cannot introduce an
+  argument with that name in a function definition, it is impossible
+  to implement it. Your choices are to change the name of the long
+  option, or to use argparse_ with a suitable destination.
 
 - plac_ does not support "required options". As the argparse_
   documentation puts it: *Required options are generally considered bad
@@ -556,10 +560,6 @@ of the following limitations/differences.
   looks like a feature too advanced for the goals of plac_. Notice however
   that the ability to define your own annotation objects may mitigate the
   need for custom actions.
-
-- plac does not support the destination concept. In other words, the
-  destination coincides with the name of the argument, always.
-
 
 I should stress again that if you want to access all of the argparse_ features
 from plac_ you can use ``plac.parser_from`` and you will get
@@ -606,7 +606,7 @@ I made a research on PyPI and the name clap (Command Line Arguments Parser)
 was not taken, so I renamed everything to clap. After two days 
 a Clap_ module appeared on PyPI! <expletives deleted>
 
-Having little imagination, I decided to rename everything again to plac, as
+Having little imagination, I decided to rename everything again to plac,
 an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
 
