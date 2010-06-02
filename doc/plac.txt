@@ -1,10 +1,11 @@
-Parsing the Command Line the Easy Way: Introducing plac, the EasiestArgument Parser in the Python World
+Parsing the Command Line the Easy Way: Introducing plac, the Easiest Argument Parser in the Python World
 ==========================================================================================================
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
 :Requires: Python 2.3+
 :Download page: http://pypi.python.org/pypi/plac
+:Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
 :Installation: ``easy_install plac``
 :License: BSD license
 
@@ -19,73 +20,75 @@ getopt_ (from the stone age),
 optparse_ (from Python 2.3) and argparse_ (from Python 2.7).  All of
 them are quite powerful and especially argparse_ is an industrial
 strength solution; unfortunately, all of them feature a non-zero learning
-curve and a certain verbosity.
+curve and a certain verbosity. They do not scale down well enough, at
+least in my opinion.
 
-An ex-coworker of mine, David Welton, once wrote a nice article about
-the importance of `scaling down`_: most people are concerned with the
-possibility of scaling up, but we should also be concerned with the
-issue of scaling down. This is an old meme in the computing world:
-programs should address the common cases simply, simple things should
-be kept simple, while at the same keeping difficult things
-possible. plac_ adhere as much as possible to this philosophy and it
-is designed to handle well the simple cases, while retaining the
-ability to handle complex cases by relying on the underlying power of
-argparse_.
+It should not be necessary to stress the importance `scaling down`_;
+nevertheless most people are obsessed with features and concerned with
+the possibility of scaling up, whereas I think that we should be even
+more concerned with the issue of scaling down. This is an old meme in
+the computing world: programs should address the common cases simply,
+simple things should be kept simple, while at the same keeping
+difficult things possible. plac_ adhere as much as possible to this
+philosophy and it is designed to handle well the simple cases, while
+retaining the ability to handle complex cases by relying on the
+underlying power of argparse_.
 
-Technically plac_ is just a simple wrapper over argparse_, hiding most
-of its complexity while retaining most of its power. The complexity is
-removed by using a declarative interface instead of an imperative one.
-Still, plac_ is surprisingly scalable upwards, even without
-using the underlying argparse_. I have been using Python for
-8 years and in my experience it is extremely unlikely that you will
-ever need to go beyond the features provided by the declarative interface
-of plac_: they should be more than enough for 99.9% of the typical use cases. 
+Technically plac_ is just a simple wrapper over argparse_ which hides
+most of its complexity by using a declarative interface: the argument
+parser is inferred rather than written down by imperatively.  Still, plac_ is
+surprisingly scalable upwards, even without using the underlying
+argparse_. I have been using Python for 8 years and in my experience
+it is extremely unlikely that you will ever need to go beyond the
+features provided by the declarative interface of plac_: they should
+be more than enough for 99.9% of the use cases.
 
-plac_ is targetting programmers, sys-admins, scientists and in
-general people writing throw-away scripts for themselves, choosing to
-use a command line interface because it is the quick and simple. Such
-users are not interested in features, they are interested in a small
-learning curve: they just want to be able to write a simple command
-line tool from a simple specification, not to build a command line
-parser by hand. Unfortunately, the modules in the standard library
-forces them to go the hard way. They are designed to implement power
-user tools for programmers or system administrators, and they have a
-non-trivial learning curve.
+plac_ is targetting especially unsophisticated users,
+programmers, sys-admins, scientists and in general people writing
+throw-away scripts for themselves, choosing the command line
+interface because it is the quick and simple. Such users are not
+interested in features, they are interested in a small learning curve:
+they just want to be able to write a simple command line tool from a
+simple specification, not to build a command line parser by
+hand. Unfortunately, the modules in the standard library forces them
+to go the hard way. They are designed to implement power user tools
+and they have a non-trivial learning curve. On the contrary, plac_
+is designed to be simple to use and extremely concise, as the examples
+below will show.
 
-Scripts with required positional arguments
+Scripts with required arguments
 ---------------------------------------------
 
 Let me start with the simplest possible thing: a script that takes a
-single argument and does something to it.  It cannot get more trivial
-than that (discarding the possibility of a script without command line
-arguments, where there is nothing to parse), nevertheless it is a use
+single argument and does something to it.  It cannot get simpler
+than that, unless you consider a script without command line
+arguments, where there is nothing to parse. Still, it is a use
 case *extremely common*: I need to write scripts like that nearly
 every day, I wrote hundreds of them in the last few years and I have
 never been happy. Here is a typical example of code I have been
 writing by hand for years:
 
- .. include:: example1.py
-    :literal:
+.. include:: example1.py
+   :literal:
 
-As you see the whole ``if __name__ == '__main__'`` block (nine lines) is
-essentially boilerplate that should not exists.  Actually I think the
-Python language should recognize the main function and pass to it the
-command line arguments behind the scenes; unfortunaly this is unlikely to
+As you see the whole ``if __name__ == '__main__'`` block (nine lines)
+is essentially boilerplate that should not exists.  Actually I think
+the language should recognize the main function and pass to it the
+command line arguments automatically; unfortunaly this is unlikely to
 happen. I have been writing boilerplate like this in hundreds of
 scripts for years, and every time I *hate* it. The purpose of using a
 scripting language is convenience and trivial things should be
-trivial. Unfortunately the standard library does not help for
-this use case, which may be trivial, but it is still incredibly
-common. Using getopt_ and optparse_ does not help, since they are
-intended to manage options and not positional arguments; the argparse_
-module helps a bit and it is able to reduce the boilerplate from nine
-lines to six lines:
+trivial. Unfortunately the standard library does not help for this
+incredibly common use case. Using getopt_ and optparse_ does not help,
+since they are intended to manage options and not positional
+arguments; the argparse_ module helps a bit and it is able to reduce
+the boilerplate from nine lines to six lines:
 
- .. include:: example2.py
-    :literal:
+.. include:: example2.py
+   :literal:
 
 However saving three lines does not justify introducing the external
-dependency: most people will not switch Python 2.7, which at the time of
+dependency: most people will not switch to Python 2.7, which at the time of
 this writing is just about to be released, for many years. 
 Moreover, it just feels too complex to instantiate a class and to
 define a parser by hand for such a trivial task.
@@ -94,8 +97,8 @@ The plac_ module is designed to manage well such use cases, and it is able
 to reduce the original nine lines of boiler plate to two lines. With the
 plac_ module all you need to write is
 
- .. include:: example3.py
-    :literal:
+.. include:: example3.py
+   :literal:
 
 The plac_ module provides for free (actually the work is done by the
 underlying argparse_ module) a nice usage message::
@@ -111,23 +114,31 @@ underlying argparse_ module) a nice usage message::
 
 This is only the tip of the iceberg: plac_ is able to do much more than that.
 
-Scritps with default arguments
+Scripts with default arguments
 --------------------------------------------------
 
-I have encountered this use case at work hundreds of times:
+The need to have suitable defaults for command line arguments is quite
+common. For instance I have encountered this use case at work hundreds
+of times:
 
- .. include:: example4.py
-    :literal:
+.. include:: example4.py
+   :literal:
 
+Here I want to perform a query on a database table, by extracting the
+today's data: it makes sense for ``today`` to be a default argument.
+If there is a most used table (in this example a table called ``'product'``)
+it also makes sense to make it a default argument. Performing the parsing
+of the command lines arguments by hand takes 8 ugly lines of boilerplate
+(using argparse_ would require about the same number of lines).
 With plac_ the entire ``__main__`` block reduces to the usual two lines::
 
   if __name__ == '__main__':
       import plac; plac.call(main)
 
-In other words, six lines of boilerplate have been removed, and I have
+In other words, six lines of boilerplate have been removed, and we get
 the usage message for free::
 
- usage: example4_.py [-h] dsn [table] [today]
+ usage: example5.py [-h] dsn [table] [today]
  
  positional arguments:
    dsn
@@ -141,12 +152,12 @@ plac_ manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
 on a database a series of SQL scripts:
 
- .. include:: example6.py
-    :literal:
+.. include:: example6.py
+   :literal:
 
 Using plac_, you can just replace the ``__main__`` block with the
 usual two lines (I have defined an Emacs keybinding for them)
-and you get the following usage message::
+and then you get the following nice usage message::
 
  usage: example7.py [-h] dsn [scripts [scripts ...]]
  
@@ -159,23 +170,22 @@ and you get the following usage message::
 
 The examples here should have made clear that *plac is able to figure out
 the command line arguments parser to use from the signature of the main
-function*. This is the whole idea behind plac_: if my intent is clear,
+function*. This is the whole idea behind plac_: if the intent is clear,
 let's the machine take care of the details.
 
-Options and flags
+Scripts with options
 ---------------------------------------
 
 It is surprising how few command line scripts with options I have
 written over the years (probably less than a hundred), compared to the
-number of scripts with positional arguments I have written (certainly
-more than a thousand of them).  Still, this use case is quite common
-and cannot be neglected.  The standard library modules (all of them)
-are quite verbose when it comes to specifying the options and frankly
-I have never used them directly. Instead, I have always relied on an
-old recipe of mine, the optionparse_ recipe, which provides a
-convenient wrapper over optionparse_. Alternatively, in the simplest
-cases, I have just performed the parsing by hand, instead of manually
-building a suitable OptionParser_.
+number of scripts with positional arguments I wrote (certainly more
+than a thousand of them).  Still, this use case cannot be neglected.
+The standard library modules (all of them) are quite verbose when it
+comes to specifying the options and frankly I have never used them
+directly. Instead, I have always relied on an old recipe of mine, the
+optionparse_ recipe, which provides a convenient wrapper over
+optionparse_. Alternatively, in the simplest cases, I have just
+performed the parsing by hand.
 
 plac_ is inspired to the optionparse_ recipe, in the sense that it
 delivers the programmer from the burden of writing the parser, but is
@@ -187,18 +197,17 @@ The idea comes from the `function annotations` concept, a new
 feature of Python 3. An example is worth a thousand words, so here
 it is:
 
- .. include:: example8.py
-    :literal:
+.. include:: example8.py
+   :literal:
 
-As you see, the argument ``command`` has been annotated with the
-tuple ``("SQL query", 'option', 'c')``: the first string is the
-help string which will appear in the usage message, whereas the
-second and third strings tell plac_ that ``command`` is an option and that
-it can be abbreviated with the letter ``c``. Of course, the long option 
-format (``--command=``) comes from the argument name.
-The resulting usage message is the following::
+As you see, the argument ``command`` has been annotated with the tuple
+``("SQL query", 'option', 'c')``: the first string is the help string
+which will appear in the usage message, the second string tell plac_
+that ``command`` is an option and the third string that it can be
+abbreviated with the letter ``c``. Of course, the long option format
+(``--command=``) comes from the argument name.  The resulting usage
+message is the following::
 
- $ python3 example8.py -h
  usage: example8.py [-h] [-c COMMAND] dsn
  
  positional arguments:
@@ -221,13 +230,13 @@ Notice that if the option is not passed, the variable ``command``
 will get the value ``None``. It is possible to specify a non-trivial
 default for an option. Here is an example:
 
- .. include:: example8_.py
-    :literal:
+.. include:: example8_.py
+   :literal:
 
 Now if you do not pass the ``command option``, the
 default query will be executed::
 
- $ python article/example8_.py dsn
+ $ python example8_.py dsn
  executing 'select * from table' on dsn
 
 Positional argument can be annotated too::
@@ -242,24 +251,30 @@ smart enough to convert help messages into tuples; in other words, you
 can just write ``"Database dsn"`` instead of ``("Database dsn",
 'positional', None)``. In both cases the usage message will show a
 nice help string on the right hand side of the ``dsn`` positional
-argument. varargs (starred-arguments) can also be annotated::
+argument. 
+
+I should also notice that varargs (starred-arguments) can be annotated too;
+here is an example::
 
   def main(dsn: "Database dsn", *scripts: "SQL scripts"):
       ...
 
-is a valid signature for plac_, which will recognize the help strings
+This is a valid signature for plac_, which will recognize the help strings
 for both ``dsn`` and ``scripts``::
 
  positional arguments:
    dsn                          Database dsn
    scripts                      SQL scripts
 
+Scripts with flags
+--------------------
+
 plac_ also recognizes flags, i.e. boolean options which are
 ``True`` if they are passed to the command line and ``False`` 
-if they are absent. Here is an example::
+if they are absent. Here is an example:
 
- $ python3 example9.py -v dsn
- connecting to dsn
+.. include:: example9.py
+   :literal:
 
 ::
 
@@ -273,6 +288,11 @@ if they are absent. Here is an example::
    -h, --help     show this help message and exit
    -v, --verbose  prints more info
 
+::
+
+ $ python3 example9.py -v dsn
+ connecting to dsn
+
 Notice that it is an error trying to specify a default for flags: the
 default value for a flag is always ``False``. If you feel the need to
 implement non-boolean flags, you should use an option with two
@@ -284,39 +304,38 @@ the ``main`` function write first the flag arguments, then the option
 arguments, then the required arguments and finally the default
 arguments. This is just a convention and you are not forced to use it,
 except for the default arguments (including the varargs) which must
-stay at the end since it is required by the Python syntax.
+stay at the end as it is required by the Python syntax.
 
 plac for Python 2.X users
 --------------------------------------------------
 
 I do not use Python 3. At work we are just starting to think about
-migrating to Python 2.6. It will take years before we even
+migrating to Python 2.6. It will take years before we
 think to migrate to Python 3. I am pretty much sure most Pythonistas
 are in the same situation. Therefore plac_ provides a way to work
 with function annotations even in Python 2.X (including Python 2.3).
 There is no magic involved; you just need to add the annotations
-by hand. For instance
+by hand. For instance the annotate function declaration
 
 ::
 
   def main(dsn: "Database dsn", *scripts: "SQL scripts"):
+      ...
 
-becomes::
+is equivalent to the following code::
 
   def main(dsn, *scripts):
       ...
   main.__annotations__ = dict(
-  dsn="Database dsn",
-  scripts="SQL scripts")
+      dsn="Database dsn",
+      scripts="SQL scripts")
 
-One should be careful to much the keys of the annotations dictionary
+One should be careful to match the keys of the annotation dictionary
 with the names of the arguments in the annotated function; for lazy
 people with Python 2.4 available the simplest way is to use the
-``plac.annotations`` decorator that performs the check for you.
+``plac.annotations`` decorator that performs the check for you::
 
-::
-
-  @annotations(
+  @plac.annotations(
       dsn="Database dsn",
       scripts="SQL scripts")
   def main(dsn, *scripts):
@@ -324,43 +343,45 @@ people with Python 2.4 available the simplest way is to use the
 
 In the rest of this article I will assume that you are using Python 2.X with
 ``X >= 4`` and I will use the ``plac.annotations`` decorator. Notice however
-that the tests for plac_ are supposed to run even with Python 2.3.
+that the tests for plac_ runs even on Python 2.3.
 
 More features
 --------------------------------------------------
 
-One of the goals of plac is to have a learning curve of *minutes*, compared
-to the learning curve of *hours* of argparse_. That does not mean
-that I have removed all the features of argparse_. Actually
-a lot of argparse_ power persists in plac_.
-Until now, I have only showed simple annotations, but in general
-an annotation is a 5-tuple of the form
+Even if one of the goals of plac is to have a learning curve of
+*minutes*, compared to the learning curve of *hours* of
+argparse_, it does not mean that I have removed all the features of
+argparse_. Actually a lot of argparse_ power persists in plac_.  Until
+now, I have only showed simple annotations, but in general an
+annotation is a 5-tuple of the form
 
   ``(help, kind, abbrev, type, choices, metavar)``
 
-where ``help`` is the help message, ``kind`` is one of {"flag",
-"option ", "positional"}, ``abbrev`` is a one-character string,
-``type`` is callable taking a string in input, choices is a sequence
-of values and ``metavar`` is a string.
+where ``help`` is the help message, ``kind`` is a string in the set {
+``"flag"``, ``"option"``, ``"positional"``}, ``abbrev`` is a
+one-character string, ``type`` is a callable taking a string in input,
+``choices`` is a discrete sequence of values and ``metavar`` is a string.
 
-``type`` is used to automagically convert the arguments from string
-to any Python type; by default there is no convertion i.e. ``type=None``.
+``type`` is used to automagically convert the command line arguments
+from the string type to any Python type; by default there is no
+convertion and ``type=None``.
 
 ``choices`` is used to restrict the number of the valid
 options; by default there is no restriction i.e. ``choices=None``.
 
 ``metavar`` is used to change the argument name in the usage message
-(and only there); by default the metavar is equal to the name of the
-argument, unless the argument has a default and in such a case is
+(and only there); by default the metavar is ``None``: this means that
+the name in the usage message is the same as the argument name,
+unless the argument has a default and in such a case is
 equal to the stringified form of the default.
 
-Here is an example showing many of the features (shamelessly stolen
-from the argparse_ documentation):
+Here is an example showing many of the features (taken from the
+argparse_ documentation):
 
- .. include:: example10.py
-    :literal:
+.. include:: example10.py
+   :literal:
 
-Here is the usage for the script::
+Here is the usage::
 
  usage: example10.py [-h] {add,mul} [n [n ...]]
  
@@ -384,7 +405,7 @@ to the usage message. Here are a couple of examples of use::
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
-A somewhat realistic example
+A more realistic example
 ---------------------------------------
 
 Here is a more realistic script using most of the features of plac_ to
@@ -392,12 +413,12 @@ run SQL queries on a database by relying on SQLAlchemy_. Notice the usage
 of the ``type`` feature to automagically convert a SQLAlchemy connection
 string into a SqlSoup_ object:
 
- .. include:: dbcli.py
-    :literal:
+.. include:: dbcli.py
+   :literal:
 
 Here is the usage message::
 
- $ python article/dbcli.py -h
+ $ python dbcli.py -h
  usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
 
  A script to run queries and SQL scripts on a database
@@ -412,7 +433,7 @@ Here is the usage message::
    -c SQL, --sqlcmd SQL  SQL command
    -d |, --delimiter |   Column separator
 
-A few notes about the underlying implementation
+Advanced usage
 ----------------------------------------------------
 
 plac_ relies on a argparse_ for all of the heavy lifting work and it is
@@ -453,7 +474,7 @@ as option prefix you can add the lines::
 
 The recognition of the ``short_prefix`` attribute is a plac_
 extension; there is also a companion ``long_prefix`` attribute with
-default value of ``--``. ``prefix_chars`` is an argparse_ feature.
+default value of ``"--"``. ``prefix_chars`` is an argparse_ feature.
 Interested readers should read the documentation of argparse_ to
 understand the meaning of the other options. If there is a set of
 options that you use very often, you may consider writing a decorator
@@ -486,13 +507,13 @@ Advanced users can implement their own annotation objects.
 For instance, here is an example of how you could implement annotations for
 positional arguments:
 
- .. include:: annotations.py
-    :literal:
+.. include:: annotations.py
+   :literal:
 
 You can use such annotations objects as follows:
 
- .. include:: example11.py
-    :literal:
+.. include:: example11.py
+   :literal:
 
 Here is the usage message you get::
 
@@ -516,9 +537,9 @@ plac vs argparse
 ---------------------------------------------
 
 plac_ is opinionated and by design it does not try to make available
-all of the features of argparse_.  In particular you should be aware
-of the following limitations/differences (the following assumes knowledge
-of argparse_):
+all of the features of argparse_ in an easy way.  In particular you
+should be aware of the following limitations/differences (the
+following assumes knowledge of argparse_):
 
 - plac_ automatically defines both a long and short form for each options,
   just like optparse_. argparse_ allows you to define only a long form,
@@ -551,7 +572,7 @@ of argparse_):
 - plac_ does not support ``nargs`` options directly (it uses them internally,
   though, to implement flag recognition). The reason it that all the use
   cases of interest to me are covered by plac_ and did not feel the need
-  to increase the learning curve by adding direct support to ``nargs``.
+  to increase the learning curve by adding direct support for ``nargs``.
 
 - plac_ does not support subparsers directly. For the moment, this
   looks like a feature too advanced for the goals of plac_.
@@ -599,16 +620,18 @@ Soon enough I realized two things:
 Putting together these two observations with the original idea of inferring the
 parser I decided to build an ArgumentParser_ object from function
 annotations. The ``optionparser`` name was ruled out, since I was
-using argparse_; a name like ``argparse_plus`` was also ruled out,
+now using argparse_; a name like ``argparse_plus`` was also ruled out,
 since the typical usage was completely different from the argparse_ usage.
 
-I made a research on PyPI and the name clap (Command Line Arguments Parser)
-was not taken, so I renamed everything to clap. After two days 
-a Clap_ module appeared on PyPI! <expletives deleted>
+I made a research on PyPI and the name plac (Command Line Arguments Parser)
+was not taken, so I renamed everything to plac. After two days 
+a Clap_ module appeared on PyPI <expletives deleted>!
 
 Having little imagination, I decided to rename everything again to plac,
-an anagram of clap: since it is a non-existing English name, I hope nobody
+an anagram of plac: since it is a non-existing English name, I hope nobody
 will steal it from me!
+
+That's all, I hope you will enjoy working with plac!
 
 .. _argparse: http://argparse.googlecode.com
 .. _optparse: http://docs.python.org/library/optparse.html

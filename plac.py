@@ -71,7 +71,7 @@ def is_annotation(obj):
             and hasattr(obj, 'choices') and hasattr(obj, 'metavar'))
 
 class Annotation(object):
-    def __init__(self, help="", kind="positional", abbrev=None, type=str,
+    def __init__(self, help="", kind="positional", abbrev=None, type=None,
                  choices=None, metavar=None):
         assert kind in ('positional', 'option', 'flag'), kind
         if kind == "positional":

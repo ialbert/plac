@@ -2,6 +2,7 @@
 def main(dsn):
     "Do something on the database"
     print(dsn)
+    # ...
 
 if __name__ == '__main__':
     import argparse

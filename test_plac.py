@@ -45,7 +45,6 @@ def test_p2():
     
     expect(SystemExit, p2.parse_args, [])
 
-
 p3 = parser_from(lambda arg1, delete: None,
                  delete=('delete a file', 'option', 'd'))
 
