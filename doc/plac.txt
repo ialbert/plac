@@ -236,7 +236,7 @@ default for an option. Here is an example:
 Now if you do not pass the ``command option``, the
 default query will be executed::
 
- $ python example8_.py dsn
+ $ python3 example8_.py dsn
  executing 'select * from table' on dsn
 
 Positional argument can be annotated too::
@@ -646,12 +646,12 @@ annotations. The ``optionparser`` name was ruled out, since I was
 now using argparse_; a name like ``argparse_plus`` was also ruled out,
 since the typical usage was completely different from the argparse_ usage.
 
-I made a research on PyPI and the name plac (Command Line Arguments Parser)
-was not taken, so I renamed everything to plac. After two days 
+I made a research on PyPI and the name clap (Command Line Arguments Parser)
+was not taken, so I renamed everything to clap. After two days 
 a Clap_ module appeared on PyPI <expletives deleted>!
 
 Having little imagination, I decided to rename everything again to plac,
-an anagram of plac: since it is a non-existing English name, I hope nobody
+an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
 
 That's all, I hope you will enjoy working with plac!
