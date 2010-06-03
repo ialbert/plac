@@ -440,7 +440,7 @@ Here is how you call the script::
  ('0', ('1', '2'), {'kw1': '1', 'kw2': '2'})
 
 When using keyword arguments, one must be careful to use names which
-are not alreay taken; for instance in this examples the names ``opt``
+are not alreay taken; for instance in this examples the name ``opt``
 is taken::
  
  $ python example12.py 1 2 kw1=1 kw2=2 opt=0
