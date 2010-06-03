@@ -136,17 +136,10 @@ With plac_ the entire ``__main__`` block reduces to the usual two lines::
       import plac; plac.call(main)
 
 In other words, six lines of boilerplate have been removed, and we get
-the usage message for free::
+the usage message for free:
 
- usage: example5.py [-h] dsn [table] [today]
- 
- positional arguments:
-   dsn
-   table
-   today
- 
- optional arguments:
-   -h, --help  show this help message and exit
+.. include:: example5.help
+   :literal:
 
 plac_ manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
@@ -157,16 +150,10 @@ on a database a series of SQL scripts:
 
 Using plac_, you can just replace the ``__main__`` block with the
 usual two lines (I have defined an Emacs keybinding for them)
-and then you get the following nice usage message::
+and then you get the following nice usage message:
 
- usage: example7.py [-h] dsn [scripts [scripts ...]]
- 
- positional arguments:
-   dsn
-   scripts
-
- optional arguments:
-   -h, --help  show this help message and exit
+.. include:: example7.help
+   :literal:
 
 The examples here should have made clear that *plac is able to figure out
 the command line arguments parser to use from the signature of the main
@@ -206,17 +193,10 @@ which will appear in the usage message, the second string tell plac_
 that ``command`` is an option and the third string that it can be
 abbreviated with the letter ``c``. Of course, the long option format
 (``--command=``) comes from the argument name.  The resulting usage
-message is the following::
+message is the following:
 
- usage: example8.py [-h] [-c COMMAND] dsn
- 
- positional arguments:
-   dsn
-
- optional arguments:
-   -h, --help            show this help message and exit
-   -c COMMAND, --command COMMAND
-                         SQL query
+.. include:: example8.help
+   :literal:
 
 Here are two examples of usage::
 
@@ -283,17 +263,8 @@ if they are absent. Here is an example:
 .. include:: example9.py
    :literal:
 
-::
-
- $ python3 example9.py -h
- usage: example9.py [-h] [-v] dsn
- 
- positional arguments:
-   dsn            connection string
- 
- optional arguments:
-   -h, --help     show this help message and exit
-   -v, --verbose  prints more info
+.. include:: example9.help
+   :literal:
 
 ::
 
@@ -388,18 +359,10 @@ argparse_ documentation):
 .. include:: example10.py
    :literal:
 
-Here is the usage::
+Here is the usage:
 
- usage: example10.py [-h] {add,mul} [n [n ...]]
- 
- A script to add and multiply numbers
-
- positional arguments:
-   {add,mul}   The name of an operator
-   n           A number
-
- optional arguments:
-   -h, --help  show this help message and exit
+.. include:: example10.help
+   :literal:
 
 Notice that the docstring of the ``main`` function has been automatically added
 to the usage message. Here are a couple of examples of use::
@@ -422,17 +385,10 @@ Here is an example:
 .. include:: example12.py
    :literal:
 
-Here is the generated usage message::
+Here is the generated usage message:
 
- usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
- 
- positional arguments:
-   args               default arguments
-   kw                 keyword arguments
- 
- optional arguments:
-   -h, --help         show this help message and exit
-   -o OPT, --opt OPT  some option
+.. include:: example12.help
+   :literal:
 
 Here is how you call the script::
    
@@ -463,22 +419,10 @@ string into a SqlSoup_ object:
 .. include:: dbcli.py
    :literal:
 
-Here is the usage message::
+Here is the usage message:
 
- $ python dbcli.py -h
- usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
-
- A script to run queries and SQL scripts on a database
- 
- positional arguments:
-   db                    Connection string
-   scripts               SQL scripts
- 
- optional arguments:
-   -h, --help            show this help message and exit
-   -H, --header          Header
-   -c SQL, --sqlcmd SQL  SQL command
-   -d |, --delimiter |   Column separator
+.. include:: dbcli.help
+   :literal:
 
 Advanced usage
 ----------------------------------------------------
@@ -562,17 +506,10 @@ You can use such annotations objects as follows:
 .. include:: example11.py
    :literal:
 
-Here is the usage message you get::
+Here is the usage message you get:
 
- usage: example11.py [-h] i n [rest [rest ...]]
- 
- positional arguments:
-   i           This is an int
-   n           This is a float
-   rest        Other arguments
- 
- optional arguments:
-   -h, --help  show this help message and exit
+.. include:: example11.help
+   :literal:
 
 You can go on and define ``Option`` and ``Flag`` classes, if you like.
 Using custom annotation objects you could do advanced things like extracting the

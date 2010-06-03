@@ -207,7 +207,7 @@ endobj
  /Dest [ 76 0 R
  /XYZ
  62.69291
- 671.8236
+ 623.8236
  0 ]
  /Rect [ 62.69291
  509.5936
@@ -225,7 +225,7 @@ endobj
  /Dest [ 76 0 R
  /XYZ
  62.69291
- 671.8236
+ 623.8236
  0 ]
  /Rect [ 527.0227
  509.5936
@@ -240,10 +240,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 80 0 R
+ /Dest [ 82 0 R
  /XYZ
  62.69291
- 162.6236
+ 765.0236
  0 ]
  /Rect [ 62.69291
  491.5936
@@ -258,10 +258,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 80 0 R
+ /Dest [ 82 0 R
  /XYZ
  62.69291
- 162.6236
+ 765.0236
  0 ]
  /Rect [ 527.0227
  491.5936
@@ -279,7 +279,7 @@ endobj
  /Dest [ 82 0 R
  /XYZ
  62.69291
- 351.7299
+ 304.7299
  0 ]
  /Rect [ 62.69291
  473.5936
@@ -297,7 +297,7 @@ endobj
  /Dest [ 82 0 R
  /XYZ
  62.69291
- 351.7299
+ 304.7299
  0 ]
  /Rect [ 527.0227
  473.5936
@@ -315,7 +315,7 @@ endobj
  /Dest [ 89 0 R
  /XYZ
  62.69291
- 603.8236
+ 558.6236
  0 ]
  /Rect [ 62.69291
  455.5936
@@ -333,7 +333,7 @@ endobj
  /Dest [ 89 0 R
  /XYZ
  62.69291
- 603.8236
+ 558.6236
  0 ]
  /Rect [ 527.0227
  455.5936
@@ -351,7 +351,7 @@ endobj
  /Dest [ 91 0 R
  /XYZ
  62.69291
- 494.4849
+ 474.4849
  0 ]
  /Rect [ 62.69291
  437.5936
@@ -369,7 +369,7 @@ endobj
  /Dest [ 91 0 R
  /XYZ
  62.69291
- 494.4849
+ 474.4849
  0 ]
  /Rect [ 527.0227
  437.5936
@@ -423,7 +423,7 @@ endobj
  /Dest [ 106 0 R
  /XYZ
  62.69291
- 619.8236
+ 631.8236
  0 ]
  /Rect [ 62.69291
  401.5936
@@ -441,7 +441,7 @@ endobj
  /Dest [ 106 0 R
  /XYZ
  62.69291
- 619.8236
+ 631.8236
  0 ]
  /Rect [ 521.4627
  401.5936
@@ -459,7 +459,7 @@ endobj
  /Dest [ 108 0 R
  /XYZ
  62.69291
- 683.8236
+ 695.8236
  0 ]
  /Rect [ 62.69291
  383.5936
@@ -477,7 +477,7 @@ endobj
  /Dest [ 108 0 R
  /XYZ
  62.69291
- 683.8236
+ 695.8236
  0 ]
  /Rect [ 521.4627
  383.5936
@@ -495,7 +495,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 741.0236
+ 765.0236
  0 ]
  /Rect [ 62.69291
  365.5936
@@ -513,7 +513,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 741.0236
+ 765.0236
  0 ]
  /Rect [ 521.4627
  365.5936
@@ -531,7 +531,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 252.0236
+ 276.0236
  0 ]
  /Rect [ 62.69291
  347.5936
@@ -549,7 +549,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 252.0236
+ 276.0236
  0 ]
  /Rect [ 521.4627
  347.5936
@@ -1120,9 +1120,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 424.9936
+ 400.9936
  84.20915
- 436.9936 ]
+ 412.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1135,9 +1135,9 @@ endobj
  0
  0 ]
  /Rect [ 91.59679
- 203.7936
+ 179.7936
  109.9368
- 215.7936 ]
+ 191.7936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1173,9 +1173,9 @@ endobj
  0
  0 ]
  /Rect [ 446.1627
- 699.3936
+ 651.3936
  464.5027
- 711.3936 ]
+ 663.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1188,9 +1188,9 @@ endobj
  0
  0 ]
  /Rect [ 357.8702
- 588.3936
+ 540.3936
  416.0058
- 600.3936 ]
+ 552.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1203,9 +1203,9 @@ endobj
  0
  0 ]
  /Rect [ 182.0729
- 576.3936
+ 528.3936
  234.3229
- 588.3936 ]
+ 540.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1218,9 +1218,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 546.3936
+ 498.3936
  84.28901
- 558.3936 ]
+ 510.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1233,9 +1233,9 @@ endobj
  0
  0 ]
  /Rect [ 161.7834
- 546.3936
+ 498.3936
  217.2895
- 558.3936 ]
+ 510.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1248,9 +1248,9 @@ endobj
  0
  0 ]
  /Rect [ 514.2427
- 343.1936
+ 295.1936
  532.2243
- 355.1936 ]
+ 307.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1288,9 +1288,9 @@ endobj
  0
  0 ]
  /Rect [ 183.9662
- 431.7936
+ 395.7936
  205.2545
- 443.7936 ]
+ 407.7936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1303,33 +1303,17 @@ endobj
  0
  0 ]
  /Rect [ 184.4029
- 235.3936
+ 199.3936
  202.7429
- 247.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER68': class PDFDictionary 
-79 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 62.69291
- 127.1936
- 84.57878
- 139.1936 ]
+ 211.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page6': class PDFPage 
-80 0 obj
+79 0 obj
 % Page dictionary
 << /Annots [ 77 0 R
- 78 0 R
- 79 0 R ]
+ 78 0 R ]
  /Contents 178 0 R
  /MediaBox [ 0
  0
@@ -1346,6 +1330,21 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
+% 'Annot.NUMBER68': class PDFDictionary 
+80 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 729.5936
+ 84.57878
+ 741.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
 % 'Annot.NUMBER69': class PDFDictionary 
 81 0 obj
 << /A << /S /URI
@@ -1355,16 +1354,17 @@ endobj
  0
  0 ]
  /Rect [ 110.2829
- 292.2999
+ 245.2999
  132.8629
- 304.2999 ]
+ 257.2999 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page7': class PDFPage 
 82 0 obj
 % Page dictionary
-<< /Annots [ 81 0 R ]
+<< /Annots [ 80 0 R
+ 81 0 R ]
  /Contents 179 0 R
  /MediaBox [ 0
  0
@@ -1390,9 +1390,9 @@ endobj
  0
  0 ]
  /Rect [ 358.6729
- 619.3936
+ 574.1936
  379.7929
- 631.3936 ]
+ 586.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1405,9 +1405,9 @@ endobj
  0
  0 ]
  /Rect [ 104.3155
- 556.3936
+ 511.1936
  143.7755
- 568.3936 ]
+ 523.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1420,9 +1420,9 @@ endobj
  0
  0 ]
  /Rect [ 414.3275
- 556.3936
+ 511.1936
  453.7875
- 568.3936 ]
+ 523.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1435,9 +1435,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 544.3936
+ 499.1936
  106.6498
- 556.3936 ]
+ 511.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1450,9 +1450,9 @@ endobj
  0
  0 ]
  /Rect [ 189.6004
- 544.3936
+ 499.1936
  207.9404
- 556.3936 ]
+ 511.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1465,9 +1465,9 @@ endobj
  0
  0 ]
  /Rect [ 355.0429
- 352.3936
+ 307.1936
  397.2829
- 364.3936 ]
+ 319.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1505,9 +1505,9 @@ endobj
  0
  0 ]
  /Rect [ 384.3381
- 459.0549
+ 439.0549
  405.6967
- 471.0549 ]
+ 451.0549 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1607,9 +1607,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 584.3936
+ 596.3936
  83.9079
- 596.3936 ]
+ 608.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1622,9 +1622,9 @@ endobj
  0
  0 ]
  /Rect [ 133.1029
- 584.3936
+ 596.3936
  175.4379
- 596.3936 ]
+ 608.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1637,9 +1637,9 @@ endobj
  0
  0 ]
  /Rect [ 454.1177
- 584.3936
+ 596.3936
  496.4527
- 596.3936 ]
+ 608.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1652,9 +1652,9 @@ endobj
  0
  0 ]
  /Rect [ 455.2227
- 542.3936
+ 554.3936
  534.3667
- 554.3936 ]
+ 566.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1667,9 +1667,9 @@ endobj
  0
  0 ]
  /Rect [ 127.99
- 375.1936
+ 387.1936
  149.3857
- 387.1936 ]
+ 399.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1682,9 +1682,9 @@ endobj
  0
  0 ]
  /Rect [ 326.9971
- 261.9936
+ 273.9936
  351.8113
- 273.9936 ]
+ 285.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1697,9 +1697,9 @@ endobj
  0
  0 ]
  /Rect [ 409.706
- 249.9936
+ 261.9936
  453.2944
- 261.9936 ]
+ 273.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1712,9 +1712,9 @@ endobj
  0
  0 ]
  /Rect [ 259.0928
- 237.9936
+ 249.9936
  302.7528
- 249.9936 ]
+ 261.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1727,9 +1727,9 @@ endobj
  0
  0 ]
  /Rect [ 258.3129
- 213.9936
+ 225.9936
  279.4329
- 225.9936 ]
+ 237.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1742,9 +1742,9 @@ endobj
  0
  0 ]
  /Rect [ 327.2261
- 195.9936
+ 207.9936
  410.5152
- 207.9936 ]
+ 219.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1786,9 +1786,9 @@ endobj
  0
  0 ]
  /Rect [ 106.6216
- 648.3936
+ 660.3936
  128.3202
- 660.3936 ]
+ 672.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1821,9 +1821,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 705.5936
+ 729.5936
  84.8789
- 717.5936 ]
+ 741.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1836,9 +1836,9 @@ endobj
  0
  0 ]
  /Rect [ 466.5307
- 705.5936
+ 729.5936
  509.8367
- 717.5936 ]
+ 741.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1851,9 +1851,9 @@ endobj
  0
  0 ]
  /Rect [ 124.3929
- 681.5936
+ 705.5936
  163.8529
- 693.5936 ]
+ 717.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1866,9 +1866,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 660.5936
+ 684.5936
  107.7029
- 672.5936 ]
+ 696.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1881,9 +1881,9 @@ endobj
  0
  0 ]
  /Rect [ 447.7627
- 660.5936
+ 684.5936
  486.6727
- 672.5936 ]
+ 696.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1896,9 +1896,9 @@ endobj
  0
  0 ]
  /Rect [ 493.1227
- 660.5936
+ 684.5936
  531.6927
- 672.5936 ]
+ 696.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1911,9 +1911,9 @@ endobj
  0
  0 ]
  /Rect [ 232.9652
- 636.5936
+ 660.5936
  271.8752
- 648.5936 ]
+ 672.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1926,9 +1926,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 546.5936
+ 570.5936
  127.9329
- 558.5936 ]
+ 582.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1941,9 +1941,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 528.5936
+ 552.5936
  107.9337
- 540.5936 ]
+ 564.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1956,9 +1956,9 @@ endobj
  0
  0 ]
  /Rect [ 308.5389
- 528.5936
+ 552.5936
  351.8997
- 540.5936 ]
+ 564.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1971,9 +1971,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 486.5936
+ 510.5936
  108.3529
- 498.5936 ]
+ 522.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1986,9 +1986,9 @@ endobj
  0
  0 ]
  /Rect [ 277.2428
- 486.5936
+ 510.5936
  321.0228
- 498.5936 ]
+ 522.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2001,9 +2001,9 @@ endobj
  0
  0 ]
  /Rect [ 404.5839
- 474.5936
+ 498.5936
  426.0657
- 486.5936 ]
+ 510.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2016,9 +2016,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 420.5936
+ 444.5936
  108.61
- 432.5936 ]
+ 456.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2031,9 +2031,9 @@ endobj
  0
  0 ]
  /Rect [ 459.2622
- 408.5936
+ 432.5936
  481.289
- 420.5936 ]
+ 444.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2046,9 +2046,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 378.5936
+ 402.5936
  107.0573
- 390.5936 ]
+ 414.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2061,9 +2061,9 @@ endobj
  0
  0 ]
  /Rect [ 140.1729
- 366.5936
+ 390.5936
  158.5129
- 378.5936 ]
+ 402.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2076,9 +2076,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 348.5936
+ 372.5936
  107.9247
- 360.5936 ]
+ 384.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2091,9 +2091,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 336.5936
+ 360.5936
  104.0329
- 348.5936 ]
+ 372.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2106,9 +2106,9 @@ endobj
  0
  0 ]
  /Rect [ 340.7317
- 303.5936
+ 327.5936
  385.1185
- 315.5936 ]
+ 339.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2121,9 +2121,9 @@ endobj
  0
  0 ]
  /Rect [ 451.1022
- 303.5936
+ 327.5936
  474.369
- 315.5936 ]
+ 339.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2136,9 +2136,9 @@ endobj
  0
  0 ]
  /Rect [ 321.0443
- 291.5936
+ 315.5936
  399.3474
- 303.5936 ]
+ 327.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2151,9 +2151,9 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 279.5936
+ 303.5936
  107.3744
- 291.5936 ]
+ 315.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2166,9 +2166,9 @@ endobj
  0
  0 ]
  /Rect [ 109.0098
- 216.5936
+ 240.5936
  131.9967
- 228.5936 ]
+ 252.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2181,9 +2181,9 @@ endobj
  0
  0 ]
  /Rect [ 397.2929
- 192.5936
+ 216.5936
  415.6329
- 204.5936 ]
+ 228.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2196,9 +2196,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 171.5936
+ 195.5936
  128.4929
- 183.5936 ]
+ 207.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2211,9 +2211,9 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 153.5936
+ 177.5936
  124.5929
- 165.5936 ]
+ 189.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2226,9 +2226,9 @@ endobj
  0
  0 ]
  /Rect [ 464.3898
- 132.5936
+ 156.5936
  503.8498
- 144.5936 ]
+ 168.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2241,9 +2241,9 @@ endobj
  0
  0 ]
  /Rect [ 305.0429
- 120.5936
+ 144.5936
  323.3829
- 132.5936 ]
+ 156.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2550,7 +2550,7 @@ endobj
 % 'R155': class PDFInfo 
 155 0 obj
 << /Author (Michele Simionato)
- /CreationDate (D:20100603134000-01'00')
+ /CreationDate (D:20100603212333-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
@@ -2603,7 +2603,7 @@ endobj
 << /Dest [ 76 0 R
  /XYZ
  62.69291
- 671.8236
+ 623.8236
  0 ]
  /Next 161 0 R
  /Parent 156 0 R
@@ -2612,10 +2612,10 @@ endobj
 endobj
 % 'Outline.4': class OutlineEntryObject 
 161 0 obj
-<< /Dest [ 80 0 R
+<< /Dest [ 82 0 R
  /XYZ
  62.69291
- 162.6236
+ 765.0236
  0 ]
  /Next 162 0 R
  /Parent 156 0 R
@@ -2627,7 +2627,7 @@ endobj
 << /Dest [ 82 0 R
  /XYZ
  62.69291
- 351.7299
+ 304.7299
  0 ]
  /Next 163 0 R
  /Parent 156 0 R
@@ -2639,7 +2639,7 @@ endobj
 << /Dest [ 89 0 R
  /XYZ
  62.69291
- 603.8236
+ 558.6236
  0 ]
  /Next 164 0 R
  /Parent 156 0 R
@@ -2651,7 +2651,7 @@ endobj
 << /Dest [ 91 0 R
  /XYZ
  62.69291
- 494.4849
+ 474.4849
  0 ]
  /Next 165 0 R
  /Parent 156 0 R
@@ -2675,7 +2675,7 @@ endobj
 << /Dest [ 106 0 R
  /XYZ
  62.69291
- 619.8236
+ 631.8236
  0 ]
  /Next 167 0 R
  /Parent 156 0 R
@@ -2687,7 +2687,7 @@ endobj
 << /Dest [ 108 0 R
  /XYZ
  62.69291
- 683.8236
+ 695.8236
  0 ]
  /Next 168 0 R
  /Parent 156 0 R
@@ -2699,7 +2699,7 @@ endobj
 << /Dest [ 138 0 R
  /XYZ
  62.69291
- 741.0236
+ 765.0236
  0 ]
  /Next 169 0 R
  /Parent 156 0 R
@@ -2711,7 +2711,7 @@ endobj
 << /Dest [ 138 0 R
  /XYZ
  62.69291
- 252.0236
+ 276.0236
  0 ]
  /Next 170 0 R
  /Parent 156 0 R
@@ -2750,7 +2750,7 @@ endobj
  64 0 R
  69 0 R
  76 0 R
- 80 0 R
+ 79 0 R
  82 0 R
  89 0 R
  91 0 R
@@ -3000,7 +3000,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (6) Tj T* -66.44 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (7) Tj T* -66.44 0 Td ET
 Q
 Q
 q
@@ -3405,7 +3405,7 @@ endobj
 % 'R176': class PDFStream 
 176 0 obj
 % page stream
-<< /Length 4252 >>
+<< /Length 4277 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -3463,7 +3463,7 @@ BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (In other words, six lines of boilerplate h
 Q
 Q
 q
-1 0 0 1 62.69291 441.4236 cm
+1 0 0 1 62.69291 417.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3473,24 +3473,24 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
+n -6 -6 468.6898 144 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example5.py [-h] dsn [table] [today]) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T* (  table) Tj T* (  today) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
+BT 1 0 0 1 0 125.71 Tm /F4 10 Tf 12 TL (usage: example5.py [-h] dsn [table] [today]) Tj T*  T* (Do something on the database) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T* (  table) Tj T* (  today) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 409.4236 cm
+1 0 0 1 62.69291 385.4236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .396235 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (manages transparently even the case when you want to pass a variable number of arguments. Here) Tj T* 0 Tw (is an example, a script running on a database a series of SQL scripts:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 220.2236 cm
+1 0 0 1 62.69291 196.2236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3510,7 +3510,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 188.2236 cm
+1 0 0 1 62.69291 164.2236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .563876 Tw 12 TL /F1 10 Tf 0 0 0 rg (Using ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (, you can just replace the ) Tj /F4 10 Tf (__main__ ) Tj /F1 10 Tf (block with the usual two lines \(I have defined an Emacs) Tj T* 0 Tw (keybinding for them\) and then you get the following nice usage message:) Tj T* ET
 Q
@@ -3526,11 +3526,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
+n -6 -6 468.6898 60 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (usage: example7.py [-h] dsn [scripts [scripts ...]]) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T* (  scripts) Tj T*  T* ET
+BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (usage: example7.py [-h] dsn [scripts [scripts ...]]) Tj T*  T* (Run the given scripts on the database) Tj T*  T* ET
 Q
 Q
 Q
@@ -3550,11 +3550,11 @@ endobj
 % 'R177': class PDFStream 
 177 0 obj
 % page stream
-<< /Length 5195 >>
+<< /Length 4903 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 727.8236 cm
+1 0 0 1 62.69291 679.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3564,48 +3564,48 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (positional arguments:) Tj T* (  dsn) Tj T* (  scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 683.8236 cm
+1 0 0 1 62.69291 635.8236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .92881 Tw 12 TL /F1 10 Tf 0 0 0 rg (The examples here should have made clear that ) Tj /F5 10 Tf (plac is able to figure out the command line arguments) Tj T* 0 Tw .899988 Tw (parser to use from the signature of the main function) Tj /F1 10 Tf (. This is the whole idea behind ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (: if the intent is) Tj T* 0 Tw (clear, let's the machine take care of the details.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 650.8236 cm
+1 0 0 1 62.69291 602.8236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with options) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 560.8236 cm
+1 0 0 1 62.69291 512.8236 cm
 q
 BT 1 0 0 1 0 76.82 Tm .046098 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is surprising how few command line scripts with options I have written over the years \(probably less than) Tj T* 0 Tw 1.02311 Tw (a hundred\), compared to the number of scripts with positional arguments I wrote \(certainly more than a) Tj T* 0 Tw .177045 Tw (thousand of them\). Still, this use case cannot be neglected. The standard library modules \(all of them\) are) Tj T* 0 Tw 2.30686 Tw (quite verbose when it comes to specifying the options and frankly I have never used them directly.) Tj T* 0 Tw 3.10561 Tw (Instead, I have always relied on an old recipe of mine, the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, which provides a) Tj T* 0 Tw 2.369982 Tw (convenient wrapper over ) Tj 0 0 .501961 rg (optionparse) Tj 0 0 0 rg (. Alternatively, in the simplest cases, I have just performed the) Tj T* 0 Tw (parsing by hand.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 518.8236 cm
+1 0 0 1 62.69291 470.8236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .476098 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is inspired to the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, in the sense that it delivers the programmer from the burden of) Tj T* 0 Tw .011488 Tw (writing the parser, but is less of a hack: instead of extracting the parser from the docstring of the module, it) Tj T* 0 Tw (extracts it from the signature of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 488.8236 cm
+1 0 0 1 62.69291 440.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .319987 Tw 12 TL /F1 10 Tf 0 0 0 rg (The idea comes from the ) Tj /F5 10 Tf (function annotations ) Tj /F1 10 Tf (concept, a new feature of Python 3. An example is worth a) Tj T* 0 Tw (thousand words, so here it is:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 371.6236 cm
+1 0 0 1 62.69291 323.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3626,13 +3626,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 303.6236 cm
+1 0 0 1 62.69291 255.6236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .789983 Tw 12 TL /F1 10 Tf 0 0 0 rg (As you see, the argument ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (has been annotated with the tuple ) Tj /F4 10 Tf (\("SQL query", 'option',) Tj T* 0 Tw .358409 Tw ('c'\)) Tj /F1 10 Tf (: the first string is the help string which will appear in the usage message, the second string tell ) Tj 0 0 .501961 rg (plac) Tj T* 0 Tw .560988 Tw 0 0 0 rg (that ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (is an option and the third string that it can be abbreviated with the letter ) Tj /F4 10 Tf (c) Tj /F1 10 Tf (. Of course, the) Tj T* 0 Tw .89284 Tw (long option format \() Tj /F4 10 Tf (--command=) Tj /F1 10 Tf (\) comes from the argument name. The resulting usage message is the) Tj T* 0 Tw (following:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 174.4236 cm
+1 0 0 1 62.69291 126.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3646,38 +3646,17 @@ n -6 -6 468.6898 120 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example8.py [-h] [-c COMMAND] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -c COMMAND, --command COMMAND) Tj T* (                        SQL query) Tj T* ET
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example8.py [-h] [-c COMMAND] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -c, --command COMMAND) Tj T* (                        SQL query) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 154.4236 cm
+1 0 0 1 62.69291 106.4236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here are two examples of usage:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 97.22362 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py -c"select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T*  T* ET
-Q
-Q
-Q
 Q
 Q
 q
@@ -3694,11 +3673,11 @@ endobj
 % 'R178': class PDFStream 
 178 0 obj
 % page stream
-<< /Length 5451 >>
+<< /Length 5073 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 727.8236 cm
+1 0 0 1 62.69291 691.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3708,24 +3687,24 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
+n -6 -6 468.6898 72 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py --command="select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T* ET
+BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py -c"select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T*  T* ($ python3 example8.py --command="select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 695.8236 cm
+1 0 0 1 62.69291 659.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.34104 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that if the option is not passed, the variable ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (will get the value ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (. It is possible to) Tj T* 0 Tw (specify a non-trivial default for an option. Here is an example:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 602.6236 cm
+1 0 0 1 62.69291 566.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3746,13 +3725,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 582.6236 cm
+1 0 0 1 62.69291 546.6236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Now if you do not pass the ) Tj /F4 10 Tf (command option) Tj /F1 10 Tf (, the default query will be executed:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 537.4236 cm
+1 0 0 1 62.69291 501.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3773,14 +3752,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 517.4236 cm
+1 0 0 1 62.69291 481.4236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Positional argument can be annotated too:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 460.2236 cm
+1 0 0 1 62.69291 424.2236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3801,13 +3780,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 416.2236 cm
+1 0 0 1 62.69291 380.2236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 3.203318 Tw 12 TL /F1 10 Tf 0 0 0 rg (Of course explicit is better than implicit, an no special cases are special enough, but sometimes) Tj T* 0 Tw .16832 Tw (practicality beats purity, so ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is able to use smart defaults; in particular you can omit the third argument) Tj T* 0 Tw (and write:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 359.0236 cm
+1 0 0 1 62.69291 323.0236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3828,20 +3807,20 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 315.0236 cm
+1 0 0 1 62.69291 279.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.123876 Tw 12 TL /F1 10 Tf 0 0 0 rg (When omitted, the third argument is assumed to be the first letter of the variable name for options and) Tj T* 0 Tw .334983 Tw (flags, and ) Tj /F4 10 Tf (None ) Tj /F1 10 Tf (for positional arguments. Moreover, smart enough to convert help messages into tuples;) Tj T* 0 Tw (in other words, you can just write ) Tj /F4 10 Tf ("Database dsn" ) Tj /F1 10 Tf (instead of ) Tj /F4 10 Tf (\("Database dsn", 'positional'\)) Tj /F1 10 Tf (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 297.0236 cm
+1 0 0 1 62.69291 261.0236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (I should notice that varargs \(starred-arguments\) can be annotated too; here is an example:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 251.8236 cm
+1 0 0 1 62.69291 215.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3862,13 +3841,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 231.8236 cm
+1 0 0 1 62.69291 195.8236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (This is a valid signature for ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (, which will recognize the help strings for both ) Tj /F4 10 Tf (dsn ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (scripts) Tj /F1 10 Tf (:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 174.6236 cm
+1 0 0 1 62.69291 138.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3889,18 +3868,6 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 141.6236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with flags) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 111.6236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .765868 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (also recognizes flags, i.e. boolean options which are ) Tj /F4 10 Tf (True ) Tj /F1 10 Tf (if they are passed to the command line) Tj T* 0 Tw (and ) Tj /F4 10 Tf (False ) Tj /F1 10 Tf (if they are absent. Here is an example:) Tj T* ET
-Q
-Q
-q
 1 0 0 1 56.69291 56.69291 cm
 q
 0 0 0 rg
@@ -3914,11 +3881,23 @@ endobj
 % 'R179': class PDFStream 
 179 0 obj
 % page stream
-<< /Length 4359 >>
+<< /Length 4742 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 648.1299 cm
+1 0 0 1 62.69291 744.0236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with flags) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 714.0236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .765868 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (also recognizes flags, i.e. boolean options which are ) Tj /F4 10 Tf (True ) Tj /F1 10 Tf (if they are passed to the command line) Tj T* 0 Tw (and ) Tj /F4 10 Tf (False ) Tj /F1 10 Tf (if they are absent. Here is an example:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 589.1299 cm
 q
 q
 .96447 0 0 .96447 0 0 cm
@@ -3939,7 +3918,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 518.9299 cm
+1 0 0 1 62.69291 471.9299 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3949,18 +3928,18 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
+n -6 -6 468.6898 108 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL ($ python3 example9.py -h) Tj T* (usage: example9.py [-h] [-v] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn            connection string) Tj T*  T* (optional arguments:) Tj T* (  -h, --help     show this help message and exit) Tj T* (  -v, --verbose  prints more info) Tj T* ET
+BT 1 0 0 1 0 89.71 Tm /F4 10 Tf 12 TL (usage: example9.py [-h] [-v] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn            connection string) Tj T*  T* (optional arguments:) Tj T* (  -h, --help     show this help message and exit) Tj T* (  -v, --verbose  prints more info) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 473.7299 cm
+1 0 0 1 62.69291 426.7299 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3981,31 +3960,31 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 429.7299 cm
+1 0 0 1 62.69291 382.7299 cm
 q
 BT 1 0 0 1 0 28.82 Tm .31408 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that it is an error trying to specify a default for flags: the default value for a flag is always ) Tj /F4 10 Tf (False) Tj /F1 10 Tf (. If) Tj T* 0 Tw 2.652485 Tw (you feel the need to implement non-boolean flags, you should use an option with two choices, as) Tj T* 0 Tw (explained in the "more features" section.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 363.7299 cm
+1 0 0 1 62.69291 316.7299 cm
 q
 BT 1 0 0 1 0 52.82 Tm 5.832651 Tw 12 TL /F1 10 Tf 0 0 0 rg (For consistency with the way the usage message is printed, I suggest you to follow the) Tj T* 0 Tw 1.895433 Tw (Flag-Option-Required-Default \(FORD\) convention: in the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function write first the flag arguments,) Tj T* 0 Tw .881235 Tw (then the option arguments, then the required arguments and finally the default arguments. This is just a) Tj T* 0 Tw .110574 Tw (convention and you are not forced to use it, except for the default arguments \(including the varargs\) which) Tj T* 0 Tw (must stay at the end as it is required by the Python syntax.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 330.7299 cm
+1 0 0 1 62.69291 283.7299 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac for Python 2.X users) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 264.7299 cm
+1 0 0 1 62.69291 217.7299 cm
 q
 BT 1 0 0 1 0 52.82 Tm .211807 Tw 12 TL /F1 10 Tf 0 0 0 rg (I do not use Python 3. At work we are just starting to think about migrating to Python 2.6. It will take years) Tj T* 0 Tw .304724 Tw (before we think to migrate to Python 3. I am pretty much sure most Pythonistas are in the same situation.) Tj T* 0 Tw 1.459984 Tw (Therefore ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (provides a way to work with function annotations even in Python 2.X \(including Python) Tj T* 0 Tw .226098 Tw (2.3\). There is no magic involved; you just need to add the annotations by hand. For instance the annotate) Tj T* 0 Tw (function declaration) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 219.5299 cm
+1 0 0 1 62.69291 172.5299 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4026,14 +4005,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 199.5299 cm
+1 0 0 1 62.69291 152.5299 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (is equivalent to the following code:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 118.3299 cm
+1 0 0 1 62.69291 95.32986 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4043,11 +4022,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 72 re B*
+n -6 -6 468.6898 48 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* (main.__annotations__ = dict\() Tj T* (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* ET
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* (main.__annotations__ = dict\() Tj T* ET
 Q
 Q
 Q
@@ -4067,17 +4046,38 @@ endobj
 % 'R180': class PDFStream 
 180 0 obj
 % page stream
-<< /Length 5557 >>
+<< /Length 5748 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 729.0236 cm
+1 0 0 1 62.69291 727.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 683.8236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .536098 Tw 12 TL /F1 10 Tf 0 0 0 rg (One should be careful to match the keys of the annotation dictionary with the names of the arguments in) Tj T* 0 Tw 3.347485 Tw (the annotated function; for lazy people with Python 2.4 available the simplest way is to use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator that performs the check for you:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 647.8236 cm
+1 0 0 1 62.69291 602.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4098,28 +4098,28 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 615.8236 cm
+1 0 0 1 62.69291 570.6236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.422164 Tw 12 TL /F1 10 Tf 0 0 0 rg (In the rest of this article I will assume that you are using Python 2.X with ) Tj /F4 10 Tf (X >) Tj (= 4 ) Tj /F1 10 Tf (and I will use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator. Notice however that the tests for ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (runs even on Python 2.3.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 582.8236 cm
+1 0 0 1 62.69291 537.6236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (More features) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 528.8236 cm
+1 0 0 1 62.69291 483.6236 cm
 q
 BT 1 0 0 1 0 40.82 Tm .486179 Tw 12 TL /F1 10 Tf 0 0 0 rg (Even if one of the goals of plac is to have a learning curve of ) Tj /F5 10 Tf (minutes) Tj /F1 10 Tf (, compared to the learning curve of) Tj T* 0 Tw 1.356303 Tw /F5 10 Tf (hours ) Tj /F1 10 Tf (of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (, it does not mean that I have removed all the features of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually a lot of) Tj T* 0 Tw 1.71686 Tw 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (power persists in ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (. Until now, I have only showed simple annotations, but in general an) Tj T* 0 Tw (annotation is a 5-tuple of the form) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 522.8236 cm
+1 0 0 1 62.69291 477.6236 cm
 Q
 q
-1 0 0 1 62.69291 510.8236 cm
+1 0 0 1 62.69291 465.6236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 BT 1 0 0 1 0 2 Tm  T* ET
@@ -4134,40 +4134,40 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 510.8236 cm
+1 0 0 1 62.69291 465.6236 cm
 Q
 q
-1 0 0 1 62.69291 468.8236 cm
+1 0 0 1 62.69291 423.6236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.068735 Tw 12 TL /F1 10 Tf 0 0 0 rg (where ) Tj /F4 10 Tf (help ) Tj /F1 10 Tf (is the help message, ) Tj /F4 10 Tf (kind ) Tj /F1 10 Tf (is a string in the set { ) Tj /F4 10 Tf ("flag") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("option") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("positional") Tj /F1 10 Tf (},) Tj T* 0 Tw 1.711163 Tw /F4 10 Tf (abbrev ) Tj /F1 10 Tf (is a one-character string, ) Tj /F4 10 Tf (type ) Tj /F1 10 Tf (is a callable taking a string in input, ) Tj /F4 10 Tf (choices ) Tj /F1 10 Tf (is a discrete) Tj T* 0 Tw (sequence of values and ) Tj /F4 10 Tf (metavar ) Tj /F1 10 Tf (is a string.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 438.8236 cm
+1 0 0 1 62.69291 393.6236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.05061 Tw 12 TL /F4 10 Tf 0 0 0 rg (type ) Tj /F1 10 Tf (is used to automagically convert the command line arguments from the string type to any Python) Tj T* 0 Tw (type; by default there is no convertion and ) Tj /F4 10 Tf (type=None) Tj /F1 10 Tf (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 408.8236 cm
+1 0 0 1 62.69291 363.6236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 2.904692 Tw 12 TL /F4 10 Tf 0 0 0 rg (choices ) Tj /F1 10 Tf (is used to restrict the number of the valid options; by default there is no restriction i.e.) Tj T* 0 Tw /F4 10 Tf (choices=None) Tj /F1 10 Tf (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 366.8236 cm
+1 0 0 1 62.69291 321.6236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.071751 Tw 12 TL /F4 10 Tf 0 0 0 rg (metavar ) Tj /F1 10 Tf (is used to change the argument name in the usage message \(and only there\); by default the) Tj T* 0 Tw 1.056654 Tw (metavar is ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (: this means that the name in the usage message is the same as the argument name,) Tj T* 0 Tw (unless the argument has a default and in such a case is equal to the stringified form of the default.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 348.8236 cm
+1 0 0 1 62.69291 303.6236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Here is an example showing many of the features \(taken from the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (documentation\):) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 140.4467 cm
+1 0 0 1 62.69291 95.24669 cm
 q
 q
 .976496 0 0 .976496 0 0 cm
@@ -4188,13 +4188,6 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 120.4467 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage:) Tj T* ET
-Q
-Q
-q
 1 0 0 1 56.69291 56.69291 cm
 q
 0 0 0 rg
@@ -4208,11 +4201,18 @@ endobj
 % 'R181': class PDFStream 
 181 0 obj
 % page stream
-<< /Length 3500 >>
+<< /Length 3603 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 631.8236 cm
+1 0 0 1 62.69291 753.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 611.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4233,13 +4233,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 599.8236 cm
+1 0 0 1 62.69291 579.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .15186 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function has been automatically added to the usage message. Here) Tj T* 0 Tw (are a couple of examples of use:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 506.4849 cm
+1 0 0 1 62.69291 486.4849 cm
 q
 q
 .87797 0 0 .87797 0 0 cm
@@ -4260,19 +4260,19 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 473.4849 cm
+1 0 0 1 62.69291 453.4849 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Keyword arguments) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 443.4849 cm
+1 0 0 1 62.69291 423.4849 cm
 q
 BT 1 0 0 1 0 16.82 Tm .238651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Starting from release 0.4, if your main function has keyword arguments, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (recognizes arguments of the) Tj T* 0 Tw (form ) Tj /F4 10 Tf ("name=value" ) Tj /F1 10 Tf (in the command line. Here is an example:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 278.2849 cm
+1 0 0 1 62.69291 258.2849 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4293,14 +4293,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 258.2849 cm
+1 0 0 1 62.69291 238.2849 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the generated usage message:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 129.0849 cm
+1 0 0 1 62.69291 109.0849 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4314,14 +4314,14 @@ n -6 -6 468.6898 120 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]) Tj T*  T* (positional arguments:) Tj T* (  args               default arguments) Tj T* (  kw                 keyword arguments) Tj T*  T* (optional arguments:) Tj T* (  -h, --help         show this help message and exit) Tj T* (  -o OPT, --opt OPT  some option) Tj T* ET
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]) Tj T*  T* (positional arguments:) Tj T* (  args           default arguments) Tj T* (  kw             keyword arguments) Tj T*  T* (optional arguments:) Tj T* (  -h, --help     show this help message and exit) Tj T* (  -o, --opt OPT  some option) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 109.0849 cm
+1 0 0 1 62.69291 89.0849 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is how you call the script:) Tj T* ET
@@ -4341,7 +4341,7 @@ endobj
 % 'R182': class PDFStream 
 182 0 obj
 % page stream
-<< /Length 4164 >>
+<< /Length 4139 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4454,7 +4454,7 @@ n -6 -6 468.6898 60 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL ($ python dbcli.py -h) Tj T* (usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]) Tj T*  T* (A script to run queries and SQL scripts on a database) Tj T* ET
+BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]) Tj T*  T* (A script to run queries and SQL scripts on a database) Tj T*  T* ET
 Q
 Q
 Q
@@ -4474,11 +4474,11 @@ endobj
 % 'R183': class PDFStream 
 183 0 obj
 % page stream
-<< /Length 5890 >>
+<< /Length 5945 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 631.8236 cm
+1 0 0 1 62.69291 643.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4488,42 +4488,42 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 132 re B*
+n -6 -6 468.6898 120 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 113.71 Tm /F4 10 Tf 12 TL  T* (positional arguments:) Tj T* (  db                    Connection string) Tj T* (  scripts               SQL scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -H, --header          Header) Tj T* (  -c SQL, --sqlcmd SQL  SQL command) Tj T* (  -d |, --delimiter |   Column separator) Tj T* ET
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (positional arguments:) Tj T* (  db                 Connection string) Tj T* (  scripts            SQL scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help         show this help message and exit) Tj T* (  -H, --header       Header) Tj T* (  -c, --sqlcmd SQL   SQL command) Tj T* (  -d, --delimiter |  Column separator) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 598.8236 cm
+1 0 0 1 62.69291 610.8236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Advanced usage) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 568.8236 cm
+1 0 0 1 62.69291 580.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .094988 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (relies on a ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (for all of the heavy lifting work and it is possible to leverage on ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (features) Tj T* 0 Tw (directly or indirectly.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 526.8236 cm
+1 0 0 1 62.69291 538.8236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 5.575697 Tw 12 TL /F1 10 Tf 0 0 0 rg (For instance, you can make invisible an argument in the usage message simply by using) Tj T* 0 Tw 1.435976 Tw /F4 10 Tf ('==SUPPRESS==' ) Tj /F1 10 Tf (as help string \(or ) Tj /F4 10 Tf (argparse.SUPPRESS) Tj /F1 10 Tf (\). Similarly, you can use ) Tj 0 0 .501961 rg (argparse.FileType) Tj T* 0 Tw 0 0 0 rg (directly.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 472.8236 cm
+1 0 0 1 62.69291 484.8236 cm
 q
 BT 1 0 0 1 0 40.82 Tm 1.639213 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is also possible to pass options to the underlying ) Tj /F4 10 Tf (argparse.ArgumentParser ) Tj /F1 10 Tf (object \(currently it) Tj T* 0 Tw .285529 Tw (accepts the default arguments ) Tj /F4 10 Tf (description) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (epilog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (usage) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (add_help) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (argument_default) Tj /F1 10 Tf (,) Tj T* 0 Tw 1.439953 Tw /F4 10 Tf (parents) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (fromfile_prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (conflict_handler) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (formatter_class) Tj /F1 10 Tf (\). It) Tj T* 0 Tw (is enough to set such attributes on the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function. For instance) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 403.6236 cm
+1 0 0 1 62.69291 415.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4544,13 +4544,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 323.6236 cm
+1 0 0 1 62.69291 335.6236 cm
 q
 BT 1 0 0 1 0 64.82 Tm 1.256457 Tw 12 TL /F1 10 Tf 0 0 0 rg (disable the recognition of the help flag ) Tj /F4 10 Tf (-h, --help) Tj /F1 10 Tf (. This is not particularly elegant, but I assume the) Tj T* 0 Tw .275703 Tw (typical user of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (will be happy with the defaults and would not want to change them; still it is possible if) Tj T* 0 Tw .365542 Tw (she wants to. For instance, by setting the ) Tj /F4 10 Tf (description ) Tj /F1 10 Tf (attribute, it is possible to add a comment to the) Tj T* 0 Tw .602339 Tw (usage message \(by default the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function is used as description\). It is also possible) Tj T* 0 Tw .322988 Tw (to change the option prefix; for instance if your script must run under Windows and you want to use "/" as) Tj T* 0 Tw (option prefix you can add the lines:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 278.4236 cm
+1 0 0 1 62.69291 290.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4571,13 +4571,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 210.4236 cm
+1 0 0 1 62.69291 222.4236 cm
 q
 BT 1 0 0 1 0 52.82 Tm 3.694269 Tw 12 TL /F1 10 Tf 0 0 0 rg (The recognition of the ) Tj /F4 10 Tf (short_prefix ) Tj /F1 10 Tf (attribute is a ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (extension; there is also a companion) Tj T* 0 Tw 1.348314 Tw /F4 10 Tf (long_prefix ) Tj /F1 10 Tf (attribute with default value of ) Tj /F4 10 Tf ("--") Tj /F1 10 Tf (. ) Tj /F4 10 Tf (prefix_chars ) Tj /F1 10 Tf (is an ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (feature. Interested) Tj T* 0 Tw 1.419984 Tw (readers should read the documentation of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (to understand the meaning of the other options. If) Tj T* 0 Tw .098935 Tw (there is a set of options that you use very often, you may consider writing a decorator adding such options) Tj T* 0 Tw (to the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function for you. For simplicity, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (does not perform any magic of that kind.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 180.4236 cm
+1 0 0 1 62.69291 192.4236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 7.709147 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is possible to access directly the underlying ) Tj 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object, by invoking the) Tj T* 0 Tw /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (utility function:) Tj T* ET
 Q
@@ -4593,10 +4593,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 72 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
-BT 1 0 0 1 0 53.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( import plac) Tj T* (>) Tj (>) Tj (>) Tj ( def main\(arg\):) Tj T* (...     pass) Tj T* (...) Tj T* (>) Tj (>) Tj (>) Tj ( print plac.parser_from\(main\)) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( import plac) Tj T* (>) Tj (>) Tj (>) Tj ( def main\(arg\):) Tj T* (...     pass) Tj T* (...) Tj T* (>) Tj (>) Tj (>) Tj ( print plac.parser_from\(main\)) Tj T* (ArgumentParser\(prog='', usage=None, description=None, version=None,) Tj T* ET
 Q
 Q
 Q
@@ -4616,11 +4616,11 @@ endobj
 % 'R184': class PDFStream 
 184 0 obj
 % page stream
-<< /Length 4195 >>
+<< /Length 4227 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 715.8236 cm
+1 0 0 1 62.69291 727.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4630,42 +4630,42 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
+n -6 -6 468.6898 36 re B*
 Q
 q
-BT 1 0 0 1 0 29.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (ArgumentParser\(prog='', usage=None, description=None, version=None,) Tj T* (formatter_class=) Tj (<) Tj (class 'argparse.HelpFormatter') Tj (>) Tj (, conflict_handler='error',) Tj T* (add_help=True\)) Tj T* ET
+BT 1 0 0 1 0 17.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (formatter_class=) Tj (<) Tj (class 'argparse.HelpFormatter') Tj (>) Tj (, conflict_handler='error',) Tj T* (add_help=True\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 695.8236 cm
+1 0 0 1 62.69291 707.8236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (I use ) Tj /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (in the unit tests of the module, but regular users should never need to use it.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 662.8236 cm
+1 0 0 1 62.69291 674.8236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Custom annotation objects) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 632.8236 cm
+1 0 0 1 62.69291 644.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .578651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Internally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (uses an ) Tj /F4 10 Tf (Annotation ) Tj /F1 10 Tf (class to convert the tuples in the function signature into annotation) Tj T* 0 Tw (objects, i.e. objects with six attributes ) Tj /F4 10 Tf (help, kind, short, type, choices, metavar) Tj /F1 10 Tf (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 602.8236 cm
+1 0 0 1 62.69291 614.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .083735 Tw (Advanced users can implement their own annotation objects. For instance, here is an example of how you) Tj T* 0 Tw (could implement annotations for positional arguments:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 473.6236 cm
+1 0 0 1 62.69291 485.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4686,14 +4686,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 453.6236 cm
+1 0 0 1 62.69291 465.6236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (You can use such annotations objects as follows:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 276.4236 cm
+1 0 0 1 62.69291 288.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4714,14 +4714,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 256.4236 cm
+1 0 0 1 62.69291 268.4236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message you get:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 127.2236 cm
+1 0 0 1 62.69291 139.2236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4744,7 +4744,7 @@ Q
 q
 1 0 0 1 62.69291 95.22362 cm
 q
-BT 1 0 0 1 0 16.82 Tm .713516 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can go on and define ) Tj /F4 10 Tf (Option ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (Flag ) Tj /F1 10 Tf (classes, if you like. Using custom annotation objects you ) Tj T* 0 Tw .17528 Tw (could do advanced things like extracting the annotations from a configuration file or from a database, but I) Tj T* 0 Tw ET
+BT 1 0 0 1 0 28.82 Tm .713516 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can go on and define ) Tj /F4 10 Tf (Option ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (Flag ) Tj /F1 10 Tf (classes, if you like. Using custom annotation objects you) Tj T* 0 Tw .17528 Tw (could do advanced things like extracting the annotations from a configuration file or from a database, but I) Tj T* 0 Tw (expect such use cases to be quite rare: the default mechanism should work pretty well for most users.) Tj T* ET
 Q
 Q
 q
@@ -4761,36 +4761,29 @@ endobj
 % 'R185': class PDFStream 
 185 0 obj
 % page stream
-<< /Length 9534 >>
+<< /Length 9331 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 753.0236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (expect such use cases to be quite rare: the default mechanism should work pretty well for most users.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 720.0236 cm
+1 0 0 1 62.69291 744.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac vs argparse) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 678.0236 cm
+1 0 0 1 62.69291 702.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.065988 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is opinionated and by design it does not try to make available all of the features of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (in an) Tj T* 0 Tw .177126 Tw (easy way. In particular you should be aware of the following limitations/differences \(the following assumes) Tj T* 0 Tw (knowledge of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (\):) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 672.0236 cm
+1 0 0 1 62.69291 696.0236 cm
 Q
 q
-1 0 0 1 62.69291 672.0236 cm
+1 0 0 1 62.69291 696.0236 cm
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 642.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4810,13 +4803,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 642.0236 cm
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 642.0236 cm
 Q
 q
-1 0 0 1 62.69291 540.0236 cm
+1 0 0 1 62.69291 564.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4836,13 +4829,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 540.0236 cm
+1 0 0 1 62.69291 564.0236 cm
 Q
 q
-1 0 0 1 62.69291 540.0236 cm
+1 0 0 1 62.69291 564.0236 cm
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 522.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4862,13 +4855,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 522.0236 cm
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 522.0236 cm
 Q
 q
-1 0 0 1 62.69291 432.0236 cm
+1 0 0 1 62.69291 456.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4888,13 +4881,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 432.0236 cm
+1 0 0 1 62.69291 456.0236 cm
 Q
 q
-1 0 0 1 62.69291 432.0236 cm
+1 0 0 1 62.69291 456.0236 cm
 Q
 q
-1 0 0 1 62.69291 390.0236 cm
+1 0 0 1 62.69291 414.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4914,13 +4907,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 390.0236 cm
+1 0 0 1 62.69291 414.0236 cm
 Q
 q
-1 0 0 1 62.69291 390.0236 cm
+1 0 0 1 62.69291 414.0236 cm
 Q
 q
-1 0 0 1 62.69291 360.0236 cm
+1 0 0 1 62.69291 384.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4940,13 +4933,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 360.0236 cm
+1 0 0 1 62.69291 384.0236 cm
 Q
 q
-1 0 0 1 62.69291 360.0236 cm
+1 0 0 1 62.69291 384.0236 cm
 Q
 q
-1 0 0 1 62.69291 318.0236 cm
+1 0 0 1 62.69291 342.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4966,37 +4959,37 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 318.0236 cm
+1 0 0 1 62.69291 342.0236 cm
 Q
 q
-1 0 0 1 62.69291 318.0236 cm
+1 0 0 1 62.69291 342.0236 cm
 Q
 q
-1 0 0 1 62.69291 264.0236 cm
+1 0 0 1 62.69291 288.0236 cm
 q
 BT 1 0 0 1 0 40.82 Tm 2.14683 Tw 12 TL /F1 10 Tf 0 0 0 rg (I should stress again that if you want to access all of the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (features from ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (you can use) Tj T* 0 Tw 2.723059 Tw /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (and you will get the underlying ) Tj 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object. The the full power of) Tj T* 0 Tw 2.44152 Tw 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (is then available to you: you can use ) Tj /F4 10 Tf (add_argument) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (add_subparsers\(\)) Tj /F1 10 Tf (, etc. In other) Tj T* 0 Tw (words, while some features are not supported directly, ) Tj /F5 10 Tf (all ) Tj /F1 10 Tf (features are supported indirectly.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 231.0236 cm
+1 0 0 1 62.69291 255.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac vs the rest of the world) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 189.0236 cm
+1 0 0 1 62.69291 213.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.866905 Tw 12 TL /F1 10 Tf 0 0 0 rg (Originally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (boasted about being "the easiest command-line arguments parser in the world". Since) Tj T* 0 Tw .306457 Tw (then, people started pointing out to me various projects which are based on the same idea \(extracting the) Tj T* 0 Tw (parser from the main function signature\) and are arguably even easier than ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 183.0236 cm
+1 0 0 1 62.69291 207.0236 cm
 Q
 q
-1 0 0 1 62.69291 183.0236 cm
+1 0 0 1 62.69291 207.0236 cm
 Q
 q
-1 0 0 1 62.69291 165.0236 cm
+1 0 0 1 62.69291 189.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -5016,13 +5009,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 165.0236 cm
+1 0 0 1 62.69291 189.0236 cm
 Q
 q
-1 0 0 1 62.69291 165.0236 cm
+1 0 0 1 62.69291 189.0236 cm
 Q
 q
-1 0 0 1 62.69291 147.0236 cm
+1 0 0 1 62.69291 171.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -5042,13 +5035,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 147.0236 cm
+1 0 0 1 62.69291 171.0236 cm
 Q
 q
-1 0 0 1 62.69291 147.0236 cm
+1 0 0 1 62.69291 171.0236 cm
 Q
 q
-1 0 0 1 62.69291 117.0236 cm
+1 0 0 1 62.69291 141.0236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 2.136457 Tw 12 TL /F1 10 Tf 0 0 0 rg (Luckily for me none of such projects had the idea of using function annotations and ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (; as a) Tj T* 0 Tw (consequence, they are no match for the capabilities of ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (.) Tj T* ET
 Q
@@ -5387,10 +5380,10 @@ xref
 0000019085 00000 n
 0000019448 00000 n
 0000019700 00000 n
-0000019952 00000 n
-0000020189 00000 n
-0000020525 00000 n
-0000020762 00000 n
+0000019937 00000 n
+0000020264 00000 n
+0000020516 00000 n
+0000020753 00000 n
 0000021080 00000 n
 0000021332 00000 n
 0000021582 00000 n
@@ -5485,39 +5478,39 @@ xref
 0000052813 00000 n
 0000058265 00000 n
 0000062301 00000 n
-0000066656 00000 n
-0000071954 00000 n
-0000077508 00000 n
-0000081970 00000 n
-0000087630 00000 n
-0000091233 00000 n
-0000095500 00000 n
-0000101493 00000 n
-0000105791 00000 n
-0000115428 00000 n
-0000120297 00000 n
-0000120579 00000 n
-0000120658 00000 n
-0000120737 00000 n
-0000120816 00000 n
-0000120895 00000 n
-0000120974 00000 n
-0000121053 00000 n
-0000121132 00000 n
-0000121211 00000 n
-0000121290 00000 n
-0000121370 00000 n
-0000121450 00000 n
-0000121530 00000 n
-0000121610 00000 n
+0000066681 00000 n
+0000071687 00000 n
+0000076863 00000 n
+0000081708 00000 n
+0000087559 00000 n
+0000091265 00000 n
+0000095507 00000 n
+0000101555 00000 n
+0000105885 00000 n
+0000115319 00000 n
+0000120188 00000 n
+0000120470 00000 n
+0000120549 00000 n
+0000120628 00000 n
+0000120707 00000 n
+0000120786 00000 n
+0000120865 00000 n
+0000120944 00000 n
+0000121023 00000 n
+0000121102 00000 n
+0000121181 00000 n
+0000121261 00000 n
+0000121341 00000 n
+0000121421 00000 n
+0000121501 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\327\356z\177\243/|\227\336\271+MV\360\206~) (\327\356z\177\243/|\227\336\271+MV\360\206~)] 
+ [(\004\3357bm\360\021\276[\204N}h[\215K) (\004\3357bm\360\021\276[\204N}h[\215K)] 
 
  /Info 155 0 R
  /Root 154 0 R
  /Size 202 >>
 startxref
-121659
+121550
 %%EOF

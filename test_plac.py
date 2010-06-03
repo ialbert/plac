@@ -2,8 +2,12 @@
 The tests are runnable with nose, with py.test, or even as standalone script
 """
 
-import sys
+import os, sys
 import plac
+
+sys.path.insert(0, 'doc')
+
+######################## helpers #######################
 
 def expect(errclass, func, *args, **kw):
     try:
@@ -16,6 +20,22 @@ def expect(errclass, func, *args, **kw):
 def parser_from(f, **kw):
     f.__annotations__ = kw
     return plac.parser_from(f)
+
+def compare_help(name):
+    sys.argv[0] = name + '.py'
+    dic = {}
+    try:
+        execfile(os.path.join('doc', name + '.py'), dic)
+    except NameError: # Python 3
+        exec(open(os.path.join('doc', name + '.py')).read(), dic)
+    except SyntaxError: # running Python 2 with some tests
+        return
+    p = plac.parser_from(dic['main'])
+    expected = open(os.path.join('doc', name + '.help')).read().strip()
+    got = p.format_help().strip()
+    assert got == expected, got
+
+####################### tests ############################
 
 p1 = parser_from(lambda delete, *args: None,
                  delete=('delete a file', 'option'))
@@ -90,6 +110,10 @@ def test_kwargs():
 
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
+def test_expected_help():
+    for fname in os.listdir('doc'):
+        if fname.endswith('.help'):
+            compare_help(fname[:-5])
 
 if __name__ == '__main__':
     n = 0

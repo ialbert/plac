@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
 <title>Plac: Parsing the Command Line the Easy Way</title>
 <meta name="author" content="Michele Simionato" />
 <style type="text/css">
@@ -428,7 +428,7 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 </tr>
 <tr class="field"><th class="docinfo-name">Project page:</th><td class="field-body"><a class="reference external" href="http://micheles.googlecode.com/hg/plac/doc/plac.html">http://micheles.googlecode.com/hg/plac/doc/plac.html</a></td>
 </tr>
-<tr class="field"><th class="docinfo-name">Installation:</th><td class="field-body"><tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">plac</span></tt></td>
+<tr class="field"><th class="docinfo-name">Installation:</th><td class="field-body"><tt class="docutils literal">easy_install plac</tt></td>
 </tr>
 <tr class="field"><th class="docinfo-name">License:</th><td class="field-body">BSD license</td>
 </tr>
@@ -523,7 +523,7 @@ if __name__ == '__main__':
         sys.exit('Unrecognized arguments: %s' % ' '.join(sys.argv[2:]))
 
 </pre>
-<p>As you see the whole <tt class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></tt> block (nine lines)
+<p>As you see the whole <tt class="docutils literal">if __name__ == '__main__'</tt> block (nine lines)
 is essentially boilerplate that should not exists.  Actually I think
 the language should recognize the main function and pass to it the
 command line arguments automatically; unfortunaly this is unlikely to
@@ -607,12 +607,12 @@ if __name__ == '__main__':
 
 </pre>
 <p>Here I want to perform a query on a database table, by extracting the
-today's data: it makes sense for <tt class="docutils literal"><span class="pre">today</span></tt> to be a default argument.
-If there is a most used table (in this example a table called <tt class="docutils literal"><span class="pre">'product'</span></tt>)
+today's data: it makes sense for <tt class="docutils literal">today</tt> to be a default argument.
+If there is a most used table (in this example a table called <tt class="docutils literal">'product'</tt>)
 it also makes sense to make it a default argument. Performing the parsing
 of the command lines arguments by hand takes 8 ugly lines of boilerplate
 (using <a class="reference external" href="http://argparse.googlecode.com">argparse</a> would require about the same number of lines).
-With <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> the entire <tt class="docutils literal"><span class="pre">__main__</span></tt> block reduces to the usual two lines:</p>
+With <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> the entire <tt class="docutils literal">__main__</tt> block reduces to the usual two lines:</p>
 <pre class="literal-block">
 if __name__ == '__main__':
     import plac; plac.call(main)
@@ -622,6 +622,8 @@ the usage message for free:</p>
 <pre class="literal-block">
 usage: example5.py [-h] dsn [table] [today]
 
+Do something on the database
+
 positional arguments:
   dsn
   table
@@ -629,6 +631,7 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
+
 </pre>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
@@ -650,11 +653,13 @@ if __name__ == '__main__':
     main(sys.argv[1:])
 
 </pre>
-<p>Using <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, you can just replace the <tt class="docutils literal"><span class="pre">__main__</span></tt> block with the
+<p>Using <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, you can just replace the <tt class="docutils literal">__main__</tt> block with the
 usual two lines (I have defined an Emacs keybinding for them)
 and then you get the following nice usage message:</p>
 <pre class="literal-block">
 usage: example7.py [-h] dsn [scripts [scripts ...]]
+
+Run the given scripts on the database
 
 positional arguments:
   dsn
@@ -662,6 +667,7 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
+
 </pre>
 <p>The examples here should have made clear that <em>plac is able to figure out
 the command line arguments parser to use from the signature of the main
@@ -683,7 +689,7 @@ performed the parsing by hand.</p>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is inspired to the <a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a> recipe, in the sense that it
 delivers the programmer from the burden of writing the parser, but is
 less of a hack: instead of extracting the parser from the docstring of
-the module, it extracts it from the signature of the <tt class="docutils literal"><span class="pre">main</span></tt>
+the module, it extracts it from the signature of the <tt class="docutils literal">main</tt>
 function.</p>
 <p>The idea comes from the <cite>function annotations</cite> concept, a new
 feature of Python 3. An example is worth a thousand words, so here
@@ -699,11 +705,11 @@ if __name__ == '__main__':
     import plac; plac.call(main)
 
 </pre>
-<p>As you see, the argument <tt class="docutils literal"><span class="pre">command</span></tt> has been annotated with the tuple
-<tt class="docutils literal"><span class="pre">(&quot;SQL</span> <span class="pre">query&quot;,</span> <span class="pre">'option',</span> <span class="pre">'c')</span></tt>: the first string is the help string
+<p>As you see, the argument <tt class="docutils literal">command</tt> has been annotated with the tuple
+<tt class="docutils literal">(&quot;SQL query&quot;, 'option', 'c')</tt>: the first string is the help string
 which will appear in the usage message, the second string tell <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
-that <tt class="docutils literal"><span class="pre">command</span></tt> is an option and the third string that it can be
-abbreviated with the letter <tt class="docutils literal"><span class="pre">c</span></tt>. Of course, the long option format
+that <tt class="docutils literal">command</tt> is an option and the third string that it can be
+abbreviated with the letter <tt class="docutils literal">c</tt>. Of course, the long option format
 (<tt class="docutils literal"><span class="pre">--command=</span></tt>) comes from the argument name.  The resulting usage
 message is the following:</p>
 <pre class="literal-block">
@@ -714,8 +720,9 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c COMMAND, --command COMMAND
+  -c, --command COMMAND
                         SQL query
+
 </pre>
 <p>Here are two examples of usage:</p>
 <pre class="literal-block">
@@ -725,8 +732,8 @@ executing select * from table on dsn
 $ python3 example8.py --command=&quot;select * from table&quot; dsn
 executing select * from table on dsn
 </pre>
-<p>Notice that if the option is not passed, the variable <tt class="docutils literal"><span class="pre">command</span></tt>
-will get the value <tt class="docutils literal"><span class="pre">None</span></tt>. It is possible to specify a non-trivial
+<p>Notice that if the option is not passed, the variable <tt class="docutils literal">command</tt>
+will get the value <tt class="docutils literal">None</tt>. It is possible to specify a non-trivial
 default for an option. Here is an example:</p>
 <pre class="literal-block">
 # example8_.py
@@ -737,7 +744,7 @@ if __name__ == '__main__':
     import plac; plac.call(main)
 
 </pre>
-<p>Now if you do not pass the <tt class="docutils literal"><span class="pre">command</span> <span class="pre">option</span></tt>, the
+<p>Now if you do not pass the <tt class="docutils literal">command option</tt>, the
 default query will be executed:</p>
 <pre class="literal-block">
 $ python3 example8_.py dsn
@@ -759,10 +766,10 @@ def main(command: (&quot;SQL query&quot;, 'option'),
     ...
 </pre>
 <p>When omitted, the third argument is assumed to be the first letter of
-the variable name for options and flags, and <tt class="docutils literal"><span class="pre">None</span></tt> for positional
+the variable name for options and flags, and <tt class="docutils literal">None</tt> for positional
 arguments. Moreover, smart enough to convert help messages into tuples;
-in other words, you can just write <tt class="docutils literal"><span class="pre">&quot;Database</span> <span class="pre">dsn&quot;</span></tt> instead of
-<tt class="docutils literal"><span class="pre">(&quot;Database</span> <span class="pre">dsn&quot;,</span> <span class="pre">'positional')</span></tt>.</p>
+in other words, you can just write <tt class="docutils literal">&quot;Database dsn&quot;</tt> instead of
+<tt class="docutils literal">(&quot;Database dsn&quot;, 'positional')</tt>.</p>
 <p>I should notice that varargs (starred-arguments) can be annotated too;
 here is an example:</p>
 <pre class="literal-block">
@@ -770,7 +777,7 @@ def main(dsn: &quot;Database dsn&quot;, *scripts: &quot;SQL scripts&quot;):
     ...
 </pre>
 <p>This is a valid signature for <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, which will recognize the help strings
-for both <tt class="docutils literal"><span class="pre">dsn</span></tt> and <tt class="docutils literal"><span class="pre">scripts</span></tt>:</p>
+for both <tt class="docutils literal">dsn</tt> and <tt class="docutils literal">scripts</tt>:</p>
 <pre class="literal-block">
 positional arguments:
   dsn                          Database dsn
@@ -780,7 +787,7 @@ positional arguments:
 <div class="section" id="scripts-with-flags">
 <h1><a class="toc-backref" href="#id5">Scripts with flags</a></h1>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> also recognizes flags, i.e. boolean options which are
-<tt class="docutils literal"><span class="pre">True</span></tt> if they are passed to the command line and <tt class="docutils literal"><span class="pre">False</span></tt>
+<tt class="docutils literal">True</tt> if they are passed to the command line and <tt class="docutils literal">False</tt>
 if they are absent. Here is an example:</p>
 <pre class="literal-block">
 # example9.py
@@ -795,7 +802,6 @@ if __name__ == '__main__':
 
 </pre>
 <pre class="literal-block">
-$ python3 example9.py -h
 usage: example9.py [-h] [-v] dsn
 
 positional arguments:
@@ -804,18 +810,19 @@ positional arguments:
 optional arguments:
   -h, --help     show this help message and exit
   -v, --verbose  prints more info
+
 </pre>
 <pre class="literal-block">
 $ python3 example9.py -v dsn
 connecting to dsn
 </pre>
 <p>Notice that it is an error trying to specify a default for flags: the
-default value for a flag is always <tt class="docutils literal"><span class="pre">False</span></tt>. If you feel the need to
+default value for a flag is always <tt class="docutils literal">False</tt>. If you feel the need to
 implement non-boolean flags, you should use an option with two
 choices, as explained in the &quot;more features&quot; section.</p>
 <p>For consistency with the way the usage message is printed, I suggest
 you to follow the Flag-Option-Required-Default (FORD) convention: in
-the <tt class="docutils literal"><span class="pre">main</span></tt> function write first the flag arguments, then the option
+the <tt class="docutils literal">main</tt> function write first the flag arguments, then the option
 arguments, then the required arguments and finally the default
 arguments. This is just a convention and you are not forced to use it,
 except for the default arguments (including the varargs) which must
@@ -845,7 +852,7 @@ main.__annotations__ = dict(
 <p>One should be careful to match the keys of the annotation dictionary
 with the names of the arguments in the annotated function; for lazy
 people with Python 2.4 available the simplest way is to use the
-<tt class="docutils literal"><span class="pre">plac.annotations</span></tt> decorator that performs the check for you:</p>
+<tt class="docutils literal">plac.annotations</tt> decorator that performs the check for you:</p>
 <pre class="literal-block">
 &#64;plac.annotations(
     dsn=&quot;Database dsn&quot;,
@@ -854,7 +861,7 @@ def main(dsn, *scripts):
     ...
 </pre>
 <p>In the rest of this article I will assume that you are using Python 2.X with
-<tt class="docutils literal"><span class="pre">X</span> <span class="pre">&gt;=</span> <span class="pre">4</span></tt> and I will use the <tt class="docutils literal"><span class="pre">plac.annotations</span></tt> decorator. Notice however
+<tt class="docutils literal">X &gt;= 4</tt> and I will use the <tt class="docutils literal">plac.annotations</tt> decorator. Notice however
 that the tests for <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> runs even on Python 2.3.</p>
 </div>
 <div class="section" id="more-features">
@@ -866,18 +873,18 @@ that the tests for <a class="reference external" href="http://pypi.python.org/py
 now, I have only showed simple annotations, but in general an
 annotation is a 5-tuple of the form</p>
 <blockquote>
-<tt class="docutils literal"><span class="pre">(help,</span> <span class="pre">kind,</span> <span class="pre">abbrev,</span> <span class="pre">type,</span> <span class="pre">choices,</span> <span class="pre">metavar)</span></tt></blockquote>
-<p>where <tt class="docutils literal"><span class="pre">help</span></tt> is the help message, <tt class="docutils literal"><span class="pre">kind</span></tt> is a string in the set {
-<tt class="docutils literal"><span class="pre">&quot;flag&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;option&quot;</span></tt>, <tt class="docutils literal"><span class="pre">&quot;positional&quot;</span></tt>}, <tt class="docutils literal"><span class="pre">abbrev</span></tt> is a
-one-character string, <tt class="docutils literal"><span class="pre">type</span></tt> is a callable taking a string in input,
-<tt class="docutils literal"><span class="pre">choices</span></tt> is a discrete sequence of values and <tt class="docutils literal"><span class="pre">metavar</span></tt> is a string.</p>
-<p><tt class="docutils literal"><span class="pre">type</span></tt> is used to automagically convert the command line arguments
+<tt class="docutils literal">(help, kind, abbrev, type, choices, metavar)</tt></blockquote>
+<p>where <tt class="docutils literal">help</tt> is the help message, <tt class="docutils literal">kind</tt> is a string in the set {
+<tt class="docutils literal">&quot;flag&quot;</tt>, <tt class="docutils literal">&quot;option&quot;</tt>, <tt class="docutils literal">&quot;positional&quot;</tt>}, <tt class="docutils literal">abbrev</tt> is a
+one-character string, <tt class="docutils literal">type</tt> is a callable taking a string in input,
+<tt class="docutils literal">choices</tt> is a discrete sequence of values and <tt class="docutils literal">metavar</tt> is a string.</p>
+<p><tt class="docutils literal">type</tt> is used to automagically convert the command line arguments
 from the string type to any Python type; by default there is no
-convertion and <tt class="docutils literal"><span class="pre">type=None</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">choices</span></tt> is used to restrict the number of the valid
-options; by default there is no restriction i.e. <tt class="docutils literal"><span class="pre">choices=None</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">metavar</span></tt> is used to change the argument name in the usage message
-(and only there); by default the metavar is <tt class="docutils literal"><span class="pre">None</span></tt>: this means that
+convertion and <tt class="docutils literal">type=None</tt>.</p>
+<p><tt class="docutils literal">choices</tt> is used to restrict the number of the valid
+options; by default there is no restriction i.e. <tt class="docutils literal">choices=None</tt>.</p>
+<p><tt class="docutils literal">metavar</tt> is used to change the argument name in the usage message
+(and only there); by default the metavar is <tt class="docutils literal">None</tt>: this means that
 the name in the usage message is the same as the argument name,
 unless the argument has a default and in such a case is
 equal to the stringified form of the default.</p>
@@ -914,8 +921,9 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
+
 </pre>
-<p>Notice that the docstring of the <tt class="docutils literal"><span class="pre">main</span></tt> function has been automatically added
+<p>Notice that the docstring of the <tt class="docutils literal">main</tt> function has been automatically added
 to the usage message. Here are a couple of examples of use:</p>
 <pre class="literal-block">
 $ python example10.py add 1 2 3 4
@@ -930,7 +938,7 @@ example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add',
 <div class="section" id="keyword-arguments">
 <h1><a class="toc-backref" href="#id8">Keyword arguments</a></h1>
 <p>Starting from release 0.4, if your main function has keyword arguments,
-<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> recognizes arguments of the form <tt class="docutils literal"><span class="pre">&quot;name=value&quot;</span></tt> in the command line.
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> recognizes arguments of the form <tt class="docutils literal">&quot;name=value&quot;</tt> in the command line.
 Here is an example:</p>
 <pre class="literal-block">
 # example12.py
@@ -952,12 +960,13 @@ if __name__ == '__main__':
 usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
 
 positional arguments:
-  args               default arguments
-  kw                 keyword arguments
+  args           default arguments
+  kw             keyword arguments
 
 optional arguments:
-  -h, --help         show this help message and exit
-  -o OPT, --opt OPT  some option
+  -h, --help     show this help message and exit
+  -o, --opt OPT  some option
+
 </pre>
 <p>Here is how you call the script:</p>
 <pre class="literal-block">
@@ -965,7 +974,7 @@ $ python example12.py 1 2 kw1=1 kw2=2 --opt=0
 ('0', ('1', '2'), {'kw1': '1', 'kw2': '2'})
 </pre>
 <p>When using keyword arguments, one must be careful to use names which
-are not alreay taken; for instance in this examples the name <tt class="docutils literal"><span class="pre">opt</span></tt>
+are not alreay taken; for instance in this examples the name <tt class="docutils literal">opt</tt>
 is taken:</p>
 <pre class="literal-block">
 $ python example12.py 1 2 kw1=1 kw2=2 opt=0
@@ -981,7 +990,7 @@ by the Python language.</p>
 <h1><a class="toc-backref" href="#id9">A realistic example</a></h1>
 <p>Here is a more realistic script using most of the features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> to
 run SQL queries on a database by relying on <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a>. Notice the usage
-of the <tt class="docutils literal"><span class="pre">type</span></tt> feature to automagically convert a SQLAlchemy connection
+of the <tt class="docutils literal">type</tt> feature to automagically convert a SQLAlchemy connection
 string into a <a class="reference external" href="http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html">SqlSoup</a> object:</p>
 <pre class="literal-block">
 # dbcli.py
@@ -1014,20 +1023,20 @@ if __name__ == '__main__':
 </pre>
 <p>Here is the usage message:</p>
 <pre class="literal-block">
-$ python dbcli.py -h
 usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
 
 A script to run queries and SQL scripts on a database
 
 positional arguments:
-  db                    Connection string
-  scripts               SQL scripts
+  db                 Connection string
+  scripts            SQL scripts
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -H, --header          Header
-  -c SQL, --sqlcmd SQL  SQL command
-  -d |, --delimiter |   Column separator
+  -h, --help         show this help message and exit
+  -H, --header       Header
+  -c, --sqlcmd SQL   SQL command
+  -d, --delimiter |  Column separator
+
 </pre>
 </div>
 <div class="section" id="advanced-usage">
@@ -1036,14 +1045,14 @@ optional arguments:
 possible to leverage on <a class="reference external" href="http://argparse.googlecode.com">argparse</a> features directly or indirectly.</p>
 <p>For instance, you can make invisible an argument in the usage message
 simply by using <tt class="docutils literal"><span class="pre">'==SUPPRESS=='</span></tt> as help string (or
-<tt class="docutils literal"><span class="pre">argparse.SUPPRESS</span></tt>). Similarly, you can use <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType">argparse.FileType</a>
+<tt class="docutils literal">argparse.SUPPRESS</tt>). Similarly, you can use <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType">argparse.FileType</a>
 directly.</p>
 <p>It is also possible to pass options to the underlying
-<tt class="docutils literal"><span class="pre">argparse.ArgumentParser</span></tt> object (currently it accepts the default
-arguments <tt class="docutils literal"><span class="pre">description</span></tt>, <tt class="docutils literal"><span class="pre">epilog</span></tt>, <tt class="docutils literal"><span class="pre">prog</span></tt>, <tt class="docutils literal"><span class="pre">usage</span></tt>,
-<tt class="docutils literal"><span class="pre">add_help</span></tt>, <tt class="docutils literal"><span class="pre">argument_default</span></tt>, <tt class="docutils literal"><span class="pre">parents</span></tt>, <tt class="docutils literal"><span class="pre">prefix_chars</span></tt>,
-<tt class="docutils literal"><span class="pre">fromfile_prefix_chars</span></tt>, <tt class="docutils literal"><span class="pre">conflict_handler</span></tt>, <tt class="docutils literal"><span class="pre">formatter_class</span></tt>).
-It is enough to set such attributes on the <tt class="docutils literal"><span class="pre">main</span></tt> function.  For
+<tt class="docutils literal">argparse.ArgumentParser</tt> object (currently it accepts the default
+arguments <tt class="docutils literal">description</tt>, <tt class="docutils literal">epilog</tt>, <tt class="docutils literal">prog</tt>, <tt class="docutils literal">usage</tt>,
+<tt class="docutils literal">add_help</tt>, <tt class="docutils literal">argument_default</tt>, <tt class="docutils literal">parents</tt>, <tt class="docutils literal">prefix_chars</tt>,
+<tt class="docutils literal">fromfile_prefix_chars</tt>, <tt class="docutils literal">conflict_handler</tt>, <tt class="docutils literal">formatter_class</tt>).
+It is enough to set such attributes on the <tt class="docutils literal">main</tt> function.  For
 instance</p>
 <pre class="literal-block">
 def main(...):
@@ -1054,9 +1063,9 @@ main.add_help = False
 <p>disable the recognition of the help flag <tt class="docutils literal"><span class="pre">-h,</span> <span class="pre">--help</span></tt>. This is not
 particularly elegant, but I assume the typical user of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> will be
 happy with the defaults and would not want to change them; still it is
-possible if she wants to. For instance, by setting the <tt class="docutils literal"><span class="pre">description</span></tt>
+possible if she wants to. For instance, by setting the <tt class="docutils literal">description</tt>
 attribute, it is possible to add a comment to the usage message (by
-default the docstring of the <tt class="docutils literal"><span class="pre">main</span></tt> function is used as
+default the docstring of the <tt class="docutils literal">main</tt> function is used as
 description). It is also possible to change the option prefix; for
 instance if your script must run under Windows and you want to use &quot;/&quot;
 as option prefix you can add the lines:</p>
@@ -1064,16 +1073,16 @@ as option prefix you can add the lines:</p>
 main.prefix_chars='-/'
 main.short_prefix = '/'
 </pre>
-<p>The recognition of the <tt class="docutils literal"><span class="pre">short_prefix</span></tt> attribute is a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
-extension; there is also a companion <tt class="docutils literal"><span class="pre">long_prefix</span></tt> attribute with
-default value of <tt class="docutils literal"><span class="pre">&quot;--&quot;</span></tt>. <tt class="docutils literal"><span class="pre">prefix_chars</span></tt> is an <a class="reference external" href="http://argparse.googlecode.com">argparse</a> feature.
+<p>The recognition of the <tt class="docutils literal">short_prefix</tt> attribute is a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
+extension; there is also a companion <tt class="docutils literal">long_prefix</tt> attribute with
+default value of <tt class="docutils literal"><span class="pre">&quot;--&quot;</span></tt>. <tt class="docutils literal">prefix_chars</tt> is an <a class="reference external" href="http://argparse.googlecode.com">argparse</a> feature.
 Interested readers should read the documentation of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> to
 understand the meaning of the other options. If there is a set of
 options that you use very often, you may consider writing a decorator
-adding such options to the <tt class="docutils literal"><span class="pre">main</span></tt> function for you. For simplicity,
+adding such options to the <tt class="docutils literal">main</tt> function for you. For simplicity,
 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not perform any magic of that kind.</p>
 <p>It is possible to access directly the underlying <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object, by
-invoking the <tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> utility function:</p>
+invoking the <tt class="docutils literal">plac.parser_from</tt> utility function:</p>
 <pre class="doctest-block">
 &gt;&gt;&gt; import plac
 &gt;&gt;&gt; def main(arg):
@@ -1084,14 +1093,14 @@ ArgumentParser(prog='', usage=None, description=None, version=None,
 formatter_class=&lt;class 'argparse.HelpFormatter'&gt;, conflict_handler='error',
 add_help=True)
 </pre>
-<p>I use <tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> in the unit tests of the module, but regular
+<p>I use <tt class="docutils literal">plac.parser_from</tt> in the unit tests of the module, but regular
 users should never need to use it.</p>
 </div>
 <div class="section" id="custom-annotation-objects">
 <h1><a class="toc-backref" href="#id11">Custom annotation objects</a></h1>
-<p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal"><span class="pre">Annotation</span></tt> class to convert the tuples
+<p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal">Annotation</tt> class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
-six attributes <tt class="docutils literal"><span class="pre">help,</span> <span class="pre">kind,</span> <span class="pre">short,</span> <span class="pre">type,</span> <span class="pre">choices,</span> <span class="pre">metavar</span></tt>.</p>
+six attributes <tt class="docutils literal">help, kind, short, type, choices, metavar</tt>.</p>
 <p>Advanced users can implement their own annotation objects.
 For instance, here is an example of how you could implement annotations for
 positional arguments:</p>
@@ -1135,8 +1144,9 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
+
 </pre>
-<p>You can go on and define <tt class="docutils literal"><span class="pre">Option</span></tt> and <tt class="docutils literal"><span class="pre">Flag</span></tt> classes, if you like.
+<p>You can go on and define <tt class="docutils literal">Option</tt> and <tt class="docutils literal">Flag</tt> classes, if you like.
 Using custom annotation objects you could do advanced things like extracting the
 annotations from a configuration file or from a database, but I expect such
 use cases to be quite rare: the default mechanism should work
@@ -1157,7 +1167,7 @@ consistent, I have decided not to support this feature.</li>
 <li>plac does not support the destination concept: the destination
 coincides with the name of the argument, always. This restriction
 has some drawbacks. For instance, suppose you want to define a long
-option called <tt class="docutils literal"><span class="pre">--yield</span></tt>. In this case the destination would be <tt class="docutils literal"><span class="pre">yield</span></tt>,
+option called <tt class="docutils literal"><span class="pre">--yield</span></tt>. In this case the destination would be <tt class="docutils literal">yield</tt>,
 which is a Python keyword, and since you cannot introduce an
 argument with that name in a function definition, it is impossible
 to implement it. Your choices are to change the name of the long
@@ -1167,16 +1177,16 @@ documentation puts it: <em>Required options are generally considered bad
 form - normal users expect options to be optional. You should avoid
 the use of required options whenever possible.</em></li>
 <li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> supports only regular boolean flags. <a class="reference external" href="http://argparse.googlecode.com">argparse</a> has the ability to
-define generalized two-value flags with values different from <tt class="docutils literal"><span class="pre">True</span></tt>
-and <tt class="docutils literal"><span class="pre">False</span></tt>. An earlier version of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> had this feature too, but
+define generalized two-value flags with values different from <tt class="docutils literal">True</tt>
+and <tt class="docutils literal">False</tt>. An earlier version of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> had this feature too, but
 since you can use options with two choices instead, and in any case
-the conversion from <tt class="docutils literal"><span class="pre">{True,</span> <span class="pre">False}</span></tt> to any couple of values
+the conversion from <tt class="docutils literal">{True, False}</tt> to any couple of values
 can be trivially implemented with a ternary operator
-(<tt class="docutils literal"><span class="pre">value1</span> <span class="pre">if</span> <span class="pre">flag</span> <span class="pre">else</span> <span class="pre">value2</span></tt>), I have removed it (KISS rules!).</li>
-<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support <tt class="docutils literal"><span class="pre">nargs</span></tt> options directly (it uses them internally,
+(<tt class="docutils literal">value1 if flag else value2</tt>), I have removed it (KISS rules!).</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support <tt class="docutils literal">nargs</tt> options directly (it uses them internally,
 though, to implement flag recognition). The reason it that all the use
 cases of interest to me are covered by <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> and did not feel the need
-to increase the learning curve by adding direct support for <tt class="docutils literal"><span class="pre">nargs</span></tt>.</li>
+to increase the learning curve by adding direct support for <tt class="docutils literal">nargs</tt>.</li>
 <li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support subparsers directly. For the moment, this
 looks like a feature too advanced for the goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</li>
 <li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support actions directly. This also
@@ -1185,9 +1195,9 @@ that the ability to define your own annotation objects may mitigate the
 need for custom actions.</li>
 </ul>
 <p>I should stress again that if you want to access all of the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> features
-from <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> you can use <tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> and you will get
+from <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> you can use <tt class="docutils literal">plac.parser_from</tt> and you will get
 the underlying <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object. The the full power of <a class="reference external" href="http://argparse.googlecode.com">argparse</a>
-is then available to you: you can use <tt class="docutils literal"><span class="pre">add_argument</span></tt>, <tt class="docutils literal"><span class="pre">add_subparsers()</span></tt>,
+is then available to you: you can use <tt class="docutils literal">add_argument</tt>, <tt class="docutils literal">add_subparsers()</tt>,
 etc. In other words, while some features are not supported directly,
 <em>all</em> features are supported indirectly.</p>
 </div>
@@ -1235,8 +1245,8 @@ of functions annotations in Python 3.</li>
 </ol>
 <p>Putting together these two observations with the original idea of inferring the
 parser I decided to build an <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object from function
-annotations. The <tt class="docutils literal"><span class="pre">optionparser</span></tt> name was ruled out, since I was
-now using <a class="reference external" href="http://argparse.googlecode.com">argparse</a>; a name like <tt class="docutils literal"><span class="pre">argparse_plus</span></tt> was also ruled out,
+annotations. The <tt class="docutils literal">optionparser</tt> name was ruled out, since I was
+now using <a class="reference external" href="http://argparse.googlecode.com">argparse</a>; a name like <tt class="docutils literal">argparse_plus</tt> was also ruled out,
 since the typical usage was completely different from the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> usage.</p>
 <p>I made a research on PyPI and the name clap (Command Line Arguments Parser)
 was not taken, so I renamed everything to clap. After two days

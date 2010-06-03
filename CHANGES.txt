@@ -1,6 +1,8 @@
 HISTORY
 ----------
 
+0.4.1. Changed the default formatting class and fixed a bug in the
+      display of the default arguments. Added more stringent tests. (2010-06-03)
 0.4.0 abbrev is now optional. Added a note about CLIArgs and opterate.
       Added keyword arguments recognition. ``plac.call`` now returns the
       the output of the main function. (2010-06-03)

@@ -1,0 +1,10 @@
+usage: example7.py [-h] dsn [scripts [scripts ...]]
+
+Run the given scripts on the database
+
+positional arguments:
+  dsn
+  scripts
+
+optional arguments:
+  -h, --help  show this help message and exit
