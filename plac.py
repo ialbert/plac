@@ -76,8 +76,6 @@ class Annotation(object):
         assert kind in ('positional', 'option', 'flag'), kind
         if kind == "positional":
             assert abbrev is None, abbrev
-        else: # option, flag
-            assert isinstance(abbrev, str) and len(abbrev) == 1, abbrev
         self.help = help
         self.kind = kind
         self.abbrev = abbrev
@@ -122,7 +120,7 @@ def parser_from(func):
         else:
             dflt, metavar = default, a.metavar or str(default)
         if a.kind in ('option', 'flag'):
-            short = short_prefix + a.abbrev
+            short = short_prefix + (a.abbrev or name[0])
             long = long_prefix + name
         elif default is NONE: # required argument
             p.add_argument(name, help=a.help, type=a.type, choices=a.choices,

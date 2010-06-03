@@ -18,7 +18,7 @@ def parser_from(f, **kw):
     return plac.parser_from(f)
 
 p1 = parser_from(lambda delete, *args: None,
-                 delete=('delete a file', 'option', 'd'))
+                 delete=('delete a file', 'option'))
 
 def test_p1():
     arg = p1.parse_args(['-d', 'foo', 'arg1', 'arg2'])

@@ -13,7 +13,9 @@ Installation
 
 If you are lazy, just perform
 
-$ easy_install plac
+::
+
+ $ easy_install plac
 
 which will install just the module on your system. Notice that
 Python 3 requires the easy_install version of the distribute_ project.
@@ -21,7 +23,9 @@ Python 3 requires the easy_install version of the distribute_ project.
 If you prefer to install the full distribution from source, including
 the documentation, download the tarball_, unpack it and run
 
-$ python setup.py install
+::
+
+ $ python setup.py install
 
 in the main directory, possibly as superuser.
 
@@ -33,15 +37,21 @@ Testing
 
 Run
 
-$ python test_plac.py
+::
+
+ $ python test_plac.py
 
 or
 
-$ nosetests test_plac
+::
+
+ $ nosetests test_plac.py
 
 or
 
-$ py.test test_plac
+::
+
+ $ py.test test_plac.py
 
 Documentation
 --------------

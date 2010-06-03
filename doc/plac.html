@@ -749,12 +749,19 @@ def main(command: (&quot;SQL query&quot;, 'option', 'c'),
 </pre>
 <p>Of course explicit is better than implicit, an no special cases are
 special enough, but sometimes practicality beats purity, so <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is
-smart enough to convert help messages into tuples; in other words, you
-can just write <tt class="docutils literal">&quot;Database dsn&quot;</tt> instead of <tt class="docutils literal">(&quot;Database dsn&quot;,
-'positional', None)</tt>. In both cases the usage message will show a
-nice help string on the right hand side of the <tt class="docutils literal">dsn</tt> positional
-argument.</p>
-<p>I should also notice that varargs (starred-arguments) can be annotated too;
+able to use smart defaults; in particular you can omit the third argument
+and write:</p>
+<pre class="literal-block">
+def main(command: (&quot;SQL query&quot;, 'option'),
+         dsn: (&quot;Database dsn&quot;, 'positional')):
+    ...
+</pre>
+<p>When omitted, the third argument is assumed to be the first letter of
+the variable name for options and flags, and <tt class="docutils literal">None</tt> for positional
+arguments. Moreover, smart enough to convert help messages into tuples;
+in other words, you can just write <tt class="docutils literal">&quot;Database dsn&quot;</tt> instead of
+<tt class="docutils literal">(&quot;Database dsn&quot;, 'positional')</tt>.</p>
+<p>I should notice that varargs (starred-arguments) can be annotated too;
 here is an example:</p>
 <pre class="literal-block">
 def main(dsn: &quot;Database dsn&quot;, *scripts: &quot;SQL scripts&quot;):

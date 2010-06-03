@@ -247,13 +247,20 @@ Positional argument can be annotated too::
 
 Of course explicit is better than implicit, an no special cases are
 special enough, but sometimes practicality beats purity, so plac_ is
-smart enough to convert help messages into tuples; in other words, you
-can just write ``"Database dsn"`` instead of ``("Database dsn",
-'positional', None)``. In both cases the usage message will show a
-nice help string on the right hand side of the ``dsn`` positional
-argument. 
+able to use smart defaults; in particular you can omit the third argument
+and write::
 
-I should also notice that varargs (starred-arguments) can be annotated too;
+ def main(command: ("SQL query", 'option'),
+          dsn: ("Database dsn", 'positional')):
+     ...
+
+When omitted, the third argument is assumed to be the first letter of
+the variable name for options and flags, and ``None`` for positional
+arguments. Moreover, smart enough to convert help messages into tuples; 
+in other words, you can just write ``"Database dsn"`` instead of 
+``("Database dsn", 'positional')``. 
+
+I should notice that varargs (starred-arguments) can be annotated too;
 here is an example::
 
   def main(dsn: "Database dsn", *scripts: "SQL scripts"):
