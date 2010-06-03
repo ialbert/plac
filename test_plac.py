@@ -77,6 +77,20 @@ def test_flag_with_default():
     expect(TypeError, parser_from, lambda yes_or_no='no': None,
            yes_or_no=('A yes/no flag', 'flag', 'f'))
 
+def test_kwargs():
+    def main(opt, arg1, *args, **kw):
+        print(opt, arg1)
+        return args, kw
+    main.__annotations__ = dict(opt=('Option', 'option'))
+    argskw = plac.call(main, ['arg1', 'arg2', 'a=1', 'b=2'])
+    assert argskw == (('arg2',), dict(a='1', b='2')), argskw
+    
+    argskw = plac.call(main, ['arg1', 'arg2', 'a=1', '-o2'])
+    assert argskw == (('arg2',), dict(a='1')), argskw
+
+    expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
+
+
 if __name__ == '__main__':
     n = 0
     for name, test in sorted(globals().items()):

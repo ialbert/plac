@@ -412,6 +412,46 @@ to the usage message. Here are a couple of examples of use::
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
+Keyword arguments
+---------------------------------------
+
+Starting from release 0.4, if your main function has keyword arguments, 
+plac_ recognizes arguments of the form ``"name=value"`` in the command line.
+Here is an example:
+
+.. include:: example12.py
+   :literal:
+
+Here is the generated usage message::
+
+ usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
+ 
+ positional arguments:
+   args               default arguments
+   kw                 keyword arguments
+ 
+ optional arguments:
+   -h, --help         show this help message and exit
+   -o OPT, --opt OPT  some option
+
+Here is how you call the script::
+   
+ $ python example12.py 1 2 kw1=1 kw2=2 --opt=0
+ ('0', ('1', '2'), {'kw1': '1', 'kw2': '2'})
+
+When using keyword arguments, one must be careful to use names which
+are not alreay taken; for instance in this examples the names ``opt``
+is taken::
+ 
+ $ python example12.py 1 2 kw1=1 kw2=2 opt=0
+ usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
+ example12.py: error: colliding keyword arguments: opt
+
+The names taken are the names of the flags, of the options, and of the
+positional arguments, excepted varargs and keywords. This limitation
+is a consequence of the way the argument names are managed in function calls
+by the Python language.
+
 A realistic example
 ---------------------------------------
 
@@ -615,14 +655,15 @@ no match for the capabilities of plac_.
 The future
 -------------------------------
 
-Currently plac is below 100 lines of code, not counting blanks, comments
-and docstrings. I do not plan to extend it much in the future. The idea is
-to keep the module short: it is and it should remain a little wrapper over
-argparse_. Actually I have thought about contributing the code back to
-argparse_ if plac_ becomes successfull and gains a reasonable number of
-users. For the moment it should be considered experimental: after all 
-I wrote it in three days, including the tests, the documentation and the
-time to learn argparse_.
+Currently plac is below 100 lines of code, not counting blanks,
+comments and docstrings. I do not plan to extend it much in the
+future. The idea is to keep the module short: it is and it should
+remain a little wrapper over argparse_. Actually I have thought about
+contributing the code back to argparse_ if plac_ becomes successfull
+and gains a reasonable number of users. For the moment it should be
+considered experimental: after all I wrote the first version of it in
+three days, including the tests, the documentation and the time to
+learn argparse_.
 
 Trivia: the story behind the name
 -----------------------------------------

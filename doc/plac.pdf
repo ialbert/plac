@@ -7,7 +7,7 @@
  /F2 3 0 R
  /F3 4 0 R
  /F4 8 0 R
- /F5 52 0 R >>
+ /F5 54 0 R >>
 endobj
 % 'F1': class PDFType1Font 
 2 0 obj
@@ -96,10 +96,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 48 0 R
+ /Dest [ 46 0 R
  /XYZ
  62.69291
- 311.0236
+ 293.0236
  0 ]
  /Rect [ 62.69291
  563.5936
@@ -114,10 +114,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 48 0 R
+ /Dest [ 46 0 R
  /XYZ
  62.69291
- 311.0236
+ 293.0236
  0 ]
  /Rect [ 527.0227
  563.5936
@@ -132,10 +132,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 56 0 R
+ /Dest [ 58 0 R
  /XYZ
  62.69291
- 615.0236
+ 579.0236
  0 ]
  /Rect [ 62.69291
  545.5936
@@ -150,10 +150,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 56 0 R
+ /Dest [ 58 0 R
  /XYZ
  62.69291
- 615.0236
+ 579.0236
  0 ]
  /Rect [ 527.0227
  545.5936
@@ -168,10 +168,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 62 0 R
+ /Dest [ 64 0 R
  /XYZ
  62.69291
- 331.4236
+ 295.4236
  0 ]
  /Rect [ 62.69291
  527.5936
@@ -186,10 +186,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 62 0 R
+ /Dest [ 64 0 R
  /XYZ
  62.69291
- 331.4236
+ 295.4236
  0 ]
  /Rect [ 527.0227
  527.5936
@@ -204,10 +204,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 74 0 R
+ /Dest [ 76 0 R
  /XYZ
  62.69291
- 717.0236
+ 671.8236
  0 ]
  /Rect [ 62.69291
  509.5936
@@ -222,10 +222,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 74 0 R
+ /Dest [ 76 0 R
  /XYZ
  62.69291
- 717.0236
+ 671.8236
  0 ]
  /Rect [ 527.0227
  509.5936
@@ -240,10 +240,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 78 0 R
+ /Dest [ 80 0 R
  /XYZ
  62.69291
- 207.8236
+ 162.6236
  0 ]
  /Rect [ 62.69291
  491.5936
@@ -258,10 +258,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 78 0 R
+ /Dest [ 80 0 R
  /XYZ
  62.69291
- 207.8236
+ 162.6236
  0 ]
  /Rect [ 527.0227
  491.5936
@@ -276,10 +276,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 80 0 R
+ /Dest [ 82 0 R
  /XYZ
  62.69291
- 383.4236
+ 351.7299
  0 ]
  /Rect [ 62.69291
  473.5936
@@ -294,10 +294,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 80 0 R
+ /Dest [ 82 0 R
  /XYZ
  62.69291
- 383.4236
+ 351.7299
  0 ]
  /Rect [ 527.0227
  473.5936
@@ -312,10 +312,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 87 0 R
+ /Dest [ 89 0 R
  /XYZ
  62.69291
- 647.8236
+ 603.8236
  0 ]
  /Rect [ 62.69291
  455.5936
@@ -330,10 +330,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 87 0 R
+ /Dest [ 89 0 R
  /XYZ
  62.69291
- 647.8236
+ 603.8236
  0 ]
  /Rect [ 527.0227
  455.5936
@@ -351,11 +351,11 @@ endobj
  /Dest [ 91 0 R
  /XYZ
  62.69291
- 542.4849
+ 494.4849
  0 ]
  /Rect [ 62.69291
  437.5936
- 153.2929
+ 158.8229
  449.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -369,7 +369,7 @@ endobj
  /Dest [ 91 0 R
  /XYZ
  62.69291
- 542.4849
+ 494.4849
  0 ]
  /Rect [ 527.0227
  437.5936
@@ -384,14 +384,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 102 0 R
+ /Dest [ 95 0 R
  /XYZ
  62.69291
- 571.8236
+ 582.6236
  0 ]
  /Rect [ 62.69291
  419.5936
- 142.1629
+ 153.2929
  431.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -402,10 +402,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 102 0 R
+ /Dest [ 95 0 R
  /XYZ
  62.69291
- 571.8236
+ 582.6236
  0 ]
  /Rect [ 521.4627
  419.5936
@@ -420,14 +420,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 104 0 R
+ /Dest [ 106 0 R
  /XYZ
  62.69291
- 623.8236
+ 619.8236
  0 ]
  /Rect [ 62.69291
  401.5936
- 191.5929
+ 142.1629
  413.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -438,10 +438,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 104 0 R
+ /Dest [ 106 0 R
  /XYZ
  62.69291
- 623.8236
+ 619.8236
  0 ]
  /Rect [ 521.4627
  401.5936
@@ -456,14 +456,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 131 0 R
+ /Dest [ 108 0 R
  /XYZ
  62.69291
- 671.8236
+ 683.8236
  0 ]
  /Rect [ 62.69291
  383.5936
- 141.6229
+ 191.5929
  395.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -474,10 +474,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 131 0 R
+ /Dest [ 108 0 R
  /XYZ
  62.69291
- 671.8236
+ 683.8236
  0 ]
  /Rect [ 521.4627
  383.5936
@@ -492,14 +492,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 131 0 R
+ /Dest [ 138 0 R
  /XYZ
  62.69291
- 182.8236
+ 741.0236
  0 ]
  /Rect [ 62.69291
  365.5936
- 194.9529
+ 141.6229
  377.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -510,10 +510,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 131 0 R
+ /Dest [ 138 0 R
  /XYZ
  62.69291
- 182.8236
+ 741.0236
  0 ]
  /Rect [ 521.4627
  365.5936
@@ -528,14 +528,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 149 0 R
+ /Dest [ 138 0 R
  /XYZ
  62.69291
- 705.0236
+ 252.0236
  0 ]
  /Rect [ 62.69291
  347.5936
- 111.5829
+ 194.9529
  359.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -546,10 +546,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 149 0 R
+ /Dest [ 138 0 R
  /XYZ
  62.69291
- 705.0236
+ 252.0236
  0 ]
  /Rect [ 521.4627
  347.5936
@@ -564,14 +564,14 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 149 0 R
+ /Dest [ 153 0 R
  /XYZ
  62.69291
- 594.0236
+ 765.0236
  0 ]
  /Rect [ 62.69291
  329.5936
- 219.9529
+ 111.5829
  341.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -582,10 +582,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 149 0 R
+ /Dest [ 153 0 R
  /XYZ
  62.69291
- 594.0236
+ 765.0236
  0 ]
  /Rect [ 521.4627
  329.5936
@@ -594,33 +594,39 @@ endobj
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER32': class PDFDictionary 
+% 'Annot.NUMBER32': class LinkAnnotation 
 37 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://docs.python.org/library/getopt.html) >>
- /Border [ 0
+<< /Border [ 0
  0
  0 ]
- /Rect [ 214.8914
- 263.5936
- 246.5585
- 275.5936 ]
+ /Contents ()
+ /Dest [ 153 0 R
+ /XYZ
+ 62.69291
+ 654.0236
+ 0 ]
+ /Rect [ 62.69291
+ 311.5936
+ 219.9529
+ 323.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER33': class PDFDictionary 
+% 'Annot.NUMBER33': class LinkAnnotation 
 38 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://docs.python.org/library/optparse.html) >>
- /Border [ 0
+<< /Border [ 0
  0
  0 ]
- /Rect [ 346.507
- 263.5936
- 389.2842
- 275.5936 ]
+ /Contents ()
+ /Dest [ 153 0 R
+ /XYZ
+ 62.69291
+ 654.0236
+ 0 ]
+ /Rect [ 521.4627
+ 311.5936
+ 532.5827
+ 323.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -628,14 +634,14 @@ endobj
 39 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://docs.python.org/library/getopt.html) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 493.1227
- 263.5936
- 531.4956
- 275.5936 ]
+ /Rect [ 214.8914
+ 245.5936
+ 246.5585
+ 257.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -643,14 +649,14 @@ endobj
 40 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://docs.python.org/library/optparse.html) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 346.384
- 251.5936
- 388.8477
- 263.5936 ]
+ /Rect [ 346.507
+ 245.5936
+ 389.2842
+ 257.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -658,14 +664,14 @@ endobj
 41 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://www.welton.it/articles/scalable_systems) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 292.1608
- 209.5936
- 350.0128
- 221.5936 ]
+ /Rect [ 493.1227
+ 245.5936
+ 531.4956
+ 257.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -673,14 +679,14 @@ endobj
 42 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 208.2364
- 161.5936
- 229.8923
- 173.5936 ]
+ /Rect [ 346.384
+ 233.5936
+ 388.8477
+ 245.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -688,14 +694,14 @@ endobj
 43 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://www.welton.it/articles/scalable_systems) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 152.7329
- 137.5936
- 192.1929
- 149.5936 ]
+ /Rect [ 292.1608
+ 191.5936
+ 350.0128
+ 203.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -707,10 +713,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 116.9711
- 119.5936
- 139.5794
- 131.5936 ]
+ /Rect [ 208.2364
+ 143.5936
+ 229.8923
+ 155.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -722,45 +728,15 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 277.9887
+ /Rect [ 152.7329
  119.5936
- 321.7169
+ 192.1929
  131.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER41': class PDFDictionary 
-46 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 504.0394
- 107.5936
- 525.3627
- 119.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER42': class PDFDictionary 
-47 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 351.0408
- 95.59362
- 390.5008
- 107.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
 % 'Page1': class PDFPage 
-48 0 obj
+46 0 obj
 % Page dictionary
 << /Annots [ 5 0 R
  6 0 R
@@ -801,15 +777,13 @@ endobj
  42 0 R
  43 0 R
  44 0 R
- 45 0 R
- 46 0 R
- 47 0 R ]
- /Contents 168 0 R
+ 45 0 R ]
+ /Contents 173 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -820,6 +794,36 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
+% 'Annot.NUMBER41': class PDFDictionary 
+47 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 116.9711
+ 756.5936
+ 139.5794
+ 768.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER42': class PDFDictionary 
+48 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 277.9887
+ 756.5936
+ 321.7169
+ 768.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
 % 'Annot.NUMBER43': class PDFDictionary 
 49 0 obj
 << /A << /S /URI
@@ -828,9 +832,9 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 247.8817
+ /Rect [ 504.0394
  744.5936
- 266.2217
+ 525.3627
  756.5936 ]
  /Subtype /Link
  /Type /Annot >>
@@ -839,14 +843,14 @@ endobj
 50 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 714.5936
- 85.3538
- 726.5936 ]
+ /Rect [ 351.0408
+ 732.5936
+ 390.5008
+ 744.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -858,15 +862,45 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 247.8817
+ 708.5936
+ 266.2217
+ 720.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER46': class PDFDictionary 
+52 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 678.5936
+ 85.3538
+ 690.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER47': class PDFDictionary 
+53 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 124.2211
- 642.5936
+ 606.5936
  146.9252
- 654.5936 ]
+ 618.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'F5': class PDFType1Font 
-52 0 obj
+54 0 obj
 % Font Helvetica-Oblique
 << /BaseFont /Helvetica-Oblique
  /Encoding /WinAnsiEncoding
@@ -874,8 +908,8 @@ endobj
  /Subtype /Type1
  /Type /Font >>
 endobj
-% 'Annot.NUMBER46': class PDFDictionary 
-53 0 obj
+% 'Annot.NUMBER48': class PDFDictionary 
+55 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://docs.python.org/library/getopt.html) >>
@@ -883,14 +917,14 @@ endobj
  0
  0 ]
  /Rect [ 325.341
- 250.3936
+ 214.3936
  356.6198
- 262.3936 ]
+ 226.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER47': class PDFDictionary 
-54 0 obj
+% 'Annot.NUMBER49': class PDFDictionary 
+56 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://docs.python.org/library/optparse.html) >>
@@ -898,14 +932,14 @@ endobj
  0
  0 ]
  /Rect [ 376.7786
- 250.3936
+ 214.3936
  419.1674
- 262.3936 ]
+ 226.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER48': class PDFDictionary 
-55 0 obj
+% 'Annot.NUMBER50': class PDFDictionary 
+57 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com) >>
@@ -913,27 +947,31 @@ endobj
  0
  0 ]
  /Rect [ 365.694
- 238.3936
+ 202.3936
  408.8281
- 250.3936 ]
+ 214.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page2': class PDFPage 
-56 0 obj
+58 0 obj
 % Page dictionary
-<< /Annots [ 49 0 R
+<< /Annots [ 47 0 R
+ 48 0 R
+ 49 0 R
  50 0 R
  51 0 R
+ 52 0 R
  53 0 R
- 54 0 R
- 55 0 R ]
- /Contents 169 0 R
+ 55 0 R
+ 56 0 R
+ 57 0 R ]
+ /Contents 174 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -944,36 +982,6 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER49': class PDFDictionary 
-57 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 83.82606
- 645.3936
- 106.0692
- 657.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER50': class PDFDictionary 
-58 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 243.8829
- 633.3936
- 265.0029
- 645.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
 % 'Annot.NUMBER51': class PDFDictionary 
 59 0 obj
 << /A << /S /URI
@@ -982,10 +990,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 83.6329
- 496.1936
- 105.6829
- 508.1936 ]
+ /Rect [ 83.82606
+ 609.3936
+ 106.0692
+ 621.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -993,14 +1001,14 @@ endobj
 60 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 421.9727
- 496.1936
- 465.1427
- 508.1936 ]
+ /Rect [ 243.8829
+ 597.3936
+ 265.0029
+ 609.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1012,27 +1020,57 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 83.6329
+ 460.1936
+ 105.6829
+ 472.1936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER54': class PDFDictionary 
+62 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 421.9727
+ 460.1936
+ 465.1427
+ 472.1936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER55': class PDFDictionary 
+63 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 211.6529
- 346.9936
+ 310.9936
  232.7729
- 358.9936 ]
+ 322.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page3': class PDFPage 
-62 0 obj
+64 0 obj
 % Page dictionary
-<< /Annots [ 57 0 R
- 58 0 R
- 59 0 R
+<< /Annots [ 59 0 R
  60 0 R
- 61 0 R ]
- /Contents 170 0 R
+ 61 0 R
+ 62 0 R
+ 63 0 R ]
+ /Contents 175 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1043,8 +1081,8 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER54': class PDFDictionary 
-63 0 obj
+% 'Annot.NUMBER56': class PDFDictionary 
+65 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com) >>
@@ -1052,39 +1090,9 @@ endobj
  0
  0 ]
  /Rect [ 321.4303
- 687.3936
+ 651.3936
  363.754
- 699.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER55': class PDFDictionary 
-64 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 126.0429
- 675.3936
- 147.1629
- 687.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER56': class PDFDictionary 
-65 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 62.69291
- 460.9936
- 84.20915
- 472.9936 ]
+ 663.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1096,26 +1104,56 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 126.0429
+ 639.3936
+ 147.1629
+ 651.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER58': class PDFDictionary 
+67 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 424.9936
+ 84.20915
+ 436.9936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER59': class PDFDictionary 
+68 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 91.59679
- 239.7936
+ 203.7936
  109.9368
- 251.7936 ]
+ 215.7936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page4': class PDFPage 
-67 0 obj
+69 0 obj
 % Page dictionary
-<< /Annots [ 63 0 R
- 64 0 R
- 65 0 R
- 66 0 R ]
- /Contents 171 0 R
+<< /Annots [ 65 0 R
+ 66 0 R
+ 67 0 R
+ 68 0 R ]
+ /Contents 176 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1126,8 +1164,8 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER58': class PDFDictionary 
-68 0 obj
+% 'Annot.NUMBER60': class PDFDictionary 
+70 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
@@ -1135,39 +1173,9 @@ endobj
  0
  0 ]
  /Rect [ 446.1627
- 744.5936
+ 699.3936
  464.5027
- 756.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER59': class PDFDictionary 
-69 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 357.8702
- 633.5936
- 416.0058
- 645.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER60': class PDFDictionary 
-70 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 182.0729
- 621.5936
- 234.3229
- 633.5936 ]
+ 711.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1175,14 +1183,14 @@ endobj
 71 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 591.5936
- 84.28901
- 603.5936 ]
+ /Rect [ 357.8702
+ 588.3936
+ 416.0058
+ 600.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1194,10 +1202,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 161.7834
- 591.5936
- 217.2895
- 603.5936 ]
+ /Rect [ 182.0729
+ 576.3936
+ 234.3229
+ 588.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1209,28 +1217,58 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 62.69291
+ 546.3936
+ 84.28901
+ 558.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER64': class PDFDictionary 
+74 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 161.7834
+ 546.3936
+ 217.2895
+ 558.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER65': class PDFDictionary 
+75 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 514.2427
- 388.3936
+ 343.1936
  532.2243
- 400.3936 ]
+ 355.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page5': class PDFPage 
-74 0 obj
+76 0 obj
 % Page dictionary
-<< /Annots [ 68 0 R
- 69 0 R
- 70 0 R
+<< /Annots [ 70 0 R
  71 0 R
  72 0 R
- 73 0 R ]
- /Contents 172 0 R
+ 73 0 R
+ 74 0 R
+ 75 0 R ]
+ /Contents 177 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1240,36 +1278,6 @@ endobj
  /Rotate 0
  /Trans <<  >>
  /Type /Page >>
-endobj
-% 'Annot.NUMBER64': class PDFDictionary 
-75 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 183.9662
- 476.9936
- 205.2545
- 488.9936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER65': class PDFDictionary 
-76 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 184.4029
- 280.5936
- 202.7429
- 292.5936 ]
- /Subtype /Link
- /Type /Annot >>
 endobj
 % 'Annot.NUMBER66': class PDFDictionary 
 77 0 obj
@@ -1279,36 +1287,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 172.3936
- 84.57878
- 184.3936 ]
+ /Rect [ 183.9662
+ 431.7936
+ 205.2545
+ 443.7936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page6': class PDFPage 
-78 0 obj
-% Page dictionary
-<< /Annots [ 75 0 R
- 76 0 R
- 77 0 R ]
- /Contents 173 0 R
- /MediaBox [ 0
- 0
- 595.2756
- 841.8898 ]
- /Parent 167 0 R
- /Resources << /Font 1 0 R
- /ProcSet [ /PDF
- /Text
- /ImageB
- /ImageC
- /ImageI ] >>
- /Rotate 0
- /Trans <<  >>
- /Type /Page >>
-endobj
 % 'Annot.NUMBER67': class PDFDictionary 
+78 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 184.4029
+ 235.3936
+ 202.7429
+ 247.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER68': class PDFDictionary 
 79 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1316,23 +1317,25 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 110.2829
- 323.9936
- 132.8629
- 335.9936 ]
+ /Rect [ 62.69291
+ 127.1936
+ 84.57878
+ 139.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page7': class PDFPage 
+% 'Page6': class PDFPage 
 80 0 obj
 % Page dictionary
-<< /Annots [ 79 0 R ]
- /Contents 174 0 R
+<< /Annots [ 77 0 R
+ 78 0 R
+ 79 0 R ]
+ /Contents 178 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1343,7 +1346,7 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER68': class PDFDictionary 
+% 'Annot.NUMBER69': class PDFDictionary 
 81 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1351,40 +1354,45 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 358.6729
- 663.3936
- 379.7929
- 675.3936 ]
+ /Rect [ 110.2829
+ 292.2999
+ 132.8629
+ 304.2999 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER69': class PDFDictionary 
+% 'Page7': class PDFPage 
 82 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
+% Page dictionary
+<< /Annots [ 81 0 R ]
+ /Contents 179 0 R
+ /MediaBox [ 0
  0
- 0 ]
- /Rect [ 104.3155
- 600.3936
- 143.7755
- 612.3936 ]
- /Subtype /Link
- /Type /Annot >>
+ 595.2756
+ 841.8898 ]
+ /Parent 172 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
 endobj
 % 'Annot.NUMBER70': class PDFDictionary 
 83 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 414.3275
- 600.3936
- 453.7875
- 612.3936 ]
+ /Rect [ 358.6729
+ 619.3936
+ 379.7929
+ 631.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1396,10 +1404,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 588.3936
- 106.6498
- 600.3936 ]
+ /Rect [ 104.3155
+ 556.3936
+ 143.7755
+ 568.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1407,14 +1415,14 @@ endobj
 85 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 189.6004
- 588.3936
- 207.9404
- 600.3936 ]
+ /Rect [ 414.3275
+ 556.3936
+ 453.7875
+ 568.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1426,28 +1434,58 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 62.69291
+ 544.3936
+ 106.6498
+ 556.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER74': class PDFDictionary 
+87 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 189.6004
+ 544.3936
+ 207.9404
+ 556.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER75': class PDFDictionary 
+88 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 355.0429
- 396.3936
+ 352.3936
  397.2829
- 408.3936 ]
+ 364.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page8': class PDFPage 
-87 0 obj
+89 0 obj
 % Page dictionary
-<< /Annots [ 81 0 R
- 82 0 R
- 83 0 R
+<< /Annots [ 83 0 R
  84 0 R
  85 0 R
- 86 0 R ]
- /Contents 175 0 R
+ 86 0 R
+ 87 0 R
+ 88 0 R ]
+ /Contents 180 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1458,63 +1496,31 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER74': class PDFDictionary 
-88 0 obj
+% 'Annot.NUMBER76': class PDFDictionary 
+90 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 338.1568
- 507.0549
- 360.5113
- 519.0549 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER75': class PDFDictionary 
-89 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://www.sqlalchemy.org/) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 110.6843
- 495.0549
- 169.0343
- 507.0549 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER76': class PDFDictionary 
-90 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 168.3029
- 483.0549
- 208.8829
- 495.0549 ]
+ /Rect [ 384.3381
+ 459.0549
+ 405.6967
+ 471.0549 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page9': class PDFPage 
 91 0 obj
 % Page dictionary
-<< /Annots [ 88 0 R
- 89 0 R
- 90 0 R ]
- /Contents 176 0 R
+<< /Annots [ 90 0 R ]
+ /Contents 181 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1533,10 +1539,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 536.3936
- 83.9079
- 548.3936 ]
+ /Rect [ 338.1568
+ 547.1936
+ 360.5113
+ 559.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1544,14 +1550,14 @@ endobj
 93 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://www.sqlalchemy.org/) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 133.1029
- 536.3936
- 175.4379
- 548.3936 ]
+ /Rect [ 110.6843
+ 535.1936
+ 169.0343
+ 547.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1559,33 +1565,40 @@ endobj
 94 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 454.1177
- 536.3936
- 496.4527
- 548.3936 ]
+ /Rect [ 168.3029
+ 523.1936
+ 208.8829
+ 535.1936 ]
  /Subtype /Link
  /Type /Annot >>
+endobj
+% 'Page10': class PDFPage 
+95 0 obj
+% Page dictionary
+<< /Annots [ 92 0 R
+ 93 0 R
+ 94 0 R ]
+ /Contents 182 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 172 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
 endobj
 % 'Annot.NUMBER80': class PDFDictionary 
-95 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 455.2227
- 494.3936
- 534.3667
- 506.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER81': class PDFDictionary 
 96 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1593,29 +1606,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 127.99
- 327.1936
- 149.3857
- 339.1936 ]
+ /Rect [ 62.69291
+ 584.3936
+ 83.9079
+ 596.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER81': class PDFDictionary 
+97 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 133.1029
+ 584.3936
+ 175.4379
+ 596.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER82': class PDFDictionary 
-97 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 326.9971
- 213.9936
- 351.8113
- 225.9936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER83': class PDFDictionary 
 98 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1623,29 +1636,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 409.706
- 201.9936
- 453.2944
- 213.9936 ]
+ /Rect [ 454.1177
+ 584.3936
+ 496.4527
+ 596.3936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER83': class PDFDictionary 
+99 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 455.2227
+ 542.3936
+ 534.3667
+ 554.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER84': class PDFDictionary 
-99 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 259.0928
- 189.9936
- 302.7528
- 201.9936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER85': class PDFDictionary 
 100 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1653,15 +1666,75 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 258.3129
- 165.9936
- 279.4329
- 177.9936 ]
+ /Rect [ 127.99
+ 375.1936
+ 149.3857
+ 387.1936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER85': class PDFDictionary 
+101 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 326.9971
+ 261.9936
+ 351.8113
+ 273.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER86': class PDFDictionary 
-101 0 obj
+102 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 409.706
+ 249.9936
+ 453.2944
+ 261.9936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER87': class PDFDictionary 
+103 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 259.0928
+ 237.9936
+ 302.7528
+ 249.9936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER88': class PDFDictionary 
+104 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 258.3129
+ 213.9936
+ 279.4329
+ 225.9936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER89': class PDFDictionary 
+105 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
@@ -1669,31 +1742,31 @@ endobj
  0
  0 ]
  /Rect [ 327.2261
- 147.9936
+ 195.9936
  410.5152
- 159.9936 ]
+ 207.9936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page10': class PDFPage 
-102 0 obj
+% 'Page11': class PDFPage 
+106 0 obj
 % Page dictionary
-<< /Annots [ 92 0 R
- 93 0 R
- 94 0 R
- 95 0 R
- 96 0 R
+<< /Annots [ 96 0 R
  97 0 R
  98 0 R
  99 0 R
  100 0 R
- 101 0 R ]
- /Contents 177 0 R
+ 101 0 R
+ 102 0 R
+ 103 0 R
+ 104 0 R
+ 105 0 R ]
+ /Contents 183 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1704,8 +1777,8 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER87': class PDFDictionary 
-103 0 obj
+% 'Annot.NUMBER90': class PDFDictionary 
+107 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
@@ -1713,22 +1786,22 @@ endobj
  0
  0 ]
  /Rect [ 106.6216
- 588.3936
+ 648.3936
  128.3202
- 600.3936 ]
+ 660.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page11': class PDFPage 
-104 0 obj
+% 'Page12': class PDFPage 
+108 0 obj
 % Page dictionary
-<< /Annots [ 103 0 R ]
- /Contents 178 0 R
+<< /Annots [ 107 0 R ]
+ /Contents 184 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1739,8 +1812,8 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER88': class PDFDictionary 
-105 0 obj
+% 'Annot.NUMBER91': class PDFDictionary 
+109 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
@@ -1748,73 +1821,13 @@ endobj
  0
  0 ]
  /Rect [ 62.69291
- 636.3936
+ 705.5936
  84.8789
- 648.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER89': class PDFDictionary 
-106 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 466.5307
- 636.3936
- 509.8367
- 648.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER90': class PDFDictionary 
-107 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 124.3929
- 612.3936
- 163.8529
- 624.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER91': class PDFDictionary 
-108 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 85.69291
- 591.3936
- 107.7029
- 603.3936 ]
+ 717.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER92': class PDFDictionary 
-109 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://docs.python.org/library/optparse.html) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 447.7627
- 591.3936
- 486.6727
- 603.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER93': class PDFDictionary 
 110 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1822,45 +1835,30 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 493.1227
- 591.3936
- 531.6927
- 603.3936 ]
+ /Rect [ 466.5307
+ 705.5936
+ 509.8367
+ 717.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER94': class PDFDictionary 
+% 'Annot.NUMBER93': class PDFDictionary 
 111 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://docs.python.org/library/optparse.html) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 232.9652
- 567.3936
- 271.8752
- 579.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER95': class PDFDictionary 
-112 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 85.69291
- 477.3936
- 127.9329
- 489.3936 ]
+ /Rect [ 124.3929
+ 681.5936
+ 163.8529
+ 693.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER96': class PDFDictionary 
-113 0 obj
+% 'Annot.NUMBER94': class PDFDictionary 
+112 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
@@ -1868,13 +1866,28 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 459.3936
- 107.9337
- 471.3936 ]
+ 660.5936
+ 107.7029
+ 672.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER97': class PDFDictionary 
+% 'Annot.NUMBER95': class PDFDictionary 
+113 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://docs.python.org/library/optparse.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 447.7627
+ 660.5936
+ 486.6727
+ 672.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER96': class PDFDictionary 
 114 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1882,29 +1895,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 308.5389
- 459.3936
- 351.8997
- 471.3936 ]
+ /Rect [ 493.1227
+ 660.5936
+ 531.6927
+ 672.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER97': class PDFDictionary 
+115 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://docs.python.org/library/optparse.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 232.9652
+ 636.5936
+ 271.8752
+ 648.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER98': class PDFDictionary 
-115 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 85.69291
- 417.3936
- 108.3529
- 429.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER99': class PDFDictionary 
 116 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1912,14 +1925,14 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 277.2428
- 417.3936
- 321.0228
- 429.3936 ]
+ /Rect [ 85.69291
+ 546.5936
+ 127.9329
+ 558.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER100': class PDFDictionary 
+% 'Annot.NUMBER99': class PDFDictionary 
 117 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1927,29 +1940,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 404.5839
- 405.3936
- 426.0657
- 417.3936 ]
+ /Rect [ 85.69291
+ 528.5936
+ 107.9337
+ 540.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER100': class PDFDictionary 
+118 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 308.5389
+ 528.5936
+ 351.8997
+ 540.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER101': class PDFDictionary 
-118 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 85.69291
- 351.3936
- 108.61
- 363.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER102': class PDFDictionary 
 119 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1957,29 +1970,29 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 459.2622
- 339.3936
- 481.289
- 351.3936 ]
+ /Rect [ 85.69291
+ 486.5936
+ 108.3529
+ 498.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER102': class PDFDictionary 
+120 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 277.2428
+ 486.5936
+ 321.0228
+ 498.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER103': class PDFDictionary 
-120 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 85.69291
- 309.3936
- 107.0573
- 321.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER104': class PDFDictionary 
 121 0 obj
 << /A << /S /URI
  /Type /Action
@@ -1987,14 +2000,14 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 140.1729
- 297.3936
- 158.5129
- 309.3936 ]
+ /Rect [ 404.5839
+ 474.5936
+ 426.0657
+ 486.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER105': class PDFDictionary 
+% 'Annot.NUMBER104': class PDFDictionary 
 122 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2003,13 +2016,13 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 279.3936
- 107.9247
- 291.3936 ]
+ 420.5936
+ 108.61
+ 432.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER106': class PDFDictionary 
+% 'Annot.NUMBER105': class PDFDictionary 
 123 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2017,29 +2030,29 @@ endobj
  /Border [ 0
  0
  0 ]
+ /Rect [ 459.2622
+ 408.5936
+ 481.289
+ 420.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER106': class PDFDictionary 
+124 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
  /Rect [ 85.69291
- 267.3936
- 104.0329
- 279.3936 ]
+ 378.5936
+ 107.0573
+ 390.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER107': class PDFDictionary 
-124 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 340.7317
- 234.3936
- 385.1185
- 246.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER108': class PDFDictionary 
 125 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2047,59 +2060,59 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 451.1022
- 234.3936
- 474.369
- 246.3936 ]
+ /Rect [ 140.1729
+ 366.5936
+ 158.5129
+ 378.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER109': class PDFDictionary 
+% 'Annot.NUMBER108': class PDFDictionary 
 126 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 321.0443
- 222.3936
- 399.3474
- 234.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER110': class PDFDictionary 
-127 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 62.69291
- 210.3936
- 107.3744
- 222.3936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER111': class PDFDictionary 
-128 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 109.0098
- 147.3936
- 131.9967
- 159.3936 ]
+ /Rect [ 85.69291
+ 348.5936
+ 107.9247
+ 360.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER112': class PDFDictionary 
+% 'Annot.NUMBER109': class PDFDictionary 
+127 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 85.69291
+ 336.5936
+ 104.0329
+ 348.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER110': class PDFDictionary 
+128 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 340.7317
+ 303.5936
+ 385.1185
+ 315.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER111': class PDFDictionary 
 129 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2107,15 +2120,75 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 397.2929
- 123.3936
- 415.6329
- 135.3936 ]
+ /Rect [ 451.1022
+ 303.5936
+ 474.369
+ 315.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER112': class PDFDictionary 
+130 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 321.0443
+ 291.5936
+ 399.3474
+ 303.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER113': class PDFDictionary 
-130 0 obj
+131 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 279.5936
+ 107.3744
+ 291.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER114': class PDFDictionary 
+132 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 109.0098
+ 216.5936
+ 131.9967
+ 228.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER115': class PDFDictionary 
+133 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 397.2929
+ 192.5936
+ 415.6329
+ 204.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER116': class PDFDictionary 
+134 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/opterator) >>
@@ -2123,20 +2196,61 @@ endobj
  0
  0 ]
  /Rect [ 85.69291
- 102.3936
+ 171.5936
  128.4929
- 114.3936 ]
+ 183.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page12': class PDFPage 
-131 0 obj
+% 'Annot.NUMBER117': class PDFDictionary 
+135 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/CLIArgs) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 85.69291
+ 153.5936
+ 124.5929
+ 165.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER118': class PDFDictionary 
+136 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 464.3898
+ 132.5936
+ 503.8498
+ 144.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER119': class PDFDictionary 
+137 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 305.0429
+ 120.5936
+ 323.3829
+ 132.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page13': class PDFPage 
+138 0 obj
 % Page dictionary
-<< /Annots [ 105 0 R
- 106 0 R
- 107 0 R
- 108 0 R
- 109 0 R
+<< /Annots [ 109 0 R
  110 0 R
  111 0 R
  112 0 R
@@ -2157,13 +2271,20 @@ endobj
  127 0 R
  128 0 R
  129 0 R
- 130 0 R ]
- /Contents 179 0 R
+ 130 0 R
+ 131 0 R
+ 132 0 R
+ 133 0 R
+ 134 0 R
+ 135 0 R
+ 136 0 R
+ 137 0 R ]
+ /Contents 185 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -2174,53 +2295,8 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'Annot.NUMBER114': class PDFDictionary 
-132 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/CLIArgs) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 85.69291
- 753.5936
- 124.5929
- 765.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER115': class PDFDictionary 
-133 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 464.3898
- 732.5936
- 503.8498
- 744.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER116': class PDFDictionary 
-134 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 305.0429
- 720.5936
- 323.3829
- 732.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER117': class PDFDictionary 
-135 0 obj
+% 'Annot.NUMBER120': class PDFDictionary 
+139 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com) >>
@@ -2228,14 +2304,14 @@ endobj
  0
  0 ]
  /Rect [ 86.82623
- 645.5936
+ 705.5936
  126.2862
- 657.5936 ]
+ 717.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Annot.NUMBER118': class PDFDictionary 
-136 0 obj
+% 'Annot.NUMBER121': class PDFDictionary 
+140 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://argparse.googlecode.com) >>
@@ -2243,73 +2319,13 @@ endobj
  0
  0 ]
  /Rect [ 415.1627
- 645.5936
+ 705.5936
  459.306
- 657.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER119': class PDFDictionary 
-137 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 468.9894
- 645.5936
- 492.0127
- 657.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER120': class PDFDictionary 
-138 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 62.69291
- 609.5936
- 102.1529
- 621.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER121': class PDFDictionary 
-139 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 83.64556
- 558.5936
- 105.7082
- 570.5936 ]
+ 717.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER122': class PDFDictionary 
-140 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 446.6
- 558.5936
- 502.5727
- 570.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER123': class PDFDictionary 
 141 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2317,15 +2333,75 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 275.6828
- 546.5936
- 297.3688
- 558.5936 ]
+ /Rect [ 468.9894
+ 705.5936
+ 492.0127
+ 717.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER123': class PDFDictionary 
+142 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 156.6329
+ 669.5936
+ 196.0929
+ 681.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER124': class PDFDictionary 
-142 0 obj
+143 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 83.64556
+ 618.5936
+ 105.7082
+ 630.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER125': class PDFDictionary 
+144 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 446.6
+ 618.5936
+ 502.5727
+ 630.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER126': class PDFDictionary 
+145 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/plac) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 275.6828
+ 606.5936
+ 297.3688
+ 618.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER127': class PDFDictionary 
+146 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser) >>
@@ -2333,73 +2409,13 @@ endobj
  0
  0 ]
  /Rect [ 77.19665
- 534.5936
+ 594.5936
  139.4904
- 546.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER125': class PDFDictionary 
-143 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 96.54131
- 522.5936
- 139.0255
- 534.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER126': class PDFDictionary 
-144 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 203.5016
- 489.5936
- 245.8453
- 501.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER127': class PDFDictionary 
-145 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 62.69291
- 414.5936
- 138.7898
- 426.5936 ]
+ 606.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER128': class PDFDictionary 
-146 0 obj
-<< /A << /S /URI
- /Type /Action
- /URI (http://argparse.googlecode.com) >>
- /Border [ 0
- 0
- 0 ]
- /Rect [ 114.6649
- 402.5936
- 154.1249
- 414.5936 ]
- /Subtype /Link
- /Type /Annot >>
-endobj
-% 'Annot.NUMBER129': class PDFDictionary 
 147 0 obj
 << /A << /S /URI
  /Type /Action
@@ -2407,15 +2423,75 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 191.6329
- 390.5936
- 233.8729
- 402.5936 ]
+ /Rect [ 96.54131
+ 582.5936
+ 139.0255
+ 594.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER129': class PDFDictionary 
+148 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 203.5016
+ 549.5936
+ 245.8453
+ 561.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Annot.NUMBER130': class PDFDictionary 
-148 0 obj
+149 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 474.5936
+ 138.7898
+ 486.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER131': class PDFDictionary 
+150 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 114.6649
+ 462.5936
+ 154.1249
+ 474.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER132': class PDFDictionary 
+151 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 191.6329
+ 450.5936
+ 233.8729
+ 462.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER133': class PDFDictionary 
+152 0 obj
 << /A << /S /URI
  /Type /Action
  /URI (http://pypi.python.org/pypi/Clap/0.7) >>
@@ -2423,23 +2499,16 @@ endobj
  0
  0 ]
  /Rect [ 263.3429
- 360.5936
+ 420.5936
  286.6829
- 372.5936 ]
+ 432.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
-% 'Page13': class PDFPage 
-149 0 obj
+% 'Page14': class PDFPage 
+153 0 obj
 % Page dictionary
-<< /Annots [ 132 0 R
- 133 0 R
- 134 0 R
- 135 0 R
- 136 0 R
- 137 0 R
- 138 0 R
- 139 0 R
+<< /Annots [ 139 0 R
  140 0 R
  141 0 R
  142 0 R
@@ -2448,13 +2517,17 @@ endobj
  145 0 R
  146 0 R
  147 0 R
- 148 0 R ]
- /Contents 180 0 R
+ 148 0 R
+ 149 0 R
+ 150 0 R
+ 151 0 R
+ 152 0 R ]
+ /Contents 186 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 167 0 R
+ /Parent 172 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -2465,220 +2538,233 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'R150': class PDFCatalog 
-150 0 obj
+% 'R154': class PDFCatalog 
+154 0 obj
 % Document Root
-<< /Outlines 152 0 R
- /PageLabels 181 0 R
+<< /Outlines 156 0 R
+ /PageLabels 187 0 R
  /PageMode /UseNone
- /Pages 167 0 R
+ /Pages 172 0 R
  /Type /Catalog >>
 endobj
-% 'R151': class PDFInfo 
-151 0 obj
+% 'R155': class PDFInfo 
+155 0 obj
 << /Author (Michele Simionato)
- /CreationDate (D:20100603072443-01'00')
+ /CreationDate (D:20100603103734-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
  /Title (Plac: Parsing the Command Line the Easy Way) >>
 endobj
-% 'R152': class PDFOutlines 
-152 0 obj
-<< /Count 14
- /First 153 0 R
- /Last 166 0 R
+% 'R156': class PDFOutlines 
+156 0 obj
+<< /Count 15
+ /First 157 0 R
+ /Last 171 0 R
  /Type /Outlines >>
 endobj
 % 'Outline.0': class OutlineEntryObject 
-153 0 obj
-<< /Dest [ 48 0 R
+157 0 obj
+<< /Dest [ 46 0 R
  /XYZ
  62.69291
- 311.0236
+ 293.0236
  0 ]
- /Next 154 0 R
- /Parent 152 0 R
+ /Next 158 0 R
+ /Parent 156 0 R
  /Title (The importance of scaling down) >>
 endobj
 % 'Outline.1': class OutlineEntryObject 
-154 0 obj
-<< /Dest [ 56 0 R
+158 0 obj
+<< /Dest [ 58 0 R
  /XYZ
  62.69291
- 615.0236
+ 579.0236
  0 ]
- /Next 155 0 R
- /Parent 152 0 R
- /Prev 153 0 R
+ /Next 159 0 R
+ /Parent 156 0 R
+ /Prev 157 0 R
  /Title (Scripts with required arguments) >>
 endobj
 % 'Outline.2': class OutlineEntryObject 
-155 0 obj
-<< /Dest [ 62 0 R
+159 0 obj
+<< /Dest [ 64 0 R
  /XYZ
  62.69291
- 331.4236
+ 295.4236
  0 ]
- /Next 156 0 R
- /Parent 152 0 R
- /Prev 154 0 R
+ /Next 160 0 R
+ /Parent 156 0 R
+ /Prev 158 0 R
  /Title (Scripts with default arguments) >>
 endobj
 % 'Outline.3': class OutlineEntryObject 
-156 0 obj
-<< /Dest [ 74 0 R
- /XYZ
- 62.69291
- 717.0236
- 0 ]
- /Next 157 0 R
- /Parent 152 0 R
- /Prev 155 0 R
- /Title (Scripts with options) >>
-endobj
-% 'Outline.4': class OutlineEntryObject 
-157 0 obj
-<< /Dest [ 78 0 R
- /XYZ
- 62.69291
- 207.8236
- 0 ]
- /Next 158 0 R
- /Parent 152 0 R
- /Prev 156 0 R
- /Title (Scripts with flags) >>
-endobj
-% 'Outline.5': class OutlineEntryObject 
-158 0 obj
-<< /Dest [ 80 0 R
- /XYZ
- 62.69291
- 383.4236
- 0 ]
- /Next 159 0 R
- /Parent 152 0 R
- /Prev 157 0 R
- /Title (plac for Python 2.X users) >>
-endobj
-% 'Outline.6': class OutlineEntryObject 
-159 0 obj
-<< /Dest [ 87 0 R
- /XYZ
- 62.69291
- 647.8236
- 0 ]
- /Next 160 0 R
- /Parent 152 0 R
- /Prev 158 0 R
- /Title (More features) >>
-endobj
-% 'Outline.7': class OutlineEntryObject 
 160 0 obj
-<< /Dest [ 91 0 R
- /XYZ
- 62.69291
- 542.4849
- 0 ]
- /Next 161 0 R
- /Parent 152 0 R
- /Prev 159 0 R
- /Title (A realistic example) >>
-endobj
-% 'Outline.8': class OutlineEntryObject 
-161 0 obj
-<< /Dest [ 102 0 R
- /XYZ
- 62.69291
- 571.8236
- 0 ]
- /Next 162 0 R
- /Parent 152 0 R
- /Prev 160 0 R
- /Title (Advanced usage) >>
-endobj
-% 'Outline.9': class OutlineEntryObject 
-162 0 obj
-<< /Dest [ 104 0 R
- /XYZ
- 62.69291
- 623.8236
- 0 ]
- /Next 163 0 R
- /Parent 152 0 R
- /Prev 161 0 R
- /Title (Custom annotation objects) >>
-endobj
-% 'Outline.10': class OutlineEntryObject 
-163 0 obj
-<< /Dest [ 131 0 R
+<< /Dest [ 76 0 R
  /XYZ
  62.69291
  671.8236
  0 ]
- /Next 164 0 R
- /Parent 152 0 R
- /Prev 162 0 R
- /Title (plac vs argparse) >>
+ /Next 161 0 R
+ /Parent 156 0 R
+ /Prev 159 0 R
+ /Title (Scripts with options) >>
 endobj
-% 'Outline.11': class OutlineEntryObject 
-164 0 obj
-<< /Dest [ 131 0 R
+% 'Outline.4': class OutlineEntryObject 
+161 0 obj
+<< /Dest [ 80 0 R
  /XYZ
  62.69291
- 182.8236
+ 162.6236
+ 0 ]
+ /Next 162 0 R
+ /Parent 156 0 R
+ /Prev 160 0 R
+ /Title (Scripts with flags) >>
+endobj
+% 'Outline.5': class OutlineEntryObject 
+162 0 obj
+<< /Dest [ 82 0 R
+ /XYZ
+ 62.69291
+ 351.7299
+ 0 ]
+ /Next 163 0 R
+ /Parent 156 0 R
+ /Prev 161 0 R
+ /Title (plac for Python 2.X users) >>
+endobj
+% 'Outline.6': class OutlineEntryObject 
+163 0 obj
+<< /Dest [ 89 0 R
+ /XYZ
+ 62.69291
+ 603.8236
+ 0 ]
+ /Next 164 0 R
+ /Parent 156 0 R
+ /Prev 162 0 R
+ /Title (More features) >>
+endobj
+% 'Outline.7': class OutlineEntryObject 
+164 0 obj
+<< /Dest [ 91 0 R
+ /XYZ
+ 62.69291
+ 494.4849
  0 ]
  /Next 165 0 R
- /Parent 152 0 R
+ /Parent 156 0 R
  /Prev 163 0 R
- /Title (plac vs the rest of the world) >>
+ /Title (Keyword arguments) >>
 endobj
-% 'Outline.12': class OutlineEntryObject 
+% 'Outline.8': class OutlineEntryObject 
 165 0 obj
-<< /Dest [ 149 0 R
+<< /Dest [ 95 0 R
  /XYZ
  62.69291
- 705.0236
+ 582.6236
  0 ]
  /Next 166 0 R
- /Parent 152 0 R
+ /Parent 156 0 R
  /Prev 164 0 R
- /Title (The future) >>
+ /Title (A realistic example) >>
 endobj
-% 'Outline.13': class OutlineEntryObject 
+% 'Outline.9': class OutlineEntryObject 
 166 0 obj
-<< /Dest [ 149 0 R
+<< /Dest [ 106 0 R
  /XYZ
  62.69291
- 594.0236
+ 619.8236
  0 ]
- /Parent 152 0 R
+ /Next 167 0 R
+ /Parent 156 0 R
  /Prev 165 0 R
+ /Title (Advanced usage) >>
+endobj
+% 'Outline.10': class OutlineEntryObject 
+167 0 obj
+<< /Dest [ 108 0 R
+ /XYZ
+ 62.69291
+ 683.8236
+ 0 ]
+ /Next 168 0 R
+ /Parent 156 0 R
+ /Prev 166 0 R
+ /Title (Custom annotation objects) >>
+endobj
+% 'Outline.11': class OutlineEntryObject 
+168 0 obj
+<< /Dest [ 138 0 R
+ /XYZ
+ 62.69291
+ 741.0236
+ 0 ]
+ /Next 169 0 R
+ /Parent 156 0 R
+ /Prev 167 0 R
+ /Title (plac vs argparse) >>
+endobj
+% 'Outline.12': class OutlineEntryObject 
+169 0 obj
+<< /Dest [ 138 0 R
+ /XYZ
+ 62.69291
+ 252.0236
+ 0 ]
+ /Next 170 0 R
+ /Parent 156 0 R
+ /Prev 168 0 R
+ /Title (plac vs the rest of the world) >>
+endobj
+% 'Outline.13': class OutlineEntryObject 
+170 0 obj
+<< /Dest [ 153 0 R
+ /XYZ
+ 62.69291
+ 765.0236
+ 0 ]
+ /Next 171 0 R
+ /Parent 156 0 R
+ /Prev 169 0 R
+ /Title (The future) >>
+endobj
+% 'Outline.14': class OutlineEntryObject 
+171 0 obj
+<< /Dest [ 153 0 R
+ /XYZ
+ 62.69291
+ 654.0236
+ 0 ]
+ /Parent 156 0 R
+ /Prev 170 0 R
  /Title (Trivia: the story behind the name) >>
 endobj
-% 'R167': class PDFPages 
-167 0 obj
+% 'R172': class PDFPages 
+172 0 obj
 % page tree
-<< /Count 13
- /Kids [ 48 0 R
- 56 0 R
- 62 0 R
- 67 0 R
- 74 0 R
- 78 0 R
+<< /Count 14
+ /Kids [ 46 0 R
+ 58 0 R
+ 64 0 R
+ 69 0 R
+ 76 0 R
  80 0 R
- 87 0 R
+ 82 0 R
+ 89 0 R
  91 0 R
- 102 0 R
- 104 0 R
- 131 0 R
- 149 0 R ]
+ 95 0 R
+ 106 0 R
+ 108 0 R
+ 138 0 R
+ 153 0 R ]
  /Type /Pages >>
 endobj
-% 'R168': class PDFStream 
-168 0 obj
+% 'R173': class PDFStream 
+173 0 obj
 % page stream
-<< /Length 9065 >>
+<< /Length 8689 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -2844,17 +2930,17 @@ BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Contents) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 323.0236 cm
+1 0 0 1 62.69291 305.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
-1 0 0 1 0 237 cm
+1 0 0 1 0 255 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (The importance of scaling down) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 237 cm
+1 0 0 1 397.8898 255 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2862,13 +2948,13 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (1) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 219 cm
+1 0 0 1 0 237 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (Scripts with required arguments) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 219 cm
+1 0 0 1 397.8898 237 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2876,13 +2962,13 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (2) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 201 cm
+1 0 0 1 0 219 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (Scripts with default arguments) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 201 cm
+1 0 0 1 397.8898 219 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2890,13 +2976,13 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (3) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 183 cm
+1 0 0 1 0 201 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (Scripts with options) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 183 cm
+1 0 0 1 397.8898 201 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2904,13 +2990,13 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (5) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 165 cm
+1 0 0 1 0 183 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (Scripts with flags) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 165 cm
+1 0 0 1 397.8898 183 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2918,13 +3004,13 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (6) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 147 cm
+1 0 0 1 0 165 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (plac for Python 2.X users) Tj T* ET
 Q
 Q
 q
-1 0 0 1 397.8898 147 cm
+1 0 0 1 397.8898 165 cm
 q
 0 0 .501961 rg
 0 0 .501961 RG
@@ -2932,9 +3018,23 @@ BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (7) Tj T* -66.44 0 Td ET
 Q
 Q
 q
-1 0 0 1 0 129 cm
+1 0 0 1 0 147 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (More features) Tj T* ET
+Q
+Q
+q
+1 0 0 1 397.8898 147 cm
+q
+0 0 .501961 rg
+0 0 .501961 RG
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (8) Tj T* -66.44 0 Td ET
+Q
+Q
+q
+1 0 0 1 0 129 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F2 10 Tf 0 0 .501961 rg (Keyword arguments) Tj T* ET
 Q
 Q
 q
@@ -2942,7 +3042,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (8) Tj T* -66.44 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (9) Tj T* -66.44 0 Td ET
 Q
 Q
 q
@@ -2956,7 +3056,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 66.44 0 Td (9) Tj T* -66.44 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (10) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -2970,7 +3070,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (10) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (11) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -2984,7 +3084,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (11) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (12) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -2998,7 +3098,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (12) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (13) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -3012,7 +3112,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (12) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (13) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -3026,7 +3126,7 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (13) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (14) Tj T* -60.88 0 Td ET
 Q
 Q
 q
@@ -3040,34 +3140,28 @@ q
 q
 0 0 .501961 rg
 0 0 .501961 RG
-BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (13) Tj T* -60.88 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F2 10 Tf 12 TL 60.88 0 Td (14) Tj T* -60.88 0 Td ET
 Q
 Q
 q
 Q
 Q
 q
-1 0 0 1 62.69291 290.0236 cm
+1 0 0 1 62.69291 272.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (The importance of scaling down) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 224.0236 cm
+1 0 0 1 62.69291 206.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm 1.50936 Tw 12 TL /F1 10 Tf 0 0 0 rg (There is no want of command line arguments parsers in the Python world. The standard library alone) Tj T* 0 Tw 1.087126 Tw (contains three different modules: ) Tj 0 0 .501961 rg (getopt ) Tj 0 0 0 rg (\(from the stone age\), ) Tj 0 0 .501961 rg (optparse ) Tj 0 0 0 rg (\(from Python 2.3\) and ) Tj 0 0 .501961 rg (argparse) Tj T* 0 Tw .223735 Tw 0 0 0 rg (\(from Python 2.7\). All of them are quite powerful and especially ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (is an industrial strength solution;) Tj T* 0 Tw 1.40311 Tw (unfortunately, all of them feature a non-zero learning curve and a certain verbosity. They do not scale) Tj T* 0 Tw (down well enough, at least in my opinion.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 134.0236 cm
+1 0 0 1 62.69291 116.0236 cm
 q
 BT 1 0 0 1 0 76.82 Tm .051984 Tw 12 TL /F1 10 Tf 0 0 0 rg (It should not be necessary to stress the importance ) Tj 0 0 .501961 rg (scaling down) Tj 0 0 0 rg (; nevertheless most people are obsessed) Tj T* 0 Tw 1.385868 Tw (with features and concerned with the possibility of scaling up, whereas I think that we should be even) Tj T* 0 Tw .996457 Tw (more concerned with the issue of scaling down. This is an old meme in the computing world: programs) Tj T* 0 Tw 2.499984 Tw (should address the common cases simply, simple things should be kept simple, while at the same) Tj T* 0 Tw .535868 Tw (keeping difficult things possible. ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (adhere as much as possible to this philosophy and it is designed to) Tj T* 0 Tw 2.44686 Tw (handle well the simple cases, while retaining the ability to handle complex cases by relying on the) Tj T* 0 Tw (underlying power of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 92.02362 cm
-q
-BT 1 0 0 1 0 28.82 Tm 1.488221 Tw 12 TL /F1 10 Tf 0 0 0 rg (Technically ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is just a simple wrapper over ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (which hides most of its complexity by using a ) Tj T* 0 Tw .203318 Tw (declarative interface: the argument parser is inferred rather than written down by imperatively. Still, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is ) Tj T* 0 Tw .125984 Tw (surprisingly scalable upwards, even without using the underlying ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. I have been using Python for 8) Tj T* 0 Tw ET
 Q
 Q
 q
@@ -3081,38 +3175,38 @@ Q
 endstream
 
 endobj
-% 'R169': class PDFStream 
-169 0 obj
+% 'R174': class PDFStream 
+174 0 obj
 % page stream
-<< /Length 4921 >>
+<< /Length 5349 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 729.0236 cm
+1 0 0 1 62.69291 693.0236 cm
 q
-BT 1 0 0 1 0 28.82 Tm 1.618876 Tw 12 TL /F1 10 Tf 0 0 0 rg (years and in my experience it is extremely unlikely that you will ever need to go beyond the features) Tj T* 0 Tw 1.776457 Tw (provided by the declarative interface of ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (: they should be more than enough for 99.9% of the use) Tj T* 0 Tw (cases.) Tj T* ET
+BT 1 0 0 1 0 64.82 Tm 1.488221 Tw 12 TL /F1 10 Tf 0 0 0 rg (Technically ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is just a simple wrapper over ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (which hides most of its complexity by using a) Tj T* 0 Tw .203318 Tw (declarative interface: the argument parser is inferred rather than written down by imperatively. Still, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is) Tj T* 0 Tw .125984 Tw (surprisingly scalable upwards, even without using the underlying ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. I have been using Python for 8) Tj T* 0 Tw 1.618876 Tw (years and in my experience it is extremely unlikely that you will ever need to go beyond the features) Tj T* 0 Tw 1.776457 Tw (provided by the declarative interface of ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (: they should be more than enough for 99.9% of the use) Tj T* 0 Tw (cases.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 627.0236 cm
+1 0 0 1 62.69291 591.0236 cm
 q
 BT 1 0 0 1 0 88.82 Tm 1.540888 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is targetting especially unsophisticated users, programmers, sys-admins, scientists and in general) Tj T* 0 Tw .81284 Tw (people writing throw-away scripts for themselves, choosing the command line interface because it is the) Tj T* 0 Tw .471751 Tw (quick and simple. Such users are not interested in features, they are interested in a small learning curve:) Tj T* 0 Tw .984988 Tw (they just want to be able to write a simple command line tool from a simple specification, not to build a) Tj T* 0 Tw 1.091235 Tw (command line parser by hand. Unfortunately, the modules in the standard library forces them to go the) Tj T* 0 Tw .014104 Tw (hard way. They are designed to implement power user tools and they have a non-trivial learning curve. On) Tj T* 0 Tw 1.584104 Tw (the contrary, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is designed to be simple to use and extremely concise, as the examples below will) Tj T* 0 Tw (show.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 594.0236 cm
+1 0 0 1 62.69291 558.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with required arguments) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 528.0236 cm
+1 0 0 1 62.69291 492.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .352209 Tw 12 TL /F1 10 Tf 0 0 0 rg (Let me start with the simplest possible thing: a script that takes a single argument and does something to) Tj T* 0 Tw 1.022485 Tw (it. It cannot get simpler than that, unless you consider a script without command line arguments, where) Tj T* 0 Tw .735488 Tw (there is nothing to parse. Still, it is a use case ) Tj /F5 10 Tf (extremely common) Tj /F1 10 Tf (: I need to write scripts like that nearly) Tj T* 0 Tw .486655 Tw (every day, I wrote hundreds of them in the last few years and I have never been happy. Here is a typical) Tj T* 0 Tw (example of code I have been writing by hand for years:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 326.8236 cm
+1 0 0 1 62.69291 290.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3133,7 +3227,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 222.8236 cm
+1 0 0 1 62.69291 186.8236 cm
 q
 BT 1 0 0 1 0 88.82 Tm .880651 Tw 12 TL /F1 10 Tf 0 0 0 rg (As you see the whole ) Tj /F4 10 Tf (if __name__ == '__main__' ) Tj /F1 10 Tf (block \(nine lines\) is essentially boilerplate that) Tj T* 0 Tw 1.67881 Tw (should not exists. Actually I think the language should recognize the main function and pass to it the) Tj T* 0 Tw 3.096905 Tw (command line arguments automatically; unfortunaly this is unlikely to happen. I have been writing) Tj T* 0 Tw 1.767356 Tw (boilerplate like this in hundreds of scripts for years, and every time I ) Tj /F5 10 Tf (hate ) Tj /F1 10 Tf (it. The purpose of using a) Tj T* 0 Tw 1.47229 Tw (scripting language is convenience and trivial things should be trivial. Unfortunately the standard library) Tj T* 0 Tw .69881 Tw (does not help for this incredibly common use case. Using ) Tj 0 0 .501961 rg (getopt ) Tj 0 0 0 rg (and ) Tj 0 0 .501961 rg (optparse ) Tj 0 0 0 rg (does not help, since they) Tj T* 0 Tw .894104 Tw (are intended to manage options and not positional arguments; the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (module helps a bit and it is) Tj T* 0 Tw (able to reduce the boilerplate from nine lines to six lines:) Tj T* ET
 Q
@@ -3149,11 +3243,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (# example2.py) Tj T* (def main\(dsn\):) Tj T* (    "Do something on the database") Tj T* (    print\(dsn\)) Tj T* (    # ...) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import argparse) Tj T* (    p = argparse.ArgumentParser\(\)) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (# example2.py) Tj T* (def main\(dsn\):) Tj T* (    "Do something on the database") Tj T* (    print\(dsn\)) Tj T* (    # ...) Tj T*  T* ET
 Q
 Q
 Q
@@ -3170,14 +3264,14 @@ Q
 endstream
 
 endobj
-% 'R170': class PDFStream 
-170 0 obj
+% 'R175': class PDFStream 
+175 0 obj
 % page stream
-<< /Length 4017 >>
+<< /Length 3933 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 715.8236 cm
+1 0 0 1 62.69291 679.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3187,31 +3281,31 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (    p.add_argument\('dsn'\)) Tj T* (    arg = p.parse_args\(\)) Tj T* (    main\(arg.dsn\)) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (if __name__ == '__main__':) Tj T* (    import argparse) Tj T* (    p = argparse.ArgumentParser\(\)) Tj T* (    p.add_argument\('dsn'\)) Tj T* (    arg = p.parse_args\(\)) Tj T* (    main\(arg.dsn\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 659.8236 cm
+1 0 0 1 62.69291 623.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 40.82 Tm /F1 10 Tf 12 TL 1.644269 Tw (However saving three lines does not justify introducing the external dependency: most people will not) Tj T* 0 Tw 2.206303 Tw (switch to Python 2.7, which at the time of this writing is just about to be released, for many years.) Tj T* 0 Tw .678488 Tw (Moreover, it just feels too complex to instantiate a class and to define a parser by hand for such a trivial) Tj T* 0 Tw (task.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 629.8236 cm
+1 0 0 1 62.69291 593.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.123145 Tw 12 TL /F1 10 Tf 0 0 0 rg (The ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (module is designed to manage well such use cases, and it is able to reduce the original nine) Tj T* 0 Tw (lines of boiler plate to two lines. With the ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (module all you need to write is) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 512.6236 cm
+1 0 0 1 62.69291 476.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3232,13 +3326,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 480.6236 cm
+1 0 0 1 62.69291 444.6236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .929986 Tw 12 TL /F1 10 Tf 0 0 0 rg (The ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (module provides for free \(actually the work is done by the underlying ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (module\) a nice) Tj T* 0 Tw (usage message:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 363.4236 cm
+1 0 0 1 62.69291 327.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3259,19 +3353,19 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 343.4236 cm
+1 0 0 1 62.69291 307.4236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (This is only the tip of the iceberg: ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is able to do much more than that.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 310.4236 cm
+1 0 0 1 62.69291 274.4236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with default arguments) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 280.4236 cm
+1 0 0 1 62.69291 244.4236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL 1.33436 Tw (The need to have suitable defaults for command line arguments is quite common. For instance I have) Tj T* 0 Tw (encountered this use case at work hundreds of times:) Tj T* ET
@@ -3288,10 +3382,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 180 re B*
+n -6 -6 468.6898 144 re B*
 Q
 q
-BT 1 0 0 1 0 161.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (# example4.py) Tj T* (from datetime import datetime) Tj T*  T* (def main\(dsn, table='product', today=datetime.today\(\)\):) Tj T* (    "Do something on the database") Tj T* (    print\(dsn, table, today\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import sys) Tj T* (    args = sys.argv[1:]) Tj T* (    if not args:) Tj T* (        sys.exit\('usage: python %s dsn' % sys.argv[0]\)) Tj T* (    elif len\(args\) ) Tj (>) Tj ( 2:) Tj T* (        sys.exit\('Unrecognized arguments: %s' % ' '.join\(argv[2:]\)\)) Tj T* ET
+BT 1 0 0 1 0 125.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (# example4.py) Tj T* (from datetime import datetime) Tj T*  T* (def main\(dsn, table='product', today=datetime.today\(\)\):) Tj T* (    "Do something on the database") Tj T* (    print\(dsn, table, today\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import sys) Tj T* (    args = sys.argv[1:]) Tj T* (    if not args:) Tj T* ET
 Q
 Q
 Q
@@ -3308,14 +3402,14 @@ Q
 endstream
 
 endobj
-% 'R171': class PDFStream 
-171 0 obj
+% 'R176': class PDFStream 
+176 0 obj
 % page stream
-<< /Length 4143 >>
+<< /Length 4252 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 739.8236 cm
+1 0 0 1 62.69291 703.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3325,23 +3419,23 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 24 re B*
+n -6 -6 468.6898 60 re B*
 Q
 q
-BT 1 0 0 1 0 5.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (    main\(*args\)) Tj T* ET
+BT 1 0 0 1 0 41.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (        sys.exit\('usage: python %s dsn' % sys.argv[0]\)) Tj T* (    elif len\(args\) ) Tj (>) Tj ( 2:) Tj T* (        sys.exit\('Unrecognized arguments: %s' % ' '.join\(argv[2:]\)\)) Tj T* (    main\(*args\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 671.8236 cm
+1 0 0 1 62.69291 635.8236 cm
 q
 BT 1 0 0 1 0 52.82 Tm 1.138935 Tw 12 TL /F1 10 Tf 0 0 0 rg (Here I want to perform a query on a database table, by extracting the today's data: it makes sense for) Tj T* 0 Tw .299988 Tw /F4 10 Tf (today ) Tj /F1 10 Tf (to be a default argument. If there is a most used table \(in this example a table called ) Tj /F4 10 Tf ('product') Tj /F1 10 Tf (\)) Tj T* 0 Tw 2.828735 Tw (it also makes sense to make it a default argument. Performing the parsing of the command lines) Tj T* 0 Tw .083735 Tw (arguments by hand takes 8 ugly lines of boilerplate \(using ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (would require about the same number) Tj T* 0 Tw (of lines\). With ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (the entire ) Tj /F4 10 Tf (__main__ ) Tj /F1 10 Tf (block reduces to the usual two lines:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 626.6236 cm
+1 0 0 1 62.69291 590.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3362,14 +3456,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 606.6236 cm
+1 0 0 1 62.69291 570.6236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (In other words, six lines of boilerplate have been removed, and we get the usage message for free:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 477.4236 cm
+1 0 0 1 62.69291 441.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3390,13 +3484,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 445.4236 cm
+1 0 0 1 62.69291 409.4236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .396235 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (manages transparently even the case when you want to pass a variable number of arguments. Here) Tj T* 0 Tw (is an example, a script running on a database a series of SQL scripts:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 256.2236 cm
+1 0 0 1 62.69291 220.2236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3416,13 +3510,13 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 224.2236 cm
+1 0 0 1 62.69291 188.2236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .563876 Tw 12 TL /F1 10 Tf 0 0 0 rg (Using ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (, you can just replace the ) Tj /F4 10 Tf (__main__ ) Tj /F1 10 Tf (block with the usual two lines \(I have defined an Emacs) Tj T* 0 Tw (keybinding for them\) and then you get the following nice usage message:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 107.0236 cm
+1 0 0 1 62.69291 95.02362 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3432,11 +3526,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 108 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 89.71 Tm /F4 10 Tf 12 TL (usage: example7.py [-h] dsn [scripts [scripts ...]]) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T* (  scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (usage: example7.py [-h] dsn [scripts [scripts ...]]) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T* (  scripts) Tj T*  T* ET
 Q
 Q
 Q
@@ -3453,1034 +3547,10 @@ Q
 endstream
 
 endobj
-% 'R172': class PDFStream 
-172 0 obj
-% page stream
-<< /Length 4981 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 729.0236 cm
-q
-BT 1 0 0 1 0 28.82 Tm .92881 Tw 12 TL /F1 10 Tf 0 0 0 rg (The examples here should have made clear that ) Tj /F5 10 Tf (plac is able to figure out the command line arguments) Tj T* 0 Tw .899988 Tw (parser to use from the signature of the main function) Tj /F1 10 Tf (. This is the whole idea behind ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (: if the intent is) Tj T* 0 Tw (clear, let's the machine take care of the details.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 696.0236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with options) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 606.0236 cm
-q
-BT 1 0 0 1 0 76.82 Tm .046098 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is surprising how few command line scripts with options I have written over the years \(probably less than) Tj T* 0 Tw 1.02311 Tw (a hundred\), compared to the number of scripts with positional arguments I wrote \(certainly more than a) Tj T* 0 Tw .177045 Tw (thousand of them\). Still, this use case cannot be neglected. The standard library modules \(all of them\) are) Tj T* 0 Tw 2.30686 Tw (quite verbose when it comes to specifying the options and frankly I have never used them directly.) Tj T* 0 Tw 3.10561 Tw (Instead, I have always relied on an old recipe of mine, the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, which provides a) Tj T* 0 Tw 2.369982 Tw (convenient wrapper over ) Tj 0 0 .501961 rg (optionparse) Tj 0 0 0 rg (. Alternatively, in the simplest cases, I have just performed the) Tj T* 0 Tw (parsing by hand.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 564.0236 cm
-q
-BT 1 0 0 1 0 28.82 Tm .476098 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is inspired to the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, in the sense that it delivers the programmer from the burden of) Tj T* 0 Tw .011488 Tw (writing the parser, but is less of a hack: instead of extracting the parser from the docstring of the module, it) Tj T* 0 Tw (extracts it from the signature of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 534.0236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .319987 Tw 12 TL /F1 10 Tf 0 0 0 rg (The idea comes from the ) Tj /F5 10 Tf (function annotations ) Tj /F1 10 Tf (concept, a new feature of Python 3. An example is worth a) Tj T* 0 Tw (thousand words, so here it is:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 416.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 108 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 89.71 Tm /F4 10 Tf 12 TL (# example8.py) Tj T* (def main\(command: \("SQL query", 'option', 'c'\), dsn\):) Tj T* (    if command:) Tj T* (        print\('executing %s on %s' % \(command, dsn\)\)) Tj T* (        # ...) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 348.8236 cm
-q
-BT 1 0 0 1 0 52.82 Tm .789983 Tw 12 TL /F1 10 Tf 0 0 0 rg (As you see, the argument ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (has been annotated with the tuple ) Tj /F4 10 Tf (\("SQL query", 'option',) Tj T* 0 Tw .358409 Tw ('c'\)) Tj /F1 10 Tf (: the first string is the help string which will appear in the usage message, the second string tell ) Tj 0 0 .501961 rg (plac) Tj T* 0 Tw .560988 Tw 0 0 0 rg (that ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (is an option and the third string that it can be abbreviated with the letter ) Tj /F4 10 Tf (c) Tj /F1 10 Tf (. Of course, the) Tj T* 0 Tw .89284 Tw (long option format \() Tj /F4 10 Tf (--command=) Tj /F1 10 Tf (\) comes from the argument name. The resulting usage message is the) Tj T* 0 Tw (following:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 219.6236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example8.py [-h] [-c COMMAND] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -c COMMAND, --command COMMAND) Tj T* (                        SQL query) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 199.6236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here are two examples of usage:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 118.4236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 72 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py -c"select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T*  T* ($ python3 example8.py --command="select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (5) Tj T* -238.1649 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R173': class PDFStream 
-173 0 obj
-% page stream
-<< /Length 5467 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 741.0236 cm
-q
-BT 1 0 0 1 0 16.82 Tm 1.34104 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that if the option is not passed, the variable ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (will get the value ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (. It is possible to) Tj T* 0 Tw (specify a non-trivial default for an option. Here is an example:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 647.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (# example8_.py) Tj T* (def main\(dsn, command: \("SQL query", 'option', 'c'\)='select * from table'\):) Tj T* (    print\('executing %r on %s' % \(command, dsn\)\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 627.8236 cm
-q
-BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Now if you do not pass the ) Tj /F4 10 Tf (command option) Tj /F1 10 Tf (, the default query will be executed:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 582.6236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python example8_.py dsn) Tj T* (executing 'select * from table' on dsn) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 562.6236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Positional argument can be annotated too:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 505.4236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (def main\(command: \("SQL query", 'option', 'c'\),) Tj T* (         dsn: \("Database dsn", 'positional', None\)\):) Tj T* (    ...) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 461.4236 cm
-q
-BT 1 0 0 1 0 28.82 Tm 3.203318 Tw 12 TL /F1 10 Tf 0 0 0 rg (Of course explicit is better than implicit, an no special cases are special enough, but sometimes) Tj T* 0 Tw .16832 Tw (practicality beats purity, so ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is able to use smart defaults; in particular you can omit the third argument) Tj T* 0 Tw (and write:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 404.2236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (def main\(command: \("SQL query", 'option'\),) Tj T* (         dsn: \("Database dsn", 'positional'\)\):) Tj T* (    ...) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 360.2236 cm
-q
-BT 1 0 0 1 0 28.82 Tm 1.123876 Tw 12 TL /F1 10 Tf 0 0 0 rg (When omitted, the third argument is assumed to be the first letter of the variable name for options and) Tj T* 0 Tw .334983 Tw (flags, and ) Tj /F4 10 Tf (None ) Tj /F1 10 Tf (for positional arguments. Moreover, smart enough to convert help messages into tuples;) Tj T* 0 Tw (in other words, you can just write ) Tj /F4 10 Tf ("Database dsn" ) Tj /F1 10 Tf (instead of ) Tj /F4 10 Tf (\("Database dsn", 'positional'\)) Tj /F1 10 Tf (.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 342.2236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (I should notice that varargs \(starred-arguments\) can be annotated too; here is an example:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 297.0236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (def main\(dsn: "Database dsn", *scripts: "SQL scripts"\):) Tj T* (    ...) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 277.0236 cm
-q
-BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (This is a valid signature for ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (, which will recognize the help strings for both ) Tj /F4 10 Tf (dsn ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (scripts) Tj /F1 10 Tf (:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 219.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (positional arguments:) Tj T* (  dsn                          Database dsn) Tj T* (  scripts                      SQL scripts) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 186.8236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with flags) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 156.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .765868 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (also recognizes flags, i.e. boolean options which are ) Tj /F4 10 Tf (True ) Tj /F1 10 Tf (if they are passed to the command line) Tj T* 0 Tw (and ) Tj /F4 10 Tf (False ) Tj /F1 10 Tf (if they are absent. Here is an example:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 101.3717 cm
-q
-q
-.96447 0 0 .96447 0 0 cm
-q
-1 0 0 1 6.6 6.843137 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 486 48 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (# example9.py) Tj T*  T* (def main\(verbose: \('prints more info', 'flag', 'v'\), dsn: 'connection string'\):) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (6) Tj T* -238.1649 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R174': class PDFStream 
-174 0 obj
-% page stream
-<< /Length 4666 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 679.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (    if verbose:) Tj T* (        print\('connecting to %s' % dsn\)) Tj T* (    # ...) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 550.6236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL ($ python3 example9.py -h) Tj T* (usage: example9.py [-h] [-v] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn            connection string) Tj T*  T* (optional arguments:) Tj T* (  -h, --help     show this help message and exit) Tj T* (  -v, --verbose  prints more info) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 505.4236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python3 example9.py -v dsn) Tj T* (connecting to dsn) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 461.4236 cm
-q
-BT 1 0 0 1 0 28.82 Tm .31408 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that it is an error trying to specify a default for flags: the default value for a flag is always ) Tj /F4 10 Tf (False) Tj /F1 10 Tf (. If) Tj T* 0 Tw 2.652485 Tw (you feel the need to implement non-boolean flags, you should use an option with two choices, as) Tj T* 0 Tw (explained in the "more features" section.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 395.4236 cm
-q
-BT 1 0 0 1 0 52.82 Tm 5.832651 Tw 12 TL /F1 10 Tf 0 0 0 rg (For consistency with the way the usage message is printed, I suggest you to follow the) Tj T* 0 Tw 1.895433 Tw (Flag-Option-Required-Default \(FORD\) convention: in the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function write first the flag arguments,) Tj T* 0 Tw .881235 Tw (then the option arguments, then the required arguments and finally the default arguments. This is just a) Tj T* 0 Tw .110574 Tw (convention and you are not forced to use it, except for the default arguments \(including the varargs\) which) Tj T* 0 Tw (must stay at the end as it is required by the Python syntax.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 362.4236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac for Python 2.X users) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 296.4236 cm
-q
-BT 1 0 0 1 0 52.82 Tm .211807 Tw 12 TL /F1 10 Tf 0 0 0 rg (I do not use Python 3. At work we are just starting to think about migrating to Python 2.6. It will take years) Tj T* 0 Tw .304724 Tw (before we think to migrate to Python 3. I am pretty much sure most Pythonistas are in the same situation.) Tj T* 0 Tw 1.459984 Tw (Therefore ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (provides a way to work with function annotations even in Python 2.X \(including Python) Tj T* 0 Tw .226098 Tw (2.3\). There is no magic involved; you just need to add the annotations by hand. For instance the annotate) Tj T* 0 Tw (function declaration) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 251.2236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (def main\(dsn: "Database dsn", *scripts: "SQL scripts"\):) Tj T* (    ...) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 231.2236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (is equivalent to the following code:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 150.0236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 72 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* (main.__annotations__ = dict\() Tj T* (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 106.0236 cm
-q
-BT 1 0 0 1 0 28.82 Tm .536098 Tw 12 TL /F1 10 Tf 0 0 0 rg (One should be careful to match the keys of the annotation dictionary with the names of the arguments in) Tj T* 0 Tw 3.347485 Tw (the annotated function; for lazy people with Python 2.4 available the simplest way is to use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator that performs the check for you:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (7) Tj T* -238.1649 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R175': class PDFStream 
-175 0 obj
-% page stream
-<< /Length 5471 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 691.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 72 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL (@plac.annotations\() Tj T* (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 659.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm 1.422164 Tw 12 TL /F1 10 Tf 0 0 0 rg (In the rest of this article I will assume that you are using Python 2.X with ) Tj /F4 10 Tf (X >) Tj (= 4 ) Tj /F1 10 Tf (and I will use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator. Notice however that the tests for ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (runs even on Python 2.3.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 626.8236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (More features) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 572.8236 cm
-q
-BT 1 0 0 1 0 40.82 Tm .486179 Tw 12 TL /F1 10 Tf 0 0 0 rg (Even if one of the goals of plac is to have a learning curve of ) Tj /F5 10 Tf (minutes) Tj /F1 10 Tf (, compared to the learning curve of) Tj T* 0 Tw 1.356303 Tw /F5 10 Tf (hours ) Tj /F1 10 Tf (of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (, it does not mean that I have removed all the features of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually a lot of) Tj T* 0 Tw 1.71686 Tw 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (power persists in ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (. Until now, I have only showed simple annotations, but in general an) Tj T* 0 Tw (annotation is a 5-tuple of the form) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 566.8236 cm
-Q
-q
-1 0 0 1 62.69291 554.8236 cm
-0 0 0 rg
-BT /F3 10 Tf 12 TL ET
-BT 1 0 0 1 0 2 Tm  T* ET
-q
-1 0 0 1 20 0 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 5.71 Tm /F4 10 Tf 12 TL (\(help, kind, abbrev, type, choices, metavar\)) Tj T* ET
-Q
-Q
-q
-Q
-Q
-q
-1 0 0 1 62.69291 554.8236 cm
-Q
-q
-1 0 0 1 62.69291 512.8236 cm
-q
-BT 1 0 0 1 0 28.82 Tm 1.068735 Tw 12 TL /F1 10 Tf 0 0 0 rg (where ) Tj /F4 10 Tf (help ) Tj /F1 10 Tf (is the help message, ) Tj /F4 10 Tf (kind ) Tj /F1 10 Tf (is a string in the set { ) Tj /F4 10 Tf ("flag") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("option") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("positional") Tj /F1 10 Tf (},) Tj T* 0 Tw 1.711163 Tw /F4 10 Tf (abbrev ) Tj /F1 10 Tf (is a one-character string, ) Tj /F4 10 Tf (type ) Tj /F1 10 Tf (is a callable taking a string in input, ) Tj /F4 10 Tf (choices ) Tj /F1 10 Tf (is a discrete) Tj T* 0 Tw (sequence of values and ) Tj /F4 10 Tf (metavar ) Tj /F1 10 Tf (is a string.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 482.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm 1.05061 Tw 12 TL /F4 10 Tf 0 0 0 rg (type ) Tj /F1 10 Tf (is used to automagically convert the command line arguments from the string type to any Python) Tj T* 0 Tw (type; by default there is no convertion and ) Tj /F4 10 Tf (type=None) Tj /F1 10 Tf (.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 452.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm 2.904692 Tw 12 TL /F4 10 Tf 0 0 0 rg (choices ) Tj /F1 10 Tf (is used to restrict the number of the valid options; by default there is no restriction i.e.) Tj T* 0 Tw /F4 10 Tf (choices=None) Tj /F1 10 Tf (.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 410.8236 cm
-q
-BT 1 0 0 1 0 28.82 Tm 1.071751 Tw 12 TL /F4 10 Tf 0 0 0 rg (metavar ) Tj /F1 10 Tf (is used to change the argument name in the usage message \(and only there\); by default the) Tj T* 0 Tw 1.056654 Tw (metavar is ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (: this means that the name in the usage message is the same as the argument name,) Tj T* 0 Tw (unless the argument has a default and in such a case is equal to the stringified form of the default.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 392.8236 cm
-q
-BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Here is an example showing many of the features \(taken from the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (documentation\):) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 184.4467 cm
-q
-q
-.976496 0 0 .976496 0 0 cm
-q
-1 0 0 1 6.6 6.758862 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 480 204 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 185.71 Tm /F4 10 Tf 12 TL (# example10.py) Tj T* (import plac) Tj T*  T* (@plac.annotations\() Tj T* (operator=\("The name of an operator", 'positional', None, str, ['add', 'mul']\),) Tj T* (numbers=\("A number", 'positional', None, float, None, "n"\)\)) Tj T* (def main\(operator, *numbers\):) Tj T* (    "A script to add and multiply numbers") Tj T* (    op = getattr\(float, '__%s__' % operator\)) Tj T* (    result = dict\(add=0.0, mul=1.0\)[operator]) Tj T* (    for n in numbers:) Tj T* (        result = op\(result, n\)) Tj T* (    print\(result\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 164.4467 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 95.24669 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 60 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (usage: example10.py [-h] {add,mul} [n [n ...]]) Tj T*  T* (A script to add and multiply numbers) Tj T*  T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (8) Tj T* -238.1649 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R176': class PDFStream 
-176 0 obj
-% page stream
-<< /Length 3577 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 679.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (positional arguments:) Tj T* (  {add,mul}   The name of an operator) Tj T* (  n           A number) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 647.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .15186 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function has been automatically added to the usage message. Here) Tj T* 0 Tw (are a couple of examples of use:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 554.4849 cm
-q
-q
-.87797 0 0 .87797 0 0 cm
-q
-1 0 0 1 6.6 7.517338 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 534 96 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 77.71 Tm /F4 10 Tf 12 TL ($ python example10.py add 1 2 3 4) Tj T* (10.0) Tj T* ($ python example10.py mul 1 2 3 4) Tj T* (24.0) Tj T* ($ python example10.py ad 1 2 3 4 # a mispelling error) Tj T* (usage: example10.py [-h] {add,mul} [n [n ...]]) Tj T* (example10.py: error: argument operator: invalid choice: 'ad' \(choose from 'add', 'mul'\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 521.4849 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (A realistic example) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 479.4849 cm
-q
-BT 1 0 0 1 0 28.82 Tm 1.234488 Tw 12 TL /F1 10 Tf 0 0 0 rg (Here is a more realistic script using most of the features of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (to run SQL queries on a database by) Tj T* 0 Tw .930697 Tw (relying on ) Tj 0 0 .501961 rg (SQLAlchemy) Tj 0 0 0 rg (. Notice the usage of the ) Tj /F4 10 Tf (type ) Tj /F1 10 Tf (feature to automagically convert a SQLAlchemy) Tj T* 0 Tw (connection string into a ) Tj 0 0 .501961 rg (SqlSoup ) Tj 0 0 0 rg (object:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 146.2849 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 324 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 305.71 Tm /F4 10 Tf 12 TL (# dbcli.py) Tj T* (import plac) Tj T* (from sqlalchemy.ext.sqlsoup import SqlSoup) Tj T*  T* (@plac.annotations\() Tj T* (    db=\("Connection string", 'positional', None, SqlSoup\),) Tj T* (    header=\("Header", 'flag', 'H'\),) Tj T* (    sqlcmd=\("SQL command", 'option', 'c', str, None, "SQL"\),) Tj T* (    delimiter=\("Column separator", 'option', 'd'\),) Tj T* (    scripts="SQL scripts",) Tj T* (    \)) Tj T* (def main\(db, header, sqlcmd, delimiter="|", *scripts\):) Tj T* (    "A script to run queries and SQL scripts on a database") Tj T* (    print\('Working on %s' % db.bind.url\)) Tj T* (    if sqlcmd:) Tj T* (        result = db.bind.execute\(sqlcmd\)) Tj T* (        if header: # print the header) Tj T* (            print\(delimiter.join\(result.keys\(\)\)\)) Tj T* (        for row in result: # print the rows) Tj T* (            print\(delimiter.join\(map\(str, row\)\)\)) Tj T*  T* (    for script in scripts:) Tj T* (        db.bind.execute\(file\(script\).read\(\)\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 126.2849 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (9) Tj T* -238.1649 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
 % 'R177': class PDFStream 
 177 0 obj
 % page stream
-<< /Length 5637 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 583.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 180 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 161.71 Tm /F4 10 Tf 12 TL ($ python dbcli.py -h) Tj T* (usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]) Tj T*  T* (A script to run queries and SQL scripts on a database) Tj T*  T* (positional arguments:) Tj T* (  db                    Connection string) Tj T* (  scripts               SQL scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -H, --header          Header) Tj T* (  -c SQL, --sqlcmd SQL  SQL command) Tj T* (  -d |, --delimiter |   Column separator) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 550.8236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Advanced usage) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 520.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .094988 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (relies on a ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (for all of the heavy lifting work and it is possible to leverage on ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (features) Tj T* 0 Tw (directly or indirectly.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 478.8236 cm
-q
-BT 1 0 0 1 0 28.82 Tm 5.575697 Tw 12 TL /F1 10 Tf 0 0 0 rg (For instance, you can make invisible an argument in the usage message simply by using) Tj T* 0 Tw 1.435976 Tw /F4 10 Tf ('==SUPPRESS==' ) Tj /F1 10 Tf (as help string \(or ) Tj /F4 10 Tf (argparse.SUPPRESS) Tj /F1 10 Tf (\). Similarly, you can use ) Tj 0 0 .501961 rg (argparse.FileType) Tj T* 0 Tw 0 0 0 rg (directly.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 424.8236 cm
-q
-BT 1 0 0 1 0 40.82 Tm 1.639213 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is also possible to pass options to the underlying ) Tj /F4 10 Tf (argparse.ArgumentParser ) Tj /F1 10 Tf (object \(currently it) Tj T* 0 Tw .285529 Tw (accepts the default arguments ) Tj /F4 10 Tf (description) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (epilog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (usage) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (add_help) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (argument_default) Tj /F1 10 Tf (,) Tj T* 0 Tw 1.439953 Tw /F4 10 Tf (parents) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (fromfile_prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (conflict_handler) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (formatter_class) Tj /F1 10 Tf (\). It) Tj T* 0 Tw (is enough to set such attributes on the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function. For instance) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 355.6236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 60 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (def main\(...\):) Tj T* (    pass) Tj T*  T* (main.add_help = False) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 275.6236 cm
-q
-BT 1 0 0 1 0 64.82 Tm 1.256457 Tw 12 TL /F1 10 Tf 0 0 0 rg (disable the recognition of the help flag ) Tj /F4 10 Tf (-h, --help) Tj /F1 10 Tf (. This is not particularly elegant, but I assume the) Tj T* 0 Tw .275703 Tw (typical user of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (will be happy with the defaults and would not want to change them; still it is possible if) Tj T* 0 Tw .365542 Tw (she wants to. For instance, by setting the ) Tj /F4 10 Tf (description ) Tj /F1 10 Tf (attribute, it is possible to add a comment to the) Tj T* 0 Tw .602339 Tw (usage message \(by default the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function is used as description\). It is also possible) Tj T* 0 Tw .322988 Tw (to change the option prefix; for instance if your script must run under Windows and you want to use "/" as) Tj T* 0 Tw (option prefix you can add the lines:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 230.4236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 36 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (main.prefix_chars='-/') Tj T* (main.short_prefix = '/') Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 162.4236 cm
-q
-BT 1 0 0 1 0 52.82 Tm 3.694269 Tw 12 TL /F1 10 Tf 0 0 0 rg (The recognition of the ) Tj /F4 10 Tf (short_prefix ) Tj /F1 10 Tf (attribute is a ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (extension; there is also a companion) Tj T* 0 Tw 1.348314 Tw /F4 10 Tf (long_prefix ) Tj /F1 10 Tf (attribute with default value of ) Tj /F4 10 Tf ("--") Tj /F1 10 Tf (. ) Tj /F4 10 Tf (prefix_chars ) Tj /F1 10 Tf (is an ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (feature. Interested) Tj T* 0 Tw 1.419984 Tw (readers should read the documentation of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (to understand the meaning of the other options. If) Tj T* 0 Tw .098935 Tw (there is a set of options that you use very often, you may consider writing a decorator adding such options) Tj T* 0 Tw (to the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function for you. For simplicity, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (does not perform any magic of that kind.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 132.4236 cm
-q
-BT 1 0 0 1 0 16.82 Tm 7.709147 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is possible to access directly the underlying ) Tj 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object, by invoking the) Tj T* 0 Tw /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (utility function:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (10) Tj T* -235.3849 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R178': class PDFStream 
-178 0 obj
-% page stream
-<< /Length 3882 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 655.8236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 108 re B*
-Q
-q
-BT 1 0 0 1 0 89.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( import plac) Tj T* (>) Tj (>) Tj (>) Tj ( def main\(arg\):) Tj T* (...     pass) Tj T* (...) Tj T* (>) Tj (>) Tj (>) Tj ( print plac.parser_from\(main\)) Tj T* (ArgumentParser\(prog='', usage=None, description=None, version=None,) Tj T* (formatter_class=) Tj (<) Tj (class 'argparse.HelpFormatter') Tj (>) Tj (, conflict_handler='error',) Tj T* (add_help=True\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 635.8236 cm
-q
-BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (I use ) Tj /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (in the unit tests of the module, but regular users should never need to use it.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 602.8236 cm
-q
-BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Custom annotation objects) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 572.8236 cm
-q
-BT 1 0 0 1 0 16.82 Tm .578651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Internally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (uses an ) Tj /F4 10 Tf (Annotation ) Tj /F1 10 Tf (class to convert the tuples in the function signature into annotation) Tj T* 0 Tw (objects, i.e. objects with six attributes ) Tj /F4 10 Tf (help, kind, short, type, choices, metavar) Tj /F1 10 Tf (.) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 542.8236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .083735 Tw (Advanced users can implement their own annotation objects. For instance, here is an example of how you) Tj T* 0 Tw (could implement annotations for positional arguments:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 413.6236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (# annotations.py) Tj T* (class Positional\(object\):) Tj T* (    def __init__\(self, help='', type=None, choices=None, metavar=None\):) Tj T* (        self.help = help) Tj T* (        self.kind = 'positional') Tj T* (        self.abbrev = None) Tj T* (        self.type = type) Tj T* (        self.choices = choices) Tj T* (        self.metavar = metavar) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 393.6236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (You can use such annotations objects as follows:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 216.4236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 168 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 149.71 Tm /F4 10 Tf 12 TL (# example11.py) Tj T* (import plac) Tj T* (from annotations import Positional) Tj T*  T* (@plac.annotations\() Tj T* (    i=Positional\("This is an int", int\),) Tj T* (    n=Positional\("This is a float", float\),) Tj T* (    rest=Positional\("Other arguments"\)\)) Tj T* (def main\(i, n, *rest\):) Tj T* (    print\(i, n, rest\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 196.4236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message you get:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 91.22362 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 96 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 77.71 Tm /F4 10 Tf 12 TL (usage: example11.py [-h] i n [rest [rest ...]]) Tj T*  T* (positional arguments:) Tj T* (  i           This is an int) Tj T* (  n           This is a float) Tj T* (  rest        Other arguments) Tj T*  T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (11) Tj T* -235.3849 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R179': class PDFStream 
-179 0 obj
-% page stream
-<< /Length 9425 >>
+<< /Length 5195 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4507,29 +3577,1220 @@ Q
 q
 1 0 0 1 62.69291 683.8236 cm
 q
-BT 1 0 0 1 0 28.82 Tm .713516 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can go on and define ) Tj /F4 10 Tf (Option ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (Flag ) Tj /F1 10 Tf (classes, if you like. Using custom annotation objects you) Tj T* 0 Tw .17528 Tw (could do advanced things like extracting the annotations from a configuration file or from a database, but I) Tj T* 0 Tw (expect such use cases to be quite rare: the default mechanism should work pretty well for most users.) Tj T* ET
+BT 1 0 0 1 0 28.82 Tm .92881 Tw 12 TL /F1 10 Tf 0 0 0 rg (The examples here should have made clear that ) Tj /F5 10 Tf (plac is able to figure out the command line arguments) Tj T* 0 Tw .899988 Tw (parser to use from the signature of the main function) Tj /F1 10 Tf (. This is the whole idea behind ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (: if the intent is) Tj T* 0 Tw (clear, let's the machine take care of the details.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 62.69291 650.8236 cm
 q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with options) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 560.8236 cm
+q
+BT 1 0 0 1 0 76.82 Tm .046098 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is surprising how few command line scripts with options I have written over the years \(probably less than) Tj T* 0 Tw 1.02311 Tw (a hundred\), compared to the number of scripts with positional arguments I wrote \(certainly more than a) Tj T* 0 Tw .177045 Tw (thousand of them\). Still, this use case cannot be neglected. The standard library modules \(all of them\) are) Tj T* 0 Tw 2.30686 Tw (quite verbose when it comes to specifying the options and frankly I have never used them directly.) Tj T* 0 Tw 3.10561 Tw (Instead, I have always relied on an old recipe of mine, the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, which provides a) Tj T* 0 Tw 2.369982 Tw (convenient wrapper over ) Tj 0 0 .501961 rg (optionparse) Tj 0 0 0 rg (. Alternatively, in the simplest cases, I have just performed the) Tj T* 0 Tw (parsing by hand.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 518.8236 cm
+q
+BT 1 0 0 1 0 28.82 Tm .476098 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is inspired to the ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe, in the sense that it delivers the programmer from the burden of) Tj T* 0 Tw .011488 Tw (writing the parser, but is less of a hack: instead of extracting the parser from the docstring of the module, it) Tj T* 0 Tw (extracts it from the signature of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 488.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .319987 Tw 12 TL /F1 10 Tf 0 0 0 rg (The idea comes from the ) Tj /F5 10 Tf (function annotations ) Tj /F1 10 Tf (concept, a new feature of Python 3. An example is worth a) Tj T* 0 Tw (thousand words, so here it is:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 371.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 108 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 89.71 Tm /F4 10 Tf 12 TL (# example8.py) Tj T* (def main\(command: \("SQL query", 'option', 'c'\), dsn\):) Tj T* (    if command:) Tj T* (        print\('executing %s on %s' % \(command, dsn\)\)) Tj T* (        # ...) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 303.6236 cm
+q
+BT 1 0 0 1 0 52.82 Tm .789983 Tw 12 TL /F1 10 Tf 0 0 0 rg (As you see, the argument ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (has been annotated with the tuple ) Tj /F4 10 Tf (\("SQL query", 'option',) Tj T* 0 Tw .358409 Tw ('c'\)) Tj /F1 10 Tf (: the first string is the help string which will appear in the usage message, the second string tell ) Tj 0 0 .501961 rg (plac) Tj T* 0 Tw .560988 Tw 0 0 0 rg (that ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (is an option and the third string that it can be abbreviated with the letter ) Tj /F4 10 Tf (c) Tj /F1 10 Tf (. Of course, the) Tj T* 0 Tw .89284 Tw (long option format \() Tj /F4 10 Tf (--command=) Tj /F1 10 Tf (\) comes from the argument name. The resulting usage message is the) Tj T* 0 Tw (following:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 174.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example8.py [-h] [-c COMMAND] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -c COMMAND, --command COMMAND) Tj T* (                        SQL query) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 154.4236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here are two examples of usage:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 97.22362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py -c"select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T*  T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (5) Tj T* -238.1649 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R178': class PDFStream 
+178 0 obj
+% page stream
+<< /Length 5451 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 727.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python3 example8.py --command="select * from table" dsn) Tj T* (executing select * from table on dsn) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 695.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 1.34104 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that if the option is not passed, the variable ) Tj /F4 10 Tf (command ) Tj /F1 10 Tf (will get the value ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (. It is possible to) Tj T* 0 Tw (specify a non-trivial default for an option. Here is an example:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 602.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 84 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (# example8_.py) Tj T* (def main\(dsn, command: \("SQL query", 'option', 'c'\)='select * from table'\):) Tj T* (    print\('executing %r on %s' % \(command, dsn\)\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 582.6236 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Now if you do not pass the ) Tj /F4 10 Tf (command option) Tj /F1 10 Tf (, the default query will be executed:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 537.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python3 example8_.py dsn) Tj T* (executing 'select * from table' on dsn) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 517.4236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Positional argument can be annotated too:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 460.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (def main\(command: \("SQL query", 'option', 'c'\),) Tj T* (         dsn: \("Database dsn", 'positional', None\)\):) Tj T* (    ...) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 416.2236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 3.203318 Tw 12 TL /F1 10 Tf 0 0 0 rg (Of course explicit is better than implicit, an no special cases are special enough, but sometimes) Tj T* 0 Tw .16832 Tw (practicality beats purity, so ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is able to use smart defaults; in particular you can omit the third argument) Tj T* 0 Tw (and write:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 359.0236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (def main\(command: \("SQL query", 'option'\),) Tj T* (         dsn: \("Database dsn", 'positional'\)\):) Tj T* (    ...) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 315.0236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.123876 Tw 12 TL /F1 10 Tf 0 0 0 rg (When omitted, the third argument is assumed to be the first letter of the variable name for options and) Tj T* 0 Tw .334983 Tw (flags, and ) Tj /F4 10 Tf (None ) Tj /F1 10 Tf (for positional arguments. Moreover, smart enough to convert help messages into tuples;) Tj T* 0 Tw (in other words, you can just write ) Tj /F4 10 Tf ("Database dsn" ) Tj /F1 10 Tf (instead of ) Tj /F4 10 Tf (\("Database dsn", 'positional'\)) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 297.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (I should notice that varargs \(starred-arguments\) can be annotated too; here is an example:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 251.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (def main\(dsn: "Database dsn", *scripts: "SQL scripts"\):) Tj T* (    ...) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 231.8236 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (This is a valid signature for ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (, which will recognize the help strings for both ) Tj /F4 10 Tf (dsn ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (scripts) Tj /F1 10 Tf (:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 174.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL (positional arguments:) Tj T* (  dsn                          Database dsn) Tj T* (  scripts                      SQL scripts) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 141.6236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Scripts with flags) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 111.6236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .765868 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (also recognizes flags, i.e. boolean options which are ) Tj /F4 10 Tf (True ) Tj /F1 10 Tf (if they are passed to the command line) Tj T* 0 Tw (and ) Tj /F4 10 Tf (False ) Tj /F1 10 Tf (if they are absent. Here is an example:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (6) Tj T* -238.1649 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R179': class PDFStream 
+179 0 obj
+% page stream
+<< /Length 4359 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 648.1299 cm
+q
+q
+.96447 0 0 .96447 0 0 cm
+q
+1 0 0 1 6.6 6.843137 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 486 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (# example9.py) Tj T*  T* (def main\(verbose: \('prints more info', 'flag', 'v'\), dsn: 'connection string'\):) Tj T* (    if verbose:) Tj T* (        print\('connecting to %s' % dsn\)) Tj T* (    # ...) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 518.9299 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL ($ python3 example9.py -h) Tj T* (usage: example9.py [-h] [-v] dsn) Tj T*  T* (positional arguments:) Tj T* (  dsn            connection string) Tj T*  T* (optional arguments:) Tj T* (  -h, --help     show this help message and exit) Tj T* (  -v, --verbose  prints more info) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 473.7299 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python3 example9.py -v dsn) Tj T* (connecting to dsn) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 429.7299 cm
+q
+BT 1 0 0 1 0 28.82 Tm .31408 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that it is an error trying to specify a default for flags: the default value for a flag is always ) Tj /F4 10 Tf (False) Tj /F1 10 Tf (. If) Tj T* 0 Tw 2.652485 Tw (you feel the need to implement non-boolean flags, you should use an option with two choices, as) Tj T* 0 Tw (explained in the "more features" section.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 363.7299 cm
+q
+BT 1 0 0 1 0 52.82 Tm 5.832651 Tw 12 TL /F1 10 Tf 0 0 0 rg (For consistency with the way the usage message is printed, I suggest you to follow the) Tj T* 0 Tw 1.895433 Tw (Flag-Option-Required-Default \(FORD\) convention: in the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function write first the flag arguments,) Tj T* 0 Tw .881235 Tw (then the option arguments, then the required arguments and finally the default arguments. This is just a) Tj T* 0 Tw .110574 Tw (convention and you are not forced to use it, except for the default arguments \(including the varargs\) which) Tj T* 0 Tw (must stay at the end as it is required by the Python syntax.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 330.7299 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac for Python 2.X users) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 264.7299 cm
+q
+BT 1 0 0 1 0 52.82 Tm .211807 Tw 12 TL /F1 10 Tf 0 0 0 rg (I do not use Python 3. At work we are just starting to think about migrating to Python 2.6. It will take years) Tj T* 0 Tw .304724 Tw (before we think to migrate to Python 3. I am pretty much sure most Pythonistas are in the same situation.) Tj T* 0 Tw 1.459984 Tw (Therefore ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (provides a way to work with function annotations even in Python 2.X \(including Python) Tj T* 0 Tw .226098 Tw (2.3\). There is no magic involved; you just need to add the annotations by hand. For instance the annotate) Tj T* 0 Tw (function declaration) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 219.5299 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (def main\(dsn: "Database dsn", *scripts: "SQL scripts"\):) Tj T* (    ...) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 199.5299 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (is equivalent to the following code:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 118.3299 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* (main.__annotations__ = dict\() Tj T* (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (7) Tj T* -238.1649 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R180': class PDFStream 
+180 0 obj
+% page stream
+<< /Length 5557 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 729.0236 cm
+q
+BT 1 0 0 1 0 28.82 Tm .536098 Tw 12 TL /F1 10 Tf 0 0 0 rg (One should be careful to match the keys of the annotation dictionary with the names of the arguments in) Tj T* 0 Tw 3.347485 Tw (the annotated function; for lazy people with Python 2.4 available the simplest way is to use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator that performs the check for you:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 647.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 53.71 Tm /F4 10 Tf 12 TL (@plac.annotations\() Tj T* (    dsn="Database dsn",) Tj T* (    scripts="SQL scripts"\)) Tj T* (def main\(dsn, *scripts\):) Tj T* (    ...) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 615.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 1.422164 Tw 12 TL /F1 10 Tf 0 0 0 rg (In the rest of this article I will assume that you are using Python 2.X with ) Tj /F4 10 Tf (X >) Tj (= 4 ) Tj /F1 10 Tf (and I will use the) Tj T* 0 Tw /F4 10 Tf (plac.annotations ) Tj /F1 10 Tf (decorator. Notice however that the tests for ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (runs even on Python 2.3.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 582.8236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (More features) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 528.8236 cm
+q
+BT 1 0 0 1 0 40.82 Tm .486179 Tw 12 TL /F1 10 Tf 0 0 0 rg (Even if one of the goals of plac is to have a learning curve of ) Tj /F5 10 Tf (minutes) Tj /F1 10 Tf (, compared to the learning curve of) Tj T* 0 Tw 1.356303 Tw /F5 10 Tf (hours ) Tj /F1 10 Tf (of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (, it does not mean that I have removed all the features of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually a lot of) Tj T* 0 Tw 1.71686 Tw 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (power persists in ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (. Until now, I have only showed simple annotations, but in general an) Tj T* 0 Tw (annotation is a 5-tuple of the form) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 522.8236 cm
+Q
+q
+1 0 0 1 62.69291 510.8236 cm
+0 0 0 rg
+BT /F3 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 5.71 Tm /F4 10 Tf 12 TL (\(help, kind, abbrev, type, choices, metavar\)) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 510.8236 cm
+Q
+q
+1 0 0 1 62.69291 468.8236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.068735 Tw 12 TL /F1 10 Tf 0 0 0 rg (where ) Tj /F4 10 Tf (help ) Tj /F1 10 Tf (is the help message, ) Tj /F4 10 Tf (kind ) Tj /F1 10 Tf (is a string in the set { ) Tj /F4 10 Tf ("flag") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("option") Tj /F1 10 Tf (, ) Tj /F4 10 Tf ("positional") Tj /F1 10 Tf (},) Tj T* 0 Tw 1.711163 Tw /F4 10 Tf (abbrev ) Tj /F1 10 Tf (is a one-character string, ) Tj /F4 10 Tf (type ) Tj /F1 10 Tf (is a callable taking a string in input, ) Tj /F4 10 Tf (choices ) Tj /F1 10 Tf (is a discrete) Tj T* 0 Tw (sequence of values and ) Tj /F4 10 Tf (metavar ) Tj /F1 10 Tf (is a string.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 438.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 1.05061 Tw 12 TL /F4 10 Tf 0 0 0 rg (type ) Tj /F1 10 Tf (is used to automagically convert the command line arguments from the string type to any Python) Tj T* 0 Tw (type; by default there is no convertion and ) Tj /F4 10 Tf (type=None) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 408.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 2.904692 Tw 12 TL /F4 10 Tf 0 0 0 rg (choices ) Tj /F1 10 Tf (is used to restrict the number of the valid options; by default there is no restriction i.e.) Tj T* 0 Tw /F4 10 Tf (choices=None) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 366.8236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.071751 Tw 12 TL /F4 10 Tf 0 0 0 rg (metavar ) Tj /F1 10 Tf (is used to change the argument name in the usage message \(and only there\); by default the) Tj T* 0 Tw 1.056654 Tw (metavar is ) Tj /F4 10 Tf (None) Tj /F1 10 Tf (: this means that the name in the usage message is the same as the argument name,) Tj T* 0 Tw (unless the argument has a default and in such a case is equal to the stringified form of the default.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 348.8236 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Here is an example showing many of the features \(taken from the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (documentation\):) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 140.4467 cm
+q
+q
+.976496 0 0 .976496 0 0 cm
+q
+1 0 0 1 6.6 6.758862 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 480 204 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 185.71 Tm /F4 10 Tf 12 TL (# example10.py) Tj T* (import plac) Tj T*  T* (@plac.annotations\() Tj T* (operator=\("The name of an operator", 'positional', None, str, ['add', 'mul']\),) Tj T* (numbers=\("A number", 'positional', None, float, None, "n"\)\)) Tj T* (def main\(operator, *numbers\):) Tj T* (    "A script to add and multiply numbers") Tj T* (    op = getattr\(float, '__%s__' % operator\)) Tj T* (    result = dict\(add=0.0, mul=1.0\)[operator]) Tj T* (    for n in numbers:) Tj T* (        result = op\(result, n\)) Tj T* (    print\(result\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 120.4467 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (8) Tj T* -238.1649 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R181': class PDFStream 
+181 0 obj
+% page stream
+<< /Length 3500 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 631.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 132 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 113.71 Tm /F4 10 Tf 12 TL (usage: example10.py [-h] {add,mul} [n [n ...]]) Tj T*  T* (A script to add and multiply numbers) Tj T*  T* (positional arguments:) Tj T* (  {add,mul}   The name of an operator) Tj T* (  n           A number) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 599.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .15186 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function has been automatically added to the usage message. Here) Tj T* 0 Tw (are a couple of examples of use:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 506.4849 cm
+q
+q
+.87797 0 0 .87797 0 0 cm
+q
+1 0 0 1 6.6 7.517338 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 534 96 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 77.71 Tm /F4 10 Tf 12 TL ($ python example10.py add 1 2 3 4) Tj T* (10.0) Tj T* ($ python example10.py mul 1 2 3 4) Tj T* (24.0) Tj T* ($ python example10.py ad 1 2 3 4 # a mispelling error) Tj T* (usage: example10.py [-h] {add,mul} [n [n ...]]) Tj T* (example10.py: error: argument operator: invalid choice: 'ad' \(choose from 'add', 'mul'\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 473.4849 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Keyword arguments) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 443.4849 cm
+q
+BT 1 0 0 1 0 16.82 Tm .238651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Starting from release 0.4, if your main function has keyword arguments, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (recognizes arguments of the) Tj T* 0 Tw (form ) Tj /F4 10 Tf ("name=value" ) Tj /F1 10 Tf (in the command line. Here is an example:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 278.2849 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 156 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 137.71 Tm /F4 10 Tf 12 TL (# example12.py) Tj T* (import plac) Tj T*  T* (@plac.annotations\() Tj T* (   opt=\('some option', 'option'\),) Tj T* (   args='default arguments',) Tj T* (   kw='keyword arguments'\)) Tj T* (def main\(opt, *args, **kw\):) Tj T* (   print\(opt, args, kw\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 258.2849 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the generated usage message:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 129.0849 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]) Tj T*  T* (positional arguments:) Tj T* (  args               default arguments) Tj T* (  kw                 keyword arguments) Tj T*  T* (optional arguments:) Tj T* (  -h, --help         show this help message and exit) Tj T* (  -o OPT, --opt OPT  some option) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 109.0849 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is how you call the script:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 238.1649 0 Td (9) Tj T* -238.1649 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R182': class PDFStream 
+182 0 obj
+% page stream
+<< /Length 4165 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 727.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL ($ python example12.py 1 2 kw1=1 kw2=2 --opt=0) Tj T* (\('0', \('1', '2'\), {'kw1': '1', 'kw2': '2'}\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 695.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 2.133735 Tw 12 TL /F1 10 Tf 0 0 0 rg (When using keyword arguments, one must be careful to use names which are not alreay taken; for) Tj T* 0 Tw (instance in this examples the names ) Tj /F4 10 Tf (opt ) Tj /F1 10 Tf (is taken:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 638.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL ($ python example12.py 1 2 kw1=1 kw2=2 opt=0) Tj T* (usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]) Tj T* (example12.py: error: colliding keyword arguments: opt) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 594.6236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 28.82 Tm /F1 10 Tf 12 TL 1.024104 Tw (The names taken are the names of the flags, of the options, and of the positional arguments, excepted) Tj T* 0 Tw .60561 Tw (varargs and keywords. This limitation is a consequence of the way the argument names are managed in) Tj T* 0 Tw (function calls by the Python language.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 561.6236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (A realistic example) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 519.6236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 1.234488 Tw 12 TL /F1 10 Tf 0 0 0 rg (Here is a more realistic script using most of the features of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (to run SQL queries on a database by) Tj T* 0 Tw .930697 Tw (relying on ) Tj 0 0 .501961 rg (SQLAlchemy) Tj 0 0 0 rg (. Notice the usage of the ) Tj /F4 10 Tf (type ) Tj /F1 10 Tf (feature to automagically convert a SQLAlchemy) Tj T* 0 Tw (connection string into a ) Tj 0 0 .501961 rg (SqlSoup ) Tj 0 0 0 rg (object:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 186.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 324 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 305.71 Tm /F4 10 Tf 12 TL (# dbcli.py) Tj T* (import plac) Tj T* (from sqlalchemy.ext.sqlsoup import SqlSoup) Tj T*  T* (@plac.annotations\() Tj T* (    db=\("Connection string", 'positional', None, SqlSoup\),) Tj T* (    header=\("Header", 'flag', 'H'\),) Tj T* (    sqlcmd=\("SQL command", 'option', 'c', str, None, "SQL"\),) Tj T* (    delimiter=\("Column separator", 'option', 'd'\),) Tj T* (    scripts="SQL scripts",) Tj T* (    \)) Tj T* (def main\(db, header, sqlcmd, delimiter="|", *scripts\):) Tj T* (    "A script to run queries and SQL scripts on a database") Tj T* (    print\('Working on %s' % db.bind.url\)) Tj T* (    if sqlcmd:) Tj T* (        result = db.bind.execute\(sqlcmd\)) Tj T* (        if header: # print the header) Tj T* (            print\(delimiter.join\(result.keys\(\)\)\)) Tj T* (        for row in result: # print the rows) Tj T* (            print\(delimiter.join\(map\(str, row\)\)\)) Tj T*  T* (    for script in scripts:) Tj T* (        db.bind.execute\(file\(script\).read\(\)\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 166.4236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 97.22362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 60 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL ($ python dbcli.py -h) Tj T* (usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]) Tj T*  T* (A script to run queries and SQL scripts on a database) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (10) Tj T* -235.3849 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R183': class PDFStream 
+183 0 obj
+% page stream
+<< /Length 5890 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 631.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 132 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 113.71 Tm /F4 10 Tf 12 TL  T* (positional arguments:) Tj T* (  db                    Connection string) Tj T* (  scripts               SQL scripts) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -H, --header          Header) Tj T* (  -c SQL, --sqlcmd SQL  SQL command) Tj T* (  -d |, --delimiter |   Column separator) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 598.8236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Advanced usage) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 568.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .094988 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (relies on a ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (for all of the heavy lifting work and it is possible to leverage on ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (features) Tj T* 0 Tw (directly or indirectly.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 526.8236 cm
+q
+BT 1 0 0 1 0 28.82 Tm 5.575697 Tw 12 TL /F1 10 Tf 0 0 0 rg (For instance, you can make invisible an argument in the usage message simply by using) Tj T* 0 Tw 1.435976 Tw /F4 10 Tf ('==SUPPRESS==' ) Tj /F1 10 Tf (as help string \(or ) Tj /F4 10 Tf (argparse.SUPPRESS) Tj /F1 10 Tf (\). Similarly, you can use ) Tj 0 0 .501961 rg (argparse.FileType) Tj T* 0 Tw 0 0 0 rg (directly.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 472.8236 cm
+q
+BT 1 0 0 1 0 40.82 Tm 1.639213 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is also possible to pass options to the underlying ) Tj /F4 10 Tf (argparse.ArgumentParser ) Tj /F1 10 Tf (object \(currently it) Tj T* 0 Tw .285529 Tw (accepts the default arguments ) Tj /F4 10 Tf (description) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (epilog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prog) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (usage) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (add_help) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (argument_default) Tj /F1 10 Tf (,) Tj T* 0 Tw 1.439953 Tw /F4 10 Tf (parents) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (fromfile_prefix_chars) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (conflict_handler) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (formatter_class) Tj /F1 10 Tf (\). It) Tj T* 0 Tw (is enough to set such attributes on the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function. For instance) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 403.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 60 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (def main\(...\):) Tj T* (    pass) Tj T*  T* (main.add_help = False) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 323.6236 cm
+q
+BT 1 0 0 1 0 64.82 Tm 1.256457 Tw 12 TL /F1 10 Tf 0 0 0 rg (disable the recognition of the help flag ) Tj /F4 10 Tf (-h, --help) Tj /F1 10 Tf (. This is not particularly elegant, but I assume the) Tj T* 0 Tw .275703 Tw (typical user of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (will be happy with the defaults and would not want to change them; still it is possible if) Tj T* 0 Tw .365542 Tw (she wants to. For instance, by setting the ) Tj /F4 10 Tf (description ) Tj /F1 10 Tf (attribute, it is possible to add a comment to the) Tj T* 0 Tw .602339 Tw (usage message \(by default the docstring of the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function is used as description\). It is also possible) Tj T* 0 Tw .322988 Tw (to change the option prefix; for instance if your script must run under Windows and you want to use "/" as) Tj T* 0 Tw (option prefix you can add the lines:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 278.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 17.71 Tm /F4 10 Tf 12 TL (main.prefix_chars='-/') Tj T* (main.short_prefix = '/') Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 210.4236 cm
+q
+BT 1 0 0 1 0 52.82 Tm 3.694269 Tw 12 TL /F1 10 Tf 0 0 0 rg (The recognition of the ) Tj /F4 10 Tf (short_prefix ) Tj /F1 10 Tf (attribute is a ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (extension; there is also a companion) Tj T* 0 Tw 1.348314 Tw /F4 10 Tf (long_prefix ) Tj /F1 10 Tf (attribute with default value of ) Tj /F4 10 Tf ("--") Tj /F1 10 Tf (. ) Tj /F4 10 Tf (prefix_chars ) Tj /F1 10 Tf (is an ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (feature. Interested) Tj T* 0 Tw 1.419984 Tw (readers should read the documentation of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (to understand the meaning of the other options. If) Tj T* 0 Tw .098935 Tw (there is a set of options that you use very often, you may consider writing a decorator adding such options) Tj T* 0 Tw (to the ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (function for you. For simplicity, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (does not perform any magic of that kind.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 180.4236 cm
+q
+BT 1 0 0 1 0 16.82 Tm 7.709147 Tw 12 TL /F1 10 Tf 0 0 0 rg (It is possible to access directly the underlying ) Tj 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object, by invoking the) Tj T* 0 Tw /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (utility function:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 99.22362 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 72 re B*
+Q
+q
+BT 1 0 0 1 0 53.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (>) Tj (>) Tj (>) Tj ( import plac) Tj T* (>) Tj (>) Tj (>) Tj ( def main\(arg\):) Tj T* (...     pass) Tj T* (...) Tj T* (>) Tj (>) Tj (>) Tj ( print plac.parser_from\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (11) Tj T* -235.3849 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R184': class PDFStream 
+184 0 obj
+% page stream
+<< /Length 4195 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 715.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 48 re B*
+Q
+q
+BT 1 0 0 1 0 29.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (ArgumentParser\(prog='', usage=None, description=None, version=None,) Tj T* (formatter_class=) Tj (<) Tj (class 'argparse.HelpFormatter') Tj (>) Tj (, conflict_handler='error',) Tj T* (add_help=True\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 695.8236 cm
+q
+BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (I use ) Tj /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (in the unit tests of the module, but regular users should never need to use it.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 662.8236 cm
+q
+BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Custom annotation objects) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 632.8236 cm
+q
+BT 1 0 0 1 0 16.82 Tm .578651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Internally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (uses an ) Tj /F4 10 Tf (Annotation ) Tj /F1 10 Tf (class to convert the tuples in the function signature into annotation) Tj T* 0 Tw (objects, i.e. objects with six attributes ) Tj /F4 10 Tf (help, kind, short, type, choices, metavar) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 602.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .083735 Tw (Advanced users can implement their own annotation objects. For instance, here is an example of how you) Tj T* 0 Tw (could implement annotations for positional arguments:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 473.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (# annotations.py) Tj T* (class Positional\(object\):) Tj T* (    def __init__\(self, help='', type=None, choices=None, metavar=None\):) Tj T* (        self.help = help) Tj T* (        self.kind = 'positional') Tj T* (        self.abbrev = None) Tj T* (        self.type = type) Tj T* (        self.choices = choices) Tj T* (        self.metavar = metavar) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 453.6236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (You can use such annotations objects as follows:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 276.4236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 168 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 149.71 Tm /F4 10 Tf 12 TL (# example11.py) Tj T* (import plac) Tj T* (from annotations import Positional) Tj T*  T* (@plac.annotations\() Tj T* (    i=Positional\("This is an int", int\),) Tj T* (    n=Positional\("This is a float", float\),) Tj T* (    rest=Positional\("Other arguments"\)\)) Tj T* (def main\(i, n, *rest\):) Tj T* (    print\(i, n, rest\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 256.4236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message you get:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 127.2236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (usage: example11.py [-h] i n [rest [rest ...]]) Tj T*  T* (positional arguments:) Tj T* (  i           This is an int) Tj T* (  n           This is a float) Tj T* (  rest        Other arguments) Tj T*  T* (optional arguments:) Tj T* (  -h, --help  show this help message and exit) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 95.22362 cm
+q
+BT 1 0 0 1 0 16.82 Tm .713516 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can go on and define ) Tj /F4 10 Tf (Option ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (Flag ) Tj /F1 10 Tf (classes, if you like. Using custom annotation objects you ) Tj T* 0 Tw .17528 Tw (could do advanced things like extracting the annotations from a configuration file or from a database, but I) Tj T* 0 Tw ET
+Q
+Q
+q
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (12) Tj T* -235.3849 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R185': class PDFStream 
+185 0 obj
+% page stream
+<< /Length 9534 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 753.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (expect such use cases to be quite rare: the default mechanism should work pretty well for most users.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 720.0236 cm
+q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac vs argparse) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 608.8236 cm
+1 0 0 1 62.69291 678.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.065988 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is opinionated and by design it does not try to make available all of the features of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (in an) Tj T* 0 Tw .177126 Tw (easy way. In particular you should be aware of the following limitations/differences \(the following assumes) Tj T* 0 Tw (knowledge of ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (\):) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 602.8236 cm
+1 0 0 1 62.69291 672.0236 cm
 Q
 q
-1 0 0 1 62.69291 602.8236 cm
+1 0 0 1 62.69291 672.0236 cm
 Q
 q
-1 0 0 1 62.69291 548.8236 cm
+1 0 0 1 62.69291 618.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4549,13 +4810,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 548.8236 cm
+1 0 0 1 62.69291 618.0236 cm
 Q
 q
-1 0 0 1 62.69291 548.8236 cm
+1 0 0 1 62.69291 618.0236 cm
 Q
 q
-1 0 0 1 62.69291 470.8236 cm
+1 0 0 1 62.69291 540.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4575,13 +4836,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 470.8236 cm
+1 0 0 1 62.69291 540.0236 cm
 Q
 q
-1 0 0 1 62.69291 470.8236 cm
+1 0 0 1 62.69291 540.0236 cm
 Q
 q
-1 0 0 1 62.69291 428.8236 cm
+1 0 0 1 62.69291 498.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4601,13 +4862,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 428.8236 cm
+1 0 0 1 62.69291 498.0236 cm
 Q
 q
-1 0 0 1 62.69291 428.8236 cm
+1 0 0 1 62.69291 498.0236 cm
 Q
 q
-1 0 0 1 62.69291 362.8236 cm
+1 0 0 1 62.69291 432.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4627,13 +4888,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 362.8236 cm
+1 0 0 1 62.69291 432.0236 cm
 Q
 q
-1 0 0 1 62.69291 362.8236 cm
+1 0 0 1 62.69291 432.0236 cm
 Q
 q
-1 0 0 1 62.69291 320.8236 cm
+1 0 0 1 62.69291 390.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4653,13 +4914,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 320.8236 cm
+1 0 0 1 62.69291 390.0236 cm
 Q
 q
-1 0 0 1 62.69291 320.8236 cm
+1 0 0 1 62.69291 390.0236 cm
 Q
 q
-1 0 0 1 62.69291 290.8236 cm
+1 0 0 1 62.69291 360.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4679,13 +4940,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 290.8236 cm
+1 0 0 1 62.69291 360.0236 cm
 Q
 q
-1 0 0 1 62.69291 290.8236 cm
+1 0 0 1 62.69291 360.0236 cm
 Q
 q
-1 0 0 1 62.69291 248.8236 cm
+1 0 0 1 62.69291 318.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4705,37 +4966,37 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 248.8236 cm
+1 0 0 1 62.69291 318.0236 cm
 Q
 q
-1 0 0 1 62.69291 248.8236 cm
+1 0 0 1 62.69291 318.0236 cm
 Q
 q
-1 0 0 1 62.69291 194.8236 cm
+1 0 0 1 62.69291 264.0236 cm
 q
 BT 1 0 0 1 0 40.82 Tm 2.14683 Tw 12 TL /F1 10 Tf 0 0 0 rg (I should stress again that if you want to access all of the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (features from ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (you can use) Tj T* 0 Tw 2.723059 Tw /F4 10 Tf (plac.parser_from ) Tj /F1 10 Tf (and you will get the underlying ) Tj 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object. The the full power of) Tj T* 0 Tw 2.44152 Tw 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (is then available to you: you can use ) Tj /F4 10 Tf (add_argument) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (add_subparsers\(\)) Tj /F1 10 Tf (, etc. In other) Tj T* 0 Tw (words, while some features are not supported directly, ) Tj /F5 10 Tf (all ) Tj /F1 10 Tf (features are supported indirectly.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 161.8236 cm
+1 0 0 1 62.69291 231.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (plac vs the rest of the world) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 119.8236 cm
+1 0 0 1 62.69291 189.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 1.866905 Tw 12 TL /F1 10 Tf 0 0 0 rg (Originally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (boasted about being "the easiest command-line arguments parser in the world". Since) Tj T* 0 Tw .306457 Tw (then, people started pointing out to me various projects which are based on the same idea \(extracting the) Tj T* 0 Tw (parser from the main function signature\) and are arguably even easier than ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 113.8236 cm
+1 0 0 1 62.69291 183.0236 cm
 Q
 q
-1 0 0 1 62.69291 113.8236 cm
+1 0 0 1 62.69291 183.0236 cm
 Q
 q
-1 0 0 1 62.69291 95.82362 cm
+1 0 0 1 62.69291 165.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4755,30 +5016,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 95.82362 cm
+1 0 0 1 62.69291 165.0236 cm
 Q
 q
-1 0 0 1 62.69291 95.82362 cm
+1 0 0 1 62.69291 165.0236 cm
 Q
 q
-1 0 0 1 56.69291 56.69291 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (12) Tj T* -235.3849 0 Td ET
-Q
-Q
- 
-endstream
-
-endobj
-% 'R180': class PDFStream 
-180 0 obj
-% page stream
-<< /Length 5487 >>
-stream
-1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
-q
-1 0 0 1 62.69291 747.0236 cm
+1 0 0 1 62.69291 147.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4798,49 +5042,66 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 747.0236 cm
+1 0 0 1 62.69291 147.0236 cm
 Q
 q
-1 0 0 1 62.69291 747.0236 cm
+1 0 0 1 62.69291 147.0236 cm
 Q
 q
-1 0 0 1 62.69291 717.0236 cm
+1 0 0 1 62.69291 117.0236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 2.136457 Tw 12 TL /F1 10 Tf 0 0 0 rg (Luckily for me none of such projects had the idea of using function annotations and ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (; as a) Tj T* 0 Tw (consequence, they are no match for the capabilities of ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 684.0236 cm
+1 0 0 1 56.69291 56.69291 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (13) Tj T* -235.3849 0 Td ET
+Q
+Q
+ 
+endstream
+
+endobj
+% 'R186': class PDFStream 
+186 0 obj
+% page stream
+<< /Length 4762 >>
+stream
+1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 744.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (The future) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 606.0236 cm
+1 0 0 1 62.69291 666.0236 cm
 q
-BT 1 0 0 1 0 64.82 Tm .444431 Tw 12 TL /F1 10 Tf 0 0 0 rg (Currently plac is below 100 lines of code, not counting blanks, comments and docstrings. I do not plan to) Tj T* 0 Tw .035444 Tw (extend it much in the future. The idea is to keep the module short: it is and it should remain a little wrapper) Tj T* 0 Tw 1.903318 Tw (over ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually I have thought about contributing the code back to ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (if ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (becomes) Tj T* 0 Tw 4.105697 Tw (successfull and gains a reasonable number of users. For the moment it should be considered) Tj T* 0 Tw .351654 Tw (experimental: after all I wrote it in three days, including the tests, the documentation and the time to learn) Tj T* 0 Tw 0 0 .501961 rg (argparse) Tj 0 0 0 rg (.) Tj T* ET
+BT 1 0 0 1 0 64.82 Tm .444431 Tw 12 TL /F1 10 Tf 0 0 0 rg (Currently plac is below 100 lines of code, not counting blanks, comments and docstrings. I do not plan to) Tj T* 0 Tw .035444 Tw (extend it much in the future. The idea is to keep the module short: it is and it should remain a little wrapper) Tj T* 0 Tw 1.903318 Tw (over ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually I have thought about contributing the code back to ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (if ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (becomes) Tj T* 0 Tw 4.105697 Tw (successfull and gains a reasonable number of users. For the moment it should be considered) Tj T* 0 Tw 1.092339 Tw (experimental: after all I wrote the first version of it in three days, including the tests, the documentation) Tj T* 0 Tw (and the time to learn ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 573.0236 cm
+1 0 0 1 62.69291 633.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Trivia: the story behind the name) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 507.0236 cm
+1 0 0 1 62.69291 567.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .942651 Tw 12 TL /F1 10 Tf 0 0 0 rg (The ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (project started very humble: I just wanted to make easy_installable my old ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe,) Tj T* 0 Tw .565988 Tw (and to publish it on PyPI. The original name of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (was optionparser and the idea behind it was to build) Tj T* 0 Tw .603735 Tw (an ) Tj 0 0 .501961 rg (OptionParser ) Tj 0 0 0 rg (object from the docstring of the module. However, before doing that, I decided to check) Tj T* 0 Tw .244198 Tw (out the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (module, since I knew it was going into Python 2.7 and Python 2.7 was coming out. Soon) Tj T* 0 Tw (enough I realized two things:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 501.0236 cm
+1 0 0 1 62.69291 561.0236 cm
 Q
 q
-1 0 0 1 62.69291 501.0236 cm
+1 0 0 1 62.69291 561.0236 cm
 Q
 q
-1 0 0 1 62.69291 471.0236 cm
+1 0 0 1 62.69291 531.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4860,13 +5121,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 471.0236 cm
+1 0 0 1 62.69291 531.0236 cm
 Q
 q
-1 0 0 1 62.69291 471.0236 cm
+1 0 0 1 62.69291 531.0236 cm
 Q
 q
-1 0 0 1 62.69291 441.0236 cm
+1 0 0 1 62.69291 501.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -4887,32 +5148,32 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 441.0236 cm
+1 0 0 1 62.69291 501.0236 cm
 Q
 q
-1 0 0 1 62.69291 441.0236 cm
+1 0 0 1 62.69291 501.0236 cm
 Q
 q
-1 0 0 1 62.69291 387.0236 cm
+1 0 0 1 62.69291 447.0236 cm
 q
 BT 1 0 0 1 0 40.82 Tm .600574 Tw 12 TL /F1 10 Tf 0 0 0 rg (Putting together these two observations with the original idea of inferring the parser I decided to build an) Tj T* 0 Tw .516905 Tw 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object from function annotations. The ) Tj /F4 10 Tf (optionparser ) Tj /F1 10 Tf (name was ruled out, since I was) Tj T* 0 Tw 2.085984 Tw (now using ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (; a name like ) Tj /F4 10 Tf (argparse_plus ) Tj /F1 10 Tf (was also ruled out, since the typical usage was) Tj T* 0 Tw (completely different from the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (usage.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 357.0236 cm
+1 0 0 1 62.69291 417.0236 cm
 q
-BT 1 0 0 1 0 16.82 Tm 1.093876 Tw 12 TL /F1 10 Tf 0 0 0 rg (I made a research on PyPI and the name plac \(Command Line Arguments Parser\) was not taken, so I) Tj T* 0 Tw (renamed everything to plac. After two days a ) Tj 0 0 .501961 rg (Clap ) Tj 0 0 0 rg (module appeared on PyPI <) Tj (expletives deleted) Tj (>) Tj (!) Tj T* ET
+BT 1 0 0 1 0 16.82 Tm 1.093876 Tw 12 TL /F1 10 Tf 0 0 0 rg (I made a research on PyPI and the name clap \(Command Line Arguments Parser\) was not taken, so I) Tj T* 0 Tw (renamed everything to clap. After two days a ) Tj 0 0 .501961 rg (Clap ) Tj 0 0 0 rg (module appeared on PyPI <) Tj (expletives deleted) Tj (>) Tj (!) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 327.0236 cm
+1 0 0 1 62.69291 387.0236 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .877209 Tw (Having little imagination, I decided to rename everything again to plac, an anagram of plac: since it is a) Tj T* 0 Tw (non-existing English name, I hope nobody will steal it from me!) Tj T* ET
+BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .877209 Tw (Having little imagination, I decided to rename everything again to plac, an anagram of clap: since it is a) Tj T* 0 Tw (non-existing English name, I hope nobody will steal it from me!) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 309.0236 cm
+1 0 0 1 62.69291 369.0236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (That's all, I hope you will enjoy working with plac!) Tj T* ET
@@ -4922,123 +5183,131 @@ q
 1 0 0 1 56.69291 56.69291 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (13) Tj T* -235.3849 0 Td ET
+BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL 235.3849 0 Td (14) Tj T* -235.3849 0 Td ET
 Q
 Q
  
 endstream
 
 endobj
-% 'R181': class PDFPageLabels 
-181 0 obj
+% 'R187': class PDFPageLabels 
+187 0 obj
 % Document Root
 << /Nums [ 0
- 182 0 R
- 1
- 183 0 R
- 2
- 184 0 R
- 3
- 185 0 R
- 4
- 186 0 R
- 5
- 187 0 R
- 6
  188 0 R
- 7
+ 1
  189 0 R
- 8
+ 2
  190 0 R
- 9
+ 3
  191 0 R
- 10
+ 4
  192 0 R
- 11
+ 5
  193 0 R
+ 6
+ 194 0 R
+ 7
+ 195 0 R
+ 8
+ 196 0 R
+ 9
+ 197 0 R
+ 10
+ 198 0 R
+ 11
+ 199 0 R
  12
- 194 0 R ] >>
-endobj
-% 'R182': class PDFPageLabel 
-182 0 obj
-% None
-<< /S /D
- /St 1 >>
-endobj
-% 'R183': class PDFPageLabel 
-183 0 obj
-% None
-<< /S /D
- /St 2 >>
-endobj
-% 'R184': class PDFPageLabel 
-184 0 obj
-% None
-<< /S /D
- /St 3 >>
-endobj
-% 'R185': class PDFPageLabel 
-185 0 obj
-% None
-<< /S /D
- /St 4 >>
-endobj
-% 'R186': class PDFPageLabel 
-186 0 obj
-% None
-<< /S /D
- /St 5 >>
-endobj
-% 'R187': class PDFPageLabel 
-187 0 obj
-% None
-<< /S /D
- /St 6 >>
+ 200 0 R
+ 13
+ 201 0 R ] >>
 endobj
 % 'R188': class PDFPageLabel 
 188 0 obj
 % None
 << /S /D
- /St 7 >>
+ /St 1 >>
 endobj
 % 'R189': class PDFPageLabel 
 189 0 obj
 % None
 << /S /D
- /St 8 >>
+ /St 2 >>
 endobj
 % 'R190': class PDFPageLabel 
 190 0 obj
 % None
 << /S /D
- /St 9 >>
+ /St 3 >>
 endobj
 % 'R191': class PDFPageLabel 
 191 0 obj
 % None
 << /S /D
- /St 10 >>
+ /St 4 >>
 endobj
 % 'R192': class PDFPageLabel 
 192 0 obj
 % None
 << /S /D
- /St 11 >>
+ /St 5 >>
 endobj
 % 'R193': class PDFPageLabel 
 193 0 obj
 % None
 << /S /D
- /St 12 >>
+ /St 6 >>
 endobj
 % 'R194': class PDFPageLabel 
 194 0 obj
 % None
 << /S /D
+ /St 7 >>
+endobj
+% 'R195': class PDFPageLabel 
+195 0 obj
+% None
+<< /S /D
+ /St 8 >>
+endobj
+% 'R196': class PDFPageLabel 
+196 0 obj
+% None
+<< /S /D
+ /St 9 >>
+endobj
+% 'R197': class PDFPageLabel 
+197 0 obj
+% None
+<< /S /D
+ /St 10 >>
+endobj
+% 'R198': class PDFPageLabel 
+198 0 obj
+% None
+<< /S /D
+ /St 11 >>
+endobj
+% 'R199': class PDFPageLabel 
+199 0 obj
+% None
+<< /S /D
+ /St 12 >>
+endobj
+% 'R200': class PDFPageLabel 
+200 0 obj
+% None
+<< /S /D
  /St 13 >>
 endobj
+% 'R201': class PDFPageLabel 
+201 0 obj
+% None
+<< /S /D
+ /St 14 >>
+endobj
 xref
-0 195
+0 202
 0000000000 65535 f
 0000000113 00000 n
 0000000258 00000 n
@@ -5065,183 +5334,190 @@ xref
 0000005109 00000 n
 0000005352 00000 n
 0000005595 00000 n
-0000005839 00000 n
-0000006083 00000 n
-0000006327 00000 n
-0000006571 00000 n
-0000006815 00000 n
-0000007059 00000 n
-0000007303 00000 n
-0000007547 00000 n
-0000007791 00000 n
-0000008035 00000 n
-0000008279 00000 n
-0000008522 00000 n
-0000008784 00000 n
-0000009047 00000 n
-0000009297 00000 n
-0000009546 00000 n
-0000009812 00000 n
-0000010064 00000 n
-0000010314 00000 n
-0000010566 00000 n
-0000010816 00000 n
-0000011068 00000 n
-0000011303 00000 n
-0000011986 00000 n
-0000012238 00000 n
-0000012489 00000 n
-0000012728 00000 n
-0000012923 00000 n
-0000013184 00000 n
-0000013448 00000 n
-0000013682 00000 n
-0000014045 00000 n
-0000014297 00000 n
+0000005838 00000 n
+0000006081 00000 n
+0000006325 00000 n
+0000006569 00000 n
+0000006813 00000 n
+0000007057 00000 n
+0000007301 00000 n
+0000007545 00000 n
+0000007789 00000 n
+0000008033 00000 n
+0000008277 00000 n
+0000008521 00000 n
+0000008765 00000 n
+0000009008 00000 n
+0000009270 00000 n
+0000009533 00000 n
+0000009783 00000 n
+0000010032 00000 n
+0000010298 00000 n
+0000010550 00000 n
+0000010785 00000 n
+0000011450 00000 n
+0000011702 00000 n
+0000011952 00000 n
+0000012204 00000 n
+0000012454 00000 n
+0000012706 00000 n
+0000012957 00000 n
+0000013196 00000 n
+0000013391 00000 n
+0000013652 00000 n
+0000013916 00000 n
+0000014150 00000 n
 0000014549 00000 n
-0000014800 00000 n
-0000015050 00000 n
-0000015287 00000 n
-0000015641 00000 n
-0000015890 00000 n
-0000016142 00000 n
+0000014801 00000 n
+0000015053 00000 n
+0000015304 00000 n
+0000015554 00000 n
+0000015791 00000 n
+0000016145 00000 n
 0000016394 00000 n
-0000016631 00000 n
-0000016976 00000 n
-0000017228 00000 n
-0000017516 00000 n
-0000017804 00000 n
-0000018056 00000 n
-0000018344 00000 n
-0000018581 00000 n
-0000018944 00000 n
-0000019196 00000 n
+0000016646 00000 n
+0000016898 00000 n
+0000017135 00000 n
+0000017480 00000 n
+0000017732 00000 n
+0000018020 00000 n
+0000018308 00000 n
+0000018560 00000 n
+0000018848 00000 n
+0000019085 00000 n
 0000019448 00000 n
-0000019685 00000 n
-0000020021 00000 n
-0000020258 00000 n
-0000020576 00000 n
-0000020828 00000 n
-0000021078 00000 n
-0000021328 00000 n
-0000021578 00000 n
-0000021830 00000 n
-0000022065 00000 n
-0000022428 00000 n
-0000022680 00000 n
-0000022926 00000 n
-0000023188 00000 n
-0000023524 00000 n
-0000023775 00000 n
-0000024025 00000 n
-0000024275 00000 n
-0000024591 00000 n
-0000024841 00000 n
-0000025093 00000 n
-0000025342 00000 n
-0000025592 00000 n
-0000025845 00000 n
-0000026119 00000 n
-0000026521 00000 n
-0000026760 00000 n
-0000027080 00000 n
-0000027332 00000 n
-0000027583 00000 n
-0000027834 00000 n
-0000028087 00000 n
-0000028352 00000 n
-0000028603 00000 n
-0000028868 00000 n
-0000029119 00000 n
-0000029372 00000 n
-0000029623 00000 n
-0000029876 00000 n
-0000030128 00000 n
-0000030382 00000 n
-0000030634 00000 n
-0000030887 00000 n
-0000031141 00000 n
-0000031395 00000 n
-0000031649 00000 n
-0000031903 00000 n
-0000032155 00000 n
-0000032408 00000 n
-0000032697 00000 n
-0000032949 00000 n
-0000033203 00000 n
-0000033457 00000 n
-0000033701 00000 n
-0000034272 00000 n
-0000034529 00000 n
-0000034781 00000 n
-0000035035 00000 n
-0000035287 00000 n
-0000035538 00000 n
-0000035792 00000 n
-0000036044 00000 n
-0000036298 00000 n
-0000036585 00000 n
-0000036839 00000 n
-0000037150 00000 n
-0000037402 00000 n
-0000037654 00000 n
-0000037943 00000 n
-0000038195 00000 n
-0000038447 00000 n
-0000038690 00000 n
-0000039157 00000 n
-0000039321 00000 n
-0000039595 00000 n
-0000039724 00000 n
-0000039918 00000 n
-0000040129 00000 n
-0000040339 00000 n
-0000040539 00000 n
-0000040737 00000 n
-0000040942 00000 n
-0000041135 00000 n
-0000041334 00000 n
-0000041529 00000 n
-0000041736 00000 n
-0000041934 00000 n
-0000042145 00000 n
-0000042337 00000 n
-0000042520 00000 n
-0000042743 00000 n
-0000051911 00000 n
-0000056935 00000 n
-0000061055 00000 n
-0000065301 00000 n
-0000070385 00000 n
-0000075955 00000 n
-0000080724 00000 n
-0000086298 00000 n
-0000089978 00000 n
-0000095718 00000 n
-0000099703 00000 n
-0000109231 00000 n
-0000114825 00000 n
-0000115092 00000 n
-0000115171 00000 n
-0000115250 00000 n
-0000115329 00000 n
-0000115408 00000 n
-0000115487 00000 n
-0000115566 00000 n
-0000115645 00000 n
-0000115724 00000 n
-0000115803 00000 n
-0000115883 00000 n
-0000115963 00000 n
-0000116043 00000 n
+0000019700 00000 n
+0000019952 00000 n
+0000020189 00000 n
+0000020525 00000 n
+0000020762 00000 n
+0000021080 00000 n
+0000021332 00000 n
+0000021582 00000 n
+0000021832 00000 n
+0000022082 00000 n
+0000022334 00000 n
+0000022569 00000 n
+0000022932 00000 n
+0000023169 00000 n
+0000023487 00000 n
+0000023739 00000 n
+0000023985 00000 n
+0000024248 00000 n
+0000024584 00000 n
+0000024835 00000 n
+0000025085 00000 n
+0000025335 00000 n
+0000025651 00000 n
+0000025902 00000 n
+0000026155 00000 n
+0000026405 00000 n
+0000026656 00000 n
+0000026909 00000 n
+0000027183 00000 n
+0000027589 00000 n
+0000027828 00000 n
+0000028148 00000 n
+0000028400 00000 n
+0000028651 00000 n
+0000028902 00000 n
+0000029155 00000 n
+0000029420 00000 n
+0000029671 00000 n
+0000029936 00000 n
+0000030187 00000 n
+0000030441 00000 n
+0000030693 00000 n
+0000030947 00000 n
+0000031199 00000 n
+0000031453 00000 n
+0000031705 00000 n
+0000031958 00000 n
+0000032212 00000 n
+0000032466 00000 n
+0000032720 00000 n
+0000032974 00000 n
+0000033226 00000 n
+0000033479 00000 n
+0000033768 00000 n
+0000034020 00000 n
+0000034274 00000 n
+0000034528 00000 n
+0000034787 00000 n
+0000035044 00000 n
+0000035296 00000 n
+0000035535 00000 n
+0000036136 00000 n
+0000036388 00000 n
+0000036639 00000 n
+0000036893 00000 n
+0000037145 00000 n
+0000037399 00000 n
+0000037686 00000 n
+0000037940 00000 n
+0000038251 00000 n
+0000038503 00000 n
+0000038755 00000 n
+0000039044 00000 n
+0000039296 00000 n
+0000039548 00000 n
+0000039791 00000 n
+0000040228 00000 n
+0000040392 00000 n
+0000040666 00000 n
+0000040795 00000 n
+0000040989 00000 n
+0000041200 00000 n
+0000041410 00000 n
+0000041610 00000 n
+0000041808 00000 n
+0000042013 00000 n
+0000042206 00000 n
+0000042403 00000 n
+0000042602 00000 n
+0000042798 00000 n
+0000043005 00000 n
+0000043203 00000 n
+0000043414 00000 n
+0000043606 00000 n
+0000043789 00000 n
+0000044021 00000 n
+0000052813 00000 n
+0000058265 00000 n
+0000062301 00000 n
+0000066656 00000 n
+0000071954 00000 n
+0000077508 00000 n
+0000081970 00000 n
+0000087630 00000 n
+0000091233 00000 n
+0000095501 00000 n
+0000101494 00000 n
+0000105792 00000 n
+0000115429 00000 n
+0000120298 00000 n
+0000120580 00000 n
+0000120659 00000 n
+0000120738 00000 n
+0000120817 00000 n
+0000120896 00000 n
+0000120975 00000 n
+0000121054 00000 n
+0000121133 00000 n
+0000121212 00000 n
+0000121291 00000 n
+0000121371 00000 n
+0000121451 00000 n
+0000121531 00000 n
+0000121611 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\212\300\352\333b\3304uY\004{\325\346`L\356) (\212\300\352\333b\3304uY\004{\325\346`L\356)] 
+ [(\007%\036^.\356,\302>\005\266\313 \327\342j) (\007%\036^.\356,\302>\005\266\313 \327\342j)] 
 
- /Info 151 0 R
- /Root 150 0 R
- /Size 195 >>
+ /Info 155 0 R
+ /Root 154 0 R
+ /Size 202 >>
 startxref
-116092
+121660
 %%EOF
