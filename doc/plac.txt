@@ -1,5 +1,5 @@
-Parsing the Command Line the Easy Way: Introducing plac, the Easiest Argument Parser in the Python World
-==========================================================================================================
+Plac: Parsing the Command Line the Easy Way
+=====================================================================
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
@@ -412,7 +412,7 @@ to the usage message. Here are a couple of examples of use::
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
-A more realistic example
+A realistic example
 ---------------------------------------
 
 Here is a more realistic script using most of the features of plac_ to
@@ -596,6 +596,22 @@ is then available to you: you can use ``add_argument``, ``add_subparsers()``,
 etc. In other words, while some features are not supported directly,
 *all* features are supported indirectly.
 
+plac vs the rest of the world
+------------------------------------------
+
+Originally plac_ boasted about being "the easiest command-line
+arguments parser in the world". Since then, people started pointing
+out to me various projects which are based on the same idea
+(extracting the parser from the main function signature) and are
+arguably even easier than plac_:
+
+- opterator_ by Dusty Phillips
+- CLIArgs_ by Pavel Panchekha
+
+Luckily for me none of such projects had the idea of using 
+function annotations and argparse_; as a consequence, they are
+no match for the capabilities of plac_.
+
 The future
 -------------------------------
 
@@ -652,3 +668,5 @@ That's all, I hope you will enjoy working with plac!
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
 .. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html
+.. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
+.. _opterator: http://pypi.python.org/pypi/opterator

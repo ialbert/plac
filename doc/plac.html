@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
-<title>Parsing the Command Line the Easy Way: Introducing plac, the Easiest Argument Parser in the Python World</title>
+<title>Plac: Parsing the Command Line the Easy Way</title>
 <meta name="author" content="Michele Simionato" />
 <style type="text/css">
 
@@ -412,8 +412,8 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 </style>
 </head>
 <body>
-<div class="document" id="parsing-the-command-line-the-easy-way-introducing-plac-the-easiest-argument-parser-in-the-python-world">
-<h1 class="title">Parsing the Command Line the Easy Way: Introducing plac, the Easiest Argument Parser in the Python World</h1>
+<div class="document" id="plac-parsing-the-command-line-the-easy-way">
+<h1 class="title">Plac: Parsing the Command Line the Easy Way</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
 <col class="docinfo-content" />
@@ -444,12 +444,13 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 <li><a class="reference internal" href="#scripts-with-flags" id="id5">Scripts with flags</a></li>
 <li><a class="reference internal" href="#plac-for-python-2-x-users" id="id6">plac for Python 2.X users</a></li>
 <li><a class="reference internal" href="#more-features" id="id7">More features</a></li>
-<li><a class="reference internal" href="#a-more-realistic-example" id="id8">A more realistic example</a></li>
+<li><a class="reference internal" href="#a-realistic-example" id="id8">A realistic example</a></li>
 <li><a class="reference internal" href="#advanced-usage" id="id9">Advanced usage</a></li>
 <li><a class="reference internal" href="#custom-annotation-objects" id="id10">Custom annotation objects</a></li>
 <li><a class="reference internal" href="#plac-vs-argparse" id="id11">plac vs argparse</a></li>
-<li><a class="reference internal" href="#the-future" id="id12">The future</a></li>
-<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id13">Trivia: the story behind the name</a></li>
+<li><a class="reference internal" href="#plac-vs-the-rest-of-the-world" id="id12">plac vs the rest of the world</a></li>
+<li><a class="reference internal" href="#the-future" id="id13">The future</a></li>
+<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id14">Trivia: the story behind the name</a></li>
 </ul>
 </div>
 <div class="section" id="the-importance-of-scaling-down">
@@ -925,8 +926,8 @@ usage: example10.py [-h] {add,mul} [n [n ...]]
 example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 </pre>
 </div>
-<div class="section" id="a-more-realistic-example">
-<h1><a class="toc-backref" href="#id8">A more realistic example</a></h1>
+<div class="section" id="a-realistic-example">
+<h1><a class="toc-backref" href="#id8">A realistic example</a></h1>
 <p>Here is a more realistic script using most of the features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> to
 run SQL queries on a database by relying on <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a>. Notice the usage
 of the <tt class="docutils literal">type</tt> feature to automagically convert a SQLAlchemy connection
@@ -1139,8 +1140,23 @@ is then available to you: you can use <tt class="docutils literal">add_argument<
 etc. In other words, while some features are not supported directly,
 <em>all</em> features are supported indirectly.</p>
 </div>
+<div class="section" id="plac-vs-the-rest-of-the-world">
+<h1><a class="toc-backref" href="#id12">plac vs the rest of the world</a></h1>
+<p>Originally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> boasted about being &quot;the easiest command-line
+arguments parser in the world&quot;. Since then, people started pointing
+out to me various projects which are based on the same idea
+(extracting the parser from the main function signature) and are
+arguably even easier than <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://pypi.python.org/pypi/opterator">opterator</a> by Dusty Phillips</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/CLIArgs">CLIArgs</a> by Pavel Panchekha</li>
+</ul>
+<p>Luckily for me none of such projects had the idea of using
+function annotations and <a class="reference external" href="http://argparse.googlecode.com">argparse</a>; as a consequence, they are
+no match for the capabilities of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+</div>
 <div class="section" id="the-future">
-<h1><a class="toc-backref" href="#id12">The future</a></h1>
+<h1><a class="toc-backref" href="#id13">The future</a></h1>
 <p>Currently plac is below 100 lines of code, not counting blanks, comments
 and docstrings. I do not plan to extend it much in the future. The idea is
 to keep the module short: it is and it should remain a little wrapper over
@@ -1151,7 +1167,7 @@ I wrote it in three days, including the tests, the documentation and the
 time to learn <a class="reference external" href="http://argparse.googlecode.com">argparse</a>.</p>
 </div>
 <div class="section" id="trivia-the-story-behind-the-name">
-<h1><a class="toc-backref" href="#id13">Trivia: the story behind the name</a></h1>
+<h1><a class="toc-backref" href="#id14">Trivia: the story behind the name</a></h1>
 <p>The <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> project started very humble: I just wanted to make
 easy_installable my old <a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a> recipe, and to publish it on PyPI.
 The original name of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> was optionparser and the idea behind it was
