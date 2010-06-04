@@ -21,14 +21,14 @@ def parser_from(f, **kw):
     f.__annotations__ = kw
     return plac.parser_from(f)
 
-def compare_help(name):
+def check_help(name):
     sys.argv[0] = name + '.py'
     dic = {}
     try:
         execfile(os.path.join('doc', name + '.py'), dic)
     except NameError: # Python 3
         exec(open(os.path.join('doc', name + '.py')).read(), dic)
-    except SyntaxError: # running Python 2 with some tests
+    except SyntaxError: # raised by some tests when using Python 2
         return
     p = plac.parser_from(dic['main'])
     expected = open(os.path.join('doc', name + '.help')).read().strip()
@@ -113,13 +113,18 @@ def test_kwargs():
 def test_expected_help():
     for fname in os.listdir('doc'):
         if fname.endswith('.help'):
-            compare_help(fname[:-5])
+            yield check_help, fname[:-5]
 
 if __name__ == '__main__':
     n = 0
     for name, test in sorted(globals().items()):
         if name.startswith('test_'):
             print('Running ' + name)
-            test()
-            n +=1
+            maybegen = test()
+            if hasattr(maybegen, '__iter__'):
+                for func, arg in maybegen:
+                    func(arg)
+                    n += 1
+            else:
+                n +=1
     print('Executed %d tests OK' % n)

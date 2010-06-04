@@ -589,10 +589,15 @@ Luckily for me none of such projects had the idea of using
 function annotations and argparse_; as a consequence, they are
 no match for the capabilities of plac_.
 
+Of course, there are tons of other libraries to parse the command
+line. For instance Clap_ by Matthew Frazier which appeared on PyPI
+just the day before plac_; Clap_ is fine but it is certainly not
+easier than plac_.
+ 
 The future
 -------------------------------
 
-Currently plac is below 100 lines of code, not counting blanks,
+Currently plac is around 140 lines of code, not counting blanks,
 comments and docstrings. I do not plan to extend it much in the
 future. The idea is to keep the module short: it is and it should
 remain a little wrapper over argparse_. Actually I have thought about
