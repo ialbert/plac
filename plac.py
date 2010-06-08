@@ -29,7 +29,7 @@ See plac/doc.html for the documentation.
 """
 # this module should be kept Python 2.3 compatible
 
-__version__ = '0.4.2'
+__version__ = '0.5.0'
 
 import re, sys, inspect, argparse
 
@@ -100,7 +100,8 @@ class Annotation(object):
 
 NONE = object() # sentinel use to signal the absence of a default
 
-valid_attrs = getfullargspec(argparse.ArgumentParser.__init__).args[1:]
+PARSER_CFG = getfullargspec(argparse.ArgumentParser.__init__).args[1:]
+# the default arguments accepted by an ArgumentParser object
 
 class PlacHelpFormatter(argparse.HelpFormatter):
     "Custom HelpFormatter which does not displau the default value twice"
@@ -116,26 +117,37 @@ class PlacHelpFormatter(argparse.HelpFormatter):
             args_string = self._format_args(action, default)
             return '%s, %s %s' % (long_short + (args_string,))
  
-def parser_from(func):
+def _parser_from(func, baseparser=None, **cfg):
     """
-    Extract the arguments from the attributes of the passed function and
-    return an ArgumentParser instance.
+    Extract the arguments from the attributes of the passed function
+    (or bound method) and return an ArgumentParser instance. As a side
+    effect, adds a .p attribute to func.
     """
-    short_prefix = getattr(func, 'short_prefix', '-')
-    long_prefix = getattr(func, 'long_prefix', '--')
-    attrs = dict(description=func.__doc__,
-                 formatter_class=PlacHelpFormatter)
+    cfg.setdefault('description', func.__doc__)
+    cfg.setdefault('formatter_class', PlacHelpFormatter)
     for n, v in vars(func).items():
-        if n in valid_attrs:
-            attrs[n] = v
-    p = func.parser = argparse.ArgumentParser(**attrs)
+        if n in PARSER_CFG: # arguments of ArgumentParser
+            cfg[n] = v
+    p = baseparser or argparse.ArgumentParser(**cfg)
+    p.func = func
     f = p.argspec = getfullargspec(func)
+    if inspect.ismethod(func):
+        del f.args[0] # remove self
+        try:
+            func.im_func.p = p # Python 2.X
+        except AttributeError:
+            func.__func__.p = p # Python 2.3
+    else:
+        func.p = p
     defaults = f.defaults or ()
     n_args = len(f.args)
     n_defaults = len(defaults)
     alldefaults = (NONE,) * (n_args - n_defaults) + defaults
+    short_prefix = getattr(func, 'short_prefix', '-')
+    long_prefix = getattr(func, 'long_prefix', '--')
     for name, default in zip(f.args, alldefaults):
-        a = Annotation.from_(f.annotations.get(name, ()))
+        ann = f.annotations.get(name, ())
+        a = Annotation.from_(ann)
         metavar = a.metavar
         if default is NONE:
             dflt = None
@@ -170,7 +182,29 @@ def parser_from(func):
                        type=a.type, metavar=a.metavar)
     return p
 
-def extract_kwargs(args):
+def parser_from(obj, baseparser=None, **cfg):
+    """
+    obj can be a function, a bound method, or a generic object with a 
+    .commands attribute. Returns an ArgumentParser with attributes
+    .func and .argspec, or a multi-parser with attribute .sub.
+    """
+    if hasattr(obj, 'p'): # the underlying parser has been generated already
+        return obj.p
+    elif hasattr(obj, 'commands'): # an object with commands
+        commands = obj.commands
+    elif inspect.isfunction(obj) or inspect.ismethod(obj): # error if not func
+        return _parser_from(obj, baseparser, **cfg)
+    p = obj.p = baseparser or argparse.ArgumentParser(**cfg)
+    subparsers = p.add_subparsers(
+        title='subcommands', help='-h to get additional help')
+    p.subp = {}
+    for cmd in commands:
+        method = getattr(obj, cmd)
+        p.subp[cmd] = _parser_from(method, subparsers.add_parser(cmd), **cfg)
+    return p
+
+def _extract_kwargs(args):
+    "Returns two lists: regular args and name=value args"
     arglist = []
     kwargs = {}
     for arg in args:
@@ -182,16 +216,18 @@ def extract_kwargs(args):
             arglist.append(arg)
     return arglist, kwargs
 
-def call(func, arglist=sys.argv[1:]):
+def parser_call(p, arglist):
     """
-    Parse the given arglist by using an argparser inferred from the
-    annotations of the given function (the main function of the script)
-    and call that function with the parsed arguments. The user can
-    provide a custom parse_annotation hook or replace the default one.
+    Given a parser, calls its underlying callable with the arglist.
+    Works also for multiparsers by dispatching to the underlying parser.
     """
-    p = parser_from(func)
+    subp = getattr(p, 'subp', None)
+    if subp: # subparsers
+        p.parse_args(arglist) # argument checking
+        return parser_call(subp[arglist[0]], arglist[1:])
+    # regular parser
     if p.argspec.varkw:
-        arglist, kwargs = extract_kwargs(arglist)
+        arglist, kwargs = _extract_kwargs(arglist)
     else:
         kwargs = {}
     argdict = vars(p.parse_args(arglist))
@@ -200,4 +236,16 @@ def call(func, arglist=sys.argv[1:]):
     collision = set(p.argspec.args) & set(kwargs)
     if collision:
         p.error('colliding keyword arguments: %s' % ' '.join(collision))
-    return func(*(args + varargs), **kwargs)
+    return p.func(*(args + varargs), **kwargs)
+
+def call(obj, arglist=sys.argv[1:], **cfg):
+    """
+    If obj is a function or a bound method, parses the given arglist 
+    by using an argument parser inferred from the annotations of obj
+    and then calls obj with the parsed arguments. 
+    If obj is an object with attribute .commands, builds a multiparser
+    and dispatches to the associated subparsers.
+    The user can provide a custom parse_annotation hook or replace
+    the default one. 
+    """
+    return parser_call(parser_from(obj, **cfg), arglist)

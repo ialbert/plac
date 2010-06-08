@@ -6,6 +6,7 @@ import os, sys
 import plac
 
 sys.path.insert(0, 'doc')
+sys_argv0 = sys.argv[0]
 
 ######################## helpers #######################
 
@@ -34,6 +35,7 @@ def check_help(name):
     expected = open(os.path.join('doc', name + '.help')).read().strip()
     got = p.format_help().strip()
     assert got == expected, got
+    sys.argv[0] = sys_argv0
 
 ####################### tests ############################
 
@@ -114,6 +116,19 @@ def test_expected_help():
     for fname in os.listdir('doc'):
         if fname.endswith('.help'):
             yield check_help, fname[:-5]
+
+class Cmds(object):
+    commands = 'help', 'commit'
+    def help(self, name):
+        return 'help', name
+    def commit(self):
+        return 'commit'
+
+def test_cmds():
+    cmds = Cmds()
+    assert 'commit' == plac.call(cmds, ['commit'])
+    assert 'help', 'foo' == plac.call(cmds, ['help', 'foo'])
+    expect(SystemExit, plac.call, cmds, [])
 
 if __name__ == '__main__':
     n = 0
