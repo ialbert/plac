@@ -29,7 +29,7 @@ See plac/doc.html for the documentation.
 """
 # this module should be kept Python 2.3 compatible
 
-__version__ = '0.4.2'
+__version__ = '0.4.3'
 
 import re, sys, inspect, argparse
 

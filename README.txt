@@ -5,7 +5,7 @@ plac, the easiest command line arguments parser in the world
 :E-mail: michele.simionato@gmail.com
 :Requires: Python 2.3+
 :Download page: http://pypi.python.org/pypi/plac
-:Installation: ``easy_install plac``
+:Installation: ``easy_install -U plac``
 :License: BSD license
 
 Installation
@@ -15,7 +15,7 @@ If you are lazy, just perform
 
 ::
 
- $ easy_install plac
+ $ easy_install -U plac
 
 which will install just the module on your system. Notice that
 Python 3 requires the easy_install version of the distribute_ project.

@@ -3,11 +3,16 @@ try:
 except ImportError:
     from distutils.core import setup
 import os.path
-import plac
+
+def getversion(fname):
+    "Get the __version__ without importing plac"
+    for line in open(fname):
+        if line.startswith('__version__'):
+            return eval(line[13:])
 
 if __name__ == '__main__':
-    setup(name=plac.__name__,
-          version=plac.__version__,
+    setup(name='plac',
+          version=getversion(os.path.join(os.path.dirname(__file__),'plac.py')),
           description='The easiest command line arguments parser in the world',
           long_description=open('README.txt').read(),
           author='Michele Simionato',
