@@ -11,16 +11,19 @@ from sqlalchemy.ext.sqlsoup import SqlSoup
     )
 def main(db, header, sqlcmd, delimiter="|", *scripts):
     "A script to run queries and SQL scripts on a database"
-    print('Working on %s' % db.bind.url)
+    yield 'Working on %s' % db.bind.url
+
     if sqlcmd:
         result = db.bind.execute(sqlcmd)
         if header: # print the header
-            print(delimiter.join(result.keys()))
+            yield delimiter.join(result.keys())
         for row in result: # print the rows
-            print(delimiter.join(map(str, row)))
+            yield delimiter.join(map(str, row))
 
     for script in scripts:
         db.bind.execute(file(script).read())
+        yield 'executed %s' % script
 
 if __name__ == '__main__':
-    plac.call(main)
+    for output in plac.call(main):
+        print(output)
