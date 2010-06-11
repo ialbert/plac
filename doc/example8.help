@@ -1,0 +1,9 @@
+usage: example8.py [-h] [-c COMMAND] dsn
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c, --command COMMAND
+                        SQL query
