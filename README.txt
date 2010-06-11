@@ -17,8 +17,9 @@ If you are lazy, just perform
 
  $ easy_install -U plac
 
-which will install just the module on your system. Notice that
-Python 3 requires the easy_install version of the distribute_ project.
+which will install the module on your system (and possibly argparse
+too, if it is not already installed). Notice that Python 3 requires
+the easy_install version of the distribute_ project.
 
 If you prefer to install the full distribution from source, including
 the documentation, download the tarball_, unpack it and run

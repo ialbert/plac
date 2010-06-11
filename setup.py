@@ -19,7 +19,7 @@ if __name__ == '__main__':
           author_email='michele.simionato@gmail.com',
           url='http://pypi.python.org/pypi/plac',
           license="BSD License",
-          py_modules = ['plac'],
+          py_modules = ['plac_core', 'plac_ext', 'plac'],
           install_requires=['argparse>=1.1'],
           keywords="command line arguments parser",
           platforms=["All"],
