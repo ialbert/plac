@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>Testing and scripting your applications with plac</title>
+<style type="text/css">
+
+.first {
+  margin-top: 0 }
+
+.last {
+  margin-bottom: 0 }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dd {
+  margin-bottom: 0.5em }
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.hint p.admonition-title, div.important p.admonition-title,
+div.note p.admonition-title, div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em }
+
+div.footer, div.header {
+  font-size: smaller }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+hr {
+  width: 75% }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.line-block {
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option-argument {
+  font-style: italic }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+table {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.citation {
+  border-left: solid thin gray ;
+  padding-left: 0.5ex }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.footnote {
+  border-left: solid thin black ;
+  padding-left: 0.5ex }
+
+td, th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+th.docinfo-name, th.field-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap }
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100% }
+
+tt {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+
+/*
+Additional styles for "modern"-style of DocFactory.
+
+:Author: Gunnar Schwant
+:Contact: g.schwant@gmx.de
+*/
+
+.first {
+  font-size: 10pt }
+
+.last {
+  font-size: 10pt }
+
+a {
+  text-decoration: none }
+
+a.reference {
+  color: #00009F }
+
+a:hover {
+  background-color: #00009F ;
+  color: white }
+
+body {
+  font-family: arial,helvetica,univers ;
+  font-size: 10pt ;
+  padding-top: 0.6cm ;
+  margin-left:0.5cm ;
+  margin-right:0.5cm ;
+  margin-bottom:0.5cm }
+
+dd {
+  font-size: 10pt ;
+  padding-top: 0.1cm
+}
+
+dt {
+  font-size: 10pt ;
+  font-weight: bold ;
+  background-color: #6FC7FB ;
+  padding-left: 0.1cm ;
+  padding-top: 0.1cm ;
+  padding-bottom: 0.1cm }
+
+div.abstract {
+  font-size: 10pt }
+
+div.abstract p.topic-title {
+  font-size: 10pt }
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  font-size: 10pt }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, div.hint p.admonition-title, 
+div.important p.admonition-title, div.note p.admonition-title, 
+div.tip p.admonition-title {
+  margin-top: 0em ;
+  font-size: 12pt ;
+  font-family: arial,helvetica,univers }
+
+div.dedication {
+  font-size: 10pt }
+
+div.dedication p.topic-title {
+  font-size: 10pt }
+
+div.figure {
+  font-size: 10pt }
+
+div.footer, div.header {
+  font-size: 8pt }
+
+div.system-messages {
+  font-size: 10pt }
+
+div.system-messages h1 {
+  font-size: 12pt }
+
+div.system-message {
+  font-size: 10pt }
+
+div.system-message p.system-message-title {
+  font-size: 10pt }
+
+div.topic {
+  font-size: 10pt }
+
+h1, h2, h3, h4, h5, h6 {
+  padding-top: 0.5cm ;
+  page-break-after: avoid ;
+  font-family: arial,helvetica,univers }
+
+h1 {
+  font-size: 18pt }
+
+h1.title {
+  color: white ;
+  background-color: #00009F ;
+  padding-top: 0cm }
+
+h2 {
+  font-size: 16pt }
+
+h2.subtitle {
+  padding-top: 0cm }
+
+h3 {
+  font-size: 14pt }
+
+h4 {
+  font-size: 12pt }
+
+h5, h6 {
+  font-size: 10pt }
+
+hr {
+  width: 100%;
+  page-break-after: always }
+
+li {
+  padding-top: 1mm ;
+  padding-bottom: 1mm }
+
+ol.simple, ul.simple {
+  font-size: 10pt }
+
+ol.arabic {
+  font-size: 10pt }
+
+ol.loweralpha {
+  font-size: 10pt }
+
+ol.upperalpha {
+  font-size: 10pt }
+
+ol.lowerroman {
+  font-size: 10pt }
+
+ol.upperroman {
+  font-size: 10pt }
+
+p.caption {
+  font-size: 10pt }
+
+p.credits {
+  font-style: italic ;
+  font-size: 8pt }
+
+p.label {
+  font-size: 10pt }
+
+p.topic-title {
+  font-size: 10pt }
+
+pre.address {
+  font-family: arial,helvetica,univers ;
+  font-size: 10pt }
+
+pre.line-block {
+  font-size: 10pt }
+
+pre.literal-block, pre.doctest-block {
+  border-width: 1pt ;
+  border-style: solid ;
+  border-color: #999999 ;
+  color: #0000C0 ;
+  background-color: #ffffe0 ;
+  font-size: 9pt }
+
+span.classifier {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.classifier-delimiter {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.field-argument {
+  font-size: 10pt }
+
+span.interpreted {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.option-argument {
+  font-size: 10pt }
+
+span.problematic {
+  font-size: 10pt }
+
+table {
+  font-size: 10pt ;
+  border-collapse: collapse ;
+  border-width: 1.5pt ;
+  border-color: #003366 }
+
+table.citation {
+  font-size: 10pt }
+
+table.docinfo {
+  font-size: 10pt }
+
+table.footnote {
+  font-size: 8pt ;
+  text-align: left }
+
+table.table {
+  width: 100% }
+
+th {
+  border-width: 1.5pt }
+
+td {
+  border-width: 1pt }
+
+td, th {
+  font-size: 10pt ;
+  border-style: thin ;
+  border-color: #003366 }
+
+td.docinfo-name, th.field-name {
+  font-size: 10pt }
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 10pt }
+
+</style>
+</head>
+<body>
+<div class="document" id="testing-and-scripting-your-applications-with-plac">
+<h1 class="title">Testing and scripting your applications with plac</h1>
+
+<div class="section" id="introduction">
+<h1>Introduction</h1>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> has been designed to be simple to use for simple stuff, but in
+truth it is a quite advanced tool with a field of applicability
+which far outreaches the specific domain of command-line arguments parsers.
+In reality <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is a generic tool to write domain specific
+languages (DSL).
+This document explains how you can use plac to test your application, and
+how you can use it to provide a scripting interface to your application.
+Notice that your application does not need to be a command-line
+application: you can use <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> whenever you have an API with strings
+in input and strings in output.</p>
+</div>
+<div class="section" id="testing-applications-with-plac">
+<h1>Testing applications with plac</h1>
+<p>In the standard usage, <tt class="docutils literal"><span class="pre">plac.call</span></tt> is called only once on the main
+function; however in the tests it quite natural to invoke <tt class="docutils literal"><span class="pre">plac.call</span></tt>
+multiple times on the same function with different arguments.
+For instance, suppose you want to store the configuration of
+your application into a Python shelve; then, you may want to write
+a command-line tool to edit your configuration, i.e. a shelve
+interface. A possible implementation could be the following:</p>
+<pre class="literal-block">
+import shelve
+import plac
+
+&#64;plac.annotations(
+    help=('show help', 'flag'),
+    all=('show all parameters in the shelve', 'flag'),
+    clear=('clear the shelve', 'flag'),
+    delete=('delete an element', 'option'),
+    filename=('filename of the shelve', 'option'),
+    params='names of the parameters in the shelve',
+    setters='setters param=value')
+def ishelve(help, all, clear, delete, filename='conf.shelve',
+            *params, **setters):
+    sh = shelve.open(filename)
+    try:
+        if help:
+            yield 'Special commands:'
+            yield 'help, all, clear, delete'
+        elif all:
+            for param, name in sh.items():
+                yield '%s=%s' % (param, name)
+        elif clear:
+            sh.clear()
+            yield 'cleared the shelve'
+        elif delete:
+            try:
+                del sh[delete]
+            except KeyError:
+                yield '%s: not found' % delete
+            else:
+                yield 'deleted %s' % delete
+        for param in params:
+            try:
+                yield sh[param]
+            except KeyError:
+                yield '%s: not found' % param           
+        for param, value in setters.items():
+            sh[param] = value
+            yield 'setting %s=%s' % (param, value)
+    finally:
+        sh.close()
+
+ishelve.add_help = False # there is a custom help
+
+if __name__ == '__main__':
+    for output in plac.call(ishelve):
+        print(output)
+
+</pre>
+<p>You can write the tests for such implementation as follows:</p>
+<pre class="literal-block">
+import plac
+from ishelve import ishelve
+
+def test():
+    assert plac.call(ishelve, []) == []
+    assert plac.call(ishelve, ['--clear']) == ['cleared the shelve']
+    assert plac.call(ishelve, ['a=1']) == ['setting a=1']
+    assert plac.call(ishelve, ['a']) == ['1']
+    assert plac.call(ishelve, ['--delete=a']) == ['deleted a']
+    assert plac.call(ishelve, ['a']) == ['a: not found']
+
+
+</pre>
+<p>There is a small optimization here: once <tt class="docutils literal"><span class="pre">plac.call(func)</span></tt>
+has been called, a <tt class="docutils literal"><span class="pre">.p</span></tt> attribute is attached to <tt class="docutils literal"><span class="pre">func</span></tt>, containing
+the parser associated to the function annotations. The second time
+<tt class="docutils literal"><span class="pre">plac.call(func)</span></tt> is invoked, the parser is re-used.</p>
+</div>
+<div class="section" id="writing-command-line-interpreters-with-plac">
+<h1>Writing command-line interpreters with plac</h1>
+<p>Apart from testing, there is another typical use case where <tt class="docutils literal"><span class="pre">plac.call</span></tt>
+is invoked multiple times, in the implementation of command interpreters.
+For instance, you could define an interative interpreter on top
+of <tt class="docutils literal"><span class="pre">ishelve</span></tt> as follows:</p>
+<pre class="literal-block">
+import plac
+from ishelve import ishelve
+
+ishelve.prefix_chars = '.'
+ishelve.add_help = False
+
+&#64;plac.annotations(
+    interactive=('start interactive interface', 'flag'))
+def main(interactive, *args):
+    if interactive:
+        import shlex
+        while True:
+            try:
+                line = raw_input('i&gt; ')
+            except EOFError:
+                break
+            cmd = shlex.split(line)
+            for out in plac.call(ishelve, cmd):
+                print(out)
+    else:
+        plac.call(ishelve, args)
+
+if __name__ == '__main__':
+    plac.call(main)
+
+</pre>
+<p>Here is an usage session, usinng <tt class="docutils literal"><span class="pre">rlwrap</span></tt> to enable readline features:</p>
+<pre class="literal-block">
+$ rlwrap python shelve_interpreter.py -i
+
+i&gt; ..clear
+cleared the shelve
+i&gt; a=1
+setting a=1
+i&gt; a
+1
+i&gt; b=2
+setting b=2
+i&gt; a b
+1
+2
+i&gt; ..delete a
+deleted a
+i&gt; a
+a: not found
+i&gt; ..all
+b=2
+i&gt; [CTRL-D]
+</pre>
+<p>As you see, it is possibly to write command interpreters directly on top of
+<tt class="docutils literal"><span class="pre">plac.call</span></tt> and it is not particularly difficult. However, the devil
+is in the details (I mean error management) and my recommendation, if
+you want to implement an interpreter of commands, is to use the
+class <tt class="docutils literal"><span class="pre">plac.Interpreter</span></tt> which is especially suited for this
+task. <tt class="docutils literal"><span class="pre">plac.Interpreter</span></tt> is available only if you are using a recent
+version of Python (&gt;= 2.5), because it is a context manager object
+to be used with the <tt class="docutils literal"><span class="pre">with</span></tt> statement. The only important method
+of <tt class="docutils literal"><span class="pre">plac.Interpreter</span></tt> is the <tt class="docutils literal"><span class="pre">.send</span></tt> method, which takes a
+string in input and returns a string in output. Internally the input string
+is splitted with <tt class="docutils literal"><span class="pre">shlex.split</span></tt> and passed to <tt class="docutils literal"><span class="pre">plac.call</span></tt>,
+with some trick to manage exceptions correctly. Moreover long options
+are managed with a single prefix character.</p>
+<pre class="literal-block">
+&quot;&quot;&quot;Call this script with rlwrap and you will be happy&quot;&quot;&quot;
+from __future__ import with_statement
+from plac_shell import Interpreter
+from shelve_interface import interpreter
+
+if __name__ == '__main__':
+    with Interpreter(interpreter) as i:
+        while True:
+            try:
+                line = raw_input('i&gt; ')
+            except EOFError:
+                break
+            print(i.send(line))
+
+</pre>
+</div>
+<div class="section" id="multi-parsers">
+<h1>Multi-parsers</h1>
+<p>As we saw, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to infer an arguments parser from the
+signature of a function. In addition, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is also able to infer a
+multi-parser from a container of commands, by inferring the subparsers
+from the commands.  That is useful if you want to implement
+<em>subcommands</em> (a familiar example of a command-line application
+featuring subcommands is subversion).</p>
+<p>A container of commands is any object with a <tt class="docutils literal"><span class="pre">.commands</span></tt> attribute
+listing a set of functions or methods which are valid commands. In
+particular, a Python module is a perfect container of commands. As an
+example, consider the following module implementing a fake Version
+Control System:</p>
+<pre class="literal-block">
+&quot;A Fake Version Control System&quot;
+
+import plac
+
+commands = 'checkout', 'commit', 'status'
+
+&#64;plac.annotations(
+    url=('url of the source code', 'positional'))
+def checkout(url):
+    return ('checkout ', url)
+
+&#64;plac.annotations(
+    message=('commit message', 'option'))
+def commit(message):
+    return ('commit ', message)
+
+&#64;plac.annotations(quiet=('summary information', 'flag'))
+def status(quiet):
+    return ('status ', quiet)
+
+if __name__ == '__main__':
+    import __main__
+    print(plac.call(__main__))
+
+</pre>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+usage: vcs.py [-h] {status,commit,checkout} ...
+
+A Fake Version Control System
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {status,commit,checkout}
+                        -h to get additional help
+
+</pre>
+<p>If the commands are completely independent, a module is a good fit for
+a method container. In other situations, it is best to use a custom
+class. For instance, suppose you want to store the configuration of
+your application into a Python shelve; then, you may want to write
+a command-line tool to edit your configuration, i.e. a shelve
+interface:</p>
+<pre class="literal-block">
+import shelve
+import plac
+
+# error checking is missing: this is left to the reader
+class ShelveInterface(object):
+    &quot;A minimal interface over a shelve object&quot;
+    commands = 'set', 'show', 'show_all', 'delete'
+    def __init__(self, fname):
+        self.fname = fname
+        self.sh = shelve.open(fname)
+    def set(self, name, value):
+        &quot;set name value&quot;
+        yield 'setting %s=%s' % (name, value)
+        self.sh[name] = value
+    def show(self, *names):
+        &quot;show given parameters&quot;
+        for name in names:
+            yield '%s = %s\n' % (name, self.sh[name])
+    def show_all(self):
+        &quot;show all parameters&quot;
+        for name in self.sh:
+            yield '%s = %s\n' % (name, self.sh[name])
+    def delete(self, name=None):
+        &quot;delete given parameter (or everything)&quot;
+        if name is None:
+            yield 'deleting everything'
+            self.sh.clear()
+        else:
+            yield 'deleting %s' % name
+            del self.sh[name]
+
+if __name__ == '__main__':
+    interface = ShelveInterface('conf.shelve')
+    try:
+        for output in plac.call(interface):
+            print(output)
+    finally:
+        interface.sh.close()
+
+</pre>
+<p>Here is a session of usage on an Unix-like operating system:</p>
+<pre class="literal-block">
+$ alias conf=&quot;python shelve_interface.py&quot;
+$ conf set a pippo
+setting a=pippo
+$ conf set b lippo
+setting b=lippo
+$ conf show_all
+b = lippo
+a = pippo
+$ conf show a b
+a = pippo
+b = lippo
+$ conf delete a
+deleting a
+$ conf show_all
+b = lippo
+</pre>
+<p>Technically a multi-parser is a parser object with an attribute <tt class="docutils literal"><span class="pre">.subp</span></tt>
+which is a dictionary of subparsers; each of the methods listed in
+the attribute <tt class="docutils literal"><span class="pre">.commands</span></tt> corresponds to a subparser inferred from
+the method signature. The original object gets a <tt class="docutils literal"><span class="pre">.p</span></tt> attribute
+containing the main parser which is associated to an internal function
+which dispatches on the right method depending on the method name.</p>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+import plac
+
+class FVCS(object):
+    &quot;A Fake Version Control System&quot;
+    commands = 'checkout', 'commit', 'status', 'help'
+
+    &#64;plac.annotations(
+        name=('a recognized command', 'positional', None, str, commands))
+    def help(self, name):
+        self.p.subp[name].print_help()
+
+    &#64;plac.annotations(
+        url=('url of the source code', 'positional'))
+    def checkout(self, url):
+        print('checkout', url)
+
+    def commit(self):
+        print('commit')
+
+    &#64;plac.annotations(quiet=('summary information', 'flag'))
+    def status(self, quiet):
+        print('status', quiet)
+
+main = FVCS()
+
+if __name__ == '__main__':
+    plac.call(main)
+
+</pre>
+<pre class="literal-block">
+usage: example13.py [-h] {status,commit,checkout,help} ...
+
+A Fake Version Control System
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {status,commit,checkout,help}
+                        -h to get additional help
+
+</pre>
+</div>
+<div class="section" id="advanced-usage">
+<h1>Advanced usage</h1>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> relies on a <a class="reference external" href="http://argparse.googlecode.com">argparse</a> for all of the heavy lifting work and it is
+possible to leverage on <a class="reference external" href="http://argparse.googlecode.com">argparse</a> features directly or indirectly.</p>
+<p>For instance, you can make invisible an argument in the usage message
+simply by using <tt class="docutils literal"><span class="pre">'==SUPPRESS=='</span></tt> as help string (or
+<tt class="docutils literal"><span class="pre">argparse.SUPPRESS</span></tt>). Similarly, you can use <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType">argparse.FileType</a>
+directly.</p>
+<p>It is also possible to pass options to the underlying
+<tt class="docutils literal"><span class="pre">argparse.ArgumentParser</span></tt> object (currently it accepts the default
+arguments <tt class="docutils literal"><span class="pre">description</span></tt>, <tt class="docutils literal"><span class="pre">epilog</span></tt>, <tt class="docutils literal"><span class="pre">prog</span></tt>, <tt class="docutils literal"><span class="pre">usage</span></tt>,
+<tt class="docutils literal"><span class="pre">add_help</span></tt>, <tt class="docutils literal"><span class="pre">argument_default</span></tt>, <tt class="docutils literal"><span class="pre">parents</span></tt>, <tt class="docutils literal"><span class="pre">prefix_chars</span></tt>,
+<tt class="docutils literal"><span class="pre">fromfile_prefix_chars</span></tt>, <tt class="docutils literal"><span class="pre">conflict_handler</span></tt>, <tt class="docutils literal"><span class="pre">formatter_class</span></tt>).
+It is enough to set such attributes on the <tt class="docutils literal"><span class="pre">main</span></tt> function.  For
+instance</p>
+<pre class="literal-block">
+def main(...):
+    pass
+
+main.add_help = False
+</pre>
+<p>disable the recognition of the help flag <tt class="docutils literal"><span class="pre">-h,</span> <span class="pre">--help</span></tt>. This is not
+particularly elegant, but I assume the typical user of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> will be
+happy with the defaults and would not want to change them; still it is
+possible if she wants to. For instance, by setting the <tt class="docutils literal"><span class="pre">description</span></tt>
+attribute, it is possible to add a comment to the usage message (by
+default the docstring of the <tt class="docutils literal"><span class="pre">main</span></tt> function is used as
+description). It is also possible to change the option prefix; for
+instance if your script must run under Windows and you want to use &quot;/&quot;
+as option prefix you can add the line:</p>
+<pre class="literal-block">
+main.prefix_chars='/-'
+</pre>
+<p><tt class="docutils literal"><span class="pre">prefix_chars</span></tt> is an <a class="reference external" href="http://argparse.googlecode.com">argparse</a> feature. The first prefix char (<tt class="docutils literal"><span class="pre">/</span></tt>) is used
+as the default in the construction of both short and long options;
+the second prefix char (<tt class="docutils literal"><span class="pre">-</span></tt>) is kept to keep the <tt class="docutils literal"><span class="pre">-h/--help</span></tt> option
+working: however you can disable it and reimplement it if you like.
+For instance, here is how you could reimplement the <tt class="docutils literal"><span class="pre">help</span></tt> command
+in the Fake VCS example:</p>
+<pre class="literal-block">
+import plac
+from example13 import FVCS
+
+class VCS_with_help(FVCS):
+    commands = FVCS.commands + ('help',)
+
+    &#64;plac.annotations(
+        name=('a recognized command', 'positional', None, str, commands))
+    def help(self, name):
+        self.p.subp[name].print_help()
+
+main = VCS_with_help()
+
+if __name__ == '__main__':
+    plac.call(main)
+
+</pre>
+<p>Internally <tt class="docutils literal"><span class="pre">plac.call</span></tt> uses
+<tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> and adds the parser as an attribute <tt class="docutils literal"><span class="pre">.p</span></tt>.
+This also happers for multiparsers and you can take advantage of
+the <tt class="docutils literal"><span class="pre">.p</span></tt> attribute to invoke <tt class="docutils literal"><span class="pre">argparse.ArgumentParser</span></tt> methods.</p>
+<p>Interested readers should read the documentation of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> to
+understand the meaning of the other options. If there is a set of
+options that you use very often, you may consider writing a decorator
+adding such options to the <tt class="docutils literal"><span class="pre">main</span></tt> function for you. For simplicity,
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not perform any magic of that kind.</p>
+<p>It is possible to access directly the underlying <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object, by
+invoking the <tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> utility function:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; import plac
+&gt;&gt;&gt; def main(arg):
+...     pass
+...
+&gt;&gt;&gt; print plac.parser_from(main)
+ArgumentParser(prog='', usage=None, description=None, version=None,
+formatter_class=&lt;class 'argparse.HelpFormatter'&gt;, conflict_handler='error',
+add_help=True)
+</pre>
+<p>I use <tt class="docutils literal"><span class="pre">plac.parser_from</span></tt> in the unit tests of the module, but regular
+users should never need to use it, since the parser is also available
+as an attribute of the main function.</p>
+</div>
+<div class="section" id="custom-annotation-objects">
+<h1>Custom annotation objects</h1>
+<p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal"><span class="pre">Annotation</span></tt> class to convert the tuples
+in the function signature into annotation objects, i.e. objects with
+six attributes <tt class="docutils literal"><span class="pre">help,</span> <span class="pre">kind,</span> <span class="pre">short,</span> <span class="pre">type,</span> <span class="pre">choices,</span> <span class="pre">metavar</span></tt>.</p>
+<p>Advanced users can implement their own annotation objects.
+For instance, here is an example of how you could implement annotations for
+positional arguments:</p>
+<pre class="literal-block">
+# annotations.py
+class Positional(object):
+    def __init__(self, help='', type=None, choices=None, metavar=None):
+        self.help = help
+        self.kind = 'positional'
+        self.abbrev = None
+        self.type = type
+        self.choices = choices
+        self.metavar = metavar
+
+</pre>
+<p>You can use such annotations objects as follows:</p>
+<pre class="literal-block">
+# example11.py
+import plac
+from annotations import Positional
+
+&#64;plac.annotations(
+    i=Positional(&quot;This is an int&quot;, int),
+    n=Positional(&quot;This is a float&quot;, float),
+    rest=Positional(&quot;Other arguments&quot;))
+def main(i, n, *rest):
+    print(i, n, rest)
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here is the usage message you get:</p>
+<pre class="literal-block">
+usage: example11.py [-h] i n [rest [rest ...]]
+
+positional arguments:
+  i           This is an int
+  n           This is a float
+  rest        Other arguments
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>You can go on and define <tt class="docutils literal"><span class="pre">Option</span></tt> and <tt class="docutils literal"><span class="pre">Flag</span></tt> classes, if you like.
+Using custom annotation objects you could do advanced things like extracting the
+annotations from a configuration file or from a database, but I expect such
+use cases to be quite rare: the default mechanism should work
+pretty well for most users.</p>
+</div>
+</div>
+</body>
+</html>

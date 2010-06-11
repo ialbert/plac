@@ -1,0 +1,10 @@
+usage: vcs.py [-h] {status,commit,checkout} ...
+
+A Fake Version Control System
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {status,commit,checkout}
+                        -h to get additional help

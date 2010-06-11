@@ -25,12 +25,13 @@ def parser_from(f, **kw):
 def check_help(name):
     sys.argv[0] = name + '.py'
     dic = {}
-    try:
-        execfile(os.path.join('doc', name + '.py'), dic)
-    except NameError: # Python 3
+    if sys.version >= '3':
         exec(open(os.path.join('doc', name + '.py')).read(), dic)
-    except SyntaxError: # raised by some tests when using Python 2
-        return
+    else: # Python 2.X
+        try:
+            execfile(os.path.join('doc', name + '.py'), dic)
+        except SyntaxError: # raised by some tests when using Python 2
+            return
     p = plac.parser_from(dic['main'])
     expected = open(os.path.join('doc', name + '.help')).read().strip()
     got = p.format_help().strip()
@@ -105,16 +106,16 @@ def test_kwargs():
         return args, kw
     main.__annotations__ = dict(opt=('Option', 'option'))
     argskw = plac.call(main, ['arg1', 'arg2', 'a=1', 'b=2'])
-    assert argskw == (('arg2',), dict(a='1', b='2')), argskw
+    assert argskw == ["('arg2',)", "{'a': '1', 'b': '2'}"], argskw
     
-    argskw = plac.call(main, ['arg1', 'arg2', 'a=1', '-o2'])
-    assert argskw == (('arg2',), dict(a='1')), argskw
+    argskw = plac.call(main, ['arg1', 'arg2', 'a=1', '-o', '2'])
+    assert argskw == ["('arg2',)", "{'a': '1'}"], argskw
 
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
 def test_expected_help():
     for fname in os.listdir('doc'):
-        if fname.endswith('.help'):
+        if fname.endswith('.help') and fname != 'vcs.help':
             yield check_help, fname[:-5]
 
 class Cmds(object):
@@ -126,9 +127,15 @@ class Cmds(object):
 
 def test_cmds():
     cmds = Cmds()
-    assert 'commit' == plac.call(cmds, ['commit'])
-    assert 'help', 'foo' == plac.call(cmds, ['help', 'foo'])
+    assert ['commit'] == plac.call(cmds, ['commit'])
+    assert ['help', 'foo'] == plac.call(cmds, ['help', 'foo'])
     expect(SystemExit, plac.call, cmds, [])
+
+def test_yield():
+    def main():
+        for i in (1, 2, 3):
+            yield i
+    assert plac.call(main, []) == ['1', '2', '3']
 
 if __name__ == '__main__':
     n = 0

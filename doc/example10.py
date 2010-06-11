@@ -10,7 +10,7 @@ def main(operator, *numbers):
     result = dict(add=0.0, mul=1.0)[operator]
     for n in numbers:
         result = op(result, n)
-    print(result)
+    return result
 
 if __name__ == '__main__':
-    plac.call(main)
+    print(plac.call(main)[0])
