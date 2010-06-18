@@ -1,6 +1,5 @@
 # this module should be kept Python 2.3 compatible
 import re, sys, inspect, argparse
-
 if sys.version >= '3':
     from inspect import getfullargspec
 else:
@@ -88,13 +87,11 @@ def _parser_from(func, baseparser=None):
     p = baseparser or argparse.ArgumentParser(**pconf(func))
     p.func = func
     p.argspec = f = getfullargspec(func)
-    p.parselist = _parser_call.__get__(p)
+    p.parselist = _parser_call.__get__(p, p.__class__)
+    # add func.p
     if inspect.ismethod(func):
         del f.args[0] # remove self
-        try:
-            func.im_func.p = p # Python 2.X
-        except AttributeError:
-            func.__func__.p = p # Python 2.3
+        func.im_func.p = p
     else:
         func.p = p
     defaults = f.defaults or ()
@@ -141,6 +138,13 @@ def _parser_from(func, baseparser=None):
                        type=a.type, metavar=a.metavar)
     return p
 
+def addsubparser(cmd, func, parser):
+    if not hasattr(parser, 'subparsers'):
+        parser.subparsers = parser.add_subparsers(
+            title='subcommands', help='-h to get additional help')
+    subp = parser.subparsers.add_parser(cmd, **pconf(func))
+    return parser_from(func, subp)
+
 def parser_from(obj, baseparser=None):
     """
     obj can be a function, a bound method, or a generic object with a 
@@ -151,14 +155,13 @@ def parser_from(obj, baseparser=None):
         return obj.p
     elif hasattr(obj, 'commands'): # a command container
         p = obj.p = baseparser or argparse.ArgumentParser(**pconf(obj))
-        subparsers = p.add_subparsers(
-            title='subcommands', help='-h to get additional help')
-        p.subp = {}
         for cmd in obj.commands:
-            method = getattr(obj, cmd)
-            baseparser = subparsers.add_parser(cmd, **pconf(method))
-            p.subp[cmd] = _parser_from(method, baseparser)
-        p.parselist = _parser_call.__get__(p)
+            addsubparser(cmd, getattr(obj, cmd), p)
+        p.missing = getattr(obj, '__missing__',
+                            lambda name: p.error('No command %r' % name))
+        p.func = lambda : None
+        p.argspec = getfullargspec(p.func)
+        p.parselist = _parser_call.__get__(p, p.__class__)
         return p
     elif inspect.isfunction(obj) or inspect.ismethod(obj): # error if not func
         return _parser_from(obj, baseparser)
@@ -178,16 +181,45 @@ def _extract_kwargs(args):
             arglist.append(arg)
     return arglist, kwargs
 
+def _match_cmd(abbrev, commands):
+    "Extract the full command name from an abbreviation or raise a NameError"
+    perfect_matches = [name for name in commands if name == abbrev]
+    if len(perfect_matches) == 1:
+        return perfect_matches[0]
+    matches = [name for name in commands if name.startswith(abbrev)]
+    n = len(matches)
+    if n == 1:
+        return matches[0]
+    elif n > 1:
+        raise NameError('Ambiguous command %r: matching %s' % (abbrev, matches))
+
+def extract_subparser(p, name_parser_map, arglist):
+    "Extract the subparser from the first recognized argument"
+    prefix = p.prefix_chars[0]
+    for i, arg in enumerate(arglist):
+        if not arg.startswith(prefix):
+            cmd = _match_cmd(arg, name_parser_map)
+            del arglist[i] 
+            return name_parser_map.get(cmd), arg
+    return None, ''
+
+def stringlist(result):
+    if hasattr(result, '__iter__') and not isinstance(result, str):
+        return [str(x) for x in result]
+    else:
+        return [str(result)]
+
 def _parser_call(p, arglist):
     """
     Given a parser, calls its underlying callable with the arglist.
     Works also for multiparsers by dispatching to the underlying parser.
     """
-    subp = getattr(p, 'subp', None)
-    if subp: # subparsers
-        p.parse_args(arglist) # argument checking
-        return _parser_call(subp[arglist[0]], arglist[1:])
-    # regular parser
+    if hasattr(p, 'subparsers'):
+        subp, cmd = extract_subparser(p, p.subparsers._name_parser_map, arglist)
+        if subp is not None:
+            p = subp
+        elif subp is None and cmd:
+            return stringlist(p.missing(cmd))
     if p.argspec.varkw:
         arglist, kwargs = _extract_kwargs(arglist)
     else:
@@ -198,13 +230,7 @@ def _parser_call(p, arglist):
     collision = set(p.argspec.args) & set(kwargs)
     if collision:
         p.error('colliding keyword arguments: %s' % ' '.join(collision))
-    result = p.func(*(args + varargs), **kwargs)
-    if result is None:
-        return []
-    elif hasattr(result, '__iter__') and not isinstance(result, str):
-        return [str(x) for x in result]
-    else:
-        return [str(result)]
+    return stringlist( p.func(*(args + varargs), **kwargs))
 
 def call(obj, arglist=sys.argv[1:]):
     """
@@ -215,4 +241,14 @@ def call(obj, arglist=sys.argv[1:]):
     and dispatches to the associated subparsers.
     Return a list of strings.
     """
-    return parser_from(obj).parselist(arglist)
+    enter = getattr(obj, '__enter__', lambda : None)
+    exit = getattr(obj, '__exit__', lambda et, ex, tb: None)
+    enter()        
+    try:
+        output = parser_from(obj).parselist(arglist)
+    except:
+        exit(*sys.exc_info())
+        raise
+    else:
+        exit(None, None, None)
+        return output

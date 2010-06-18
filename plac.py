@@ -30,8 +30,26 @@ See doc/plac.pdf for the documentation.
 
 __version__ = '0.5.0'
 
-import sys
+import imp, os, sys
 from plac_core import *
-
 if sys.version >= '2.5':
-    from plac_ext import Interpreter
+    from plac_ext import Interpreter, cmd_interface
+
+try:
+    PLACDIRS = os.environ.get('PLACPATH', '.').split(':')
+except:
+    raise ValueError('Ill-formed PLACPATH: got %PLACPATHs' % os.environ)
+
+def import_main(path):
+    "An utility to import the main function of a plac tool"
+    if not os.path.isabs(path): # relative path, look at PLACDIRS
+        for placdir in PLACDIRS:
+            fullpath = os.path.join(placdir, path)
+            if os.path.exists(fullpath):
+                break
+        else: # no break
+            raise ImportError('Cannot find %s', path)
+    else:
+        fullpath = path
+    name, ext = os.path.splitext(os.path.basename(fullpath))
+    return imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1)).main

@@ -1,0 +1,13 @@
+#!ishelve.py
+i> .clear # start from a clean state
+cleared the shelve
+i> a=1
+setting a=1
+i> a
+1
+i> .del a
+deleted a
+i> a
+a: not found
+i> .cler # spelling error
+SystemExit: unrecognized arguments: .cler

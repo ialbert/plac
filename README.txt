@@ -1,5 +1,5 @@
-plac, the easiest command line arguments parser in the world
-============================================================
+plac, the smartest command line arguments parser in the world
+=============================================================
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
@@ -40,24 +40,31 @@ Run
 
 ::
 
- $ python test_plac.py
+ $ python doc/test_plac.py
 
 or
 
 ::
 
- $ nosetests test_plac.py
+ $ nosetests doc
 
 or
 
 ::
 
- $ py.test test_plac.py
+ $ py.test doc
 
 Documentation
 --------------
 
-You can choose between the `HTML version`_  and the `PDF version`_ .
+You can choose between the `HTML version`_  and the `PDF version`_:
 
 .. _HTML version: http://micheles.googlecode.com/hg/plac/doc/plac.html
 .. _PDF version: http://micheles.googlecode.com/hg/plac/doc/plac.pdf
+
+There is also an additional documentation for advanced usages of plac,
+such as using plac_ for testing/scripting an application and to
+write domain specific languages (DSL):
+
+.. _HTML version: http://micheles.googlecode.com/hg/plac/doc/plac_adv.html
+.. _PDF version: http://micheles.googlecode.com/hg/plac/doc/plac_adv.pdf

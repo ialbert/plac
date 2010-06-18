@@ -1,42 +1,64 @@
-import os, sys, cmd, shlex
-import plac
+# this module requires Python 2.5+
+from __future__ import with_statement
+import os, sys, cmd, shlex, traceback
+import plac_core
 
 def cmd_interface(obj):
     "Returns a cmd.Cmd wrapper over the command container"
-    dic = {}
+    i = Interpreter(obj)
+    def default(self, line):
+        print(i.send(line))
+    dic = dict(preloop=lambda self: i.__enter__(),
+               postloop=lambda self: i.__exit__(),
+               do_EOF=lambda self, line: True,
+               default=default)
     for command in obj.commands:
         method = getattr(obj, command)
         def do_func(self, line, command=command):
-            args = [command] + shlex.split(line)
-            try:
-                for output in plac.call(obj, args):
-                    print(output)
-            except SystemExit:
-                print(e)
-            except Exception:
-                print('%s: %s' % (e.__class__.__name__, e))
+            print(i.send(command + ' ' + line))
         do_func.__doc__ = method.__doc__
-        if sys.version >= '2.4':
-            do_func.__name__ = method.__name__
+        do_func.__name__ = method.__name__
         dic['do_' + command] = do_func
     clsname = '_%s_' % obj.__class__.__name__
     cls = type(clsname, (cmd.Cmd, object), dic)
     return cls()
 
-# requires Python 2.5+
+def _getoutputs(lines, intlist):
+    "helper used in parse_doctest"
+    for i, start in enumerate(intlist[:-1]):
+        end = intlist[i + 1]
+        yield '\n'.join(lines[start+1:end])
+
+class Output(tuple):
+    """
+    The output returned by the .send method of an Interpreter object.
+    Contains the output string (or None if there is an exception)
+    and the exception information (exception type, exception, traceback).
+    """
+    def __new__(cls, outstr, etype, exc, tb):
+        self = tuple.__new__(cls, (outstr, etype, exc, tb))
+        self.str = outstr
+        self.etype = etype
+        self.exc = exc
+        self.tb = tb
+        return self
+    def __str__(self):
+        "Returns the output string or the error message"
+        if self.str is None: # there was an error
+            return '%s: %s' % (self.etype.__name__, self.exc)
+        else:
+            return self.str
+
 class Interpreter(object):
     """
-    The safety_net is a function taking a parsing function and a list of
-    arguments and applying the first to the second by managing some class
-    of exceptions.
+    A context manager with a .send method and a few utility methods:
+    execute, test and doctest.
     """
-    def __init__(self, obj, safety_net=lambda parse, arglist: parse(arglist),
-                 commentchar='#'):
+    def __init__(self, obj, commentchar='#'):
         self.obj = obj
-        self.safety_net = safety_net
         self.commentchar = commentchar
         self.interpreter = None
-        self.p = plac.parser_from(obj)
+        self.p = plac_core.parser_from(obj)
         self.p.error = lambda msg: sys.exit(msg) # patch the parser
 
     def __enter__(self):
@@ -45,11 +67,10 @@ class Interpreter(object):
         return self
 
     def send(self, line):
-        """
-        Send a line to the underlying interpreter. 
-        Return a string or None for comment lines.
-        The line should end with a newline.
-        """
+        "Send a line to the underlying interpreter and return an Output object"
+        if self.interpreter is None:
+            raise RuntimeError('%r not initialized: probably you forgot to '
+                               'use the with statement' % self)
         return self.interpreter.send(line)
 
     def close(self):
@@ -60,97 +81,89 @@ class Interpreter(object):
 
     def _make_interpreter(self):
         enter = getattr(self.obj, '__enter__', lambda : None)
-        exit = getattr(self.obj, '__exit__', lambda a1, a2, a3: None)
+        exit = getattr(self.obj, '__exit__', lambda et, ex, tb: None)
         enter()
-        result = None
-        prefix = self.p.short_prefix
+        output = None
         try:
             while True:
-                line = yield result
-                if not line:
-                    break
-                elif line.startswith(self.commentchar):
-                    yield; continue
-                arglist = shlex.split(line)
-                for i, long_opt in enumerate(arglist):
-                    # avoid double prefix in long options
-                    if len(long_opt) > 2 and long_opt[0] == prefix:
-                        arglist[i] = prefix + long_opt
+                line = yield output
+                arglist = shlex.split(line, self.commentchar)
                 try:
-                    output = self.safety_net(self.p.parselist, arglist)
-                except SystemExit, e:
-                    output = [str(e)]
-                result = os.linesep.join(output)
+                    lines = self.p.parselist(arglist)
+                except:
+                    output = Output(None, *sys.exc_info())
+                else:
+                    output = Output(os.linesep.join(lines), None, None, None)
         except:
             exit(*sys.exc_info())
             raise
         else:
             exit(None, None, None)
 
-## from cmd.py
-# def complete(self, text, state):
-#     """Return the next possible completion for 'text'.
+    def check(self, given_input, expected_output, lineno=None):
+        "Make sure you get the expected_output from the given_input"
+        output = str(self.send(given_input))
+        ok = output == expected_output
+        if not ok:
+            msg = 'input: %s\noutput: %s\nexpected: %s' % (
+                given_input, output, expected_output)
+            if lineno:
+                msg = 'line %d: %s' % (lineno + 1, msg)
+            raise AssertionError(msg) 
 
-#     If a command has not been entered, then complete against command list.
-#     Otherwise try to call complete_<command> to get list of completions.
-#     """
-#     if state == 0:
-#         import readline
-#         origline = readline.get_line_buffer()
-#         line = origline.lstrip()
-#         stripped = len(origline) - len(line)
-#         begidx = readline.get_begidx() - stripped
-#         endidx = readline.get_endidx() - stripped
-#         if begidx>0:
-#             cmd, args, foo = self.parseline(line)
-#             if cmd == '':
-#                 compfunc = self.completedefault
-#             else:
-#                 try:
-#                     compfunc = getattr(self, 'complete_' + cmd)
-#                 except AttributeError:
-#                     compfunc = self.completedefault
-#         else:
-#             compfunc = self.completenames
-#         self.completion_matches = compfunc(text, line, begidx, endidx)
-#     try:
-#         return self.completion_matches[state]
-#     except IndexError:
-#         return None
+    def _parse_doctest(self, lineiter):
+        lines = [line.strip() for line in lineiter]
+        inputs = []
+        positions = []
+        for i, line in enumerate(lines):
+            if line.startswith('i> '):
+                inputs.append(line[3:])
+                positions.append(i)
+        positions.append(len(lines) + 1) # last position
+        return zip(inputs, _getoutputs(lines, positions), positions)
 
-# def readlines(completekey='tab'):
-#     if readline:
-#         old_completer = readline.get_completer()
-#         readline.set_completer(self.complete)
-#         readline.parse_and_bind(self.completekey + ": complete")
-#     try:
-#         while True:
-#             try:
-#                 yield raw_input('cli> ')
-#             except EOFError:
-#                 break
-#     finally:
-#         if readline:
-#             readline.set_completer(old_completer)
+    def doctest(self, lineiter, out=sys.stdout, verbose=False):
+        """
+        Parse a text containing doctests in a context and tests of all them.
+        Raise an error even if a single doctest if broken. Use this for
+        sequential tests which are logically grouped.
+        """
+        with self:
+            for input, output, no in self._parse_doctest(lineiter):
+                if verbose:
+                    out.write('i> %s\n' % input)
+                    out.write('-> %s\n' % output)
+                    out.flush()
+                self.check(input, output, no)
 
-class Cmds(object):
-    commands = 'checkout', 'commit', 'status', 'help'
-    quit = False
+    def execute(self, lineiter, out=sys.stdout, verbose=False):
+        """
+        Execute a lineiter of commands in a context and print the output.
+        """
+        with self:
+            for line in lineiter:
+                if verbose:
+                    out.write('i> ' + line); out.flush()
+                output = self.send(line)
+                if output.str is None: # there was an error
+                    raise output.etype, output.exc, output.tb
+                out.write('%s\n' % output.str)
+                out.flush()
 
-    @plac.annotations(
-        name=('a recognized command', 'positional', None, str, commands))
-    def help(self, name):
-        return self.p.subp[name].format_help()
-
-    def checkout(self, url):
-        return ('checkout', url)
-
-    def commit(self):
-        return ('commit')
-
-    @plac.annotations(quiet=('summary information', 'flag'))
-    def status(self, quiet):
-        return ('status', quiet)
-
-if __name__ == '__main__':
-    cmdloop(Cmds())
+    def interact(self, prompt='i> ', intro=None, verbose=False):
+        """Starts an interactive command loop reading commands from the
+        consolle. Using rlwrap is recommended."""
+        if intro is None:
+            self.p.print_usage()
+        else:
+            print(intro)
+        with self:
+            while True:
+                try:
+                    line = raw_input(prompt)
+                except EOFError:
+                    break
+                out = self.send(line)
+                if verbose:
+                    traceback.print_tb(out.tb)
+                print(out)
