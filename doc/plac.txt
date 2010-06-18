@@ -291,6 +291,12 @@ arguments. This is just a convention and you are not forced to use it,
 except for the default arguments (including the varargs) which must
 stay at the end as it is required by the Python syntax.
 
+I also suggests to specify a one-character abbreviation for flags: in
+this way you can use the GNU-style composition of flags (i.e. ``-zxvf``
+is an abbreviation of ``-z -x -v -f``). I usually do not provide
+the one-character abbreviation for options, since it does not make sense
+to compose them.
+
 plac for Python 2.X users
 --------------------------------------------------
 
@@ -367,7 +373,7 @@ argparse_ documentation):
    :literal:
 
 
-Usually the main function of a script works by side effects and returns 
+Often the main function of a script works by side effects and returns 
 ``None``; in this example instead I choose to return the number and to
 print it in the ``__main__`` block.
 
@@ -526,12 +532,76 @@ following assumes knowledge of argparse_):
   that the ability to define your own annotation objects (again, see
   the  `advanced usage document`_) may mitigate the need for custom actions.
 
-I should stress that if you want to access all of the argparse_ features
-from plac_ you can use ``plac.parser_from`` and you will get
-the underlying ArgumentParser_ object. The the full power of argparse_
-is then available to you: you can use ``add_argument``, ``add_subparsers()``,
-etc. In other words, while some features are not supported directly,
-*all* features are supported indirectly.
+plac_ can leverage directly on many argparse_ features.
+
+For instance, you can make invisible an argument in the usage message
+simply by using ``'==SUPPRESS=='`` as help string (or
+``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
+directly.
+
+It is also possible to pass options to the underlying
+``argparse.ArgumentParser`` object (currently it accepts the default
+arguments ``description``, ``epilog``, ``prog``, ``usage``,
+``add_help``, ``argument_default``, ``parents``, ``prefix_chars``,
+``fromfile_prefix_chars``, ``conflict_handler``, ``formatter_class``).
+It is enough to set such attributes on the ``main`` function.  For
+instance
+
+::
+
+  def main(...):
+      pass
+
+  main.add_help = False
+
+disables the recognition of the help flag ``-h, --help``. This
+mechanism does not look particularly elegant, but it works well
+enough.  I assume that the typical user of plac_ will be happy with
+the defaults and would not want to change them; still it is possible
+if she wants to. 
+
+For instance, by setting the ``description`` attribute, it is possible
+to add a comment to the usage message (by default the docstring of the
+``main`` function is used as description).
+
+It is also possible to change the option prefix; for
+instance if your script must run under Windows and you want to use "/"
+as option prefix you can add the line::
+
+  main.prefix_chars='/-'
+
+The first prefix char (``/``) is used
+as the default for the recognition of options and flags;
+the second prefix char (``-``) is kept to keep the ``-h/--help`` option
+working: however you can disable it and reimplement it, if you like.
+An example will be given in the `advanced usage document`_ .
+
+It is possible to access directly the underlying ArgumentParser_ object, by
+invoking the ``plac.parser_from`` utility function:
+
+>>> import plac
+>>> def main(arg):
+...     pass
+... 
+>>> print plac.parser_from(main)
+ArgumentParser(prog='', usage=None, description=None, version=None, 
+formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error',
+add_help=True)
+
+Internally ``plac.call`` uses ``plac.parser_from`` and adds the parser
+as an attribute ``.p``.  When ``plac.call(func)`` is
+invoked multiple time, the parser is re-used and not rebuilt from scratch again.
+
+I use ``plac.parser_from`` in the unit tests of the module, but regular
+users should not need to use it, unless they want to access *all*
+of the features of argparse_ directly without calling the main function.
+
+Interested readers should read the documentation of argparse_ to
+understand the meaning of the other options. If there is a set of
+options that you use very often, you may consider writing a decorator
+adding such options to the ``main`` function for you. For simplicity,
+plac_ does not perform any magic except the addition of the ``.p``
+attribute.
 
 plac vs the rest of the world
 ------------------------------------------
@@ -557,19 +627,15 @@ easier than plac_.
 The future
 -------------------------------
 
-Currently plac_ is around 170 lines of code, not counting blanks,
+Currently the core of plac_ is around 200 lines of code, not counting blanks,
 comments and docstrings. I do not plan to extend the core much in the
 future. The idea is to keep the module short: it is and it should
 remain a little wrapper over argparse_. Actually I have thought about
 contributing the core back to argparse_ if plac_ becomes successfull
 and gains a reasonable number of users. For the moment it should be
-considered in alpha status: after all I wrote the first version of it in
-three days, including the tests, the documentation and the time to
-learn argparse_. At the moment I have already written some powerful
-extensions for plac_ and I plan to release them in the 0.5 release, once
-I finish writing `advanced usage document`_ .
-The extensions will be released together with plac_ but in a separated
-module.
+considered in alpha status, especially for what concerns the
+features described in the `advanced usage document`_, which are
+implemented in a separated module (``plac_ext.py``).
 
 Trivia: the story behind the name
 -----------------------------------------
@@ -600,6 +666,10 @@ a Clap_ module appeared on PyPI <expletives deleted>!
 Having little imagination, I decided to rename everything again to plac,
 an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
+
+Version 0.5 of plac_ doubled the code base and the documentation: it is
+based on the idea of using plac_ to implement command-line interpreters,
+i.e. something like the ``cmd`` module in the standard library, only better.
 
 That's all, I hope you will enjoy working with plac_!
 

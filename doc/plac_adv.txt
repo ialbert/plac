@@ -1,61 +1,162 @@
 Testing and scripting your applications with plac
 =========================================================
 
+.. contents::
+
 Introduction
 -----------------------------------------------------
 
-plac_ has been designed to be simple to use for simple stuff, but in
-truth it is a quite advanced tool with a field of applicability
-which far outreaches the specific domain of command-line arguments parsers.
-In reality plac_ is a generic tool to write domain specific
-languages (DSL).
-This document explains how you can use plac to test your application, and
-how you can use it to provide a scripting interface to your application.
-Notice that your application does not need to be a command-line
-application: you can use plac_ whenever you have an API with strings
-in input and strings in output.
+plac_ has been designed to be simple to use for simple stuff, but its
+power should not be underestimated; it is actually a quite advanced
+tool with a domain of applicability which far exceeds the realm of
+command-line arguments parsers.
 
-Testing applications with plac
--------------------------------------------
+In this document I will discuss a few of the advanced use cases for plac_.
+I assume you have already read an understood the `basic documentation`_.
 
-In the standard usage, ``plac.call`` is called only once on the main
-function; however in the tests it quite natural to invoke ``plac.call``
-multiple times on the same function with different arguments.
-For instance, suppose you want to store the configuration of
-your application into a Python shelve; then, you may want to write
-a command-line tool to edit your configuration, i.e. a shelve
-interface. A possible implementation could be the following:
+One of the goals of plac_ is to make it dead easy to write
+a scriptable and testable interface for an application, even if originally 
+the application is not a command-line application.
+
+You can use plac_ whenever you have an API with strings
+in input and strings in output, and this includes a *huge* domain
+of applications. A string-oriented interface
+is also a scriptable interface. That means that you can define
+a command language for your application and that it is possible
+to write scripts which are interpreted by plac_ and can be run
+as batch scripts to execute any kind of operations.
+
+Actually, at the most general level, you can see plac_ as a generic tool to
+write domain specific languages (DSL). plac_ makes it dead easy
+to write interpreters for command-oriented languages, both
+interactive interpreters and batch interpreters. With plac_ you
+can test your application interactively as well as with batch
+scripts, and even with the analogous of Python doctests for your
+defined language.
+
+You can easily replace the ``cmd`` module of the standard library and
+you could easily write an application like twill_ with plac_. Or you
+could use it to script your building procedure. Or any other thing,
+your imagination is the only limit!
+
+A simple example: a shelve interface
+----------------------------------------------------------
+
+Since I like to be concrete and to show examples, let me start by
+considering the following use case: you want to store some
+configuration parameters into a Python shelve and you need a
+command-line tool to edit your configuration, i.e. you want a shelve
+interface.
+A possible implementation using plac_ could be the following:
 
 .. include:: ishelve.py
    :literal:
 
-You can write the tests for such implementation as follows:
+A few notes are in order:
 
-.. include:: test_ishelve.py
-   :literal:
+1. I have disabled the ordinary help provided by argparse_ and I have 
+   implemented a custom help command.
+2. I have changed the prefix character used to recognize the options
+   to a dot: I like to change the prefix character when I disable the
+   default help.
+3. A plac-specific feature, i.e. keyword arguments recognition is put
+   to good use to make it possible to store a value in the shelve with
+   the syntax ``param_name=param_value``.
+4. varargs are used to retrieve parameters from the shelve and some
+   error checking is performed in the case of missing parameters
+5. A command to clear the shelve is implemented as a flag (``.clear``).
+6. A command to delete a given parameter is implemented as an option
+   (``.delete``).
+7. There is an option with default (``.filename=conf.shelve``) to store
+   the filename of the shelve.
+8. All things considered, the code looks like a poor man object oriented
+   interface implemented with a chain of elifs instead of methods. Of course,
+   plac_ can do better than that, but I am starting from a low-level approach
+   first.
 
-There is a small optimization here: once ``plac.call(func)``
-has been called, a ``.p`` attribute is attached to ``func``, containing
-the parser associated to the function annotations. The second time
-``plac.call(func)`` is invoked, the parser is re-used.
+.. If the script is invoked with no arguments, the default help is
+    invoked: this is done by invoking the argparse_ low-level method
+    ``.format_help``. In other words, the recognition of the couple
+    ``-h/--help`` is disabled, but the original help feature is still there.
 
-Writing command-line interpreters with plac
------------------------------------------------
+If you run ``ishelve.py`` without arguments you get the following
+message::
 
-Apart from testing, there is another typical use case where ``plac.call``
-is invoked multiple times, in the implementation of command interpreters.
-For instance, you could define an interative interpreter on top
-of ``ishelve`` as follows:
+ $ python ishelve.py
+ no arguments passed, use .help to see the available commands
+
+If you run ``ishelve.py`` with the option ``.h`` (or any abbreviation
+of ``.help``) you get::
+
+  $ python ishelve.py .h
+  Commands: .help, .showall, .clear, .delete
+  <param> ...
+  <param=value> ...
+
+You can check by hand that the tool work::
+
+ $ python ishelve.py .clear # start from an empty shelve
+ cleared the shelve
+ $ python ishelve.py a=1 b=2
+ setting a=1
+ setting b=2
+ $ python ishelve.py .showall
+ b=2
+ a=1
+ $ python ishelve.py .del b # abbreviation for .delete
+ deleted b
+ $ python ishelve.py a
+ 1
+ $ python ishelve.py b
+ b: not found
+ $ python ishelve.py .cler # mispelled command
+ usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
+                   [.filename /home/micheles/conf.shelve]
+                   [params [params ...]] [setters [setters ...]]
+ ishelve.py: error: unrecognized arguments: .cler
+
+Command-line scripts have many advantages, but are no substitute
+for a real interactive application.
+
+Turning a script into an interactive application
+------------------------------------------------------------
+
+If you have a script with a large startup time which must be run
+multiple times, it is best to turn it into an interactive application,
+so that the startup is performed only once.  ``plac`` provides an
+``Interpreter`` class just for this purpose. 
+
+The ``Interpreter`` class wraps the main function of a script and
+provides an ``.interact`` method to start an interactive interpreter
+reading commands from the console.
+
+You could define an interactive interpreter on top of ``ishelve`` as
+follows:
 
 .. include:: shelve_interpreter.py
    :literal:
 
-Here is an usage session, usinng ``rlwrap`` to enable readline features::
+A trick has been used here: the ishelve command-line interface has been
+hidden inside and external interface. They are distinct: for instance
+the external interface recognizes the ``-h/--help`` flag whereas the
+internal interface only recognizes the ``.help`` command:
 
- $ rlwrap python shelve_interpreter.py -i
+.. include:: shelve_interpreter.help
+   :literal:
 
- i> ..clear
+Thanks to this ingenuous trick, the script can be run both interactively
+and non-interactively::
+
+ $ python shelve_interpreter.py .clear # non-interactive use
  cleared the shelve
+
+Here is an usage session, using ``rlwrap`` to enable readline features
+(``rlwrap`` is available in Unix-like systems)::
+
+ $ rlwrap python shelve_interpreter.py -i # interactive use
+ usage: shelve_interpreter.py [.help] [.showall] [.clear] [.delete DELETE]
+                              [.filename /home/micheles/conf.shelve]
+                              [params [params ...]] [setters [setters ...]]
  i> a=1
  setting a=1
  i> a
@@ -65,83 +166,416 @@ Here is an usage session, usinng ``rlwrap`` to enable readline features::
  i> a b
  1
  2
- i> ..delete a
+ i> .del a
  deleted a
  i> a
  a: not found
- i> ..all
+ i> .show
  b=2
  i> [CTRL-D]
 
-As you see, it is possibly to write command interpreters directly on top of
-``plac.call`` and it is not particularly difficult. However, the devil
-is in the details (I mean error management) and my recommendation, if 
-you want to implement an interpreter of commands, is to use the
-class ``plac.Interpreter`` which is especially suited for this
-task. ``plac.Interpreter`` is available only if you are using a recent
-version of Python (>= 2.5), because it is a context manager object
-to be used with the ``with`` statement. The only important method
-of ``plac.Interpreter`` is the ``.send`` method, which takes a
-string in input and returns a string in output. Internally the input string
-is splitted with ``shlex.split`` and passed to ``plac.call``,
-with some trick to manage exceptions correctly. Moreover long options
-are managed with a single prefix character.
+The ``.interact`` method 
+reads commands from the console and send them to the
+underlying interpreter, until the user send a CTRL-D
+command (CTRL-Z in Windows). There are two default
+arguments ``prompt='i> '``, and ``intro=None`` which
+can be used to change the prompt and the message displayed
+at the beginning, which by default is the argparse-provided
+usage message.
 
-.. include:: shelve_cli.py
+Notice that ``plac.Interpreter`` is available only if you are using a recent
+version of Python (>= 2.5), because it is a context manager object
+which uses extended generators internally.
+
+The distribution of ``plac`` includes a runner script named ``plac_runner.py``
+which will be installed in a suitable directory in your system by distutils
+(say in ``\usr\local\bin\plac_runner.py`` in a Unix-like operative system).
+The easiest way to turn a script into an interactive application is
+to use the runner. If you put this alias in your bashrc
+
+  ``alias plac="rlwrap plac_runner.py"``
+
+(or you define a suitable ``plac.bat`` script in Windows) you can
+run the original ``ishelve.py`` script in interactive mode as
+follows::
+
+ $ plac -i ishelve.py
+ usage: plac_runner.py ishelve.py [.help] [.showall] [.clear]
+                   [.delete DELETE] [.filename /home/micheles/conf.shelve]
+                   [params [params ...]] [setters [setters ...]]
+ i>
+
+In other words, there is no need to write the interactive
+wrapper (``shelve_interpreter.py``) by hand, the plac runner
+does the job for you.
+
+You can conveniently test your application in interactive mode.
+However manual testing is a poor substitute for automatic testing.
+
+Testing a plac application
+-----------------------------------------------------------
+
+In principle, one could write automatic tests for the
+``ishelve`` application by using ``plac.call`` directly:
+
+.. include:: test_ishelve.py
    :literal:
 
-Multi-parsers
+However, using ``plac.call`` is not especially nice. The big
+issue is that ``plac.call`` responds to invalid input by printing an
+error message on stderr and by raising a ``SystemExit``: this is
+certainly not a nice thing to do in a test.
+
+As a consequence of this behavior it is impossible to test for invalid
+commands, unless you wrap the ``SystemExit`` exception by
+hand each time (a possibly you do something with the error message in
+stderr too). Luckily, ``plac`` offers a better testing support through
+the ``check`` method of ``Interpreter`` objects:
+
+.. include:: test_ishelve2.py
+   :literal:
+
+The method ``.check(given_input, expected_output)`` works on strings
+and raises an ``AssertionError`` if the output produced by the
+interpreter is different from the expected output for the given input.
+
+``AssertionError`` is catched by tools like ``py.test`` and
+``nosetests`` and actually ``plac`` tests are intended to be run with
+such tools.  If you want to use the ``unittest`` module in the
+standard library you can, but I am not going to support it directly
+(reminder: plac_ is opinionated and I dislike the unittest module).
+
+Interpreters offer a minor syntactic advantage with respect to calling
+``plac.call`` directly, but they offer a *major* semantic advantage when things
+go wrong (read exceptions): an ``Interpreter`` object internally invokes
+something like ``plac.call``, but it wraps all exceptions, so that ``i.check``
+is guaranteed not to raise any exception except ``AssertionError``.
+
+Even the ``SystemExit`` exception is captured and you can write your test as
+
+    ``i.check('-cler', 'SystemExit: unrecognized arguments: -cler')``
+
+without risk of exiting from the Python interpreter.
+
+There is a second advantage of interpreters: if the main function contains some
+initialization code and finalization code
+(``__enter__`` and ``__exit__`` functions) they will be run only
+once at the beginning and at the end of the interpreter loop.
+``plac.call`` also executes the initialization/finalization code,
+but it runs it at each call, and that may be too expensive.
+
+Plac easytests
+---------------------------------------------------------
+
+Writing your tests in terms of ``Interpreter.check`` is certainly an
+improvement over writing them in terms of ``plac.call``, but they
+are still too low-level for my taste. The ``Interpreter`` class provides 
+support for doctest-style tests, a.k.a. *plac easytests*.
+
+By using plac easy tests you can cut and paste your interactive session and
+turn it into a runnable automatics test!
+Consider for instance the following file ``ishelve.placet`` (the ``.placet``
+extension is a mnemonic for plac easytests):
+
+.. include:: ishelve.placet
+   :literal:
+
+Notice the precence of the shebang line containing the name of the
+plac_ tool to test (a plac_ tool is just a Python module with a
+function called ``main``).  You can doctest it by calling the
+``.doctest`` method of the interpreter
+
+::
+
+ $ python -c"import plac, ishelve
+ plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)"
+
+and you will get the following output:
+
+.. include:: doctest_out.txt
+   :literal:
+
+You can also run placets following the shebang convention directly with
+the plac runner::
+
+ $ plac --easytest ishelve.placet
+ run 1 plac easy test(s)
+
+The runner ignore the extension, so you can actually use any extension
+your like, but *it relies on the first line of the file to correspond
+to an existing plac tool*, so you cannot skip it and you cannot write a
+wrong shebang.
+
+The plac runner does not provide any test discovery facility,
+but you can use standard Unix tools to help. For instance, you can
+run all the ``.placet`` files into a directory and its subdirectories
+as follows::
+
+ $ find . -name \*.placet | xargs plac_runner.py -e
+
+Internally ``Interpreter.doctests`` invokes ``Interpreter.check``
+multiple times inside the same context and compare the output with the
+expected output: if even a check fails, the whole test fail. The
+easy tests supported by ``plac`` are *not* unittests: they should be
+used to model user interaction when the order of the operations
+matters.  Since the single subtests in a ``.placet`` file are not
+independent, it makes sense to exit immediately at the first failure.
+
+The support for doctests in plac_ comes nearly for free, thanks to the shlex_
+module in the standard library, which is able to parse simple
+languages as the ones you can implement with plac_. In particular,
+thanks to shlex_, plac_ is able to recognize comments (the default
+comment character is ``#``), continuation lines, escape sequences and
+more. Look at the shlex_ documentation if you need to customize how
+the language is interpreted.
+
+In addition, I have implemented from scratch some support for line number
+recognition, so that if a test fail you get the line number of the
+failing command. This is especially useful if your tests are
+stored in external files (plac easy tests does not need to be in
+a file: you can just pass to the ``.doctest`` method a list of
+strings corresponding to the lines of the file).
+
+It is straighforward to integrate your .placet tests with standard
+testing tools. For instance, you can integrate your doctests with nose
+or py.test as follow:
+
+.. include:: test_doct.py
+   :literal:
+
+Here you should notice that usage of ``plac.import_main(path)``, an utility
+which is able to import the main function of the specified script.
+You can use both the full path name of the
+tool, or a relative path name. In this case the runner look at the
+environment variable ``PLACPATH`` and it searches
+the plac tool in the directories specified there (``PLACPATH`` is just
+a string containing directory names separated by colons). If the variable
+``PLACPATH`` is not defined, it just looks in the current directory.
+If the plac tool is not found, an ``ImportError`` is raised.
+
+Plac batch scripts
+--------------------------------------------------
+
+It is pretty easy to realize that an interactive interpreter can
+also be used to run batch scripts: instead of reading the commands from
+the console, it is enough to read the commands from a file.
+plac_ interpreters provide an ``.execute`` method to perform just that::
+
+  plac.Interpreter(main).execute(line_iterator)
+
+There is just a subtle point to notice: whereas in an interactive
+loop one wants to manage all exceptions, in a batch script we want to
+make sure that the script does not continue in the background
+in case of unexpected errors. The implementation of ``Interpreter.execute``
+makes sure that any error raised by ``plac.call`` internally is re-raised.
+In other words, plac_ interpreters *wrap the errors, but does not eat them*:
+the errors are always accessible and can be re-raised on demand.
+
+In particular consider the following batch file, which contains a syntax
+error (``.dl`` instead of ``.del``):
+
+.. include:: ishelve.batch
+   :literal:
+
+If you execute the batch file, the interpreter will raise a ``SystemExit``
+with an appropriated error message at the ``.dl`` line and the last command
+will *not* be executed. The easiest way to execute the batch file is
+to invoke the ``plac`` runner::
+
+ $ plac --batch --verbose ishelve.batch 
+ i> .clear 
+ cleared the shelve
+ i> a=1 b=2
+ setting a=1
+ setting b=2
+ i> .show
+ b=2
+ a=1
+ i> .del a
+ deleted a
+ i> .dl b
+ unrecognized arguments: .dl
+
+The ``--verbose`` flag is there to show the lines which are being interpreted
+(prefixed by ``i>``). This is done on purpose, so that you can cut and paste
+the output of the batch script and turn it into a ``.placet`` test
+(cool, isn't it?).
+
+Command containers
 ----------------------------------------
 
-As we saw, plac_ is able to infer an arguments parser from the
-signature of a function. In addition, plac_ is also able to infer a
-multi-parser from a container of commands, by inferring the subparsers
-from the commands.  That is useful if you want to implement
-*subcommands* (a familiar example of a command-line application
-featuring subcommands is subversion).
+When I discussed the ``ishelve`` implementation, I said that it looked
+like a poor man implementation of an object system as a chain of
+elifs; I also said that plac_ was able to do better.
+Here I will substantiate my claim. 
 
-A container of commands is any object with a ``.commands`` attribute
-listing a set of functions or methods which are valid commands. In
-particular, a Python module is a perfect container of commands. As an
+plac_ is actually able to infer a set of subparsers from a
+generic container of commands.  This is useful if you want to
+implement *subcommands* (a familiar example of a command-line
+application featuring subcommands is subversion).
+
+Technically a container of commands is any object with a ``.commands`` attribute
+listing a set of functions or methods which are valid commands. A command
+container may have initialization/finalization hooks (``__enter__/__exit__``)
+and dispatch hooks (``__missing__``, invoked for invalid command names).
+
+Using this feature the shelve interface can be rewritten in a more
+object-oriented way as follows:
+
+.. include:: ishelve2.py
+   :literal:
+
+You should notice that ``plac.call`` understands the context manager
+protocol: if you call an object with ``__enter__`` and ``__exit__``
+methods, they are invoked in the right order (``__enter__`` before
+the call and ``__exit__`` after the call, both in the regular
+and in the exceptional case). Since ``plac.call`` does not use
+the ``with`` statement internally, such feature works even in old versions
+of Python, before the introduction of the context manager
+protocol (in Python 2.5). In our example, 
+the methods ``__enter__`` and ``__exit__`` make sure the the shelve
+is opened and closed correctly even in the case of exceptions. Notice
+that I have not implemented any error checking in the ``show`` and
+``delete`` methods on purpose, to verify that plac_ works
+correctly in the presence of exceptions (in particular I want to show
+that plac_ does not "eat" the traceback).
+
+Here is a session of usage on an Unix-like operating system::
+ 
+ $ alias conf="python ishelve2.py"
+ $ conf set a pippo
+ setting a=pippo
+ $ conf set b lippo
+ setting b=lippo
+ $ conf showall
+ b = lippo
+ a = pippo
+ $ conf show a b
+ a = pippo
+ b = lippo
+ $ conf del a # an abbreviation
+ deleting a
+ $ conf showall
+ b = lippo
+ $ conf delete a # notice the full traceback
+ Traceback (most recent call last):
+   ...
+ _bsddb.DBNotFoundError: (-30988, 'DB_NOTFOUND: No matching key/data pair found')
+
+Notice that in script mode you get the full traceback, whereas in
+interactive mode the traceback is hidden::
+
+ $ plac -i ishelve2.py
+ usage: plac_runner.py ishelve2.py [-h] {delete,set,showall,show} ...
+ i> del a
+ DBNotFoundError: (-30988, 'DB_NOTFOUND: No matching key/data pair found')
+ i> 
+
+You can see the traceback if you start the runner in verbose mode
+(``plac -vi ishelve2.py``).
+
+The interactive mode of ``plac`` can be used as a replacement of the 
+``cmd`` module in the standard library. There are a few differences,
+however. For instance you miss tab completion, even if use ``rlwrap``
+(you get persistent command history for free, however). This is not
+a big issue, since ``plac`` understands *command abbreviations*
+(in all modes, not only in interactive mode).
+
+If an abbreviation is ambiguous, plac warns you::
+
+ $ plac ishelve2.py -i
+ usage: plac_runner.py ishelve2.py [-h] {delete,set,showall,show} ...
+ i> sh
+ NameError: Ambiguous command 'sh': matching ['showall', 'show']
+
+Giving the same abbreviation in script mode gives the same error
+but also shows the full traceback.
+
+A non class-based example
+--------------------------------------------------------
+
+plac_ does not force you to use classes to define command containers.
+Even a simple function can be a valid command container, it is
+enough to add to it a ``.commands`` attribute and possibly
+``__enter__`` and/or ``__exit__`` attributes.
+
+A Python module is a perfect container of commands. As an
 example, consider the following module implementing a fake Version
 Control System:
 
 .. include:: vcs.py
    :literal:
 
-Here is the usage message:
+Notice that I have defined both and ``__exit__`` hook and a ``__missing__``
+hook, invoked for non-existing commands.
+The real trick here is the line ``main = __import__(__name__)``, which
+define ``main`` to be an alias for the current module.
+
+The ``vcs`` module does not contain an ``if __name__ == '__main__'``
+block, but you can still run it through the plac runner
+(try ``plac vcs.py -h``):
 
 .. include:: vcs.help
    :literal:
 
+You can get help for the subcommands by postponing ``-h`` after the
+name of the command::
+ 
+ $ plac vcs.py status -h
+ usage: vcs.py status [-h] [-q]
+ 
+ A fake status command
+ 
+ optional arguments:
+   -h, --help   show this help message and exit
+   -q, --quiet  summary information
+
+Notice how the docstring of the command is automatically shown in
+usage message, as well as the documentation for the sub flag ``-q``.
+
+Here is an example of a non-interactive session::
+
+ $ plac vcs.py check url
+ ok
+ checkout 
+ url
+ $ plac vcs.py st -q
+ ok
+ status 
+ True
+ $ plac vcs.py co
+ ok
+ commit 
+ None
+
+and here is an interactive session::
+
+ $ plac -i vcs.py
+ usage: plac_runner.py vcs.py [-h] {status,commit,checkout} ...
+ i> check url
+ checkout 
+ url
+ i> st -q
+ status 
+ True
+ i> co
+ commit 
+ None
+ i> sto
+ Command 'sto' does not exist
+ i> [CTRL-D]
+ ok
+
+Notice the invocation of the ``__missing__`` hook for non-existing commands.
+Notice also that the ``__exit__`` hook gets called differently in interactive
+mode and non-interactive mode: in the first case it is called at the end of the
+interactive loop with a ``GeneratorExit`` exception, whereas in
+the second case there is no exception. 
+
 If the commands are completely independent, a module is a good fit for
 a method container. In other situations, it is best to use a custom
-class. For instance, suppose you want to store the configuration of
-your application into a Python shelve; then, you may want to write
-a command-line tool to edit your configuration, i.e. a shelve
-interface:
+class. 
 
-.. include:: shelve_interface2.py
-   :literal:
-
-Here is a session of usage on an Unix-like operating system::
- 
- $ alias conf="python shelve_interface.py"
- $ conf set a pippo
- setting a=pippo
- $ conf set b lippo
- setting b=lippo
- $ conf show_all
- b = lippo
- a = pippo
- $ conf show a b
- a = pippo
- b = lippo
- $ conf delete a
- deleting a
- $ conf show_all
- b = lippo
- 
 Technically a multi-parser is a parser object with an attribute ``.subp``
 which is a dictionary of subparsers; each of the methods listed in
 the attribute ``.commands`` corresponds to a subparser inferred from
@@ -149,91 +583,111 @@ the method signature. The original object gets a ``.p`` attribute
 containing the main parser which is associated to an internal function
 which dispatches on the right method depending on the method name.
 
-Here is the usage message:
+Writing your own plac runner
+----------------------------------------------------------
 
-.. include:: example13.py
-   :literal:
+The runner included in the plac_ distribution is intentionally kept
+small (around 40 lines of code) so that you can study it and write
+your own runner if want to. If you need to go to such level
+of detail, you should know that the most important method of
+the ``Interpreter`` class is the ``.send`` method, which takes
+strings in input and returns a four-tuple with attributes
+``.str``, ``.etype``, ``.exc`` and ``.tb``:
 
-.. include:: example13.help
-   :literal:
+- ``.str`` is the output of the command, if successful (a string);
+- ``.etype`` is the class of the exception, if the command fail;
+- ``.exc`` is the exception instance;
+- ``.tb`` is the traceback.
 
-Advanced usage
-----------------------------------------------------
+Moreover the ``__str__`` representation of the output object is redefined
+to return the output string if the command was successful or the error
+message if the command failed (actually it returns the error message
+preceded by the name of the exception class).
 
-plac_ relies on a argparse_ for all of the heavy lifting work and it is
-possible to leverage on argparse_ features directly or indirectly.
-
-For instance, you can make invisible an argument in the usage message
-simply by using ``'==SUPPRESS=='`` as help string (or
-``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
-directly.
-
-It is also possible to pass options to the underlying
-``argparse.ArgumentParser`` object (currently it accepts the default
-arguments ``description``, ``epilog``, ``prog``, ``usage``,
-``add_help``, ``argument_default``, ``parents``, ``prefix_chars``,
-``fromfile_prefix_chars``, ``conflict_handler``, ``formatter_class``).
-It is enough to set such attributes on the ``main`` function.  For
-instance
-
-::
-
-  def main(...):
-      pass
-
-  main.add_help = False
-
-disable the recognition of the help flag ``-h, --help``. This is not
-particularly elegant, but I assume the typical user of plac_ will be
-happy with the defaults and would not want to change them; still it is
-possible if she wants to. For instance, by setting the ``description``
-attribute, it is possible to add a comment to the usage message (by
-default the docstring of the ``main`` function is used as
-description). It is also possible to change the option prefix; for
-instance if your script must run under Windows and you want to use "/"
-as option prefix you can add the line::
-
-  main.prefix_chars='/-'
-
-``prefix_chars`` is an argparse_ feature. The first prefix char (``/``) is used
-as the default in the construction of both short and long options;
-the second prefix char (``-``) is kept to keep the ``-h/--help`` option
-working: however you can disable it and reimplement it if you like.
-For instance, here is how you could reimplement the ``help`` command
-in the Fake VCS example:
-
-.. include:: example14.py
-   :literal:
-
-Internally ``plac.call`` uses
-``plac.parser_from`` and adds the parser as an attribute ``.p``. 
-This also happers for multiparsers and you can take advantage of
-the ``.p`` attribute to invoke ``argparse.ArgumentParser`` methods.
-
-Interested readers should read the documentation of argparse_ to
-understand the meaning of the other options. If there is a set of
-options that you use very often, you may consider writing a decorator
-adding such options to the ``main`` function for you. For simplicity,
-plac_ does not perform any magic of that kind.
-
-It is possible to access directly the underlying ArgumentParser_ object, by
-invoking the ``plac.parser_from`` utility function:
+For instance, if you send a mispelled option to
+the interpreter a ``SystemExit`` will be trapped:
 
 >>> import plac
->>> def main(arg):
-...     pass
+>>> from ishelve import ishelve
+>>> with plac.Interpreter(ishelve) as i:
+...     print(i.send('.cler'))
 ... 
->>> print plac.parser_from(main)
-ArgumentParser(prog='', usage=None, description=None, version=None, 
-formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error',
-add_help=True)
+SystemExit: unrecognized arguments: .cler
 
-I use ``plac.parser_from`` in the unit tests of the module, but regular
-users should never need to use it, since the parser is also available
-as an attribute of the main function. 
+It is important to invoke the ``.send`` method inside the context manager,
+otherwise you will get a ``RuntimeError``.
 
-Custom annotation objects
-------------------------------------------------------
+For instance, suppose you want to implement a graphical runner for a
+plac-based interpreter with two text widgets: one to enter the commands
+and one to display the results. Suppose you want to display the errors
+with tracebacks in red. You will need to code something like that
+(pseudocode follows)::
+
+  input_widget = WidgetReadingInput()
+  output_widget = WidgetDisplayingOutput()
+
+  def send(interpreter, line):
+      out = interpreter.send(line)
+      if out.tb: # there was an error
+          output_widget.display(out.tb, color='red')
+      else:
+          output_widget.display(out.str)
+
+  main = plac.import_main(tool_path) # get the main object
+
+  with plac.Interpreter(main) as i:
+     def callback(event):
+        if event.user_pressed_ENTER():
+             send(i, input_widget.last_line)
+     input_widget.addcallback(callback)
+     gui_mainloop.start()
+
+You can adapt the pseudocode to your GUI toolkit of choice and you can
+also change the file associations in such a way that clicking on a
+plac tool file the graphical user interface starts.
+
+There is a final *caveat*: since the plac interpreter loop is
+implemented via extended generators, plac interpreters are single threaded: you
+will get an error if you ``.send`` commands from separated threads. 
+You can circumvent the problem by using a queue. If EXIT is a sentinel
+value to signal exiting from the interpreter look, you can write code
+like this::
+
+    with interpreter:
+        for input_value in iter(input_queue.get, EXIT):
+            output_queue.put(interpreter.send(input_value))
+
+The same trick also work for processes; you could run the interpreter
+loop in a separate process and send commands to it via the Queue
+class provided by the multiprocessing_ module.
+
+Summary
+-------------------------------------------------------
+
+Once plac_ claimed to be the easiest command-line arguments parser
+in the world. Having read this document you may think that it is not
+so easy after all. But it is a false impression. Actually the
+rules are quite simple:
+
+1. 
+   if you want to implement a command-line script, use ``plac.call``;
+
+2. 
+   if you want to implement a command interpreter, use ``plac.Interpreter``:
+
+   - for an interactive interpreter, call the ``.interact`` method;
+   - for an batch interpreter, call the ``.execute`` method;
+
+3. for testing call the ``Interpreter.check`` method in the appropriate context
+   or use the ``Interpreter.doctest`` feature;
+
+4. if you need to go at a lower level, you may need to call the
+   ``Interpreter.send`` method.
+
+Moreover, remember that ``plac_runner.py`` is your friend.
+
+Appendix: custom annotation objects
+--------------------------------------------------------
 
 Internally plac_ uses an ``Annotation`` class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
@@ -277,3 +731,7 @@ pretty well for most users.
 .. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
 .. _opterator: http://pypi.python.org/pypi/opterator
 .. _advanced usage document: in-writing
+.. _twill: http://twill.idyll.org/
+.. _basic documentation: http://micheles.googlecode.com/hg/plac/doc/plac.html
+.. _shlex: http://docs.python.org/library/shlex.html
+.. _multiprocessing: http://docs.python.org/library/multiprocessing.html

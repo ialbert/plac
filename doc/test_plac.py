@@ -5,8 +5,8 @@ The tests are runnable with nose, with py.test, or even as standalone script
 import os, sys
 import plac
 
-sys.path.insert(0, 'doc')
 sys_argv0 = sys.argv[0]
+os.chdir(os.path.dirname(__file__) or '.') # work in the current directory
 
 ######################## helpers #######################
 
@@ -23,20 +23,21 @@ def parser_from(f, **kw):
     return plac.parser_from(f)
 
 def check_help(name):
-    sys.argv[0] = name + '.py'
-    dic = {}
-    if sys.version >= '3':
-        exec(open(os.path.join('doc', name + '.py')).read(), dic)
-    else: # Python 2.X
+    sys.argv[0] = name + '.py' # avoid issue with nosetests
+    try:
         try:
-            execfile(os.path.join('doc', name + '.py'), dic)
-        except SyntaxError: # raised by some tests when using Python 2
-            return
-    p = plac.parser_from(dic['main'])
-    expected = open(os.path.join('doc', name + '.help')).read().strip()
-    got = p.format_help().strip()
-    assert got == expected, got
-    sys.argv[0] = sys_argv0
+            main = plac.import_main(name + '.py')
+        except SyntaxError:
+            if sys.version < '3': # expected for Python 2.X
+                return
+            else:  # not expected for Python 3.X
+                raise
+        p = plac.parser_from(main)
+        expected = open(name + '.help').read().strip()
+        got = p.format_help().strip()
+        assert got == expected, got
+    finally:
+        sys.argv[0] = sys_argv0
 
 ####################### tests ############################
 
@@ -114,22 +115,31 @@ def test_kwargs():
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
 def test_expected_help():
-    for fname in os.listdir('doc'):
-        if fname.endswith('.help') and fname != 'vcs.help':
-            yield check_help, fname[:-5]
+    for fname in os.listdir('.'):
+        if fname.endswith('.help'):
+            name = fname[:-5]
+            if name not in ('vcs', 'ishelve'):
+                yield check_help, fname[:-5]
 
 class Cmds(object):
+    add_help = False
     commands = 'help', 'commit'
     def help(self, name):
         return 'help', name
     def commit(self):
         return 'commit'
 
+cmds = Cmds()
+
 def test_cmds():
-    cmds = Cmds()
     assert ['commit'] == plac.call(cmds, ['commit'])
     assert ['help', 'foo'] == plac.call(cmds, ['help', 'foo'])
     expect(SystemExit, plac.call, cmds, [])
+
+def test_cmd_abbrevs():
+    assert ['commit'] == plac.call(cmds, ['comm'])
+    assert ['help', 'foo'] == plac.call(cmds, ['h', 'foo'])
+    expect(SystemExit, plac.call, cmds, ['foo'])
 
 def test_yield():
     def main():
