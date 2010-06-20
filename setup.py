@@ -13,7 +13,7 @@ def getversion(fname):
 if __name__ == '__main__':
     setup(name='plac',
           version=getversion(os.path.join(os.path.dirname(__file__),'plac.py')),
-          description='The easiest command line arguments parser in the world',
+          description='The smartest command line arguments parser in the world',
           long_description=open('README.txt').read(),
           author='Michele Simionato',
           author_email='michele.simionato@gmail.com',

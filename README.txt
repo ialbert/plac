@@ -1,13 +1,3 @@
-plac, the smartest command line arguments parser in the world
-=============================================================
-
-:Author: Michele Simionato
-:E-mail: michele.simionato@gmail.com
-:Requires: Python 2.3+
-:Download page: http://pypi.python.org/pypi/plac
-:Installation: ``easy_install -U plac``
-:License: BSD license
-
 Installation
 -------------
 
@@ -57,14 +47,17 @@ or
 Documentation
 --------------
 
-You can choose between the `HTML version`_  and the `PDF version`_:
+The source code and the documentation are hosted on Google code.
+First you should read the basic documentation:
 
-.. _HTML version: http://micheles.googlecode.com/hg/plac/doc/plac.html
-.. _PDF version: http://micheles.googlecode.com/hg/plac/doc/plac.pdf
+http://micheles.googlecode.com/hg/plac/doc/plac.html
+
+http://micheles.googlecode.com/hg/plac/doc/plac.pdf
 
 There is also an additional documentation for advanced usages of plac,
-such as using plac_ for testing/scripting an application and to
+such as using plac for testing/scripting an application and to
 write domain specific languages (DSL):
 
-.. _HTML version: http://micheles.googlecode.com/hg/plac/doc/plac_adv.html
-.. _PDF version: http://micheles.googlecode.com/hg/plac/doc/plac_adv.pdf
+http://micheles.googlecode.com/hg/plac/doc/plac_adv.html
+
+http://micheles.googlecode.com/hg/plac/doc/plac_adv.pdf
