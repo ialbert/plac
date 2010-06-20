@@ -1,6 +1,5 @@
 # ishelve.py
-import os, shelve
-import plac
+import os, shelve, plac
 
 DEFAULT_SHELVE = os.path.expanduser('~/conf.shelve')
 
@@ -13,7 +12,7 @@ DEFAULT_SHELVE = os.path.expanduser('~/conf.shelve')
     params='names of the parameters in the shelve',
     setters='setters param=value')
 def main(help, showall, clear, delete, filename=DEFAULT_SHELVE,
-            *params, **setters):
+         *params, **setters):
     "A simple interface to a shelve"
     sh = shelve.open(filename)
     try:

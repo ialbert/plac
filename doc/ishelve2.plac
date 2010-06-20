@@ -1,0 +1,4 @@
+#!ishelve2.py -c ~/conf.shelve
+set a 1
+del a
+del a # intentional error

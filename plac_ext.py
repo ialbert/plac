@@ -11,7 +11,8 @@ def cmd_interface(obj):
     dic = dict(preloop=lambda self: i.__enter__(),
                postloop=lambda self: i.__exit__(),
                do_EOF=lambda self, line: True,
-               default=default)
+               default=default,
+               intro=getattr(i, 'intro', None))
     for command in obj.commands:
         method = getattr(obj, command)
         def do_func(self, line, command=command):
@@ -89,16 +90,19 @@ class Interpreter(object):
                 line = yield output
                 arglist = shlex.split(line, self.commentchar)
                 try:
-                    lines = self.p.parselist(arglist)
+                    lines = plac_core.call(self.obj, arglist)
                 except:
                     output = Output(None, *sys.exc_info())
                 else:
-                    output = Output(os.linesep.join(lines), None, None, None)
-        except:
+                    if not hasattr(lines, '__iter__'):
+                        raise TypeError('Expected a sequence, got %r' % lines)
+                    s = os.linesep.join(map(str, lines))
+                    output = Output(s, None, None, None)
+        except GeneratorExit: # regular exit
+            exit(None, None, None)
+        except: # exceptional exit
             exit(*sys.exc_info())
             raise
-        else:
-            exit(None, None, None)
 
     def check(self, given_input, expected_output, lineno=None):
         "Make sure you get the expected_output from the given_input"
@@ -150,13 +154,13 @@ class Interpreter(object):
                 out.write('%s\n' % output.str)
                 out.flush()
 
-    def interact(self, prompt='i> ', intro=None, verbose=False):
+    def interact(self, prompt='i> ', verbose=False):
         """Starts an interactive command loop reading commands from the
         consolle. Using rlwrap is recommended."""
-        if intro is None:
+        try:
+            print(self.obj.intro)
+        except AttributeError: # no intro
             self.p.print_usage()
-        else:
-            print(intro)
         with self:
             while True:
                 try:
