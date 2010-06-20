@@ -2,7 +2,7 @@
 The tests are runnable with nose, with py.test, or even as standalone script
 """
 
-import os, sys
+import os, sys, doctest, subprocess
 import plac
 
 sys_argv0 = sys.argv[0]
@@ -107,10 +107,10 @@ def test_kwargs():
         return args, kw
     main.__annotations__ = dict(opt=('Option', 'option'))
     argskw = plac.call(main, ['arg1', 'arg2', 'a=1', 'b=2'])
-    assert argskw == ["('arg2',)", "{'a': '1', 'b': '2'}"], argskw
+    assert argskw == [('arg2',), {'a': '1', 'b': '2'}], argskw
     
     argskw = plac.call(main, ['arg1', 'arg2', 'a=1', '-o', '2'])
-    assert argskw == ["('arg2',)", "{'a': '1'}"], argskw
+    assert argskw == [('arg2',), {'a': '1'}], argskw
 
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
@@ -132,12 +132,12 @@ class Cmds(object):
 cmds = Cmds()
 
 def test_cmds():
-    assert ['commit'] == plac.call(cmds, ['commit'])
+    assert 'commit' == plac.call(cmds, ['commit'])
     assert ['help', 'foo'] == plac.call(cmds, ['help', 'foo'])
     expect(SystemExit, plac.call, cmds, [])
 
 def test_cmd_abbrevs():
-    assert ['commit'] == plac.call(cmds, ['comm'])
+    assert 'commit' == plac.call(cmds, ['comm'])
     assert ['help', 'foo'] == plac.call(cmds, ['h', 'foo'])
     expect(SystemExit, plac.call, cmds, ['foo'])
 
@@ -145,7 +145,23 @@ def test_yield():
     def main():
         for i in (1, 2, 3):
             yield i
-    assert plac.call(main, []) == ['1', '2', '3']
+    assert plac.call(main, []) == [1, 2, 3]
+
+def test_doctest():
+    failure, tot= doctest.testfile('plac.txt', module_relative=False)
+    assert not failure, failure
+
+def test_batch():
+    for batch in os.listdir('.'):
+        if batch.endswith('.plac'):
+            args = [sys.executable, '../plac_runner.py', '-b', batch]
+            yield subprocess.call, args
+
+def test_placet():
+    for placet in os.listdir('.'):
+        if placet.endswith('.placet'):
+            args = [sys.executable, '../plac_runner.py', '-t', placet]
+            yield subprocess.call, args
 
 if __name__ == '__main__':
     n = 0
