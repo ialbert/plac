@@ -680,7 +680,7 @@ to use to test the file.</p>
 $ python -c&quot;import plac, ishelve
 plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)&quot;
 </pre>
-<p>Internally <tt class="docutils literal">Interpreter.doctests</tt> invokes <tt class="docutils literal">Interpreter.check</tt>
+<p>Internally <tt class="docutils literal">Interpreter.doctests</tt> invokes something like <tt class="docutils literal">Interpreter.check</tt>
 multiple times inside the same context and compare the output with the
 expected output: if even a check fails, the whole test fail. The
 easy tests supported by <tt class="docutils literal">plac</tt> are <em>not</em> unittests: they should be
@@ -704,8 +704,8 @@ strings corresponding to the lines of the file).</p>
 module, but the situation may change in the future (it would be nice
 if <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> could reuse doctests directives like ELLIPSIS).</p>
 <p>It is straighforward to integrate your <tt class="docutils literal">.placet</tt> tests with standard
-testing tools. For instance, you can integrate your doctests with nose
-or py.test as follow:</p>
+testing tools. For instance, you can integrate your doctests with <tt class="docutils literal">nose</tt>
+or <tt class="docutils literal">py.test</tt> as follow:</p>
 <pre class="literal-block">
 import os, shlex, plac
 

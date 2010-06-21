@@ -195,7 +195,7 @@ You can test ``ishelve.placet`` file by calling the
  $ python -c"import plac, ishelve
  plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)"
 
-Internally ``Interpreter.doctests`` invokes ``Interpreter.check``
+Internally ``Interpreter.doctests`` invokes something like ``Interpreter.check``
 multiple times inside the same context and compare the output with the
 expected output: if even a check fails, the whole test fail. The
 easy tests supported by ``plac`` are *not* unittests: they should be
@@ -223,8 +223,8 @@ module, but the situation may change in the future (it would be nice
 if plac_ could reuse doctests directives like ELLIPSIS).
 
 It is straighforward to integrate your ``.placet`` tests with standard
-testing tools. For instance, you can integrate your doctests with nose
-or py.test as follow::
+testing tools. For instance, you can integrate your doctests with ``nose``
+or ``py.test`` as follow::
 
  import os, shlex, plac
  

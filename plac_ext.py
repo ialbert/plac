@@ -104,15 +104,13 @@ class Interpreter(object):
             exit(*sys.exc_info())
             raise
 
-    def check(self, given_input, expected_output, lineno=None):
+    def check(self, given_input, expected_output):
         "Make sure you get the expected_output from the given_input"
         output = str(self.send(given_input))
         ok = output == expected_output
         if not ok:
             msg = 'input: %s\noutput: %s\nexpected: %s' % (
                 given_input, output, expected_output)
-            if lineno:
-                msg = 'line %d: %s' % (lineno + 1, msg)
             raise AssertionError(msg) 
 
     def _parse_doctest(self, lineiter):
@@ -138,7 +136,12 @@ class Interpreter(object):
                     out.write('i> %s\n' % input)
                     out.write('-> %s\n' % output)
                     out.flush()
-                self.check(input, output, no)
+            out = self.send(input)
+            if not out.str == output:
+                msg = 'line %d: input: %s\noutput: %s\nexpected: %s\n' % (
+                    no + 1, input, out, output)
+                out.write(msg)
+                raise out.etype, out.exc, out.tb
 
     def execute(self, lineiter, out=sys.stdout, verbose=False):
         """
