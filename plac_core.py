@@ -26,13 +26,10 @@ def annotations(**ann):
             args.append(fas.varargs)
         if fas.varkw:
             args.append(fas.varkw)
-        ret = ann.pop('return_', None) # return_ is return  
         for argname in ann:
             if argname not in args:
                 raise NameError(
                     'Annotating non-existing argument: %s' % argname)
-        if ret:
-            ann['return'] = ret
         f.__annotations__ = ann
         return f
     return annotate
@@ -81,90 +78,27 @@ def pconf(obj):
             cfg[name] = getattr(obj, name)
     return cfg
 
-def _parser_from(func, baseparser=None):
+def parser_from(obj):
     """
-    Extract the arguments from the attributes of the passed function
-    (or bound method) and return an ArgumentParser instance. As a side
-    effect, adds a .p attribute to func.
-    """
-    p = baseparser or ArgumentParser(**pconf(func))
-    p.func = func
-    p.argspec = f = getfullargspec(func)
-    # add func.p
-    if inspect.ismethod(func):
-        del f.args[0] # remove self
-        func.im_func.p = p
-    else:
-        func.p = p
-    defaults = f.defaults or ()
-    n_args = len(f.args)
-    n_defaults = len(defaults)
-    alldefaults = (NONE,) * (n_args - n_defaults) + defaults
-    prefix = p.prefix = getattr(func, 'prefix_chars', '-')[0]
-    for name, default in zip(f.args, alldefaults):
-        ann = f.annotations.get(name, ())
-        a = Annotation.from_(ann)
-        metavar = a.metavar
-        if default is NONE:
-            dflt = None
-        else:
-            dflt = default
-        if a.kind in ('option', 'flag'):
-            if a.abbrev:
-                shortlong = (prefix + a.abbrev, prefix*2 + name)
-            else:
-                shortlong = (prefix + name,)
-        elif default is NONE: # required argument
-            p.add_argument(name, help=a.help, type=a.type, choices=a.choices,
-                           metavar=metavar)
-        else: # default argument
-            p.add_argument(name, nargs='?', help=a.help, default=dflt, 
-                           type=a.type, choices=a.choices, metavar=metavar)
-        if a.kind == 'option':
-            if default is not NONE:
-                metavar = metavar or str(default)
-            p.add_argument(help=a.help, default=dflt, type=a.type,
-                           choices=a.choices, metavar=metavar, *shortlong)
-        elif a.kind == 'flag':
-            if default is not NONE and default is not False:
-                raise TypeError('Flag %r wants default False, got %r' %
-                                (name, default))
-            p.add_argument(action='store_true', help=a.help, *shortlong)
-    if f.varargs:
-        a = Annotation.from_(f.annotations.get(f.varargs, ()))
-        p.add_argument(f.varargs, nargs='*', help=a.help, default=[],
-                       type=a.type, metavar=a.metavar)
-    if f.varkw:
-        a = Annotation.from_(f.annotations.get(f.varkw, ()))
-        p.add_argument(f.varkw, nargs='*', help=a.help, default={},
-                       type=a.type, metavar=a.metavar)
-    return p
-
-def parser_from(obj, baseparser=None):
-    """
-    obj can be a class, a function, a bound method, or a generic object with a 
-    .commands attribute. Returns an ArgumentParser with attributes
-    .func and .argspec, or a multi-parser with attribute .sub.
-    """
+    obj can be a callable or an object with a .commands attribute.
+    Returns an ArgumentParser.
+    """ 
+    if hasattr(obj, 'func'): # added by the task manager
+        obj = obj.func
     if hasattr(obj, 'p'): # the underlying parser has been generated already
         return obj.p
-    elif inspect.isclass(obj):
-        p = parser_from(obj.__init__)
-        p.func = obj
-        return p
-    elif hasattr(obj, 'commands'): # a command container
-        p = obj.p = baseparser or ArgumentParser(**pconf(obj))
+    parser = obj.p = ArgumentParser(**pconf(obj))
+    if hasattr(obj, 'commands'): # a command container
         for cmd in obj.commands:
-            p.addsubparser(cmd, getattr(obj, cmd))
-        p.missing = getattr(
-            obj, '__missing__', lambda name: p.error('No command %r' % name))
-        p.func = lambda : None
-        p.argspec = getfullargspec(p.func)
-        return p
-    elif inspect.isfunction(obj) or inspect.ismethod(obj): # error if not func
-        return _parser_from(obj, baseparser)
+            parser.addsubparser(cmd, getattr(obj, cmd))
+        parser.missing = getattr(
+            obj, '__missing__',
+            lambda name: parser.error('No command %r' % name))
+        parser.func = lambda : None
+        parser.argspec = getfullargspec(parser.func)
+        return parser
     else:
-        raise TypeError('%r could not be converted into a parser' % obj)
+        return parser._populated(obj)
 
 def _extract_kwargs(args):
     "Returns two lists: regular args and name=value args"
@@ -201,6 +135,7 @@ class ArgumentParser(argparse.ArgumentParser):
         """Call the underlying function with the args. Works also for
         command containers, by dispatching to the right subparser."""
         arglist = list(args)
+        cmd = None
         if hasattr(self, 'subparsers'):
             subp, cmd = self._extract_subparser_cmd(arglist)
             if subp is None and cmd is not None:
@@ -220,7 +155,7 @@ class ArgumentParser(argparse.ArgumentParser):
         collision = set(self.argspec.args) & set(kwargs)
         if collision:
             self.error('colliding keyword arguments: %s' % ' '.join(collision))
-        return self.func(*(args + varargs), **kwargs)
+        return cmd, self.func(*(args + varargs), **kwargs)
 
     def _extract_subparser_cmd(self, arglist):
         "Extract the subparser from the first recognized argument"
@@ -230,7 +165,7 @@ class ArgumentParser(argparse.ArgumentParser):
             if not arg.startswith(prefix):
                 cmd = _match_cmd(arg, name_parser_map)
                 del arglist[i] 
-                return name_parser_map.get(cmd), arg
+                return name_parser_map.get(cmd), cmd
         return None, None
 
     def addsubparser(self, cmd, func):
@@ -239,14 +174,87 @@ class ArgumentParser(argparse.ArgumentParser):
             self.subparsers = self.add_subparsers(
                 title='subcommands', help='-h to get additional help')
         subp = self.subparsers.add_parser(cmd, **pconf(func))
-        return parser_from(func, subp)
+        return subp._populated(func)
 
-def listify(result):
-    "If result is an iterable, convert it into a list, else return it unchanged"
-    if hasattr(result, '__iter__') and not isinstance(result, str):
-        return list(result)
-    else:
-        return result
+    def _set_func_argspec(self, obj):
+        """Extracts the signature from a callable object and adds an .argspec
+        attribute to the parser. Also adds a .func reference to the object."""
+        self.func = obj
+        if inspect.isfunction(obj):
+            self.argspec = getfullargspec(obj)
+            obj.p = self
+        elif inspect.ismethod(obj):
+            self.argspec = getfullargspec(obj)
+            obj.im_func.p = self
+            del self.argspec.args[0] # remove first argument
+        elif inspect.isclass(obj):
+            self.argspec = getfullargspec(obj.__init__)
+            obj.__init__.im_func.p = self
+            del self.argspec.args[0] # remove first argument
+        elif hasattr(obj, '__call__'):
+            self.argspec = getfullargspec(obj.__call__)
+            obj.__call__.im_func.p = self
+            del self.argspec.args[0] # remove first argument
+        else:
+            raise TypeError('Could not determine signature of %r' % obj)
+
+    def _populated(self, func):
+        """
+        Extract the arguments from the attributes of the passed function
+        and return a populated ArgumentParser instance. As a side
+        effect, adds a .p attribute to func.
+        """
+        self._set_func_argspec(func)
+        f = self.argspec
+        defaults = f.defaults or ()
+        n_args = len(f.args)
+        n_defaults = len(defaults)
+        alldefaults = (NONE,) * (n_args - n_defaults) + defaults
+        prefix = self.prefix = getattr(func, 'prefix_chars', '-')[0]
+        for name, default in zip(f.args, alldefaults):
+            ann = f.annotations.get(name, ())
+            a = Annotation.from_(ann)
+            metavar = a.metavar
+            if default is NONE:
+                dflt = None
+            else:
+                dflt = default
+            if a.kind in ('option', 'flag'):
+                if a.abbrev:
+                    shortlong = (prefix + a.abbrev, prefix*2 + name)
+                else:
+                    shortlong = (prefix + name,)
+            elif default is NONE: # required argument
+                self.add_argument(name, help=a.help, type=a.type, 
+                                  choices=a.choices, metavar=metavar)
+            else: # default argument
+                self.add_argument(
+                    name, nargs='?', help=a.help, default=dflt, 
+                    type=a.type, choices=a.choices, metavar=metavar)
+            if a.kind == 'option':
+                if default is not NONE:
+                    metavar = metavar or str(default)
+                self.add_argument(
+                    help=a.help, default=dflt, type=a.type,
+                    choices=a.choices, metavar=metavar, *shortlong)
+            elif a.kind == 'flag':
+                if default is not NONE and default is not False:
+                    raise TypeError('Flag %r wants default False, got %r' %
+                                    (name, default))
+                self.add_argument(action='store_true', help=a.help, *shortlong)
+        if f.varargs:
+            a = Annotation.from_(f.annotations.get(f.varargs, ()))
+            self.add_argument(f.varargs, nargs='*', help=a.help, default=[],
+                              type=a.type, metavar=a.metavar)
+        if f.varkw:
+            a = Annotation.from_(f.annotations.get(f.varkw, ()))
+            self.add_argument(f.varkw, nargs='*', help=a.help, default={},
+                              type=a.type, metavar=a.metavar)
+        return self
+
+def iterable(obj):
+    "Any object with an __iter__ method which is not a string"
+    return hasattr(obj, '__iter__') and not isinstance(obj, basestring)
 
 def call(obj, arglist=sys.argv[1:], ignore_extra=False):
     """
@@ -259,4 +267,7 @@ def call(obj, arglist=sys.argv[1:], ignore_extra=False):
     in the attribute .extra_args of the associated parser for
     later processing.
     """
-    return listify(parser_from(obj).consume(arglist, ignore_extra))
+    cmd, result = parser_from(obj).consume(arglist, ignore_extra)
+    if iterable(result):
+        return list(result)
+    return result

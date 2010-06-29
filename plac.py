@@ -24,42 +24,12 @@
 ##   DAMAGE.
 
 """
-plac, the easiest Command Line Arguments Parser in the world.
 See doc/plac.pdf for the documentation.
 """
 
-__version__ = '0.5.0'
+__version__ = '0.6.0'
 
-import imp, os, sys, inspect
 from plac_core import *
+
 if sys.version >= '2.5':
-    from plac_ext import Interpreter
-
-try:
-    PLACDIRS = os.environ.get('PLACPATH', '.').split(':')
-except:
-    raise ValueError('Ill-formed PLACPATH: got %PLACPATHs' % os.environ)
-
-def import_main(path, *args, **pconf):
-    """
-    An utility to import the main function of a plac tool. It also
-    works with tool factories, if you pass the arguments.
-    """
-    if not os.path.isabs(path): # relative path, look at PLACDIRS
-        for placdir in PLACDIRS:
-            fullpath = os.path.join(placdir, path)
-            if os.path.exists(fullpath):
-                break
-        else: # no break
-            raise ImportError('Cannot find %s', path)
-    else:
-        fullpath = path
-    name, ext = os.path.splitext(os.path.basename(fullpath))
-    tool = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1)).main
-    if args:
-        tool = parser_from(tool).consume(args) # instantiate the factory
-    elif inspect.isclass(tool):
-        tool = tool() # instantiate it
-    vars(tool).update(pconf)
-    parser_from(tool) # raise a TypeError if not
-    return tool
+    from plac_ext import Interpreter, import_main

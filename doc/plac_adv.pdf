@@ -2507,7 +2507,7 @@ n -6 -6 468.6898 144 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 125.71 Tm /F4 10 Tf 12 TL (# test_ishelve2.py) Tj T* (from __future__ import with_statement) Tj T* (import plac, ishelve) Tj T*  T* (def test\(\):) Tj T* (    with plac.Interpreter\(ishelve.main\) as i:) Tj T* (        i.check\('.clear', 'cleared the shelve'\)) Tj T* (        i.check\('a=1', 'setting a=1'\)) Tj T* (        i.check\('a', '1'\)) Tj T* (        i.check\('.delete=a', 'deleted a'\)) Tj T* (        i.check\('a', 'a: not found'\)) Tj T* ET
+BT 1 0 0 1 0 125.71 Tm /F4 10 Tf 12 TL (# test_ishelve_more.py) Tj T* (from __future__ import with_statement) Tj T* (import plac, ishelve) Tj T*  T* (def test\(\):) Tj T* (    with plac.Interpreter\(ishelve.main\) as i:) Tj T* (        i.check\('.clear', 'cleared the shelve'\)) Tj T* (        i.check\('a=1', 'setting a=1'\)) Tj T* (        i.check\('a', '1'\)) Tj T* (        i.check\('.delete=a', 'deleted a'\)) Tj T* (        i.check\('a', 'a: not found'\)) Tj T* ET
 Q
 Q
 Q

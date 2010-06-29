@@ -1,4 +1,4 @@
-# test_ishelve2.py
+# test_ishelve_more.py
 from __future__ import with_statement
 import plac, ishelve
 

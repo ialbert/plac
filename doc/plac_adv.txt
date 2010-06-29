@@ -137,7 +137,7 @@ hand each time (a possibly you do something with the error message in
 stderr too). Luckily, ``plac`` offers a better testing support through
 the ``check`` method of ``Interpreter`` objects:
 
-.. include:: test_ishelve2.py
+.. include:: test_ishelve_more.py
    :literal:
 
 The method ``.check(given_input, expected_output)`` works on strings
