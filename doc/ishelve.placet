@@ -10,4 +10,4 @@ deleted a
 i> a
 a: not found
 i> .cler # spelling error
-SystemExit: unrecognized arguments: .cler
+.cler: not found

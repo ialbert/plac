@@ -1,8 +1,0 @@
-usage: example14.py [-h] {status,commit,checkout,help} ...
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-subcommands:
-  {status,commit,checkout,help}
-                        -h to get additional help

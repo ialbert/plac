@@ -13,6 +13,7 @@ try:
     set
 except NameError: # Python 2.3
     from sets import Set as set
+from gettext import gettext as _
 
 def annotations(**ann):
     """
@@ -29,7 +30,7 @@ def annotations(**ann):
         for argname in ann:
             if argname not in args:
                 raise NameError(
-                    'Annotating non-existing argument: %s' % argname)
+                    _('Annotating non-existing argument: %s') % argname)
         f.__annotations__ = ann
         return f
     return annotate
@@ -72,33 +73,36 @@ PARSER_CFG = getfullargspec(argparse.ArgumentParser.__init__).args[1:]
 
 def pconf(obj):
     "Extracts the configuration of the underlying ArgumentParser from obj"
-    cfg = dict(description=obj.__doc__)
+    cfg = dict(description=obj.__doc__, 
+               formatter_class=argparse.RawDescriptionHelpFormatter)
     for name in dir(obj):
         if name in PARSER_CFG: # argument of ArgumentParser
             cfg[name] = getattr(obj, name)
     return cfg
 
-def parser_from(obj):
+parser_registry = {}
+
+def parser_from(obj, **confparams):
     """
     obj can be a callable or an object with a .commands attribute.
     Returns an ArgumentParser.
-    """ 
-    if hasattr(obj, 'func'): # added by the task manager
-        obj = obj.func
-    if hasattr(obj, 'p'): # the underlying parser has been generated already
-        return obj.p
-    parser = obj.p = ArgumentParser(**pconf(obj))
-    if hasattr(obj, 'commands'): # a command container
-        for cmd in obj.commands:
-            parser.addsubparser(cmd, getattr(obj, cmd))
+    """
+    try: # the underlying parser has been generated already
+        return parser_registry[obj]
+    except KeyError: # generate a new parser
+        pass
+    conf = pconf(obj).copy()
+    conf.update(confparams)
+    parser_registry[obj] = parser = ArgumentParser(**conf)
+    if hasattr(obj, 'commands') and obj.commands and not inspect.isclass(obj):
+        # a command container instance
+        parser.addsubcommands(obj.commands, obj, 'subcommands')
         parser.missing = getattr(
             obj, '__missing__',
             lambda name: parser.error('No command %r' % name))
-        parser.func = lambda : None
-        parser.argspec = getfullargspec(parser.func)
-        return parser
     else:
-        return parser._populated(obj)
+        parser.populate_from(obj)
+    return parser
 
 def _extract_kwargs(args):
     "Returns two lists: regular args and name=value args"
@@ -124,14 +128,14 @@ def _match_cmd(abbrev, commands):
         return matches[0]
     elif n > 1:
         raise NameError(
-            'Ambiguous command %r: matching %s' % (abbrev, matches))
+            _('Ambiguous command %r: matching %s' % (abbrev, matches)))
 
 class ArgumentParser(argparse.ArgumentParser):
     """
     An ArgumentParser with .func and .argspec attributes, and possibly
     .commands and .subparsers.
     """
-    def consume(self, args, ignore_extra=False):
+    def consume(self, args):
         """Call the underlying function with the args. Works also for
         command containers, by dispatching to the right subparser."""
         arglist = list(args)
@@ -139,70 +143,74 @@ class ArgumentParser(argparse.ArgumentParser):
         if hasattr(self, 'subparsers'):
             subp, cmd = self._extract_subparser_cmd(arglist)
             if subp is None and cmd is not None:
-                return self.missing(cmd)
+                return cmd, self.missing(cmd)
             elif subp is not None: # use the subparser
                 self = subp
-        if self.argspec.varkw:
-            arglist, kwargs = _extract_kwargs(arglist)
+        if hasattr(self, 'argspec') and self.argspec.varkw:
+            arglist, kwargs = _extract_kwargs(arglist) # modify arglist!
         else:
             kwargs = {}
-        if ignore_extra: # ignore unrecognized arguments
-            ns, self.extra_args = self.parse_known_args(arglist)
+        if hasattr(self, 'argspec') and self.argspec.varargs:
+            # ignore unrecognized arguments
+            ns, extraopts = self.parse_known_args(arglist)
         else:
-            ns = self.parse_args(arglist)
+            ns, extraopts = self.parse_args(arglist), []
         args = [getattr(ns, a) for a in self.argspec.args]
         varargs = getattr(ns, self.argspec.varargs or '', [])
         collision = set(self.argspec.args) & set(kwargs)
         if collision:
-            self.error('colliding keyword arguments: %s' % ' '.join(collision))
-        return cmd, self.func(*(args + varargs), **kwargs)
+            self.error(
+                _('colliding keyword arguments: %s') % ' '.join(collision))
+        return cmd, self.func(*(args + varargs + extraopts), **kwargs)
 
     def _extract_subparser_cmd(self, arglist):
-        "Extract the subparser from the first recognized argument"
-        prefix = self.prefix_chars[0] 
+        "Extract the right subparser from the first recognized argument"
+        optprefix = self.prefix_chars[0] 
         name_parser_map = self.subparsers._name_parser_map
         for i, arg in enumerate(arglist):
-            if not arg.startswith(prefix):
+            if not arg.startswith(optprefix):
                 cmd = _match_cmd(arg, name_parser_map)
                 del arglist[i] 
-                return name_parser_map.get(cmd), cmd
+                return name_parser_map.get(cmd), cmd or arg
         return None, None
 
-    def addsubparser(self, cmd, func):
-        "Add a subparser for a command"
+    def addsubcommands(self, commands, obj, title=None, cmdprefix=''):
+        "Extract a list of subcommands from obj and add them to the parser"
+        if hasattr(obj, cmdprefix) and obj.cmdprefix in self.prefix_chars:
+            raise ValueError(_('The prefix %r is already taken!' % cmdprefix))
         if not hasattr(self, 'subparsers'):
-            self.subparsers = self.add_subparsers(
-                title='subcommands', help='-h to get additional help')
-        subp = self.subparsers.add_parser(cmd, **pconf(func))
-        return subp._populated(func)
+            self.subparsers = self.add_subparsers(title=title) 
+        elif title:
+            self.add_argument_group(title=title) # populate ._action_groups
+        prefixlen = len(getattr(obj, 'cmdprefix', ''))
+        for cmd in commands:
+            func = getattr(obj, cmd[prefixlen:]) # strip the prefix
+            self.subparsers.add_parser(
+                cmd, add_help=False, **pconf(func)).populate_from(func)
 
     def _set_func_argspec(self, obj):
         """Extracts the signature from a callable object and adds an .argspec
         attribute to the parser. Also adds a .func reference to the object."""
-        self.func = obj
         if inspect.isfunction(obj):
             self.argspec = getfullargspec(obj)
-            obj.p = self
         elif inspect.ismethod(obj):
             self.argspec = getfullargspec(obj)
-            obj.im_func.p = self
             del self.argspec.args[0] # remove first argument
         elif inspect.isclass(obj):
             self.argspec = getfullargspec(obj.__init__)
-            obj.__init__.im_func.p = self
             del self.argspec.args[0] # remove first argument
         elif hasattr(obj, '__call__'):
             self.argspec = getfullargspec(obj.__call__)
-            obj.__call__.im_func.p = self
             del self.argspec.args[0] # remove first argument
         else:
-            raise TypeError('Could not determine signature of %r' % obj)
+            raise TypeError(_('Could not determine the signature of %r') % obj)
+        self.func = obj
+        parser_registry[obj] = self
 
-    def _populated(self, func):
+    def populate_from(self, func):
         """
         Extract the arguments from the attributes of the passed function
-        and return a populated ArgumentParser instance. As a side
-        effect, adds a .p attribute to func.
+        and return a populated ArgumentParser instance.
         """
         self._set_func_argspec(func)
         f = self.argspec
@@ -226,7 +234,7 @@ class ArgumentParser(argparse.ArgumentParser):
                     shortlong = (prefix + name,)
             elif default is NONE: # required argument
                 self.add_argument(name, help=a.help, type=a.type, 
-                                  choices=a.choices, metavar=metavar)
+                                   choices=a.choices, metavar=metavar)
             else: # default argument
                 self.add_argument(
                     name, nargs='?', help=a.help, default=dflt, 
@@ -239,35 +247,45 @@ class ArgumentParser(argparse.ArgumentParser):
                     choices=a.choices, metavar=metavar, *shortlong)
             elif a.kind == 'flag':
                 if default is not NONE and default is not False:
-                    raise TypeError('Flag %r wants default False, got %r' %
+                    raise TypeError(_('Flag %r wants default False, got %r') %
                                     (name, default))
                 self.add_argument(action='store_true', help=a.help, *shortlong)
         if f.varargs:
             a = Annotation.from_(f.annotations.get(f.varargs, ()))
             self.add_argument(f.varargs, nargs='*', help=a.help, default=[],
-                              type=a.type, metavar=a.metavar)
+                               type=a.type, metavar=a.metavar)
         if f.varkw:
             a = Annotation.from_(f.annotations.get(f.varkw, ()))
             self.add_argument(f.varkw, nargs='*', help=a.help, default={},
-                              type=a.type, metavar=a.metavar)
-        return self
+                               type=a.type, metavar=a.metavar)
+
+    def help_cmd(self, cmd):
+        "Return the help message for a subcommand"
+        p = self.subparsers._name_parser_map.get(cmd)
+        if p is None:
+            return _('Unknown command %s' % cmd)
+        else:
+            return p.format_help()
+
+    def print_actions(self):
+        "Useful for debugging"
+        print(self)
+        for a in self._actions:
+            print(a)
 
 def iterable(obj):
     "Any object with an __iter__ method which is not a string"
     return hasattr(obj, '__iter__') and not isinstance(obj, basestring)
 
-def call(obj, arglist=sys.argv[1:], ignore_extra=False):
+def call(obj, arglist=sys.argv[1:], eager=True):
     """
     If obj is a function or a bound method, parse the given arglist 
-    by using the argument parser inferred from the annotations of obj
+    by using the parser inferred from the annotations of obj
     and call obj with the parsed arguments. 
     If obj is an object with attribute .commands, dispatch to the 
-    associated subparser. Returns a list or an atomic object.
-    If ignore_extra is True, unrecognized arguments are stored
-    in the attribute .extra_args of the associated parser for
-    later processing.
+    associated subparser.
     """
-    cmd, result = parser_from(obj).consume(arglist, ignore_extra)
-    if iterable(result):
+    cmd, result = parser_from(obj).consume(arglist)
+    if iterable(result) and eager: # listify the result
         return list(result)
     return result

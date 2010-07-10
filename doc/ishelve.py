@@ -13,7 +13,7 @@ DEFAULT_SHELVE = os.path.expanduser('~/conf.shelve')
     setters='setters param=value')
 def main(help, showall, clear, delete, filename=DEFAULT_SHELVE,
          *params, **setters):
-    "A simple interface to a shelve"
+    "A simple interface to a shelve. Use .help to see the available commands."
     sh = shelve.open(filename)
     try:
         if not any([help, showall, clear, delete, params, setters]):

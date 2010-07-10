@@ -1027,12 +1027,18 @@ try:
 except:
    # do something
 </pre>
-<p>Without the <tt class="docutils literal">listify</tt> functionality, a main function returning a
+<p>Without the &quot;listify&quot; functionality, a main function returning a
 generator object would not raise any exception until the generator
 is iterated over.</p>
-<p>Moreover you can rely on type checks like <tt class="docutils literal">isinstance(result, list)</tt>
-for the output of <tt class="docutils literal">plac.call</tt>, to check if the output is an iterable
-or not.</p>
+<p>If you are a fan of lazyness, you can still have it by setting the <tt class="docutils literal">eager</tt>
+flag to <tt class="docutils literal">False</tt>, as in the following example:</p>
+<pre class="literal-block">
+for line in plac.call(main, args, eager=False):
+    print(line)
+</pre>
+<p>If <tt class="docutils literal">main</tt> returns a generator object this example will print each
+line as soon as available, whereas the default behaviour is to print
+all the lines together and the end of the computation.</p>
 </div>
 <div class="section" id="a-realistic-example">
 <h1><a class="toc-backref" href="#id8">A realistic example</a></h1>

@@ -24,7 +24,7 @@
 ##   DAMAGE.
 
 """
-See doc/plac.pdf for the documentation.
+See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
 """
 
 __version__ = '0.6.0'
@@ -32,4 +32,4 @@ __version__ = '0.6.0'
 from plac_core import *
 
 if sys.version >= '2.5':
-    from plac_ext import Interpreter, import_main
+    from plac_ext import Interpreter, import_main, ReadlineInput

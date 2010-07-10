@@ -7,7 +7,7 @@ class FVCS(object):
     @plac.annotations(
         name=('a recognized command', 'positional', None, str, commands))
     def help(self, name):
-        self.p.subp[name].print_help()
+        print(plac.parser_from(self).help_cmd(name))
 
     @plac.annotations(
         url=('url of the source code', 'positional'))

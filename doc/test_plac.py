@@ -41,6 +41,13 @@ def check_help(name):
 
 ####################### tests ############################
 
+def test_expected_help():
+    for fname in os.listdir('.'):
+        if fname.endswith('.help'):
+            name = fname[:-5]
+            if name not in ('vcs', 'ishelve'):
+                yield check_help, fname[:-5]
+
 p1 = parser_from(lambda delete, *args: None,
                  delete=('delete a file', 'option'))
 
@@ -114,13 +121,6 @@ def test_kwargs():
 
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
-def test_expected_help():
-    for fname in os.listdir('.'):
-        if fname.endswith('.help'):
-            name = fname[:-5]
-            if name not in ('vcs', 'ishelve'):
-                yield check_help, fname[:-5]
-
 class Cmds(object):
     add_help = False
     commands = 'help', 'commit'
@@ -151,17 +151,24 @@ def test_doctest():
     failure, tot= doctest.testfile('plac.txt', module_relative=False)
     assert not failure, failure
 
+failing_scripts = set(['ishelve2.plac'])
+
+def check_script(args):
+    if failing_scripts.intersection(args):
+        assert subprocess.call(args) > 0, ( # expected failure
+            'Unexpected success for %s' % ' '.join(args))
+    else:
+        assert subprocess.call(args) == 0 , 'Failed %s' % ' '.join(args)
+
 def test_batch():
     for batch in os.listdir('.'):
         if batch.endswith('.plac'):
-            args = [sys.executable, '../plac_runner.py', '-b', batch]
-            yield subprocess.call, args
+            yield check_script, ['plac_runner.py', '-b', batch]
 
 def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
-            args = [sys.executable, '../plac_runner.py', '-t', placet]
-            yield subprocess.call, args
+            yield check_script, ['plac_runner.py', '-t', placet]
 
 if __name__ == '__main__':
     n = 0

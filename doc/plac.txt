@@ -419,13 +419,19 @@ errors visible early, and avoids mistakes in code like the following::
  except:
     # do something
 
-Without the ``listify`` functionality, a main function returning a
+Without the "listify" functionality, a main function returning a
 generator object would not raise any exception until the generator
-is iterated over.
+is iterated over. 
 
-Moreover you can rely on type checks like ``isinstance(result, list)``
-for the output of ``plac.call``, to check if the output is an iterable
-or not.
+If you are a fan of lazyness, you can still have it by setting the ``eager``
+flag to ``False``, as in the following example::
+
+   for line in plac.call(main, args, eager=False):
+       print(line)
+
+If ``main`` returns a generator object this example will print each
+line as soon as available, whereas the default behaviour is to print
+all the lines together and the end of the computation.
 
 A realistic example
 ---------------------------------------

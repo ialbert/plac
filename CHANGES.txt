@@ -1,6 +1,9 @@
 HISTORY
 ----------
 
+0.6.0 Improvement the interactive experience with full readline support and
+      custom help. Added support for long running command, via threads and
+      processes.
 0.5.0 Gigantic release. Introduced smart options, added an Interpreter class
       and the command container concept. Made the split plac/plac_core/plac_ext
       and added a plac runner, able to run scripts, batch files and doctests.

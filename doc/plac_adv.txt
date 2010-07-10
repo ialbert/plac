@@ -1,9 +1,9 @@
-Testing and scripting your applications with plac
+Advanced usages of plac
 =========================================================
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: June 2010
+:Date: July 2010
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
 :Installation: ``easy_install -U plac``
@@ -11,7 +11,9 @@ Testing and scripting your applications with plac
 :Requires: Python 2.5+
 
 *The present document discusses a few of the advanced use
-cases for plac.  It assumes you have already read an understood the
+cases for plac. It shows how to write interactive and non-interactive
+interpreters with plac, and how to use plac for testing and scripting a generic
+application. It assumes you have already read an understood the
 basic documentation.*
 
 .. contents::
@@ -77,13 +79,14 @@ and non-interactively::
  $ python shelve_interpreter.py .clear # non-interactive use
  cleared the shelve
 
-Here is an usage session, using rlwrap_ to enable readline features
-(rlwrap_ is available in Unix-like systems)::
+Here is an usage session::
 
- $ rlwrap python shelve_interpreter.py -i # interactive use
- usage: shelve_interpreter.py [.help] [.showall] [.clear] [.delete DELETE]
-                              [.filename /home/micheles/conf.shelve]
-                              [params [params ...]] [setters [setters ...]]
+ $ python shelve_interpreter.py -i # interactive use
+ A simple interface to a shelve. Use .help to see the available commands.
+ i> .help
+ Commands: .help, .showall, .clear, .delete
+ <param> ...
+ <param=value> ...
  i> a=1
  setting a=1
  i> a
@@ -106,19 +109,21 @@ reads commands from the console and send them to the
 underlying interpreter, until the user send a CTRL-D
 command (CTRL-Z in Windows). There is a default
 argument ``prompt='i> '`` which
-can be used to change the prompt. The message displayed
-by default is the argparse-provided usage message, but can be
-customized by setting an ``.intro`` attribute on the main function.
+can be used to change the prompt. The text displayed at the beginning
+of the interactive session is the docstring of the main function.
+``plac`` also understands command abbreviations: in this example
+``del`` is an abbreviation for ``delete``. In case of ambiguous 
+abbreviations plac_ raises a ``NameError``.
 
-Notice that ``plac.Interpreter`` is available only if you are using a recent
-version of Python (>= 2.5), because it is a context manager object
-which uses extended generators internally.
-
-You can conveniently test your application in interactive mode.
-However manual testing is a poor substitute for automatic testing.
+Finally I must notice that the ``plac.Interpreter`` is available only if you
+are using a recent version of Python (>= 2.5), because it is a context
+manager object which uses extended generators internally.
 
 Testing a plac application
 -----------------------------------------------------------
+
+You can conveniently test your application in interactive mode.
+However manual testing is a poor substitute for automatic testing.
 
 In principle, one could write automatic tests for the
 ``ishelve`` application by using ``plac.call`` directly:
@@ -143,8 +148,7 @@ the ``check`` method of ``Interpreter`` objects:
 The method ``.check(given_input, expected_output)`` works on strings
 and raises an ``AssertionError`` if the output produced by the
 interpreter is different from the expected output for the given input.
-
-``AssertionError`` is catched by tools like ``py.test`` and
+Notice that ``AssertionError`` is catched by tools like ``py.test`` and
 ``nosetests`` and actually ``plac`` tests are intended to be run with
 such tools.
 
@@ -175,7 +179,7 @@ are still too low-level for my taste. The ``Interpreter`` class provides
 support for doctest-style tests, a.k.a. *plac easy tests*.
 
 By using plac easy tests you can cut and paste your interactive session and
-turn it into a runnable automatics test!
+turn it into a runnable automatics test.
 Consider for instance the following file ``ishelve.placet`` (the ``.placet``
 extension is a mnemonic for plac easy tests):
 
@@ -197,28 +201,30 @@ You can test ``ishelve.placet`` file by calling the
 
 Internally ``Interpreter.doctests`` invokes something like ``Interpreter.check``
 multiple times inside the same context and compare the output with the
-expected output: if even a check fails, the whole test fail. The
-easy tests supported by ``plac`` are *not* unittests: they should be
-used to model user interaction when the order of the operations
-matters.  Since the single subtests in a ``.placet`` file are not
-independent, it makes sense to exit immediately at the first failure.
+expected output: if even a check fails, the whole test fail. 
 
-The support for doctests in plac_ comes nearly for free, thanks to the shlex_
-module in the standard library, which is able to parse simple
+You should realize tha the easy tests supported by ``plac`` are *not*
+unittests: they are functional tests. They model then user interaction and the
+order of the operations generally matters.  The single subtests in a
+``.placet`` file are not independent and it makes sense to exit
+immediately at the first failure.
+
+The support for doctests in plac_ comes nearly for free, thanks to the
+shlex_ module in the standard library, which is able to parse simple
 languages as the ones you can implement with plac_. In particular,
 thanks to shlex_, plac_ is able to recognize comments (the default
-comment character is ``#``), continuation lines, escape sequences and
-more. Look at the shlex_ documentation if you need to customize how
-the language is interpreted.
+comment character is ``#``), escape sequences and more. Look at the
+shlex_ documentation if you need to customize how the language is
+interpreted.
 
 In addition, I have implemented from scratch some support for line number
 recognition, so that if a test fail you get the line number of the
 failing command. This is especially useful if your tests are
-stored in external files (plac easy tests does not need to be in
+stored in external files, even if plac easy tests does not need to be in
 a file: you can just pass to the ``.doctest`` method a list of
-strings corresponding to the lines of the file).
+strings corresponding to the lines of the file.
 
-At the present plac easy tests do not use any code from the doctest
+At the present plac_ does not use any code from the doctest
 module, but the situation may change in the future (it would be nice
 if plac_ could reuse doctests directives like ELLIPSIS).
 
@@ -243,7 +249,7 @@ or ``py.test`` as follow::
 
 Here you should notice that usage of ``plac.import_main``, an utility
 which is able to import the main function of the script specified in
-the shabng line. You can use both the full path name of the
+the shebang line. You can use both the full path name of the
 tool, or a relative path name. In this case the runner look at the
 environment variable ``PLACPATH`` and it searches
 the plac tool in the directories specified there (``PLACPATH`` is just
@@ -267,15 +273,15 @@ background in case of unexpected errors. The implementation of
 interpreters *wrap the errors, but does not eat them*: the errors are
 always accessible and can be re-raised on demand.
 
-In particular consider the following batch file, which contains a syntax
-error (``.dl`` instead of ``.del``):
+The exception is the case of invalid commands, which are skipped.
+Consider for instance the following batch file, which contains a 
+mispelled command (``.dl`` instead of ``.del``):
 
 .. include:: ishelve.plac
    :literal:
 
-If you execute the batch file, the interpreter will raise a ``SystemExit``
-with an appropriated error message at the ``.dl`` line and the last command
-will *not* be executed::
+If you execute the batch file, the interpreter will print a ``.dl: not found``
+at the ``.dl`` line and will continue::
 
  $ python -c "import plac, ishelve
  plac.Interpreter(ishelve.main).execute(open('ishelve.plac'), verbose=True)" 
@@ -290,20 +296,23 @@ will *not* be executed::
  i> .del a
  deleted a
  i> .dl b
- unrecognized arguments: .dl
+ 2
+ .dl: not found
+ i> .show
+ b=2
 
 The ``verbose`` flag is there to show the lines which are being interpreted
 (prefixed by ``i>``). This is done on purpose, so that you can cut and paste
 the output of the batch script and turn it into a ``.placet`` test
 (cool, isn't it?).
 
-Containers of commands 
+Implementing subcommands 
 ----------------------------------------
 
 When I discussed the ``ishelve`` implementation in the `basic
 documentation`_, I said that it looked like a poor man implementation
 of an object system as a chain of elifs; I also said that plac_ was
-able to do better.  Here I will substantiate my claim.
+able to do much better than that.  Here I will substantiate my claim.
 
 plac_ is actually able to infer a set of subparsers from a
 generic container of commands.  This is useful if you want to
@@ -314,9 +323,10 @@ Technically a container of commands is any object with a ``.commands`` attribute
 listing a set of functions or methods which are valid commands. A command
 container may have initialization/finalization hooks (``__enter__/__exit__``)
 and dispatch hooks (``__missing__``, invoked for invalid command names).
+Moreover, only when using command containers plac_ is able to provide
+automatic autocompletion of commands.
 
-Using this feature the shelve interface can be rewritten in a more
-object-oriented way as follows:
+Rhe shelve interface can be rewritten in an object-oriented way as follows:
 
 .. include:: ishelve2.py
    :literal:
@@ -333,14 +343,31 @@ implemented any error checking in the ``show`` and ``delete`` methods
 on purpose, to verify that plac_ works correctly in the presence of
 exceptions.
 
+When working with command containers, plac_ automatically adds two
+special commands to the set of provided commands: ``.help``
+and ``.last_tb``. The ``.help`` command is the easier to understand:
+when invoked without arguments it displays the list of available commands
+with the same formatting of the cmd_ module; when invoked with the name of
+a command it displays the usage message for that command.
+The ``.last_tb`` command is useful when debugging: in case of errors,
+it allows you to display the traceback of the last executed command.
+
 Here is a session of usage on an Unix-like operating system::
 
- $ rlwrap python ishelve2.py
- Operating on /home/micheles/conf.shelve. Available commands:
- set
- show
- showall
- delete
+ $ python ishelve2.py
+ A minimal interface over a shelve object.
+ Operating on /home/micheles/conf.shelve.
+ .help to see the available commands.
+ i> .help
+
+ special commands
+ ================
+ .help .last_tb  
+ 
+ custom commands
+ ===============
+ delete  set  show  showall
+
  i> delete
  deleting everything
  i> set a pippo
@@ -358,75 +385,108 @@ Here is a session of usage on an Unix-like operating system::
  i> showall
  b = lippo
  i> delete a     
- DBNotFoundError: (-30988, 'DB_NOTFOUND: No matching key/data pair found')
+ deleting a
+ KeyError: 'a'
+ i> .last_tb 
+  File "/usr/local/lib/python2.6/dist-packages/plac-0.6.0-py2.6.egg/plac_ext.py", line 190, in _wrap
+     for value in genobj:
+   File "./ishelve2.py", line 37, in delete
+     del self.sh[name] # no error checking
+   File "/usr/lib/python2.6/shelve.py", line 136, in __delitem__
+     del self.dict[key]
  i> 
 
 Notice that in interactive mode the traceback is hidden, unless
 you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
 
-The interactive mode of ``plac`` can be used as a replacement of the 
-``cmd`` module in the standard library. There are a few differences,
-however. For instance you miss tab completion, even if use rlwrap_
-(you get persistent command history for free, however). This is not
-a big issue, since ``plac`` understands command abbreviations.
+Readline support
+---------------------------------------
 
-If an abbreviation is ambiguous, plac_ warns you::
+Starting from release 0.6 plac_ offers full readline support. That
+means that if your Python was compiled with readline support you get
+autocompletion and persistent command history for free.
+By default all commands are autocomplete in a case sensitive way.
+If you want to add new words to the autocompletion set, or you want
+to change the location of the ``.history`` file, or to change the
+case sensitivirt, or you want to change the prompt, the way to do
+it is to pass a ``plac.ReadlineInput`` object to the interpreter.
+Here is an example, assuming you want to build a database interface
+understanding SQL commands:
 
- $ rlwrap python ishelve2.py
- usage: plac_runner.py ishelve2.py [-h] {delete,set,showall,show} ...
+.. include:: sql_interface.py
+   :literal:
+
+Here is an example of usage::
+
+ $ python sql_interface.py <some dsn>
+ sql> SELECT a.* FROM TABLE1 AS a INNER JOIN TABLE2 AS b ON a.id = b.id 
+ ...
+
+You can check that entering just ``sel`` and pressing TAB the readline library
+completes the ``SELECT`` keyword for you and makes it upper case; idem for 
+``FROM``, ``INNER``, ``JOIN`` and even for the names of the tables. An
+obvious improvement is to read the names of the tables by introspecting
+the database: actually you can even read the names of the views and of
+the columns, and have full autocompletion. All the entered commands
+and recorded and saved in the file ``~/.sql_interface.history`` when
+exiting from the command-line interface.
+
+If the readline library is not available, my suggestion is to use the
+rlwrap_ tool which provides similar features, at least on Unix-like
+platforms. plac_ should also work fine on Windows with the pyreadline
+library (I do not use Windows, so this part is very little tested).
+For people worried about licenses, I will notice that plac_ uses the
+readline library only if available, it does not include it and it does
+not rely on it in any fundamental way, so that the plac_ licence does
+not need to be the GPL (actually it is a BSD
+do-whatever-you-want-with-it licence).
+
+The interactive mode of ``plac`` can be used as a replacement of the
+cmd_ module in the standard library. It is actually better than cmd_:
+for instance, the ``.help`` command is more powerful, since it
+provides information about the arguments accepted by the given command::
+
+ i> .help set
+ usage:  set name value
+ 
+ set name value
+ 
+ positional arguments:
+   name
+   value
+
+ i> .help delete
+ usage:  delete [name]
+ 
+ delete given parameter (or everything)
+ 
+ positional arguments:
+   name
+
+ i> .help show
+ usage:  show [names [names ...]]
+ 
+ show given parameters
+ 
+ positional arguments:
+   names
+
+As you can imagine, the help message is provided by the underlying argparse_
+subparser (there is a subparser for each command). plac_ commands accept
+options, flags, varargs, keyword arguments, arguments with defaults, 
+arguments with a fixed number of choices, type conversion and all the
+features provided of argparse_ which should be reimplemented from scratch
+using plac_.
+
+Moreover at the moment ``plac`` also understands command abbreviations.
+However, this feature should be considered deprecated and may disappear in
+future releases. It was meaningful in the past, when plac_ did not support
+readline.
+
+Notice that if an abbreviation is ambiguous, plac_ warns you::
+
  i> sh
  NameError: Ambiguous command 'sh': matching ['showall', 'show']
-
-For ``cmd`` lovers
---------------------------------------------------------
-
-I have been using the cmd_ module of the standard library for years.
-I have also written a much enhanced ``cmd2`` module which we are using
-internally at work and from which I have taken some ideas used in plac_.
-In many ways plac_ makes the cmd_ module obsolete,
-but I realize why many nostalgic souls would still use cmd_, especially
-until plac_ does not grow real auto-completion features, instead of
-relying on rlwrap_. But there must not be competition between plac_
-and cmd_: actually the two can happily work togethere. For this
-reason I have put in the ``plac_ext`` module a few lines of code
-for gluing together cmd_ and plac_, the ``cmd_interface``.
-Using the ``cmd_interface`` is quite trivial: give to it a plac
-command container and you will get in exchange a ``cmd.Cmd`` object:
-
-.. include:: cmd_ex.py
- :literal:
-
-Here is an example of interactive session::
-
- $ python cmd_ex.py 
- (Cmd) help 
- 
- Documented commands (type help <topic>):
- ========================================
- delete  set  show  showall
- 
- Undocumented commands:
- ======================
- EOF  help
- 
- (Cmd) set a 1
- setting a=1
- (Cmd) show a
- a = 1
- (Cmd) showall 
- a = 1
- (Cmd) delete b
- KeyError: 'b'
- (Cmd) EOF [or CTRL-D]
-
-Internally the ``cmd_interface`` builds a ``cmd.Cmd`` class and adds
-to it the ``do_`` methods corresponding to the commands in the container,
-then it returns a ``cmd.Cmd`` instance.
-
-The ``cmd_interface`` is just a proof of concept: it is there so that you
-can study the source code and see an example of integration of plac_
-with a different framework. It may change and even go away in future
-releases of plac_.
 
 The plac runner
 --------------------------------------------------------
@@ -464,18 +524,17 @@ plac runner does not eat the traceback.
 The runner can also be used to run Python modules in interactive
 mode and non-interactive mode. If you put this alias in your bashrc
 
-  ``alias plac="rlwrap plac_runner.py"``
+  ``alias plac="plac_runner.py"``
 
 (or you define a suitable ``plac.bat`` script in Windows) you can
 run the ``ishelve2.py`` script in interactive mode as
 follows::
 
  $ plac -i ishelve2.py
- Operating on /home/micheles/conf.shelve. Available commands:
- set
- show
- showall
- delete
+ A minimal interface over a shelve object.
+ Operating on /home/micheles/conf.shelve.
+ .help to see the available commands.
+ 
  i> del
  deleting everything
  i> set a 1
@@ -690,6 +749,163 @@ The same trick also work for processes; you could run the interpreter
 loop in a separate process and send commands to it via the Queue
 class provided by the multiprocessing_ module.
 
+Long running commands
+---------------------------------------
+
+As we saw, by default a plac_ interpreter blocks until 
+the command terminates. This is an issue, in the sense that it makes
+the interactive experience quite painful for long running commands. An
+example is better than a thousand words, so consider the following
+fake importer:
+
+.. include:: importer1.py
+   :literal:
+
+If you run the ``import_file`` command, you will have to wait for 200 seconds
+before entering a new command::
+
+ $ python importer1.py dsn
+ A fake importer with an import_file command
+ i> import_file file1
+ Imported 100 lines
+ Imported 200 lines
+ Imported 300 lines
+ ... <wait 3+ minutes>
+ Imported 10000 lines
+ closing the file
+
+Being unable to enter any other command is quite annoying: in such situation one
+would like to run the long running commands in the background, to keep
+the interface responsive. plac_ provides two ways to reach this goal: threads
+and processes.
+
+Threaded commands
+-----------------------------------------
+
+The most familiar way to execute a task in the background (even if not
+necessarily the best way) is to run it into a separated thread. In our
+example it is sufficient to replace the line
+
+   ``commands = ['import_file']``
+
+with
+
+   ``thcommands = ['import_file']``
+
+to tell to the plac_ interpreter that the command ``import_file`` should be
+run into a separated thread. Here is an example session::
+
+ i> import_file file1
+ <ThreadedTask 1 [import_file file1] RUNNING>
+
+The import task started in a separated thread. You can see the
+progress of the task by using the special command ``.output``::
+
+ i> .output 1
+ <ThreadedTask 1 [import_file file1] RUNNING>
+ Imported 100 lines
+ Imported 200 lines
+
+If you look after a while, you will get more lines of output::
+
+ i> .output 1
+ <ThreadedTask 1 [import_file file1] RUNNING>
+ Imported 100 lines
+ Imported 200 lines
+ Imported 300 lines
+ Imported 400 lines
+
+If you look after a time long enough, the task will be finished::
+
+ i> .output 1
+ <ThreadedTask 1 [import_file file1] FINISHED>
+
+You can launch many tasks one after the other::
+
+ i> import_file file2
+ <ThreadedTask 5 [import_file file2] RUNNING>
+ i> import_file file3
+ <ThreadedTask 6 [import_file file3] RUNNING>
+
+The ``.list`` command displays all the running tasks::
+
+ i> .list
+ <ThreadedTask 5 [import_file file2] RUNNING>
+ <ThreadedTask 6 [import_file file3] RUNNING>
+
+It is even possible to kill a task::
+
+ i> .kill 5
+ <ThreadedTask 5 [import_file file2] TOBEKILLED>
+ # wait a bit ...
+ closing the file
+ i> .output 5
+ <ThreadedTask 5 [import_file file2] KILLED>
+
+You should notice that since at the Python level it is impossible to kill 
+a thread, the ``.kill`` commands works by setting the status of the task to
+``TOBEKILLED``. Internally the generator corresponding to the command
+is executed in the thread and the status is checked at each iteration:
+when the status become ``TOBEKILLED`` a ``GeneratorExit`` exception is
+raised and the thread terminates (softly, so that the ``finally`` clause
+is honored). In our example the generator is yielding
+back control once every 100 iterations, i.e. every two seconds (not much).
+In order to get a responsive interface it is a good idea to yield more
+often, for instance every 10 iterations (i.e. 5 times per second),
+as in the following code:
+
+.. include:: importer2.py
+   :literal:
+
+Running commands as external processes
+-----------------------------------------
+
+Threads are not loved much in the Python world and actually most people
+prefer to use processes instead. For this reason plac_ provides the
+option to execute long running commands as external processes. Unfortunately
+the current implementation only works in Unix-like operating systems
+(including Mac OS X) because it relies on fork via the multiprocessing_
+module. 
+
+In our example, to enable the feature it is sufficient to replace the line
+
+   ``thcommands = ['import_file']``
+
+with
+
+   ``mpcommands = ['import_file']``.
+
+The user experience is exactly the same as with threads and you will not see any
+difference at the user interface level::
+
+ i> import_file file3
+ <MPTask 1 [import_file file3] SUBMITTED>
+ i> .kill 1
+ <MPTask 1 [import_file file3] RUNNING>
+ closing the file
+ i> .o 1
+ <MPTask 1 [import_file file3] KILLED>
+ Imported 100 lines
+ Imported 200 lines
+ i> 
+
+Still, using processes is quite different than using threads: in
+particular, when using processes you can only yield pickleable values
+and you cannot re-raise an exception first raised in a different
+process, because traceback objects are not pickleable. Moreover,
+you cannot rely on automatic sharing of your objects.
+
+On the plus side, when using processes you do not need to worry about
+killing a command: they are killed immediately using a SIGTERM signal,
+and there is not a ``TOBEKILLED`` mechanism. Moreover, the killing is
+guaranteed to be soft: internally a command receiving a SIGTERM raises
+a ``TerminatedProcess`` exception which is trapped in the generator
+loop, so that the command is closed properly.
+
+Using processes allows to take full advantage of multicore machines
+and it is safer than using threads, so it is the recommended approach
+unless you are working on Windows.
+
 Summary
 -------------------------------------------------------
 
@@ -711,7 +927,11 @@ rules are quite simple:
    or use the ``Interpreter.doctest`` feature;
 
 4. if you need to go at a lower level, you may need to call the
-   ``Interpreter.send`` method.
+   ``Interpreter.send`` method which returns a (finished) ``Task`` object.
+
+5. long running command can be executed in the background as threads or
+   processes: just declare them in the lists ``thcommands`` and ``mpcommands``
+   respectively.
 
 Moreover, remember that ``plac_runner.py`` is your friend.
 
@@ -767,8 +987,3 @@ pretty well for most users.
 .. _distutils: http://docs.python.org/distutils/
 .. _cmd: http://docs.python.org/library/cmd.html
 .. _rlwrap: http://freshmeat.net/projects/rlwrap/
-
-.. If the script is invoked with no arguments, the default help is
-    invoked: this is done by invoking the argparse_ low-level method
-    ``.format_help``. In other words, the recognition of the couple
-    ``-h/--help`` is disabled, but the original help feature is still there.

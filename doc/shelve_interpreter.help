@@ -1,8 +1,9 @@
 usage: shelve_interpreter.py [-h] [-interactive]
                              [subcommands [subcommands ...]]
 
-This script works both interactively and non-interactively. Use .help to see
-the internal commands.
+    This script works both interactively and non-interactively.
+    Use .help to see the internal commands.
+    
 
 positional arguments:
   subcommands   the commands of the underlying ishelve interpreter

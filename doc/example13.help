@@ -7,4 +7,3 @@ optional arguments:
 
 subcommands:
   {status,commit,checkout,help}
-                        -h to get additional help
