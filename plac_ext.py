@@ -55,22 +55,6 @@ class TerminatedProcess(Exception):
 def terminatedProcess(signum, frame):
     raise TerminatedProcess
 
-def namedpipe(fname):
-    "Return a line iterator reading from a named pipe every twice per second"
-    try:
-        os.mkfifo(fname)
-    except OSError: # already there
-        pass
-    with open(fname) as fifo:
-        while True:
-            line = fifo.readline()
-            if line == 'EOF\n':
-                break
-            elif line:
-                yield line
-            time.sleep(.5)
-    os.remove(fname)
-
 ########################### readline support #############################
 
 class ReadlineInput(object):
