@@ -11,8 +11,8 @@ class SqlInterface(object):
     commands = ['SELECT']
     def __init__(self, dsn):
         self.soup = SqlSoup(dsn)
-    def SELECT(self, *args):
-        sql = 'SELECT ' + ' '.join(args)
+    def SELECT(self, argstring):
+        sql = 'SELECT ' + argstring
         for row in self.soup.bind.execute(sql):
             yield str(row) # the formatting can be much improved
 
@@ -21,5 +21,10 @@ rl_input = plac.ReadlineInput(
     histfile=os.path.expanduser('~/.sql_interface.history'), 
     case_sensitive=False)
 
+def split_on_first_space(line, commentchar):
+    return line.strip().split(' ', 1) # ignoring comments
+    
 if __name__ == '__main__':
-    plac.Interpreter(plac.call(SqlInterface)).interact(rl_input)
+    si = plac.call(SqlInterface)
+    i = plac.Interpreter(si, split=split_on_first_space)
+    i.interact(rl_input)

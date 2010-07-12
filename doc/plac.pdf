@@ -528,10 +528,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 162 0 R
+ /Dest [ 167 0 R
  /XYZ
  62.69291
- 645.0236
+ 603.0236
  0 ]
  /Rect [ 62.69291
  332.5936
@@ -546,10 +546,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 162 0 R
+ /Dest [ 167 0 R
  /XYZ
  62.69291
- 645.0236
+ 603.0236
  0 ]
  /Rect [ 521.4627
  332.5936
@@ -564,10 +564,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 162 0 R
+ /Dest [ 167 0 R
  /XYZ
  62.69291
- 438.0236
+ 396.0236
  0 ]
  /Rect [ 62.69291
  314.5936
@@ -582,10 +582,10 @@ endobj
  0
  0 ]
  /Contents ()
- /Dest [ 162 0 R
+ /Dest [ 167 0 R
  /XYZ
  62.69291
- 438.0236
+ 396.0236
  0 ]
  /Rect [ 521.4627
  314.5936
@@ -804,12 +804,12 @@ endobj
  45 0 R
  46 0 R
  47 0 R ]
- /Contents 181 0 R
+ /Contents 186 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -928,12 +928,12 @@ endobj
  53 0 R
  54 0 R
  55 0 R ]
- /Contents 182 0 R
+ /Contents 187 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1043,12 +1043,12 @@ endobj
  60 0 R
  61 0 R
  62 0 R ]
- /Contents 183 0 R
+ /Contents 188 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1110,12 +1110,12 @@ endobj
 << /Annots [ 64 0 R
  65 0 R
  66 0 R ]
- /Contents 184 0 R
+ /Contents 189 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1241,12 +1241,12 @@ endobj
  72 0 R
  73 0 R
  74 0 R ]
- /Contents 185 0 R
+ /Contents 190 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1276,12 +1276,12 @@ endobj
 77 0 obj
 % Page dictionary
 << /Annots [ 76 0 R ]
- /Contents 186 0 R
+ /Contents 191 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1311,12 +1311,12 @@ endobj
 79 0 obj
 % Page dictionary
 << /Annots [ 78 0 R ]
- /Contents 187 0 R
+ /Contents 192 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1346,12 +1346,12 @@ endobj
 81 0 obj
 % Page dictionary
 << /Annots [ 80 0 R ]
- /Contents 188 0 R
+ /Contents 193 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1477,12 +1477,12 @@ endobj
  86 0 R
  87 0 R
  88 0 R ]
- /Contents 189 0 R
+ /Contents 194 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1496,12 +1496,12 @@ endobj
 % 'Page10': class PDFPage 
 90 0 obj
 % Page dictionary
-<< /Contents 190 0 R
+<< /Contents 195 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1563,12 +1563,12 @@ endobj
 << /Annots [ 91 0 R
  92 0 R
  93 0 R ]
- /Contents 191 0 R
+ /Contents 196 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1614,12 +1614,12 @@ endobj
 % Page dictionary
 << /Annots [ 95 0 R
  96 0 R ]
- /Contents 192 0 R
+ /Contents 197 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1649,12 +1649,12 @@ endobj
 99 0 obj
 % Page dictionary
 << /Annots [ 98 0 R ]
- /Contents 193 0 R
+ /Contents 198 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1700,12 +1700,12 @@ endobj
 % Page dictionary
 << /Annots [ 100 0 R
  101 0 R ]
- /Contents 194 0 R
+ /Contents 199 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -1930,7 +1930,7 @@ endobj
 117 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (file:///home/micheles/Dropbox/md/gcodedev/plac/in-writing) >>
+ /URI (file:///home/msimionato/Dropbox/gcode/plac/in-writing) >>
  /Border [ 0
  0
  0 ]
@@ -1975,7 +1975,7 @@ endobj
 120 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (file:///home/micheles/Dropbox/md/gcodedev/plac/in-writing) >>
+ /URI (file:///home/msimionato/Dropbox/gcode/plac/in-writing) >>
  /Border [ 0
  0
  0 ]
@@ -1990,7 +1990,7 @@ endobj
 121 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (file:///home/micheles/Dropbox/md/gcodedev/plac/in-writing) >>
+ /URI (file:///home/msimionato/Dropbox/gcode/plac/in-writing) >>
  /Border [ 0
  0
  0 ]
@@ -2055,12 +2055,12 @@ endobj
  121 0 R
  122 0 R
  123 0 R ]
- /Contents 195 0 R
+ /Contents 200 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -2202,12 +2202,12 @@ endobj
  130 0 R
  131 0 R
  132 0 R ]
- /Contents 196 0 R
+ /Contents 201 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -2346,10 +2346,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 156.6051
- 609.5936
- 177.8606
- 621.5936 ]
+ /Rect [ 62.69291
+ 642.5936
+ 84.4354
+ 654.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2357,14 +2357,14 @@ endobj
 143 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://docs.python.org/library/cmd.html) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 186.6535
- 585.5936
- 226.1135
- 597.5936 ]
+ /Rect [ 275.6978
+ 642.5936
+ 297.9903
+ 654.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2372,14 +2372,14 @@ endobj
 144 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://packages.python.org/cmd2/) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 493.1227
- 585.5936
- 532.4646
- 597.5936 ]
+ /Rect [ 203.5285
+ 630.5936
+ 231.1357
+ 642.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2387,14 +2387,14 @@ endobj
 145 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://packages.python.org/cmd2/) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 72.7804
- 573.5936
- 96.20788
- 585.5936 ]
+ /Rect [ 164.4129
+ 618.5936
+ 191.6429
+ 630.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2406,10 +2406,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 149.2229
- 543.5936
- 171.2704
- 555.5936 ]
+ /Rect [ 302.7929
+ 618.5936
+ 321.1329
+ 630.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2421,10 +2421,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 128.0309
- 501.5936
- 149.4369
- 513.5936 ]
+ /Rect [ 156.6051
+ 567.5936
+ 177.8606
+ 579.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2432,14 +2432,14 @@ endobj
 148 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 502.8367
- 501.5936
- 524.2427
- 513.5936 ]
+ /Rect [ 186.6535
+ 543.5936
+ 226.1135
+ 555.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2447,14 +2447,14 @@ endobj
 149 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/plac) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 187.4797
- 477.5936
- 209.0991
- 489.5936 ]
+ /Rect [ 493.1227
+ 543.5936
+ 532.4646
+ 555.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2462,14 +2462,14 @@ endobj
 150 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (file:///home/micheles/Dropbox/md/gcodedev/plac/in-writing) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 301.6965
- 477.5936
- 426.0446
- 489.5936 ]
+ /Rect [ 72.7804
+ 531.5936
+ 96.20788
+ 543.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2481,10 +2481,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 83.64556
- 402.5936
- 105.7082
- 414.5936 ]
+ /Rect [ 149.2229
+ 501.5936
+ 171.2704
+ 513.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2492,14 +2492,14 @@ endobj
 152 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 446.6
- 402.5936
- 502.5727
- 414.5936 ]
+ /Rect [ 128.0309
+ 459.5936
+ 149.4369
+ 471.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2511,10 +2511,10 @@ endobj
  /Border [ 0
  0
  0 ]
- /Rect [ 275.6828
- 390.5936
- 297.3688
- 402.5936 ]
+ /Rect [ 502.8367
+ 459.5936
+ 524.2427
+ 471.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2522,14 +2522,14 @@ endobj
 154 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 77.19665
- 378.5936
- 139.4904
- 390.5936 ]
+ /Rect [ 187.4797
+ 435.5936
+ 209.0991
+ 447.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2537,14 +2537,14 @@ endobj
 155 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (file:///home/msimionato/Dropbox/gcode/plac/in-writing) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 96.54131
- 366.5936
- 139.0255
- 378.5936 ]
+ /Rect [ 301.6965
+ 435.5936
+ 426.0446
+ 447.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2552,14 +2552,14 @@ endobj
 156 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 203.5016
- 333.5936
- 245.8453
- 345.5936 ]
+ /Rect [ 83.64556
+ 360.5936
+ 105.7082
+ 372.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2567,14 +2567,14 @@ endobj
 157 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
+ /URI (http://code.activestate.com/recipes/278844-parsing-the-command-line/) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 62.69291
- 258.5936
- 138.7898
- 270.5936 ]
+ /Rect [ 446.6
+ 360.5936
+ 502.5727
+ 372.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2582,14 +2582,14 @@ endobj
 158 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 114.6649
- 246.5936
- 154.1249
- 258.5936 ]
+ /Rect [ 275.6828
+ 348.5936
+ 297.3688
+ 360.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2597,14 +2597,14 @@ endobj
 159 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://argparse.googlecode.com) >>
+ /URI (http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 191.6329
- 234.5936
- 233.8729
- 246.5936 ]
+ /Rect [ 77.19665
+ 336.5936
+ 139.4904
+ 348.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2612,14 +2612,14 @@ endobj
 160 0 obj
 << /A << /S /URI
  /Type /Action
- /URI (http://pypi.python.org/pypi/Clap/0.7) >>
+ /URI (http://argparse.googlecode.com) >>
  /Border [ 0
  0
  0 ]
- /Rect [ 263.3429
- 204.5936
- 286.6829
- 216.5936 ]
+ /Rect [ 96.54131
+ 324.5936
+ 139.0255
+ 336.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2627,19 +2627,94 @@ endobj
 161 0 obj
 << /A << /S /URI
  /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 203.5016
+ 291.5936
+ 245.8453
+ 303.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER140': class PDFDictionary 
+162 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 216.5936
+ 138.7898
+ 228.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER141': class PDFDictionary 
+163 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 114.6649
+ 204.5936
+ 154.1249
+ 216.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER142': class PDFDictionary 
+164 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://argparse.googlecode.com) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 191.6329
+ 192.5936
+ 233.8729
+ 204.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER143': class PDFDictionary 
+165 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://pypi.python.org/pypi/Clap/0.7) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 263.3429
+ 162.5936
+ 286.6829
+ 174.5936 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER144': class PDFDictionary 
+166 0 obj
+<< /A << /S /URI
+ /Type /Action
  /URI (http://pypi.python.org/pypi/plac) >>
  /Border [ 0
  0
  0 ]
  /Rect [ 258.5629
- 156.5936
+ 114.5936
  276.9029
- 168.5936 ]
+ 126.5936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
 % 'Page17': class PDFPage 
-162 0 obj
+167 0 obj
 % Page dictionary
 << /Annots [ 134 0 R
  135 0 R
@@ -2668,13 +2743,18 @@ endobj
  158 0 R
  159 0 R
  160 0 R
- 161 0 R ]
- /Contents 197 0 R
+ 161 0 R
+ 162 0 R
+ 163 0 R
+ 164 0 R
+ 165 0 R
+ 166 0 R ]
+ /Contents 202 0 R
  /MediaBox [ 0
  0
  595.2756
  841.8898 ]
- /Parent 180 0 R
+ /Parent 185 0 R
  /Resources << /Font 1 0 R
  /ProcSet [ /PDF
  /Text
@@ -2685,199 +2765,199 @@ endobj
  /Trans <<  >>
  /Type /Page >>
 endobj
-% 'R163': class PDFCatalog 
-163 0 obj
+% 'R168': class PDFCatalog 
+168 0 obj
 % Document Root
-<< /Outlines 165 0 R
- /PageLabels 198 0 R
+<< /Outlines 170 0 R
+ /PageLabels 203 0 R
  /PageMode /UseNone
- /Pages 180 0 R
+ /Pages 185 0 R
  /Type /Catalog >>
 endobj
-% 'R164': class PDFInfo 
-164 0 obj
+% 'R169': class PDFInfo 
+169 0 obj
 << /Author (Michele Simionato)
- /CreationDate (D:20100703163715-01'00')
+ /CreationDate (D:20100712091726-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
  /Title (Plac: Parsing the Command Line the Easy Way) >>
 endobj
-% 'R165': class PDFOutlines 
-165 0 obj
+% 'R170': class PDFOutlines 
+170 0 obj
 << /Count 14
- /First 166 0 R
- /Last 179 0 R
+ /First 171 0 R
+ /Last 184 0 R
  /Type /Outlines >>
 endobj
 % 'Outline.0': class OutlineEntryObject 
-166 0 obj
+171 0 obj
 << /Dest [ 48 0 R
  /XYZ
  62.69291
  296.0236
  0 ]
- /Next 167 0 R
- /Parent 165 0 R
+ /Next 172 0 R
+ /Parent 170 0 R
  /Title (The importance of scaling down) >>
 endobj
 % 'Outline.1': class OutlineEntryObject 
-167 0 obj
+172 0 obj
 << /Dest [ 56 0 R
  /XYZ
  62.69291
  615.0236
  0 ]
- /Next 168 0 R
- /Parent 165 0 R
- /Prev 166 0 R
+ /Next 173 0 R
+ /Parent 170 0 R
+ /Prev 171 0 R
  /Title (Scripts with required arguments) >>
 endobj
 % 'Outline.2': class OutlineEntryObject 
-168 0 obj
+173 0 obj
 << /Dest [ 63 0 R
  /XYZ
  62.69291
  274.2236
  0 ]
- /Next 169 0 R
- /Parent 165 0 R
- /Prev 167 0 R
+ /Next 174 0 R
+ /Parent 170 0 R
+ /Prev 172 0 R
  /Title (Scripts with default arguments) >>
 endobj
 % 'Outline.3': class OutlineEntryObject 
-169 0 obj
+174 0 obj
 << /Dest [ 75 0 R
  /XYZ
  62.69291
  229.4236
  0 ]
- /Next 170 0 R
- /Parent 165 0 R
- /Prev 168 0 R
+ /Next 175 0 R
+ /Parent 170 0 R
+ /Prev 173 0 R
  /Title (Scripts with options \(and smart options\)) >>
 endobj
 % 'Outline.4': class OutlineEntryObject 
-170 0 obj
+175 0 obj
 << /Dest [ 79 0 R
  /XYZ
  62.69291
  231.0236
  0 ]
- /Next 171 0 R
- /Parent 165 0 R
- /Prev 169 0 R
+ /Next 176 0 R
+ /Parent 170 0 R
+ /Prev 174 0 R
  /Title (Scripts with flags) >>
 endobj
 % 'Outline.5': class OutlineEntryObject 
-171 0 obj
+176 0 obj
 << /Dest [ 81 0 R
  /XYZ
  62.69291
  377.4236
  0 ]
- /Next 172 0 R
- /Parent 165 0 R
- /Prev 170 0 R
+ /Next 177 0 R
+ /Parent 170 0 R
+ /Prev 175 0 R
  /Title (plac for Python 2.X users) >>
 endobj
 % 'Outline.6': class OutlineEntryObject 
-172 0 obj
+177 0 obj
 << /Dest [ 89 0 R
  /XYZ
  62.69291
  647.8236
  0 ]
- /Next 173 0 R
- /Parent 165 0 R
- /Prev 171 0 R
+ /Next 178 0 R
+ /Parent 170 0 R
+ /Prev 176 0 R
  /Title (More features) >>
 endobj
 % 'Outline.7': class OutlineEntryObject 
-173 0 obj
+178 0 obj
 << /Dest [ 94 0 R
  /XYZ
  62.69291
  683.8236
  0 ]
- /Next 174 0 R
- /Parent 165 0 R
- /Prev 172 0 R
+ /Next 179 0 R
+ /Parent 170 0 R
+ /Prev 177 0 R
  /Title (A realistic example) >>
 endobj
 % 'Outline.8': class OutlineEntryObject 
-174 0 obj
+179 0 obj
 << /Dest [ 97 0 R
  /XYZ
  62.69291
  623.8236
  0 ]
- /Next 175 0 R
- /Parent 165 0 R
- /Prev 173 0 R
+ /Next 180 0 R
+ /Parent 170 0 R
+ /Prev 178 0 R
  /Title (Keyword arguments) >>
 endobj
 % 'Outline.9': class OutlineEntryObject 
-175 0 obj
+180 0 obj
 << /Dest [ 99 0 R
  /XYZ
  62.69291
  594.6236
  0 ]
- /Next 176 0 R
- /Parent 165 0 R
- /Prev 174 0 R
+ /Next 181 0 R
+ /Parent 170 0 R
+ /Prev 179 0 R
  /Title (Final example: a shelve interface) >>
 endobj
 % 'Outline.10': class OutlineEntryObject 
-176 0 obj
+181 0 obj
 << /Dest [ 124 0 R
  /XYZ
  62.69291
  511.8236
  0 ]
- /Next 177 0 R
- /Parent 165 0 R
- /Prev 175 0 R
+ /Next 182 0 R
+ /Parent 170 0 R
+ /Prev 180 0 R
  /Title (plac vs argparse) >>
 endobj
 % 'Outline.11': class OutlineEntryObject 
-177 0 obj
+182 0 obj
 << /Dest [ 133 0 R
  /XYZ
  62.69291
  161.4236
  0 ]
- /Next 178 0 R
- /Parent 165 0 R
- /Prev 176 0 R
+ /Next 183 0 R
+ /Parent 170 0 R
+ /Prev 181 0 R
  /Title (plac vs the rest of the world) >>
 endobj
 % 'Outline.12': class OutlineEntryObject 
-178 0 obj
-<< /Dest [ 162 0 R
+183 0 obj
+<< /Dest [ 167 0 R
  /XYZ
  62.69291
- 645.0236
+ 603.0236
  0 ]
- /Next 179 0 R
- /Parent 165 0 R
- /Prev 177 0 R
+ /Next 184 0 R
+ /Parent 170 0 R
+ /Prev 182 0 R
  /Title (The future) >>
 endobj
 % 'Outline.13': class OutlineEntryObject 
-179 0 obj
-<< /Dest [ 162 0 R
+184 0 obj
+<< /Dest [ 167 0 R
  /XYZ
  62.69291
- 438.0236
+ 396.0236
  0 ]
- /Parent 165 0 R
- /Prev 178 0 R
+ /Parent 170 0 R
+ /Prev 183 0 R
  /Title (Trivia: the story behind the name) >>
 endobj
-% 'R180': class PDFPages 
-180 0 obj
+% 'R185': class PDFPages 
+185 0 obj
 % page tree
 << /Count 17
  /Kids [ 48 0 R
@@ -2896,11 +2976,11 @@ endobj
  102 0 R
  124 0 R
  133 0 R
- 162 0 R ]
+ 167 0 R ]
  /Type /Pages >>
 endobj
-% 'R181': class PDFStream 
-181 0 obj
+% 'R186': class PDFStream 
+186 0 obj
 % page stream
 << /Length 9341 >>
 stream
@@ -3326,8 +3406,8 @@ Q
 endstream
 
 endobj
-% 'R182': class PDFStream 
-182 0 obj
+% 'R187': class PDFStream 
+187 0 obj
 % page stream
 << /Length 4921 >>
 stream
@@ -3415,8 +3495,8 @@ Q
 endstream
 
 endobj
-% 'R183': class PDFStream 
-183 0 obj
+% 'R188': class PDFStream 
+188 0 obj
 % page stream
 << /Length 4194 >>
 stream
@@ -3574,8 +3654,8 @@ Q
 endstream
 
 endobj
-% 'R184': class PDFStream 
-184 0 obj
+% 'R189': class PDFStream 
+189 0 obj
 % page stream
 << /Length 3999 >>
 stream
@@ -3721,8 +3801,8 @@ Q
 endstream
 
 endobj
-% 'R185': class PDFStream 
-185 0 obj
+% 'R190': class PDFStream 
+190 0 obj
 % page stream
 << /Length 4674 >>
 stream
@@ -3843,8 +3923,8 @@ Q
 endstream
 
 endobj
-% 'R186': class PDFStream 
-186 0 obj
+% 'R191': class PDFStream 
+191 0 obj
 % page stream
 << /Length 4134 >>
 stream
@@ -3984,8 +4064,8 @@ Q
 endstream
 
 endobj
-% 'R187': class PDFStream 
-187 0 obj
+% 'R192': class PDFStream 
+192 0 obj
 % page stream
 << /Length 4491 >>
 stream
@@ -4171,8 +4251,8 @@ Q
 endstream
 
 endobj
-% 'R188': class PDFStream 
-188 0 obj
+% 'R193': class PDFStream 
+193 0 obj
 % page stream
 << /Length 5065 >>
 stream
@@ -4336,8 +4416,8 @@ Q
 endstream
 
 endobj
-% 'R189': class PDFStream 
-189 0 obj
+% 'R194': class PDFStream 
+194 0 obj
 % page stream
 << /Length 5334 >>
 stream
@@ -4471,8 +4551,8 @@ Q
 endstream
 
 endobj
-% 'R190': class PDFStream 
-190 0 obj
+% 'R195': class PDFStream 
+195 0 obj
 % page stream
 << /Length 4511 >>
 stream
@@ -4634,8 +4714,8 @@ Q
 endstream
 
 endobj
-% 'R191': class PDFStream 
-191 0 obj
+% 'R196': class PDFStream 
+196 0 obj
 % page stream
 << /Length 4236 >>
 stream
@@ -4745,8 +4825,8 @@ Q
 endstream
 
 endobj
-% 'R192': class PDFStream 
-192 0 obj
+% 'R197': class PDFStream 
+197 0 obj
 % page stream
 << /Length 3423 >>
 stream
@@ -4879,10 +4959,10 @@ Q
 endstream
 
 endobj
-% 'R193': class PDFStream 
-193 0 obj
+% 'R198': class PDFStream 
+198 0 obj
 % page stream
-<< /Length 4047 >>
+<< /Length 4089 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4966,7 +5046,7 @@ q
 n -6 -6 492 432 re B*
 Q
 q
-BT 1 0 0 1 0 413.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (# ishelve.py) Tj T* (import os, shelve, plac) Tj T*  T* (DEFAULT_SHELVE = os.path.expanduser\('~/conf.shelve'\)) Tj T*  T* (@plac.annotations\() Tj T* (    help=\('show help', 'flag'\),) Tj T* (    showall=\('show all parameters in the shelve', 'flag'\),) Tj T* (    clear=\('clear the shelve', 'flag'\),) Tj T* (    delete=\('delete an element', 'option'\),) Tj T* (    filename=\('filename of the shelve', 'option'\),) Tj T* (    params='names of the parameters in the shelve',) Tj T* (    setters='setters param=value'\)) Tj T* (def main\(help, showall, clear, delete, filename=DEFAULT_SHELVE,) Tj T* (         *params, **setters\):) Tj T* (    "A simple interface to a shelve") Tj T* (    sh = shelve.open\(filename\)) Tj T* (    try:) Tj T* (        if not any\([help, showall, clear, delete, params, setters]\):) Tj T* (            yield 'no arguments passed, use .help to see the available commands') Tj T* (        elif help: # custom help) Tj T* (            yield 'Commands: .help, .showall, .clear, .delete') Tj T* (            yield ') Tj (<) Tj (param) Tj (>) Tj ( ...') Tj T* (            yield ') Tj (<) Tj (param=value) Tj (>) Tj ( ...') Tj T* (        elif showall:) Tj T* (            for param, name in sh.items\(\):) Tj T* (                yield '%s=%s' % \(param, name\)) Tj T* (        elif clear:) Tj T* (            sh.clear\(\)) Tj T* (            yield 'cleared the shelve') Tj T* (        elif delete:) Tj T* (            try:) Tj T* (                del sh[delete]) Tj T* (            except KeyError:) Tj T* (                yield '%s: not found' % delete) Tj T* ET
+BT 1 0 0 1 0 413.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (# ishelve.py) Tj T* (import os, shelve, plac) Tj T*  T* (DEFAULT_SHELVE = os.path.expanduser\('~/conf.shelve'\)) Tj T*  T* (@plac.annotations\() Tj T* (    help=\('show help', 'flag'\),) Tj T* (    showall=\('show all parameters in the shelve', 'flag'\),) Tj T* (    clear=\('clear the shelve', 'flag'\),) Tj T* (    delete=\('delete an element', 'option'\),) Tj T* (    filename=\('filename of the shelve', 'option'\),) Tj T* (    params='names of the parameters in the shelve',) Tj T* (    setters='setters param=value'\)) Tj T* (def main\(help, showall, clear, delete, filename=DEFAULT_SHELVE,) Tj T* (         *params, **setters\):) Tj T* (    "A simple interface to a shelve. Use .help to see the available commands.") Tj T* (    sh = shelve.open\(filename\)) Tj T* (    try:) Tj T* (        if not any\([help, showall, clear, delete, params, setters]\):) Tj T* (            yield 'no arguments passed, use .help to see the available commands') Tj T* (        elif help: # custom help) Tj T* (            yield 'Commands: .help, .showall, .clear, .delete') Tj T* (            yield ') Tj (<) Tj (param) Tj (>) Tj ( ...') Tj T* (            yield ') Tj (<) Tj (param=value) Tj (>) Tj ( ...') Tj T* (        elif showall:) Tj T* (            for param, name in sh.items\(\):) Tj T* (                yield '%s=%s' % \(param, name\)) Tj T* (        elif clear:) Tj T* (            sh.clear\(\)) Tj T* (            yield 'cleared the shelve') Tj T* (        elif delete:) Tj T* (            try:) Tj T* (                del sh[delete]) Tj T* (            except KeyError:) Tj T* (                yield '%s: not found' % delete) Tj T* ET
 Q
 Q
 Q
@@ -4983,8 +5063,8 @@ Q
 endstream
 
 endobj
-% 'R194': class PDFStream 
-194 0 obj
+% 'R199': class PDFStream 
+199 0 obj
 % page stream
 << /Length 6795 >>
 stream
@@ -5302,8 +5382,8 @@ Q
 endstream
 
 endobj
-% 'R195': class PDFStream 
-195 0 obj
+% 'R200': class PDFStream 
+200 0 obj
 % page stream
 << /Length 7204 >>
 stream
@@ -5520,8 +5600,8 @@ Q
 endstream
 
 endobj
-% 'R196': class PDFStream 
-196 0 obj
+% 'R201': class PDFStream 
+201 0 obj
 % page stream
 << /Length 6860 >>
 stream
@@ -5678,10 +5758,10 @@ Q
 endstream
 
 endobj
-% 'R197': class PDFStream 
-197 0 obj
+% 'R202': class PDFStream 
+202 0 obj
 % page stream
-<< /Length 7645 >>
+<< /Length 8225 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -5749,49 +5829,55 @@ BT 1 0 0 1 0 28.82 Tm 1.551163 Tw 12 TL /F1 10 Tf 0 0 0 rg (Of course, there are
 Q
 Q
 q
-1 0 0 1 62.69291 624.0236 cm
+1 0 0 1 62.69291 615.0236 cm
+q
+BT 1 0 0 1 0 28.82 Tm .622488 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (can also be used as a replacement of the ) Tj 0 0 .501961 rg (cmd ) Tj 0 0 0 rg (module in the standard library and as such it shares) Tj T* 0 Tw .377126 Tw (many features with the module ) Tj 0 0 .501961 rg (cmd2 ) Tj 0 0 0 rg (by Catherine Devlin. However, this is completely coincidental, since) Tj T* 0 Tw (I became aware of the ) Tj 0 0 .501961 rg (cmd2 ) Tj 0 0 0 rg (module only after writing ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 582.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (The future) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 558.0236 cm
+1 0 0 1 62.69291 516.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .135542 Tw 12 TL /F1 10 Tf 0 0 0 rg (Currently the core of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is around 200 lines of code, not counting blanks, comments and docstrings. I do) Tj T* 0 Tw .968626 Tw (not plan to extend the core much in the future. The idea is to keep the module short: it is and it should) Tj T* 0 Tw .11811 Tw (remain a little wrapper over ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (. Actually I have thought about contributing the core back to ) Tj 0 0 .501961 rg (argparse) Tj T* 0 Tw 2.307485 Tw 0 0 0 rg (if ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (becomes successfull and gains a reasonable number of users. For the moment it should be) Tj T* 0 Tw (considered in alpha status.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 516.0236 cm
+1 0 0 1 62.69291 474.0236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .927488 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that even if ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (has been designed to be simple to use for simple stuff, its power should not be) Tj T* 0 Tw 1.02186 Tw (underestimated; it is actually a quite advanced tool with a domain of applicability which far exceeds the) Tj T* 0 Tw (realm of command-line arguments parsers.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 450.0236 cm
+1 0 0 1 62.69291 408.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .285988 Tw 12 TL /F1 10 Tf 0 0 0 rg (Version 0.5 of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (doubled the code base and the documentation: it is based on the idea of using ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (to) Tj T* 0 Tw .408555 Tw (implement command-line interpreters, i.e. something akin to the ) Tj /F4 10 Tf (cmd ) Tj /F1 10 Tf (module in the standard library, only) Tj T* 0 Tw .49936 Tw (better. The new features of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (are described in the ) Tj 0 0 .501961 rg (advanced usage document ) Tj 0 0 0 rg (. They are implemented) Tj T* 0 Tw .313828 Tw (in a separated module \() Tj /F4 10 Tf (plac_ext.py) Tj /F1 10 Tf (\), since they require Python 2.5 to work, whereas ) Tj /F4 10 Tf (plac_core.py) Tj T* 0 Tw /F1 10 Tf (only requires Python 2.3.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 417.0236 cm
+1 0 0 1 62.69291 375.0236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Trivia: the story behind the name) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 351.0236 cm
+1 0 0 1 62.69291 309.0236 cm
 q
 BT 1 0 0 1 0 52.82 Tm .942651 Tw 12 TL /F1 10 Tf 0 0 0 rg (The ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (project started very humble: I just wanted to make easy_installable my old ) Tj 0 0 .501961 rg (optionparse ) Tj 0 0 0 rg (recipe,) Tj T* 0 Tw .565988 Tw (and to publish it on PyPI. The original name of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (was optionparser and the idea behind it was to build) Tj T* 0 Tw .603735 Tw (an ) Tj 0 0 .501961 rg (OptionParser ) Tj 0 0 0 rg (object from the docstring of the module. However, before doing that, I decided to check) Tj T* 0 Tw .244198 Tw (out the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (module, since I knew it was going into Python 2.7 and Python 2.7 was coming out. Soon) Tj T* 0 Tw (enough I realized two things:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 345.0236 cm
+1 0 0 1 62.69291 303.0236 cm
 Q
 q
-1 0 0 1 62.69291 345.0236 cm
+1 0 0 1 62.69291 303.0236 cm
 Q
 q
-1 0 0 1 62.69291 315.0236 cm
+1 0 0 1 62.69291 273.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -5811,13 +5897,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 315.0236 cm
+1 0 0 1 62.69291 273.0236 cm
 Q
 q
-1 0 0 1 62.69291 315.0236 cm
+1 0 0 1 62.69291 273.0236 cm
 Q
 q
-1 0 0 1 62.69291 285.0236 cm
+1 0 0 1 62.69291 243.0236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -5838,32 +5924,32 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 285.0236 cm
+1 0 0 1 62.69291 243.0236 cm
 Q
 q
-1 0 0 1 62.69291 285.0236 cm
+1 0 0 1 62.69291 243.0236 cm
 Q
 q
-1 0 0 1 62.69291 231.0236 cm
+1 0 0 1 62.69291 189.0236 cm
 q
 BT 1 0 0 1 0 40.82 Tm .600574 Tw 12 TL /F1 10 Tf 0 0 0 rg (Putting together these two observations with the original idea of inferring the parser I decided to build an) Tj T* 0 Tw .516905 Tw 0 0 .501961 rg (ArgumentParser ) Tj 0 0 0 rg (object from function annotations. The ) Tj /F4 10 Tf (optionparser ) Tj /F1 10 Tf (name was ruled out, since I was) Tj T* 0 Tw 2.085984 Tw (now using ) Tj 0 0 .501961 rg (argparse) Tj 0 0 0 rg (; a name like ) Tj /F4 10 Tf (argparse_plus ) Tj /F1 10 Tf (was also ruled out, since the typical usage was) Tj T* 0 Tw (completely different from the ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (usage.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 201.0236 cm
+1 0 0 1 62.69291 159.0236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.093876 Tw 12 TL /F1 10 Tf 0 0 0 rg (I made a research on PyPI and the name ) Tj /F5 10 Tf (clap ) Tj /F1 10 Tf (\(Command Line Arguments Parser\) was not taken, so I) Tj T* 0 Tw (renamed everything to clap. After two days a ) Tj 0 0 .501961 rg (Clap ) Tj 0 0 0 rg (module appeared on PyPI <) Tj (expletives deleted) Tj (>) Tj (!) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 171.0236 cm
+1 0 0 1 62.69291 129.0236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .877209 Tw (Having little imagination, I decided to rename everything again to plac, an anagram of clap: since it is a) Tj T* 0 Tw (non-existing English name, I hope nobody will steal it from me!) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 153.0236 cm
+1 0 0 1 62.69291 111.0236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (That's all, I hope you will enjoy working with ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (!) Tj T* ET
 Q
@@ -5879,148 +5965,148 @@ Q
 endstream
 
 endobj
-% 'R198': class PDFPageLabels 
-198 0 obj
+% 'R203': class PDFPageLabels 
+203 0 obj
 % Document Root
 << /Nums [ 0
- 199 0 R
- 1
- 200 0 R
- 2
- 201 0 R
- 3
- 202 0 R
- 4
- 203 0 R
- 5
  204 0 R
- 6
+ 1
  205 0 R
- 7
+ 2
  206 0 R
- 8
+ 3
  207 0 R
- 9
+ 4
  208 0 R
- 10
+ 5
  209 0 R
- 11
+ 6
  210 0 R
- 12
+ 7
  211 0 R
- 13
+ 8
  212 0 R
- 14
+ 9
  213 0 R
- 15
+ 10
  214 0 R
+ 11
+ 215 0 R
+ 12
+ 216 0 R
+ 13
+ 217 0 R
+ 14
+ 218 0 R
+ 15
+ 219 0 R
  16
- 215 0 R ] >>
-endobj
-% 'R199': class PDFPageLabel 
-199 0 obj
-% None
-<< /S /D
- /St 1 >>
-endobj
-% 'R200': class PDFPageLabel 
-200 0 obj
-% None
-<< /S /D
- /St 2 >>
-endobj
-% 'R201': class PDFPageLabel 
-201 0 obj
-% None
-<< /S /D
- /St 3 >>
-endobj
-% 'R202': class PDFPageLabel 
-202 0 obj
-% None
-<< /S /D
- /St 4 >>
-endobj
-% 'R203': class PDFPageLabel 
-203 0 obj
-% None
-<< /S /D
- /St 5 >>
+ 220 0 R ] >>
 endobj
 % 'R204': class PDFPageLabel 
 204 0 obj
 % None
 << /S /D
- /St 6 >>
+ /St 1 >>
 endobj
 % 'R205': class PDFPageLabel 
 205 0 obj
 % None
 << /S /D
- /St 7 >>
+ /St 2 >>
 endobj
 % 'R206': class PDFPageLabel 
 206 0 obj
 % None
 << /S /D
- /St 8 >>
+ /St 3 >>
 endobj
 % 'R207': class PDFPageLabel 
 207 0 obj
 % None
 << /S /D
- /St 9 >>
+ /St 4 >>
 endobj
 % 'R208': class PDFPageLabel 
 208 0 obj
 % None
 << /S /D
- /St 10 >>
+ /St 5 >>
 endobj
 % 'R209': class PDFPageLabel 
 209 0 obj
 % None
 << /S /D
- /St 11 >>
+ /St 6 >>
 endobj
 % 'R210': class PDFPageLabel 
 210 0 obj
 % None
 << /S /D
- /St 12 >>
+ /St 7 >>
 endobj
 % 'R211': class PDFPageLabel 
 211 0 obj
 % None
 << /S /D
- /St 13 >>
+ /St 8 >>
 endobj
 % 'R212': class PDFPageLabel 
 212 0 obj
 % None
 << /S /D
- /St 14 >>
+ /St 9 >>
 endobj
 % 'R213': class PDFPageLabel 
 213 0 obj
 % None
 << /S /D
- /St 15 >>
+ /St 10 >>
 endobj
 % 'R214': class PDFPageLabel 
 214 0 obj
 % None
 << /S /D
- /St 16 >>
+ /St 11 >>
 endobj
 % 'R215': class PDFPageLabel 
 215 0 obj
 % None
 << /S /D
+ /St 12 >>
+endobj
+% 'R216': class PDFPageLabel 
+216 0 obj
+% None
+<< /S /D
+ /St 13 >>
+endobj
+% 'R217': class PDFPageLabel 
+217 0 obj
+% None
+<< /S /D
+ /St 14 >>
+endobj
+% 'R218': class PDFPageLabel 
+218 0 obj
+% None
+<< /S /D
+ /St 15 >>
+endobj
+% 'R219': class PDFPageLabel 
+219 0 obj
+% None
+<< /S /D
+ /St 16 >>
+endobj
+% 'R220': class PDFPageLabel 
+220 0 obj
+% None
+<< /S /D
  /St 17 >>
 endobj
 xref
-0 216
+0 221
 0000000000 65535 f
 0000000113 00000 n
 0000000258 00000 n
@@ -6139,112 +6225,117 @@ xref
 0000029570 00000 n
 0000029822 00000 n
 0000030075 00000 n
-0000030353 00000 n
-0000030606 00000 n
-0000030860 00000 n
-0000031138 00000 n
-0000031417 00000 n
-0000031671 00000 n
-0000031908 00000 n
-0000032429 00000 n
-0000032747 00000 n
-0000033001 00000 n
-0000033290 00000 n
-0000033542 00000 n
-0000033794 00000 n
-0000034048 00000 n
-0000034302 00000 n
-0000034541 00000 n
-0000034932 00000 n
-0000035191 00000 n
-0000035448 00000 n
-0000035700 00000 n
-0000035954 00000 n
-0000036212 00000 n
-0000036464 00000 n
-0000036722 00000 n
-0000036976 00000 n
-0000037230 00000 n
-0000037482 00000 n
-0000037734 00000 n
-0000037987 00000 n
-0000038241 00000 n
-0000038495 00000 n
-0000038749 00000 n
-0000039003 00000 n
-0000039282 00000 n
-0000039536 00000 n
-0000039823 00000 n
-0000040077 00000 n
-0000040388 00000 n
-0000040640 00000 n
-0000040892 00000 n
-0000041181 00000 n
-0000041433 00000 n
-0000041685 00000 n
-0000041943 00000 n
-0000042182 00000 n
-0000042759 00000 n
-0000042923 00000 n
-0000043197 00000 n
-0000043326 00000 n
-0000043520 00000 n
-0000043731 00000 n
-0000043941 00000 n
-0000044163 00000 n
-0000044361 00000 n
-0000044566 00000 n
-0000044759 00000 n
-0000044958 00000 n
-0000045155 00000 n
-0000045369 00000 n
-0000045567 00000 n
-0000045778 00000 n
-0000045970 00000 n
-0000046153 00000 n
-0000046412 00000 n
-0000055856 00000 n
-0000060880 00000 n
-0000065177 00000 n
-0000069279 00000 n
-0000074056 00000 n
-0000078293 00000 n
-0000082887 00000 n
-0000088055 00000 n
-0000093492 00000 n
-0000098106 00000 n
-0000102445 00000 n
-0000105971 00000 n
-0000110121 00000 n
-0000117019 00000 n
-0000124326 00000 n
-0000131289 00000 n
-0000139041 00000 n
-0000139368 00000 n
-0000139447 00000 n
-0000139526 00000 n
-0000139605 00000 n
-0000139684 00000 n
-0000139763 00000 n
-0000139842 00000 n
-0000139921 00000 n
-0000140000 00000 n
-0000140079 00000 n
-0000140159 00000 n
-0000140239 00000 n
-0000140319 00000 n
-0000140399 00000 n
-0000140479 00000 n
-0000140559 00000 n
-0000140639 00000 n
+0000030349 00000 n
+0000030602 00000 n
+0000030856 00000 n
+0000031130 00000 n
+0000031405 00000 n
+0000031659 00000 n
+0000031896 00000 n
+0000032417 00000 n
+0000032735 00000 n
+0000032989 00000 n
+0000033278 00000 n
+0000033530 00000 n
+0000033782 00000 n
+0000034036 00000 n
+0000034290 00000 n
+0000034529 00000 n
+0000034920 00000 n
+0000035179 00000 n
+0000035436 00000 n
+0000035688 00000 n
+0000035942 00000 n
+0000036200 00000 n
+0000036452 00000 n
+0000036710 00000 n
+0000036964 00000 n
+0000037217 00000 n
+0000037478 00000 n
+0000037732 00000 n
+0000037986 00000 n
+0000038240 00000 n
+0000038494 00000 n
+0000038746 00000 n
+0000038998 00000 n
+0000039251 00000 n
+0000039505 00000 n
+0000039759 00000 n
+0000040013 00000 n
+0000040267 00000 n
+0000040542 00000 n
+0000040796 00000 n
+0000041083 00000 n
+0000041337 00000 n
+0000041648 00000 n
+0000041900 00000 n
+0000042152 00000 n
+0000042441 00000 n
+0000042693 00000 n
+0000042945 00000 n
+0000043203 00000 n
+0000043442 00000 n
+0000044069 00000 n
+0000044233 00000 n
+0000044507 00000 n
+0000044636 00000 n
+0000044830 00000 n
+0000045041 00000 n
+0000045251 00000 n
+0000045473 00000 n
+0000045671 00000 n
+0000045876 00000 n
+0000046069 00000 n
+0000046268 00000 n
+0000046465 00000 n
+0000046679 00000 n
+0000046877 00000 n
+0000047088 00000 n
+0000047280 00000 n
+0000047463 00000 n
+0000047722 00000 n
+0000057166 00000 n
+0000062190 00000 n
+0000066487 00000 n
+0000070589 00000 n
+0000075366 00000 n
+0000079603 00000 n
+0000084197 00000 n
+0000089365 00000 n
+0000094802 00000 n
+0000099416 00000 n
+0000103755 00000 n
+0000107281 00000 n
+0000111473 00000 n
+0000118371 00000 n
+0000125678 00000 n
+0000132641 00000 n
+0000140973 00000 n
+0000141300 00000 n
+0000141379 00000 n
+0000141458 00000 n
+0000141537 00000 n
+0000141616 00000 n
+0000141695 00000 n
+0000141774 00000 n
+0000141853 00000 n
+0000141932 00000 n
+0000142011 00000 n
+0000142091 00000 n
+0000142171 00000 n
+0000142251 00000 n
+0000142331 00000 n
+0000142411 00000 n
+0000142491 00000 n
+0000142571 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\035U\351\206J$\3719\335\010i\224\201=?\204) (\035U\351\206J$\3719\335\010i\224\201=?\204)] 
+ [(\272\236\026\327\302X\352+\277U\362\364\256\2152\272) (\272\236\026\327\302X\352+\277U\362\364\256\2152\272)] 
 
- /Info 164 0 R
- /Root 163 0 R
- /Size 216 >>
+ /Info 169 0 R
+ /Root 168 0 R
+ /Size 221 >>
 startxref
-140688
+142620
 %%EOF

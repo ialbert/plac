@@ -215,7 +215,9 @@ languages as the ones you can implement with plac_. In particular,
 thanks to shlex_, plac_ is able to recognize comments (the default
 comment character is ``#``), escape sequences and more. Look at the
 shlex_ documentation if you need to customize how the language is
-interpreted.
+interpreted. For more flexibility, it is even possible to pass to the
+interpreter a custom split function with signature ``split(line,
+commentchar)``.
 
 In addition, I have implemented from scratch some support for line number
 recognition, so that if a test fail you get the line number of the

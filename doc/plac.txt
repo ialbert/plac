@@ -3,7 +3,7 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: June 2010
+:Date: July 2010
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
 :Requires: Python 2.3+
@@ -697,7 +697,12 @@ Of course, there are tons of other libraries to parse the command
 line. For instance Clap_ by Matthew Frazier which appeared on PyPI
 just the day before plac_; Clap_ is fine but it is certainly not
 easier than plac_.
- 
+
+plac_ can also be used as a replacement of the cmd_ module in the standard
+library and as such it shares many features with the module cmd2_ by
+Catherine Devlin. However, this is completely coincidental, since I became
+aware of the cmd2_ module only after writing plac_.
+
 The future
 -------------------------------
 
@@ -769,3 +774,5 @@ That's all, I hope you will enjoy working with plac_!
 .. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
 .. _opterator: http://pypi.python.org/pypi/opterator
 .. _advanced usage document: in-writing
+.. _cmd2: http://packages.python.org/cmd2/
+.. _cmd: http://docs.python.org/library/cmd.html

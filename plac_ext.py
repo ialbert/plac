@@ -491,13 +491,14 @@ class Interpreter(object):
     A context manager with a .send method and a few utility methods:
     execute, test and doctest.
     """
-    def __init__(self, obj, commentchar='#'):
+    def __init__(self, obj, commentchar='#', split=shlex.split):
         self.obj = obj
         try:
             self.name = obj.__module__
         except AttributeError:
             self.name = 'plac'
         self.commentchar = commentchar
+        self.split = split
         self._set_commands(obj)
         self.tm = TaskManager(obj)
         self.parser = plac_core.parser_from(obj, prog='', add_help=False)
@@ -544,7 +545,7 @@ class Interpreter(object):
             raise RuntimeError(_('%r not initialized: probably you forgot to '
                                  'use the with statement') % self)
         if isinstance(line, basestring):
-            arglist = shlex.split(line, self.commentchar)
+            arglist = self.split(line, self.commentchar)
         else: # expects a list of strings
             arglist = line
         return self._interpreter.send(arglist)
@@ -653,10 +654,8 @@ class Interpreter(object):
         consolle. Using rlwrap is recommended.
         """
         if stdin is sys.stdin and readline: # use readline
-            # print '.%s.history' % self.name
-            stdin = ReadlineInput(
-                self.commands, prompt, histfile='.%s.history' % self.name,
-                case_sensitive=True)
+            histfile = os.path.expanduser('~/.%s.history' % self.name)
+            stdin = ReadlineInput(self.commands, prompt, histfile=histfile)
         self.stdin = stdin
         self.prompt = getattr(stdin, 'prompt', prompt)
         self.verbose = verbose
