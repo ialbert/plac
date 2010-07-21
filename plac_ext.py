@@ -60,7 +60,7 @@ def terminatedProcess(signum, frame):
 class ReadlineInput(object):
     """
     An iterable with a .readline method reading from stdin with readline
-    features enabled, if possible. Otherwise return sys.stdin itself.
+    features enabled, if possible.
     """
     def __init__(self, completions, prompt='', case_sensitive=True,
                  histfile=None):
