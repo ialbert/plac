@@ -94,6 +94,8 @@ def parser_from(obj, **confparams):
     conf = pconf(obj).copy()
     conf.update(confparams)
     parser_registry[obj] = parser = ArgumentParser(**conf)
+    parser.case_sensitive = confparams.get(
+        'case_sensitive', getattr(obj, 'case_sensitive', True))
     if hasattr(obj, 'commands') and obj.commands and not inspect.isclass(obj):
         # a command container instance
         parser.addsubcommands(obj.commands, obj, 'subcommands')
@@ -117,8 +119,10 @@ def _extract_kwargs(args):
             arglist.append(arg)
     return arglist, kwargs
 
-def _match_cmd(abbrev, commands):
+def _match_cmd(abbrev, commands, case_sensitive=True):
     "Extract the command name from an abbreviation or raise a NameError"
+    if not case_sensitive:
+        abbrev = abbrev.upper(); commands = [c.upper() for c in commands]
     perfect_matches = [name for name in commands if name == abbrev]
     if len(perfect_matches) == 1:
         return perfect_matches[0]
@@ -135,6 +139,8 @@ class ArgumentParser(argparse.ArgumentParser):
     An ArgumentParser with .func and .argspec attributes, and possibly
     .commands and .subparsers.
     """
+    case_sensitive = True
+
     def consume(self, args):
         """Call the underlying function with the args. Works also for
         command containers, by dispatching to the right subparser."""
@@ -169,7 +175,7 @@ class ArgumentParser(argparse.ArgumentParser):
         name_parser_map = self.subparsers._name_parser_map
         for i, arg in enumerate(arglist):
             if not arg.startswith(optprefix):
-                cmd = _match_cmd(arg, name_parser_map)
+                cmd = _match_cmd(arg, name_parser_map, self.case_sensitive)
                 del arglist[i] 
                 return name_parser_map.get(cmd), cmd or arg
         return None, None

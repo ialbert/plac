@@ -27,9 +27,9 @@
 See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
 """
 
-__version__ = '0.6.1'
+__version__ = '0.7.0'
 
 from plac_core import *
 
 if sys.version >= '2.5':
-    from plac_ext import Interpreter, import_main, ReadlineInput
+    from plac_ext import Interpreter, import_main, ReadlineInput, stdout

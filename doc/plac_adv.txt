@@ -39,13 +39,16 @@ defined language.
 
 You can easily replace the ``cmd`` module of the standard library and
 you could easily write an application like twill_ with plac_. Or you
-could use it to script your building procedure. Or any other thing,
-your imagination is the only limit!
+could use it to script your building procedure. plac_ also supports
+parallel execution of multiple commands and can be used as
+task manager and monitor. It is also quite easy to build a GUI
+or a Web application on top of plac_. When speaking of things
+you can do with plac_, your imagination is the only limit!
 
 From scripts to interactive applications
 ------------------------------------------------------------
 
-Command-line scripts have many advantages, but are no substitute
+Command-line scripts have many advantages, but they are no substitute
 for interactive applications.
 In particular, if you have a script with a large startup time which must be run
 multiple times, it is best to turn it into an interactive application,
@@ -328,7 +331,7 @@ and dispatch hooks (``__missing__``, invoked for invalid command names).
 Moreover, only when using command containers plac_ is able to provide
 automatic autocompletion of commands.
 
-Rhe shelve interface can be rewritten in an object-oriented way as follows:
+The shelve interface can be rewritten in an object-oriented way as follows:
 
 .. include:: ishelve2.py
    :literal:
@@ -406,14 +409,13 @@ Readline support
 
 Starting from release 0.6 plac_ offers full readline support. That
 means that if your Python was compiled with readline support you get
-autocompletion and persistent command history for free.
-By default all commands are autocomplete in a case sensitive way.
-If you want to add new words to the autocompletion set, or you want
-to change the location of the ``.history`` file, or to change the
-case sensitivirt, or you want to change the prompt, the way to do
-it is to pass a ``plac.ReadlineInput`` object to the interpreter.
-Here is an example, assuming you want to build a database interface
-understanding SQL commands:
+autocompletion and persistent command history for free.  By default
+all commands are autocomplete in a case sensitive way.  If you want to
+add new words to the autocompletion set, or you want to change the
+location of the ``.history`` file, or to change the case sensitivity,
+the way to go is to pass a ``plac.ReadlineInput`` object to the
+interpreter.  Here is an example, assuming you want to build a
+database interface understanding SQL commands:
 
 .. include:: sql_interface.py
    :literal:
@@ -435,8 +437,9 @@ exiting from the command-line interface.
 
 If the readline library is not available, my suggestion is to use the
 rlwrap_ tool which provides similar features, at least on Unix-like
-platforms. plac_ should also work fine on Windows with the pyreadline
-library (I do not use Windows, so this part is very little tested).
+platforms. plac_ should also work fine on Windows with the pyreadline_
+library (I do not use Windows, so this part is very little tested: I
+tried it only once and it worked, but your mileage may vary).
 For people worried about licenses, I will notice that plac_ uses the
 readline library only if available, it does not include it and it does
 not rely on it in any fundamental way, so that the plac_ licence does
@@ -481,7 +484,7 @@ features provided of argparse_ which should be reimplemented from scratch
 using plac_.
 
 Moreover at the moment ``plac`` also understands command abbreviations.
-However, this feature should be considered deprecated and may disappear in
+However, this feature may disappear in
 future releases. It was meaningful in the past, when plac_ did not support
 readline.
 
@@ -592,6 +595,51 @@ Here is an example::
 
 Notice that it non-interactive mode the runner just invokes ``plac.call``
 on the ``main`` object of the Python module.
+
+Multiline support and Emacs integration 
+--------------------------------------------------------
+
+plac_ is optimized for the simplest use case and by default it provide
+support for simple command-line languages where a command take
+a single line. This is the simplest case: it is easy to keep
+track of the line number and to print it in the error message, if
+there is some error in a plac_ script. Starting from release 0.7
+plac_ is beginning to support multiline input: it is now possible
+to define command-line languages with commands spanning multiple
+lines. The topical use case is the implementation of a tool 
+to interact with a relational database: the tool must be able to send
+complex SQL queries spanning multiple lines to the backend.
+To support multiline input the ``Interpreter`` class provides
+a method ``multiline(stdin=sys.stdin, terminator=';', verbose=False)``
+which reads input from ``stdin`` until the terminator character
+(by default a semicolon) is reached.
+
+Since the Python readline module does not expose the
+multiline functionality of the underlying C library (which is there),
+plac_ multiline mode does not have readline functionality.  This is
+not a big deal really, because if you are writing multiple line
+commands you don't really want to type them at the command-line. It is
+much better to use a real editor to type them, and to call plac_ from
+the editor. Since I use Emacs I will give the recipe to integrate
+Emacs with plac_: something equivalent can be done for vi and for
+other editors/IDEs.
+
+The multiline mode can be enabled by invoking the plac_ runner with
+the ``-m`` option. Since the multiline mode is intended for use with
+Emacs in inferior mode, it does not print any prompt. Here is an example
+of usage::
+
+ $ plac -m ishelve2.py
+ set a 1;
+ setting a=1
+ show a;
+ a = 1
+
+To integrate plac_ with Emacs, enters the following lines in your
+.emacs:
+
+.. include:: plac.el
+   :literal:
 
 A non class-based example
 --------------------------------------------------------
@@ -822,6 +870,10 @@ If you look after a time long enough, the task will be finished::
  i> .output 1
  <ThreadedTask 1 [import_file file1] FINISHED>
 
+You can even skip the number argument: then ``.output`` will the return
+the output of the last launched command (the special commands like .output
+do not count).
+
 You can launch many tasks one after the other::
 
  i> import_file file2
@@ -908,6 +960,131 @@ Using processes allows to take full advantage of multicore machines
 and it is safer than using threads, so it is the recommended approach
 unless you are working on Windows.
 
+Managing the output of concurrent commands
+---------------------------------------------
+
+plac_ acts as a command-line task launcher and can be used as the base
+to build a GUI-based task launcher and task monitor. To this aim the
+interpreter class provides a ``.submit`` method which returns a task
+object and a ``.tasks`` method returning the list of all the tasks
+submitted to the interpreter.  The ``submit`` method does not start the task
+and thus it is nonblocking.
+Each task has an ``.outlist`` attribute which is a list
+storing the value yielded by the generator underlying the task (the
+``None`` values are skipped though): the ``.outlist`` grows as the
+task runs and more values are yielded. Accessing the ``.outlist`` is
+nonblocking and can be done freely.
+Finally there is a ``.result``
+property which waits for the task to finish and returns the last yielded 
+value or raises an exception.
+
+Here is some example code to visualize the output of the FakeImporter
+in Tkinter (I chose Tkinter because it is easy to use and it is
+in the standard library, but you can use any GUI):
+
+.. include:: importer_ui.py
+   :literal:
+
+Parallel computing with plac
+---------------------------------------------
+
+plac_ is certainly not intended as a tool for parallel computing, but
+still you can use it to launch a set of commands and to collect the
+results, similarly to the MapReduce pattern recently popularized by
+Google.  In order to give an example, I will consider the "Hello
+World" of parallel computing, i.e. the computation of pi with
+independent processes.  There is a huge number of algorithms to
+compute pi; here I will describe a trivial one chosen for simplicity,
+not per efficienty. The trick is to consider the first quadrant of a
+circle with radius 1 and to extract a number of points ``(x, y)`` with
+``x`` and ``y`` random variables in the interval ``[0,1]``. The
+probability of extracting a number inside the quadrant (i.e. with
+``x^2 + y^2 < 1``) is proportional to the area of the quadrant
+(i.e. ``pi/4``). The value of ``pi`` therefore can be extracted by
+multiplying by 4 the ratio between the number of points in the
+quadrant versus the total number of points ``N``, for ``N`` large::
+
+    def calc_pi(N):
+        inside = 0
+        for j in xrange(N):
+            x, y = random(), random()
+            if x*x + y*y < 1:
+                inside += 1
+        return (4.0 * inside) / N
+
+The algorithm is trivially parallelizable: if you have n CPUs, you can
+compute pi n times with N/n iterations, sum the results and divide the total
+by n. I have a Macbook with two cores, therefore I would expect a speedup
+factor of 2 with respect to a sequential computation. Moreover, I would
+expect a threaded computation to be even slower than a sequential
+computation, due to the GIL and the scheduling overhead.
+
+Here is a script implementing the algorithm and working in three different
+modes (parallel mode, threaded mode and sequential mode) depending on a
+``mode`` option:
+
+.. include:: picalculator.py
+   :literal:
+
+Notice the ``submit_tasks`` method, which instantiates and initializes a
+``plac.Interpreter`` object and submits a number of commands corresponding
+to the number of available CPUs. The ``calc_pi`` command yield a log
+message every million of interactions, just to monitor the progress of
+the computation. The ``run`` method starts all the submitted commands
+in parallel and sums the results. It returns the average value of ``pi``
+after the slowest CPU has finished its job (if the CPUs are equal and
+equally busy they should finish more or less at the same time).
+
+Here are the results on my old Macbook with Ubuntu 10.04 and Python 2.6,
+for 10 million of iterations::
+
+ $ python picalculator.py -mP 10000000
+ 3.141904 in 5.744545 seconds 
+ $ python picalculator.py -mT 10000000
+ 3.141272 in 13.875645 seconds 
+ $ python picalculator.py -mS 10000000
+ 3.141586 in 11.353841 seconds 
+
+As you see using processes one gets a 2x speedup indeed, where the threaded
+mode is some 20% slower than the sequential mode.
+
+The plac server
+-------------------------------------------------------
+
+A command-line oriented interface can be easily converted into a 
+socket-based interface. Starting from release 0.7 plac features
+a builtin server which is able to accept commands from multiple
+clients and to execute them. The server works by instantiating
+a separate interpreter for each client, so that if a client interpreter
+dies for any reason the other interpreters keep working.
+To avoid external dependencies the server is based on the ``asynchat``
+module in the standard library, but it would not be difficult to
+replace the server with a different one (for instance, a Twisted server).
+Since ``asynchat``-based servers are asynchronous, any blocking command
+in the interpreter should be run in a separated process or thread.
+The default port for the plac_ server is 2199, and the command to
+signal end-of-connection is EOF.
+For instance, here is how you could manage remote import on a database:
+
+.. include:: server_ex.py
+   :literal:
+
+You can connect to the server with ``telnet`` on port 2199, as follows::
+
+ $ telnet localhost 2199
+ Trying ::1...
+ Trying 127.0.0.1...
+ Connected to localhost.
+ Escape character is '^]'.
+ i> import_file f1
+ i> .list
+ <ThreadedTask 1 [import_file f1] RUNNING>
+ i> .out
+ Imported 100 lines
+ Imported 200 lines
+ i> EOF
+ Connection closed by foreign host.
+
 Summary
 -------------------------------------------------------
 
@@ -934,6 +1111,9 @@ rules are quite simple:
 5. long running command can be executed in the background as threads or
    processes: just declare them in the lists ``thcommands`` and ``mpcommands``
    respectively.
+
+6. the ``.start_server`` method starts an asynchronous server on the
+   given port number (default 2199)
 
 Moreover, remember that ``plac_runner.py`` is your friend.
 
