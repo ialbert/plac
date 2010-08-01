@@ -101,6 +101,7 @@ class ReadlineInput(object):
         readline.set_completer(self.complete)
 
     def __enter__(self):
+        self.old_completer = readline.get_completer()
         try:
             if self.histfile:
                 readline.read_history_file(self.histfile)
@@ -109,6 +110,7 @@ class ReadlineInput(object):
         return self
 
     def __exit__(self, etype, exc, tb):
+        readline.set_completer(self.old_completer)
         if self.histfile:
             readline.write_history_file(self.histfile)
 
@@ -548,7 +550,7 @@ class _AsynHandler(asynchat.async_chat):
             task = self.i.submit(line)
             task.run() # synchronous or not
             if task.etype: # manage exception
-                error = '%s: %s on command %s%s' % (
+                error = '%s: %s\nReceived: %s' % (
                     task.etype.__name__, task.exc, ' '.join(task.arglist))
                 self.log_info(task.traceback + error) # on the server
                 self.write(error + self.terminator) # back to the client

@@ -10,6 +10,7 @@ set a 1
 ''',
 '''\
 set b 1
+wrong command
 showall
 ''']
 

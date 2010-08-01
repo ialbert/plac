@@ -3,7 +3,7 @@ Advanced usages of plac
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: July 2010
+:Date: August 2010
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
 :Installation: ``easy_install -U plac``
@@ -593,54 +593,55 @@ Here is an example::
  $ plac ishelve.py .show
  a=1
 
-Notice that it non-interactive mode the runner just invokes ``plac.call``
+Notice that in non-interactive mode the runner just invokes ``plac.call``
 on the ``main`` object of the Python module.
 
-Multiline support and Emacs integration 
---------------------------------------------------------
-
-plac_ is optimized for the simplest use case and by default it provide
-support for simple command-line languages where a command take
-a single line. This is the simplest case: it is easy to keep
-track of the line number and to print it in the error message, if
-there is some error in a plac_ script. Starting from release 0.7
-plac_ is beginning to support multiline input: it is now possible
-to define command-line languages with commands spanning multiple
-lines. The topical use case is the implementation of a tool 
-to interact with a relational database: the tool must be able to send
-complex SQL queries spanning multiple lines to the backend.
-To support multiline input the ``Interpreter`` class provides
-a method ``multiline(stdin=sys.stdin, terminator=';', verbose=False)``
-which reads input from ``stdin`` until the terminator character
-(by default a semicolon) is reached.
-
-Since the Python readline module does not expose the
-multiline functionality of the underlying C library (which is there),
-plac_ multiline mode does not have readline functionality.  This is
-not a big deal really, because if you are writing multiple line
-commands you don't really want to type them at the command-line. It is
-much better to use a real editor to type them, and to call plac_ from
-the editor. Since I use Emacs I will give the recipe to integrate
-Emacs with plac_: something equivalent can be done for vi and for
-other editors/IDEs.
-
-The multiline mode can be enabled by invoking the plac_ runner with
-the ``-m`` option. Since the multiline mode is intended for use with
-Emacs in inferior mode, it does not print any prompt. Here is an example
-of usage::
-
- $ plac -m ishelve2.py
- set a 1;
- setting a=1
- show a;
- a = 1
-
-To integrate plac_ with Emacs, enters the following lines in your
-.emacs:
-
-.. include:: plac.el
-   :literal:
-
+..
+  
+  Multiline support and Emacs integration
+  
+  plac_ is optimized for the simplest use case and by default it provide
+  support for simple command-line languages where a command take
+  a single line. This is the simplest case: it is easy to keep
+  track of the line number and to print it in the error message, if
+  there is some error in a plac_ script. Starting from release 0.7
+  plac_ is beginning to support multiline input: it is now possible
+  to define command-line languages with commands spanning multiple
+  lines. The topical use case is the implementation of a tool 
+  to interact with a relational database: the tool must be able to send
+  complex SQL queries spanning multiple lines to the backend.
+  To support multiline input the ``Interpreter`` class provides
+  a method ``multiline(stdin=sys.stdin, terminator=';', verbose=False)``
+  which reads input from ``stdin`` until the terminator character
+  (by default a semicolon) is reached.
+  
+  Since the Python readline module does not expose the
+  multiline functionality of the underlying C library (which is there),
+  plac_ multiline mode does not have readline functionality.  This is
+  not a big deal really, because if you are writing multiple line
+  commands you don't really want to type them at the command-line. It is
+  much better to use a real editor to type them, and to call plac_ from
+  the editor. Since I use Emacs I will give the recipe to integrate
+  Emacs with plac_: something equivalent can be done for vi and for
+  other editors/IDEs.
+  
+  The multiline mode can be enabled by invoking the plac_ runner with
+  the ``-m`` option. Since the multiline mode is intended for use with
+  Emacs in inferior mode, it does not print any prompt. Here is an example
+  of usage::
+  
+   $ plac -m ishelve2.py
+   set a 1;
+   setting a=1
+   show a;
+   a = 1
+  
+  To integrate plac_ with Emacs, enters the following lines in your
+  .emacs:
+  
+  .. include:: plac.el
+     :literal:
+  
 A non class-based example
 --------------------------------------------------------
 
