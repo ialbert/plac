@@ -7,6 +7,6 @@ doc/plac_adv.pdf: doc/plac_adv.txt
 upload:
 	python3 setup.py register sdist upload 
 2:
-	python setup.py build; sudo python setup.py install
+	python setup.py build; sudo python setup.py install; sudo rm -rf dist
 3:
-	python3 setup.py build; sudo python3 setup.py install
+	python3 setup.py build; sudo python3 setup.py install; sudo rm -rf dist

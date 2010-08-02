@@ -21,12 +21,15 @@ def run(fnames, cmd, verbose):
 @plac.annotations(
     verbose=('verbose mode', 'flag', 'v'),
     interactive=('run plac tool in interactive mode', 'flag', 'i'),
+    multiline=('run plac tool in multiline mode', 'flag', 'm'),
+    server=('run plac server', 'flag', 's'),
     batch=('run plac batch files', 'flag', 'b'),
     test=('run plac test files', 'flag', 't'),
     fname='script to run (.py or .plac or .placet)',
     extra='additional arguments',
     )
-def main(verbose, interactive, batch, test, fname=None, *extra):
+def main(verbose, interactive, multiline, server, batch, test, fname=None,
+         *extra):
     "Runner for plac tools, plac batch files and plac tests"
     baseparser = plac.parser_from(main)
     if fname is None:
@@ -40,11 +43,17 @@ def main(verbose, interactive, batch, test, fname=None, *extra):
                 print(output)
         else:
             print(out)
-    elif interactive:
+    elif interactive or multiline or server:
         plactool = plac.import_main(fname, *extra, **{'prog': ''})
         if inspect.isclass(plactool): # special case
             plactool = plactool()
-        plac.Interpreter(plactool).interact(verbose=verbose)
+        i = plac.Interpreter(plactool)
+        if interactive:
+            i.interact(verbose=verbose)
+        elif multiline:
+            i.multiline(verbose=verbose)
+        elif server:
+            i.serve()
     elif batch:
         run((fname,) + extra, 'execute', verbose)
     elif test:

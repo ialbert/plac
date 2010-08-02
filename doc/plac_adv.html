@@ -6,7 +6,7 @@
 <meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
 <title>Advanced usages of plac</title>
 <meta name="author" content="Michele Simionato" />
-<meta name="date" content="July 2010" />
+<meta name="date" content="August 2010" />
 <style type="text/css">
 
 .first {
@@ -424,7 +424,7 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 <tr class="field"><th class="docinfo-name">E-mail:</th><td class="field-body"><a class="reference external" href="mailto:michele.simionato&#64;gmail.com">michele.simionato&#64;gmail.com</a></td>
 </tr>
 <tr><th class="docinfo-name">Date:</th>
-<td>July 2010</td></tr>
+<td>August 2010</td></tr>
 <tr class="field"><th class="docinfo-name">Download page:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></td>
 </tr>
 <tr class="field"><th class="docinfo-name">Project page:</th><td class="field-body"><a class="reference external" href="http://micheles.googlecode.com/hg/plac/doc/plac.html">http://micheles.googlecode.com/hg/plac/doc/plac.html</a></td>
@@ -458,8 +458,11 @@ basic documentation.</em></p>
 <li><a class="reference internal" href="#long-running-commands" id="id11">Long running commands</a></li>
 <li><a class="reference internal" href="#threaded-commands" id="id12">Threaded commands</a></li>
 <li><a class="reference internal" href="#running-commands-as-external-processes" id="id13">Running commands as external processes</a></li>
-<li><a class="reference internal" href="#summary" id="id14">Summary</a></li>
-<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id15">Appendix: custom annotation objects</a></li>
+<li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id14">Managing the output of concurrent commands</a></li>
+<li><a class="reference internal" href="#parallel-computing-with-plac" id="id15">Parallel computing with plac</a></li>
+<li><a class="reference internal" href="#the-plac-server" id="id16">The plac server</a></li>
+<li><a class="reference internal" href="#summary" id="id17">Summary</a></li>
+<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id18">Appendix: custom annotation objects</a></li>
 </ul>
 </div>
 <div class="section" id="introduction">
@@ -479,12 +482,15 @@ scripts, and even with the analogous of Python doctests for your
 defined language.</p>
 <p>You can easily replace the <tt class="docutils literal">cmd</tt> module of the standard library and
 you could easily write an application like <a class="reference external" href="http://twill.idyll.org/">twill</a> with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. Or you
-could use it to script your building procedure. Or any other thing,
-your imagination is the only limit!</p>
+could use it to script your building procedure. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> also supports
+parallel execution of multiple commands and can be used as
+task manager and monitor. It is also quite easy to build a GUI
+or a Web application on top of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. When speaking of things
+you can do with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, your imagination is the only limit!</p>
 </div>
 <div class="section" id="from-scripts-to-interactive-applications">
 <h1><a class="toc-backref" href="#id2">From scripts to interactive applications</a></h1>
-<p>Command-line scripts have many advantages, but are no substitute
+<p>Command-line scripts have many advantages, but they are no substitute
 for interactive applications.
 In particular, if you have a script with a large startup time which must be run
 multiple times, it is best to turn it into an interactive application,
@@ -703,7 +709,9 @@ languages as the ones you can implement with <a class="reference external" href=
 thanks to <a class="reference external" href="http://docs.python.org/library/shlex.html">shlex</a>, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to recognize comments (the default
 comment character is <tt class="docutils literal">#</tt>), escape sequences and more. Look at the
 <a class="reference external" href="http://docs.python.org/library/shlex.html">shlex</a> documentation if you need to customize how the language is
-interpreted.</p>
+interpreted. For more flexibility, it is even possible to pass to the
+interpreter a custom split function with signature <tt class="docutils literal">split(line,
+commentchar)</tt>.</p>
 <p>In addition, I have implemented from scratch some support for line number
 recognition, so that if a test fail you get the line number of the
 failing command. This is especially useful if your tests are
@@ -810,7 +818,7 @@ container may have initialization/finalization hooks (<tt class="docutils litera
 and dispatch hooks (<tt class="docutils literal">__missing__</tt>, invoked for invalid command names).
 Moreover, only when using command containers <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to provide
 automatic autocompletion of commands.</p>
-<p>Rhe shelve interface can be rewritten in an object-oriented way as follows:</p>
+<p>The shelve interface can be rewritten in an object-oriented way as follows:</p>
 <pre class="literal-block">
 # ishelve2.py
 import shelve, os, sys, plac
@@ -850,11 +858,10 @@ class ShelveInterface(object):
             yield 'deleting %s' % name
             del self.sh[name] # no error checking
 
-main = ShelveInterface # the main 'function' can also be a class!
+main = ShelveInterface # useful for the tests
 
 if __name__ == '__main__':
-    shelve_interface = plac.call(main)
-    plac.Interpreter(shelve_interface).interact()
+    plac.Interpreter(plac.call(ShelveInterface)).interact()
 
 </pre>
 <p><tt class="docutils literal">plac.Interpreter</tt> objects wrap context manager objects
@@ -927,14 +934,13 @@ you pass the <tt class="docutils literal">verbose</tt> flag to the <tt class="do
 <h1><a class="toc-backref" href="#id7">Readline support</a></h1>
 <p>Starting from release 0.6 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> offers full readline support. That
 means that if your Python was compiled with readline support you get
-autocompletion and persistent command history for free.
-By default all commands are autocomplete in a case sensitive way.
-If you want to add new words to the autocompletion set, or you want
-to change the location of the <tt class="docutils literal">.history</tt> file, or to change the
-case sensitivirt, or you want to change the prompt, the way to do
-it is to pass a <tt class="docutils literal">plac.ReadlineInput</tt> object to the interpreter.
-Here is an example, assuming you want to build a database interface
-understanding SQL commands:</p>
+autocompletion and persistent command history for free.  By default
+all commands are autocomplete in a case sensitive way.  If you want to
+add new words to the autocompletion set, or you want to change the
+location of the <tt class="docutils literal">.history</tt> file, or to change the case sensitivity,
+the way to go is to pass a <tt class="docutils literal">plac.ReadlineInput</tt> object to the
+interpreter.  Here is an example, assuming you want to build a
+database interface understanding SQL commands:</p>
 <pre class="literal-block">
 import os, plac
 from sqlalchemy.ext.sqlsoup import SqlSoup
@@ -949,18 +955,22 @@ class SqlInterface(object):
     commands = ['SELECT']
     def __init__(self, dsn):
         self.soup = SqlSoup(dsn)
-    def SELECT(self, *args):
-        sql = 'SELECT ' + ' '.join(args)
+    def SELECT(self, argstring):
+        sql = 'SELECT ' + argstring
         for row in self.soup.bind.execute(sql):
             yield str(row) # the formatting can be much improved
 
 rl_input = plac.ReadlineInput(
-    COMPLETIONS, prompt='sql&gt; ', 
-    histfile=os.path.expanduser('~/.sql_interface.history'), 
+    COMPLETIONS, histfile=os.path.expanduser('~/.sql_interface.history'), 
     case_sensitive=False)
 
+def split_on_first_space(line, commentchar):
+    return line.strip().split(' ', 1) # ignoring comments
+    
 if __name__ == '__main__':
-    plac.Interpreter(plac.call(SqlInterface)).interact(rl_input)
+    si = plac.call(SqlInterface)
+    i = plac.Interpreter(si, split=split_on_first_space)
+    i.interact(rl_input, prompt='sql&gt; ')
 
 </pre>
 <p>Here is an example of usage:</p>
@@ -979,8 +989,9 @@ and recorded and saved in the file <tt class="docutils literal"><span class="pre
 exiting from the command-line interface.</p>
 <p>If the readline library is not available, my suggestion is to use the
 <a class="reference external" href="http://freshmeat.net/projects/rlwrap/">rlwrap</a> tool which provides similar features, at least on Unix-like
-platforms. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> should also work fine on Windows with the pyreadline
-library (I do not use Windows, so this part is very little tested).
+platforms. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> should also work fine on Windows with the <a href="#id19"><span class="problematic" id="id20">pyreadline_</span></a>
+library (I do not use Windows, so this part is very little tested: I
+tried it only once and it worked, but your mileage may vary).
 For people worried about licenses, I will notice that <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses the
 readline library only if available, it does not include it and it does
 not rely on it in any fundamental way, so that the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> licence does
@@ -1023,7 +1034,7 @@ arguments with a fixed number of choices, type conversion and all the
 features provided of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> which should be reimplemented from scratch
 using <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
 <p>Moreover at the moment <tt class="docutils literal">plac</tt> also understands command abbreviations.
-However, this feature should be considered deprecated and may disappear in
+However, this feature may disappear in
 future releases. It was meaningful in the past, when <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> did not support
 readline.</p>
 <p>Notice that if an abbreviation is ambiguous, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> warns you:</p>
@@ -1044,7 +1055,7 @@ even a command container class.</p>
 <p>For instance, suppose you want to execute a script containing commands
 defined in the <tt class="docutils literal">ishelve2</tt> module like the following one:</p>
 <pre class="literal-block">
-#!ishelve2.py -c ~/conf.shelve
+#!ishelve2.py:ShelveInterface -c ~/conf.shelve
 set a 1
 del a
 del a # intentional error
@@ -1053,8 +1064,12 @@ del a # intentional error
 <p>The first line of the <tt class="docutils literal">.plac</tt> script contains the name of the
 python module containing the plac interpreter and the arguments
 which must be passed to its main function in order to be able
-to instantiate an interpreter object. The other lines contains
-commands. Then you can run the script as follows:</p>
+to instantiate an interpreter object. In this case I appended
+<tt class="docutils literal">:ShelveInterface</tt> to the name of the module to specify the
+object that must be imported: if not specified, by default the
+object named 'main' is imported.
+The other lines contains commands.
+You can run the script as follows:</p>
 <pre class="literal-block">
 $ plac_runner.py --batch ishelve2.plac
 setting a=1
@@ -1090,7 +1105,7 @@ b = 2
 <p>Now you can cut and paste the interactive session an turns into into
 a <tt class="docutils literal">.placet</tt> file like the following:</p>
 <pre class="literal-block">
-#!ishelve2.py -configfile=~/test.shelve
+#!ishelve2.py:ShelveInterface -configfile=~/test.shelve
 i&gt; del
 deleting everything
 i&gt; set a 1
@@ -1135,8 +1150,128 @@ setting a=1
 $ plac ishelve.py .show
 a=1
 </pre>
-<p>Notice that it non-interactive mode the runner just invokes <tt class="docutils literal">plac.call</tt>
+<p>Notice that in non-interactive mode the runner just invokes <tt class="docutils literal">plac.call</tt>
 on the <tt class="docutils literal">main</tt> object of the Python module.</p>
+<!--  -->
+<blockquote>
+<p>Multiline support and Emacs integration</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is optimized for the simplest use case and by default it provide
+support for simple command-line languages where a command take
+a single line. This is the simplest case: it is easy to keep
+track of the line number and to print it in the error message, if
+there is some error in a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> script. Starting from release 0.7
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is beginning to support multiline input: it is now possible
+to define command-line languages with commands spanning multiple
+lines. The topical use case is the implementation of a tool
+to interact with a relational database: the tool must be able to send
+complex SQL queries spanning multiple lines to the backend.
+To support multiline input the <tt class="docutils literal">Interpreter</tt> class provides
+a method <tt class="docutils literal">multiline(stdin=sys.stdin, <span class="pre">terminator=';',</span> verbose=False)</tt>
+which reads input from <tt class="docutils literal">stdin</tt> until the terminator character
+(by default a semicolon) is reached.</p>
+<p>Since the Python readline module does not expose the
+multiline functionality of the underlying C library (which is there),
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> multiline mode does not have readline functionality.  This is
+not a big deal really, because if you are writing multiple line
+commands you don't really want to type them at the command-line. It is
+much better to use a real editor to type them, and to call <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> from
+the editor. Since I use Emacs I will give the recipe to integrate
+Emacs with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>: something equivalent can be done for vi and for
+other editors/IDEs.</p>
+<p>The multiline mode can be enabled by invoking the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> runner with
+the <tt class="docutils literal"><span class="pre">-m</span></tt> option. Since the multiline mode is intended for use with
+Emacs in inferior mode, it does not print any prompt. Here is an example
+of usage:</p>
+<pre class="literal-block">
+$ plac -m ishelve2.py
+set a 1;
+setting a=1
+show a;
+a = 1
+</pre>
+<p>To integrate <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> with Emacs, enters the following lines in your
+.emacs:</p>
+<pre class="literal-block">
+;;; Emacs-plac integration: add the following to your .emacs
+
+(define-generic-mode 'plac-mode
+  '(&quot;#&quot;) ; comment chars
+  '(); highlighted commands
+  nil
+  '(&quot;.plac\\'&quot;); file extensions
+  nil)
+ 
+(add-hook 'plac-mode-hook (lambda () (local-set-key [f4]  'plac-start)))
+(add-hook 'plac-mode-hook (lambda () (local-set-key [f5]  'plac-send)))
+(add-hook 'plac-mode-hook (lambda () (local-set-key [f6]  'plac-stop)))
+
+(defconst terminator 59); ASCII code for the semicolon
+(defvar *plac-process* nil)
+
+(defun plac-start ()
+  &quot;Start an inferior plac process by inferring the script to use from the 
+  shebang line&quot;
+  (interactive)
+  (let ((shebang-line 
+         (save-excursion
+           (goto-line 1) (end-of-line)
+           (buffer-substring-no-properties 3 (point)))))
+    (if *plac-process* (princ &quot;plac already started&quot;)
+      (setq *plac-process*
+            (start-process
+             &quot;plac&quot; &quot;*plac*&quot; &quot;plac_runner.py&quot; &quot;-m&quot; shebang-line))))
+  (display-buffer &quot;*plac*&quot;))
+
+;(defun plac-send ()
+;  &quot;Send the current region to the inferior plac process&quot;
+;  (interactive)
+;  (save-excursion (set-buffer &quot;*plac*&quot;) (erase-buffer))
+;  (process-send-region *plac-process* (region-beginning) (region-end)))
+
+(defun current-paragraph-beg-end ()
+  &quot;Returns the extrema of the current paragraph, delimited by semicolons&quot;
+  (interactive)
+  (save-excursion
+    (let ((beg (save-excursion (goto-line 2) (point))); skip the shebang
+          (end (point-max)))
+      ;; go backward
+      (while (&gt; (point) beg)
+        (goto-char (1- (point)))
+        (if (= terminator (following-char))
+            (setq beg (point))))
+      (if (= terminator (following-char))
+          (setq beg (1+ beg)))
+      ;; go forward
+      (while (&lt; (point) end)
+        (goto-char (1+ (point)))
+        (if (= 59 (following-char))
+            (setq end (point))))
+      (if (= 59 (following-char))
+          (setq end (1+ end)))
+      (list beg end))))
+ 
+(defun plac-send ()
+  &quot;Send the current region to the inferior plac process&quot;
+  (interactive)
+  (save-excursion (set-buffer &quot;*plac*&quot;) (erase-buffer))
+  (let ((p (apply 'buffer-substring-no-properties (current-paragraph-beg-end))))
+    (message p)
+    (process-send-string *plac-process* (concat p &quot;\n&quot;))))
+    ;(switch-to-buffer-other-window &quot;*plac*&quot;)))
+    ;(save-excursion (set-buffer &quot;*plac*&quot;) 
+    ;  (set-window-start (selected-window) 1 nil))))
+
+(defun plac-stop ()
+  &quot;Stop the inferior plac process by sending to it an EOF&quot;
+  (interactive)
+  (process-send-eof *plac-process*)
+  (setq *plac-process* nil)
+  &quot;killed *plac-process*&quot;)
+
+(provide 'plac)
+
+</pre>
+</blockquote>
 </div>
 <div class="section" id="a-non-class-based-example">
 <h1><a class="toc-backref" href="#id9">A non class-based example</a></h1>
@@ -1411,6 +1546,9 @@ Imported 400 lines
 i&gt; .output 1
 &lt;ThreadedTask 1 [import_file file1] FINISHED&gt;
 </pre>
+<p>You can even skip the number argument: then <tt class="docutils literal">.output</tt> will the return
+the output of the last launched command (the special commands like .output
+do not count).</p>
 <p>You can launch many tasks one after the other:</p>
 <pre class="literal-block">
 i&gt; import_file file2
@@ -1513,8 +1651,227 @@ loop, so that the command is closed properly.</p>
 and it is safer than using threads, so it is the recommended approach
 unless you are working on Windows.</p>
 </div>
+<div class="section" id="managing-the-output-of-concurrent-commands">
+<h1><a class="toc-backref" href="#id14">Managing the output of concurrent commands</a></h1>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> acts as a command-line task launcher and can be used as the base
+to build a GUI-based task launcher and task monitor. To this aim the
+interpreter class provides a <tt class="docutils literal">.submit</tt> method which returns a task
+object and a <tt class="docutils literal">.tasks</tt> method returning the list of all the tasks
+submitted to the interpreter.  The <tt class="docutils literal">submit</tt> method does not start the task
+and thus it is nonblocking.
+Each task has an <tt class="docutils literal">.outlist</tt> attribute which is a list
+storing the value yielded by the generator underlying the task (the
+<tt class="docutils literal">None</tt> values are skipped though): the <tt class="docutils literal">.outlist</tt> grows as the
+task runs and more values are yielded. Accessing the <tt class="docutils literal">.outlist</tt> is
+nonblocking and can be done freely.
+Finally there is a <tt class="docutils literal">.result</tt>
+property which waits for the task to finish and returns the last yielded
+value or raises an exception.</p>
+<p>Here is some example code to visualize the output of the FakeImporter
+in Tkinter (I chose Tkinter because it is easy to use and it is
+in the standard library, but you can use any GUI):</p>
+<pre class="literal-block">
+from Tkinter import *
+from importer3 import FakeImporter
+
+def taskwidget(root, task, tick=500):
+    &quot;A Label widget showing the output of a task every 500 ms&quot;
+    sv = StringVar(root)
+    lb = Label(root, textvariable=sv)
+    def show_outlist():
+        try:
+            out = task.outlist[-1]
+        except IndexError: # no output yet
+            out = ''
+        sv.set('%s %s' % (task, out))
+        root.after(tick, show_outlist)
+    root.after(0, show_outlist)
+    return lb
+
+def monitor(tasks):
+    root = Tk()
+    for task in tasks:
+        task.run()
+        taskwidget(root, task).pack()
+    root.mainloop()
+
+if __name__ == '__main__':
+    import plac
+    with plac.Interpreter(plac.call(FakeImporter)) as i:
+        tasks = [i.submit('import_file f1'), i.submit('import_file f2')]
+        monitor(tasks)
+
+</pre>
+</div>
+<div class="section" id="parallel-computing-with-plac">
+<h1><a class="toc-backref" href="#id15">Parallel computing with plac</a></h1>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is certainly not intended as a tool for parallel computing, but
+still you can use it to launch a set of commands and to collect the
+results, similarly to the MapReduce pattern recently popularized by
+Google.  In order to give an example, I will consider the &quot;Hello
+World&quot; of parallel computing, i.e. the computation of pi with
+independent processes.  There is a huge number of algorithms to
+compute pi; here I will describe a trivial one chosen for simplicity,
+not per efficienty. The trick is to consider the first quadrant of a
+circle with radius 1 and to extract a number of points <tt class="docutils literal">(x, y)</tt> with
+<tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> random variables in the interval <tt class="docutils literal">[0,1]</tt>. The
+probability of extracting a number inside the quadrant (i.e. with
+<tt class="docutils literal">x^2 + y^2 &lt; 1</tt>) is proportional to the area of the quadrant
+(i.e. <tt class="docutils literal">pi/4</tt>). The value of <tt class="docutils literal">pi</tt> therefore can be extracted by
+multiplying by 4 the ratio between the number of points in the
+quadrant versus the total number of points <tt class="docutils literal">N</tt>, for <tt class="docutils literal">N</tt> large:</p>
+<pre class="literal-block">
+def calc_pi(N):
+    inside = 0
+    for j in xrange(N):
+        x, y = random(), random()
+        if x*x + y*y &lt; 1:
+            inside += 1
+    return (4.0 * inside) / N
+</pre>
+<p>The algorithm is trivially parallelizable: if you have n CPUs, you can
+compute pi n times with N/n iterations, sum the results and divide the total
+by n. I have a Macbook with two cores, therefore I would expect a speedup
+factor of 2 with respect to a sequential computation. Moreover, I would
+expect a threaded computation to be even slower than a sequential
+computation, due to the GIL and the scheduling overhead.</p>
+<p>Here is a script implementing the algorithm and working in three different
+modes (parallel mode, threaded mode and sequential mode) depending on a
+<tt class="docutils literal">mode</tt> option:</p>
+<pre class="literal-block">
+from __future__ import with_statement
+from random import random
+import multiprocessing
+import plac
+
+class PiCalculator(object):
+    &quot;&quot;&quot;Compute pi in parallel with threads or processes&quot;&quot;&quot;
+    
+    &#64;plac.annotations(
+        npoints=('number of integration points', 'positional', None, int),
+        mode=('sequential|parallel|threaded', 'option', 'm', str, 'SPT'))
+    def __init__(self, npoints, mode='S'):
+        self.npoints = npoints
+        if mode == 'P':
+            self.mpcommands = ['calc_pi']
+        elif mode == 'T':
+            self.thcommands = ['calc_pi']
+        elif mode == 'S':
+            self.commands = ['calc_pi']
+        self.n_cpu = multiprocessing.cpu_count()
+    
+    def submit_tasks(self):
+        self.i = plac.Interpreter(self).__enter__()            
+        return [self.i.submit('calc_pi %d' % (self.npoints / self.n_cpu))
+                for _ in range(self.n_cpu)]
+
+    def close(self):
+        self.i.close()
+
+    &#64;plac.annotations(
+        npoints=('npoints', 'positional', None, int))
+    def calc_pi(self, npoints):
+        counts = 0
+        for j in xrange(npoints):
+            n, r = divmod(j, 1000000)
+            if r == 0:
+                yield '%dM iterations' % n
+            x, y = random(), random()
+            if x*x + y*y &lt; 1:
+                counts += 1
+        yield (4.0 * counts)/npoints
+
+    def run(self):
+        tasks = self.i.tasks()
+        for t in tasks:
+            t.run()
+        try:
+            total = 0
+            for task in tasks:
+                total += task.result
+        except: # the task was killed
+            print tasks
+            return
+        return total / self.n_cpu
+
+if __name__ == '__main__':
+    pc = plac.call(PiCalculator)
+    pc.submit_tasks()
+    try:
+        import time; t0 = time.time()
+        print '%f in %f seconds ' % (pc.run(), time.time() - t0)
+    finally:
+        pc.close()
+
+</pre>
+<p>Notice the <tt class="docutils literal">submit_tasks</tt> method, which instantiates and initializes a
+<tt class="docutils literal">plac.Interpreter</tt> object and submits a number of commands corresponding
+to the number of available CPUs. The <tt class="docutils literal">calc_pi</tt> command yield a log
+message every million of interactions, just to monitor the progress of
+the computation. The <tt class="docutils literal">run</tt> method starts all the submitted commands
+in parallel and sums the results. It returns the average value of <tt class="docutils literal">pi</tt>
+after the slowest CPU has finished its job (if the CPUs are equal and
+equally busy they should finish more or less at the same time).</p>
+<p>Here are the results on my old Macbook with Ubuntu 10.04 and Python 2.6,
+for 10 million of iterations:</p>
+<pre class="literal-block">
+$ python picalculator.py -mP 10000000
+3.141904 in 5.744545 seconds
+$ python picalculator.py -mT 10000000
+3.141272 in 13.875645 seconds
+$ python picalculator.py -mS 10000000
+3.141586 in 11.353841 seconds
+</pre>
+<p>As you see using processes one gets a 2x speedup indeed, where the threaded
+mode is some 20% slower than the sequential mode.</p>
+</div>
+<div class="section" id="the-plac-server">
+<h1><a class="toc-backref" href="#id16">The plac server</a></h1>
+<p>A command-line oriented interface can be easily converted into a
+socket-based interface. Starting from release 0.7 plac features
+a builtin server which is able to accept commands from multiple
+clients and to execute them. The server works by instantiating
+a separate interpreter for each client, so that if a client interpreter
+dies for any reason the other interpreters keep working.
+To avoid external dependencies the server is based on the <tt class="docutils literal">asynchat</tt>
+module in the standard library, but it would not be difficult to
+replace the server with a different one (for instance, a Twisted server).
+Since <tt class="docutils literal">asynchat</tt>-based servers are asynchronous, any blocking command
+in the interpreter should be run in a separated process or thread.
+The default port for the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> server is 2199, and the command to
+signal end-of-connection is EOF.
+For instance, here is how you could manage remote import on a database:</p>
+<pre class="literal-block">
+import plac
+from importer2 import FakeImporter
+
+def main(port=2199):
+    main = FakeImporter('dsn')
+    plac.Interpreter(main).start_server(port)
+    
+if __name__ == '__main__':
+   plac.call(main)
+
+</pre>
+<p>You can connect to the server with <tt class="docutils literal">telnet</tt> on port 2199, as follows:</p>
+<pre class="literal-block">
+$ telnet localhost 2199
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+i&gt; import_file f1
+i&gt; .list
+&lt;ThreadedTask 1 [import_file f1] RUNNING&gt;
+i&gt; .out
+Imported 100 lines
+Imported 200 lines
+i&gt; EOF
+Connection closed by foreign host.
+</pre>
+</div>
 <div class="section" id="summary">
-<h1><a class="toc-backref" href="#id14">Summary</a></h1>
+<h1><a class="toc-backref" href="#id17">Summary</a></h1>
 <p>Once <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> claimed to be the easiest command-line arguments parser
 in the world. Having read this document you may think that it is not
 so easy after all. But it is a false impression. Actually the
@@ -1533,11 +1890,13 @@ or use the <tt class="docutils literal">Interpreter.doctest</tt> feature;</li>
 <li>long running command can be executed in the background as threads or
 processes: just declare them in the lists <tt class="docutils literal">thcommands</tt> and <tt class="docutils literal">mpcommands</tt>
 respectively.</li>
+<li>the <tt class="docutils literal">.start_server</tt> method starts an asynchronous server on the
+given port number (default 2199)</li>
 </ol>
 <p>Moreover, remember that <tt class="docutils literal">plac_runner.py</tt> is your friend.</p>
 </div>
 <div class="section" id="appendix-custom-annotation-objects">
-<h1><a class="toc-backref" href="#id15">Appendix: custom annotation objects</a></h1>
+<h1><a class="toc-backref" href="#id18">Appendix: custom annotation objects</a></h1>
 <p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal">Annotation</tt> class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
 six attributes <tt class="docutils literal">help, kind, short, type, choices, metavar</tt>.</p>
@@ -1591,6 +1950,12 @@ Using custom annotation objects you could do advanced things like extracting the
 annotations from a configuration file or from a database, but I expect such
 use cases to be quite rare: the default mechanism should work
 pretty well for most users.</p>
+</div>
+<div class="system-messages section">
+<h1>Docutils System Messages</h1>
+<div class="system-message" id="id19">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">plac_adv.txt</tt>, line 438); <em><a href="#id20">backlink</a></em></p>
+Unknown target name: &quot;pyreadline&quot;.</div>
 </div>
 </div>
 </body>

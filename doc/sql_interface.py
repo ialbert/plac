@@ -17,8 +17,7 @@ class SqlInterface(object):
             yield str(row) # the formatting can be much improved
 
 rl_input = plac.ReadlineInput(
-    COMPLETIONS, prompt='sql> ', 
-    histfile=os.path.expanduser('~/.sql_interface.history'), 
+    COMPLETIONS, histfile=os.path.expanduser('~/.sql_interface.history'), 
     case_sensitive=False)
 
 def split_on_first_space(line, commentchar):
@@ -27,4 +26,4 @@ def split_on_first_space(line, commentchar):
 if __name__ == '__main__':
     si = plac.call(SqlInterface)
     i = plac.Interpreter(si, split=split_on_first_space)
-    i.interact(rl_input)
+    i.interact(rl_input, prompt='sql> ')

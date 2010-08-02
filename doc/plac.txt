@@ -730,7 +730,7 @@ Python 2.3.
 Trivia: the story behind the name
 -----------------------------------------
 
-The plac_ project started very humble: I just wanted to make 
+The plac_ project started very humbly: I just wanted to make 
 easy_installable my old optionparse_ recipe, and to publish it on PyPI.
 The original name of plac_ was optionparser and the idea behind it was
 to build an OptionParser_ object from the docstring of the module.

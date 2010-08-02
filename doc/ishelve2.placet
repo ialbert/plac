@@ -1,4 +1,4 @@
-#!ishelve2.py -configfile=~/test.shelve
+#!ishelve2.py:ShelveInterface -configfile=~/test.shelve
 i> del
 deleting everything
 i> set a 1

@@ -9,12 +9,13 @@ import plac_core
 try:
     import readline
 except ImportError:
-    readline = None
+    readline = False
 
 ############################# generic utils ################################
 
 @contextmanager
 def stdout(fileobj):
+    "usage: with stdout(file('out.txt', 'a')): do_something()"
     orig_stdout = sys.stdout
     sys.stdout = fileobj
     try:
@@ -57,23 +58,50 @@ def terminatedProcess(signum, frame):
 
 ########################### readline support #############################
 
+def read_line(stdin, prompt=''):
+    "Read a line from stdin, using readline when possible"
+    if isinstance(stdin, ReadlineInput):
+        return stdin.readline(prompt)
+    else:
+        write(prompt)
+        return stdin.readline()
+
+def read_long_line(stdin, terminator):
+    """
+    Read multiple lines from stdin until the terminator character is found, then
+    yield a single space-separated long line.
+    """
+    while True:
+        lines = []
+        while True:
+            line = stdin.readline() # ends with \n
+            if not line: # EOF
+                return
+            line = line.strip()
+            if not line:
+                continue
+            elif line[-1] == terminator:
+                lines.append(line[:-1])
+                break
+            else:
+                lines.append(line)
+        yield ' '.join(lines)
+
 class ReadlineInput(object):
     """
-    An iterable with a .readline method reading from stdin with readline
-    features enabled, if possible.
+    An iterable with a .readline method reading from stdin.
     """
-    def __init__(self, completions, prompt='', case_sensitive=True,
-                 histfile=None):
+    def __init__(self, completions, case_sensitive=True, histfile=None):
         self.completions = completions
         self.case_sensitive = case_sensitive
         self.histfile = histfile
-        self.prompt = prompt
         if not case_sensitive:
             self.completions = map(str.upper, completions)
         readline.parse_and_bind("tab: complete")
         readline.set_completer(self.complete)
 
     def __enter__(self):
+        self.old_completer = readline.get_completer()
         try:
             if self.histfile:
                 readline.read_history_file(self.histfile)
@@ -82,6 +110,7 @@ class ReadlineInput(object):
         return self
 
     def __exit__(self, etype, exc, tb):
+        readline.set_completer(self.old_completer)
         if self.histfile:
             readline.write_history_file(self.histfile)
 
@@ -94,9 +123,9 @@ class ReadlineInput(object):
         except IndexError: # no completions
             return # exit
 
-    def readline(self):
+    def readline(self, prompt=''):
         try:
-            return raw_input(self.prompt) + '\n'
+            return raw_input(prompt) + '\n'
         except EOFError:
             return ''
 
@@ -115,6 +144,10 @@ def import_main(path, *args, **pconf):
     An utility to import the main function of a plac tool. It also
     works with tool factories, if you pass the arguments.
     """
+    if ':' in path:
+        path, main_name = path.split(':')
+    else:
+        main_name = 'main'
     if not os.path.isabs(path): # relative path, look at PLACDIRS
         for placdir in PLACDIRS:
             fullpath = os.path.join(placdir, path)
@@ -125,7 +158,8 @@ def import_main(path, *args, **pconf):
     else:
         fullpath = path
     name, ext = os.path.splitext(os.path.basename(fullpath))
-    main = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1)).main
+    module = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1))
+    main = getattr(module, main_name)
     if args:
         cmd, tool = plac_core.parser_from(main).consume(args)
     else:
@@ -149,7 +183,6 @@ class BaseTask(object):
     .exc
     .tb
     .status
-    .synchronous
     and methods .run and .kill.
     """
     STATES = ('SUBMITTED', 'RUNNING', 'TOBEKILLED',  'KILLED', 'FINISHED',
@@ -177,7 +210,8 @@ class BaseTask(object):
                 if value is not None: # add output
                     self.outlist.append(value)
                 yield
-        except (GeneratorExit, TerminatedProcess):  # soft termination
+        except (GeneratorExit, TerminatedProcess, KeyboardInterrupt): 
+            # soft termination
             self.status = 'KILLED'
         except: # unexpected exception
             self.etype, self.exc, tb = sys.exc_info()
@@ -185,7 +219,10 @@ class BaseTask(object):
             self.status = 'ABORTED'
         else: # regular exit
             self.status = 'FINISHED'
-        self.str = '\n'.join(map(str, self.outlist))
+            try:
+                self.str = str(self.outlist[-1])
+            except IndexError:
+                self.str = 'no result'
 
     def run(self):
         "Run the inner generator"
@@ -209,7 +246,14 @@ class BaseTask(object):
         else:
             return ''.join(traceback.format_tb(self.tb))
 
-    def __str__(self):
+    @property
+    def result(self):
+        self.wait()
+        if self.exc:
+            raise self.etype, self.exc, self.tb or None
+        return self.outlist[-1]
+
+    def __repr__(self):
         "String representation containing class name, number, arglist, status"
         return '<%s %d [%s] %s>' % (
             self.__class__.__name__, self.no, 
@@ -217,42 +261,22 @@ class BaseTask(object):
 
 ########################## synchronous tasks ###############################
 
-class Outlist(object):
-    "A list wrapper displaying each appended value on stdout"
-    def __init__(self):
-        self._ls = []
-    def append(self, value):
-        self._ls.append(value)
-        print(value)
-    def __iter__(self):
-        return iter(self._ls)
-    def __len__(self):
-        return len(self._ls)
-
 class SynTask(BaseTask):
     """
     Synchronous task running in the interpreter loop and displaying its
     output as soon as available.
-    """
-    synchronous = True
-
-    def __init__(self, no, arglist, genobj):
-        BaseTask.__init__(self, no, arglist, genobj)
-        self.outlist = Outlist()
-    
+    """    
     def __str__(self):
         "Return the output string or the error message"
         if self.etype: # there was an error
             return '%s: %s' % (self.etype.__name__, self.exc)
         else:
-            return self.str
+            return '\n'.join(map(str, self.outlist))
 
 class ThreadedTask(BaseTask):
     """
     A task running in a separated thread.
     """
-    synchronous = False
-
     def __init__(self, no, arglist, genobj):
         BaseTask.__init__(self, no, arglist, genobj)
         self.thread = threading.Thread(target=super(ThreadedTask, self).run)
@@ -267,12 +291,18 @@ class ThreadedTask(BaseTask):
 
 ######################### multiprocessing tasks ##########################
 
-def sharedattr(name):
-    "Return a property to be attached to an object with a .ns attribute"
+def sharedattr(name, on_error):
+    "Return a property to be attached to an MPTask"
     def get(self):
-        return getattr(self.ns, name)
+        try:
+            return getattr(self.ns, name)
+        except: # the process was killed or died hard
+            return on_error
     def set(self, value):
-        setattr(self.ns, name, value)
+        try:
+            setattr(self.ns, name, value)
+        except: # the process was killed or died hard
+            pass
     return property(get, set)
 
 class MPTask(BaseTask):
@@ -280,26 +310,29 @@ class MPTask(BaseTask):
     A task running as an external process. The current implementation
     only works on Unix-like systems, where multiprocessing use forks.
     """
+    str = sharedattr('str', '')
+    etype = sharedattr('etype', None)
+    exc = sharedattr('exc', None)
+    tb = sharedattr('tb', None)
+    status = sharedattr('status', 'ABORTED')
 
-    synchronous = False
-    _mp_manager = None
+    @property
+    def outlist(self):
+        try:
+            return self._outlist
+        except: # the process died hard
+            return []
 
-    str = sharedattr('str')
-    etype = sharedattr('etype')
-    exc = sharedattr('exc')
-    tb = sharedattr('tb')
-    status = sharedattr('status')
-
-    def __init__(self, no, arglist, genobj):
-        if self.__class__._mp_manager is None: # the first time
-            self.__class__._mp_manager = multiprocessing.Manager()
+    def __init__(self, no, arglist, genobj, mp_manager):
         self.no = no
         self.arglist = arglist
-        self.outlist = self._mp_manager.list()
-        self.ns = self._mp_manager.Namespace()
-        self.str, self.etype, self.exc, self.tb = '*', None, None, None
-        self.status = 'SUBMITTED'
         self._genobj = self._wrap(genobj, stringify_tb=True)
+        self.mp_manager = mp_manager
+        self._outlist = self.mp_manager.list()
+        self.ns = self.mp_manager.Namespace()
+        self.status = 'SUBMITTED'
+        self.etype, self.exc, self.tb = None, None, None
+        self.str = repr(self)
         self.proc = multiprocessing.Process(target=super(MPTask, self).run)
 
     def run(self):
@@ -307,7 +340,7 @@ class MPTask(BaseTask):
         self.proc.start()
 
     def wait(self):
-        "Block until the external process ends"
+        "Block until the external process ends or is killed"
         self.proc.join()
 
     def kill(self):
@@ -353,23 +386,20 @@ class TaskManager(object):
         if obj.mpcommands or obj.thcommands:
             self.specialcommands.update(['.kill', '.list', '.output'])
         self.helpsummary = HelpSummary.make(obj, self.specialcommands)
+        self.mp_manager = multiprocessing.Manager() if obj.mpcommands else None
         signal.signal(signal.SIGTERM, terminatedProcess)
-
-    def run_task(self, task):
-        "Run the task and update the registry"
-        if not task.arglist:
-            return
-        cmd = task.arglist[0]
-        if cmd not in self.specialcommands:
-            self.registry[task.no] = task
-        task.run()
 
     def close(self):
         "Kill all the running tasks"
         for task in self.registry.itervalues():
-            if task.status == 'RUNNING':
-                task.kill()
-                task.wait()
+            try:
+                if task.status == 'RUNNING':
+                    task.kill()
+                    task.wait()
+            except: # task killed, nothing to wait
+                pass
+        if self.mp_manager:
+            self.mp_manager.shutdown()
 
     def _get_latest(self, taskno=-1, status=None):
         "Get the latest submitted task from the registry"
@@ -427,7 +457,7 @@ class TaskManager(object):
             return
         else:
             task = self.registry[taskno]
-        outstr = '\n'.join(task.outlist)
+        outstr = '\n'.join(map(str, task.outlist))
         yield task
         if len(task.outlist) > 20 and use_less:
             less(outstr)
@@ -484,6 +514,74 @@ plac.Interpreter(plac.import_main(*%s)).interact(prompt='i>\\n')
         self.stdin.write(line + os.linesep)
         return self.recv()
 
+########################## plac server ##############################
+
+import asyncore, asynchat, socket
+
+class _AsynHandler(asynchat.async_chat):
+    "asynchat handler starting a new interpreter loop for each connection"
+
+    terminator = '\r\n' # the standard one for telnet
+    prompt = 'i> '
+
+    def __init__(self, socket, interpreter):
+        asynchat.async_chat.__init__(self, socket)
+        self.set_terminator(self.terminator)
+        self.i = interpreter
+        self.i.__enter__()
+        self.data = []
+        self.write(self.prompt)
+
+    def write(self, data, *args):
+        "Push a string back to the client"
+        if args:
+            data %= args
+        if data.endswith('\n') and not data.endswith(self.terminator):
+            data = data[:-1] + self.terminator # fix newlines
+        self.push(data)
+    
+    def collect_incoming_data(self, data):
+        "Collect one character at the time"
+        self.data.append(data)
+
+    def found_terminator(self):
+        "Put in the queue the line received from the client"
+        line = ''.join(self.data)
+        self.log('Received line %r from %s' % (line, self.addr))
+        if line == 'EOF':
+            self.i.__exit__()
+            self.handle_close()
+        else:
+            task = self.i.submit(line)
+            task.run() # synchronous or not
+            if task.etype: # manage exception
+                error = '%s: %s\nReceived: %s' % (
+                    task.etype.__name__, task.exc, ' '.join(task.arglist))
+                self.log_info(task.traceback + error) # on the server
+                self.write(error + self.terminator) # back to the client
+            else: # no exception
+                self.write(task.str + self.terminator)
+            self.data = []
+            self.write(self.prompt)
+
+class _AsynServer(asyncore.dispatcher):
+    "asyncore-based server spawning AsynHandlers"
+
+    def __init__(self, interpreter, newhandler, port, listen=5):
+        self.interpreter = interpreter
+        self.newhandler = newhandler
+        self.port = port
+        asyncore.dispatcher.__init__(self)
+        self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.bind(('', port))
+        self.listen(listen)
+
+    def handle_accept(self):
+        clientsock, clientaddr = self.accept()
+        self.log('Connected from %s' % str(clientaddr))
+        i = self.interpreter.__class__(self.interpreter.obj) # new interpreter
+        self.newhandler(clientsock, i) # spawn a new handler
+
 ########################### the Interpreter #############################
 
 class Interpreter(object):
@@ -532,14 +630,16 @@ class Interpreter(object):
         self.commands.update(obj.thcommands)
 
     def __enter__(self):
+        "Start the inner interpreter loop"
         self._interpreter = self._make_interpreter()
         self._interpreter.send(None)
         return self
 
     def __exit__(self, *exc):
+        "Close the inner interpreter and the task manager"
         self.close()
 
-    def make_task(self, line):
+    def submit(self, line):
         "Send a line to the underlying interpreter and return a task object"
         if self._interpreter is None:
             raise RuntimeError(_('%r not initialized: probably you forgot to '
@@ -548,13 +648,21 @@ class Interpreter(object):
             arglist = self.split(line, self.commentchar)
         else: # expects a list of strings
             arglist = line
-        return self._interpreter.send(arglist)
-        
+        task = self._interpreter.send(arglist) # nonblocking
+        if arglist and not plac_core._match_cmd(
+            arglist[0], self.tm.specialcommands):
+            self.tm.registry[task.no] = task
+        return task
+
     def send(self, line):
-        "Send a line to the underlying interpreter and return the result"
-        task = self.make_task(line)
+        "Send a line to the underlying interpreter and return the finished task"
+        task = self.submit(line)
         BaseTask.run(task) # blocking
         return task
+
+    def tasks(self):
+        "The full lists of the submitted tasks"
+        return self.tm.registry.values()
 
     def close(self):
         "Can be called to close the interpreter prematurely"
@@ -578,7 +686,7 @@ class Interpreter(object):
                 if not plac_core.iterable(result): # atomic result
                     task = SynTask(no, arglist, gen_val(result))
                 elif cmd in self.obj.mpcommands:
-                    task = MPTask(no, arglist, result)
+                    task = MPTask(no, arglist, result, self.tm.mp_manager)
                 elif cmd in self.obj.thcommands:
                     task = ThreadedTask(no, arglist, result)
                 else: # blocking task
@@ -599,13 +707,8 @@ class Interpreter(object):
                 given_input, output, expected_output)
             raise AssertionError(msg) 
 
-    def _getoutputs(self, lines, intlist):
-        "helper used in parse_doctest"
-        for i, start in enumerate(intlist[:-1]):
-            end = intlist[i + 1]
-            yield '\n'.join(lines[start+1:end])
-
     def _parse_doctest(self, lineiter):
+        "Returns the lines of input, the lines of output, and the line number"
         lines = [line.strip() for line in lineiter]
         inputs = []
         positions = []
@@ -614,7 +717,11 @@ class Interpreter(object):
                 inputs.append(line[3:])
                 positions.append(i)
         positions.append(len(lines) + 1) # last position
-        return zip(inputs, self._getoutputs(lines, positions), positions)
+        outputs = []
+        for i, start in enumerate(positions[:-1]):
+            end = positions[i + 1]
+            outputs.append('\n'.join(lines[start+1:end]))
+        return zip(inputs, outputs, positions)
 
     def doctest(self, lineiter, verbose=False):
         """
@@ -635,9 +742,7 @@ class Interpreter(object):
                     raise task.etype, task.exc, task.tb
 
     def execute(self, lineiter, verbose=False):
-        """
-        Execute a lineiter of commands in a context and print the output.
-        """
+        "Execute a lineiter of commands in a context and print the output"
         with self:
             for line in lineiter:
                 if verbose:
@@ -645,19 +750,26 @@ class Interpreter(object):
                 task = self.send(line) # finished task
                 if task.etype: # there was an error
                     raise task.etype, task.exc, task.tb
-                if not task.synchronous:
-                    write('%s\n' % task.str)
+                write('%s\n' % task.str)
+
+    def multiline(self, stdin=sys.stdin, terminator=';', verbose=False):
+        "The multiline mode is especially suited for usage with emacs"
+        with self:
+            for line in read_long_line(stdin, terminator):
+                task = self.submit(line)
+                task.run()
+                write('%s\n' % task.str)
+                if verbose and task.traceback:
+                    write(task.traceback)
 
     def interact(self, stdin=sys.stdin, prompt='i> ', verbose=False):
-        """
-        Starts an interactive command loop reading commands from the
-        consolle. Using rlwrap is recommended.
-        """
+        "Starts an interactive command loop reading commands from the consolle"
         if stdin is sys.stdin and readline: # use readline
             histfile = os.path.expanduser('~/.%s.history' % self.name)
-            stdin = ReadlineInput(self.commands, prompt, histfile=histfile)
-        self.stdin = stdin
-        self.prompt = getattr(stdin, 'prompt', prompt)
+            self.stdin = ReadlineInput(self.commands, histfile=histfile)
+        else:
+            self.stdin = stdin
+        self.prompt = prompt
         self.verbose = verbose
         intro = self.obj.__doc__ or ''
         write(intro + '\n')
@@ -665,19 +777,32 @@ class Interpreter(object):
             if self.stdin is sys.stdin: # do not close stdin automatically
                 self._manage_input()
             else:
-                with self.stdin:
+                with self.stdin: # close stdin automatically
                     self._manage_input()
 
     def _manage_input(self):
-        while True: # using 'for' would not work well with unbuffered mode
-            if not isinstance(self.stdin, ReadlineInput):
-                write(self.prompt) # else the prompt is already there
-            line = self.stdin.readline() # including \n
+        "Convert input lines into task which are then executed"
+        for line in iter(lambda : read_line(self.stdin, self.prompt), ''):
+            line = line.strip()
             if not line:
-                break
-            task = self.make_task(line)
-            self.tm.run_task(task)
-            if self.verbose and task.synchronous and task.etype:
+                continue
+            task = self.submit(line)
+            task.run() # synchronous or not
+            write(str(task) + '\n')
+            if self.verbose and task.etype:
                 write(task.traceback)
-            if task.etype or not task.synchronous:
-                write(str(task) + '\n')
+
+    def start_server(self, port=2199, **kw):
+        """Starts an asyncore server reading commands for clients and opening
+        a new interpreter for each connection."""
+        _AsynServer(self, _AsynHandler, port) # register the server
+        try:
+            asyncore.loop(**kw)
+        except KeyboardInterrupt:
+            pass
+        finally:
+            asyncore.close_all()
+
+    def stop_server(self, wait=0.0):
+        "Stops the asyncore server, possibly after a given number of seconds"
+        threading.Timer(wait, asyncore.socket_map.clear).start()
