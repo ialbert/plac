@@ -513,8 +513,12 @@ defined in the ``ishelve2`` module like the following one:
 The first line of the ``.plac`` script contains the name of the
 python module containing the plac interpreter and the arguments
 which must be passed to its main function in order to be able
-to instantiate an interpreter object. The other lines contains
-commands. Then you can run the script as follows::
+to instantiate an interpreter object. In this case I appended
+``:ShelveInterface`` to the name of the module to specify the
+object that must be imported: if not specified, by default the
+object named 'main' is imported.
+The other lines contains commands. 
+You can run the script as follows::
 
  $ plac_runner.py --batch ishelve2.plac
  setting a=1

@@ -324,7 +324,7 @@ endobj
  /Dest [ 86 0 R
  /XYZ
  62.69291
- 460.0769
+ 469.3633
  0 ]
  /Rect [ 62.69291
  398.5936
@@ -342,7 +342,7 @@ endobj
  /Dest [ 86 0 R
  /XYZ
  62.69291
- 460.0769
+ 469.3633
  0 ]
  /Rect [ 527.0227
  398.5936
@@ -360,7 +360,7 @@ endobj
  /Dest [ 102 0 R
  /XYZ
  62.69291
- 554.6236
+ 566.6236
  0 ]
  /Rect [ 62.69291
  380.5936
@@ -378,7 +378,7 @@ endobj
  /Dest [ 102 0 R
  /XYZ
  62.69291
- 554.6236
+ 566.6236
  0 ]
  /Rect [ 521.4627
  380.5936
@@ -684,7 +684,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 765.0236
+ 715.8236
  0 ]
  /Rect [ 62.69291
  218.5936
@@ -702,7 +702,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 765.0236
+ 715.8236
  0 ]
  /Rect [ 521.4627
  218.5936
@@ -720,7 +720,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 468.0236
+ 418.8236
  0 ]
  /Rect [ 62.69291
  200.5936
@@ -738,7 +738,7 @@ endobj
  /Dest [ 138 0 R
  /XYZ
  62.69291
- 468.0236
+ 418.8236
  0 ]
  /Rect [ 521.4627
  200.5936
@@ -1376,9 +1376,9 @@ endobj
  0
  0 ]
  /Rect [ 431.7904
- 399.3936
+ 411.3936
  453.7245
- 411.3936 ]
+ 423.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1391,9 +1391,9 @@ endobj
  0
  0 ]
  /Rect [ 255.5885
- 369.3936
+ 381.3936
  278.2757
- 381.3936 ]
+ 393.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1406,9 +1406,9 @@ endobj
  0
  0 ]
  /Rect [ 513.6927
- 345.3936
+ 357.3936
  532.1846
- 357.3936 ]
+ 369.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1443,9 +1443,9 @@ endobj
  0
  0 ]
  /Rect [ 179.0529
- 424.6469
+ 433.9333
  201.1953
- 436.6469 ]
+ 445.9333 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1478,9 +1478,9 @@ endobj
  0
  0 ]
  /Rect [ 377.8504
- 472.1936
+ 484.1936
  409.861
- 484.1936 ]
+ 496.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1493,9 +1493,9 @@ endobj
  0
  0 ]
  /Rect [ 252.3128
- 460.1936
+ 472.1936
  275.3028
- 472.1936 ]
+ 484.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1508,9 +1508,9 @@ endobj
  0
  0 ]
  /Rect [ 381.9869
- 436.1936
+ 448.1936
  403.548
- 448.1936 ]
+ 460.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1523,9 +1523,9 @@ endobj
  0
  0 ]
  /Rect [ 480.1313
- 424.1936
+ 436.1936
  501.4627
- 436.1936 ]
+ 448.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1538,9 +1538,9 @@ endobj
  0
  0 ]
  /Rect [ 366.9454
- 394.1936
+ 406.1936
  388.8033
- 406.1936 ]
+ 418.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1553,9 +1553,9 @@ endobj
  0
  0 ]
  /Rect [ 170.8855
- 382.1936
+ 394.1936
  189.7755
- 394.1936 ]
+ 406.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1593,9 +1593,9 @@ endobj
  0
  0 ]
  /Rect [ 390.8027
- 699.3936
+ 711.3936
  435.0027
- 711.3936 ]
+ 723.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1608,9 +1608,9 @@ endobj
  0
  0 ]
  /Rect [ 213.451
- 687.3936
+ 699.3936
  237.5255
- 699.3936 ]
+ 711.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1623,9 +1623,9 @@ endobj
  0
  0 ]
  /Rect [ 114.9429
- 663.3936
+ 675.3936
  157.1829
- 675.3936 ]
+ 687.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1638,9 +1638,9 @@ endobj
  0
  0 ]
  /Rect [ 385.0429
- 663.3936
+ 675.3936
  403.3829
- 675.3936 ]
+ 687.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1653,9 +1653,9 @@ endobj
  0
  0 ]
  /Rect [ 350.6129
- 633.3936
+ 645.3936
  371.7329
- 645.3936 ]
+ 657.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1668,9 +1668,9 @@ endobj
  0
  0 ]
  /Rect [ 256.6729
- 615.3936
+ 627.3936
  277.7929
- 627.3936 ]
+ 639.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1683,9 +1683,9 @@ endobj
  0
  0 ]
  /Rect [ 149.5469
- 519.1936
+ 531.1936
  172.1982
- 531.1936 ]
+ 543.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -1698,9 +1698,9 @@ endobj
  0
  0 ]
  /Rect [ 224.3178
- 507.1936
+ 519.1936
  260.8853
- 519.1936 ]
+ 531.1936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2307,9 +2307,9 @@ endobj
  0
  0 ]
  /Rect [ 91.57623
- 729.5936
+ 680.3936
  114.8995
- 741.5936 ]
+ 692.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2322,9 +2322,9 @@ endobj
  0
  0 ]
  /Rect [ 106.6216
- 432.5936
+ 383.3936
  128.3202
- 444.5936 ]
+ 395.3936 ]
  /Subtype /Link
  /Type /Annot >>
 endobj
@@ -2380,7 +2380,7 @@ endobj
 % 'R141': class PDFInfo 
 141 0 obj
 << /Author (Michele Simionato)
- /CreationDate (D:20100801071315-01'00')
+ /CreationDate (D:20100802070955-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
@@ -2469,7 +2469,7 @@ endobj
 << /Dest [ 86 0 R
  /XYZ
  62.69291
- 460.0769
+ 469.3633
  0 ]
  /Next 150 0 R
  /Parent 142 0 R
@@ -2481,7 +2481,7 @@ endobj
 << /Dest [ 102 0 R
  /XYZ
  62.69291
- 554.6236
+ 566.6236
  0 ]
  /Next 151 0 R
  /Parent 142 0 R
@@ -2589,7 +2589,7 @@ endobj
 << /Dest [ 138 0 R
  /XYZ
  62.69291
- 765.0236
+ 715.8236
  0 ]
  /Next 160 0 R
  /Parent 142 0 R
@@ -2601,7 +2601,7 @@ endobj
 << /Dest [ 138 0 R
  /XYZ
  62.69291
- 468.0236
+ 418.8236
  0 ]
  /Parent 142 0 R
  /Prev 159 0 R
@@ -3835,11 +3835,11 @@ endobj
 % 'R169': class PDFStream 
 169 0 obj
 % page stream
-<< /Length 4289 >>
+<< /Length 4262 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 475.8236 cm
+1 0 0 1 62.69291 487.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -3849,30 +3849,30 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 288 re B*
+n -6 -6 468.6898 276 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 269.71 Tm /F4 10 Tf 12 TL (        self.sh[name] = value) Tj T* (    def show\(self, *names\):) Tj T* (        "show given parameters") Tj T* (        for name in names:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\) # no error checking) Tj T* (    def showall\(self\):) Tj T* (        "show all parameters") Tj T* (        for name in self.sh:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\)) Tj T* (    def delete\(self, name=None\):) Tj T* (        "delete given parameter \(or everything\)") Tj T* (        if name is None:) Tj T* (            yield 'deleting everything') Tj T* (            self.sh.clear\(\)) Tj T* (        else:) Tj T* (            yield 'deleting %s' % name) Tj T* (            del self.sh[name] # no error checking) Tj T*  T* (main = ShelveInterface # the main 'function' can also be a class!) Tj T*  T* (if __name__ == '__main__':) Tj T* (    shelve_interface = plac.call\(main\)) Tj T* (    plac.Interpreter\(shelve_interface\).interact\(\)) Tj T* ET
+BT 1 0 0 1 0 257.71 Tm /F4 10 Tf 12 TL (        self.sh[name] = value) Tj T* (    def show\(self, *names\):) Tj T* (        "show given parameters") Tj T* (        for name in names:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\) # no error checking) Tj T* (    def showall\(self\):) Tj T* (        "show all parameters") Tj T* (        for name in self.sh:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\)) Tj T* (    def delete\(self, name=None\):) Tj T* (        "delete given parameter \(or everything\)") Tj T* (        if name is None:) Tj T* (            yield 'deleting everything') Tj T* (            self.sh.clear\(\)) Tj T* (        else:) Tj T* (            yield 'deleting %s' % name) Tj T* (            del self.sh[name] # no error checking) Tj T*  T* (main = ShelveInterface # useful for the tests) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.Interpreter\(plac.call\(ShelveInterface\)\).interact\(\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 383.8236 cm
+1 0 0 1 62.69291 395.8236 cm
 q
 BT 1 0 0 1 0 76.82 Tm .885366 Tw 12 TL /F4 10 Tf 0 0 0 rg (plac.Interpreter ) Tj /F1 10 Tf (objects wrap context manager objects consistently. In other words, if you wrap an) Tj T* 0 Tw 2.323828 Tw (object with ) Tj /F4 10 Tf (__enter__ ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (__exit__ ) Tj /F1 10 Tf (methods, they are invoked in the right order \() Tj /F4 10 Tf (__enter__) Tj T* 0 Tw .23528 Tw /F1 10 Tf (before the interpreter loop starts and ) Tj /F4 10 Tf (__exit__ ) Tj /F1 10 Tf (after the interpreter loop ends, both in the regular and in) Tj T* 0 Tw 1.916412 Tw (the exceptional case\). In our example, the methods ) Tj /F4 10 Tf (__enter__ ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (__exit__ ) Tj /F1 10 Tf (make sure the the) Tj T* 0 Tw .339398 Tw (shelve is opened and closed correctly even in the case of exceptions. Notice that I have not implemented) Tj T* 0 Tw .814104 Tw (any error checking in the ) Tj /F4 10 Tf (show ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (delete ) Tj /F1 10 Tf (methods on purpose, to verify that ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (works correctly in) Tj T* 0 Tw (the presence of exceptions.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 305.8236 cm
+1 0 0 1 62.69291 317.8236 cm
 q
 BT 1 0 0 1 0 64.82 Tm 1.567126 Tw 12 TL /F1 10 Tf 0 0 0 rg (When working with command containers, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (automatically adds two special commands to the set of) Tj T* 0 Tw 1.176136 Tw (provided commands: ) Tj /F4 10 Tf (.help ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (.last_tb) Tj /F1 10 Tf (. The ) Tj /F4 10 Tf (.help ) Tj /F1 10 Tf (command is the easier to understand: when) Tj T* 0 Tw .39811 Tw (invoked without arguments it displays the list of available commands with the same formatting of the ) Tj 0 0 .501961 rg (cmd) Tj T* 0 Tw 1.19561 Tw 0 0 0 rg (module; when invoked with the name of a command it displays the usage message for that command.) Tj T* 0 Tw 2.33686 Tw (The ) Tj /F4 10 Tf (.last_tb ) Tj /F1 10 Tf (command is useful when debugging: in case of errors, it allows you to display the) Tj T* 0 Tw (traceback of the last executed command.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 287.8236 cm
+1 0 0 1 62.69291 299.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is a session of usage on an Unix-like operating system:) Tj T* ET
@@ -3889,10 +3889,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 180 re B*
+n -6 -6 468.6898 192 re B*
 Q
 q
-BT 1 0 0 1 0 161.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ python ishelve2.py) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T* (i) Tj (>) Tj ( .help) Tj T*  T* (special commands) Tj T* (================) Tj T* (.help .last_tb) Tj T*  T* (custom commands) Tj T* (===============) Tj T* (delete  set  show  showall) Tj T*  T* ET
+BT 1 0 0 1 0 173.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ python ishelve2.py) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T* (i) Tj (>) Tj ( .help) Tj T*  T* (special commands) Tj T* (================) Tj T* (.help .last_tb) Tj T*  T* (custom commands) Tj T* (===============) Tj T* (delete  set  show  showall) Tj T*  T* (i) Tj (>) Tj ( delete) Tj T* ET
 Q
 Q
 Q
@@ -3912,11 +3912,11 @@ endobj
 % 'R170': class PDFStream 
 170 0 obj
 % page stream
-<< /Length 3743 >>
+<< /Length 3748 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 504.0769 cm
+1 0 0 1 62.69291 513.3633 cm
 q
 q
 .773863 0 0 .773863 0 0 cm
@@ -3926,35 +3926,35 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 606 336 re B*
+n -6 -6 606 324 re B*
 Q
 q
-BT 1 0 0 1 0 317.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (i) Tj (>) Tj ( delete) Tj T* (deleting everything) Tj T* (i) Tj (>) Tj ( set a pippo) Tj T* (setting a=pippo) Tj T* (i) Tj (>) Tj ( set b lippo) Tj T* (setting b=lippo) Tj T* (i) Tj (>) Tj ( showall) Tj T* (b = lippo) Tj T* (a = pippo) Tj T* (i) Tj (>) Tj ( show a b) Tj T* (a = pippo) Tj T* (b = lippo) Tj T* (i) Tj (>) Tj ( del a) Tj T* (deleting a) Tj T* (i) Tj (>) Tj ( showall) Tj T* (b = lippo) Tj T* (i) Tj (>) Tj ( delete a) Tj T* (deleting a) Tj T* (KeyError: 'a') Tj T* (i) Tj (>) Tj ( .last_tb) Tj T* ( File "/usr/local/lib/python2.6/dist-packages/plac-0.6.0-py2.6.egg/plac_ext.py", line 190, in _wrap) Tj T* (    for value in genobj:) Tj T* (  File "./ishelve2.py", line 37, in delete) Tj T* (    del self.sh[name] # no error checking) Tj T* (  File "/usr/lib/python2.6/shelve.py", line 136, in __delitem__) Tj T* (    del self.dict[key]) Tj T* (i) Tj (>) Tj T* ET
+BT 1 0 0 1 0 305.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (deleting everything) Tj T* (i) Tj (>) Tj ( set a pippo) Tj T* (setting a=pippo) Tj T* (i) Tj (>) Tj ( set b lippo) Tj T* (setting b=lippo) Tj T* (i) Tj (>) Tj ( showall) Tj T* (b = lippo) Tj T* (a = pippo) Tj T* (i) Tj (>) Tj ( show a b) Tj T* (a = pippo) Tj T* (b = lippo) Tj T* (i) Tj (>) Tj ( del a) Tj T* (deleting a) Tj T* (i) Tj (>) Tj ( showall) Tj T* (b = lippo) Tj T* (i) Tj (>) Tj ( delete a) Tj T* (deleting a) Tj T* (KeyError: 'a') Tj T* (i) Tj (>) Tj ( .last_tb) Tj T* ( File "/usr/local/lib/python2.6/dist-packages/plac-0.6.0-py2.6.egg/plac_ext.py", line 190, in _wrap) Tj T* (    for value in genobj:) Tj T* (  File "./ishelve2.py", line 37, in delete) Tj T* (    del self.sh[name] # no error checking) Tj T* (  File "/usr/lib/python2.6/shelve.py", line 136, in __delitem__) Tj T* (    del self.dict[key]) Tj T* (i) Tj (>) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 472.0769 cm
+1 0 0 1 62.69291 481.3633 cm
 q
 BT 1 0 0 1 0 16.82 Tm 2.571235 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice that in interactive mode the traceback is hidden, unless you pass the ) Tj /F4 10 Tf (verbose ) Tj /F1 10 Tf (flag to the) Tj T* 0 Tw /F4 10 Tf (Interpreter.interact ) Tj /F1 10 Tf (method.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 439.0769 cm
+1 0 0 1 62.69291 448.3633 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Readline support) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 361.0769 cm
+1 0 0 1 62.69291 370.3633 cm
 q
 BT 1 0 0 1 0 64.82 Tm 1.022485 Tw 12 TL /F1 10 Tf 0 0 0 rg (Starting from release 0.6 ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (offers full readline support. That means that if your Python was compiled) Tj T* 0 Tw 2.120697 Tw (with readline support you get autocompletion and persistent command history for free. By default all) Tj T* 0 Tw .144104 Tw (commands are autocomplete in a case sensitive way. If you want to add new words to the autocompletion) Tj T* 0 Tw .116488 Tw (set, or you want to change the location of the ) Tj /F4 10 Tf (.history ) Tj /F1 10 Tf (file, or to change the case sensitivity, the way to) Tj T* 0 Tw .18436 Tw (go is to pass a ) Tj /F4 10 Tf (plac.ReadlineInput ) Tj /F1 10 Tf (object to the interpreter. Here is an example, assuming you want) Tj T* 0 Tw (to build a database interface understanding SQL commands:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 108.8731 cm
+1 0 0 1 62.69291 106.5859 cm
 q
 q
 .96447 0 0 .96447 0 0 cm
@@ -3964,10 +3964,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 486 252 re B*
+n -6 -6 486 264 re B*
 Q
 q
-BT 1 0 0 1 0 233.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (import os, plac) Tj T* (from sqlalchemy.ext.sqlsoup import SqlSoup) Tj T*  T* (SQLKEYWORDS = set\(['select', 'from', 'inner', 'join', 'outer', 'left', 'right']) Tj T* (                  \) # and many others) Tj T* (DBTABLES = set\(['table1', 'table2']\) # you can read them from the db schema) Tj T*  T* (COMPLETIONS = SQLKEYWORDS | DBTABLES) Tj T*  T* (class SqlInterface\(object\):) Tj T* (    commands = ['SELECT']) Tj T* (    def __init__\(self, dsn\):) Tj T* (        self.soup = SqlSoup\(dsn\)) Tj T* (    def SELECT\(self, argstring\):) Tj T* (        sql = 'SELECT ' + argstring) Tj T* (        for row in self.soup.bind.execute\(sql\):) Tj T* (            yield str\(row\) # the formatting can be much improved) Tj T*  T* (rl_input = plac.ReadlineInput\() Tj T* (    COMPLETIONS, histfile=os.path.expanduser\('~/.sql_interface.history'\), ) Tj T* ET
+BT 1 0 0 1 0 245.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (import os, plac) Tj T* (from sqlalchemy.ext.sqlsoup import SqlSoup) Tj T*  T* (SQLKEYWORDS = set\(['select', 'from', 'inner', 'join', 'outer', 'left', 'right']) Tj T* (                  \) # and many others) Tj T* (DBTABLES = set\(['table1', 'table2']\) # you can read them from the db schema) Tj T*  T* (COMPLETIONS = SQLKEYWORDS | DBTABLES) Tj T*  T* (class SqlInterface\(object\):) Tj T* (    commands = ['SELECT']) Tj T* (    def __init__\(self, dsn\):) Tj T* (        self.soup = SqlSoup\(dsn\)) Tj T* (    def SELECT\(self, argstring\):) Tj T* (        sql = 'SELECT ' + argstring) Tj T* (        for row in self.soup.bind.execute\(sql\):) Tj T* (            yield str\(row\) # the formatting can be much improved) Tj T*  T* (rl_input = plac.ReadlineInput\() Tj T* (    COMPLETIONS, histfile=os.path.expanduser\('~/.sql_interface.history'\), ) Tj T* (    case_sensitive=False\)) Tj T* ET
 Q
 Q
 Q
@@ -3987,11 +3987,11 @@ endobj
 % 'R171': class PDFStream 
 171 0 obj
 % page stream
-<< /Length 4535 >>
+<< /Length 4503 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 643.8236 cm
+1 0 0 1 62.69291 655.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4001,24 +4001,24 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 120 re B*
+n -6 -6 468.6898 108 re B*
 Q
 q
-BT 1 0 0 1 0 101.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (    case_sensitive=False\)) Tj T*  T* (def split_on_first_space\(line, commentchar\):) Tj T* (    return line.strip\(\).split\(' ', 1\) # ignoring comments) Tj T* (    ) Tj T* (if __name__ == '__main__':) Tj T* (    si = plac.call\(SqlInterface\)) Tj T* (    i = plac.Interpreter\(si, split=split_on_first_space\)) Tj T* (    i.interact\(rl_input, prompt='sql) Tj (>) Tj ( '\)) Tj T* ET
+BT 1 0 0 1 0 89.71 Tm 12 TL /F4 10 Tf 0 0 0 rg  T* (def split_on_first_space\(line, commentchar\):) Tj T* (    return line.strip\(\).split\(' ', 1\) # ignoring comments) Tj T* (    ) Tj T* (if __name__ == '__main__':) Tj T* (    si = plac.call\(SqlInterface\)) Tj T* (    i = plac.Interpreter\(si, split=split_on_first_space\)) Tj T* (    i.interact\(rl_input, prompt='sql) Tj (>) Tj ( '\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 623.8236 cm
+1 0 0 1 62.69291 635.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is an example of usage:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 566.6236 cm
+1 0 0 1 62.69291 578.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4038,19 +4038,19 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 486.6236 cm
+1 0 0 1 62.69291 498.6236 cm
 q
 BT 1 0 0 1 0 64.82 Tm 1.951318 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can check that entering just ) Tj /F4 10 Tf (sel ) Tj /F1 10 Tf (and pressing TAB the readline library completes the ) Tj /F4 10 Tf (SELECT) Tj T* 0 Tw .797356 Tw /F1 10 Tf (keyword for you and makes it upper case; idem for ) Tj /F4 10 Tf (FROM) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (INNER) Tj /F1 10 Tf (, ) Tj /F4 10 Tf (JOIN ) Tj /F1 10 Tf (and even for the names of the) Tj T* 0 Tw .256235 Tw (tables. An obvious improvement is to read the names of the tables by introspecting the database: actually) Tj T* 0 Tw 1.616654 Tw (you can even read the names of the views and of the columns, and have full autocompletion. All the) Tj T* 0 Tw 2.047251 Tw (entered commands and recorded and saved in the file ) Tj /F4 10 Tf (~/.sql_interface.history ) Tj /F1 10 Tf (when exiting) Tj T* 0 Tw (from the command-line interface.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 408.6236 cm
+1 0 0 1 62.69291 420.6236 cm
 q
 BT 1 0 0 1 0 64.82 Tm 2.010574 Tw 12 TL /F1 10 Tf 0 0 0 rg (If the readline library is not available, my suggestion is to use the ) Tj 0 0 .501961 rg (rlwrap ) Tj 0 0 0 rg (tool which provides similar) Tj T* 0 Tw 1.869984 Tw (features, at least on Unix-like platforms. ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (should also work fine on Windows with the ) Tj 1 0 0 rg (pyreadline_) Tj T* 0 Tw .74408 Tw 0 0 0 rg (library \(I do not use Windows, so this part is very little tested: I tried it only once and it worked, but your) Tj T* 0 Tw .441163 Tw (mileage may vary\). For people worried about licenses, I will notice that ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (uses the readline library only) Tj T* 0 Tw .211353 Tw (if available, it does not include it and it does not rely on it in any fundamental way, so that the ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (licence) Tj T* 0 Tw (does not need to be the GPL \(actually it is a BSD do-whatever-you-want-with-it licence\).) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 366.6236 cm
+1 0 0 1 62.69291 378.6236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .187882 Tw 12 TL /F1 10 Tf 0 0 0 rg (The interactive mode of ) Tj /F4 10 Tf (plac ) Tj /F1 10 Tf (can be used as a replacement of the ) Tj 0 0 .501961 rg (cmd ) Tj 0 0 0 rg (module in the standard library. It) Tj T* 0 Tw 2.730651 Tw (is actually better than ) Tj 0 0 .501961 rg (cmd) Tj 0 0 0 rg (: for instance, the ) Tj /F4 10 Tf (.help ) Tj /F1 10 Tf (command is more powerful, since it provides) Tj T* 0 Tw (information about the arguments accepted by the given command:) Tj T* ET
 Q
@@ -4066,10 +4066,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 264 re B*
+n -6 -6 468.6898 276 re B*
 Q
 q
-BT 1 0 0 1 0 245.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (i) Tj (>) Tj ( .help set) Tj T* (usage:  set name value) Tj T*  T* (set name value) Tj T*  T* (positional arguments:) Tj T* (  name) Tj T* (  value) Tj T*  T* (i) Tj (>) Tj ( .help delete) Tj T* (usage:  delete [name]) Tj T*  T* (delete given parameter \(or everything\)) Tj T*  T* (positional arguments:) Tj T* (  name) Tj T*  T* (i) Tj (>) Tj ( .help show) Tj T* (usage:  show [names [names ...]]) Tj T*  T* (show given parameters) Tj T* ET
+BT 1 0 0 1 0 257.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (i) Tj (>) Tj ( .help set) Tj T* (usage:  set name value) Tj T*  T* (set name value) Tj T*  T* (positional arguments:) Tj T* (  name) Tj T* (  value) Tj T*  T* (i) Tj (>) Tj ( .help delete) Tj T* (usage:  delete [name]) Tj T*  T* (delete given parameter \(or everything\)) Tj T*  T* (positional arguments:) Tj T* (  name) Tj T*  T* (i) Tj (>) Tj ( .help show) Tj T* (usage:  show [names [names ...]]) Tj T*  T* (show given parameters) Tj T*  T* ET
 Q
 Q
 Q
@@ -4089,11 +4089,11 @@ endobj
 % 'R172': class PDFStream 
 172 0 obj
 % page stream
-<< /Length 5760 >>
+<< /Length 6026 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 715.8236 cm
+1 0 0 1 62.69291 727.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4103,35 +4103,35 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
+n -6 -6 468.6898 36 re B*
 Q
 q
-BT 1 0 0 1 0 29.71 Tm 12 TL /F4 10 Tf 0 0 0 rg  T* (positional arguments:) Tj T* (  names) Tj T* ET
+BT 1 0 0 1 0 17.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (positional arguments:) Tj T* (  names) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 659.8236 cm
+1 0 0 1 62.69291 671.8236 cm
 q
 BT 1 0 0 1 0 40.82 Tm 1.959985 Tw 12 TL /F1 10 Tf 0 0 0 rg (As you can imagine, the help message is provided by the underlying ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (subparser \(there is a) Tj T* 0 Tw 2.954524 Tw (subparser for each command\). ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (commands accept options, flags, varargs, keyword arguments,) Tj T* 0 Tw .719318 Tw (arguments with defaults, arguments with a fixed number of choices, type conversion and all the features) Tj T* 0 Tw (provided of ) Tj 0 0 .501961 rg (argparse ) Tj 0 0 0 rg (which should be reimplemented from scratch using ) Tj 0 0 .501961 rg (plac) Tj 0 0 0 rg (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 629.8236 cm
+1 0 0 1 62.69291 641.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.78248 Tw 12 TL /F1 10 Tf 0 0 0 rg (Moreover at the moment ) Tj /F4 10 Tf (plac ) Tj /F1 10 Tf (also understands command abbreviations. However, this feature may) Tj T* 0 Tw (disappear in future releases. It was meaningful in the past, when ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (did not support readline.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 611.8236 cm
+1 0 0 1 62.69291 623.8236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Notice that if an abbreviation is ambiguous, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (warns you:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 566.6236 cm
+1 0 0 1 62.69291 578.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4151,25 +4151,25 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 533.6236 cm
+1 0 0 1 62.69291 545.6236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (The plac runner) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 467.6236 cm
+1 0 0 1 62.69291 479.6236 cm
 q
 BT 1 0 0 1 0 52.82 Tm 1.531318 Tw 12 TL /F1 10 Tf 0 0 0 rg (The distribution of ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (includes a runner script named ) Tj /F4 10 Tf (plac_runner.py) Tj /F1 10 Tf (, which will be installed in a) Tj T* 0 Tw .44748 Tw (suitable directory in your system by ) Tj 0 0 .501961 rg (distutils ) Tj 0 0 0 rg (\(say in ) Tj /F4 10 Tf (\\usr\\local\\bin\\plac_runner.py ) Tj /F1 10 Tf (in a Unix-like) Tj T* 0 Tw .680651 Tw (operative system\). The runner provides many facilities to run ) Tj /F4 10 Tf (.plac ) Tj /F1 10 Tf (scripts and ) Tj /F4 10 Tf (.placet ) Tj /F1 10 Tf (files, as well) Tj T* 0 Tw 1.47311 Tw (as Python modules containg a ) Tj /F4 10 Tf (main ) Tj /F1 10 Tf (object, which can be a function, a command container object or) Tj T* 0 Tw (even a command container class.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 437.6236 cm
+1 0 0 1 62.69291 449.6236 cm
 q
 BT 1 0 0 1 0 16.82 Tm 1.994269 Tw 12 TL /F1 10 Tf 0 0 0 rg (For instance, suppose you want to execute a script containing commands defined in the ) Tj /F4 10 Tf (ishelve2) Tj T* 0 Tw /F1 10 Tf (module like the following one:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 368.4236 cm
+1 0 0 1 62.69291 380.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4183,20 +4183,20 @@ n -6 -6 468.6898 60 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (#!ishelve2.py -c ~/conf.shelve) Tj T* (set a 1) Tj T* (del a) Tj T* (del a # intentional error) Tj T* ET
+BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL (#!ishelve2.py:ShelveInterface -c ~/conf.shelve) Tj T* (set a 1) Tj T* (del a) Tj T* (del a # intentional error) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 324.4236 cm
+1 0 0 1 62.69291 312.4236 cm
 q
-BT 1 0 0 1 0 28.82 Tm .575868 Tw 12 TL /F1 10 Tf 0 0 0 rg (The first line of the ) Tj /F4 10 Tf (.plac ) Tj /F1 10 Tf (script contains the name of the python module containing the plac interpreter) Tj T* 0 Tw 2.327209 Tw (and the arguments which must be passed to its main function in order to be able to instantiate an) Tj T* 0 Tw (interpreter object. The other lines contains commands. Then you can run the script as follows:) Tj T* ET
+BT 1 0 0 1 0 52.82 Tm .575868 Tw 12 TL /F1 10 Tf 0 0 0 rg (The first line of the ) Tj /F4 10 Tf (.plac ) Tj /F1 10 Tf (script contains the name of the python module containing the plac interpreter) Tj T* 0 Tw 2.327209 Tw (and the arguments which must be passed to its main function in order to be able to instantiate an) Tj T* 0 Tw .202485 Tw (interpreter object. In this case I appended ) Tj /F4 10 Tf (:ShelveInterface ) Tj /F1 10 Tf (to the name of the module to specify the) Tj T* 0 Tw 1.030574 Tw (object that must be imported: if not specified, by default the object named 'main' is imported. The other) Tj T* 0 Tw (lines contains commands. You can run the script as follows:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 235.2505 cm
+1 0 0 1 62.69291 223.2505 cm
 q
 q
 .952737 0 0 .952737 0 0 cm
@@ -4217,24 +4217,24 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 203.2505 cm
+1 0 0 1 62.69291 191.2505 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL 2.79186 Tw (The last command intentionally contained an error, to show that the plac runner does not eat the) Tj T* 0 Tw (traceback.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 173.2505 cm
+1 0 0 1 62.69291 161.2505 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .437633 Tw (The runner can also be used to run Python modules in interactive mode and non-interactive mode. If you) Tj T* 0 Tw (put this alias in your bashrc) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 167.2505 cm
+1 0 0 1 62.69291 155.2505 cm
 Q
 q
-1 0 0 1 62.69291 155.2505 cm
+1 0 0 1 62.69291 143.2505 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 BT 1 0 0 1 0 2 Tm  T* ET
@@ -4249,10 +4249,10 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 155.2505 cm
+1 0 0 1 62.69291 143.2505 cm
 Q
 q
-1 0 0 1 62.69291 125.2505 cm
+1 0 0 1 62.69291 113.2505 cm
 q
 BT 1 0 0 1 0 16.82 Tm 2.955318 Tw 12 TL /F1 10 Tf 0 0 0 rg (\(or you define a suitable ) Tj /F4 10 Tf (plac.bat ) Tj /F1 10 Tf (script in Windows\) you can run the ) Tj /F4 10 Tf (ishelve2.py ) Tj /F1 10 Tf (script in) Tj T* 0 Tw (interactive mode as follows:) Tj T* ET
 Q
@@ -4271,7 +4271,7 @@ endobj
 % 'R173': class PDFStream 
 173 0 obj
 % page stream
-<< /Length 4832 >>
+<< /Length 4848 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4314,7 +4314,7 @@ q
 n -6 -6 468.6898 120 re B*
 Q
 q
-BT 1 0 0 1 0 101.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (#!ishelve2.py -configfile=~/test.shelve) Tj T* (i) Tj (>) Tj ( del) Tj T* (deleting everything) Tj T* (i) Tj (>) Tj ( set a 1) Tj T* (setting a=1) Tj T* (i) Tj (>) Tj ( set b 2) Tj T* (setting b=2) Tj T* (i) Tj (>) Tj ( show a) Tj T* (a = 1) Tj T* ET
+BT 1 0 0 1 0 101.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (#!ishelve2.py:ShelveInterface -configfile=~/test.shelve) Tj T* (i) Tj (>) Tj ( del) Tj T* (deleting everything) Tj T* (i) Tj (>) Tj ( set a 1) Tj T* (setting a=1) Tj T* (i) Tj (>) Tj ( set b 2) Tj T* (setting b=2) Tj T* (i) Tj (>) Tj ( show a) Tj T* (a = 1) Tj T* ET
 Q
 Q
 Q
@@ -4463,7 +4463,7 @@ endobj
 % 'R174': class PDFStream 
 174 0 obj
 % page stream
-<< /Length 5036 >>
+<< /Length 5041 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4546,7 +4546,7 @@ q
 n -6 -6 456 276 re B*
 Q
 q
-BT 1 0 0 1 0 257.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (;;; Emacs-plac integration: add the following to your .emacs) Tj T*  T* (\(define-generic-mode 'plac-mode) Tj T* (  '\("#"\) ; comment chars) Tj T* (  '\(\); highlighted commands) Tj T* (  nil) Tj T* (  '\(".plac"\); file extensions) Tj T* (  nil\)) Tj T* ( ) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f4]  'plac-start\)\)\)) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f5]  'plac-send\)\)\)) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f6]  'plac-stop\)\)\)) Tj T*  T* (\(defconst terminator 59\); ASCII code for the semicolon) Tj T* (\(defvar *plac-process* nil\)) Tj T*  T* (\(defun plac-start \(\)) Tj T* (  "Start an inferior plac process by inferring the script to use from the ) Tj T* (  shebang line") Tj T* (  \(interactive\)) Tj T* (  \(let \(\(shebang-line ) Tj T* (         \(save-excursion) Tj T* ET
+BT 1 0 0 1 0 257.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (;;; Emacs-plac integration: add the following to your .emacs) Tj T*  T* (\(define-generic-mode 'plac-mode) Tj T* (  '\("#"\) ; comment chars) Tj T* (  '\(\); highlighted commands) Tj T* (  nil) Tj T* (  '\(".plac\\\\'"\); file extensions) Tj T* (  nil\)) Tj T* ( ) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f4]  'plac-start\)\)\)) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f5]  'plac-send\)\)\)) Tj T* (\(add-hook 'plac-mode-hook \(lambda \(\) \(local-set-key [f6]  'plac-stop\)\)\)) Tj T*  T* (\(defconst terminator 59\); ASCII code for the semicolon) Tj T* (\(defvar *plac-process* nil\)) Tj T*  T* (\(defun plac-start \(\)) Tj T* (  "Start an inferior plac process by inferring the script to use from the ) Tj T* (  shebang line") Tj T* (  \(interactive\)) Tj T* (  \(let \(\(shebang-line ) Tj T* (         \(save-excursion) Tj T* ET
 Q
 Q
 Q
@@ -5826,7 +5826,7 @@ endobj
 % 'R185': class PDFStream 
 185 0 obj
 % page stream
-<< /Length 4799 >>
+<< /Length 4788 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -5883,7 +5883,7 @@ BT 1 0 0 1 0 100.82 Tm 1.258443 Tw 12 TL /F1 10 Tf 0 0 0 rg (A command-line orie
 Q
 Q
 q
-1 0 0 1 62.69291 309.6236 cm
+1 0 0 1 62.69291 273.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -5893,24 +5893,24 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
+n -6 -6 468.6898 120 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (import plac) Tj T* (from importer2 import FakeImporter) Tj T*  T* (if __name__ == '__main__':) Tj T* (    main = FakeImporter\('dsn'\)) Tj T* (    plac.Interpreter\(main\).start_server\(\) # default port 2199) Tj T* ET
+BT 1 0 0 1 0 101.71 Tm /F4 10 Tf 12 TL (import plac) Tj T* (from importer2 import FakeImporter) Tj T*  T* (def main\(port=2199\):) Tj T* (    main = FakeImporter\('dsn'\)) Tj T* (    plac.Interpreter\(main\).start_server\(port\)) Tj T* (    ) Tj T* (if __name__ == '__main__':) Tj T* (   plac.call\(main\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 289.6236 cm
+1 0 0 1 62.69291 253.6236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (You can connect to the server with ) Tj /F4 10 Tf (telnet ) Tj /F1 10 Tf (on port 2199, as follows:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 112.4236 cm
+1 0 0 1 62.69291 100.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -5920,10 +5920,10 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 168 re B*
+n -6 -6 468.6898 144 re B*
 Q
 q
-BT 1 0 0 1 0 149.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ telnet localhost 2199) Tj T* (Trying ::1...) Tj T* (Trying 127.0.0.1...) Tj T* (Connected to localhost.) Tj T* (Escape character is '^]'.) Tj T* (i) Tj (>) Tj ( import_file f1) Tj T* (i) Tj (>) Tj ( .list) Tj T* (<) Tj (ThreadedTask 1 [import_file f1] RUNNING) Tj (>) Tj  T* (i) Tj (>) Tj ( .out) Tj T* (Imported 100 lines) Tj T* (Imported 200 lines) Tj T* (i) Tj (>) Tj ( EOF) Tj T* (Connection closed by foreign host.) Tj T* ET
+BT 1 0 0 1 0 125.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ telnet localhost 2199) Tj T* (Trying ::1...) Tj T* (Trying 127.0.0.1...) Tj T* (Connected to localhost.) Tj T* (Escape character is '^]'.) Tj T* (i) Tj (>) Tj ( import_file f1) Tj T* (i) Tj (>) Tj ( .list) Tj T* (<) Tj (ThreadedTask 1 [import_file f1] RUNNING) Tj (>) Tj  T* (i) Tj (>) Tj ( .out) Tj T* (Imported 100 lines) Tj T* (Imported 200 lines) Tj T* ET
 Q
 Q
 Q
@@ -5943,29 +5943,49 @@ endobj
 % 'R186': class PDFStream 
 186 0 obj
 % page stream
-<< /Length 7057 >>
+<< /Length 7197 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 744.0236 cm
+1 0 0 1 62.69291 727.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+BT 1 0 0 1 0 17.71 Tm 12 TL /F4 10 Tf 0 0 0 rg (i) Tj (>) Tj ( EOF) Tj T* (Connection closed by foreign host.) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 694.8236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Summary) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 702.0236 cm
+1 0 0 1 62.69291 652.8236 cm
 q
 BT 1 0 0 1 0 28.82 Tm 2.203318 Tw 12 TL /F1 10 Tf 0 0 0 rg (Once ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (claimed to be the easiest command-line arguments parser in the world. Having read this) Tj T* 0 Tw .673322 Tw (document you may think that it is not so easy after all. But it is a false impression. Actually the rules are) Tj T* 0 Tw (quite simple:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 696.0236 cm
+1 0 0 1 62.69291 646.8236 cm
 Q
 q
-1 0 0 1 62.69291 696.0236 cm
+1 0 0 1 62.69291 646.8236 cm
 Q
 q
-1 0 0 1 62.69291 678.0236 cm
+1 0 0 1 62.69291 628.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -5985,13 +6005,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 678.0236 cm
+1 0 0 1 62.69291 628.8236 cm
 Q
 q
-1 0 0 1 62.69291 678.0236 cm
+1 0 0 1 62.69291 628.8236 cm
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 568.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -6069,13 +6089,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 568.8236 cm
 Q
 q
-1 0 0 1 62.69291 618.0236 cm
+1 0 0 1 62.69291 568.8236 cm
 Q
 q
-1 0 0 1 62.69291 588.0236 cm
+1 0 0 1 62.69291 538.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -6095,13 +6115,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 588.0236 cm
+1 0 0 1 62.69291 538.8236 cm
 Q
 q
-1 0 0 1 62.69291 588.0236 cm
+1 0 0 1 62.69291 538.8236 cm
 Q
 q
-1 0 0 1 62.69291 558.0236 cm
+1 0 0 1 62.69291 508.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -6121,13 +6141,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 558.0236 cm
+1 0 0 1 62.69291 508.8236 cm
 Q
 q
-1 0 0 1 62.69291 558.0236 cm
+1 0 0 1 62.69291 508.8236 cm
 Q
 q
-1 0 0 1 62.69291 528.0236 cm
+1 0 0 1 62.69291 478.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -6147,13 +6167,13 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 528.0236 cm
+1 0 0 1 62.69291 478.8236 cm
 Q
 q
-1 0 0 1 62.69291 528.0236 cm
+1 0 0 1 62.69291 478.8236 cm
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 448.8236 cm
 0 0 0 rg
 BT /F3 10 Tf 12 TL ET
 q
@@ -6173,38 +6193,38 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 448.8236 cm
 Q
 q
-1 0 0 1 62.69291 498.0236 cm
+1 0 0 1 62.69291 448.8236 cm
 Q
 q
-1 0 0 1 62.69291 480.0236 cm
+1 0 0 1 62.69291 430.8236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (Moreover, remember that ) Tj /F4 10 Tf (plac_runner.py ) Tj /F1 10 Tf (is your friend.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 447.0236 cm
+1 0 0 1 62.69291 397.8236 cm
 q
 BT 1 0 0 1 0 8.435 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Appendix: custom annotation objects) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 417.0236 cm
+1 0 0 1 62.69291 367.8236 cm
 q
 BT 1 0 0 1 0 16.82 Tm .578651 Tw 12 TL /F1 10 Tf 0 0 0 rg (Internally ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (uses an ) Tj /F4 10 Tf (Annotation ) Tj /F1 10 Tf (class to convert the tuples in the function signature into annotation) Tj T* 0 Tw (objects, i.e. objects with six attributes ) Tj /F4 10 Tf (help, kind, short, type, choices, metavar) Tj /F1 10 Tf (.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 387.0236 cm
+1 0 0 1 62.69291 337.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL .083735 Tw (Advanced users can implement their own annotation objects. For instance, here is an example of how you) Tj T* 0 Tw (could implement annotations for positional arguments:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 257.8236 cm
+1 0 0 1 62.69291 208.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -6225,14 +6245,14 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 237.8236 cm
+1 0 0 1 62.69291 188.6236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (You can use such annotations objects as follows:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 96.62362 cm
+1 0 0 1 62.69291 95.42362 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -6242,11 +6262,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 132 re B*
+n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 113.71 Tm /F4 10 Tf 12 TL (# example11.py) Tj T* (import plac) Tj T* (from annotations import Positional) Tj T*  T* (@plac.annotations\() Tj T* (    i=Positional\("This is an int", int\),) Tj T* (    n=Positional\("This is a float", float\),) Tj T* (    rest=Positional\("Other arguments"\)\)) Tj T* (def main\(i, n, *rest\):) Tj T* (    print\(i, n, rest\)) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F4 10 Tf 12 TL (# example11.py) Tj T* (import plac) Tj T* (from annotations import Positional) Tj T*  T* (@plac.annotations\() Tj T* (    i=Positional\("This is an int", int\),) Tj T* ET
 Q
 Q
 Q
@@ -6266,11 +6286,11 @@ endobj
 % 'R187': class PDFStream 
 187 0 obj
 % page stream
-<< /Length 1692 >>
+<< /Length 1862 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 715.8236 cm
+1 0 0 1 62.69291 667.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -6280,25 +6300,25 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 48 re B*
+n -6 -6 468.6898 96 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 29.71 Tm /F4 10 Tf 12 TL  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
+BT 1 0 0 1 0 77.71 Tm /F4 10 Tf 12 TL (    n=Positional\("This is a float", float\),) Tj T* (    rest=Positional\("Other arguments"\)\)) Tj T* (def main\(i, n, *rest\):) Tj T* (    print\(i, n, rest\)) Tj T*  T* (if __name__ == '__main__':) Tj T* (    import plac; plac.call\(main\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 695.8236 cm
+1 0 0 1 62.69291 647.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (Here is the usage message you get:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 566.6236 cm
+1 0 0 1 62.69291 518.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -6319,7 +6339,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 522.6236 cm
+1 0 0 1 62.69291 474.6236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .713516 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can go on and define ) Tj /F4 10 Tf (Option ) Tj /F1 10 Tf (and ) Tj /F4 10 Tf (Flag ) Tj /F1 10 Tf (classes, if you like. Using custom annotation objects you) Tj T* 0 Tw .17528 Tw (could do advanced things like extracting the annotations from a configuration file or from a database, but I) Tj T* 0 Tw (expect such use cases to be quite rare: the default mechanism should work pretty well for most users.) Tj T* ET
 Q
@@ -6719,59 +6739,59 @@ xref
 0000071778 00000 n
 0000077134 00000 n
 0000081556 00000 n
-0000085948 00000 n
-0000089794 00000 n
-0000094432 00000 n
-0000100295 00000 n
-0000105230 00000 n
-0000110369 00000 n
-0000113559 00000 n
-0000117346 00000 n
-0000120871 00000 n
-0000126958 00000 n
-0000131344 00000 n
-0000136786 00000 n
-0000141884 00000 n
-0000147062 00000 n
-0000151797 00000 n
-0000154392 00000 n
-0000159294 00000 n
-0000166454 00000 n
-0000168253 00000 n
-0000168715 00000 n
-0000168794 00000 n
-0000168873 00000 n
-0000168952 00000 n
-0000169031 00000 n
-0000169110 00000 n
-0000169189 00000 n
-0000169268 00000 n
-0000169347 00000 n
-0000169426 00000 n
-0000169506 00000 n
-0000169586 00000 n
-0000169666 00000 n
-0000169746 00000 n
-0000169826 00000 n
-0000169906 00000 n
-0000169986 00000 n
-0000170066 00000 n
-0000170146 00000 n
-0000170226 00000 n
-0000170306 00000 n
-0000170386 00000 n
-0000170466 00000 n
-0000170546 00000 n
-0000170626 00000 n
-0000170706 00000 n
+0000085921 00000 n
+0000089772 00000 n
+0000094378 00000 n
+0000100507 00000 n
+0000105458 00000 n
+0000110602 00000 n
+0000113792 00000 n
+0000117579 00000 n
+0000121104 00000 n
+0000127191 00000 n
+0000131577 00000 n
+0000137019 00000 n
+0000142117 00000 n
+0000147295 00000 n
+0000152030 00000 n
+0000154625 00000 n
+0000159516 00000 n
+0000166816 00000 n
+0000168785 00000 n
+0000169247 00000 n
+0000169326 00000 n
+0000169405 00000 n
+0000169484 00000 n
+0000169563 00000 n
+0000169642 00000 n
+0000169721 00000 n
+0000169800 00000 n
+0000169879 00000 n
+0000169958 00000 n
+0000170038 00000 n
+0000170118 00000 n
+0000170198 00000 n
+0000170278 00000 n
+0000170358 00000 n
+0000170438 00000 n
+0000170518 00000 n
+0000170598 00000 n
+0000170678 00000 n
+0000170758 00000 n
+0000170838 00000 n
+0000170918 00000 n
+0000170998 00000 n
+0000171078 00000 n
+0000171158 00000 n
+0000171238 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\270\205\223\242_\260\304s\324\201\036t\\;\334\337) (\270\205\223\242_\260\304s\324\201\036t\\;\334\337)] 
+ [(\373.sKQ\210\237\313\200B\274O\370\202\343\022) (\373.sKQ\210\237\313\200B\274O\370\202\343\022)] 
 
  /Info 141 0 R
  /Root 140 0 R
  /Size 215 >>
 startxref
-170755
+171287
 %%EOF

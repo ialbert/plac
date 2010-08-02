@@ -144,6 +144,10 @@ def import_main(path, *args, **pconf):
     An utility to import the main function of a plac tool. It also
     works with tool factories, if you pass the arguments.
     """
+    if ':' in path:
+        path, main_name = path.split(':')
+    else:
+        main_name = 'main'
     if not os.path.isabs(path): # relative path, look at PLACDIRS
         for placdir in PLACDIRS:
             fullpath = os.path.join(placdir, path)
@@ -154,7 +158,8 @@ def import_main(path, *args, **pconf):
     else:
         fullpath = path
     name, ext = os.path.splitext(os.path.basename(fullpath))
-    main = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1)).main
+    module = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1))
+    main = getattr(module, main_name)
     if args:
         cmd, tool = plac_core.parser_from(main).consume(args)
     else:

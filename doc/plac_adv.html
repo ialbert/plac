@@ -858,11 +858,10 @@ class ShelveInterface(object):
             yield 'deleting %s' % name
             del self.sh[name] # no error checking
 
-main = ShelveInterface # the main 'function' can also be a class!
+main = ShelveInterface # useful for the tests
 
 if __name__ == '__main__':
-    shelve_interface = plac.call(main)
-    plac.Interpreter(shelve_interface).interact()
+    plac.Interpreter(plac.call(ShelveInterface)).interact()
 
 </pre>
 <p><tt class="docutils literal">plac.Interpreter</tt> objects wrap context manager objects
@@ -1056,7 +1055,7 @@ even a command container class.</p>
 <p>For instance, suppose you want to execute a script containing commands
 defined in the <tt class="docutils literal">ishelve2</tt> module like the following one:</p>
 <pre class="literal-block">
-#!ishelve2.py -c ~/conf.shelve
+#!ishelve2.py:ShelveInterface -c ~/conf.shelve
 set a 1
 del a
 del a # intentional error
@@ -1065,8 +1064,12 @@ del a # intentional error
 <p>The first line of the <tt class="docutils literal">.plac</tt> script contains the name of the
 python module containing the plac interpreter and the arguments
 which must be passed to its main function in order to be able
-to instantiate an interpreter object. The other lines contains
-commands. Then you can run the script as follows:</p>
+to instantiate an interpreter object. In this case I appended
+<tt class="docutils literal">:ShelveInterface</tt> to the name of the module to specify the
+object that must be imported: if not specified, by default the
+object named 'main' is imported.
+The other lines contains commands.
+You can run the script as follows:</p>
 <pre class="literal-block">
 $ plac_runner.py --batch ishelve2.plac
 setting a=1
@@ -1102,7 +1105,7 @@ b = 2
 <p>Now you can cut and paste the interactive session an turns into into
 a <tt class="docutils literal">.placet</tt> file like the following:</p>
 <pre class="literal-block">
-#!ishelve2.py -configfile=~/test.shelve
+#!ishelve2.py:ShelveInterface -configfile=~/test.shelve
 i&gt; del
 deleting everything
 i&gt; set a 1
@@ -1195,7 +1198,7 @@ a = 1
   '(&quot;#&quot;) ; comment chars
   '(); highlighted commands
   nil
-  '(&quot;.plac&quot;); file extensions
+  '(&quot;.plac\\'&quot;); file extensions
   nil)
  
 (add-hook 'plac-mode-hook (lambda () (local-set-key [f4]  'plac-start)))
@@ -1842,9 +1845,12 @@ For instance, here is how you could manage remote import on a database:</p>
 import plac
 from importer2 import FakeImporter
 
-if __name__ == '__main__':
+def main(port=2199):
     main = FakeImporter('dsn')
-    plac.Interpreter(main).start_server() # default port 2199
+    plac.Interpreter(main).start_server(port)
+    
+if __name__ == '__main__':
+   plac.call(main)
 
 </pre>
 <p>You can connect to the server with <tt class="docutils literal">telnet</tt> on port 2199, as follows:</p>
