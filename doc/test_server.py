@@ -2,7 +2,7 @@ import multiprocessing, subprocess, time, random
 import plac
 from ishelve2 import ShelveInterface
 
-i = plac.Interpreter(ShelveInterface())
+i = plac.Interpreter(ShelveInterface(configfile=None))
 
 COMMANDS = ['''\
 .help

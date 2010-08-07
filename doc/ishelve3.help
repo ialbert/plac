@@ -1,4 +1,4 @@
-usage: ishelve2.py [-h] [-configfile CONFIGFILE]
+usage: ishelve3.py [-h] [-configfile CONFIGFILE]
 
 A minimal interface over a shelve object.
 

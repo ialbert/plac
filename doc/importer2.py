@@ -19,4 +19,4 @@ class FakeImporter(object):
             print('closing the file')
 
 if __name__ == '__main__':
-    plac.Interpreter(plac.call(FakeImporter)).interact()
+    plac.Interpreter.call(FakeImporter)

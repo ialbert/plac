@@ -24,6 +24,7 @@ def parser_from(f, **kw):
 
 def check_help(name):
     sys.argv[0] = name + '.py' # avoid issue with nosetests
+    plac.parser_registry.clear() # makes different imports independent
     try:
         try:
             main = plac.import_main(name + '.py')

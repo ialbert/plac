@@ -154,7 +154,7 @@ def import_main(path, *args, **pconf):
             if os.path.exists(fullpath):
                 break
         else: # no break
-            raise ImportError(_('Cannot find %s'), path)
+            raise ImportError(_('Cannot find %s' % path))
     else:
         fullpath = path
     name, ext = os.path.splitext(os.path.basename(fullpath))
@@ -195,7 +195,7 @@ class BaseTask(object):
         self.str, self.etype, self.exc, self.tb = '', None, None, None
         self.status = 'SUBMITTED'
         self.outlist = []
-
+        
     def _wrap(self, genobj, stringify_tb=False):
         """
         Wrap the genobj into a generator managing the exceptions,
@@ -589,6 +589,43 @@ class Interpreter(object):
     A context manager with a .send method and a few utility methods:
     execute, test and doctest.
     """
+
+    @classmethod
+    def call(cls, factory, arglist=sys.argv[1:], 
+             commentchar='#', split=shlex.split, 
+             stdin=sys.stdin, prompt='i> ', verbose=False):
+        """Call a container factory with the arglist and instantiate an
+        interpreter object. If there are remaining arguments, send them to the
+        interpreter, else start an interactive session"""
+        a = plac_core.parser_from(factory).argspec
+        if a.defaults or a.varargs or a.varkw:
+            raise TypeError('Interpreter.call must be invoked on '
+                            'factories with required arguments only')
+        required_args = ', '.join(a.args)
+        code = '''def makeobj(%s, *args):
+        obj = factory(%s)
+        obj.args = args
+        return obj'''% (required_args, required_args)
+        dic = dict(factory=factory)
+        exec code in dic
+        makeobj = dic['makeobj']
+        if inspect.isclass(factory):
+            makeobj.__annotations__ = getattr(
+                factory.__init__, '__annotations__', {})
+        else:
+            makeobj.__annotations__ = getattr(
+                factory, '__annotations__', {})
+        obj = plac_core.call(makeobj, arglist)
+        i = cls(obj, commentchar, split) # interpreter
+        if obj.args:
+            with i:
+                task = i.send(obj.args) # synchronous
+                if task.exc:
+                    raise task.etype, task.exc, task.tb
+                print(task)
+        else:
+            i.interact(stdin, prompt, verbose)
+            
     def __init__(self, obj, commentchar='#', split=shlex.split):
         self.obj = obj
         try:

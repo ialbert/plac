@@ -24,6 +24,5 @@ def split_on_first_space(line, commentchar):
     return line.strip().split(' ', 1) # ignoring comments
     
 if __name__ == '__main__':
-    si = plac.call(SqlInterface)
-    i = plac.Interpreter(si, split=split_on_first_space)
-    i.interact(rl_input, prompt='sql> ')
+    plac.Interpreter.call(SqlInterface, split=split_on_first_space,
+                          stdin=rl_input, prompt='sql> ')
