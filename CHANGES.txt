@@ -1,6 +1,7 @@
 HISTORY
 ----------
 
+0.7.1 A few bug fixes (2010-08-11)
 0.7.0 Improved and documented the support for parallel programming;
       added an asynchronous server; added plac.Interpreter.call (2010-08-07)
 0.6.1 Fixed the history file location; added the ability to pass a split

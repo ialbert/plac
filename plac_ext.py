@@ -142,12 +142,12 @@ except:
 def import_main(path, *args, **pconf):
     """
     An utility to import the main function of a plac tool. It also
-    works with tool factories, if you pass the arguments.
+    works with command container factories.
     """
-    if ':' in path:
-        path, main_name = path.split(':')
-    else:
-        main_name = 'main'
+    if ':' in path: # importing a factory
+        path, factory_name = path.split(':')
+    else: # importing the main function
+        factory_name = None
     if not os.path.isabs(path): # relative path, look at PLACDIRS
         for placdir in PLACDIRS:
             fullpath = os.path.join(placdir, path)
@@ -159,12 +159,11 @@ def import_main(path, *args, **pconf):
         fullpath = path
     name, ext = os.path.splitext(os.path.basename(fullpath))
     module = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1))
-    main = getattr(module, main_name)
-    if args:
-        cmd, tool = plac_core.parser_from(main).consume(args)
+    if factory_name:
+        tool = plac_core.call(getattr(module, factory_name), args)
     else:
-        tool = main
-    # set the parser configuration and possibly raise a TypeError early
+        tool = module.main
+    # set the parser configuration
     plac_core.parser_from(tool, **pconf) 
     return tool
 
@@ -258,6 +257,8 @@ class BaseTask(object):
         return '<%s %d [%s] %s>' % (
             self.__class__.__name__, self.no, 
             ' '.join(self.arglist), self.status)
+
+nulltask = BaseTask(0, [], ('skip' for dummy in (1,)))
 
 ########################## synchronous tasks ###############################
 
@@ -591,21 +592,23 @@ class Interpreter(object):
     """
 
     @classmethod
-    def call(cls, factory, arglist=sys.argv[1:], 
-             commentchar='#', split=shlex.split, 
-             stdin=sys.stdin, prompt='i> ', verbose=False):
-        """Call a container factory with the arglist and instantiate an
-        interpreter object. If there are remaining arguments, send them to the
-        interpreter, else start an interactive session"""
+    def instance(cls, factory, arglist=sys.argv[1:], 
+                 commentchar='#', split=shlex.split):
+        """
+        Call a container factory with the arglist and return an
+        interpreter object.
+        """
         a = plac_core.parser_from(factory).argspec
         if a.defaults or a.varargs or a.varkw:
             raise TypeError('Interpreter.call must be invoked on '
                             'factories with required arguments only')
         required_args = ', '.join(a.args)
-        code = '''def makeobj(%s, *args):
+        if required_args:
+            required_args += ',' # trailing comma
+        code = '''def makeobj(%s *args):
         obj = factory(%s)
         obj.args = args
-        return obj'''% (required_args, required_args)
+        return obj\n'''% (required_args, required_args)
         dic = dict(factory=factory)
         exec code in dic
         makeobj = dic['makeobj']
@@ -616,16 +619,27 @@ class Interpreter(object):
             makeobj.__annotations__ = getattr(
                 factory, '__annotations__', {})
         obj = plac_core.call(makeobj, arglist)
-        i = cls(obj, commentchar, split) # interpreter
-        if obj.args:
+        return cls(obj, commentchar, split) # interpreter
+
+    @classmethod
+    def call(cls, factory, arglist=sys.argv[1:], 
+             commentchar='#', split=shlex.split, 
+             stdin=sys.stdin, prompt='i> ', verbose=False):
+        """
+        Call a container factory with the arglist and instantiate an
+        interpreter object. If there are remaining arguments, send them to the
+        interpreter, else start an interactive session.
+        """
+        i = cls.instance(factory, arglist, commentchar, split)
+        if i.obj.args:
             with i:
-                task = i.send(obj.args) # synchronous
+                task = i.send(i.obj.args) # synchronous
                 if task.exc:
                     raise task.etype, task.exc, task.tb
                 print(task)
         else:
             i.interact(stdin, prompt, verbose)
-            
+
     def __init__(self, obj, commentchar='#', split=shlex.split):
         self.obj = obj
         try:
@@ -685,9 +699,10 @@ class Interpreter(object):
             arglist = self.split(line, self.commentchar)
         else: # expects a list of strings
             arglist = line
+        if not arglist:
+            return nulltask
         task = self._interpreter.send(arglist) # nonblocking
-        if arglist and not plac_core._match_cmd(
-            arglist[0], self.tm.specialcommands):
+        if not plac_core._match_cmd(arglist[0], self.tm.specialcommands):
             self.tm.registry[task.no] = task
         return task
 

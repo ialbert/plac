@@ -94,14 +94,12 @@ def parser_from(obj, **confparams):
     conf = pconf(obj).copy()
     conf.update(confparams)
     parser_registry[obj] = parser = ArgumentParser(**conf)
+    parser.obj = obj
     parser.case_sensitive = confparams.get(
         'case_sensitive', getattr(obj, 'case_sensitive', True))
     if hasattr(obj, 'commands') and obj.commands and not inspect.isclass(obj):
         # a command container instance
         parser.addsubcommands(obj.commands, obj, 'subcommands')
-        parser.missing = getattr(
-            obj, '__missing__',
-            lambda name: parser.error('No command %r' % name))
     else:
         parser.populate_from(obj)
     return parser
@@ -160,7 +158,7 @@ class ArgumentParser(argparse.ArgumentParser):
             # ignore unrecognized arguments
             ns, extraopts = self.parse_known_args(arglist)
         else:
-            ns, extraopts = self.parse_args(arglist), []
+            ns, extraopts = self.parse_args(arglist), [] # may raise an exit
         args = [getattr(ns, a) for a in self.argspec.args]
         varargs = getattr(ns, self.argspec.varargs or '', [])
         collision = set(self.argspec.args) & set(kwargs)
@@ -203,7 +201,10 @@ class ArgumentParser(argparse.ArgumentParser):
             self.argspec = getfullargspec(obj)
             del self.argspec.args[0] # remove first argument
         elif inspect.isclass(obj):
-            self.argspec = getfullargspec(obj.__init__)
+            if obj.__init__ is object.__init__: # to avoid an error
+                self.argspec = getfullargspec(lambda self: None)
+            else:
+                self.argspec = getfullargspec(obj.__init__)
             del self.argspec.args[0] # remove first argument
         elif hasattr(obj, '__call__'):
             self.argspec = getfullargspec(obj.__call__)
@@ -264,6 +265,11 @@ class ArgumentParser(argparse.ArgumentParser):
             a = Annotation.from_(f.annotations.get(f.varkw, ()))
             self.add_argument(f.varkw, nargs='*', help=a.help, default={},
                                type=a.type, metavar=a.metavar)
+
+    def missing(self, name):
+        miss = getattr(self.obj, '__missing__', lambda name: 
+                       self.error('No command %r' % name))
+        return miss(name)
 
     def help_cmd(self, cmd):
         "Return the help message for a subcommand"
