@@ -1101,6 +1101,16 @@ for 10 million of iterations::
 As you see using processes one gets a 2x speedup indeed, where the threaded
 mode is some 20% slower than the sequential mode.
 
+Since the pattern submit a bunch of tasks, starts them and collect the
+results is so common, plac_ provides an utility function 
+``runp(genseq, mode='p', start=True)`` to start
+a bunch a generators and return a list of task objects. By default
+``runp`` use processes, but you can use threads by passing ``mode='t'``.
+If you do not wont to start the tasks, you can say so (``start=False``).
+With ``runp`` the parallel pi calculation becomes a one-liner::
+
+    sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
+
 The plac server
 -------------------------------------------------------
 

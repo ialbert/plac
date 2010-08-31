@@ -1,6 +1,7 @@
 HISTORY
 ----------
 
+0.7.3 Put the documentation in a single document; added runp (2010-08-31)
 0.7.2 Interpreter.call does not start an interpreter automagically anymore;
       better documented and added tests for the metavar concept (2010-08-31)
 0.7.1 A few bug fixes (2010-08-11)

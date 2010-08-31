@@ -250,6 +250,8 @@ class BaseTask(object):
         self.wait()
         if self.exc:
             raise self.etype, self.exc, self.tb or None
+        if not self.outlist:
+            return None
         return self.outlist[-1]
 
     def __repr__(self):
@@ -863,3 +865,32 @@ class Interpreter(object):
     def stop_server(self, wait=0.0):
         "Stops the asyncore server, possibly after a given number of seconds"
         threading.Timer(wait, asyncore.socket_map.clear).start()
+
+#################################### runp #####################################
+
+class _TaskLauncher(object):
+    "Helper for runp"
+    def __init__(self, genseq, mode):
+        if mode == 'p':
+            self.mpcommands = ['rungen']
+        else:
+            self.thcommands = ['rungen']
+        self.genlist = list(genseq)
+    def rungen(self, i):
+        for out in self.genlist[int(i) - 1]:
+            yield out
+
+def runp(genseq, mode='p', start=True):
+    """Run a sequence of generators in parallel. Mode can be 'p' (use processes)
+    or 't' (use threads). Return a list of running task objects. If start is
+    False, the tasks are only submitted and not automatically started.
+    """
+    assert mode in 'pt', mode
+    launcher = _TaskLauncher(genseq, mode)
+    inter = Interpreter(launcher).__enter__()
+    for i in range(len(launcher.genlist)):
+        inter.submit('rungen %d' % (i + 1))
+    if start:
+        for task in inter.tasks():
+            task.run()
+    return inter.tasks()
