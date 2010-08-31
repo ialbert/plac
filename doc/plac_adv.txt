@@ -1026,7 +1026,7 @@ Parallel computing with plac
 
 plac_ is certainly not intended as a tool for parallel computing, but
 still you can use it to launch a set of commands and to collect the
-results, similarly to the MapReduce pattern recently popularized by
+results, similarly to the MapReduce pattern popularized by
 Google.  In order to give an example, I will consider the "Hello
 World" of parallel computing, i.e. the computation of pi with
 independent processes.  There is a huge number of algorithms to
@@ -1074,11 +1074,11 @@ equally busy they should finish more or less at the same time).
 Here are the results on my old Macbook with Ubuntu 10.04 and Python 2.6,
 for 10 million of iterations::
 
- $ python picalculator.py -mP 10000000
+ $ python picalculator.py -mP 10000000 # two processes
  3.141904 in 5.744545 seconds 
- $ python picalculator.py -mT 10000000
+ $ python picalculator.py -mT 10000000 # two threads
  3.141272 in 13.875645 seconds 
- $ python picalculator.py -mS 10000000
+ $ python picalculator.py -mS 10000000 # sequential
  3.141586 in 11.353841 seconds 
 
 As you see using processes one gets a 2x speedup indeed, where the threaded
