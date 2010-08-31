@@ -1,14 +1,6 @@
 Advanced usages of plac
 =========================================================
 
-*The present document discusses a few of the advanced use
-cases for plac. It shows how to write interactive and non-interactive
-interpreters with plac, and how to use plac for testing and scripting a generic
-application. It assumes you have already read an understood the
-basic documentation.*
-
-.. contents::
-
 Introduction
 -----------------------------------------------------
 

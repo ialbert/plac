@@ -415,7 +415,7 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 
 
 <div class="section" id="plac-parsing-the-command-line-the-easy-way">
-<h1><a class="toc-backref" href="#id53">Plac: Parsing the Command Line the Easy Way</a></h1>
+<h1><a class="toc-backref" href="#id17">Plac: Parsing the Command Line the Easy Way</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -441,49 +441,49 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#plac-parsing-the-command-line-the-easy-way" id="id18">Plac: Parsing the Command Line the Easy Way</a><ul>
-<li><a class="reference internal" href="#the-importance-of-scaling-down" id="id19">The importance of scaling down</a></li>
-<li><a class="reference internal" href="#scripts-with-required-arguments" id="id20">Scripts with required arguments</a></li>
-<li><a class="reference internal" href="#scripts-with-default-arguments" id="id21">Scripts with default arguments</a></li>
-<li><a class="reference internal" href="#scripts-with-options-and-smart-options" id="id22">Scripts with options (and smart options)</a></li>
-<li><a class="reference internal" href="#scripts-with-flags" id="id23">Scripts with flags</a></li>
-<li><a class="reference internal" href="#plac-for-python-2-x-users" id="id24">plac for Python 2.X users</a></li>
-<li><a class="reference internal" href="#more-features" id="id25">More features</a></li>
-<li><a class="reference internal" href="#a-realistic-example" id="id26">A realistic example</a></li>
-<li><a class="reference internal" href="#keyword-arguments" id="id27">Keyword arguments</a></li>
-<li><a class="reference internal" href="#final-example-a-shelve-interface" id="id28">Final example: a shelve interface</a></li>
-<li><a class="reference internal" href="#plac-vs-argparse" id="id29">plac vs argparse</a></li>
-<li><a class="reference internal" href="#plac-vs-the-rest-of-the-world" id="id30">plac vs the rest of the world</a></li>
-<li><a class="reference internal" href="#the-future" id="id31">The future</a></li>
-<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id32">Trivia: the story behind the name</a></li>
+<li><a class="reference internal" href="#plac-parsing-the-command-line-the-easy-way" id="id17">Plac: Parsing the Command Line the Easy Way</a><ul>
+<li><a class="reference internal" href="#the-importance-of-scaling-down" id="id18">The importance of scaling down</a></li>
+<li><a class="reference internal" href="#scripts-with-required-arguments" id="id19">Scripts with required arguments</a></li>
+<li><a class="reference internal" href="#scripts-with-default-arguments" id="id20">Scripts with default arguments</a></li>
+<li><a class="reference internal" href="#scripts-with-options-and-smart-options" id="id21">Scripts with options (and smart options)</a></li>
+<li><a class="reference internal" href="#scripts-with-flags" id="id22">Scripts with flags</a></li>
+<li><a class="reference internal" href="#plac-for-python-2-x-users" id="id23">plac for Python 2.X users</a></li>
+<li><a class="reference internal" href="#more-features" id="id24">More features</a></li>
+<li><a class="reference internal" href="#a-realistic-example" id="id25">A realistic example</a></li>
+<li><a class="reference internal" href="#keyword-arguments" id="id26">Keyword arguments</a></li>
+<li><a class="reference internal" href="#final-example-a-shelve-interface" id="id27">Final example: a shelve interface</a></li>
+<li><a class="reference internal" href="#plac-vs-argparse" id="id28">plac vs argparse</a></li>
+<li><a class="reference internal" href="#plac-vs-the-rest-of-the-world" id="id29">plac vs the rest of the world</a></li>
+<li><a class="reference internal" href="#the-future" id="id30">The future</a></li>
+<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id31">Trivia: the story behind the name</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-usages-of-plac" id="id33">Advanced usages of plac</a><ul>
-<li><a class="reference internal" href="#introduction" id="id34">Introduction</a></li>
-<li><a class="reference internal" href="#from-scripts-to-interactive-applications" id="id35">From scripts to interactive applications</a></li>
-<li><a class="reference internal" href="#testing-a-plac-application" id="id36">Testing a plac application</a></li>
-<li><a class="reference internal" href="#plac-easy-tests" id="id37">Plac easy tests</a></li>
-<li><a class="reference internal" href="#plac-batch-scripts" id="id38">Plac batch scripts</a></li>
-<li><a class="reference internal" href="#implementing-subcommands" id="id39">Implementing subcommands</a></li>
-<li><a class="reference internal" href="#plac-interpreter-call" id="id40">plac.Interpreter.call</a></li>
-<li><a class="reference internal" href="#readline-support" id="id41">Readline support</a></li>
-<li><a class="reference internal" href="#the-plac-runner" id="id42">The plac runner</a></li>
-<li><a class="reference internal" href="#a-non-class-based-example" id="id43">A non class-based example</a></li>
-<li><a class="reference internal" href="#writing-your-own-plac-runner" id="id44">Writing your own plac runner</a></li>
-<li><a class="reference internal" href="#long-running-commands" id="id45">Long running commands</a></li>
-<li><a class="reference internal" href="#threaded-commands" id="id46">Threaded commands</a></li>
-<li><a class="reference internal" href="#running-commands-as-external-processes" id="id47">Running commands as external processes</a></li>
-<li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id48">Managing the output of concurrent commands</a></li>
-<li><a class="reference internal" href="#parallel-computing-with-plac" id="id49">Parallel computing with plac</a></li>
-<li><a class="reference internal" href="#the-plac-server" id="id50">The plac server</a></li>
-<li><a class="reference internal" href="#summary" id="id51">Summary</a></li>
-<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id52">Appendix: custom annotation objects</a></li>
+<li><a class="reference internal" href="#advanced-usages-of-plac" id="id32">Advanced usages of plac</a><ul>
+<li><a class="reference internal" href="#introduction" id="id33">Introduction</a></li>
+<li><a class="reference internal" href="#from-scripts-to-interactive-applications" id="id34">From scripts to interactive applications</a></li>
+<li><a class="reference internal" href="#testing-a-plac-application" id="id35">Testing a plac application</a></li>
+<li><a class="reference internal" href="#plac-easy-tests" id="id36">Plac easy tests</a></li>
+<li><a class="reference internal" href="#plac-batch-scripts" id="id37">Plac batch scripts</a></li>
+<li><a class="reference internal" href="#implementing-subcommands" id="id38">Implementing subcommands</a></li>
+<li><a class="reference internal" href="#plac-interpreter-call" id="id39">plac.Interpreter.call</a></li>
+<li><a class="reference internal" href="#readline-support" id="id40">Readline support</a></li>
+<li><a class="reference internal" href="#the-plac-runner" id="id41">The plac runner</a></li>
+<li><a class="reference internal" href="#a-non-class-based-example" id="id42">A non class-based example</a></li>
+<li><a class="reference internal" href="#writing-your-own-plac-runner" id="id43">Writing your own plac runner</a></li>
+<li><a class="reference internal" href="#long-running-commands" id="id44">Long running commands</a></li>
+<li><a class="reference internal" href="#threaded-commands" id="id45">Threaded commands</a></li>
+<li><a class="reference internal" href="#running-commands-as-external-processes" id="id46">Running commands as external processes</a></li>
+<li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id47">Managing the output of concurrent commands</a></li>
+<li><a class="reference internal" href="#parallel-computing-with-plac" id="id48">Parallel computing with plac</a></li>
+<li><a class="reference internal" href="#the-plac-server" id="id49">The plac server</a></li>
+<li><a class="reference internal" href="#summary" id="id50">Summary</a></li>
+<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id51">Appendix: custom annotation objects</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="the-importance-of-scaling-down">
-<h2><a class="toc-backref" href="#id54">The importance of scaling down</a></h2>
+<h2><a class="toc-backref" href="#id18">The importance of scaling down</a></h2>
 <p>There is no want of command line arguments parsers in the Python
 world. The standard library alone contains three different modules:
 <a class="reference external" href="http://docs.python.org/library/getopt.html">getopt</a> (from the stone age),
@@ -524,7 +524,7 @@ is designed to be simple to use and extremely concise, as the examples
 below will show.</p>
 </div>
 <div class="section" id="scripts-with-required-arguments">
-<h2><a class="toc-backref" href="#id55">Scripts with required arguments</a></h2>
+<h2><a class="toc-backref" href="#id19">Scripts with required arguments</a></h2>
 <p>Let me start with the simplest possible thing: a script that takes a
 single argument and does something to it.  It cannot get simpler
 than that, unless you consider a script without command-line
@@ -618,7 +618,7 @@ optional arguments:
 This is only the tip of the iceberg: <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to do much more than that.</p>
 </div>
 <div class="section" id="scripts-with-default-arguments">
-<h2><a class="toc-backref" href="#id56">Scripts with default arguments</a></h2>
+<h2><a class="toc-backref" href="#id20">Scripts with default arguments</a></h2>
 <p>The need to have suitable defaults for command-line scripts is quite
 common. For instance I have encountered this use case at work hundreds
 of times:</p>
@@ -743,7 +743,7 @@ optional arguments:
 I will show in the next paragraphs.</p>
 </div>
 <div class="section" id="scripts-with-options-and-smart-options">
-<h2><a class="toc-backref" href="#id57">Scripts with options (and smart options)</a></h2>
+<h2><a class="toc-backref" href="#id21">Scripts with options (and smart options)</a></h2>
 <p>It is surprising how few command-line scripts with options I have
 written over the years (probably less than a hundred), compared to the
 number of scripts with positional arguments I wrote (certainly more
@@ -867,7 +867,7 @@ executing 'select * from table' on dsn
 </pre>
 </div>
 <div class="section" id="scripts-with-flags">
-<h2><a class="toc-backref" href="#id58">Scripts with flags</a></h2>
+<h2><a class="toc-backref" href="#id22">Scripts with flags</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to recognize flags, i.e. boolean options which are
 <tt class="docutils literal"><span class="pre">True</span></tt> if they are passed to the command line and <tt class="docutils literal"><span class="pre">False</span></tt>
 if they are absent. Here is an example:</p>
@@ -916,7 +916,7 @@ the one-character abbreviation for options, since it does not make sense
 to compose them.</p>
 </div>
 <div class="section" id="plac-for-python-2-x-users">
-<h2><a class="toc-backref" href="#id59">plac for Python 2.X users</a></h2>
+<h2><a class="toc-backref" href="#id23">plac for Python 2.X users</a></h2>
 <p>I do not use Python 3. At work we are just starting to think about
 migrating to Python 2.6. It will take years before we
 think to migrate to Python 3. I am pretty much sure most Pythonistas
@@ -952,7 +952,7 @@ X &gt;= 4 and I will use the <tt class="docutils literal"><span class="pre">plac
 that the core features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> run even on Python 2.3.</p>
 </div>
 <div class="section" id="more-features">
-<h2><a class="toc-backref" href="#id60">More features</a></h2>
+<h2><a class="toc-backref" href="#id24">More features</a></h2>
 <p>One of the goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is to have a learning curve of <em>minutes</em> for
 its core features, compared to the learning curve of <em>hours</em> of
 <a class="reference external" href="http://argparse.googlecode.com">argparse</a>. In order to reach this goal, I have <em>not</em> sacrificed all
@@ -1071,7 +1071,7 @@ line as soon as available, whereas the default behaviour is to print
 all the lines together and the end of the computation.</p>
 </div>
 <div class="section" id="a-realistic-example">
-<h2><a class="toc-backref" href="#id61">A realistic example</a></h2>
+<h2><a class="toc-backref" href="#id25">A realistic example</a></h2>
 <p>Here is a more realistic script using most of the features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> to
 run SQL queries on a database by relying on <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a>. Notice the usage
 of the <tt class="docutils literal"><span class="pre">type</span></tt> feature to automagically convert a SQLAlchemy connection
@@ -1135,7 +1135,7 @@ optional arguments:
 <p>You can check for yourself that the script works.</p>
 </div>
 <div class="section" id="keyword-arguments">
-<h2><a class="toc-backref" href="#id62">Keyword arguments</a></h2>
+<h2><a class="toc-backref" href="#id26">Keyword arguments</a></h2>
 <p>Starting from release 0.4, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> supports keyword arguments.  In
 practice that means that if your main function has keyword arguments,
 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> treats specially arguments of the form <tt class="docutils literal"><span class="pre">&quot;name=value&quot;</span></tt> in the
@@ -1195,7 +1195,7 @@ is a consequence of the way the argument names are managed in function calls
 by the Python language.</p>
 </div>
 <div class="section" id="final-example-a-shelve-interface">
-<h2><a class="toc-backref" href="#id63">Final example: a shelve interface</a></h2>
+<h2><a class="toc-backref" href="#id27">Final example: a shelve interface</a></h2>
 <p>Here is a less trivial example for the keyword arguments feature.
 The use case is the following: suppose we have stored the
 configuration parameters of a given application into a Python shelve
@@ -1317,7 +1317,7 @@ ishelve.py: error: unrecognized arguments: .cler
 </pre>
 </div>
 <div class="section" id="plac-vs-argparse">
-<h2><a class="toc-backref" href="#id64">plac vs argparse</a></h2>
+<h2><a class="toc-backref" href="#id28">plac vs argparse</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is opinionated and by design it does not try to make available
 all of the features of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> in an easy way.  In particular you
 should be aware of the following limitations/differences (the
@@ -1415,7 +1415,7 @@ adding such options to the <tt class="docutils literal"><span class="pre">main</
 attribute.</p>
 </div>
 <div class="section" id="plac-vs-the-rest-of-the-world">
-<h2><a class="toc-backref" href="#id65">plac vs the rest of the world</a></h2>
+<h2><a class="toc-backref" href="#id29">plac vs the rest of the world</a></h2>
 <p>Originally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> boasted about being &quot;the easiest command-line
 arguments parser in the world&quot;. Since then, people started pointing
 out to me various projects which are based on the same idea
@@ -1438,7 +1438,7 @@ Catherine Devlin. However, this is completely coincidental, since I became
 aware of the <a class="reference external" href="http://packages.python.org/cmd2/">cmd2</a> module only after writing <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
 </div>
 <div class="section" id="the-future">
-<h2><a class="toc-backref" href="#id66">The future</a></h2>
+<h2><a class="toc-backref" href="#id30">The future</a></h2>
 <p>Currently the core of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is around 200 lines of code, not counting blanks,
 comments and docstrings. I do not plan to extend the core much in the
 future. The idea is to keep the module short: it is and it should
@@ -1459,7 +1459,7 @@ they require Python 2.5 to work, whereas <tt class="docutils literal"><span clas
 Python 2.3.</p>
 </div>
 <div class="section" id="trivia-the-story-behind-the-name">
-<h2><a class="toc-backref" href="#id67">Trivia: the story behind the name</a></h2>
+<h2><a class="toc-backref" href="#id31">Trivia: the story behind the name</a></h2>
 <p>The <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> project started very humbly: I just wanted to make
 easy_installable my old <a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a> recipe, and to publish it on PyPI.
 The original name of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> was optionparser and the idea behind it was
@@ -1488,58 +1488,9 @@ will steal it from me!</p>
 </div>
 </div>
 <div class="section" id="advanced-usages-of-plac">
-<h1><a class="toc-backref" href="#id68">Advanced usages of plac</a></h1>
-<p><em>The present document discusses a few of the advanced use
-cases for plac. It shows how to write interactive and non-interactive
-interpreters with plac, and how to use plac for testing and scripting a generic
-application. It assumes you have already read an understood the
-basic documentation.</em></p>
-<div class="contents topic" id="id1">
-<p class="topic-title first">Contents</p>
-<ul class="simple">
-<li><a class="reference internal" href="#plac-parsing-the-command-line-the-easy-way" id="id53">Plac: Parsing the Command Line the Easy Way</a><ul>
-<li><a class="reference internal" href="#the-importance-of-scaling-down" id="id54">The importance of scaling down</a></li>
-<li><a class="reference internal" href="#scripts-with-required-arguments" id="id55">Scripts with required arguments</a></li>
-<li><a class="reference internal" href="#scripts-with-default-arguments" id="id56">Scripts with default arguments</a></li>
-<li><a class="reference internal" href="#scripts-with-options-and-smart-options" id="id57">Scripts with options (and smart options)</a></li>
-<li><a class="reference internal" href="#scripts-with-flags" id="id58">Scripts with flags</a></li>
-<li><a class="reference internal" href="#plac-for-python-2-x-users" id="id59">plac for Python 2.X users</a></li>
-<li><a class="reference internal" href="#more-features" id="id60">More features</a></li>
-<li><a class="reference internal" href="#a-realistic-example" id="id61">A realistic example</a></li>
-<li><a class="reference internal" href="#keyword-arguments" id="id62">Keyword arguments</a></li>
-<li><a class="reference internal" href="#final-example-a-shelve-interface" id="id63">Final example: a shelve interface</a></li>
-<li><a class="reference internal" href="#plac-vs-argparse" id="id64">plac vs argparse</a></li>
-<li><a class="reference internal" href="#plac-vs-the-rest-of-the-world" id="id65">plac vs the rest of the world</a></li>
-<li><a class="reference internal" href="#the-future" id="id66">The future</a></li>
-<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id67">Trivia: the story behind the name</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#advanced-usages-of-plac" id="id68">Advanced usages of plac</a><ul>
-<li><a class="reference internal" href="#introduction" id="id69">Introduction</a></li>
-<li><a class="reference internal" href="#from-scripts-to-interactive-applications" id="id70">From scripts to interactive applications</a></li>
-<li><a class="reference internal" href="#testing-a-plac-application" id="id71">Testing a plac application</a></li>
-<li><a class="reference internal" href="#plac-easy-tests" id="id72">Plac easy tests</a></li>
-<li><a class="reference internal" href="#plac-batch-scripts" id="id73">Plac batch scripts</a></li>
-<li><a class="reference internal" href="#implementing-subcommands" id="id74">Implementing subcommands</a></li>
-<li><a class="reference internal" href="#plac-interpreter-call" id="id75">plac.Interpreter.call</a></li>
-<li><a class="reference internal" href="#readline-support" id="id76">Readline support</a></li>
-<li><a class="reference internal" href="#the-plac-runner" id="id77">The plac runner</a></li>
-<li><a class="reference internal" href="#a-non-class-based-example" id="id78">A non class-based example</a></li>
-<li><a class="reference internal" href="#writing-your-own-plac-runner" id="id79">Writing your own plac runner</a></li>
-<li><a class="reference internal" href="#long-running-commands" id="id80">Long running commands</a></li>
-<li><a class="reference internal" href="#threaded-commands" id="id81">Threaded commands</a></li>
-<li><a class="reference internal" href="#running-commands-as-external-processes" id="id82">Running commands as external processes</a></li>
-<li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id83">Managing the output of concurrent commands</a></li>
-<li><a class="reference internal" href="#parallel-computing-with-plac" id="id84">Parallel computing with plac</a></li>
-<li><a class="reference internal" href="#the-plac-server" id="id85">The plac server</a></li>
-<li><a class="reference internal" href="#summary" id="id86">Summary</a></li>
-<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id87">Appendix: custom annotation objects</a></li>
-</ul>
-</li>
-</ul>
-</div>
+<h1><a class="toc-backref" href="#id32">Advanced usages of plac</a></h1>
 <div class="section" id="introduction">
-<h2><a class="toc-backref" href="#id69">Introduction</a></h2>
+<h2><a class="toc-backref" href="#id33">Introduction</a></h2>
 <p>One of the design goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is to make it dead easy to write a
 scriptable and testable interface for an application.  You can use
 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> whenever you have an API with strings in input and strings in
@@ -1562,7 +1513,7 @@ or a Web application on top of <a class="reference external" href="http://pypi.p
 you can do with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, your imagination is the only limit!</p>
 </div>
 <div class="section" id="from-scripts-to-interactive-applications">
-<h2><a class="toc-backref" href="#id70">From scripts to interactive applications</a></h2>
+<h2><a class="toc-backref" href="#id34">From scripts to interactive applications</a></h2>
 <p>Command-line scripts have many advantages, but they are no substitute
 for interactive applications.
 In particular, if you have a script with a large startup time which must be run
@@ -1666,7 +1617,7 @@ are using a recent version of Python (&gt;= 2.5), because it is a context
 manager object which uses extended generators internally.</p>
 </div>
 <div class="section" id="testing-a-plac-application">
-<h2><a class="toc-backref" href="#id71">Testing a plac application</a></h2>
+<h2><a class="toc-backref" href="#id35">Testing a plac application</a></h2>
 <p>You can conveniently test your application in interactive mode.
 However manual testing is a poor substitute for automatic testing.</p>
 <p>In principle, one could write automatic tests for the
@@ -1731,7 +1682,7 @@ once at the beginning and at the end of the interpreter loop.
 <tt class="docutils literal"><span class="pre">plac.call</span></tt> instead ignores the initialization/finalization code.</p>
 </div>
 <div class="section" id="plac-easy-tests">
-<h2><a class="toc-backref" href="#id72">Plac easy tests</a></h2>
+<h2><a class="toc-backref" href="#id36">Plac easy tests</a></h2>
 <p>Writing your tests in terms of <tt class="docutils literal"><span class="pre">Interpreter.check</span></tt> is certainly an
 improvement over writing them in terms of <tt class="docutils literal"><span class="pre">plac.call</span></tt>, but they
 are still too low-level for my taste. The <tt class="docutils literal"><span class="pre">Interpreter</span></tt> class provides
@@ -1824,7 +1775,7 @@ a string containing directory names separated by colons). If the variable
 If the plac tool is not found, an <tt class="docutils literal"><span class="pre">ImportError</span></tt> is raised.</p>
 </div>
 <div class="section" id="plac-batch-scripts">
-<h2><a class="toc-backref" href="#id73">Plac batch scripts</a></h2>
+<h2><a class="toc-backref" href="#id37">Plac batch scripts</a></h2>
 <p>It is pretty easy to realize that an interactive interpreter can
 also be used to run batch scripts: instead of reading the commands from
 the console, it is enough to read the commands from a file.
@@ -1876,7 +1827,7 @@ the output of the batch script and turn it into a <tt class="docutils literal"><
 (cool, isn't it?).</p>
 </div>
 <div class="section" id="implementing-subcommands">
-<h2><a class="toc-backref" href="#id74">Implementing subcommands</a></h2>
+<h2><a class="toc-backref" href="#id38">Implementing subcommands</a></h2>
 <p>When I discussed the <tt class="docutils literal"><span class="pre">ishelve</span></tt> implementation in the <a class="reference external" href="http://micheles.googlecode.com/hg/plac/doc/plac.html">basic
 documentation</a>, I said that it looked like a poor man implementation
 of an object system as a chain of elifs; I also said that <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> was
@@ -2005,7 +1956,7 @@ i&gt;
 you pass the <tt class="docutils literal"><span class="pre">verbose</span></tt> flag to the <tt class="docutils literal"><span class="pre">Interpreter.interact</span></tt> method.</p>
 </div>
 <div class="section" id="plac-interpreter-call">
-<h2><a class="toc-backref" href="#id75">plac.Interpreter.call</a></h2>
+<h2><a class="toc-backref" href="#id39">plac.Interpreter.call</a></h2>
 <p>At the core of <tt class="docutils literal"><span class="pre">plac</span></tt> there is the <tt class="docutils literal"><span class="pre">call</span></tt> function which invokes
 a callable with the list of the arguments passed at the command-line
 (<tt class="docutils literal"><span class="pre">sys.argv[1:]</span></tt>). Thanks to <tt class="docutils literal"><span class="pre">plac.call</span></tt> you can launch your module
@@ -2096,7 +2047,7 @@ a comment, the splitting function, the input source and the prompt to
 use while in interactive mode, and a verbose flag.</p>
 </div>
 <div class="section" id="readline-support">
-<h2><a class="toc-backref" href="#id76">Readline support</a></h2>
+<h2><a class="toc-backref" href="#id40">Readline support</a></h2>
 <p>Starting from release 0.6 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> offers full readline support. That
 means that if your Python was compiled with readline support you get
 autocompletion and persistent command history for free.  By default
@@ -2208,7 +2159,7 @@ NameError: Ambiguous command 'sh': matching ['showall', 'show']
 </pre>
 </div>
 <div class="section" id="the-plac-runner">
-<h2><a class="toc-backref" href="#id77">The plac runner</a></h2>
+<h2><a class="toc-backref" href="#id41">The plac runner</a></h2>
 <p>The distribution of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> includes a runner script named <tt class="docutils literal"><span class="pre">plac_runner.py</span></tt>,
 which will be installed in a suitable directory in your system by <a class="reference external" href="http://docs.python.org/distutils/">distutils</a>
 (say in <tt class="docutils literal"><span class="pre">\usr\local\bin\plac_runner.py</span></tt> in a Unix-like operative system).
@@ -2318,7 +2269,7 @@ a=1
 on the <tt class="docutils literal"><span class="pre">main</span></tt> object of the Python module.</p>
 </div>
 <div class="section" id="a-non-class-based-example">
-<h2><a class="toc-backref" href="#id78">A non class-based example</a></h2>
+<h2><a class="toc-backref" href="#id42">A non class-based example</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not force you to use classes to define command containers.
 Even a simple function can be a valid command container, it is
 enough to add to it a <tt class="docutils literal"><span class="pre">.commands</span></tt> attribute and possibly
@@ -2431,7 +2382,7 @@ a method container. In other situations, it is best to use a custom
 class.</p>
 </div>
 <div class="section" id="writing-your-own-plac-runner">
-<h2><a class="toc-backref" href="#id79">Writing your own plac runner</a></h2>
+<h2><a class="toc-backref" href="#id43">Writing your own plac runner</a></h2>
 <p>The runner included in the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> distribution is intentionally kept
 small (around 50 lines of code) so that you can study it and write
 your own runner if want to. If you need to go to such level
@@ -2508,7 +2459,7 @@ loop in a separate process and send commands to it via the Queue
 class provided by the <a class="reference external" href="http://docs.python.org/library/multiprocessing.html">multiprocessing</a> module.</p>
 </div>
 <div class="section" id="long-running-commands">
-<h2><a class="toc-backref" href="#id80">Long running commands</a></h2>
+<h2><a class="toc-backref" href="#id44">Long running commands</a></h2>
 <p>As we saw, by default a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> interpreter blocks until
 the command terminates. This is an issue, in the sense that it makes
 the interactive experience quite painful for long running commands. An
@@ -2557,7 +2508,7 @@ the interface responsive. <a class="reference external" href="http://pypi.python
 and processes.</p>
 </div>
 <div class="section" id="threaded-commands">
-<h2><a class="toc-backref" href="#id81">Threaded commands</a></h2>
+<h2><a class="toc-backref" href="#id45">Threaded commands</a></h2>
 <p>The most familiar way to execute a task in the background (even if not
 necessarily the best way) is to run it into a separated thread. In our
 example it is sufficient to replace the line</p>
@@ -2657,7 +2608,7 @@ if __name__ == '__main__':
 </pre>
 </div>
 <div class="section" id="running-commands-as-external-processes">
-<h2><a class="toc-backref" href="#id82">Running commands as external processes</a></h2>
+<h2><a class="toc-backref" href="#id46">Running commands as external processes</a></h2>
 <p>Threads are not loved much in the Python world and actually most people
 prefer to use processes instead. For this reason <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides the
 option to execute long running commands as external processes. Unfortunately
@@ -2700,7 +2651,7 @@ and it is safer than using threads, so it is the recommended approach
 unless you are working on Windows.</p>
 </div>
 <div class="section" id="managing-the-output-of-concurrent-commands">
-<h2><a class="toc-backref" href="#id83">Managing the output of concurrent commands</a></h2>
+<h2><a class="toc-backref" href="#id47">Managing the output of concurrent commands</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> acts as a command-line task launcher and can be used as the base
 to build a GUI-based task launcher and task monitor. To this aim the
 interpreter class provides a <tt class="docutils literal"><span class="pre">.submit</span></tt> method which returns a task
@@ -2752,7 +2703,7 @@ if __name__ == '__main__':
 </pre>
 </div>
 <div class="section" id="parallel-computing-with-plac">
-<h2><a class="toc-backref" href="#id84">Parallel computing with plac</a></h2>
+<h2><a class="toc-backref" href="#id48">Parallel computing with plac</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is certainly not intended as a tool for parallel computing, but
 still you can use it to launch a set of commands and to collect the
 results, similarly to the MapReduce pattern recently popularized by
@@ -2884,7 +2835,7 @@ sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
 </pre>
 </div>
 <div class="section" id="the-plac-server">
-<h2><a class="toc-backref" href="#id85">The plac server</a></h2>
+<h2><a class="toc-backref" href="#id49">The plac server</a></h2>
 <p>A command-line oriented interface can be easily converted into a
 socket-based interface. Starting from release 0.7 plac features
 a builtin server which is able to accept commands from multiple
@@ -2930,7 +2881,7 @@ Connection closed by foreign host.
 </pre>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id86">Summary</a></h2>
+<h2><a class="toc-backref" href="#id50">Summary</a></h2>
 <p>Once <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> claimed to be the easiest command-line arguments parser
 in the world. Having read this document you may think that it is not
 so easy after all. But it is a false impression. Actually the
@@ -2956,7 +2907,7 @@ given port number (default 2199)</li>
 </div>
 <hr class="docutils" />
 <div class="section" id="appendix-custom-annotation-objects">
-<h2><a class="toc-backref" href="#id87">Appendix: custom annotation objects</a></h2>
+<h2><a class="toc-backref" href="#id51">Appendix: custom annotation objects</a></h2>
 <p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal"><span class="pre">Annotation</span></tt> class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
 six attributes <tt class="docutils literal"><span class="pre">help,</span> <span class="pre">kind,</span> <span class="pre">short,</span> <span class="pre">type,</span> <span class="pre">choices,</span> <span class="pre">metavar</span></tt>.</p>
