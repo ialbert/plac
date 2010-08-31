@@ -976,29 +976,27 @@ if __name__ == '__main__':
 <p>and here are a few examples of usage:</p>
 <pre class="literal-block">
 $ python ishelve3.py -h
-</pre>
-<pre class="literal-block">
-usage: ishelve3.py [-h] [-configfile CONFIGFILE]
+usage: ishelve3.py [-h] [-i] [-configfile CONFIGFILE] [args [args ...]]
 
-A minimal interface over a shelve object.
+positional arguments:
+  args
 
 optional arguments:
   -h, --help            show this help message and exit
+  -i, --interact        start interactive interpreter
   -configfile CONFIGFILE
                         path name of the shelve
 
-</pre>
-<pre class="literal-block">
 $ python ishelve3.py set a 1
 setting a=1
 $ python ishelve3.py show a
 a = 1
 </pre>
-<p>If you do not pass enough arguments in the command line, then the
-script will automatically enter in interactive mode and ask the user
-for the command to execute:</p>
+<p>If you pass the <tt class="docutils literal"><span class="pre">-i</span></tt> flag in the command line, then the
+script will enter in interactive mode and ask the user
+for the commands to execute:</p>
 <pre class="literal-block">
-$ python ishelve3.py
+$ python ishelve3.py -i
 A minimal interface over a shelve object.
 Operating on /home/micheles/conf.shelve.
 .help to see the available commands.

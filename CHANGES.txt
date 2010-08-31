@@ -1,6 +1,8 @@
 HISTORY
 ----------
 
+0.7.2 Interpreter.call does not start an interpreter automagically anymore;
+      better documented and added tests for the metavar concept (2010-08-31)
 0.7.1 A few bug fixes (2010-08-11)
 0.7.0 Improved and documented the support for parallel programming;
       added an asynchronous server; added plac.Interpreter.call (2010-08-07)

@@ -605,9 +605,10 @@ class Interpreter(object):
         required_args = ', '.join(a.args)
         if required_args:
             required_args += ',' # trailing comma
-        code = '''def makeobj(%s *args):
+        code = '''def makeobj(interact, %s *args):
         obj = factory(%s)
-        obj.args = args
+        obj._interact_ = interact
+        obj._args_ = args
         return obj\n'''% (required_args, required_args)
         dic = dict(factory=factory)
         exec code in dic
@@ -618,6 +619,8 @@ class Interpreter(object):
         else:
             makeobj.__annotations__ = getattr(
                 factory, '__annotations__', {})
+        makeobj.__annotations__['interact'] = (
+            'start interactive interpreter', 'flag', 'i')
         obj = plac_core.call(makeobj, arglist)
         return cls(obj, commentchar, split) # interpreter
 
@@ -631,14 +634,16 @@ class Interpreter(object):
         interpreter, else start an interactive session.
         """
         i = cls.instance(factory, arglist, commentchar, split)
-        if i.obj.args:
+        if i.obj._args_:
             with i:
-                task = i.send(i.obj.args) # synchronous
+                task = i.send(i.obj._args_) # synchronous
                 if task.exc:
                     raise task.etype, task.exc, task.tb
                 print(task)
-        else:
+        elif i.obj._interact_:
             i.interact(stdin, prompt, verbose)
+        else:
+            i.parser.print_usage()
 
     def __init__(self, obj, commentchar='#', split=shlex.split):
         self.obj = obj

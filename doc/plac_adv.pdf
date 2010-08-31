@@ -2322,7 +2322,7 @@ endobj
 % 'R137': class PDFInfo 
 137 0 obj
 << /Author (Michele Simionato)
- /CreationDate (D:20100807083546-01'00')
+ /CreationDate (D:20100826065902-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
@@ -4004,7 +4004,7 @@ endobj
 % 'R168': class PDFStream 
 168 0 obj
 % page stream
-<< /Length 4455 >>
+<< /Length 4064 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -4036,7 +4036,7 @@ BT 1 0 0 1 0 4.82 Tm /F1 10 Tf 12 TL (and here are a few examples of usage:) Tj 
 Q
 Q
 q
-1 0 0 1 62.69291 674.6236 cm
+1 0 0 1 62.69291 494.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4046,67 +4046,24 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 24 re B*
+n -6 -6 468.6898 204 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 5.71 Tm /F4 10 Tf 12 TL ($ python ishelve3.py -h) Tj T* ET
+BT 1 0 0 1 0 185.71 Tm /F4 10 Tf 12 TL ($ python ishelve3.py -h) Tj T* (usage: ishelve3.py [-h] [-i] [-configfile CONFIGFILE] [args [args ...]]) Tj T*  T* (positional arguments:) Tj T* (  args) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -i, --interact        start interactive interpreter) Tj T* (  -configfile CONFIGFILE) Tj T* (                        path name of the shelve) Tj T*  T* ($ python ishelve3.py set a 1) Tj T* (setting a=1) Tj T* ($ python ishelve3.py show a) Tj T* (a = 1) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 557.4236 cm
+1 0 0 1 62.69291 462.6236 cm
 q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 108 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 89.71 Tm /F4 10 Tf 12 TL (usage: ishelve3.py [-h] [-configfile CONFIGFILE]) Tj T*  T* (A minimal interface over a shelve object.) Tj T*  T* (optional arguments:) Tj T* (  -h, --help            show this help message and exit) Tj T* (  -configfile CONFIGFILE) Tj T* (                        path name of the shelve) Tj T* ET
-Q
-Q
-Q
+BT 1 0 0 1 0 16.82 Tm .079989 Tw 12 TL /F1 10 Tf 0 0 0 rg (If you pass the ) Tj /F4 10 Tf (-i ) Tj /F1 10 Tf (flag in the command line, then the script will enter in interactive mode and ask the user) Tj T* 0 Tw (for the commands to execute:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 488.2236 cm
-q
-q
-1 0 0 1 0 0 cm
-q
-1 0 0 1 6.6 6.6 cm
-q
-.662745 .662745 .662745 RG
-.5 w
-.960784 .960784 .862745 rg
-n -6 -6 468.6898 60 re B*
-Q
-q
-0 0 0 rg
-BT 1 0 0 1 0 41.71 Tm /F4 10 Tf 12 TL ($ python ishelve3.py set a 1) Tj T* (setting a=1) Tj T* ($ python ishelve3.py show a) Tj T* (a = 1) Tj T* ET
-Q
-Q
-Q
-Q
-Q
-q
-1 0 0 1 62.69291 456.2236 cm
-q
-0 0 0 rg
-BT 1 0 0 1 0 16.82 Tm /F1 10 Tf 12 TL 1.77881 Tw (If you do not pass enough arguments in the command line, then the script will automatically enter in) Tj T* 0 Tw (interactive mode and ask the user for the command to execute:) Tj T* ET
-Q
-Q
-q
-1 0 0 1 62.69291 363.0236 cm
+1 0 0 1 62.69291 369.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4119,26 +4076,26 @@ q
 n -6 -6 468.6898 84 re B*
 Q
 q
-BT 1 0 0 1 0 65.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ python ishelve3.py) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T*  T* (i) Tj (>) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm 12 TL /F4 10 Tf 0 0 0 rg ($ python ishelve3.py -i) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T*  T* (i) Tj (>) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 319.0236 cm
+1 0 0 1 62.69291 325.4236 cm
 q
 BT 1 0 0 1 0 28.82 Tm .221417 Tw 12 TL /F1 10 Tf 0 0 0 rg (In a sense, I have closed the circle: at the beginning of this document I discussed how to turn a script into) Tj T* 0 Tw .784147 Tw (an interactive application \(the ) Tj /F4 10 Tf (shelve_interpreter.py ) Tj /F1 10 Tf (example\), whereas here I have show how to) Tj T* 0 Tw (turn an interactive application into a script.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 301.0236 cm
+1 0 0 1 62.69291 307.4236 cm
 q
 BT 1 0 0 1 0 4.82 Tm 12 TL /F1 10 Tf 0 0 0 rg (The complete signature of ) Tj /F4 10 Tf (plac.Interpreter.call ) Tj /F1 10 Tf (is the following:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 243.8236 cm
+1 0 0 1 62.69291 250.2236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -4158,7 +4115,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 163.8236 cm
+1 0 0 1 62.69291 170.2236 cm
 q
 BT 1 0 0 1 0 64.82 Tm 1.756651 Tw 12 TL /F1 10 Tf 0 0 0 rg (The factory must have a fixed number of positional arguments \(no default arguments, no varargs, no) Tj T* 0 Tw 1.87881 Tw (kwargs\), otherwise a ) Tj /F4 10 Tf (TypeError ) Tj /F1 10 Tf (is raised: the reason is that we want to be able to distinguish the) Tj T* 0 Tw .829984 Tw (command-line arguments needed to instantiate the factory from the rest arguments that must be sent to) Tj T* 0 Tw 2.609984 Tw (the corresponding interpreter object. It is also possible to specify a list of arguments different from) Tj T* 0 Tw .513318 Tw /F4 10 Tf (sys.argv[1:] ) Tj /F1 10 Tf (\(useful in tests\), the character to be recognized as a comment, the splitting function, the) Tj T* 0 Tw (input source and the prompt to use while in interactive mode, and a verbose flag.) Tj T* ET
 Q
@@ -6800,57 +6757,57 @@ xref
 0000080839 00000 n
 0000085230 00000 n
 0000090375 00000 n
-0000094933 00000 n
-0000100118 00000 n
-0000104753 00000 n
-0000109083 00000 n
-0000114533 00000 n
-0000118530 00000 n
-0000124283 00000 n
-0000129428 00000 n
-0000133953 00000 n
-0000138989 00000 n
-0000143386 00000 n
-0000147672 00000 n
-0000152445 00000 n
-0000155907 00000 n
-0000161587 00000 n
-0000167087 00000 n
-0000168297 00000 n
-0000168759 00000 n
-0000168838 00000 n
-0000168917 00000 n
-0000168996 00000 n
-0000169075 00000 n
-0000169154 00000 n
-0000169233 00000 n
-0000169312 00000 n
-0000169391 00000 n
-0000169470 00000 n
-0000169550 00000 n
-0000169630 00000 n
-0000169710 00000 n
-0000169790 00000 n
-0000169870 00000 n
-0000169950 00000 n
-0000170030 00000 n
-0000170110 00000 n
-0000170190 00000 n
-0000170270 00000 n
-0000170350 00000 n
-0000170430 00000 n
-0000170510 00000 n
-0000170590 00000 n
-0000170670 00000 n
-0000170750 00000 n
+0000094542 00000 n
+0000099727 00000 n
+0000104362 00000 n
+0000108692 00000 n
+0000114142 00000 n
+0000118139 00000 n
+0000123892 00000 n
+0000129037 00000 n
+0000133562 00000 n
+0000138598 00000 n
+0000142995 00000 n
+0000147281 00000 n
+0000152054 00000 n
+0000155516 00000 n
+0000161196 00000 n
+0000166696 00000 n
+0000167906 00000 n
+0000168368 00000 n
+0000168447 00000 n
+0000168526 00000 n
+0000168605 00000 n
+0000168684 00000 n
+0000168763 00000 n
+0000168842 00000 n
+0000168921 00000 n
+0000169000 00000 n
+0000169079 00000 n
+0000169159 00000 n
+0000169239 00000 n
+0000169319 00000 n
+0000169399 00000 n
+0000169479 00000 n
+0000169559 00000 n
+0000169639 00000 n
+0000169719 00000 n
+0000169799 00000 n
+0000169879 00000 n
+0000169959 00000 n
+0000170039 00000 n
+0000170119 00000 n
+0000170199 00000 n
+0000170279 00000 n
+0000170359 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(n\020^\320f\231\256\243,\334=\267N\336b3) (n\020^\320f\231\256\243,\334=\267N\336b3)] 
+ [(sBo\373\214D1\203\267\213\235\214h\027V\257) (sBo\373\214D1\203\267\213\235\214h\027V\257)] 
 
  /Info 137 0 R
  /Root 136 0 R
  /Size 212 >>
 startxref
-170799
+170408
 %%EOF

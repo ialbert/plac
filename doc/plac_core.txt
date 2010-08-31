@@ -363,11 +363,15 @@ conversion and ``type=None``.
 ``choices`` is used to restrict the number of the valid
 options; by default there is no restriction i.e. ``choices=None``.
 
-``metavar`` is used to change the argument name in the usage message
-(and only there); by default the metavar is ``None``: this means that
-the name in the usage message is the same as the argument name,
-unless the argument has a default and in such a case is
-equal to the stringified form of the default.
+``metavar`` has two meanings. For a positional argument it is used to
+change the argument name in the usage message (and only there). By
+default the metavar is ``None`` and the name in the usage message is
+the same as the argument name.  For an option
+the ``metavar`` is used differently in the usage message, which has
+now the form ``[--option-name METAVAR]``. If the ``metavar`` is ``None``,
+then it is equal to the uppercased name of the argument, unless the
+argument has a default and in such a case is equal to the stringified
+form of the default.
 
 Here is an example showing many of the features (copied from the
 argparse_ documentation):

@@ -109,6 +109,36 @@ def test_flag_with_default():
     expect(TypeError, parser_from, lambda yes_or_no='no': None,
            yes_or_no=('A yes/no flag', 'flag', 'f'))
 
+def assert_usage(parser, expected):
+    usage = parser.format_usage()
+    assert usage == expected, usage
+
+def test_metavar_no_defaults():
+    # positional
+    p = parser_from(lambda x: None, 
+                   x=('first argument', 'positional', None, str, [], 'METAVAR'))
+    assert_usage(p, 'usage: test_plac.py [-h] METAVAR\n')
+
+    # option
+    p = parser_from(lambda x: None, 
+                    x=('first argument', 'option', None, str, [], 'METAVAR'))
+    assert_usage(p, 'usage: test_plac.py [-h] [-x METAVAR]\n')
+
+def test_metavar_with_defaults():
+    # positional
+    p = parser_from(lambda x='a': None, 
+                   x=('first argument', 'positional', None, str, [], 'METAVAR'))
+    assert_usage(p, 'usage: test_plac.py [-h] [METAVAR]\n')
+
+    # option
+    p = parser_from(lambda x='a': None, 
+                    x=('first argument', 'option', None, str, [], 'METAVAR'))
+    assert_usage(p, 'usage: test_plac.py [-h] [-x METAVAR]\n')
+
+    p = parser_from(lambda x='a': None, 
+                    x=('first argument', 'option', None, str, []))
+    assert_usage(p, 'usage: test_plac.py [-h] [-x a]\n')
+
 def test_kwargs():
     def main(opt, arg1, *args, **kw):
         print(opt, arg1)

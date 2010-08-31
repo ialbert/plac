@@ -48,16 +48,8 @@ Documentation
 --------------
 
 The source code and the documentation are hosted on Google code.
-First you should read the basic documentation:
+Here is the full documentation in HTML and PDF form:
 
 http://micheles.googlecode.com/hg/plac/doc/plac.html
 
 http://micheles.googlecode.com/hg/plac/doc/plac.pdf
-
-There is also an additional documentation for advanced usages of plac,
-such as using plac for testing/scripting an application and to
-write domain specific languages (DSL):
-
-http://micheles.googlecode.com/hg/plac/doc/plac_adv.html
-
-http://micheles.googlecode.com/hg/plac/doc/plac_adv.pdf

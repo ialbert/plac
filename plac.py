@@ -27,7 +27,7 @@
 See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
 """
 
-__version__ = '0.7.1'
+__version__ = '0.7.2'
 
 from plac_core import *
 
