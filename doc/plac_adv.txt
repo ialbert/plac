@@ -1,15 +1,6 @@
 Advanced usages of plac
 =========================================================
 
-:Author: Michele Simionato
-:E-mail: michele.simionato@gmail.com
-:Date: August 2010
-:Download page: http://pypi.python.org/pypi/plac
-:Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
-:Installation: ``easy_install -U plac``
-:License: BSD license
-:Requires: Python 2.5+
-
 *The present document discusses a few of the advanced use
 cases for plac. It shows how to write interactive and non-interactive
 interpreters with plac, and how to use plac for testing and scripting a generic

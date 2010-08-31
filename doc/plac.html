@@ -424,7 +424,7 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 </tr>
 <tr class="field"><th class="field-name">E-mail:</th><td class="field-body"><a class="reference external" href="mailto:michele.simionato&#64;gmail.com">michele.simionato&#64;gmail.com</a></td>
 </tr>
-<tr class="field"><th class="field-name">Date:</th><td class="field-body">July 2010</td>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">August 2010</td>
 </tr>
 <tr class="field"><th class="field-name">Download page:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></td>
 </tr>
@@ -1489,28 +1489,6 @@ will steal it from me!</p>
 </div>
 <div class="section" id="advanced-usages-of-plac">
 <h1><a class="toc-backref" href="#id68">Advanced usages of plac</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Author:</th><td class="field-body">Michele Simionato</td>
-</tr>
-<tr class="field"><th class="field-name">E-mail:</th><td class="field-body"><a class="reference external" href="mailto:michele.simionato&#64;gmail.com">michele.simionato&#64;gmail.com</a></td>
-</tr>
-<tr class="field"><th class="field-name">Date:</th><td class="field-body">August 2010</td>
-</tr>
-<tr class="field"><th class="field-name">Download page:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></td>
-</tr>
-<tr class="field"><th class="field-name">Project page:</th><td class="field-body"><a class="reference external" href="http://micheles.googlecode.com/hg/plac/doc/plac.html">http://micheles.googlecode.com/hg/plac/doc/plac.html</a></td>
-</tr>
-<tr class="field"><th class="field-name">Installation:</th><td class="field-body"><tt class="docutils literal"><span class="pre">easy_install</span> <span class="pre">-U</span> <span class="pre">plac</span></tt></td>
-</tr>
-<tr class="field"><th class="field-name">License:</th><td class="field-body">BSD license</td>
-</tr>
-<tr class="field"><th class="field-name">Requires:</th><td class="field-body">Python 2.5+</td>
-</tr>
-</tbody>
-</table>
 <p><em>The present document discusses a few of the advanced use
 cases for plac. It shows how to write interactive and non-interactive
 interpreters with plac, and how to use plac for testing and scripting a generic
@@ -2898,9 +2876,9 @@ mode is some 20% slower than the sequential mode.</p>
 results is so common, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides an utility function
 <tt class="docutils literal"><span class="pre">runp(genseq,</span> <span class="pre">mode='p',</span> <span class="pre">start=True)</span></tt> to start
 a bunch a generators and return a list of task objects. By default
-<tt class="docutils literal"><span class="pre">runp</span></tt> use processes, but you can use threads by passing <tt class="docutils literal"><span class="pre">t</span></tt> as
-mode. If you do not wont to start the tasks, you can say so (<tt class="docutils literal"><span class="pre">start=False</span></tt>).
-With <tt class="docutils literal"><span class="pre">runp</span></tt> the picalculator becomes a one-liner:</p>
+<tt class="docutils literal"><span class="pre">runp</span></tt> use processes, but you can use threads by passing <tt class="docutils literal"><span class="pre">mode='t'</span></tt>.
+If you do not wont to start the tasks, you can say so (<tt class="docutils literal"><span class="pre">start=False</span></tt>).
+With <tt class="docutils literal"><span class="pre">runp</span></tt> the parallel pi calculation becomes a one-liner:</p>
 <pre class="literal-block">
 sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
 </pre>
