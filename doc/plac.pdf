@@ -5067,7 +5067,7 @@ endobj
 % 'R299': class PDFInfo 
 299 0 obj
 << /Author ()
- /CreationDate (D:20100831080254-01'00')
+ /CreationDate (D:20100904090628-01'00')
  /Keywords ()
  /Producer (ReportLab http://www.reportlab.com)
  /Subject (\(unspecified\))
@@ -9571,7 +9571,7 @@ endobj
 % 'R361': class PDFStream 
 361 0 obj
 % page stream
-<< /Length 4362 >>
+<< /Length 4341 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -9589,7 +9589,7 @@ n -6 -6 468.6898 456 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 437.71 Tm /F3 10 Tf 12 TL (    @plac.annotations\() Tj T* (        configfile=\('path name of the shelve', 'option'\)\)) Tj T* (    def __init__\(self, configfile\):) Tj T* (        self.configfile = configfile or '~/conf.shelve') Tj T* (        self.fname = os.path.expanduser\(self.configfile\)) Tj T* (        self.__doc__ += '\\nOperating on %s.\\n.help to see '\\) Tj T* (            'the available commands.\\n'  % self.fname) Tj T* (    def __enter__\(self\):) Tj T* (        self.sh = shelve.open\(self.fname\)) Tj T* (        return self) Tj T* (    def __exit__\(self, etype, exc, tb\):) Tj T* (        self.sh.close\(\)) Tj T* (    def set\(self, name, value\):) Tj T* (        "set name value") Tj T* (        yield 'setting %s=%s' % \(name, value\)) Tj T* (        self.sh[name] = value) Tj T* (    def show\(self, *names\):) Tj T* (        "show given parameters") Tj T* (        for name in names:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\) # no error checking) Tj T* (    def showall\(self\):) Tj T* (        "show all parameters") Tj T* (        for name in self.sh:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\)) Tj T* (    def delete\(self, name=None\):) Tj T* (        "delete given parameter \(or everything\)") Tj T* (        if name is None:) Tj T* (            yield 'deleting everything') Tj T* (            self.sh.clear\(\)) Tj T* (        else:) Tj T* (            yield 'deleting %s' % name) Tj T* (            del self.sh[name] # no error checking) Tj T*  T* (main = ShelveInterface # useful for the tests) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.Interpreter\(plac.call\(ShelveInterface\)\).interact\(\)) Tj T* ET
+BT 1 0 0 1 0 437.71 Tm /F3 10 Tf 12 TL (    @plac.annotations\() Tj T* (        configfile=\('path name of the shelve', 'option'\)\)) Tj T* (    def __init__\(self, configfile\):) Tj T* (        self.configfile = configfile or '~/conf.shelve') Tj T* (        self.fname = os.path.expanduser\(self.configfile\)) Tj T* (        self.__doc__ += '\\nOperating on %s.\\n.help to see '\\) Tj T* (            'the available commands.\\n'  % self.fname) Tj T* (    def __enter__\(self\):) Tj T* (        self.sh = shelve.open\(self.fname\)) Tj T* (        return self) Tj T* (    def __exit__\(self, etype, exc, tb\):) Tj T* (        self.sh.close\(\)) Tj T* (    def set\(self, name, value\):) Tj T* (        "set name value") Tj T* (        yield 'setting %s=%s' % \(name, value\)) Tj T* (        self.sh[name] = value) Tj T* (    def show\(self, *names\):) Tj T* (        "show given parameters") Tj T* (        for name in names:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\) # no error checking) Tj T* (    def showall\(self\):) Tj T* (        "show all parameters") Tj T* (        for name in self.sh:) Tj T* (            yield '%s = %s' % \(name, self.sh[name]\)) Tj T* (    def delete\(self, name=None\):) Tj T* (        "delete given parameter \(or everything\)") Tj T* (        if name is None:) Tj T* (            yield 'deleting everything') Tj T* (            self.sh.clear\(\)) Tj T* (        else:) Tj T* (            yield 'deleting %s' % name) Tj T* (            del self.sh[name] # no error checking) Tj T*  T* (main = ShelveInterface # useful for the tests) Tj T*  T* (if __name__ == '__main__':) Tj T* (    plac.Interpreter.call\(ShelveInterface\)) Tj T* ET
 Q
 Q
 Q
@@ -10072,7 +10072,7 @@ endobj
 % 'R366': class PDFStream 
 366 0 obj
 % page stream
-<< /Length 4227 >>
+<< /Length 4243 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -10178,7 +10178,7 @@ q
 n -6 -6 468.6898 168 re B*
 Q
 q
-BT 1 0 0 1 0 149.71 Tm 12 TL /F3 10 Tf 0 0 0 rg ($ plac -i ishelve2.py) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T*  T* (i) Tj (>) Tj ( del) Tj T* (deleting everything) Tj T* (i) Tj (>) Tj ( set a 1) Tj T* (setting a=1) Tj T* (i) Tj (>) Tj ( set b 2) Tj T* (setting b=2) Tj T* (i) Tj (>) Tj ( show b) Tj T* (b = 2) Tj T* ET
+BT 1 0 0 1 0 149.71 Tm 12 TL /F3 10 Tf 0 0 0 rg ($ plac -i ishelve2.py:ShelveInterface) Tj T* (A minimal interface over a shelve object.) Tj T* (Operating on /home/micheles/conf.shelve.) Tj T* (.help to see the available commands.) Tj T*  T* (i) Tj (>) Tj ( del) Tj T* (deleting everything) Tj T* (i) Tj (>) Tj ( set a 1) Tj T* (setting a=1) Tj T* (i) Tj (>) Tj ( set b 2) Tj T* (setting b=2) Tj T* (i) Tj (>) Tj ( show b) Tj T* (b = 2) Tj T* ET
 Q
 Q
 Q
@@ -11486,7 +11486,7 @@ endobj
 % 'R375': class PDFStream 
 375 0 obj
 % page stream
-<< /Length 4667 >>
+<< /Length 4659 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -11498,7 +11498,7 @@ Q
 q
 1 0 0 1 62.69291 633.0236 cm
 q
-BT 1 0 0 1 0 100.82 Tm 1.174751 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is certainly not intended as a tool for parallel computing, but still you can use it to launch a set of) Tj T* 0 Tw .494269 Tw (commands and to collect the results, similarly to the MapReduce pattern recently popularized by Google.) Tj T* 0 Tw .329431 Tw (In order to give an example, I will consider the "Hello World" of parallel computing, i.e. the computation of) Tj T* 0 Tw .229431 Tw (pi with independent processes. There is a huge number of algorithms to compute pi; here I will describe a) Tj T* 0 Tw .30683 Tw (trivial one chosen for simplicity, not per efficienty. The trick is to consider the first quadrant of a circle with) Tj T* 0 Tw .102488 Tw (radius 1 and to extract a number of points ) Tj /F3 10 Tf (\(x, y\) ) Tj /F1 10 Tf (with ) Tj /F3 10 Tf (x ) Tj /F1 10 Tf (and ) Tj /F3 10 Tf (y ) Tj /F1 10 Tf (random variables in the interval ) Tj /F3 10 Tf ([0,1]) Tj /F1 10 Tf (.) Tj T* 0 Tw .743876 Tw (The probability of extracting a number inside the quadrant \(i.e. with ) Tj /F3 10 Tf (x^2 + y^2 < 1) Tj /F1 10 Tf (\) is proportional to) Tj T* 0 Tw .725251 Tw (the area of the quadrant \(i.e. ) Tj /F3 10 Tf (pi/4) Tj /F1 10 Tf (\). The value of ) Tj /F3 10 Tf (pi ) Tj /F1 10 Tf (therefore can be extracted by multiplying by 4 the) Tj T* 0 Tw (ratio between the number of points in the quadrant versus the total number of points ) Tj /F3 10 Tf (N) Tj /F1 10 Tf (, for ) Tj /F3 10 Tf (N ) Tj /F1 10 Tf (large:) Tj T* ET
+BT 1 0 0 1 0 100.82 Tm 1.174751 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (is certainly not intended as a tool for parallel computing, but still you can use it to launch a set of) Tj T* 0 Tw .497984 Tw (commands and to collect the results, similarly to the MapReduce pattern popularized by Google. In order) Tj T* 0 Tw .669431 Tw (to give an example, I will consider the "Hello World" of parallel computing, i.e. the computation of pi with) Tj T* 0 Tw .537633 Tw (independent processes. There is a huge number of algorithms to compute pi; here I will describe a trivial) Tj T* 0 Tw .101567 Tw (one chosen for simplicity, not per efficienty. The trick is to consider the first quadrant of a circle with radius) Tj T* 0 Tw .602488 Tw (1 and to extract a number of points ) Tj /F3 10 Tf (\(x, y\) ) Tj /F1 10 Tf (with ) Tj /F3 10 Tf (x ) Tj /F1 10 Tf (and ) Tj /F3 10 Tf (y ) Tj /F1 10 Tf (random variables in the interval ) Tj /F3 10 Tf ([0,1]) Tj /F1 10 Tf (. The) Tj T* 0 Tw .928876 Tw (probability of extracting a number inside the quadrant \(i.e. with ) Tj /F3 10 Tf (x^2 + y^2 < 1) Tj /F1 10 Tf (\) is proportional to the) Tj T* 0 Tw .433145 Tw (area of the quadrant \(i.e. ) Tj /F3 10 Tf (pi/4) Tj /F1 10 Tf (\). The value of ) Tj /F3 10 Tf (pi ) Tj /F1 10 Tf (therefore can be extracted by multiplying by 4 the ratio) Tj T* 0 Tw (between the number of points in the quadrant versus the total number of points ) Tj /F3 10 Tf (N) Tj /F1 10 Tf (, for ) Tj /F3 10 Tf (N ) Tj /F1 10 Tf (large:) Tj T* ET
 Q
 Q
 q
@@ -11568,7 +11568,7 @@ endobj
 % 'R376': class PDFStream 
 376 0 obj
 % page stream
-<< /Length 3359 >>
+<< /Length 3402 >>
 stream
 1 0 0 1 0 0 cm BT /F1 12 Tf 14.4 TL ET
 q
@@ -11619,7 +11619,7 @@ n -6 -6 468.6898 84 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 65.71 Tm /F3 10 Tf 12 TL ($ python picalculator.py -mP 10000000) Tj T* (3.141904 in 5.744545 seconds) Tj T* ($ python picalculator.py -mT 10000000) Tj T* (3.141272 in 13.875645 seconds) Tj T* ($ python picalculator.py -mS 10000000) Tj T* (3.141586 in 11.353841 seconds) Tj T* ET
+BT 1 0 0 1 0 65.71 Tm /F3 10 Tf 12 TL ($ python picalculator.py -mP 10000000 # two processes) Tj T* (3.141904 in 5.744545 seconds) Tj T* ($ python picalculator.py -mT 10000000 # two threads) Tj T* (3.141272 in 13.875645 seconds) Tj T* ($ python picalculator.py -mS 10000000 # sequential) Tj T* (3.141586 in 11.353841 seconds) Tj T* ET
 Q
 Q
 Q
@@ -12836,76 +12836,76 @@ xref
 0000207099 00000 n
 0000213658 00000 n
 0000218191 00000 n
-0000222656 00000 n
-0000226992 00000 n
-0000231813 00000 n
-0000236988 00000 n
-0000242093 00000 n
-0000246423 00000 n
-0000251870 00000 n
-0000255867 00000 n
-0000261617 00000 n
-0000266759 00000 n
-0000271281 00000 n
-0000276317 00000 n
-0000280711 00000 n
-0000284994 00000 n
-0000289764 00000 n
-0000293226 00000 n
-0000298346 00000 n
-0000305069 00000 n
-0000306543 00000 n
-0000307260 00000 n
-0000307339 00000 n
-0000307418 00000 n
-0000307497 00000 n
-0000307576 00000 n
-0000307655 00000 n
-0000307734 00000 n
-0000307813 00000 n
-0000307892 00000 n
-0000307971 00000 n
-0000308051 00000 n
-0000308131 00000 n
-0000308211 00000 n
-0000308291 00000 n
-0000308371 00000 n
-0000308451 00000 n
-0000308531 00000 n
-0000308611 00000 n
-0000308691 00000 n
-0000308771 00000 n
-0000308851 00000 n
-0000308931 00000 n
-0000309011 00000 n
-0000309091 00000 n
-0000309171 00000 n
-0000309251 00000 n
-0000309331 00000 n
-0000309411 00000 n
-0000309491 00000 n
-0000309571 00000 n
-0000309651 00000 n
-0000309731 00000 n
-0000309811 00000 n
-0000309891 00000 n
-0000309971 00000 n
-0000310051 00000 n
-0000310131 00000 n
-0000310211 00000 n
-0000310291 00000 n
-0000310371 00000 n
-0000310451 00000 n
-0000310531 00000 n
-0000310611 00000 n
+0000222635 00000 n
+0000226971 00000 n
+0000231792 00000 n
+0000236967 00000 n
+0000242072 00000 n
+0000246418 00000 n
+0000251865 00000 n
+0000255862 00000 n
+0000261612 00000 n
+0000266754 00000 n
+0000271276 00000 n
+0000276312 00000 n
+0000280706 00000 n
+0000284989 00000 n
+0000289751 00000 n
+0000293256 00000 n
+0000298376 00000 n
+0000305099 00000 n
+0000306573 00000 n
+0000307290 00000 n
+0000307369 00000 n
+0000307448 00000 n
+0000307527 00000 n
+0000307606 00000 n
+0000307685 00000 n
+0000307764 00000 n
+0000307843 00000 n
+0000307922 00000 n
+0000308001 00000 n
+0000308081 00000 n
+0000308161 00000 n
+0000308241 00000 n
+0000308321 00000 n
+0000308401 00000 n
+0000308481 00000 n
+0000308561 00000 n
+0000308641 00000 n
+0000308721 00000 n
+0000308801 00000 n
+0000308881 00000 n
+0000308961 00000 n
+0000309041 00000 n
+0000309121 00000 n
+0000309201 00000 n
+0000309281 00000 n
+0000309361 00000 n
+0000309441 00000 n
+0000309521 00000 n
+0000309601 00000 n
+0000309681 00000 n
+0000309761 00000 n
+0000309841 00000 n
+0000309921 00000 n
+0000310001 00000 n
+0000310081 00000 n
+0000310161 00000 n
+0000310241 00000 n
+0000310321 00000 n
+0000310401 00000 n
+0000310481 00000 n
+0000310561 00000 n
+0000310641 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\(\254\234\247\203\244\025~\222\365\014\265\3063$\303) (\(\254\234\247\203\244\025~\222\365\014\265\3063$\303)] 
+ [(\207i\\\(\331\(e\246\374\374\337\204\202\207\020\203) (\207i\\\(\331\(e\246\374\374\337\204\202\207\020\203)] 
 
  /Info 299 0 R
  /Root 298 0 R
  /Size 424 >>
 startxref
-310660
+310690
 %%EOF

@@ -114,6 +114,8 @@ def assert_usage(parser, expected):
     assert usage == expected, usage
 
 def test_metavar_no_defaults():
+    sys.argv[0] = 'test_plac.py'
+
     # positional
     p = parser_from(lambda x: None, 
                    x=('first argument', 'positional', None, str, [], 'METAVAR'))
@@ -123,8 +125,11 @@ def test_metavar_no_defaults():
     p = parser_from(lambda x: None, 
                     x=('first argument', 'option', None, str, [], 'METAVAR'))
     assert_usage(p, 'usage: test_plac.py [-h] [-x METAVAR]\n')
+    sys.argv[0] = sys_argv0
 
 def test_metavar_with_defaults():
+    sys.argv[0] = 'test_plac.py'
+
     # positional
     p = parser_from(lambda x='a': None, 
                    x=('first argument', 'positional', None, str, [], 'METAVAR'))
@@ -138,6 +143,8 @@ def test_metavar_with_defaults():
     p = parser_from(lambda x='a': None, 
                     x=('first argument', 'option', None, str, []))
     assert_usage(p, 'usage: test_plac.py [-h] [-x a]\n')
+
+    sys.argv[0] = sys_argv0
 
 def test_kwargs():
     def main(opt, arg1, *args, **kw):

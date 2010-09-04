@@ -611,7 +611,7 @@ mode and non-interactive mode. If you put this alias in your bashrc
 run the ``ishelve2.py`` script in interactive mode as
 follows::
 
- $ plac -i ishelve2.py
+ $ plac -i ishelve2.py:ShelveInterface
  A minimal interface over a shelve object.
  Operating on /home/micheles/conf.shelve.
  .help to see the available commands.

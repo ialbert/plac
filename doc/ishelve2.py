@@ -40,4 +40,4 @@ class ShelveInterface(object):
 main = ShelveInterface # useful for the tests
 
 if __name__ == '__main__':
-    plac.Interpreter(plac.call(ShelveInterface)).interact()
+    plac.Interpreter.call(ShelveInterface)

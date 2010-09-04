@@ -44,6 +44,9 @@ or
 
  $ py.test doc
 
+Some tests will fail if sqlalchemy is not installed. 
+Run an ``easy_install -U sqlalchemy`` or just ignore them.
+
 Documentation
 --------------
 

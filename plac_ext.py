@@ -139,6 +139,34 @@ try:
 except:
     raise ValueError(_('Ill-formed PLACPATH: got %PLACPATHs') % os.environ)
 
+def partial_call(factory, arglist):
+    "Call a container factory with the arglist and return a plac object"
+
+    a = plac_core.parser_from(factory).argspec
+    if a.defaults or a.varargs or a.varkw:
+        raise TypeError('Interpreter.call must be invoked on '
+                        'factories with required arguments only')
+    required_args = ', '.join(a.args)
+    if required_args:
+        required_args += ',' # trailing comma
+    code = '''def makeobj(interact, %s *args):
+    obj = factory(%s)
+    obj._interact_ = interact
+    obj._args_ = args
+    return obj\n'''% (required_args, required_args)
+    dic = dict(factory=factory)
+    exec code in dic
+    makeobj = dic['makeobj']
+    if inspect.isclass(factory):
+        makeobj.__annotations__ = getattr(
+            factory.__init__, '__annotations__', {})
+    else:
+        makeobj.__annotations__ = getattr(
+            factory, '__annotations__', {})
+    makeobj.__annotations__['interact'] = (
+        'start interactive interpreter', 'flag', 'i')
+    return plac_core.call(makeobj, arglist)
+
 def import_main(path, *args, **pconf):
     """
     An utility to import the main function of a plac tool. It also
@@ -160,7 +188,7 @@ def import_main(path, *args, **pconf):
     name, ext = os.path.splitext(os.path.basename(fullpath))
     module = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1))
     if factory_name:
-        tool = plac_core.call(getattr(module, factory_name), args)
+        tool = partial_call(getattr(module, factory_name), args)
     else:
         tool = module.main
     # set the parser configuration
@@ -219,7 +247,7 @@ class BaseTask(object):
         else: # regular exit
             self.status = 'FINISHED'
             try:
-                self.str = str(self.outlist[-1])
+                self.str = '\n'.join(map(str, self.outlist))
             except IndexError:
                 self.str = 'no result'
 
@@ -594,39 +622,6 @@ class Interpreter(object):
     """
 
     @classmethod
-    def instance(cls, factory, arglist=sys.argv[1:], 
-                 commentchar='#', split=shlex.split):
-        """
-        Call a container factory with the arglist and return an
-        interpreter object.
-        """
-        a = plac_core.parser_from(factory).argspec
-        if a.defaults or a.varargs or a.varkw:
-            raise TypeError('Interpreter.call must be invoked on '
-                            'factories with required arguments only')
-        required_args = ', '.join(a.args)
-        if required_args:
-            required_args += ',' # trailing comma
-        code = '''def makeobj(interact, %s *args):
-        obj = factory(%s)
-        obj._interact_ = interact
-        obj._args_ = args
-        return obj\n'''% (required_args, required_args)
-        dic = dict(factory=factory)
-        exec code in dic
-        makeobj = dic['makeobj']
-        if inspect.isclass(factory):
-            makeobj.__annotations__ = getattr(
-                factory.__init__, '__annotations__', {})
-        else:
-            makeobj.__annotations__ = getattr(
-                factory, '__annotations__', {})
-        makeobj.__annotations__['interact'] = (
-            'start interactive interpreter', 'flag', 'i')
-        obj = plac_core.call(makeobj, arglist)
-        return cls(obj, commentchar, split) # interpreter
-
-    @classmethod
     def call(cls, factory, arglist=sys.argv[1:], 
              commentchar='#', split=shlex.split, 
              stdin=sys.stdin, prompt='i> ', verbose=False):
@@ -635,7 +630,8 @@ class Interpreter(object):
         interpreter object. If there are remaining arguments, send them to the
         interpreter, else start an interactive session.
         """
-        i = cls.instance(factory, arglist, commentchar, split)
+        obj = partial_call(factory, arglist)
+        i = cls(obj, commentchar, split)
         if i.obj._args_:
             with i:
                 task = i.send(i.obj._args_) # synchronous
