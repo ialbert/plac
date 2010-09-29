@@ -242,7 +242,7 @@ class BaseTask(object):
             self.status = 'KILLED'
         except: # unexpected exception
             self.etype, self.exc, tb = sys.exc_info()
-            self.tb = self.traceback if stringify_tb else tb 
+            self.tb = ''.join(traceback.format_tb(tb)) if stringify_tb else tb
             self.status = 'ABORTED'
         else: # regular exit
             self.status = 'FINISHED'
