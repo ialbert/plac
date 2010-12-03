@@ -4,7 +4,7 @@ from contextlib import contextmanager
 from operator import attrgetter
 from gettext import gettext as _
 import imp, inspect, os, sys, cmd, shlex, subprocess
-import itertools, traceback, time, select, multiprocessing, signal, threading
+import itertools, traceback, multiprocessing, signal, threading
 import plac_core
 try:
     import readline
@@ -476,8 +476,8 @@ class TaskManager(object):
 
     @plac_core.annotations(
         taskno=('task number', 'positional', None, int))
-    def output(self, taskno=-1):
-        'show the output of a given task'
+    def output(self, taskno=-1, fname=None):
+        'show the output of a given task (and optionally save it to a file)'
         if taskno < 0:
             task = self._get_latest(taskno)
             if task is None:
@@ -489,6 +489,8 @@ class TaskManager(object):
         else:
             task = self.registry[taskno]
         outstr = '\n'.join(map(str, task.outlist))
+        if fname:
+            open(fname, 'w').write(outstr)
         yield task
         if len(task.outlist) > 20 and use_less:
             less(outstr)
