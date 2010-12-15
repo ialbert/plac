@@ -6,10 +6,6 @@ from gettext import gettext as _
 import imp, inspect, os, sys, cmd, shlex, subprocess
 import itertools, traceback, multiprocessing, signal, threading
 import plac_core
-try:
-    import readline
-except ImportError:
-    readline = False
 
 ############################# generic utils ################################
 
@@ -97,22 +93,24 @@ class ReadlineInput(object):
         self.histfile = histfile
         if not case_sensitive:
             self.completions = map(str.upper, completions)
+        import readline
+        self.rl = readline
         readline.parse_and_bind("tab: complete")
         readline.set_completer(self.complete)
 
     def __enter__(self):
-        self.old_completer = readline.get_completer()
+        self.old_completer = self.rl.get_completer()
         try:
             if self.histfile:
-                readline.read_history_file(self.histfile)
+                self.rl.read_history_file(self.histfile)
         except IOError: # the first time
             pass
         return self
 
     def __exit__(self, etype, exc, tb):
-        readline.set_completer(self.old_completer)
+        self.rl.set_completer(self.old_completer)
         if self.histfile:
-            readline.write_history_file(self.histfile)
+            self.rl.write_history_file(self.histfile)
 
     def complete(self, kw, state):
         # state is 0, 1, 2, ... and increases by hitting TAB
@@ -491,6 +489,7 @@ class TaskManager(object):
         outstr = '\n'.join(map(str, task.outlist))
         if fname:
             open(fname, 'w').write(outstr)
+            yield 'saved output on %s' % fname; return
         yield task
         if len(task.outlist) > 20 and use_less:
             less(outstr)
@@ -821,7 +820,12 @@ class Interpreter(object):
 
     def interact(self, stdin=sys.stdin, prompt='i> ', verbose=False):
         "Starts an interactive command loop reading commands from the consolle"
-        if stdin is sys.stdin and readline: # use readline
+        try:
+            import readline
+            readline_present = True
+        except ImportError:
+            readline_present = False
+        if stdin is sys.stdin and readline_present: # use readline
             histfile = os.path.expanduser('~/.%s.history' % self.name)
             self.stdin = ReadlineInput(self.commands, histfile=histfile)
         else:
