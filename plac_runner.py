@@ -1,6 +1,6 @@
 #!python
 from __future__ import with_statement
-import os, sys, shlex, inspect
+import os, sys, shlex
 import plac
 
 def run(fnames, cmd, verbose):

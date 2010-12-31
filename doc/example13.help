@@ -1,9 +1,10 @@
-usage: example13.py [-h] {status,commit,checkout,help} ...
+usage: example13.py {status,commit,checkout,help} ...
 
 A Fake Version Control System
 
-optional arguments:
-  -h, --help            show this help message and exit
-
 subcommands:
   {status,commit,checkout,help}
+    checkout
+    commit
+    status
+    help

@@ -179,6 +179,11 @@ def test_cmd_abbrevs():
     assert ['help', 'foo'] == plac.call(cmds, ['h', 'foo'])
     expect(SystemExit, plac.call, cmds, ['foo'])
 
+def test_sub_help():
+    c = Cmds()
+    c.add_help = True    
+    expect(SystemExit, plac.call, c, ['commit', '-h'])
+
 def test_yield():
     def main():
         for i in (1, 2, 3):

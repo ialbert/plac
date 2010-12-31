@@ -15,6 +15,30 @@ except NameError: # Python 2.3
     from sets import Set as set
 from gettext import gettext as _
 
+
+def getargspec(callableobj):
+    """Given a callable return an object with attributes .args, .varargs, 
+    .varkw, .defaults. It tries to do the "right thing" with functions,
+    methods, classes and generic callables."""
+    if inspect.isfunction(callableobj):
+        argspec = getfullargspec(callableobj)
+    elif inspect.ismethod(callableobj):
+        argspec = getfullargspec(callableobj)
+        del argspec.args[0] # remove first argument
+    elif inspect.isclass(callableobj):
+        if callableobj.__init__ is object.__init__: # to avoid an error
+            argspec = getfullargspec(lambda self: None)
+        else:
+            argspec = getfullargspec(callableobj.__init__)
+        del argspec.args[0] # remove first argument
+    elif hasattr(callableobj, '__call__'):
+        argspec = getfullargspec(callableobj.__call__)
+        del argspec.args[0] # remove first argument
+    else:
+        raise TypeError(_('Could not determine the signature of ') + 
+                        str(callableobj))
+    return argspec
+
 def annotations(**ann):
     """
     Returns a decorator annotating a function with the given annotations.
@@ -169,7 +193,7 @@ class ArgumentParser(argparse.ArgumentParser):
 
     def _extract_subparser_cmd(self, arglist):
         "Extract the right subparser from the first recognized argument"
-        optprefix = self.prefix_chars[0] 
+        optprefix = self.prefix_chars[0]
         name_parser_map = self.subparsers._name_parser_map
         for i, arg in enumerate(arglist):
             if not arg.startswith(optprefix):
@@ -187,31 +211,18 @@ class ArgumentParser(argparse.ArgumentParser):
         elif title:
             self.add_argument_group(title=title) # populate ._action_groups
         prefixlen = len(getattr(obj, 'cmdprefix', ''))
+        add_help = getattr(obj, 'add_help', True)
         for cmd in commands:
             func = getattr(obj, cmd[prefixlen:]) # strip the prefix
             self.subparsers.add_parser(
-                cmd, add_help=False, **pconf(func)).populate_from(func)
+                cmd, add_help=add_help, help=func.__doc__, **pconf(func)
+                ).populate_from(func)
 
     def _set_func_argspec(self, obj):
         """Extracts the signature from a callable object and adds an .argspec
         attribute to the parser. Also adds a .func reference to the object."""
-        if inspect.isfunction(obj):
-            self.argspec = getfullargspec(obj)
-        elif inspect.ismethod(obj):
-            self.argspec = getfullargspec(obj)
-            del self.argspec.args[0] # remove first argument
-        elif inspect.isclass(obj):
-            if obj.__init__ is object.__init__: # to avoid an error
-                self.argspec = getfullargspec(lambda self: None)
-            else:
-                self.argspec = getfullargspec(obj.__init__)
-            del self.argspec.args[0] # remove first argument
-        elif hasattr(obj, '__call__'):
-            self.argspec = getfullargspec(obj.__call__)
-            del self.argspec.args[0] # remove first argument
-        else:
-            raise TypeError(_('Could not determine the signature of %r') % obj)
         self.func = obj
+        self.argspec = getargspec(obj)
         parser_registry[obj] = self
 
     def populate_from(self, func):
