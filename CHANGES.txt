@@ -1,8 +1,12 @@
 HISTORY
 ----------
 
-0.7.4 Fixed the plac_runner switches -i and -s; fixed a bug with multiline output
-      and issue with nosetest (2010-09-04)
+0.7.5 Fixed a bug with the help of subcommands, signaled by Paul Jacobson;
+      added the ability to save the output of a command into a file; postponed
+      the import of the readline module to avoid buffering issues; fixed a
+      bug with the traceback when in multiprocessing mode (2011-01-01)
+0.7.4 Fixed the plac_runner switches -i and -s; fixed a bug with multiline
+      output and issue with nosetest (2010-09-04)
 0.7.3 Put the documentation in a single document; added runp (2010-08-31)
 0.7.2 Interpreter.call does not start an interpreter automagically anymore;
       better documented and added tests for the metavar concept (2010-08-31)

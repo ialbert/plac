@@ -489,7 +489,7 @@ class TaskManager(object):
         outstr = '\n'.join(map(str, task.outlist))
         if fname:
             open(fname, 'w').write(outstr)
-            yield 'saved output on %s' % fname; return
+            yield 'saved output of %d into %s' % (taskno, fname); return
         yield task
         if len(task.outlist) > 20 and use_less:
             less(outstr)

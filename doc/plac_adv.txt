@@ -849,7 +849,7 @@ fake importer:
 If you run the ``import_file`` command, you will have to wait for 200 seconds
 before entering a new command::
 
- $ python importer1.py dsn
+ $ python importer1.py dsn -i
  A fake importer with an import_file command
  i> import_file file1
  ... <wait 3+ minutes>
@@ -905,6 +905,12 @@ If you look after a time long enough, the task will be finished::
 
  i> .output 1
  <ThreadedTask 1 [import_file file1] FINISHED>
+
+It is possible to store the output of a task into a file, to be read
+later (this is useful for tasks with a large output)::
+
+ i> .output 1 /tmp/out.txt
+ saved output of 1 into /tmp/out.txt
 
 You can even skip the number argument: then ``.output`` will the return
 the output of the last launched command (the special commands like .output
