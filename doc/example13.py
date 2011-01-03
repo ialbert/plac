@@ -3,7 +3,7 @@ import plac
 class FVCS(object):
     "A Fake Version Control System"
     commands = 'checkout', 'commit', 'status', 'help'
-    add_help = False
+    add_help = True
 
     @plac.annotations(
         name=('a recognized command', 'positional', None, str, commands))

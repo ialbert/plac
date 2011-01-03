@@ -7,4 +7,6 @@ optional arguments:
 
 subcommands:
   {status,commit,checkout}
-                        -h to get additional help
+    checkout            A fake checkout command
+    commit              A fake commit command
+    status              A fake status command
