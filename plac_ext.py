@@ -690,9 +690,9 @@ class Interpreter(object):
         self._interpreter.send(None)
         return self
 
-    def __exit__(self, *exc):
+    def __exit__(self, exctype, exc, tb):
         "Close the inner interpreter and the task manager"
-        self.close()
+        self.close(exctype, exc, tb)
 
     def submit(self, line):
         "Send a line to the underlying interpreter and return a task object"
@@ -720,10 +720,13 @@ class Interpreter(object):
         "The full lists of the submitted tasks"
         return self.tm.registry.values()
 
-    def close(self):
+    def close(self, exctype=None, exc=None, tb=None):
         "Can be called to close the interpreter prematurely"
         self.tm.close()
-        self._interpreter.close()
+        if exctype is not None:
+            self._interpreter.throw(exctype, exc, tb)
+        else:
+            self._interpreter.close()
 
     def _make_interpreter(self):
         "The interpreter main loop, from lists of arguments to task objects"
