@@ -692,6 +692,7 @@ arguably even easier than plac_:
 
 - opterator_ by Dusty Phillips
 - CLIArgs_ by Pavel Panchekha
+- commandline_ by David Laban
 
 Luckily for me none of such projects had the idea of using 
 function annotations and argparse_; as a consequence, they are
@@ -706,6 +707,10 @@ plac_ can also be used as a replacement of the cmd_ module in the standard
 library and as such it shares many features with the module cmd2_ by
 Catherine Devlin. However, this is completely coincidental, since I became
 aware of the cmd2_ module only after writing plac_.
+
+Command-line argument parsers keep coming out; between the newcomers
+I will notice `marrow.script`_ by Alice Bevan-McGregor, which is quite
+similar to plac_ in spirit, but does not rely on argparse_ at all.
 
 The future
 -------------------------------
@@ -780,3 +785,5 @@ That's all, I hope you will enjoy working with plac_!
 .. _advanced usage document: in-writing
 .. _cmd2: http://packages.python.org/cmd2/
 .. _cmd: http://docs.python.org/library/cmd.html
+.. _marrow.script: https://github.com/pulp/marrow.script 
+.. _commandline: http://pypi.python.org/pypi/commandline

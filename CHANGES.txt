@@ -1,6 +1,9 @@
 HISTORY
 ----------
 
+0.7.6 Fixed the error propagation in ``Interpreter.__exit__``.
+      Added a note about commandline and marrow.script in the documentation
+      (2011-01-13)
 0.7.5 Fixed a bug with the help of subcommands, signaled by Paul Jacobson;
       added the ability to save the output of a command into a file; postponed
       the import of the readline module to avoid buffering issues; fixed a
