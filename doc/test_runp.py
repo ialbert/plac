@@ -14,13 +14,11 @@ def test():
     tasks = plac.runp([gen(3), gen(5), gen(10)])
     for t in tasks:
         t.result
+    t.man.stop()
 
 def test_tkmonitor():
     mon = plac_tk.TkMonitor('tkmon')
-    i = plac.Interpreter.from_gen([gen(3), gen(5), gen(10)], 'p', [mon])
-    with i:
-        for t in i.tasks():
-            t.run()
-        for t in i.tasks():
-            t.result
-        i.man.stop()
+    tasks = plac.runp([gen(3), gen(5), gen(10)], monitors=[mon])
+    for t in tasks:
+        t.result
+    t.man.stop()

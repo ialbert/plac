@@ -474,10 +474,11 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 <li><a class="reference internal" href="#threaded-commands" id="id45">Threaded commands</a></li>
 <li><a class="reference internal" href="#running-commands-as-external-processes" id="id46">Running commands as external processes</a></li>
 <li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id47">Managing the output of concurrent commands</a></li>
-<li><a class="reference internal" href="#parallel-computing-with-plac" id="id48">Parallel computing with plac</a></li>
-<li><a class="reference internal" href="#the-plac-server" id="id49">The plac server</a></li>
-<li><a class="reference internal" href="#summary" id="id50">Summary</a></li>
-<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id51">Appendix: custom annotation objects</a></li>
+<li><a class="reference internal" href="#monitor-support" id="id48">Monitor support</a></li>
+<li><a class="reference internal" href="#parallel-computing-with-plac" id="id49">Parallel computing with plac</a></li>
+<li><a class="reference internal" href="#the-plac-server" id="id50">The plac server</a></li>
+<li><a class="reference internal" href="#summary" id="id51">Summary</a></li>
+<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id52">Appendix: custom annotation objects</a></li>
 </ul>
 </li>
 </ul>
@@ -2676,11 +2677,10 @@ task runs and more values are yielded. Accessing the <tt class="docutils literal
 nonblocking and can be done freely.
 Finally there is a <tt class="docutils literal">.result</tt>
 property which waits for the task to finish and returns the last yielded
-value or raises an exception.</p>
-<p>Here is some example code to visualize the output of the FakeImporter
-in Tkinter (I chose Tkinter because it is easy to use and it is
-in the standard library, but you can use any GUI):</p>
+value or raises an exception. The code below provides an example of
+how you could implement a GUI over the importer example:</p>
 <pre class="literal-block">
+from __future__ import with_statement
 from Tkinter import *
 from importer3 import FakeImporter
 
@@ -2713,8 +2713,47 @@ if __name__ == '__main__':
 
 </pre>
 </div>
+<div class="section" id="monitor-support">
+<h2><a class="toc-backref" href="#id48">Monitor support</a></h2>
+<p>Starting from release 0.8 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides builtin support for monitoring the
+output of concurrent commands, at least for platforms where multiprocessing
+is fully supported. You can define your own monitor
+class, simply by inheriting from <tt class="docutils literal">plac.Monitor</tt> and by
+overriding the methods <tt class="docutils literal">add_listener(self, no)</tt>,
+<tt class="docutils literal">del_listener(self, taskno)</tt>, <tt class="docutils literal">notify_listener(self, taskno, msg)</tt>,
+<tt class="docutils literal">schedule(self, seconds, func, arg)</tt> and <tt class="docutils literal">run(self)</tt>.
+Then, you can a monitor object to any <tt class="docutils literal">plac.Interpreter</tt> object
+by simply calling the <tt class="docutils literal">add_monitor</tt> method.
+For convenience,
+<tt class="docutils literal">plac</tt> comes with a very simple <tt class="docutils literal">TkMonitor</tt> based on Tkinter
+(I chose Tkinter because it is easy to use and it is
+in the standard library, but you can use any GUI): you can just
+look at how the <tt class="docutils literal">TkMonitor</tt> is implemented in <tt class="docutils literal">plac_tk.py</tt>
+and adapt it. Here is an example of usage of the <tt class="docutils literal">TkMonitor</tt>:</p>
+<pre class="literal-block">
+from __future__ import with_statement
+import plac
+
+class Hello(object):
+    mpcommands = ['hello']
+    def hello(self):
+        yield 'hello'
+
+if __name__ == '__main__':
+    i = plac.Interpreter(Hello())
+    i.add_monitor(plac.TkMonitor('tkmon'))
+    with i:
+        i.interact()
+        
+
+</pre>
+<p>Try to give the <tt class="docutils literal">hello</tt> command from the interactive interpreter:
+each time a new text widget will be added displaying the output
+of the command. Notice that if <tt class="docutils literal">Tkinter</tt> is not installed correctly
+on your system the <tt class="docutils literal">TkMonitor</tt> class will not be available.</p>
+</div>
 <div class="section" id="parallel-computing-with-plac">
-<h2><a class="toc-backref" href="#id48">Parallel computing with plac</a></h2>
+<h2><a class="toc-backref" href="#id49">Parallel computing with plac</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is certainly not intended as a tool for parallel computing, but
 still you can use it to launch a set of commands and to collect the
 results, similarly to the MapReduce pattern popularized by
@@ -2836,7 +2875,7 @@ $ python picalculator.py -mS 10000000 # sequential
 mode is some 20% slower than the sequential mode.</p>
 <p>Since the pattern submit a bunch of tasks, starts them and collect the
 results is so common, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides an utility function
-<tt class="docutils literal">runp(genseq, <span class="pre">mode='p',</span> start=True)</tt> to start
+<tt class="docutils literal">runp(genseq, <span class="pre">mode='p',</span> <span class="pre">monitors=(),</span> start=True)</tt> to start
 a bunch a generators and return a list of task objects. By default
 <tt class="docutils literal">runp</tt> use processes, but you can use threads by passing <tt class="docutils literal"><span class="pre">mode='t'</span></tt>.
 If you do not wont to start the tasks, you can say so (<tt class="docutils literal">start=False</tt>).
@@ -2844,9 +2883,12 @@ With <tt class="docutils literal">runp</tt> the parallel pi calculation becomes 
 <pre class="literal-block">
 sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
 </pre>
+<p>The file <tt class="docutils literal">test_runp</tt> in the <tt class="docutils literal">doc</tt> directory of the plac distribution
+shows another couple of examples of usage, including how to show the
+results of the running computation on a <tt class="docutils literal">TkMonitor</tt>.</p>
 </div>
 <div class="section" id="the-plac-server">
-<h2><a class="toc-backref" href="#id49">The plac server</a></h2>
+<h2><a class="toc-backref" href="#id50">The plac server</a></h2>
 <p>A command-line oriented interface can be easily converted into a
 socket-based interface. Starting from release 0.7 plac features
 a builtin server which is able to accept commands from multiple
@@ -2892,7 +2934,7 @@ Connection closed by foreign host.
 </pre>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id50">Summary</a></h2>
+<h2><a class="toc-backref" href="#id51">Summary</a></h2>
 <p>Once <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> claimed to be the easiest command-line arguments parser
 in the world. Having read this document you may think that it is not
 so easy after all. But it is a false impression. Actually the
@@ -2918,7 +2960,7 @@ given port number (default 2199)</li>
 </div>
 <hr class="docutils" />
 <div class="section" id="appendix-custom-annotation-objects">
-<h2><a class="toc-backref" href="#id51">Appendix: custom annotation objects</a></h2>
+<h2><a class="toc-backref" href="#id52">Appendix: custom annotation objects</a></h2>
 <p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal">Annotation</tt> class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
 six attributes <tt class="docutils literal">help, kind, short, type, choices, metavar</tt>.</p>

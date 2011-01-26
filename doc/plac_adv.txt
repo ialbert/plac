@@ -1018,14 +1018,38 @@ task runs and more values are yielded. Accessing the ``.outlist`` is
 nonblocking and can be done freely.
 Finally there is a ``.result``
 property which waits for the task to finish and returns the last yielded 
-value or raises an exception.
-
-Here is some example code to visualize the output of the FakeImporter
-in Tkinter (I chose Tkinter because it is easy to use and it is
-in the standard library, but you can use any GUI):
+value or raises an exception. The code below provides an example of
+how you could implement a GUI over the importer example:
 
 .. include:: importer_ui.py
    :literal:
+
+Monitor support
+--------------------------------
+
+Starting from release 0.8 plac_ provides builtin support for monitoring the
+output of concurrent commands, at least for platforms where multiprocessing
+is fully supported. You can define your own monitor
+class, simply by inheriting from ``plac.Monitor`` and by
+overriding the methods ``add_listener(self, no)``, 
+``del_listener(self, taskno)``, ``notify_listener(self, taskno, msg)``,
+``schedule(self, seconds, func, arg)`` and ``run(self)``. 
+Then, you can a monitor object to any ``plac.Interpreter`` object
+by simply calling the ``add_monitor`` method.
+For convenience,
+``plac`` comes with a very simple ``TkMonitor`` based on Tkinter
+(I chose Tkinter because it is easy to use and it is
+in the standard library, but you can use any GUI): you can just
+look at how the ``TkMonitor`` is implemented in ``plac_tk.py``
+and adapt it. Here is an example of usage of the ``TkMonitor``:
+
+.. include:: tkmon.py
+   :literal:
+
+Try to give the ``hello`` command from the interactive interpreter:
+each time a new text widget will be added displaying the output
+of the command. Notice that if ``Tkinter`` is not installed correctly
+on your system the ``TkMonitor`` class will not be available.
 
 Parallel computing with plac
 ---------------------------------------------
@@ -1092,13 +1116,17 @@ mode is some 20% slower than the sequential mode.
 
 Since the pattern submit a bunch of tasks, starts them and collect the
 results is so common, plac_ provides an utility function 
-``runp(genseq, mode='p', start=True)`` to start
+``runp(genseq, mode='p', monitors=(), start=True)`` to start
 a bunch a generators and return a list of task objects. By default
 ``runp`` use processes, but you can use threads by passing ``mode='t'``.
 If you do not wont to start the tasks, you can say so (``start=False``).
 With ``runp`` the parallel pi calculation becomes a one-liner::
 
     sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
+
+The file ``test_runp`` in the ``doc`` directory of the plac distribution
+shows another couple of examples of usage, including how to show the
+results of the running computation on a ``TkMonitor``.
 
 The plac server
 -------------------------------------------------------

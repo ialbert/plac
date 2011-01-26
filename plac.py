@@ -32,4 +32,8 @@ __version__ = '0.8.0'
 from plac_core import *
 
 if sys.version >= '2.5':
-    from plac_ext import Interpreter, import_main, ReadlineInput, stdout, runp, Manager
+    from plac_ext import Interpreter, import_main, ReadlineInput, stdout, runp, Monitor
+    try:
+        from plac_tk import TkMonitor
+    except ImportError:
+        pass
