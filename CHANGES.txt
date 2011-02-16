@@ -1,6 +1,7 @@
 HISTORY
 ----------
 
+0.8.0 Added a monitor framework and a TkMonitor (2011-02-16)
 0.7.6 Fixed the error propagation in ``Interpreter.__exit__``.
       Added a note about commandline and marrow.script in the documentation
       (2011-01-13)
