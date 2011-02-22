@@ -1000,7 +1000,9 @@ class Interpreter(object):
                 task = i.send(i.obj._args_) # synchronous
                 if task.exc:
                     raise task.etype, task.exc, task.tb
-                print(task)
+                out = str(task)
+                if out:
+                    print(out)
         elif i.obj._interact_:
             i.interact(stdin, prompt, verbose)
         else:
