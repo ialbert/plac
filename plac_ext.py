@@ -905,7 +905,8 @@ class Interpreter(object):
                     msg = 'line %d: input: %s\noutput: %s\nexpected: %s\n' % (
                         no + 1, input, task, output)
                     write(msg)
-                    raise task.etype, task.exc, task.tb
+                    if task.exc:
+                        raise task.etype, task.exc, task.tb
 
     def execute(self, lineiter, verbose=False):
         "Execute a lineiter of commands in a context and print the output"
