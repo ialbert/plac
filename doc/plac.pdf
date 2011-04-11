@@ -5204,7 +5204,7 @@ endobj
 % 'R307': class PDFInfo 
 307 0 obj
 << /Author ()
- /CreationDate (D:20110126134857-01'00')
+ /CreationDate (D:20110329173347-01'00')
  /Creator (\(unspecified\))
  /Keywords ()
  /Producer (ReportLab PDF Library - www.reportlab.com)
@@ -9737,7 +9737,7 @@ endobj
 % 'R371': class PDFStream 
 371 0 obj
 % page stream
-<< /Length 4207 >>
+<< /Length 4203 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -9775,7 +9775,7 @@ Q
 q
 1 0 0 1 62.69291 270.0679 cm
 q
-BT 1 0 0 1 0 26 Tm 1.066303 Tw 12 TL /F1 10 Tf 0 0 0 rg (At the core of ) Tj /F3 10 Tf (plac ) Tj /F1 10 Tf (there is the ) Tj /F3 10 Tf (call ) Tj /F1 10 Tf (function which invokes a callable with the list of the arguments) Tj T* 0 Tw .937674 Tw (passed at the command-line \() Tj /F3 10 Tf (sys.argv[1:]) Tj /F1 10 Tf (\). Thanks to ) Tj /F3 10 Tf (plac.call ) Tj /F1 10 Tf (you can launch your module by) Tj T* 0 Tw (simply adding the lines:) Tj T* ET
+BT 1 0 0 1 0 26 Tm .10104 Tw 12 TL /F1 10 Tf 0 0 0 rg (At the core of ) Tj /F3 10 Tf (plac ) Tj /F1 10 Tf (there is the ) Tj /F3 10 Tf (call ) Tj /F1 10 Tf (function which invokes a callable with the list of arguments passed) Tj T* 0 Tw 1.238443 Tw (at the command-line \() Tj /F3 10 Tf (sys.argv[1:]) Tj /F1 10 Tf (\). Thanks to ) Tj /F3 10 Tf (plac.call ) Tj /F1 10 Tf (you can launch your module by simply) Tj T* 0 Tw (adding the lines:) Tj T* ET
 Q
 Q
 q
@@ -9829,7 +9829,7 @@ Q
 q
 1 0 0 1 62.69291 91.66791 cm
 q
-BT 1 0 0 1 0 14 Tm .435227 Tw 12 TL /F1 10 Tf 0 0 0 rg (Moreover, now the program runs, but only in interactive mode, i.e. it is not possible to run it as a script. It ) Tj T* 0 Tw .721098 Tw (would be nice instead to be able to specify the command to execute on the command-line and have the) Tj T* 0 Tw ET
+BT 1 0 0 1 0 14 Tm .873988 Tw 12 TL /F1 10 Tf 0 0 0 rg (Moreover, now the program runs, but only in interactive mode, i.e. it is not possible to run it as a script. ) Tj T* 0 Tw .097882 Tw (Instead, it would be nice to be able to specify the command to execute on the command-line and have the) Tj T* 0 Tw ET
 Q
 Q
 q
@@ -9845,13 +9845,13 @@ endobj
 % 'R372': class PDFStream 
 372 0 obj
 % page stream
-<< /Length 4686 >>
+<< /Length 4687 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
 1 0 0 1 62.69291 693.0236 cm
 q
-BT 1 0 0 1 0 62 Tm 4.08229 Tw 12 TL /F1 10 Tf 0 0 0 rg (interpreter start, execute the command and finish properly \(I mean by calling ) Tj /F3 10 Tf (__enter__ ) Tj /F1 10 Tf (and) Tj T* 0 Tw .427633 Tw /F3 10 Tf (__exit__) Tj /F1 10 Tf (\) without needing user input. The the script could be called from a batch shell script working in) Tj T* 0 Tw 2.26816 Tw (the background. In order to provide such functionality ) Tj /F3 10 Tf (plac.Interpreter ) Tj /F1 10 Tf (provides a classmethod) Tj T* 0 Tw 1.173318 Tw (named ) Tj /F3 10 Tf (.call ) Tj /F1 10 Tf (which takes the factory, instantiates it with the arguments read from the command line,) Tj T* 0 Tw 1.517045 Tw (wraps the resulting container object as an interpreter and runs it with the rest arguments found in the) Tj T* 0 Tw (command line. Here is the code to turn the ) Tj /F3 10 Tf (ShelveInterface ) Tj /F1 10 Tf (into a script) Tj T* ET
+BT 1 0 0 1 0 62 Tm 4.08229 Tw 12 TL /F1 10 Tf 0 0 0 rg (interpreter start, execute the command and finish properly \(I mean by calling ) Tj /F3 10 Tf (__enter__ ) Tj /F1 10 Tf (and) Tj T* 0 Tw .100574 Tw /F3 10 Tf (__exit__) Tj /F1 10 Tf (\) without needing user input. Then the script could be called from a batch shell script working in) Tj T* 0 Tw 2.26816 Tw (the background. In order to provide such functionality ) Tj /F3 10 Tf (plac.Interpreter ) Tj /F1 10 Tf (provides a classmethod) Tj T* 0 Tw 1.173318 Tw (named ) Tj /F3 10 Tf (.call ) Tj /F1 10 Tf (which takes the factory, instantiates it with the arguments read from the command line,) Tj T* 0 Tw 1.517045 Tw (wraps the resulting container object as an interpreter and runs it with the rest arguments found in the) Tj T* 0 Tw (command line. Here is the code to turn the ) Tj /F3 10 Tf (ShelveInterface ) Tj /F1 10 Tf (into a script) Tj T* ET
 Q
 Q
 q
@@ -12989,77 +12989,77 @@ xref
 0000215252 00000 n
 0000219751 00000 n
 0000224179 00000 n
-0000228487 00000 n
-0000233274 00000 n
-0000238421 00000 n
-0000243492 00000 n
-0000247803 00000 n
-0000253198 00000 n
-0000256969 00000 n
-0000262463 00000 n
-0000267406 00000 n
-0000271659 00000 n
-0000276396 00000 n
-0000281327 00000 n
-0000286032 00000 n
-0000291704 00000 n
-0000295024 00000 n
-0000299605 00000 n
-0000305885 00000 n
-0000310323 00000 n
-0000311120 00000 n
-0000311852 00000 n
-0000311931 00000 n
-0000312010 00000 n
-0000312089 00000 n
-0000312168 00000 n
-0000312247 00000 n
-0000312326 00000 n
-0000312405 00000 n
-0000312484 00000 n
-0000312563 00000 n
-0000312643 00000 n
-0000312723 00000 n
-0000312803 00000 n
-0000312883 00000 n
-0000312963 00000 n
-0000313043 00000 n
-0000313123 00000 n
-0000313203 00000 n
-0000313283 00000 n
-0000313363 00000 n
-0000313443 00000 n
-0000313523 00000 n
-0000313603 00000 n
-0000313683 00000 n
-0000313763 00000 n
-0000313843 00000 n
-0000313923 00000 n
-0000314003 00000 n
-0000314083 00000 n
-0000314163 00000 n
-0000314243 00000 n
-0000314323 00000 n
-0000314403 00000 n
-0000314483 00000 n
-0000314563 00000 n
-0000314643 00000 n
-0000314723 00000 n
-0000314803 00000 n
-0000314883 00000 n
-0000314963 00000 n
-0000315043 00000 n
-0000315123 00000 n
-0000315203 00000 n
-0000315283 00000 n
+0000228483 00000 n
+0000233271 00000 n
+0000238418 00000 n
+0000243489 00000 n
+0000247800 00000 n
+0000253195 00000 n
+0000256966 00000 n
+0000262460 00000 n
+0000267403 00000 n
+0000271656 00000 n
+0000276393 00000 n
+0000281324 00000 n
+0000286029 00000 n
+0000291701 00000 n
+0000295021 00000 n
+0000299602 00000 n
+0000305882 00000 n
+0000310320 00000 n
+0000311117 00000 n
+0000311849 00000 n
+0000311928 00000 n
+0000312007 00000 n
+0000312086 00000 n
+0000312165 00000 n
+0000312244 00000 n
+0000312323 00000 n
+0000312402 00000 n
+0000312481 00000 n
+0000312560 00000 n
+0000312640 00000 n
+0000312720 00000 n
+0000312800 00000 n
+0000312880 00000 n
+0000312960 00000 n
+0000313040 00000 n
+0000313120 00000 n
+0000313200 00000 n
+0000313280 00000 n
+0000313360 00000 n
+0000313440 00000 n
+0000313520 00000 n
+0000313600 00000 n
+0000313680 00000 n
+0000313760 00000 n
+0000313840 00000 n
+0000313920 00000 n
+0000314000 00000 n
+0000314080 00000 n
+0000314160 00000 n
+0000314240 00000 n
+0000314320 00000 n
+0000314400 00000 n
+0000314480 00000 n
+0000314560 00000 n
+0000314640 00000 n
+0000314720 00000 n
+0000314800 00000 n
+0000314880 00000 n
+0000314960 00000 n
+0000315040 00000 n
+0000315120 00000 n
+0000315200 00000 n
+0000315280 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
- [(\264*\221\021\265;\202\277\256k\312\271\011\200e&) (\264*\221\021\265;\202\277\256k\312\271\011\200e&)] 
+ [(\304|\307\207\356\233\\[\313\301W\035\310PO\271) (\304|\307\207\356\233\\[\313\301W\035\310PO\271)] 
 
  /Info 307 0 R
  /Root 306 0 R
  /Size 435 >>
 startxref
-315332
+315329
 %%EOF

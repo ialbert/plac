@@ -2,7 +2,10 @@ HISTORY
 ----------
 
 0.8.1 Removed a stray newline in the output of plac, as signaled
-      by Daniele Pighin (2011-02-22)
+      by Daniele Pighin; fixed a bug in the doctest method raising
+      non-existing exceptions; turned the notification messages into
+      unicode strings; removed an ugly SystemExit message
+      for invalid commands, signaled by Tuk Bredsdorff (2011-04-11)
 0.8.0 Added a monitor framework and a TkMonitor (2011-02-16)
 0.7.6 Fixed the error propagation in ``Interpreter.__exit__``.
       Added a note about commandline and marrow.script in the documentation

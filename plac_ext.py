@@ -237,7 +237,7 @@ class BaseTask(object):
                     raise GeneratorExit
                 if value is not None: # add output
                     self.outlist.append(value)
-                    self.notify(str(value))
+                    self.notify(unicode(value))
                 yield
         except (GeneratorExit, TerminatedProcess, KeyboardInterrupt): 
             # soft termination
@@ -249,7 +249,7 @@ class BaseTask(object):
         else: # regular exit
             self.status = 'FINISHED'
             try:
-                self.str = '\n'.join(map(str, self.outlist))
+                self.str = '\n'.join(map(unicode, self.outlist))
             except IndexError:
                 self.str = 'no result'
 
@@ -304,7 +304,7 @@ class SynTask(BaseTask):
         if self.etype: # there was an error
             return '%s: %s' % (self.etype.__name__, self.exc)
         else:
-            return '\n'.join(map(str, self.outlist))
+            return '\n'.join(map(unicode, self.outlist))
 
 class ThreadedTask(BaseTask):
     """
@@ -500,7 +500,7 @@ class TaskManager(object):
             return
         else:
             task = self.registry[taskno]
-        outstr = '\n'.join(map(str, task.outlist))
+        outstr = '\n'.join(map(unicode, task.outlist))
         if fname:
             open(fname, 'w').write(outstr)
             yield 'saved output of %d into %s' % (taskno, fname); return
@@ -523,7 +523,7 @@ class TaskManager(object):
     def help(self, cmd=None):
         "show help about a given command"
         if cmd is None:
-            yield str(self.helpsummary)
+            yield unicode(self.helpsummary)
         else:
             yield plac_core.parser_from(self.obj).help_cmd(cmd)
 
@@ -846,7 +846,10 @@ class Interpreter(object):
                 arglist = yield task
                 try:
                     cmd, result = self.parser.consume(arglist)
-                except: # i.e. SystemExit for invalid command
+                except SystemExit: # for invalid commands
+                    task = SynTask(no, arglist, iter([]))
+                    continue
+                except: # anything else
                     task = SynTask(no, arglist, gen_exc(*sys.exc_info()))
                     continue
                 if not plac_core.iterable(result): # atomic result

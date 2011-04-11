@@ -391,7 +391,7 @@ plac.Interpreter.call
 --------------------------------------------
 
 At the core of ``plac`` there is the ``call`` function which invokes
-a callable with the list of the arguments passed at the command-line
+a callable with the list of arguments passed at the command-line
 (``sys.argv[1:]``). Thanks to ``plac.call`` you can launch your module 
 by simply adding the lines::
 
@@ -409,11 +409,11 @@ a bit ugly::
      plac.Interpreter(plac.call(ShelveInterface)).interact()
 
 Moreover, now the program runs, but only in interactive mode, i.e.
-it is not possible to run it as a script. It would be nice instead
+it is not possible to run it as a script. Instead, it would be nice
 to be able to specify the command to execute on the command-line
 and have the interpreter start, execute the command and finish
 properly (I mean by calling ``__enter__`` and ``__exit__``)
-without needing user input. The the script could be called from
+without needing user input. Then the script could be called from
 a batch shell script working in the background.
 In order to provide such functionality ``plac.Interpreter`` provides
 a classmethod named ``.call`` which takes the factory, instantiates

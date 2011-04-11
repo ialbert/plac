@@ -1962,7 +1962,7 @@ you pass the <tt class="docutils literal">verbose</tt> flag to the <tt class="do
 <div class="section" id="plac-interpreter-call">
 <h2><a class="toc-backref" href="#id39">plac.Interpreter.call</a></h2>
 <p>At the core of <tt class="docutils literal">plac</tt> there is the <tt class="docutils literal">call</tt> function which invokes
-a callable with the list of the arguments passed at the command-line
+a callable with the list of arguments passed at the command-line
 (<tt class="docutils literal">sys.argv[1:]</tt>). Thanks to <tt class="docutils literal">plac.call</tt> you can launch your module
 by simply adding the lines:</p>
 <pre class="literal-block">
@@ -1980,11 +1980,11 @@ if __name__ == '__main__':
    plac.Interpreter(plac.call(ShelveInterface)).interact()
 </pre>
 <p>Moreover, now the program runs, but only in interactive mode, i.e.
-it is not possible to run it as a script. It would be nice instead
+it is not possible to run it as a script. Instead, it would be nice
 to be able to specify the command to execute on the command-line
 and have the interpreter start, execute the command and finish
 properly (I mean by calling <tt class="docutils literal">__enter__</tt> and <tt class="docutils literal">__exit__</tt>)
-without needing user input. The the script could be called from
+without needing user input. Then the script could be called from
 a batch shell script working in the background.
 In order to provide such functionality <tt class="docutils literal">plac.Interpreter</tt> provides
 a classmethod named <tt class="docutils literal">.call</tt> which takes the factory, instantiates
