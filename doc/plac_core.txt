@@ -47,7 +47,7 @@ be more than enough for 99.9% of the use cases.
 plac_ is targetting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
 throw-away scripts for themselves, choosing the command line
-interface because it is the quick and simple. Such users are not
+interface because it is quick and simple. Such users are not
 interested in features, they are interested in a small learning curve:
 they just want to be able to write a simple command line tool from a
 simple specification, not to build a command-line parser by
