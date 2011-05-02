@@ -32,7 +32,7 @@ if __name__ == '__main__':
           author_email='michele.simionato@gmail.com',
           url='http://pypi.python.org/pypi/plac',
           license="BSD License",
-          py_modules = ['plac_core', 'plac_ext', 'plac'],
+          py_modules = ['plac_core', 'plac_ext', 'plac_tk', 'plac'],
           scripts = ['plac_runner.py'],
           install_requires=require('argparse', 'multiprocessing'),
           use_2to3=True,
@@ -44,6 +44,7 @@ if __name__ == '__main__':
                        'Natural Language :: English',
                        'Operating System :: OS Independent',
                        'Programming Language :: Python',
+                       'Programming Language :: Python :: 3',
                        'Topic :: Software Development :: Libraries',
                        'Topic :: Utilities'],
           zip_safe=False)

@@ -1,3 +1,4 @@
+from __future__ import with_statement
 from Tkinter import *
 from importer3 import FakeImporter
 
