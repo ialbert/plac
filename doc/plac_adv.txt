@@ -332,8 +332,8 @@ on purpose, to verify that plac_ works correctly in the presence of
 exceptions.
 
 When working with command containers, plac_ automatically adds two
-special commands to the set of provided commands: ``.help``
-and ``.last_tb``. The ``.help`` command is the easier to understand:
+special commands to the set of provided commands: ``help``
+and ``.last_tb``. The ``help`` command is the easier to understand:
 when invoked without arguments it displays the list of available commands
 with the same formatting of the cmd_ module; when invoked with the name of
 a command it displays the usage message for that command.
@@ -345,12 +345,12 @@ Here is a session of usage on an Unix-like operating system::
  $ python ishelve2.py
  A minimal interface over a shelve object.
  Operating on /home/micheles/conf.shelve.
- .help to see the available commands.
- i> .help
+ Use help to see the available commands.
+ i> help
 
  special commands
  ================
- .help .last_tb  
+ last_tb  
  
  custom commands
  ===============
@@ -386,6 +386,19 @@ Here is a session of usage on an Unix-like operating system::
 
 Notice that in interactive mode the traceback is hidden, unless
 you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
+
+CHANGED IN VERSION 0.9: if you have an old version of plac_ the
+``help`` command must be prefixed with a dot, i.e. you must write
+``.help``. The old behavior was more consistent in my opinion, since
+it made it clear that the ``help`` command was special and threated
+differently from the regular commands. However many users complained against
+the dot, so I changed it to make them happy. Starting from release 0.9
+the ``help`` command is just an alias for ``--help``, in the
+sense that there is a preprocessor step replacing ``help`` with ``--help``
+in the argument list.
+Notice that if you implement a custom ``help`` command in the commander class
+the preprocessor will be automatically disabled: passing ``help``
+will call the custom help command, just as you would expect.
 
 plac.Interpreter.call
 --------------------------------------------
@@ -451,7 +464,7 @@ for the commands to execute::
  $ python ishelve3.py -i 
  A minimal interface over a shelve object.
  Operating on /home/micheles/conf.shelve.
- .help to see the available commands.
+ Use help to see the available commands.
 
  i> 
 
@@ -520,10 +533,10 @@ do-whatever-you-want-with-it licence).
 
 The interactive mode of ``plac`` can be used as a replacement of the
 cmd_ module in the standard library. It is actually better than cmd_:
-for instance, the ``.help`` command is more powerful, since it
+for instance, the ``help`` command is more powerful, since it
 provides information about the arguments accepted by the given command::
 
- i> .help set
+ i> help set
  usage:  set name value
  
  set name value
@@ -532,15 +545,15 @@ provides information about the arguments accepted by the given command::
    name
    value
 
- i> .help delete
+ i> help delete
  usage:  delete [name]
  
  delete given parameter (or everything)
  
  positional arguments:
-   name
+   name        [None]
 
- i> .help show
+ i> help show
  usage:  show [names [names ...]]
  
  show given parameters
@@ -1242,11 +1255,9 @@ pretty well for most users.
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
 .. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html
-.. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
-.. _opterator: http://pypi.python.org/pypi/opterator
 .. _advanced usage document: in-writing
 .. _twill: http://twill.idyll.org/
-.. _basic documentation: http://micheles.googlecode.com/hg/plac/doc/plac.html
+.. _basic documentation: http://plac.googlecode.com/hg/doc/plac.html
 .. _shlex: http://docs.python.org/library/shlex.html
 .. _multiprocessing: http://docs.python.org/library/multiprocessing.html
 .. _distutils: http://docs.python.org/distutils/

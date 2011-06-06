@@ -1,11 +1,11 @@
-import multiprocessing, subprocess, time, random
+import multiprocessing, subprocess, random, time
 import plac
 from ishelve2 import ShelveInterface
 
 i = plac.Interpreter(ShelveInterface(configfile=None))
 
 COMMANDS = ['''\
-.help
+help
 set a 1
 ''',
 '''\
@@ -15,7 +15,6 @@ showall
 ''']
 
 def telnet(commands, port):
-    time.sleep(.5) # wait a bit for the server to start
     po = subprocess.Popen(['telnet', 'localhost', str(port)],
                           stdin=subprocess.PIPE)
     try:
@@ -27,13 +26,13 @@ def telnet(commands, port):
 
 def test():
     port = random.choice(range(2000, 20000))
+    server = multiprocessing.Process(target=i.start_server, args=(port,))
+    server.start()
     clients = []
     for cmds in COMMANDS:
         cl = multiprocessing.Process(target=telnet, args=(cmds, port))
         clients.append(cl)
         cl.start()
-
-    i.start_server(port, timeout=.5)
     for cl in clients:
         cl.join()
-    i.stop_server()
+    server.terminate()

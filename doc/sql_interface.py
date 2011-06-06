@@ -1,7 +1,8 @@
 import os, plac
 from sqlalchemy.ext.sqlsoup import SqlSoup
 
-SQLKEYWORDS = set(['select', 'from', 'inner', 'join', 'outer', 'left', 'right']
+SQLKEYWORDS = set(['help', 'select', 'from', 
+                   'inner', 'join', 'outer', 'left', 'right']
                   ) # and many others
 DBTABLES = set(['table1', 'table2']) # you can read them from the db schema
 

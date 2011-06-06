@@ -69,7 +69,7 @@ def is_annotation(obj):
             and hasattr(obj, 'choices') and hasattr(obj, 'metavar'))
 
 class Annotation(object):
-    def __init__(self, help="", kind="positional", abbrev=None, type=None,
+    def __init__(self, help=None, kind="positional", abbrev=None, type=None,
                  choices=None, metavar=None):
         assert kind in ('positional', 'option', 'flag'), kind
         if kind == "positional":
@@ -104,7 +104,7 @@ def pconf(obj):
             cfg[name] = getattr(obj, name)
     return cfg
 
-parser_registry = {}
+_parser_registry = {}
 
 def parser_from(obj, **confparams):
     """
@@ -112,12 +112,12 @@ def parser_from(obj, **confparams):
     Returns an ArgumentParser.
     """
     try: # the underlying parser has been generated already
-        return parser_registry[obj]
+        return _parser_registry[obj]
     except KeyError: # generate a new parser
         pass
     conf = pconf(obj).copy()
     conf.update(confparams)
-    parser_registry[obj] = parser = ArgumentParser(**conf)
+    _parser_registry[obj] = parser = ArgumentParser(**conf)
     parser.obj = obj
     parser.case_sensitive = confparams.get(
         'case_sensitive', getattr(obj, 'case_sensitive', True))
@@ -163,10 +163,14 @@ class ArgumentParser(argparse.ArgumentParser):
     """
     case_sensitive = True
 
+    def alias(self, arg):
+        "Can be overridden to preprocess command-line arguments"
+        return arg
+
     def consume(self, args):
         """Call the underlying function with the args. Works also for
         command containers, by dispatching to the right subparser."""
-        arglist = list(args)
+        arglist = map(self.alias, args)
         cmd = None
         if hasattr(self, 'subparsers'):
             subp, cmd = self._extract_subparser_cmd(arglist)
@@ -223,7 +227,7 @@ class ArgumentParser(argparse.ArgumentParser):
         attribute to the parser. Also adds a .func reference to the object."""
         self.func = obj
         self.argspec = getargspec(obj)
-        parser_registry[obj] = self
+        _parser_registry[obj] = self
 
     def populate_from(self, func):
         """
@@ -245,6 +249,8 @@ class ArgumentParser(argparse.ArgumentParser):
                 dflt = None
             else:
                 dflt = default
+                if a.help is None:
+                    a.help = '[%s]' % dflt
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
                     shortlong = (prefix + a.abbrev, prefix*2 + name)
@@ -281,14 +287,6 @@ class ArgumentParser(argparse.ArgumentParser):
         miss = getattr(self.obj, '__missing__', lambda name: 
                        self.error('No command %r' % name))
         return miss(name)
-
-    def help_cmd(self, cmd):
-        "Return the help message for a subcommand"
-        p = self.subparsers._name_parser_map.get(cmd)
-        if p is None:
-            return _('Unknown command %s' % cmd)
-        else:
-            return p.format_help()
 
     def print_actions(self):
         "Useful for debugging"

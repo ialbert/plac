@@ -1,7 +1,7 @@
 # example5.py
-from datetime import datetime
+from datetime import date
 
-def main(dsn, table='product', today=datetime.today()):
+def main(dsn, table='product', today=date.today()):
     "Do something on the database"
     print(dsn, table, today)
 

@@ -1,5 +1,5 @@
 """
-This test should work on Linux if you have both Tkinter installed.
+This test should work on Linux if you have Tkinter installed.
 """
 
 from __future__ import with_statement

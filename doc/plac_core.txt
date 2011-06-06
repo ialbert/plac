@@ -3,9 +3,9 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: August 2010
+:Date: June 2011
 :Download page: http://pypi.python.org/pypi/plac
-:Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
+:Project page: http://plac.googlecode.com/hg/doc/plac.html
 :Requires: Python 2.3+
 :Installation: ``easy_install -U plac``
 :License: BSD license
@@ -47,7 +47,7 @@ be more than enough for 99.9% of the use cases.
 plac_ is targetting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
 throw-away scripts for themselves, choosing the command line
-interface because it is quick and simple. Such users are not
+interface because it is the quick and simple. Such users are not
 interested in features, they are interested in a small learning curve:
 they just want to be able to write a simple command line tool from a
 simple specification, not to build a command-line parser by
@@ -88,10 +88,7 @@ the boilerplate from nine lines to six lines:
 .. include:: example2.py
    :literal:
 
-However saving three lines does not justify introducing the external
-dependency: most people will not switch to Python 2.7, which at the time of
-this writing is just about to be released, for many years. 
-Moreover, it just feels too complex to instantiate a class and to
+However, it just feels too complex to instantiate a class and to
 define a parser by hand for such a trivial task.
 
 The plac_ module is designed to manage well such use cases, and it is able
@@ -139,6 +136,8 @@ the usage message for free:
 .. include:: example5.help
    :literal:
 
+Notice that by default plac_ prints the string representation
+of the default values (with square brackets) in the usage message.
 plac_ manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
 on a database a series of SQL scripts:
@@ -156,7 +155,7 @@ the command-line arguments parser to use from the signature of the main
 function*. This is the whole idea behind plac_: if the intent is clear,
 let's the machine take care of the details.
 
-plac_ is inspired to an old Python Cookbook recipe (optionparse_), in
+plac_ is inspired to an old Python Cookbook recipe of mine (optionparse_), in
 the sense that it delivers the programmer from the burden of writing
 the parser, but is less of a hack: instead of extracting the parser
 from the docstring of the module, it extracts it from the signature of
@@ -708,9 +707,12 @@ library and as such it shares many features with the module cmd2_ by
 Catherine Devlin. However, this is completely coincidental, since I became
 aware of the cmd2_ module only after writing plac_.
 
-Command-line argument parsers keep coming out; between the newcomers
-I will notice `marrow.script`_ by Alice Bevan-McGregor, which is quite
+Command-line argument parsers keep coming out; between the newcomers I
+will notice `marrow.script`_ by Alice Bevan-McGregor, which is quite
 similar to plac_ in spirit, but does not rely on argparse_ at all.
+Argh_ by Andrey Mikhaylenko is also worth mentioning: it is also based
+on argparse_, it came after plac_ and I must give credit to the author
+for the choice of the name, much funnier than plac!
 
 The future
 -------------------------------
@@ -766,7 +768,8 @@ Having little imagination, I decided to rename everything again to plac,
 an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
 
-That's all, I hope you will enjoy working with plac_!
+That concludes the section about the basic usage of plac_. You are now ready to
+read about the advanced usage.
 
 .. _argparse: http://argparse.googlecode.com
 .. _optparse: http://docs.python.org/library/optparse.html
@@ -787,3 +790,4 @@ That's all, I hope you will enjoy working with plac_!
 .. _cmd: http://docs.python.org/library/cmd.html
 .. _marrow.script: https://github.com/pulp/marrow.script 
 .. _commandline: http://pypi.python.org/pypi/commandline
+.. _argh: http://packages.python.org/argh

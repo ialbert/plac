@@ -9,7 +9,7 @@ class ShelveInterface(object):
     def __init__(self, configfile):
         self.configfile = configfile or '~/conf.shelve'
         self.fname = os.path.expanduser(self.configfile)
-        self.__doc__ += '\nOperating on %s.\n.help to see '\
+        self.__doc__ += '\nOperating on %s.\nUse help to see '\
             'the available commands.\n'  % self.fname
     def __enter__(self):
         self.sh = shelve.open(self.fname)
