@@ -1045,7 +1045,7 @@ class _TaskLauncher(object):
         for out in self.genlist[int(i) - 1]:
             yield out
 
-def runp(genseq, mode='p', monitors=(), start=True):
+def runp(genseq, mode='p', start=True):
     """Run a sequence of generators in parallel. Mode can be 'p' (use processes)
     or 't' (use threads). Return a list of running task objects. If start is
     False, the tasks are only submitted and not automatically started.
@@ -1053,8 +1053,6 @@ def runp(genseq, mode='p', monitors=(), start=True):
     assert mode in 'pt', mode
     launcher = _TaskLauncher(genseq, mode)
     inter = Interpreter(launcher).__enter__()
-    for mon in monitors: # must be added before submit
-        inter.add_monitor(mon)
     for i in range(len(launcher.genlist)):
         inter.submit('rungen %d' % (i + 1))
     if start:
