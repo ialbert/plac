@@ -651,20 +651,20 @@ class Manager(StartStopObject):
     of slave monitor processes to which we can send commands. There
     is a manager for each interpreter with mpcommands.
     """
-    def add(self, monitor):
-        'Add or replace a monitor in the registry'
-        slave = SlaveProcess(monitor)
-        name = slave.name = monitor.name
-        self.registry[name] = slave
-
-    def delete(self, name):
-        'Remove a named monitor from the registry'
-        del self.registry[name]
-
     def __init__(self):
         self.registry = {}
         self.started = False
         self.mp = None
+
+    def add(self, monitor):
+        'Add or replace a monitor in the registry'
+        slave = SlaveProcess(monitor)
+        slave.name = monitor.name
+        self.registry[slave.name] = slave
+
+    def delete(self, name):
+        'Remove a named monitor from the registry'
+        del self.registry[name]
 
     # can be called more than once
     def start(self):

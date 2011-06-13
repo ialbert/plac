@@ -15,12 +15,12 @@ Plac: Parsing the Command Line the Easy Way
 The importance of scaling down
 ------------------------------------------------
 
-There is no want of command line arguments parsers in the Python
+There is no want of command-line arguments parsers in the Python
 world. The standard library alone contains three different modules:
 getopt_ (from the stone age),
 optparse_ (from Python 2.3) and argparse_ (from Python 2.7).  All of
 them are quite powerful and especially argparse_ is an industrial
-strength solution; unfortunately, all of them feature a non-zero learning
+strength solution; unfortunately, all of them feature a non-negligible learning
 curve and a certain verbosity. They do not scale down well, at
 least in my opinion.
 
@@ -29,7 +29,7 @@ nevertheless, a lot of people are obsessed with features and concerned with
 the possibility of scaling up, forgetting the equally important
 issue of scaling down. This is an old meme in
 the computing world: programs should address the common cases simply and
-simple things should be kept simple, while at the same keeping
+simple things should be kept simple, while at the same time keeping
 difficult things possible. plac_ adhere as much as possible to this
 philosophy and it is designed to handle well the simple cases, while
 retaining the ability to handle complex cases by relying on the
@@ -46,8 +46,8 @@ be more than enough for 99.9% of the use cases.
 
 plac_ is targetting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
-throw-away scripts for themselves, choosing the command line
-interface because it is the quick and simple. Such users are not
+throw-away scripts for themselves, choosing the command-line
+interface because it is quick and simple. Such users are not
 interested in features, they are interested in a small learning curve:
 they just want to be able to write a simple command line tool from a
 simple specification, not to build a command-line parser by
