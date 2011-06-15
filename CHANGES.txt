@@ -1,6 +1,11 @@
 HISTORY
 ----------
 
+0.8.2 Default values are now displayed in the help message by default;
+      removed .help and introduced help as an alias for --help;
+      added a reference to Argh; removed the experimental monitor
+      framework because it is too much platform-dependent;
+      now plac has its own space on Google Code (2011-06-13)
 0.8.1 Removed a stray newline in the output of plac, as signaled
       by Daniele Pighin; fixed a bug in the doctest method raising
       non-existing exceptions; turned the notification messages into

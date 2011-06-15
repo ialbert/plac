@@ -53,6 +53,6 @@ Documentation
 The source code and the documentation are hosted on Google code.
 Here is the full documentation in HTML and PDF form:
 
-http://micheles.googlecode.com/hg/plac/doc/plac.html
+http://plac.googlecode.com/hg/doc/plac.html
 
-http://micheles.googlecode.com/hg/plac/doc/plac.pdf
+http://plac.googlecode.com/hg/doc/plac.pdf

@@ -1,7 +1,6 @@
 # example1.py
 def main(dsn):
     "Do something with the database"
-    print(dsn)
     # ...
 
 if __name__ == '__main__':

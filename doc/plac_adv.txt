@@ -24,7 +24,7 @@ You can easily replace the ``cmd`` module of the standard library and
 you could easily write an application like twill_ with plac_. Or you
 could use it to script your building procedure. plac_ also supports
 parallel execution of multiple commands and can be used as
-task manager and monitor. It is also quite easy to build a GUI
+task manager. It is also quite easy to build a GUI
 or a Web application on top of plac_. When speaking of things
 you can do with plac_, your imagination is the only limit!
 
@@ -101,7 +101,7 @@ of the interactive session is the docstring of the main function.
 ``del`` is an abbreviation for ``delete``. In case of ambiguous 
 abbreviations plac_ raises a ``NameError``.
 
-Finally I must notice that the ``plac.Interpreter`` is available only if you
+Finally I must notice that ``plac.Interpreter`` is available only if you
 are using a recent version of Python (>= 2.5), because it is a context
 manager object which uses extended generators internally.
 
@@ -150,11 +150,11 @@ Even the ``SystemExit`` exception is captured and you can write your test as
 
 without risk of exiting from the Python interpreter.
 
-There is a second advantage of interpreters: if the main function contains some
-initialization code and finalization code
-(``__enter__`` and ``__exit__`` functions) they will be run only
-once at the beginning and at the end of the interpreter loop.
-``plac.call`` instead ignores the initialization/finalization code.
+There is a second advantage of interpreters: if the main function
+contains some initialization code and finalization code (``__enter__``
+and ``__exit__`` functions) they will be run at the beginning and at
+the end of the interpreter loop, whereas ``plac.call`` ignores
+the initialization/finalization code.
 
 Plac easy tests
 ---------------------------------------------------------
@@ -179,7 +179,7 @@ function called ``main``). The shebang is ignored by the interpreter
 tools (say a test runner) can infer the plac interpreter
 to use to test the file.
 
-You can test ``ishelve.placet`` file by calling the
+You can run the ``ishelve.placet`` file by calling the
 ``.doctest`` method of the interpreter, as in this example::
 
  $ python -c"import plac, ishelve
@@ -190,7 +190,7 @@ multiple times inside the same context and compare the output with the
 expected output: if even a check fails, the whole test fail. 
 
 You should realize tha the easy tests supported by ``plac`` are *not*
-unittests: they are functional tests. They model then user interaction and the
+unittests: they are functional tests. They model the user interaction and the
 order of the operations generally matters.  The single subtests in a
 ``.placet`` file are not independent and it makes sense to exit
 immediately at the first failure.
@@ -205,10 +205,10 @@ interpreted. For more flexibility, it is even possible to pass to the
 interpreter a custom split function with signature ``split(line,
 commentchar)``.
 
-In addition, I have implemented from scratch some support for line number
+In addition, I have implemented some support for line number
 recognition, so that if a test fail you get the line number of the
 failing command. This is especially useful if your tests are
-stored in external files, even if plac easy tests does not need to be in
+stored in external files, even if they do not need to be in
 a file: you can just pass to the ``.doctest`` method a list of
 strings corresponding to the lines of the file.
 
@@ -254,7 +254,7 @@ the console, it is enough to read the commands from a file.
 plac_ interpreters provide an ``.execute`` method to perform just that.
 
 There is just a subtle point to notice: whereas in an interactive loop
-one wants to manage all exceptions, a batch script should not in the
+one wants to manage all exceptions, a batch script should not continue in the
 background in case of unexpected errors. The implementation of
 ``Interpreter.execute`` makes sure that any error raised by
 ``plac.call`` internally is re-raised.  In other words, plac_
@@ -298,21 +298,21 @@ Implementing subcommands
 ----------------------------------------
 
 When I discussed the ``ishelve`` implementation in the `basic
-documentation`_, I said that it looked like a poor man implementation
+documentation`_, I said that it looked like the poor man implementation
 of an object system as a chain of elifs; I also said that plac_ was
 able to do much better than that.  Here I will substantiate my claim.
 
 plac_ is actually able to infer a set of subparsers from a
 generic container of commands.  This is useful if you want to
 implement *subcommands* (a familiar example of a command-line
-application featuring subcommands is subversion).
-
+application featuring subcommands is version control system).
+\
 Technically a container of commands is any object with a ``.commands`` attribute
 listing a set of functions or methods which are valid commands. A command
 container may have initialization/finalization hooks (``__enter__/__exit__``)
 and dispatch hooks (``__missing__``, invoked for invalid command names).
 Moreover, only when using command containers plac_ is able to provide
-automatic autocompletion of commands.
+automatic *autocompletion* of commands.
 
 The shelve interface can be rewritten in an object-oriented way as follows:
 
@@ -332,8 +332,8 @@ on purpose, to verify that plac_ works correctly in the presence of
 exceptions.
 
 When working with command containers, plac_ automatically adds two
-special commands to the set of provided commands: ``.help``
-and ``.last_tb``. The ``.help`` command is the easier to understand:
+special commands to the set of provided commands: ``help``
+and ``.last_tb``. The ``help`` command is the easier to understand:
 when invoked without arguments it displays the list of available commands
 with the same formatting of the cmd_ module; when invoked with the name of
 a command it displays the usage message for that command.
@@ -345,12 +345,12 @@ Here is a session of usage on an Unix-like operating system::
  $ python ishelve2.py
  A minimal interface over a shelve object.
  Operating on /home/micheles/conf.shelve.
- .help to see the available commands.
- i> .help
+ Use help to see the available commands.
+ i> help
 
  special commands
  ================
- .help .last_tb  
+ last_tb  
  
  custom commands
  ===============
@@ -386,6 +386,14 @@ Here is a session of usage on an Unix-like operating system::
 
 Notice that in interactive mode the traceback is hidden, unless
 you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
+
+CHANGED IN VERSION 0.8.2: if you have an old version of plac_ the
+``help`` command must be prefixed with a dot, i.e. you must write
+``.help``. The old behavior was more consistent in my opinion, since
+it made it clear that the ``help`` command was special and threated
+differently from the regular commands.
+Notice that if you implement a custom ``help`` command in the commander class
+the default help will not be added, as you would expect.
 
 plac.Interpreter.call
 --------------------------------------------
@@ -451,7 +459,7 @@ for the commands to execute::
  $ python ishelve3.py -i 
  A minimal interface over a shelve object.
  Operating on /home/micheles/conf.shelve.
- .help to see the available commands.
+ Use help to see the available commands.
 
  i> 
 
@@ -520,10 +528,10 @@ do-whatever-you-want-with-it licence).
 
 The interactive mode of ``plac`` can be used as a replacement of the
 cmd_ module in the standard library. It is actually better than cmd_:
-for instance, the ``.help`` command is more powerful, since it
+for instance, the ``help`` command is more powerful, since it
 provides information about the arguments accepted by the given command::
 
- i> .help set
+ i> help set
  usage:  set name value
  
  set name value
@@ -532,15 +540,15 @@ provides information about the arguments accepted by the given command::
    name
    value
 
- i> .help delete
+ i> help delete
  usage:  delete [name]
  
  delete given parameter (or everything)
  
  positional arguments:
-   name
+   name        [None]
 
- i> .help show
+ i> help show
  usage:  show [names [names ...]]
  
  show given parameters
@@ -549,11 +557,10 @@ provides information about the arguments accepted by the given command::
    names
 
 As you can imagine, the help message is provided by the underlying argparse_
-subparser (there is a subparser for each command). plac_ commands accept
+subparser: there is a subparser for each command. plac_ commands accept
 options, flags, varargs, keyword arguments, arguments with defaults, 
 arguments with a fixed number of choices, type conversion and all the
-features provided of argparse_ which should be reimplemented from scratch
-using plac_.
+features provided of argparse_ .
 
 Moreover at the moment ``plac`` also understands command abbreviations.
 However, this feature may disappear in
@@ -1024,33 +1031,6 @@ how you could implement a GUI over the importer example:
 .. include:: importer_ui.py
    :literal:
 
-Monitor support
---------------------------------
-
-Starting from release 0.8 plac_ provides builtin support for monitoring the
-output of concurrent commands, at least for platforms where multiprocessing
-is fully supported. You can define your own monitor
-class, simply by inheriting from ``plac.Monitor`` and by
-overriding the methods ``add_listener(self, no)``, 
-``del_listener(self, taskno)``, ``notify_listener(self, taskno, msg)``,
-``schedule(self, seconds, func, arg)`` and ``run(self)``. 
-Then, you can a monitor object to any ``plac.Interpreter`` object
-by simply calling the ``add_monitor`` method.
-For convenience,
-``plac`` comes with a very simple ``TkMonitor`` based on Tkinter
-(I chose Tkinter because it is easy to use and it is
-in the standard library, but you can use any GUI): you can just
-look at how the ``TkMonitor`` is implemented in ``plac_tk.py``
-and adapt it. Here is an example of usage of the ``TkMonitor``:
-
-.. include:: tkmon.py
-   :literal:
-
-Try to give the ``hello`` command from the interactive interpreter:
-each time a new text widget will be added displaying the output
-of the command. Notice that if ``Tkinter`` is not installed correctly
-on your system the ``TkMonitor`` class will not be available.
-
 Parallel computing with plac
 ---------------------------------------------
 
@@ -1116,7 +1096,7 @@ mode is some 20% slower than the sequential mode.
 
 Since the pattern submit a bunch of tasks, starts them and collect the
 results is so common, plac_ provides an utility function 
-``runp(genseq, mode='p', monitors=(), start=True)`` to start
+``runp(genseq, mode='p', start=True)`` to start
 a bunch a generators and return a list of task objects. By default
 ``runp`` use processes, but you can use threads by passing ``mode='t'``.
 If you do not wont to start the tasks, you can say so (``start=False``).
@@ -1125,27 +1105,29 @@ With ``runp`` the parallel pi calculation becomes a one-liner::
     sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
 
 The file ``test_runp`` in the ``doc`` directory of the plac distribution
-shows another couple of examples of usage, including how to show the
-results of the running computation on a ``TkMonitor``.
+shows another example of usage.
 
 The plac server
 -------------------------------------------------------
 
-A command-line oriented interface can be easily converted into a 
-socket-based interface. Starting from release 0.7 plac features
-a builtin server which is able to accept commands from multiple
-clients and to execute them. The server works by instantiating
-a separate interpreter for each client, so that if a client interpreter
-dies for any reason the other interpreters keep working.
-To avoid external dependencies the server is based on the ``asynchat``
-module in the standard library, but it would not be difficult to
-replace the server with a different one (for instance, a Twisted server).
-Since ``asynchat``-based servers are asynchronous, any blocking command
-in the interpreter should be run in a separated process or thread.
-The default port for the plac_ server is 2199, and the command to
-signal end-of-connection is EOF.
-For instance, here is how you could manage remote import on a database
-(say a SQLite db):
+A command-line oriented interface can be easily converted into a
+socket-based interface. Starting from release 0.7 plac features a
+builtin server which is able to accept commands from multiple clients
+and to execute them. The server works by instantiating a separate
+interpreter for each client, so that if a client interpreter dies for
+any reason the other interpreters keep working.  To avoid external
+dependencies the server is based on the ``asynchat`` module in the
+standard library, but it would not be difficult to replace the server
+with a different one (for instance, a Twisted server).  Notice that at
+the moment the plac_ server does not work with to Python 3.2 due to
+changes to ``asynchat``. In time I fill fix this and other known
+issue.  You should consider the server functionality still
+experimental and subject to changes. Also, notice that since
+``asynchat``-based servers are asynchronous, any blocking command in
+the interpreter should be run in a separated process or thread.  The
+default port for the plac_ server is 2199, and the command to signal
+end-of-connection is EOF.  For instance, here is how you could manage
+remote import on a database (say a SQLite db):
 
 .. include:: server_ex.py
    :literal:
@@ -1242,11 +1224,9 @@ pretty well for most users.
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
 .. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html
-.. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
-.. _opterator: http://pypi.python.org/pypi/opterator
 .. _advanced usage document: in-writing
 .. _twill: http://twill.idyll.org/
-.. _basic documentation: http://micheles.googlecode.com/hg/plac/doc/plac.html
+.. _basic documentation: http://plac.googlecode.com/hg/doc/plac.html
 .. _shlex: http://docs.python.org/library/shlex.html
 .. _multiprocessing: http://docs.python.org/library/multiprocessing.html
 .. _distutils: http://docs.python.org/distutils/

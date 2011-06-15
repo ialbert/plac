@@ -130,6 +130,55 @@ class ReadlineInput(object):
     def __iter__(self):
         return iter(self.readline, '')
 
+################### help functionality in plac interpreters ###################
+
+class HelpSummary(object):
+    "Build the help summary consistently with the cmd module"
+
+    @classmethod
+    def add(cls, obj, specialcommands):
+        p = plac_core.parser_from(obj)
+        c = cmd.Cmd(stdout=cls())
+        c.stdout.write('\n')
+        c.print_topics('special commands',
+                       sorted(specialcommands), 15, 80)
+        c.print_topics('custom commands',
+                       sorted(obj.syncommands), 15, 80)
+        c.print_topics('commands run in external processes',
+                       sorted(obj.mpcommands), 15, 80)
+        c.print_topics('threaded commands',
+                       sorted(obj.thcommands), 15, 80)
+        p.helpsummary = unicode(c.stdout)
+
+    def __init__(self):
+        self._ls = []
+
+    def write(self, s):
+        self._ls.append(s)
+
+    def __str__(self):
+        return ''.join(self._ls)
+
+def format_help(self):
+    "Attached to plac_core.ArgumentParser for plac interpreters"
+    try:
+        return self.helpsummary
+    except AttributeError:
+        return super(plac_core.ArgumentParser, self).format_help()
+plac_core.ArgumentParser.format_help = format_help
+
+def default_help(obj, cmd=None):
+    "The default help functionality in plac interpreters"
+    parser = plac_core.parser_from(obj)
+    if cmd is None:
+        yield parser.format_help()
+        return
+    subp = parser.subparsers._name_parser_map.get(cmd)
+    if subp is None:
+        yield _('Unknown command %s' % cmd)
+    else:
+        yield subp.format_help()
+
 ########################### import management ################################
 
 try:
@@ -139,7 +188,6 @@ except:
 
 def partial_call(factory, arglist):
     "Call a container factory with the arglist and return a plac object"
-
     a = plac_core.parser_from(factory).argspec
     if a.defaults or a.varargs or a.varkw:
         raise TypeError('Interpreter.call must be invoked on '
@@ -155,6 +203,7 @@ def partial_call(factory, arglist):
     dic = dict(factory=factory)
     exec code in dic
     makeobj = dic['makeobj']
+    makeobj.add_help = False 
     if inspect.isclass(factory):
         makeobj.__annotations__ = getattr(
             factory.__init__, '__annotations__', {})
@@ -389,46 +438,21 @@ class MPTask(BaseTask):
 
 ######################### Task Manager #######################
 
-class HelpSummary(object):
-    "Build the help summary consistently with the cmd module"
-
-    @classmethod
-    def make(cls, obj, specialcommands):
-        c = cmd.Cmd(stdout=cls())
-        c.stdout.write('\n')
-        c.print_topics('special commands',
-                       sorted(specialcommands), 15, 80)
-        c.print_topics('custom commands',
-                       sorted(obj.syncommands), 15, 80)
-        c.print_topics('commands run in external processes',
-                       sorted(obj.mpcommands), 15, 80)
-        c.print_topics('threaded commands',
-                       sorted(obj.thcommands), 15, 80)
-        return c.stdout
-
-    def __init__(self):
-        self._ls = []
-
-    def write(self, s):
-        self._ls.append(s)
-
-    def __str__(self):
-        return ''.join(self._ls)
-
 class TaskManager(object):
     """
     Store the given commands into a task registry. Provides methods to
     manage the submitted tasks.
     """
     cmdprefix = '.'
-    specialcommands = set(['.help', '.last_tb'])
+    specialcommands = set(['.last_tb'])
 
     def __init__(self, obj):
         self.obj = obj
         self.registry = {} # {taskno : task}
         if obj.mpcommands or obj.thcommands:
             self.specialcommands.update(['.kill', '.list', '.output'])
-        self.helpsummary = HelpSummary.make(obj, self.specialcommands)
+        self.parser = plac_core.parser_from(obj)
+        HelpSummary.add(obj, self.specialcommands)
         self.man = Manager() if obj.mpcommands else None
         signal.signal(signal.SIGTERM, terminatedProcess)
 
@@ -506,7 +530,7 @@ class TaskManager(object):
             yield 'saved output of %d into %s' % (taskno, fname); return
         yield task
         if len(task.outlist) > 20 and use_less:
-            less(outstr)
+            less(outstr) # has no meaning for a plac server
         else:
             yield outstr
 
@@ -519,13 +543,6 @@ class TaskManager(object):
             yield task.traceback
         else:
             yield 'Nothing to show'
-
-    def help(self, cmd=None):
-        "show help about a given command"
-        if cmd is None:
-            yield unicode(self.helpsummary)
-        else:
-            yield plac_core.parser_from(self.obj).help_cmd(cmd)
 
 ########################### SyncProcess ##############################
 
@@ -635,20 +652,20 @@ class Manager(StartStopObject):
     of slave monitor processes to which we can send commands. There
     is a manager for each interpreter with mpcommands.
     """
-    def add(self, monitor):
-        'Add or replace a monitor in the registry'
-        slave = SlaveProcess(monitor)
-        name = slave.name = monitor.name
-        self.registry[name] = slave
-
-    def delete(self, name):
-        'Remove a named monitor from the registry'
-        del self.registry[name]
-
     def __init__(self):
         self.registry = {}
         self.started = False
         self.mp = None
+
+    def add(self, monitor):
+        'Add or replace a monitor in the registry'
+        slave = SlaveProcess(monitor)
+        slave.name = monitor.name
+        self.registry[slave.name] = slave
+
+    def delete(self, name):
+        'Remove a named monitor from the registry'
+        del self.registry[name]
 
     # can be called more than once
     def start(self):
@@ -705,7 +722,7 @@ class _AsynHandler(asynchat.async_chat):
         line = ''.join(self.data)
         self.log('Received line %r from %s' % (line, self.addr))
         if line == 'EOF':
-            self.i.__exit__()
+            self.i.__exit__(None, None, None)
             self.handle_close()
         else:
             task = self.i.submit(line)
@@ -756,7 +773,7 @@ class Interpreter(object):
         self._set_commands(obj)
         self.tm = TaskManager(obj)
         self.man = self.tm.man
-        self.parser = plac_core.parser_from(obj, prog='', add_help=False)
+        self.parser = plac_core.parser_from(obj, prog='')
         if self.commands:
             self.commands.update(self.tm.specialcommands)
             self.parser.addsubcommands(
@@ -785,6 +802,9 @@ class Interpreter(object):
         self.commands.update(obj.syncommands)
         self.commands.update(obj.mpcommands)
         self.commands.update(obj.thcommands)
+        if not hasattr(obj, 'help'): # add default help
+            obj.help = default_help.__get__(obj, obj.__class__)
+            self.commands.add('help')
 
     def __enter__(self):
         "Start the inner interpreter loop"
@@ -941,7 +961,8 @@ class Interpreter(object):
             readline_present = False
         if stdin is sys.stdin and readline_present: # use readline
             histfile = os.path.expanduser('~/.%s.history' % self.name)
-            self.stdin = ReadlineInput(self.commands, histfile=histfile)
+            completions = list(self.commands) + ['help']
+            self.stdin = ReadlineInput(completions, histfile=histfile)
         else:
             self.stdin = stdin
         self.prompt = prompt
@@ -973,14 +994,10 @@ class Interpreter(object):
         _AsynServer(self, _AsynHandler, port) # register the server
         try:
             asyncore.loop(**kw)
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, TerminatedProcess):
             pass
         finally:
             asyncore.close_all()
-
-    def stop_server(self, after=0.0):
-        "Stops the asyncore server, possibly after a given number of seconds"
-        threading.Timer(after, asyncore.socket_map.clear).start()
 
     def add_monitor(self, mon):
         self.man.add(mon)
@@ -1028,7 +1045,7 @@ class _TaskLauncher(object):
         for out in self.genlist[int(i) - 1]:
             yield out
 
-def runp(genseq, mode='p', monitors=(), start=True):
+def runp(genseq, mode='p', start=True):
     """Run a sequence of generators in parallel. Mode can be 'p' (use processes)
     or 't' (use threads). Return a list of running task objects. If start is
     False, the tasks are only submitted and not automatically started.
@@ -1036,8 +1053,6 @@ def runp(genseq, mode='p', monitors=(), start=True):
     assert mode in 'pt', mode
     launcher = _TaskLauncher(genseq, mode)
     inter = Interpreter(launcher).__enter__()
-    for mon in monitors: # must be added before submit
-        inter.add_monitor(mon)
     for i in range(len(launcher.genlist)):
         inter.submit('rungen %d' % (i + 1))
     if start:

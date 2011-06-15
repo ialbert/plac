@@ -3,9 +3,9 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: August 2010
+:Date: June 2011
 :Download page: http://pypi.python.org/pypi/plac
-:Project page: http://micheles.googlecode.com/hg/plac/doc/plac.html
+:Project page: http://plac.googlecode.com/hg/doc/plac.html
 :Requires: Python 2.3+
 :Installation: ``easy_install -U plac``
 :License: BSD license
@@ -15,21 +15,21 @@ Plac: Parsing the Command Line the Easy Way
 The importance of scaling down
 ------------------------------------------------
 
-There is no want of command line arguments parsers in the Python
+There is no want of command-line arguments parsers in the Python
 world. The standard library alone contains three different modules:
 getopt_ (from the stone age),
 optparse_ (from Python 2.3) and argparse_ (from Python 2.7).  All of
 them are quite powerful and especially argparse_ is an industrial
-strength solution; unfortunately, all of them feature a non-zero learning
-curve and a certain verbosity. They do not scale down well, at
+strength solution; unfortunately, all of them feature a non-negligible learning
+curve and a certain verbosity. They do not scale down well enough, at
 least in my opinion.
 
-It should not be necessary to stress the importance `scaling down`_;
+It should not be necessary to stress the importance of `scaling down`_;
 nevertheless, a lot of people are obsessed with features and concerned with
 the possibility of scaling up, forgetting the equally important
 issue of scaling down. This is an old meme in
 the computing world: programs should address the common cases simply and
-simple things should be kept simple, while at the same keeping
+simple things should be kept simple, while at the same time keeping
 difficult things possible. plac_ adhere as much as possible to this
 philosophy and it is designed to handle well the simple cases, while
 retaining the ability to handle complex cases by relying on the
@@ -39,14 +39,14 @@ Technically plac_ is just a simple wrapper over argparse_ which hides
 most of its complexity by using a declarative interface: the argument
 parser is inferred rather than written down by imperatively.  Still, plac_ is
 surprisingly scalable upwards, even without using the underlying
-argparse_. I have been using Python for 8 years and in my experience
+argparse_. I have been using Python for 9 years and in my experience
 it is extremely unlikely that you will ever need to go beyond the
 features provided by the declarative interface of plac_: they should
 be more than enough for 99.9% of the use cases.
 
 plac_ is targetting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
-throw-away scripts for themselves, choosing the command line
+throw-away scripts for themselves, choosing the command-line
 interface because it is quick and simple. Such users are not
 interested in features, they are interested in a small learning curve:
 they just want to be able to write a simple command line tool from a
@@ -62,7 +62,7 @@ Scripts with required arguments
 
 Let me start with the simplest possible thing: a script that takes a
 single argument and does something to it.  It cannot get simpler
-than that, unless you consider a script without command-line
+than that, unless you consider the case of a script without command-line
 arguments, where there is nothing to parse. Still, it is a use
 case *extremely common*: I need to write scripts like that nearly
 every day, I wrote hundreds of them in the last few years and I have
@@ -74,7 +74,7 @@ writing by hand for years:
 
 As you see the whole ``if __name__ == '__main__'`` block (nine lines)
 is essentially boilerplate that should not exist.  Actually I think
-the language should recognize the main function and pass to it the
+the language should recognize the main function and pass the
 command-line arguments automatically; unfortunaly this is unlikely to
 happen. I have been writing boilerplate like this in hundreds of
 scripts for years, and every time I *hate* it. The purpose of using a
@@ -88,10 +88,7 @@ the boilerplate from nine lines to six lines:
 .. include:: example2.py
    :literal:
 
-However saving three lines does not justify introducing the external
-dependency: most people will not switch to Python 2.7, which at the time of
-this writing is just about to be released, for many years. 
-Moreover, it just feels too complex to instantiate a class and to
+However, it just feels too complex to instantiate a class and to
 define a parser by hand for such a trivial task.
 
 The plac_ module is designed to manage well such use cases, and it is able
@@ -139,6 +136,8 @@ the usage message for free:
 .. include:: example5.help
    :literal:
 
+Notice that by default plac_ prints the string representation
+of the default values (with square brackets) in the usage message.
 plac_ manages transparently even the case when you want to pass a
 variable number of arguments. Here is an example, a script running
 on a database a series of SQL scripts:
@@ -156,7 +155,7 @@ the command-line arguments parser to use from the signature of the main
 function*. This is the whole idea behind plac_: if the intent is clear,
 let's the machine take care of the details.
 
-plac_ is inspired to an old Python Cookbook recipe (optionparse_), in
+plac_ is inspired to an old Python Cookbook recipe of mine (optionparse_), in
 the sense that it delivers the programmer from the burden of writing
 the parser, but is less of a hack: instead of extracting the parser
 from the docstring of the module, it extracts it from the signature of
@@ -302,13 +301,13 @@ to compose them.
 plac for Python 2.X users
 --------------------------------------------------
 
-I do not use Python 3. At work we are just starting to think about
-migrating to Python 2.6. It will take years before we
-think to migrate to Python 3. I am pretty much sure most Pythonistas
-are in the same situation. Therefore plac_ provides a way to work
-with function annotations even in Python 2.X (including Python 2.3).
-There is no magic involved; you just need to add the annotations
-by hand. For instance the annotated function declaration
+I do not use Python 3. At work we just migrated to Python 2.7. It will
+take years before we think to migrate to Python 3. I am pretty much
+sure most Pythonistas are in the same situation. Therefore plac_
+provides a way to work with function annotations even in Python 2.X
+(including Python 2.3).  There is no magic involved; you just need to
+add the annotations by hand. For instance the annotated function
+declaration
 
 ::
 
@@ -344,7 +343,7 @@ More features
 One of the goals of plac_ is to have a learning curve of *minutes* for
 its core features, compared to the learning curve of *hours* of
 argparse_. In order to reach this goal, I have *not* sacrificed all
-the features of argparse_. Actually a lot of argparse_ power persists
+the features of argparse_. Actually a lot of the argparse_ power persists
 in plac_.  Until now, I have only showed simple annotations, but in
 general an annotation is a 6-tuple of the form
 
@@ -370,7 +369,7 @@ the same as the argument name.  For an option
 the ``metavar`` is used differently in the usage message, which has
 now the form ``[--option-name METAVAR]``. If the ``metavar`` is ``None``,
 then it is equal to the uppercased name of the argument, unless the
-argument has a default and in such a case is equal to the stringified
+argument has a default: then it is equal to the stringified
 form of the default.
 
 Here is an example showing many of the features (copied from the
@@ -385,7 +384,7 @@ Here is the usage:
    :literal:
 
 Notice that the docstring of the ``main`` function has been automatically added
-to the usage message. Here are a couple of examples of use::
+to the usage message. Here are a couple of examples of usage::
 
  $ python example10.py add 1 2 3 4
  10.0
@@ -423,10 +422,8 @@ errors visible early, and avoids mistakes in code like the following::
  except:
     # do something
 
-Without the "listify" functionality, a main function returning a
-generator object would not raise any exception until the generator
-is iterated over. 
-
+Without eagerness, a main function returning a generator object would
+not raise any exception until the generator is iterated over.
 If you are a fan of lazyness, you can still have it by setting the ``eager``
 flag to ``False``, as in the following example::
 
@@ -499,10 +496,122 @@ positional arguments, excepted varargs and keywords. This limitation
 is a consequence of the way the argument names are managed in function calls
 by the Python language.
 
+plac vs argparse
+---------------------------------------------
+
+plac_ is opinionated and by design it does not try to make available
+all of the features of argparse_ in an easy way.  In particular you
+should be aware of the following limitations/differences (the
+following assumes knowledge of argparse_):
+
+- plac does not support the destination concept: the destination
+  coincides with the name of the argument, always. This restriction
+  has some drawbacks. For instance, suppose you want to define a long
+  option called ``--yield``. In this case the destination would be ``yield``,
+  which is a Python keyword, and since you cannot introduce an
+  argument with that name in a function definition, it is impossible
+  to implement it. Your choices are to change the name of the long
+  option, or to use argparse_ with a suitable destination.
+
+- plac_ does not support "required options". As the argparse_
+  documentation puts it: *Required options are generally considered bad
+  form - normal users expect options to be optional. You should avoid
+  the use of required options whenever possible.* Notice that since
+  argparse_ supports them, plac_ can manage them too, but not directly.
+
+- plac_ supports only regular boolean flags. argparse_ has the ability to 
+  define generalized two-value flags with values different from ``True`` 
+  and ``False``. An earlier version of plac_ had this feature too, but 
+  since you can use options with two choices instead, and in any case
+  the conversion from ``{True, False}`` to any couple of values
+  can be trivially implemented with a ternary operator
+  (``value1 if flag else value2``), I have removed it (KISS rules!).
+
+- plac_ does not support ``nargs`` options directly (it uses them internally,
+  though, to implement flag recognition). The reason it that all the use
+  cases of interest to me are covered by plac_ and I did not feel the need
+  to increase the learning curve by adding direct support for ``nargs``.
+
+- plac_ does support subparsers, but you must read the `advanced usage
+  document`_ to see how it works.
+
+- plac_ does not support actions directly. This also
+  looks like a feature too advanced for the goals of plac_. Notice however
+  that the ability to define your own annotation objects (again, see
+  the  `advanced usage document`_) may mitigate the need for custom actions.
+
+On the plus side, plac_ can leverage directly on a number of argparse_ features.
+
+For instance, you can make invisible an argument in the usage message
+simply by using ``'==SUPPRESS=='`` as help string (or
+``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
+directly.
+
+It is also possible to pass options to the underlying
+``argparse.ArgumentParser`` object (currently it accepts the default
+arguments ``description``, ``epilog``, ``prog``, ``usage``,
+``add_help``, ``argument_default``, ``parents``, ``prefix_chars``,
+``fromfile_prefix_chars``, ``conflict_handler``, ``formatter_class``).
+It is enough to set such attributes on the ``main`` function.  For
+instance writing
+
+::
+
+  def main(...):
+      pass
+
+  main.add_help = False
+
+disables the recognition of the help flag ``-h, --help``. This
+mechanism does not look particularly elegant, but it works well
+enough.  I assume that the typical user of plac_ will be happy with
+the defaults and would not want to change them; still it is possible
+if she wants to. 
+
+For instance, by setting the ``description`` attribute, it is possible
+to add a comment to the usage message (by default the docstring of the
+``main`` function is used as description).
+
+It is also possible to change the option prefix; for
+instance if your script must run under Windows and you want to use "/"
+as option prefix you can add the line::
+
+  main.prefix_chars='/-'
+
+The first prefix char (``/``) is used
+as the default for the recognition of options and flags;
+the second prefix char (``-``) is kept to keep the ``-h/--help`` option
+working: however you can disable it and reimplement it, if you like.
+
+It is possible to access directly the underlying ArgumentParser_ object, by
+invoking the ``plac.parser_from`` utility function:
+
+>>> import plac
+>>> def main(arg):
+...     pass
+... 
+>>> print(plac.parser_from(main)) #doctest: +ELLIPSIS
+ArgumentParser(prog=...)
+
+Internally ``plac.call`` uses ``plac.parser_from``. Notice that when
+``plac.call(func)`` is invoked multiple time, the parser is re-used
+and not rebuilt from scratch again.
+
+I use ``plac.parser_from`` in the unit tests of the module, but regular
+users should not need to use it, unless they want to access *all*
+of the features of argparse_ directly without calling the main function.
+
+Interested readers should read the documentation of argparse_ to
+understand the meaning of the other options. If there is a set of
+options that you use very often, you may consider writing a decorator
+adding such options to the ``main`` function for you. For simplicity,
+plac_ does not perform any magic.
+
 Final example: a shelve interface
 ----------------------------------------------------------
 
-Here is a less trivial example for the keyword arguments feature.
+Here is a nontrivial example showing off many plac_ feature, including
+keyword arguments recognition.
 The use case is the following: suppose we have stored the
 configuration parameters of a given application into a Python shelve
 and we need a command-line tool to edit the shelve.
@@ -568,119 +677,6 @@ You can check by hand that the tool work::
                    [params [params ...]] [setters [setters ...]]
  ishelve.py: error: unrecognized arguments: .cler
 
-plac vs argparse
----------------------------------------------
-
-plac_ is opinionated and by design it does not try to make available
-all of the features of argparse_ in an easy way.  In particular you
-should be aware of the following limitations/differences (the
-following assumes knowledge of argparse_):
-
-- plac does not support the destination concept: the destination
-  coincides with the name of the argument, always. This restriction
-  has some drawbacks. For instance, suppose you want to define a long
-  option called ``--yield``. In this case the destination would be ``yield``,
-  which is a Python keyword, and since you cannot introduce an
-  argument with that name in a function definition, it is impossible
-  to implement it. Your choices are to change the name of the long
-  option, or to use argparse_ with a suitable destination.
-
-- plac_ does not support "required options". As the argparse_
-  documentation puts it: *Required options are generally considered bad
-  form - normal users expect options to be optional. You should avoid
-  the use of required options whenever possible.* Notice that since
-  argparse_ supports them, plac_ can manage them too, but not directly.
-
-- plac_ supports only regular boolean flags. argparse_ has the ability to 
-  define generalized two-value flags with values different from ``True`` 
-  and ``False``. An earlier version of plac_ had this feature too, but 
-  since you can use options with two choices instead, and in any case
-  the conversion from ``{True, False}`` to any couple of values
-  can be trivially implemented with a ternary operator
-  (``value1 if flag else value2``), I have removed it (KISS rules!).
-
-- plac_ does not support ``nargs`` options directly (it uses them internally,
-  though, to implement flag recognition). The reason it that all the use
-  cases of interest to me are covered by plac_ and did not feel the need
-  to increase the learning curve by adding direct support for ``nargs``.
-
-- plac_ does support subparsers, but you must read the `advanced usage
-  document`_ to see how it works.
-
-- plac_ does not support actions directly. This also
-  looks like a feature too advanced for the goals of plac_. Notice however
-  that the ability to define your own annotation objects (again, see
-  the  `advanced usage document`_) may mitigate the need for custom actions.
-
-plac_ can leverage directly on many argparse_ features.
-
-For instance, you can make invisible an argument in the usage message
-simply by using ``'==SUPPRESS=='`` as help string (or
-``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
-directly.
-
-It is also possible to pass options to the underlying
-``argparse.ArgumentParser`` object (currently it accepts the default
-arguments ``description``, ``epilog``, ``prog``, ``usage``,
-``add_help``, ``argument_default``, ``parents``, ``prefix_chars``,
-``fromfile_prefix_chars``, ``conflict_handler``, ``formatter_class``).
-It is enough to set such attributes on the ``main`` function.  For
-instance
-
-::
-
-  def main(...):
-      pass
-
-  main.add_help = False
-
-disables the recognition of the help flag ``-h, --help``. This
-mechanism does not look particularly elegant, but it works well
-enough.  I assume that the typical user of plac_ will be happy with
-the defaults and would not want to change them; still it is possible
-if she wants to. 
-
-For instance, by setting the ``description`` attribute, it is possible
-to add a comment to the usage message (by default the docstring of the
-``main`` function is used as description).
-
-It is also possible to change the option prefix; for
-instance if your script must run under Windows and you want to use "/"
-as option prefix you can add the line::
-
-  main.prefix_chars='/-'
-
-The first prefix char (``/``) is used
-as the default for the recognition of options and flags;
-the second prefix char (``-``) is kept to keep the ``-h/--help`` option
-working: however you can disable it and reimplement it, if you like,
-as seen in the ``ishelve`` example.
-
-It is possible to access directly the underlying ArgumentParser_ object, by
-invoking the ``plac.parser_from`` utility function:
-
->>> import plac
->>> def main(arg):
-...     pass
-... 
->>> print(plac.parser_from(main)) #doctest: +ELLIPSIS
-ArgumentParser(prog=...)
-
-Internally ``plac.call`` uses ``plac.parser_from`` and adds the parser
-to the main function as an attribute.  When ``plac.call(func)`` is
-invoked multiple time, the parser is re-used and not rebuilt from scratch again.
-
-I use ``plac.parser_from`` in the unit tests of the module, but regular
-users should not need to use it, unless they want to access *all*
-of the features of argparse_ directly without calling the main function.
-
-Interested readers should read the documentation of argparse_ to
-understand the meaning of the other options. If there is a set of
-options that you use very often, you may consider writing a decorator
-adding such options to the ``main`` function for you. For simplicity,
-plac_ does not perform any magic except the addition of the ``.p``
-attribute.
-
 plac vs the rest of the world
 ------------------------------------------
 
@@ -708,9 +704,12 @@ library and as such it shares many features with the module cmd2_ by
 Catherine Devlin. However, this is completely coincidental, since I became
 aware of the cmd2_ module only after writing plac_.
 
-Command-line argument parsers keep coming out; between the newcomers
-I will notice `marrow.script`_ by Alice Bevan-McGregor, which is quite
+Command-line argument parsers keep coming out; between the newcomers I
+will notice `marrow.script`_ by Alice Bevan-McGregor, which is quite
 similar to plac_ in spirit, but does not rely on argparse_ at all.
+Argh_ by Andrey Mikhaylenko is also worth mentioning: it is based
+on argparse_, it came after plac_ and I must give credit to the author
+for the choice of the name, much funnier than plac!
 
 The future
 -------------------------------
@@ -721,7 +720,7 @@ future. The idea is to keep the module short: it is and it should
 remain a little wrapper over argparse_. Actually I have thought about
 contributing the core back to argparse_ if plac_ becomes successfull
 and gains a reasonable number of users. For the moment it should be
-considered in alpha status.
+considered in a frozen status.
 
 Notice that even if plac_ has been designed to be simple to use for
 simple stuff, its power should not be underestimated; it is actually a
@@ -766,7 +765,8 @@ Having little imagination, I decided to rename everything again to plac,
 an anagram of clap: since it is a non-existing English name, I hope nobody
 will steal it from me!
 
-That's all, I hope you will enjoy working with plac_!
+That concludes the section about the basic usage of plac_. You are now ready to
+read about the advanced usage.
 
 .. _argparse: http://argparse.googlecode.com
 .. _optparse: http://docs.python.org/library/optparse.html
@@ -787,3 +787,4 @@ That's all, I hope you will enjoy working with plac_!
 .. _cmd: http://docs.python.org/library/cmd.html
 .. _marrow.script: https://github.com/pulp/marrow.script 
 .. _commandline: http://pypi.python.org/pypi/commandline
+.. _argh: http://packages.python.org/argh
