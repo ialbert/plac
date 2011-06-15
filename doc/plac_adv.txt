@@ -24,7 +24,7 @@ You can easily replace the ``cmd`` module of the standard library and
 you could easily write an application like twill_ with plac_. Or you
 could use it to script your building procedure. plac_ also supports
 parallel execution of multiple commands and can be used as
-task manager and monitor. It is also quite easy to build a GUI
+task manager. It is also quite easy to build a GUI
 or a Web application on top of plac_. When speaking of things
 you can do with plac_, your imagination is the only limit!
 
@@ -101,7 +101,7 @@ of the interactive session is the docstring of the main function.
 ``del`` is an abbreviation for ``delete``. In case of ambiguous 
 abbreviations plac_ raises a ``NameError``.
 
-Finally I must notice that the ``plac.Interpreter`` is available only if you
+Finally I must notice that ``plac.Interpreter`` is available only if you
 are using a recent version of Python (>= 2.5), because it is a context
 manager object which uses extended generators internally.
 
@@ -150,11 +150,11 @@ Even the ``SystemExit`` exception is captured and you can write your test as
 
 without risk of exiting from the Python interpreter.
 
-There is a second advantage of interpreters: if the main function contains some
-initialization code and finalization code
-(``__enter__`` and ``__exit__`` functions) they will be run only
-once at the beginning and at the end of the interpreter loop.
-``plac.call`` instead ignores the initialization/finalization code.
+There is a second advantage of interpreters: if the main function
+contains some initialization code and finalization code (``__enter__``
+and ``__exit__`` functions) they will be run at the beginning and at
+the end of the interpreter loop, whereas ``plac.call`` ignores
+the initialization/finalization code.
 
 Plac easy tests
 ---------------------------------------------------------
@@ -179,7 +179,7 @@ function called ``main``). The shebang is ignored by the interpreter
 tools (say a test runner) can infer the plac interpreter
 to use to test the file.
 
-You can test ``ishelve.placet`` file by calling the
+You can run the ``ishelve.placet`` file by calling the
 ``.doctest`` method of the interpreter, as in this example::
 
  $ python -c"import plac, ishelve
@@ -190,7 +190,7 @@ multiple times inside the same context and compare the output with the
 expected output: if even a check fails, the whole test fail. 
 
 You should realize tha the easy tests supported by ``plac`` are *not*
-unittests: they are functional tests. They model then user interaction and the
+unittests: they are functional tests. They model the user interaction and the
 order of the operations generally matters.  The single subtests in a
 ``.placet`` file are not independent and it makes sense to exit
 immediately at the first failure.
@@ -205,10 +205,10 @@ interpreted. For more flexibility, it is even possible to pass to the
 interpreter a custom split function with signature ``split(line,
 commentchar)``.
 
-In addition, I have implemented from scratch some support for line number
+In addition, I have implemented some support for line number
 recognition, so that if a test fail you get the line number of the
 failing command. This is especially useful if your tests are
-stored in external files, even if plac easy tests does not need to be in
+stored in external files, even if they do not need to be in
 a file: you can just pass to the ``.doctest`` method a list of
 strings corresponding to the lines of the file.
 
@@ -254,7 +254,7 @@ the console, it is enough to read the commands from a file.
 plac_ interpreters provide an ``.execute`` method to perform just that.
 
 There is just a subtle point to notice: whereas in an interactive loop
-one wants to manage all exceptions, a batch script should not in the
+one wants to manage all exceptions, a batch script should not continue in the
 background in case of unexpected errors. The implementation of
 ``Interpreter.execute`` makes sure that any error raised by
 ``plac.call`` internally is re-raised.  In other words, plac_
@@ -298,21 +298,21 @@ Implementing subcommands
 ----------------------------------------
 
 When I discussed the ``ishelve`` implementation in the `basic
-documentation`_, I said that it looked like a poor man implementation
+documentation`_, I said that it looked like the poor man implementation
 of an object system as a chain of elifs; I also said that plac_ was
 able to do much better than that.  Here I will substantiate my claim.
 
 plac_ is actually able to infer a set of subparsers from a
 generic container of commands.  This is useful if you want to
 implement *subcommands* (a familiar example of a command-line
-application featuring subcommands is subversion).
-
+application featuring subcommands is version control system).
+\
 Technically a container of commands is any object with a ``.commands`` attribute
 listing a set of functions or methods which are valid commands. A command
 container may have initialization/finalization hooks (``__enter__/__exit__``)
 and dispatch hooks (``__missing__``, invoked for invalid command names).
 Moreover, only when using command containers plac_ is able to provide
-automatic autocompletion of commands.
+automatic *autocompletion* of commands.
 
 The shelve interface can be rewritten in an object-oriented way as follows:
 
@@ -387,18 +387,13 @@ Here is a session of usage on an Unix-like operating system::
 Notice that in interactive mode the traceback is hidden, unless
 you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
 
-CHANGED IN VERSION 0.9: if you have an old version of plac_ the
+CHANGED IN VERSION 0.8.2: if you have an old version of plac_ the
 ``help`` command must be prefixed with a dot, i.e. you must write
 ``.help``. The old behavior was more consistent in my opinion, since
 it made it clear that the ``help`` command was special and threated
-differently from the regular commands. However many users complained against
-the dot, so I changed it to make them happy. Starting from release 0.9
-the ``help`` command is just an alias for ``--help``, in the
-sense that there is a preprocessor step replacing ``help`` with ``--help``
-in the argument list.
+differently from the regular commands.
 Notice that if you implement a custom ``help`` command in the commander class
-the preprocessor will be automatically disabled: passing ``help``
-will call the custom help command, just as you would expect.
+the default help will not be added, as you would expect.
 
 plac.Interpreter.call
 --------------------------------------------
@@ -562,11 +557,10 @@ provides information about the arguments accepted by the given command::
    names
 
 As you can imagine, the help message is provided by the underlying argparse_
-subparser (there is a subparser for each command). plac_ commands accept
+subparser: there is a subparser for each command. plac_ commands accept
 options, flags, varargs, keyword arguments, arguments with defaults, 
 arguments with a fixed number of choices, type conversion and all the
-features provided of argparse_ which should be reimplemented from scratch
-using plac_.
+features provided of argparse_ .
 
 Moreover at the moment ``plac`` also understands command abbreviations.
 However, this feature may disappear in
