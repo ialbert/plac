@@ -802,7 +802,7 @@ class Interpreter(object):
         self.commands.update(obj.syncommands)
         self.commands.update(obj.mpcommands)
         self.commands.update(obj.thcommands)
-        if not hasattr(obj, 'help'): # add default help
+        if obj.commands and not hasattr(obj, 'help'): # add default help
             obj.help = default_help.__get__(obj, obj.__class__)
             self.commands.add('help')
 
