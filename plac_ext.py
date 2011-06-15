@@ -168,10 +168,11 @@ def format_help(self):
 plac_core.ArgumentParser.format_help = format_help
 
 def default_help(obj, cmd=None):
-    "An utility for implementing the help functionality in plac interpreters"
+    "The default help functionality in plac interpreters"
     parser = plac_core.parser_from(obj)
     if cmd is None:
         yield parser.format_help()
+        return
     subp = parser.subparsers._name_parser_map.get(cmd)
     if subp is None:
         yield _('Unknown command %s' % cmd)
@@ -529,7 +530,7 @@ class TaskManager(object):
             yield 'saved output of %d into %s' % (taskno, fname); return
         yield task
         if len(task.outlist) > 20 and use_less:
-            less(outstr)
+            less(outstr) # has no meaning for a plac server
         else:
             yield outstr
 
@@ -801,6 +802,9 @@ class Interpreter(object):
         self.commands.update(obj.syncommands)
         self.commands.update(obj.mpcommands)
         self.commands.update(obj.thcommands)
+        if not hasattr(obj, 'help'): # add default help
+            obj.help = default_help.__get__(obj, obj.__class__)
+            self.commands.add('help')
 
     def __enter__(self):
         "Start the inner interpreter loop"
@@ -1011,10 +1015,6 @@ class Interpreter(object):
         interpreter, else start an interactive session.
         """
         obj = partial_call(factory, arglist)
-        if not hasattr(obj, 'help'):
-            # help is recognized as an alias for --help
-            aliases = dict(help='--help')
-            plac_core.parser_from(obj).alias = lambda a: aliases.get(a, a) 
         i = cls(obj, commentchar, split)
         if i.obj._args_:
             with i:

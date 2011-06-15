@@ -1110,21 +1110,24 @@ shows another example of usage.
 The plac server
 -------------------------------------------------------
 
-A command-line oriented interface can be easily converted into a 
-socket-based interface. Starting from release 0.7 plac features
-a builtin server which is able to accept commands from multiple
-clients and to execute them. The server works by instantiating
-a separate interpreter for each client, so that if a client interpreter
-dies for any reason the other interpreters keep working.
-To avoid external dependencies the server is based on the ``asynchat``
-module in the standard library, but it would not be difficult to
-replace the server with a different one (for instance, a Twisted server).
-Since ``asynchat``-based servers are asynchronous, any blocking command
-in the interpreter should be run in a separated process or thread.
-The default port for the plac_ server is 2199, and the command to
-signal end-of-connection is EOF.
-For instance, here is how you could manage remote import on a database
-(say a SQLite db):
+A command-line oriented interface can be easily converted into a
+socket-based interface. Starting from release 0.7 plac features a
+builtin server which is able to accept commands from multiple clients
+and to execute them. The server works by instantiating a separate
+interpreter for each client, so that if a client interpreter dies for
+any reason the other interpreters keep working.  To avoid external
+dependencies the server is based on the ``asynchat`` module in the
+standard library, but it would not be difficult to replace the server
+with a different one (for instance, a Twisted server).  Notice that at
+the moment the plac_ server does not work with to Python 3.2 due to
+changes to ``asynchat``. In time I fill fix this and other known
+issue.  You should consider the server functionality still
+experimental and subject to changes. Also, notice that since
+``asynchat``-based servers are asynchronous, any blocking command in
+the interpreter should be run in a separated process or thread.  The
+default port for the plac_ server is 2199, and the command to signal
+end-of-connection is EOF.  For instance, here is how you could manage
+remote import on a database (say a SQLite db):
 
 .. include:: server_ex.py
    :literal:
