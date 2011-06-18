@@ -1,5 +1,5 @@
 # ishelve2.py
-import shelve, os, sys, plac
+import shelve, os, plac
 
 class ShelveInterface(object):
     "A minimal interface over a shelve object."
@@ -40,4 +40,4 @@ class ShelveInterface(object):
 main = ShelveInterface # useful for the tests
 
 if __name__ == '__main__':
-    plac.Interpreter.call(ShelveInterface)
+    plac.Interpreter(plac.call(ShelveInterface)).interact()

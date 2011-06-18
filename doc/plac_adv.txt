@@ -350,7 +350,7 @@ Here is a session of usage on an Unix-like operating system::
 
  special commands
  ================
- last_tb  
+ .last_tb
  
  custom commands
  ===============
@@ -387,13 +387,23 @@ Here is a session of usage on an Unix-like operating system::
 Notice that in interactive mode the traceback is hidden, unless
 you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
 
-CHANGED IN VERSION 0.8.2: if you have an old version of plac_ the
+CHANGED IN VERSION 0.9: if you have an old version of plac_ the
 ``help`` command must be prefixed with a dot, i.e. you must write
 ``.help``. The old behavior was more consistent in my opinion, since
 it made it clear that the ``help`` command was special and threated
 differently from the regular commands.
 Notice that if you implement a custom ``help`` command in the commander class
 the default help will not be added, as you would expect.
+
+In version 0.9 an exception ```plac.Interpreter.Exit`` was added. Its
+purpose it to make it easy to define commands to exit from the command
+loop. Just define something like::
+
+  def quit(self):
+     raise plac.Interpreter.Exit
+
+and the interpreter will be closed properly when the ``quit`` command
+is entered.
 
 plac.Interpreter.call
 --------------------------------------------
@@ -532,7 +542,7 @@ for instance, the ``help`` command is more powerful, since it
 provides information about the arguments accepted by the given command::
 
  i> help set
- usage:  set name value
+ usage:  set [-h] name value
  
  set name value
  
@@ -541,7 +551,7 @@ provides information about the arguments accepted by the given command::
    value
 
  i> help delete
- usage:  delete [name]
+ usage:  delete [-h] [name]
  
  delete given parameter (or everything)
  
@@ -549,7 +559,7 @@ provides information about the arguments accepted by the given command::
    name        [None]
 
  i> help show
- usage:  show [names [names ...]]
+ usage:  show [-h] [names [names ...]]
  
  show given parameters
  

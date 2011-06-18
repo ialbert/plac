@@ -15,7 +15,6 @@ except NameError: # Python 2.3
     from sets import Set as set
 from gettext import gettext as _
 
-
 def getargspec(callableobj):
     """Given a callable return an object with attributes .args, .varargs, 
     .varkw, .defaults. It tries to do the "right thing" with functions,
@@ -284,6 +283,7 @@ class ArgumentParser(argparse.ArgumentParser):
                                type=a.type, metavar=a.metavar)
 
     def missing(self, name):
+        "May raise a SystemExit"
         miss = getattr(self.obj, '__missing__', lambda name: 
                        self.error('No command %r' % name))
         return miss(name)

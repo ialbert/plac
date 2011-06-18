@@ -176,7 +176,20 @@ def default_help(obj, cmd=None):
     subp = parser.subparsers._name_parser_map.get(cmd)
     if subp is None:
         yield _('Unknown command %s' % cmd)
-    else:
+    elif getattr(obj, '_interact_', False): # in interactive mode
+        formatter = subp._get_formatter()
+        formatter._prog = cmd # remove the program name from the usage
+        formatter.add_usage(subp.usage, subp._actions,
+                            subp._mutually_exclusive_groups)
+        formatter.add_text(subp.description)
+        for action_group in subp._action_groups:
+            formatter.start_section(action_group.title)
+            formatter.add_text(action_group.description)
+            formatter.add_arguments(a for a in action_group._group_actions
+                                    if a.dest != 'help')
+            formatter.end_section()
+        yield formatter.format_help()
+    else: # regular argparse help
         yield subp.format_help()
 
 ########################### import management ################################
@@ -288,6 +301,9 @@ class BaseTask(object):
                     self.outlist.append(value)
                     self.notify(unicode(value))
                 yield
+        except Interpreter.Exit: # wanted exit
+            self._regular_exit()
+            raise
         except (GeneratorExit, TerminatedProcess, KeyboardInterrupt): 
             # soft termination
             self.status = 'KILLED'
@@ -295,12 +311,15 @@ class BaseTask(object):
             self.etype, self.exc, tb = sys.exc_info()
             self.tb = ''.join(traceback.format_tb(tb)) if stringify_tb else tb
             self.status = 'ABORTED'
-        else: # regular exit
-            self.status = 'FINISHED'
-            try:
-                self.str = '\n'.join(map(unicode, self.outlist))
-            except IndexError:
-                self.str = 'no result'
+        else:
+            self._regular_exit()
+
+    def _regular_exit(self):
+        self.status = 'FINISHED'
+        try:
+            self.str = '\n'.join(map(unicode, self.outlist))
+        except IndexError:
+            self.str = 'no result'
 
     def run(self):
         "Run the inner generator"
@@ -762,6 +781,9 @@ class Interpreter(object):
     A context manager with a .send method and a few utility methods:
     execute, test and doctest.
     """
+    class Exit(Exception):
+        pass
+
     def __init__(self, obj, commentchar='#', split=shlex.split):
         self.obj = obj
         try:
@@ -866,8 +888,12 @@ class Interpreter(object):
                 arglist = yield task
                 try:
                     cmd, result = self.parser.consume(arglist)
-                except SystemExit: # for invalid commands
-                    task = SynTask(no, arglist, iter([]))
+                except SystemExit, e: # for invalid commands
+                    if e.args == (0,): # raised as sys.exit(0)
+                        errlist = []
+                    else:
+                        errlist = [str(e)]
+                    task = SynTask(no, arglist, iter(errlist))
                     continue
                 except: # anything else
                     task = SynTask(no, arglist, gen_exc(*sys.exc_info()))
@@ -919,38 +945,47 @@ class Interpreter(object):
         sequential tests which are logically grouped.
         """
         with self:
-            for input, output, no in self._parse_doctest(lineiter):
-                if verbose:
-                    write('i> %s\n' % input)
-                    write('-> %s\n' % output)
-                task = self.send(input) # blocking
-                if not str(task) == output:
-                    msg = 'line %d: input: %s\noutput: %s\nexpected: %s\n' % (
-                        no + 1, input, task, output)
-                    write(msg)
-                    if task.exc:
-                        raise task.etype, task.exc, task.tb
+            try:
+                for input, output, no in self._parse_doctest(lineiter):
+                    if verbose:
+                        write('i> %s\n' % input)
+                        write('-> %s\n' % output)
+                    task = self.send(input) # blocking
+                    if not str(task) == output:
+                        msg = 'line %d: input: %s\noutput: %s\nexpected: %s\n'%(
+                            no + 1, input, task, output)
+                        write(msg)
+                        if task.exc:
+                            raise task.etype, task.exc, task.tb
+            except self.Exit:
+                pass
 
     def execute(self, lineiter, verbose=False):
         "Execute a lineiter of commands in a context and print the output"
         with self:
-            for line in lineiter:
-                if verbose:
-                    write('i> ' + line)
-                task = self.send(line) # finished task
-                if task.etype: # there was an error
-                    raise task.etype, task.exc, task.tb
-                write('%s\n' % task.str)
+            try:
+                for line in lineiter:
+                    if verbose:
+                        write('i> ' + line)
+                    task = self.send(line) # finished task
+                    if task.etype: # there was an error
+                        raise task.etype, task.exc, task.tb
+                    write('%s\n' % task.str)
+            except self.Exit:
+                pass
 
     def multiline(self, stdin=sys.stdin, terminator=';', verbose=False):
         "The multiline mode is especially suited for usage with emacs"
         with self:
-            for line in read_long_line(stdin, terminator):
-                task = self.submit(line)
-                task.run()
-                write('%s\n' % task.str)
-                if verbose and task.traceback:
-                    write(task.traceback)
+            try:
+                for line in read_long_line(stdin, terminator):
+                    task = self.submit(line)
+                    task.run()
+                    write('%s\n' % task.str)
+                    if verbose and task.traceback:
+                        write(task.traceback)
+            except self.Exit:
+                pass
 
     def interact(self, stdin=sys.stdin, prompt='i> ', verbose=False):
         "Starts an interactive command loop reading commands from the consolle"
@@ -970,6 +1005,7 @@ class Interpreter(object):
         intro = self.obj.__doc__ or ''
         write(intro + '\n')
         with self:
+            self.obj._interact_ = True
             if self.stdin is sys.stdin: # do not close stdin automatically
                 self._manage_input()
             else:
@@ -978,15 +1014,18 @@ class Interpreter(object):
 
     def _manage_input(self):
         "Convert input lines into task which are then executed"
-        for line in iter(lambda : read_line(self.stdin, self.prompt), ''):
-            line = line.strip()
-            if not line:
-                continue
-            task = self.submit(line)
-            task.run() # synchronous or not
-            write(str(task) + '\n')
-            if self.verbose and task.etype:
-                write(task.traceback)
+        try:
+            for line in iter(lambda : read_line(self.stdin, self.prompt), ''):
+                line = line.strip()
+                if not line:
+                    continue
+                task = self.submit(line)
+                task.run() # synchronous or not
+                write(str(task) + '\n')
+                if self.verbose and task.etype:
+                    write(task.traceback)
+        except self.Exit:
+            pass
 
     def start_server(self, port=2199, **kw):
         """Starts an asyncore server reading commands for clients and opening

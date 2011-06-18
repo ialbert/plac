@@ -542,12 +542,8 @@ following assumes knowledge of argparse_):
 
 On the plus side, plac_ can leverage directly on a number of argparse_ features.
 
-For instance, you can make invisible an argument in the usage message
-simply by using ``'==SUPPRESS=='`` as help string (or
-``argparse.SUPPRESS``). Similarly, you can use argparse.FileType_
-directly.
-
-It is also possible to pass options to the underlying
+For instance, you can use argparse.FileType_ directly. Moreover,
+it is possible to pass options to the underlying
 ``argparse.ArgumentParser`` object (currently it accepts the default
 arguments ``description``, ``epilog``, ``prog``, ``usage``,
 ``add_help``, ``argument_default``, ``parents``, ``prefix_chars``,

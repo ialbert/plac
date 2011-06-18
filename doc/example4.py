@@ -5,7 +5,7 @@ def main(dsn, table='product', today=datetime.today()):
     "Do something on the database"
     print(dsn, table, today)
 
-if __name__ == '__main__':
+if __name__ == '__main__': # manual management before argparse
     import sys
     args = sys.argv[1:]
     if not args:
