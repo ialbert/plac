@@ -1,16 +1,19 @@
-* plac is general purpose tool than can be used to define
-  command-oriented domain specific languages (DSLs). 
+What's plac?
 
-* it can be used as a command-line arguments parser with an
-  easier-to-use API than argparse. 
+* plac started out as a command-line arguments parser written on top
+  of argparse. 
+
+* plac evolved into a general purpose tool to define
+  command-oriented domain specific languages (DSLs). 
 
 * it can be used as a replacement of the cmd module in the standard 
   library.
 
-* it can be used to automatize functional tests 
+* it can be used to script applications and to automatize functional
+  tests 
 
 * and much more
 
-This talk will touch upon many use cases where plac can make your life
-as a developer simpler and better. plac works with all Python versions from 2.3
-to 3.2 (more or less).
+This talk will touch upon many use cases where plac can make your 
+life as a developer simpler and better. plac works with all Python 
+versions from 2.3 to 3.2 (more or less).

@@ -537,7 +537,7 @@ writing by hand for years:</p>
 # example1.py
 def main(dsn):
     &quot;Do something with the database&quot;
-    # ...
+    print(&quot;ok&quot;)
 
 if __name__ == '__main__':
     import sys
@@ -755,7 +755,7 @@ performed the parsing by hand. In <a class="reference external" href="http://pyp
 function annotations. Here is an example:</p>
 <pre class="literal-block">
 # example8.py
-def main(command: (&quot;SQL query&quot;, 'option', 'c'), dsn):
+def main(command: (&quot;SQL query&quot;, 'option', 'q'), dsn):
     if command:
         print('executing %s on %s' % (command, dsn))
         # ...
@@ -771,14 +771,14 @@ that <tt class="docutils literal"><span class="pre">command</span></tt> is an op
 a short form of the option <tt class="docutils literal"><span class="pre">-c</span></tt>, the long form being <tt class="docutils literal"><span class="pre">--command</span></tt>.
 The usage message is the following:</p>
 <pre class="literal-block">
-usage: example8.py [-h] [-c COMMAND] dsn
+usage: example8.py [-h] [-q COMMAND] dsn
 
 positional arguments:
   dsn
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c COMMAND, --command COMMAND
+  -q COMMAND, --command COMMAND
                         SQL query
 
 </pre>
@@ -838,7 +838,7 @@ will get the value <tt class="docutils literal"><span class="pre">None</span></t
 default. Here is an example:</p>
 <pre class="literal-block">
 # example8_.py
-def main(dsn, command: (&quot;SQL query&quot;, 'option', 'c')='select * from table'):
+def main(dsn, command: (&quot;SQL query&quot;, 'option', 'q')='select * from table'):
     print('executing %r on %s' % (command, dsn))
 
 if __name__ == '__main__':
@@ -847,14 +847,14 @@ if __name__ == '__main__':
 </pre>
 <p>Notice that the default value appears in the help message:</p>
 <pre class="literal-block">
-usage: example8_.py [-h] [-c select * from table] dsn
+usage: example8_.py [-h] [-q select * from table] dsn
 
 positional arguments:
   dsn
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c select * from table, --command select * from table
+  -q select * from table, --command select * from table
                         SQL query
 
 </pre>
@@ -1080,11 +1080,11 @@ import plac
 from sqlalchemy.ext.sqlsoup import SqlSoup
 
 &#64;plac.annotations(
-    db=(&quot;Connection string&quot;, 'positional', None, SqlSoup),
-    header=(&quot;Header&quot;, 'flag', 'H'),
-    sqlcmd=(&quot;SQL command&quot;, 'option', 'c', str, None, &quot;SQL&quot;),
-    delimiter=(&quot;Column separator&quot;, 'option', 'd'),
-    scripts=&quot;SQL scripts&quot;,
+    db=plac.Annotation(&quot;Connection string&quot;, type=SqlSoup),
+    header=plac.Annotation(&quot;Header&quot;, 'flag', 'H'),
+    sqlcmd=plac.Annotation(&quot;SQL command&quot;, 'option', 'c', str, metavar=&quot;SQL&quot;),
+    delimiter=plac.Annotation(&quot;Column separator&quot;, 'option', 'd'),
+    scripts=plac.Annotation(&quot;SQL scripts&quot;),
     )
 def main(db, header, sqlcmd, delimiter=&quot;|&quot;, *scripts):
     &quot;A script to run queries and SQL scripts on a database&quot;
@@ -1885,8 +1885,6 @@ class ShelveInterface(object):
             yield 'deleting %s' % name
             del self.sh[name] # no error checking
 
-main = ShelveInterface # useful for the tests
-
 if __name__ == '__main__':
     plac.Interpreter(plac.call(ShelveInterface)).interact()
 
@@ -1910,11 +1908,23 @@ with the same formatting of the <a class="reference external" href="http://docs.
 a command it displays the usage message for that command.
 The <tt class="docutils literal"><span class="pre">.last_tb</span></tt> command is useful when debugging: in case of errors,
 it allows you to display the traceback of the last executed command.</p>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+usage: ishelve2.py [-h] [-configfile CONFIGFILE]
+
+A minimal interface over a shelve object.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -configfile CONFIGFILE
+                        path name of the shelve
+
+</pre>
 <p>Here is a session of usage on an Unix-like operating system:</p>
 <pre class="literal-block">
-$ python ishelve2.py
+$ python ishelve2.py -c ~/test.shelve
 A minimal interface over a shelve object.
-Operating on /home/micheles/conf.shelve.
+Operating on /home/micheles/test.shelve.
 Use help to see the available commands.
 i&gt; help
 
@@ -2008,25 +2018,28 @@ found in the command line. Here is the code to turn the <tt class="docutils lite
 into a script</p>
 <pre class="literal-block">
 # ishelve3.py
-from ishelve2 import ShelveInterface as main
+from ishelve2 import ShelveInterface
 
 if __name__ == '__main__':
-    import plac; plac.Interpreter.call(main)
+    import plac; plac.Interpreter.call(ShelveInterface)
+
+## try the following:
+# $ python ishelve3.py delete
+# $ python ishelve3.py set a 1
+# $ python ishelve3.py showall
 
 </pre>
 <p>and here are a few examples of usage:</p>
 <pre class="literal-block">
-$ python ishelve3.py -h
-usage: ishelve3.py [-h] [-i] [-configfile CONFIGFILE] [args [args ...]]
+$ python ishelve3.py help
 
-positional arguments:
-  args
+special commands
+================
+.last_tb
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -i, --interact        start interactive interpreter
-  -configfile CONFIGFILE
-                        path name of the shelve
+custom commands
+===============
+delete  set  show  showall
 
 $ python ishelve3.py set a 1
 setting a=1
@@ -2137,7 +2150,7 @@ for instance, the <tt class="docutils literal"><span class="pre">help</span></tt
 provides information about the arguments accepted by the given command:</p>
 <pre class="literal-block">
 i&gt; help set
-usage:  set [-h] name value
+usage:  set name value
 
 set name value
 
@@ -2146,7 +2159,7 @@ positional arguments:
   value
 
 i&gt; help delete
-usage:  delete [-h] [name]
+usage:  delete [name]
 
 delete given parameter (or everything)
 
@@ -2154,7 +2167,7 @@ positional arguments:
   name        [None]
 
 i&gt; help show
-usage:  show [-h] [names [names ...]]
+usage:  show [names [names ...]]
 
 show given parameters
 
@@ -2239,6 +2252,7 @@ b = 2
 a <tt class="docutils literal"><span class="pre">.placet</span></tt> file like the following:</p>
 <pre class="literal-block">
 #!ishelve2.py:ShelveInterface -configfile=~/test.shelve
+# an example of .placet file for the ShelveInterface
 i&gt; del
 deleting everything
 i&gt; set a 1
@@ -2318,7 +2332,7 @@ def status(quiet):
     return ('status ', quiet)
 
 def __missing__(name):
-    return 'Command %r does not exist' % name
+    return ('Command %r does not exist' % name,)
 
 def __exit__(etype, exc, tb):
     &quot;Will be called automatically at the end of the intepreter loop&quot;
@@ -2327,13 +2341,16 @@ def __exit__(etype, exc, tb):
 
 main = __import__(__name__) # the module imports itself!
 
+if __name__ == '__main__':
+    import plac
+    for out in plac.call(main): print(out)
+
 </pre>
 <p>Notice that I have defined both an <tt class="docutils literal"><span class="pre">__exit__</span></tt> hook and a <tt class="docutils literal"><span class="pre">__missing__</span></tt>
 hook, invoked for non-existing commands.
 The real trick here is the line <tt class="docutils literal"><span class="pre">main</span> <span class="pre">=</span> <span class="pre">__import__(__name__)</span></tt>, which
 define <tt class="docutils literal"><span class="pre">main</span></tt> to be an alias for the current module.</p>
-<p>The <tt class="docutils literal"><span class="pre">vcs</span></tt> module does not contain an <tt class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></tt>
-block, but you can still run it through the plac runner
+<p>The <tt class="docutils literal"><span class="pre">vcs</span></tt> module can be run through the plac runner
 (try <tt class="docutils literal"><span class="pre">plac</span> <span class="pre">vcs.py</span> <span class="pre">-h</span></tt>):</p>
 <pre class="literal-block">
 usage: plac_runner.py vcs.py [-h] {status,commit,checkout} ...
@@ -2350,11 +2367,11 @@ subcommands:
     status              A fake status command
 
 </pre>
-<p>You can get help for the subcommands by postponing <tt class="docutils literal"><span class="pre">-h</span></tt> after the
+<p>You can get help for the subcommands by inserting an <tt class="docutils literal"><span class="pre">-h</span></tt> close the
 name of the command:</p>
 <pre class="literal-block">
 $ plac vcs.py status -h
-usage: vcs.py status [-h] [-q]
+usage: plac_runner.py vcs.py status [-h] [-q]
 
 A fake status command
 
@@ -2655,7 +2672,7 @@ i&gt; import_file file3
 i&gt; .kill 1
 &lt;MPTask 1 [import_file file3] RUNNING&gt;
 closing the file
-i&gt; .o 1
+i&gt; .output 1
 &lt;MPTask 1 [import_file file3] KILLED&gt;
 Imported 100 lines
 Imported 200 lines

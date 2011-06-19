@@ -3,7 +3,7 @@ from __future__ import with_statement
 from contextlib import contextmanager
 from operator import attrgetter
 from gettext import gettext as _
-import imp, inspect, os, sys, cmd, shlex, subprocess
+import imp, inspect, os, sys, cmd, shlex, subprocess, argparse
 import itertools, traceback, multiprocessing, signal, threading
 import plac_core
 
@@ -159,6 +159,14 @@ class HelpSummary(object):
     def __str__(self):
         return ''.join(self._ls)
 
+class PlacFormatter(argparse.RawDescriptionHelpFormatter):
+    def _metavar_formatter(self, action, default_metavar):
+        'Remove special commands from the usage message'
+        action.choices = dict((n, c) for n, c in action.choices.iteritems()
+                              if not n.startswith('.'))
+        return super(PlacFormatter, self)._metavar_formatter(
+            action, default_metavar)
+
 def format_help(self):
     "Attached to plac_core.ArgumentParser for plac interpreters"
     try:
@@ -179,8 +187,9 @@ def default_help(obj, cmd=None):
     elif getattr(obj, '_interact_', False): # in interactive mode
         formatter = subp._get_formatter()
         formatter._prog = cmd # remove the program name from the usage
-        formatter.add_usage(subp.usage, subp._actions,
-                            subp._mutually_exclusive_groups)
+        formatter.add_usage(
+            subp.usage, [a for a in subp._actions if a.dest != 'help'],
+            subp._mutually_exclusive_groups)
         formatter.add_text(subp.description)
         for action_group in subp._action_groups:
             formatter.start_section(action_group.title)
@@ -227,7 +236,7 @@ def partial_call(factory, arglist):
         'start interactive interpreter', 'flag', 'i')
     return plac_core.call(makeobj, arglist)
 
-def import_main(path, *args, **pconf):
+def import_main(path, *args):
     """
     An utility to import the main function of a plac tool. It also
     works with command container factories.
@@ -251,8 +260,6 @@ def import_main(path, *args, **pconf):
         tool = partial_call(getattr(module, factory_name), args)
     else:
         tool = module.main
-    # set the parser configuration
-    plac_core.parser_from(tool, **pconf) 
     return tool
 
 ############################## Task classes ##############################
@@ -470,7 +477,9 @@ class TaskManager(object):
         self.registry = {} # {taskno : task}
         if obj.mpcommands or obj.thcommands:
             self.specialcommands.update(['.kill', '.list', '.output'])
-        self.parser = plac_core.parser_from(obj)
+        interact = getattr(obj, '_interact_', False)
+        self.parser = plac_core.parser_from(
+            obj, prog='' if interact else None, formatter_class=PlacFormatter)
         HelpSummary.add(obj, self.specialcommands)
         self.man = Manager() if obj.mpcommands else None
         signal.signal(signal.SIGTERM, terminatedProcess)
@@ -795,7 +804,7 @@ class Interpreter(object):
         self._set_commands(obj)
         self.tm = TaskManager(obj)
         self.man = self.tm.man
-        self.parser = plac_core.parser_from(obj, prog='')
+        self.parser =  self.tm.parser
         if self.commands:
             self.commands.update(self.tm.specialcommands)
             self.parser.addsubcommands(
@@ -827,7 +836,7 @@ class Interpreter(object):
         if obj.commands and not hasattr(obj, 'help'): # add default help
             obj.help = default_help.__get__(obj, obj.__class__)
             self.commands.add('help')
-
+            
     def __enter__(self):
         "Start the inner interpreter loop"
         self._interpreter = self._make_interpreter()

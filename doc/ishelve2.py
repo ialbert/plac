@@ -37,7 +37,5 @@ class ShelveInterface(object):
             yield 'deleting %s' % name
             del self.sh[name] # no error checking
 
-main = ShelveInterface # useful for the tests
-
 if __name__ == '__main__':
     plac.Interpreter(plac.call(ShelveInterface)).interact()

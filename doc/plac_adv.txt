@@ -340,11 +340,16 @@ a command it displays the usage message for that command.
 The ``.last_tb`` command is useful when debugging: in case of errors,
 it allows you to display the traceback of the last executed command.
 
+Here is the usage message:
+
+.. include:: ishelve2.hel
+   :literal:
+
 Here is a session of usage on an Unix-like operating system::
 
- $ python ishelve2.py
+ $ python ishelve2.py -c ~/test.shelve
  A minimal interface over a shelve object.
- Operating on /home/micheles/conf.shelve.
+ Operating on /home/micheles/test.shelve.
  Use help to see the available commands.
  i> help
 
@@ -445,18 +450,16 @@ into a script
 
 and here are a few examples of usage::
 
-  $ python ishelve3.py -h
-  usage: ishelve3.py [-h] [-i] [-configfile CONFIGFILE] [args [args ...]]
+  $ python ishelve3.py help
+   
+  special commands
+  ================
+  .last_tb
   
-  positional arguments:
-    args
-  
-  optional arguments:
-    -h, --help            show this help message and exit
-    -i, --interact        start interactive interpreter
-    -configfile CONFIGFILE
-                          path name of the shelve
-
+  custom commands
+  ===============
+  delete  set  show  showall
+   
   $ python ishelve3.py set a 1
   setting a=1
   $ python ishelve3.py show a
@@ -542,7 +545,7 @@ for instance, the ``help`` command is more powerful, since it
 provides information about the arguments accepted by the given command::
 
  i> help set
- usage:  set [-h] name value
+ usage:  set name value
  
  set name value
  
@@ -551,7 +554,7 @@ provides information about the arguments accepted by the given command::
    value
 
  i> help delete
- usage:  delete [-h] [name]
+ usage:  delete [name]
  
  delete given parameter (or everything)
  
@@ -559,7 +562,7 @@ provides information about the arguments accepted by the given command::
    name        [None]
 
  i> help show
- usage:  show [-h] [names [names ...]]
+ usage:  show [names [names ...]]
  
  show given parameters
  
@@ -709,18 +712,17 @@ hook, invoked for non-existing commands.
 The real trick here is the line ``main = __import__(__name__)``, which
 define ``main`` to be an alias for the current module.
 
-The ``vcs`` module does not contain an ``if __name__ == '__main__'``
-block, but you can still run it through the plac runner
+The ``vcs`` module can be run through the plac runner
 (try ``plac vcs.py -h``):
 
 .. include:: vcs.help
    :literal:
 
-You can get help for the subcommands by postponing ``-h`` after the
+You can get help for the subcommands by inserting an ``-h`` close the
 name of the command::
  
  $ plac vcs.py status -h
- usage: vcs.py status [-h] [-q]
+ usage: plac_runner.py vcs.py status [-h] [-q]
  
  A fake status command
  
@@ -996,7 +998,7 @@ difference at the user interface level::
  i> .kill 1
  <MPTask 1 [import_file file3] RUNNING>
  closing the file
- i> .o 1
+ i> .output 1
  <MPTask 1 [import_file file3] KILLED>
  Imported 100 lines
  Imported 200 lines

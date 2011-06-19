@@ -35,8 +35,8 @@ def main(verbose, interactive, multiline, serve, batch, test, fname=None,
     if fname is None:
         baseparser.print_help()
     elif sys.argv[1] == fname: # script mode
-        plactool = plac.import_main(
-            fname, prog=os.path.basename(sys.argv[0]) + ' ' + fname)
+        plactool = plac.import_main(fname)
+        plactool.prog = os.path.basename(sys.argv[0]) + ' ' + fname
         out = plac.call(plactool, sys.argv[2:], eager=False)
         if plac.iterable(out):
             for output in out:
@@ -44,7 +44,8 @@ def main(verbose, interactive, multiline, serve, batch, test, fname=None,
         else:
             print(out)
     elif interactive or multiline or serve:
-        plactool = plac.import_main(fname, *extra, **{'prog': ''})
+        plactool = plac.import_main(fname, *extra)
+        plactool.prog = ''
         i = plac.Interpreter(plactool)
         if interactive:
             i.interact(verbose=verbose)

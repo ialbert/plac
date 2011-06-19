@@ -2,10 +2,11 @@ HISTORY
 ----------
 
 0.9.0 Default values are now displayed in the help message by default;
-      removed .help and introduced help; added an ``Interpreter.Exit``
+      removed .help and introduced help; removed the special dotted
+      commands from the usage message; added an ``Interpreter.Exit``
       exception; removed the experimental monitor framework because
       it is too much platform-dependent; added a reference
-      to Argh; now plac has its own space on Google Code (2011-06-18)
+      to Argh; now plac has its own space on Google Code (2011-06-19)
 0.8.1 Removed a stray newline in the output of plac, as signaled
       by Daniele Pighin; fixed a bug in the doctest method raising
       non-existing exceptions; turned the notification messages into

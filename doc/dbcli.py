@@ -3,11 +3,11 @@ import plac
 from sqlalchemy.ext.sqlsoup import SqlSoup
 
 @plac.annotations(
-    db=("Connection string", 'positional', None, SqlSoup),
-    header=("Header", 'flag', 'H'),
-    sqlcmd=("SQL command", 'option', 'c', str, None, "SQL"),
-    delimiter=("Column separator", 'option', 'd'),
-    scripts="SQL scripts",
+    db=plac.Annotation("Connection string", type=SqlSoup),
+    header=plac.Annotation("Header", 'flag', 'H'),
+    sqlcmd=plac.Annotation("SQL command", 'option', 'c', str, metavar="SQL"),
+    delimiter=plac.Annotation("Column separator", 'option', 'd'),
+    scripts=plac.Annotation("SQL scripts"),
     )
 def main(db, header, sqlcmd, delimiter="|", *scripts):
     "A script to run queries and SQL scripts on a database"

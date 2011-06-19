@@ -1,5 +1,5 @@
 # example8.py
-def main(command: ("SQL query", 'option', 'c'), dsn):
+def main(command: ("SQL query", 'option', 'q'), dsn):
     if command:
         print('executing %s on %s' % (command, dsn))
         # ...
