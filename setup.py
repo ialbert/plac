@@ -30,7 +30,7 @@ if __name__ == '__main__':
           long_description=open('README.txt').read(),
           author='Michele Simionato',
           author_email='michele.simionato@gmail.com',
-          url='http://pypi.python.org/pypi/plac',
+          url='http://code.google.com/p/plac/',
           license="BSD License",
           py_modules = ['plac_core', 'plac_ext', 'plac_tk', 'plac'],
           scripts = ['plac_runner.py'],

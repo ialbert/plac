@@ -21,7 +21,7 @@ def main(db, header, sqlcmd, delimiter="|", *scripts):
             yield delimiter.join(map(str, row))
 
     for script in scripts:
-        db.bind.execute(file(script).read())
+        db.bind.execute(open(script).read())
         yield 'executed %s' % script
 
 if __name__ == '__main__':
