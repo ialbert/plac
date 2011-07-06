@@ -1,6 +1,6 @@
 "A Fake Version Control System"
 
-import plac
+import plac # this implementation also works with Python 2.4
 
 commands = 'checkout', 'commit', 'status'
 
