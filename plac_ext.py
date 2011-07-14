@@ -623,9 +623,9 @@ class Monitor(StartStopObject):
     Base monitor class with methods add_listener/del_listener/notify_listener
     read_queue and and start/stop.
     """
-    def __init__(self, name, queue):
+    def __init__(self, name, queue=None):
         self.name = name
-        self.queue = queue
+        self.queue = queue or multiprocessing.Queue()
     def add_listener(self, taskno):
         pass
     def del_listener(self, taskno):

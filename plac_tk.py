@@ -8,9 +8,8 @@ class TkMonitor(Monitor):
     An interface over a dictionary {taskno: scrolledtext widget}, with
     methods add_listener, del_listener, notify_listener and start/stop.
     """
-    def __init__(self, name, queue):
-        self.name = name
-        self.queue = queue
+    def __init__(self, name, queue=None):
+        Monitor.__init__(name, queue)
         self.widgets = {}
 
     @plac_core.annotations(taskno=('task number', 'positional', None, int))

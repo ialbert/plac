@@ -1,7 +1,5 @@
 from __future__ import with_statement
-import plac, multiprocessing
-
-tkmon = plac.TkMonitor('tkmon', multiprocessing.Queue())
+import plac
 
 class Hello(object):
     mpcommands = ['hello', 'quit']
@@ -12,7 +10,7 @@ class Hello(object):
 
 if __name__ == '__main__':
     i = plac.Interpreter(Hello())
-    i.add_monitor(tkmon)
+    i.add_monitor(plac.TkMonitor('tkmon'))
     i.interact()
 
     
