@@ -10,14 +10,19 @@ def gen(n):
         yield str(i)
         time.sleep(.1)
 
-def test():
-    tasks = plac.runp([gen(3), gen(5), gen(10)])
-    for t in tasks:
-        t.result
-    t.man.stop()
+def err():
+    yield 1/0
 
-#def test_tkmonitor():
-#    mon = plac_tk.TkMonitor('tkmon')
-#    results = plac.runp([gen(3), gen(5), gen(10)], monitors=[mon])
-#    assert results == ['3', '5', '10']
+def test1():
+    assert ['3', '5', '10'] == plac.runp([gen(3), gen(5), gen(10)])
+
+def test2():
+    result, error = plac.runp([gen(3), err()])
+    assert result == '3' and error.__class__ == ZeroDivisionError
+
+def test3():
+    t0 = time.time()
+    plac.runp([gen(9), gen(9)])
+    assert int(time.time() - t0) == 1 # it must take 1 second, not 2
+
 

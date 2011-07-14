@@ -354,7 +354,10 @@ class BaseTask(object):
     def result(self):
         self.wait()
         if self.exc:
-            raise self.etype, self.exc, self.tb or None
+            if isinstance(self.tb, basestring):
+                raise self.etype(self.tb)
+            else:
+                raise self.etype, self.exc, self.tb or None
         if not self.outlist:
             return None
         return self.outlist[-1]
@@ -432,7 +435,7 @@ class MPTask(BaseTask):
             return []
 
     def notify(self, msg):
-        self.man.send('notify_listener %d %r' % (self.no, msg))
+        self.man.notify_listener(self.no, msg)
 
     def __init__(self, no, arglist, genobj, manager):
         """
@@ -610,14 +613,19 @@ plac.Interpreter(plac.import_main(*%s)).interact(prompt='i>\\n')
         self.stdin.write(line + os.linesep)
         return self.recv()
 
-class Monitor(object):
+class StartStopObject(object):
+    started = False
+    def start(self): pass
+    def stop(self): pass
+
+class Monitor(StartStopObject):
     """
     Base monitor class with methods add_listener/del_listener/notify_listener
-    and start/stop/schedule/slave.
+    read_queue and and start/stop.
     """
-    commands = 'add_listener', 'del_listener', 'notify_listener'
-    def __init__(self, name):
+    def __init__(self, name, queue):
         self.name = name
+        self.queue = queue
     def add_listener(self, taskno):
         pass
     def del_listener(self, taskno):
@@ -628,51 +636,8 @@ class Monitor(object):
         pass
     def stop(self):
         pass
-    def schedule(self, seconds, display, arg):
+    def read_queue(self):
         pass
-
-import Queue
-
-class SlaveProcess(object):
-    """
-    Spawn a slave process reading from an input queue and displaying
-    on a monitor object. Methods are start/send/stop.
-    """
-    def __init__(self, mon):
-        self.mon= mon
-        self.queue = multiprocessing.Queue()
-        self.proc = multiprocessing.Process(None, self._run)
-
-    def start(self):
-        self.proc.start()
-
-    def send(self, line):
-        self.queue.put(line)
-
-    def stop(self):
-        self.queue.close()
-        self.proc.terminate()
-
-    def _sendline(self, i):
-        "Send a line to the underlying monitor"
-        try:
-            line = self.queue.get_nowait()
-        except Queue.Empty:
-            pass
-        else:
-            i.send(line)
-        self.mon.schedule(.1, self._sendline, i)
-
-    def _run(self):
-        with Interpreter(self.mon) as i:
-            # .schedule() must be invoked inside the with block
-            self.mon.schedule(.1, self._sendline, i)
-            self.mon.run()
-
-class StartStopObject(object):
-    started = False
-    def start(self): pass
-    def stop(self): pass
 
 class Manager(StartStopObject):
     """
@@ -687,9 +652,9 @@ class Manager(StartStopObject):
 
     def add(self, monitor):
         'Add or replace a monitor in the registry'
-        slave = SlaveProcess(monitor)
-        slave.name = monitor.name
-        self.registry[slave.name] = slave
+        proc = multiprocessing.Process(None, monitor.start, monitor.name)
+        proc.queue = monitor.queue
+        self.registry[monitor.name] = proc
 
     def delete(self, name):
         'Remove a named monitor from the registry'
@@ -699,21 +664,26 @@ class Manager(StartStopObject):
     def start(self):
         if self.mp is None:
             self.mp = multiprocessing.Manager()
-        for slave in self.registry.itervalues():
-            slave.start()
+        for monitor in self.registry.itervalues():
+            monitor.start()
         self.started = True
 
     def stop(self):
-        for slave in self.registry.itervalues():
-            slave.stop()
+        for monitor in self.registry.itervalues():
+            monitor.queue.close()
+            monitor.terminate()
         if self.mp:
             self.mp.shutdown()
             self.mp = None
         self.started = False
 
-    def send(self, line):
-        for slave in self.registry.itervalues():
-            slave.send(line)
+    def notify_listener(self, taskno, msg):
+        for monitor in self.registry.itervalues():
+            monitor.queue.put(('notify_listener', taskno, msg))
+
+    def add_listener(self, no):
+        for monitor in self.registry.itervalues():
+            monitor.queue.put(('add_listener', no))
 
 ########################## plac server ##############################
 
@@ -865,7 +835,7 @@ class Interpreter(object):
         if not plac_core._match_cmd(arglist[0], self.tm.specialcommands):
             self.tm.registry[task.no] = task
             if m:
-                m.send('add_listener %d' % task.no)
+                m.add_listener(task.no)
         return task
 
     def send(self, line):
@@ -1093,17 +1063,20 @@ class _TaskLauncher(object):
         for out in self.genlist[int(i) - 1]:
             yield out
 
-def runp(genseq, mode='p', start=True):
+def runp(genseq, mode='p'):
     """Run a sequence of generators in parallel. Mode can be 'p' (use processes)
-    or 't' (use threads). Return a list of running task objects. If start is
-    False, the tasks are only submitted and not automatically started.
+    or 't' (use threads). After all of them are finished, return a list of 
+    task objects.
     """
     assert mode in 'pt', mode
     launcher = _TaskLauncher(genseq, mode)
-    inter = Interpreter(launcher).__enter__()
-    for i in range(len(launcher.genlist)):
-        inter.submit('rungen %d' % (i + 1))
-    if start:
+    res = []
+    with Interpreter(launcher) as inter:
+        for i in range(len(launcher.genlist)):
+            inter.submit('rungen %d' % (i + 1)).run()
         for task in inter.tasks():
-            task.run()
-    return inter.tasks()
+            try:
+                res.append(task.result)
+            except Exception, e:
+                res.append(e)
+    return res

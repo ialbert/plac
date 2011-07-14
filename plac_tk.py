@@ -1,4 +1,4 @@
-import os, sys, plac_core
+import os, sys, Queue, plac_core
 from Tkinter import Tk
 from ScrolledText import ScrolledText
 from plac_ext import Monitor, TerminatedProcess
@@ -6,10 +6,11 @@ from plac_ext import Monitor, TerminatedProcess
 class TkMonitor(Monitor):
     """
     An interface over a dictionary {taskno: scrolledtext widget}, with
-    methods add_listener, del_listener, notify_listener and run.
+    methods add_listener, del_listener, notify_listener and start/stop.
     """
-    def __init__(self, name):
+    def __init__(self, name, queue):
         self.name = name
+        self.queue = queue
         self.widgets = {}
 
     @plac_core.annotations(taskno=('task number', 'positional', None, int))
@@ -30,26 +31,27 @@ class TkMonitor(Monitor):
         w.insert('end', msg + '\n')
         w.update()
 
-    def run(self):
+    def start(self):
         'Start the mainloop'
+        self.root = Tk()
+        self.root.title(self.name)
+        self.root.wm_protocol("WM_DELETE_WINDOW", self.stop)
+        self.root.after(0, self.read_queue)
         try:
             self.root.mainloop()
         except KeyboardInterrupt:
             print >> sys.stderr, 'Process %d killed by CTRL-C' % os.getpid()
         except TerminatedProcess:
             pass
-        finally:
-            self.root.quit()
 
-    def __enter__(self):
-        self.root = Tk()
-        self.root.title(self.name)
-        self.root.wm_protocol("WM_DELETE_WINDOW", self.root.quit)
-        return self
+    def stop(self):
+        self.root.quit()
 
-    def __exit__(self, exctype, exc, tb):
-        self.stop()
-
-    def schedule(self, seconds, func, arg):
-        "Call func with arg after seconds"
-        self.root.after(int(seconds*1000), func, arg)
+    def read_queue(self):
+        try:
+            cmd_args = self.queue.get_nowait()
+        except Queue.Empty:
+            pass
+        else:
+            getattr(self, cmd_args[0])(*cmd_args[1:])
+        self.root.after(100, self.read_queue)
