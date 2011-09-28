@@ -9,7 +9,7 @@ class TkMonitor(Monitor):
     methods add_listener, del_listener, notify_listener and start/stop.
     """
     def __init__(self, name, queue=None):
-        Monitor.__init__(name, queue)
+        Monitor.__init__(self, name, queue)
         self.widgets = {}
 
     @plac_core.annotations(taskno=('task number', 'positional', None, int))

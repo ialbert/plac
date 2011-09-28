@@ -249,7 +249,7 @@ class ArgumentParser(argparse.ArgumentParser):
             else:
                 dflt = default
                 if a.help is None:
-                    a.help = '[%s]' % dflt
+                    a.help = '[%s]' % str(dflt) # dflt can be a tuple
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
                     shortlong = (prefix + a.abbrev, prefix*2 + name)
