@@ -162,7 +162,8 @@ class HelpSummary(object):
 class PlacFormatter(argparse.RawDescriptionHelpFormatter):
     def _metavar_formatter(self, action, default_metavar):
         'Remove special commands from the usage message'
-        action.choices = dict((n, c) for n, c in action.choices.iteritems()
+        choices = action.choices or {}
+        action.choices = dict((n, c) for n, c in choices.iteritems()
                               if not n.startswith('.'))
         return super(PlacFormatter, self)._metavar_formatter(
             action, default_metavar)
