@@ -252,9 +252,9 @@ class ArgumentParser(argparse.ArgumentParser):
                     a.help = '[%s]' % str(dflt) # dflt can be a tuple
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
-                    shortlong = (prefix + a.abbrev, prefix*2 + name)
+                    shortlong = (prefix + a.abbrev, prefix*2 + name.replace('_', '-'))
                 else:
-                    shortlong = (prefix + name,)
+                    shortlong = (prefix + name.replace('_', '-'),)
             elif default is NONE: # required argument
                 self.add_argument(name, help=a.help, type=a.type, 
                                    choices=a.choices, metavar=metavar)

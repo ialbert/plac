@@ -3,6 +3,8 @@ HISTORY
 
 0.9.1 Restored the monitor support temporarily removed in 0.9.0 (2011-07-15)
       Fixed an issue with tuple defaults (2011-09-28)
+      Options and flags can now contain dashes (i.e. ``--dry-run`` is valid and
+      translated into dry_run, you are no more forced to use ``--dry-run``) (2012-04-20)
 0.9.0 Default values are now displayed in the help message by default;
       removed .help and introduced help; removed the special dotted
       commands from the usage message; added an ``Interpreter.Exit``
