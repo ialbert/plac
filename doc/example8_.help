@@ -1,0 +1,9 @@
+usage: example8_.py [-h] [-q select * from table] dsn
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q select * from table, --command select * from table
+                        SQL query

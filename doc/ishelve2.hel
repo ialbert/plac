@@ -1,0 +1,8 @@
+usage: ishelve2.py [-h] [-configfile CONFIGFILE]
+
+A minimal interface over a shelve object.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -configfile CONFIGFILE
+                        path name of the shelve

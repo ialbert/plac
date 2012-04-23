@@ -1,0 +1,11 @@
+usage: example5.py [-h] dsn [table] [today]
+
+Do something on the database
+
+positional arguments:
+  dsn
+  table       [product]
+  today       [YYYY-MM-DD]
+
+optional arguments:
+  -h, --help  show this help message and exit

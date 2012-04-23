@@ -1,0 +1,12 @@
+usage: plac_runner.py vcs.py [-h] {status,commit,checkout} ...
+
+A Fake Version Control System
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {status,commit,checkout}
+    checkout            A fake checkout command
+    commit              A fake commit command
+    status              A fake status command

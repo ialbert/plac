@@ -1,0 +1,1 @@
+include *.txt doc/*.py doc/*.help doc/*.txt doc/*.html doc/*.pdf

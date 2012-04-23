@@ -1,0 +1,13 @@
+usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
+
+A script to run queries and SQL scripts on a database
+
+positional arguments:
+  db                    Connection string
+  scripts               SQL scripts
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -H, --header          Header
+  -c SQL, --sqlcmd SQL  SQL command
+  -d |, --delimiter |   Column separator

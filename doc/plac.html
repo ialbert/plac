@@ -1,0 +1,3092 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title></title>
+<style type="text/css">
+
+.first {
+  margin-top: 0 }
+
+.last {
+  margin-bottom: 0 }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+dd {
+  margin-bottom: 0.5em }
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.hint p.admonition-title, div.important p.admonition-title,
+div.note p.admonition-title, div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em }
+
+div.footer, div.header {
+  font-size: smaller }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+hr {
+  width: 75% }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.line-block {
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option-argument {
+  font-style: italic }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+table {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.citation {
+  border-left: solid thin gray ;
+  padding-left: 0.5ex }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.footnote {
+  border-left: solid thin black ;
+  padding-left: 0.5ex }
+
+td, th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+th.docinfo-name, th.field-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap }
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100% }
+
+tt {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+
+
+/*
+Additional styles for "modern"-style of DocFactory.
+
+:Author: Gunnar Schwant
+:Contact: g.schwant@gmx.de
+*/
+
+.first {
+  font-size: 10pt }
+
+.last {
+  font-size: 10pt }
+
+a {
+  text-decoration: none }
+
+a.reference {
+  color: #00009F }
+
+a:hover {
+  background-color: #00009F ;
+  color: white }
+
+body {
+  font-family: arial,helvetica,univers ;
+  font-size: 10pt ;
+  padding-top: 0.6cm ;
+  margin-left:0.5cm ;
+  margin-right:0.5cm ;
+  margin-bottom:0.5cm }
+
+dd {
+  font-size: 10pt ;
+  padding-top: 0.1cm
+}
+
+dt {
+  font-size: 10pt ;
+  font-weight: bold ;
+  background-color: #6FC7FB ;
+  padding-left: 0.1cm ;
+  padding-top: 0.1cm ;
+  padding-bottom: 0.1cm }
+
+div.abstract {
+  font-size: 10pt }
+
+div.abstract p.topic-title {
+  font-size: 10pt }
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  font-size: 10pt }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, div.hint p.admonition-title, 
+div.important p.admonition-title, div.note p.admonition-title, 
+div.tip p.admonition-title {
+  margin-top: 0em ;
+  font-size: 12pt ;
+  font-family: arial,helvetica,univers }
+
+div.dedication {
+  font-size: 10pt }
+
+div.dedication p.topic-title {
+  font-size: 10pt }
+
+div.figure {
+  font-size: 10pt }
+
+div.footer, div.header {
+  font-size: 8pt }
+
+div.system-messages {
+  font-size: 10pt }
+
+div.system-messages h1 {
+  font-size: 12pt }
+
+div.system-message {
+  font-size: 10pt }
+
+div.system-message p.system-message-title {
+  font-size: 10pt }
+
+div.topic {
+  font-size: 10pt }
+
+h1, h2, h3, h4, h5, h6 {
+  padding-top: 0.5cm ;
+  page-break-after: avoid ;
+  font-family: arial,helvetica,univers }
+
+h1 {
+  font-size: 18pt }
+
+h1.title {
+  color: white ;
+  background-color: #00009F ;
+  padding-top: 0cm }
+
+h2 {
+  font-size: 16pt }
+
+h2.subtitle {
+  padding-top: 0cm }
+
+h3 {
+  font-size: 14pt }
+
+h4 {
+  font-size: 12pt }
+
+h5, h6 {
+  font-size: 10pt }
+
+hr {
+  width: 100%;
+  page-break-after: always }
+
+li {
+  padding-top: 1mm ;
+  padding-bottom: 1mm }
+
+ol.simple, ul.simple {
+  font-size: 10pt }
+
+ol.arabic {
+  font-size: 10pt }
+
+ol.loweralpha {
+  font-size: 10pt }
+
+ol.upperalpha {
+  font-size: 10pt }
+
+ol.lowerroman {
+  font-size: 10pt }
+
+ol.upperroman {
+  font-size: 10pt }
+
+p.caption {
+  font-size: 10pt }
+
+p.credits {
+  font-style: italic ;
+  font-size: 8pt }
+
+p.label {
+  font-size: 10pt }
+
+p.topic-title {
+  font-size: 10pt }
+
+pre.address {
+  font-family: arial,helvetica,univers ;
+  font-size: 10pt }
+
+pre.line-block {
+  font-size: 10pt }
+
+pre.literal-block, pre.doctest-block {
+  border-width: 1pt ;
+  border-style: solid ;
+  border-color: #999999 ;
+  color: #0000C0 ;
+  background-color: #ffffe0 ;
+  font-size: 9pt }
+
+span.classifier {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.classifier-delimiter {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.field-argument {
+  font-size: 10pt }
+
+span.interpreted {
+  font-size: 10pt ;
+  font-family: arial,helvetica,univers }
+
+span.option-argument {
+  font-size: 10pt }
+
+span.problematic {
+  font-size: 10pt }
+
+table {
+  font-size: 10pt ;
+  border-collapse: collapse ;
+  border-width: 1.5pt ;
+  border-color: #003366 }
+
+table.citation {
+  font-size: 10pt }
+
+table.docinfo {
+  font-size: 10pt }
+
+table.footnote {
+  font-size: 8pt ;
+  text-align: left }
+
+table.table {
+  width: 100% }
+
+th {
+  border-width: 1.5pt }
+
+td {
+  border-width: 1pt }
+
+td, th {
+  font-size: 10pt ;
+  border-style: thin ;
+  border-color: #003366 }
+
+td.docinfo-name, th.field-name {
+  font-size: 10pt }
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 10pt }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="plac-parsing-the-command-line-the-easy-way">
+<h1><a class="toc-backref" href="#id15">Plac: Parsing the Command Line the Easy Way</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Michele Simionato</td>
+</tr>
+<tr class="field"><th class="field-name">E-mail:</th><td class="field-body"><a class="reference external" href="mailto:michele.simionato&#64;gmail.com">michele.simionato&#64;gmail.com</a></td>
+</tr>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">June 2011</td>
+</tr>
+<tr class="field"><th class="field-name">Download page:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></td>
+</tr>
+<tr class="field"><th class="field-name">Project page:</th><td class="field-body"><a class="reference external" href="http://plac.googlecode.com/hg/doc/plac.html">http://plac.googlecode.com/hg/doc/plac.html</a></td>
+</tr>
+<tr class="field"><th class="field-name">Requires:</th><td class="field-body">Python 2.3+</td>
+</tr>
+<tr class="field"><th class="field-name">Installation:</th><td class="field-body"><tt class="docutils literal">easy_install <span class="pre">-U</span> plac</tt></td>
+</tr>
+<tr class="field"><th class="field-name">License:</th><td class="field-body">BSD license</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#plac-parsing-the-command-line-the-easy-way" id="id15">Plac: Parsing the Command Line the Easy Way</a><ul>
+<li><a class="reference internal" href="#the-importance-of-scaling-down" id="id16">The importance of scaling down</a></li>
+<li><a class="reference internal" href="#scripts-with-required-arguments" id="id17">Scripts with required arguments</a></li>
+<li><a class="reference internal" href="#scripts-with-default-arguments" id="id18">Scripts with default arguments</a></li>
+<li><a class="reference internal" href="#scripts-with-options-and-smart-options" id="id19">Scripts with options (and smart options)</a></li>
+<li><a class="reference internal" href="#scripts-with-flags" id="id20">Scripts with flags</a></li>
+<li><a class="reference internal" href="#plac-for-python-2-x-users" id="id21">plac for Python 2.X users</a></li>
+<li><a class="reference internal" href="#more-features" id="id22">More features</a></li>
+<li><a class="reference internal" href="#a-realistic-example" id="id23">A realistic example</a></li>
+<li><a class="reference internal" href="#keyword-arguments" id="id24">Keyword arguments</a></li>
+<li><a class="reference internal" href="#plac-vs-argparse" id="id25">plac vs argparse</a></li>
+<li><a class="reference internal" href="#final-example-a-shelve-interface" id="id26">Final example: a shelve interface</a></li>
+<li><a class="reference internal" href="#plac-vs-the-rest-of-the-world" id="id27">plac vs the rest of the world</a></li>
+<li><a class="reference internal" href="#the-future" id="id28">The future</a></li>
+<li><a class="reference internal" href="#trivia-the-story-behind-the-name" id="id29">Trivia: the story behind the name</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-usages-of-plac" id="id30">Advanced usages of plac</a><ul>
+<li><a class="reference internal" href="#introduction" id="id31">Introduction</a></li>
+<li><a class="reference internal" href="#from-scripts-to-interactive-applications" id="id32">From scripts to interactive applications</a></li>
+<li><a class="reference internal" href="#testing-a-plac-application" id="id33">Testing a plac application</a></li>
+<li><a class="reference internal" href="#plac-easy-tests" id="id34">Plac easy tests</a></li>
+<li><a class="reference internal" href="#plac-batch-scripts" id="id35">Plac batch scripts</a></li>
+<li><a class="reference internal" href="#implementing-subcommands" id="id36">Implementing subcommands</a></li>
+<li><a class="reference internal" href="#plac-interpreter-call" id="id37">plac.Interpreter.call</a></li>
+<li><a class="reference internal" href="#readline-support" id="id38">Readline support</a></li>
+<li><a class="reference internal" href="#the-plac-runner" id="id39">The plac runner</a></li>
+<li><a class="reference internal" href="#a-non-class-based-example" id="id40">A non class-based example</a></li>
+<li><a class="reference internal" href="#writing-your-own-plac-runner" id="id41">Writing your own plac runner</a></li>
+<li><a class="reference internal" href="#long-running-commands" id="id42">Long running commands</a></li>
+<li><a class="reference internal" href="#threaded-commands" id="id43">Threaded commands</a></li>
+<li><a class="reference internal" href="#running-commands-as-external-processes" id="id44">Running commands as external processes</a></li>
+<li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id45">Managing the output of concurrent commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experimental-features" id="id46">Experimental features</a><ul>
+<li><a class="reference internal" href="#parallel-computing-with-plac" id="id47">Parallel computing with plac</a></li>
+<li><a class="reference internal" href="#monitor-support" id="id48">Monitor support</a></li>
+<li><a class="reference internal" href="#the-plac-server" id="id49">The plac server</a></li>
+<li><a class="reference internal" href="#summary" id="id50">Summary</a></li>
+<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id51">Appendix: custom annotation objects</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-importance-of-scaling-down">
+<h2><a class="toc-backref" href="#id16">The importance of scaling down</a></h2>
+<p>There is no want of command-line arguments parsers in the Python
+world. The standard library alone contains three different modules:
+<a class="reference external" href="http://docs.python.org/library/getopt.html">getopt</a> (from the stone age),
+<a class="reference external" href="http://docs.python.org/library/optparse.html">optparse</a> (from Python 2.3) and <a class="reference external" href="http://argparse.googlecode.com">argparse</a> (from Python 2.7).  All of
+them are quite powerful and especially <a class="reference external" href="http://argparse.googlecode.com">argparse</a> is an industrial
+strength solution; unfortunately, all of them feature a non-negligible learning
+curve and a certain verbosity. They do not scale down well enough, at
+least in my opinion.</p>
+<p>It should not be necessary to stress the importance of <a class="reference external" href="http://www.welton.it/articles/scalable_systems">scaling down</a>;
+nevertheless, a lot of people are obsessed with features and concerned with
+the possibility of scaling up, forgetting the equally important
+issue of scaling down. This is an old meme in
+the computing world: programs should address the common cases simply and
+simple things should be kept simple, while at the same time keeping
+difficult things possible. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> adhere as much as possible to this
+philosophy and it is designed to handle well the simple cases, while
+retaining the ability to handle complex cases by relying on the
+underlying power of <a class="reference external" href="http://argparse.googlecode.com">argparse</a>.</p>
+<p>Technically <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is just a simple wrapper over <a class="reference external" href="http://argparse.googlecode.com">argparse</a> which hides
+most of its complexity by using a declarative interface: the argument
+parser is inferred rather than written down by imperatively.  Still, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is
+surprisingly scalable upwards, even without using the underlying
+<a class="reference external" href="http://argparse.googlecode.com">argparse</a>. I have been using Python for 9 years and in my experience
+it is extremely unlikely that you will ever need to go beyond the
+features provided by the declarative interface of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>: they should
+be more than enough for 99.9% of the use cases.</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is targetting especially unsophisticated users,
+programmers, sys-admins, scientists and in general people writing
+throw-away scripts for themselves, choosing the command-line
+interface because it is quick and simple. Such users are not
+interested in features, they are interested in a small learning curve:
+they just want to be able to write a simple command line tool from a
+simple specification, not to build a command-line parser by
+hand. Unfortunately, the modules in the standard library forces them
+to go the hard way. They are designed to implement power user tools
+and they have a non-trivial learning curve. On the contrary, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
+is designed to be simple to use and extremely concise, as the examples
+below will show.</p>
+</div>
+<div class="section" id="scripts-with-required-arguments">
+<h2><a class="toc-backref" href="#id17">Scripts with required arguments</a></h2>
+<p>Let me start with the simplest possible thing: a script that takes a
+single argument and does something to it.  It cannot get simpler
+than that, unless you consider the case of a script without command-line
+arguments, where there is nothing to parse. Still, it is a use
+case <em>extremely common</em>: I need to write scripts like that nearly
+every day, I wrote hundreds of them in the last few years and I have
+never been happy. Here is a typical example of code I have been
+writing by hand for years:</p>
+<pre class="literal-block">
+# example1.py
+def main(dsn):
+    &quot;Do something with the database&quot;
+    print(&quot;ok&quot;)
+
+if __name__ == '__main__':
+    import sys
+    n = len(sys.argv[1:])
+    if n == 0:
+        sys.exit('usage: python %s dsn' % sys.argv[0])
+    elif n == 1:
+        main(sys.argv[1])
+    else:
+        sys.exit('Unrecognized arguments: %s' % ' '.join(sys.argv[2:]))
+
+</pre>
+<p>As you see the whole <tt class="docutils literal">if __name__ == '__main__'</tt> block (nine lines)
+is essentially boilerplate that should not exist.  Actually I think
+the language should recognize the main function and pass the
+command-line arguments automatically; unfortunaly this is unlikely to
+happen. I have been writing boilerplate like this in hundreds of
+scripts for years, and every time I <em>hate</em> it. The purpose of using a
+scripting language is convenience and trivial things should be
+trivial. Unfortunately the standard library does not help for this
+incredibly common use case. Using <a class="reference external" href="http://docs.python.org/library/getopt.html">getopt</a> and <a class="reference external" href="http://docs.python.org/library/optparse.html">optparse</a> does not help,
+since they are intended to manage options and not positional
+arguments; the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> module helps a bit and it is able to reduce
+the boilerplate from nine lines to six lines:</p>
+<pre class="literal-block">
+# example2.py
+def main(dsn):
+    &quot;Do something on the database&quot;
+    print(dsn)
+    # ...
+
+if __name__ == '__main__':
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument('dsn')
+    arg = p.parse_args()
+    main(arg.dsn)
+
+</pre>
+<p>However, it just feels too complex to instantiate a class and to
+define a parser by hand for such a trivial task.</p>
+<p>The <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> module is designed to manage well such use cases, and it is able
+to reduce the original nine lines of boiler plate to two lines. With the
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> module all you need to write is</p>
+<pre class="literal-block">
+# example3.py
+def main(dsn):
+    &quot;Do something with the database&quot;
+    print(dsn)
+    # ...
+ 
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>The <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> module provides for free (actually the work is done by the
+underlying <a class="reference external" href="http://argparse.googlecode.com">argparse</a> module) a nice usage message:</p>
+<pre class="literal-block">
+$ python example3.py -h
+</pre>
+<pre class="literal-block">
+usage: example3.py [-h] dsn
+
+Do something with the database
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>Moreover <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> manages the case of missing arguments and of too many arguments.
+This is only the tip of the iceberg: <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to do much more than that.</p>
+</div>
+<div class="section" id="scripts-with-default-arguments">
+<h2><a class="toc-backref" href="#id18">Scripts with default arguments</a></h2>
+<p>The need to have suitable defaults for command-line scripts is quite
+common. For instance I have encountered this use case at work hundreds
+of times:</p>
+<pre class="literal-block">
+# example4.py
+from datetime import datetime
+
+def main(dsn, table='product', today=datetime.today()):
+    &quot;Do something on the database&quot;
+    print(dsn, table, today)
+
+if __name__ == '__main__': # manual management before argparse
+    import sys
+    args = sys.argv[1:]
+    if not args:
+        sys.exit('usage: python %s dsn' % sys.argv[0])
+    elif len(args) &gt; 2:
+        sys.exit('Unrecognized arguments: %s' % ' '.join(argv[2:]))
+    main(*args)
+
+</pre>
+<p>Here I want to perform a query on a database table, by extracting the
+most recent data: it makes sense for <tt class="docutils literal">today</tt> to be a default argument.
+If there is a most used table (in this example a table called <tt class="docutils literal">'product'</tt>)
+it also makes sense to make it a default argument. Performing the parsing
+of the command-line arguments by hand takes 8 ugly lines of boilerplate
+(using <a class="reference external" href="http://argparse.googlecode.com">argparse</a> would require about the same number of lines).
+With <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> the entire <tt class="docutils literal">__main__</tt> block reduces to the usual two lines:</p>
+<pre class="literal-block">
+if __name__ == '__main__':
+    import plac; plac.call(main)
+</pre>
+<p>In other words, six lines of boilerplate have been removed, and we get
+the usage message for free:</p>
+<pre class="literal-block">
+usage: example5.py [-h] dsn [table] [today]
+
+Do something on the database
+
+positional arguments:
+  dsn
+  table       [product]
+  today       [YYYY-MM-DD]
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>Notice that by default <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> prints the string representation
+of the default values (with square brackets) in the usage message.
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> manages transparently even the case when you want to pass a
+variable number of arguments. Here is an example, a script running
+on a database a series of SQL scripts:</p>
+<pre class="literal-block">
+# example7.py
+from datetime import datetime
+
+def main(dsn, *scripts):
+    &quot;Run the given scripts on the database&quot;
+    for script in scripts:
+        print('executing %s' % script)
+        # ...
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+usage: example7.py [-h] dsn [scripts [scripts ...]]
+
+Run the given scripts on the database
+
+positional arguments:
+  dsn
+  scripts
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>The examples here should have made clear that <em>plac is able to figure out
+the command-line arguments parser to use from the signature of the main
+function</em>. This is the whole idea behind <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>: if the intent is clear,
+let's the machine take care of the details.</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is inspired to an old Python Cookbook recipe of mine (<a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a>), in
+the sense that it delivers the programmer from the burden of writing
+the parser, but is less of a hack: instead of extracting the parser
+from the docstring of the module, it extracts it from the signature of
+the <tt class="docutils literal">main</tt> function.</p>
+<p>The idea comes from the <cite>function annotations</cite> concept, a new
+feature of Python 3. An example is worth a thousand words, so here
+it is:</p>
+<pre class="literal-block">
+# example7_.py
+from datetime import datetime
+
+def main(dsn: &quot;Database dsn&quot;, *scripts: &quot;SQL scripts&quot;):
+    &quot;Run the given scripts on the database&quot;
+    for script in scripts:
+        print('executing %s' % script)
+        # ...
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here the arguments of the <tt class="docutils literal">main</tt> function have been annotated with
+strings which are intented to be used in the help message:</p>
+<pre class="literal-block">
+usage: example7_.py [-h] dsn [scripts [scripts ...]]
+
+Run the given scripts on the database
+
+positional arguments:
+  dsn         Database dsn
+  scripts     SQL scripts
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to recognize much more complex annotations, as
+I will show in the next paragraphs.</p>
+</div>
+<div class="section" id="scripts-with-options-and-smart-options">
+<h2><a class="toc-backref" href="#id19">Scripts with options (and smart options)</a></h2>
+<p>It is surprising how few command-line scripts with options I have
+written over the years (probably less than a hundred), compared to the
+number of scripts with positional arguments I wrote (certainly more
+than a thousand of them).  Still, this use case cannot be neglected.
+The standard library modules (all of them) are quite verbose when it
+comes to specifying the options and frankly I have never used them
+directly. Instead, I have always relied on the
+<a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a> recipe, which provides a convenient wrapper over
+<a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a>. Alternatively, in the simplest cases, I have just
+performed the parsing by hand. In <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> the parser is inferred by the
+function annotations. Here is an example:</p>
+<pre class="literal-block">
+# example8.py
+def main(command: (&quot;SQL query&quot;, 'option', 'q'), dsn):
+    if command:
+        print('executing %s on %s' % (command, dsn))
+        # ...
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here the argument <tt class="docutils literal">command</tt> has been annotated with the tuple
+<tt class="docutils literal">(&quot;SQL query&quot;, 'option', 'c')</tt>: the first string is the help string
+which will appear in the usage message, the second string tells <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
+that <tt class="docutils literal">command</tt> is an option and the third string that there is also
+a short form of the option <tt class="docutils literal"><span class="pre">-c</span></tt>, the long form being <tt class="docutils literal"><span class="pre">--command</span></tt>.
+The usage message is the following:</p>
+<pre class="literal-block">
+usage: example8.py [-h] [-q COMMAND] dsn
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q COMMAND, --command COMMAND
+                        SQL query
+
+</pre>
+<p>Here are two examples of usage:</p>
+<pre class="literal-block">
+$ python3 example8.py -c&quot;select * from table&quot; dsn
+executing select * from table on dsn
+
+$ python3 example8.py --command=&quot;select * from table&quot; dsn
+executing select * from table on dsn
+</pre>
+<p>The third argument in the function annotation can be omitted: in such
+case it will be assumed to be <tt class="docutils literal">None</tt>. The consequence is that
+the usual dichotomy between long and short options (GNU-style options)
+disappears: we get <em>smart options</em>, which have the single character prefix
+of short options and behave like both long and short options, since
+they can be abbreviated. Here is an example featuring smart options:</p>
+<pre class="literal-block">
+# example6.py
+def main(dsn, command: (&quot;SQL query&quot;, 'option')='select * from table'):
+    print('executing %r on %s' % (command, dsn))
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<pre class="literal-block">
+usage: example6.py [-h] [-command select * from table] dsn
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -command select * from table
+                        SQL query
+
+</pre>
+<p>The following are all valid invocations ot the script:</p>
+<pre class="literal-block">
+$ python3 example6.py -c &quot;select&quot; dsn
+executing 'select' on dsn
+$ python3 example6.py -com &quot;select&quot; dsn
+executing 'select' on dsn
+$ python3 example6.py -command=&quot;select&quot; dsn
+executing 'select' on dsn
+</pre>
+<p>Notice that the form <tt class="docutils literal"><span class="pre">-command=SQL</span></tt> is recognized only for the full
+option, not for its abbreviations:</p>
+<pre class="literal-block">
+$ python3 example6.py -com=&quot;select&quot; dsn
+usage: example6.py [-h] [-command COMMAND] dsn
+example6.py: error: unrecognized arguments: -com=select
+</pre>
+<p>If the option is not passed, the variable <tt class="docutils literal">command</tt>
+will get the value <tt class="docutils literal">None</tt>. However, it is possible to specify a non-trivial
+default. Here is an example:</p>
+<pre class="literal-block">
+# example8_.py
+def main(dsn, command: (&quot;SQL query&quot;, 'option', 'q')='select * from table'):
+    print('executing %r on %s' % (command, dsn))
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Notice that the default value appears in the help message:</p>
+<pre class="literal-block">
+usage: example8_.py [-h] [-q select * from table] dsn
+
+positional arguments:
+  dsn
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -q select * from table, --command select * from table
+                        SQL query
+
+</pre>
+<p>When you run the script and you do not pass the <tt class="docutils literal"><span class="pre">-command</span></tt> option, the
+default query will be executed:</p>
+<pre class="literal-block">
+$ python3 example8_.py dsn
+executing 'select * from table' on dsn
+</pre>
+</div>
+<div class="section" id="scripts-with-flags">
+<h2><a class="toc-backref" href="#id20">Scripts with flags</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to recognize flags, i.e. boolean options which are
+<tt class="docutils literal">True</tt> if they are passed to the command line and <tt class="docutils literal">False</tt>
+if they are absent. Here is an example:</p>
+<pre class="literal-block">
+# example9.py
+
+def main(verbose: ('prints more info', 'flag', 'v'), dsn: 'connection string'):
+    if verbose:
+        print('connecting to %s' % dsn)
+    # ...
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<pre class="literal-block">
+usage: example9.py [-h] [-v] dsn
+
+positional arguments:
+  dsn            connection string
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  prints more info
+
+</pre>
+<pre class="literal-block">
+$ python3 example9.py -v dsn
+connecting to dsn
+</pre>
+<p>Notice that it is an error trying to specify a default for flags: the
+default value for a flag is always <tt class="docutils literal">False</tt>. If you feel the need to
+implement non-boolean flags, you should use an option with two
+choices, as explained in the &quot;more features&quot; section.</p>
+<p>For consistency with the way the usage message is printed, I suggest
+you to follow the Flag-Option-Required-Default (FORD) convention: in
+the <tt class="docutils literal">main</tt> function write first the flag arguments, then the option
+arguments, then the required arguments and finally the default
+arguments. This is just a convention and you are not forced to use it,
+except for the default arguments (including the varargs) which must
+stay at the end as it is required by the Python syntax.</p>
+<p>I also suggests to specify a one-character abbreviation for flags: in
+this way you can use the GNU-style composition of flags (i.e. <tt class="docutils literal"><span class="pre">-zxvf</span></tt>
+is an abbreviation of <tt class="docutils literal"><span class="pre">-z</span> <span class="pre">-x</span> <span class="pre">-v</span> <span class="pre">-f</span></tt>). I usually do not provide
+the one-character abbreviation for options, since it does not make sense
+to compose them.</p>
+<p>Starting from <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> 0.9.1 dashes in options and flags are
+automatically turned into underscores. This feature was implemented at user
+request, to make it possible to use a more traditional naming. For
+instance now you can have a <tt class="docutils literal"><span class="pre">--dry-run</span></tt> flag, whereas before you had
+to use <tt class="docutils literal"><span class="pre">--dry_run</span></tt>.</p>
+<pre class="literal-block">
+def main(dry_run: ('Dry run', 'flag', 'd')):
+    if dry_run:
+        print('Doing nothing')
+    else:
+        print('Doing something')
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here is an example of usage:</p>
+<pre class="literal-block">
+$ python3.2 dry_run.py -h
+usage: dry_run.py [-h] [-d]
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -d, --dry-run  Dry run
+</pre>
+</div>
+<div class="section" id="plac-for-python-2-x-users">
+<h2><a class="toc-backref" href="#id21">plac for Python 2.X users</a></h2>
+<p>I do not use Python 3. At work we just migrated to Python 2.7. It will
+take years before we think to migrate to Python 3. I am pretty much
+sure most Pythonistas are in the same situation. Therefore <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
+provides a way to work with function annotations even in Python 2.X
+(including Python 2.3).  There is no magic involved; you just need to
+add the annotations by hand. For instance the annotated function
+declaration</p>
+<pre class="literal-block">
+def main(dsn: &quot;Database dsn&quot;, *scripts: &quot;SQL scripts&quot;):
+    ...
+</pre>
+<p>is equivalent to the following code:</p>
+<pre class="literal-block">
+def main(dsn, *scripts):
+    ...
+main.__annotations__ = dict(
+    dsn=&quot;Database dsn&quot;,
+    scripts=&quot;SQL scripts&quot;)
+</pre>
+<p>One should be careful to match the keys of the annotation dictionary
+with the names of the arguments in the annotated function; for lazy
+people with Python 2.4 available the simplest way is to use the
+<tt class="docutils literal">plac.annotations</tt> decorator that performs the check for you:</p>
+<pre class="literal-block">
+&#64;plac.annotations(
+    dsn=&quot;Database dsn&quot;,
+    scripts=&quot;SQL scripts&quot;)
+def main(dsn, *scripts):
+    ...
+</pre>
+<p>In the rest of this article I will assume that you are using Python 2.X with
+X &gt;= 4 and I will use the <tt class="docutils literal">plac.annotations</tt> decorator. Notice however
+that the core features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> run even on Python 2.3.</p>
+</div>
+<div class="section" id="more-features">
+<h2><a class="toc-backref" href="#id22">More features</a></h2>
+<p>One of the goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is to have a learning curve of <em>minutes</em> for
+its core features, compared to the learning curve of <em>hours</em> of
+<a class="reference external" href="http://argparse.googlecode.com">argparse</a>. In order to reach this goal, I have <em>not</em> sacrificed all
+the features of <a class="reference external" href="http://argparse.googlecode.com">argparse</a>. Actually a lot of the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> power persists
+in <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.  Until now, I have only showed simple annotations, but in
+general an annotation is a 6-tuple of the form</p>
+<blockquote>
+<tt class="docutils literal">(help, kind, abbrev, type, choices, metavar)</tt></blockquote>
+<p>where <tt class="docutils literal">help</tt> is the help message, <tt class="docutils literal">kind</tt> is a string in the set {
+<tt class="docutils literal">&quot;flag&quot;</tt>, <tt class="docutils literal">&quot;option&quot;</tt>, <tt class="docutils literal">&quot;positional&quot;</tt>}, <tt class="docutils literal">abbrev</tt> is a
+one-character string or <tt class="docutils literal">None</tt>, <tt class="docutils literal">type</tt> is a callable taking a
+string in input,
+<tt class="docutils literal">choices</tt> is a discrete sequence of values and <tt class="docutils literal">metavar</tt> is a string.</p>
+<p><tt class="docutils literal">type</tt> is used to automagically convert the command line arguments
+from the string type to any Python type; by default there is no
+conversion and <tt class="docutils literal">type=None</tt>.</p>
+<p><tt class="docutils literal">choices</tt> is used to restrict the number of the valid
+options; by default there is no restriction i.e. <tt class="docutils literal">choices=None</tt>.</p>
+<p><tt class="docutils literal">metavar</tt> has two meanings. For a positional argument it is used to
+change the argument name in the usage message (and only there). By
+default the metavar is <tt class="docutils literal">None</tt> and the name in the usage message is
+the same as the argument name.  For an option
+the <tt class="docutils literal">metavar</tt> is used differently in the usage message, which has
+now the form <tt class="docutils literal"><span class="pre">[--option-name</span> METAVAR]</tt>. If the <tt class="docutils literal">metavar</tt> is <tt class="docutils literal">None</tt>,
+then it is equal to the uppercased name of the argument, unless the
+argument has a default: then it is equal to the stringified
+form of the default.</p>
+<p>Here is an example showing many of the features (copied from the
+<a class="reference external" href="http://argparse.googlecode.com">argparse</a> documentation):</p>
+<pre class="literal-block">
+# example10.py
+import plac
+
+&#64;plac.annotations(
+operator=(&quot;The name of an operator&quot;, 'positional', None, str, ['add', 'mul']),
+numbers=(&quot;A number&quot;, 'positional', None, float, None, &quot;n&quot;))
+def main(operator, *numbers):
+    &quot;A script to add and multiply numbers&quot;
+    if operator == 'mul':
+        op = float.__mul__
+        result = 1.0
+    else: # operator == 'add'
+        op = float.__add__
+        result = 0.0
+    for n in numbers:
+        result = op(result, n)
+    return result
+
+if __name__ == '__main__':
+    print(plac.call(main))
+
+</pre>
+<p>Here is the usage:</p>
+<pre class="literal-block">
+usage: example10.py [-h] {add,mul} [n [n ...]]
+
+A script to add and multiply numbers
+
+positional arguments:
+  {add,mul}   The name of an operator
+  n           A number
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>Notice that the docstring of the <tt class="docutils literal">main</tt> function has been automatically added
+to the usage message. Here are a couple of examples of usage:</p>
+<pre class="literal-block">
+$ python example10.py add 1 2 3 4
+10.0
+$ python example10.py mul 1 2 3 4
+24.0
+$ python example10.py ad 1 2 3 4 # a mispelling error
+usage: example10.py [-h] {add,mul} [n [n ...]]
+example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
+</pre>
+<p><tt class="docutils literal">plac.call</tt> can also be used in doctests like this:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; import plac, example10
+&gt;&gt;&gt; plac.call(example10.main, ['add', '1', '2'])
+3.0
+</pre>
+<p><tt class="docutils literal">plac.call</tt> works for generators too:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; def main(n):
+...     for i in range(int(n)):
+...         yield i
+&gt;&gt;&gt; plac.call(main, ['3'])
+[0, 1, 2]
+</pre>
+<p>Internally <tt class="docutils literal">plac.call</tt> tries to convert the output of the main function
+into a list, if possible. If the output is not iterable or it is a
+string, it is left unchanged, but if it is iterable it is converted.
+In particular, generator objects are exhausted by <tt class="docutils literal">plac.call</tt>.</p>
+<p>This behavior avoids mistakes like forgetting of applying
+<tt class="docutils literal">list(result)</tt> to the result of <tt class="docutils literal">plac.call</tt>; moreover it makes
+errors visible early, and avoids mistakes in code like the following:</p>
+<pre class="literal-block">
+try:
+    result = plac.call(main, args)
+except:
+   # do something
+</pre>
+<p>Without eagerness, a main function returning a generator object would
+not raise any exception until the generator is iterated over.
+If you are a fan of lazyness, you can still have it by setting the <tt class="docutils literal">eager</tt>
+flag to <tt class="docutils literal">False</tt>, as in the following example:</p>
+<pre class="literal-block">
+for line in plac.call(main, args, eager=False):
+    print(line)
+</pre>
+<p>If <tt class="docutils literal">main</tt> returns a generator object this example will print each
+line as soon as available, whereas the default behaviour is to print
+all the lines together and the end of the computation.</p>
+</div>
+<div class="section" id="a-realistic-example">
+<h2><a class="toc-backref" href="#id23">A realistic example</a></h2>
+<p>Here is a more realistic script using most of the features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> to
+run SQL queries on a database by relying on <a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a>. Notice the usage
+of the <tt class="docutils literal">type</tt> feature to automagically convert a SQLAlchemy connection
+string into a <a class="reference external" href="http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html">SqlSoup</a> object:</p>
+<pre class="literal-block">
+# dbcli.py
+import plac
+from sqlalchemy.ext.sqlsoup import SqlSoup
+
+&#64;plac.annotations(
+    db=plac.Annotation(&quot;Connection string&quot;, type=SqlSoup),
+    header=plac.Annotation(&quot;Header&quot;, 'flag', 'H'),
+    sqlcmd=plac.Annotation(&quot;SQL command&quot;, 'option', 'c', str, metavar=&quot;SQL&quot;),
+    delimiter=plac.Annotation(&quot;Column separator&quot;, 'option', 'd'),
+    scripts=plac.Annotation(&quot;SQL scripts&quot;),
+    )
+def main(db, header, sqlcmd, delimiter=&quot;|&quot;, *scripts):
+    &quot;A script to run queries and SQL scripts on a database&quot;
+    yield 'Working on %s' % db.bind.url
+
+    if sqlcmd:
+        result = db.bind.execute(sqlcmd)
+        if header: # print the header
+            yield delimiter.join(result.keys())
+        for row in result: # print the rows
+            yield delimiter.join(map(str, row))
+
+    for script in scripts:
+        db.bind.execute(open(script).read())
+        yield 'executed %s' % script
+
+if __name__ == '__main__':
+    for output in plac.call(main):
+        print(output)
+
+</pre>
+<p>You can see the <em>yield-is-print</em> pattern here: instead of using
+<tt class="docutils literal">print</tt> in the main function, I use <tt class="docutils literal">yield</tt>, and I perform the
+print in the <tt class="docutils literal">__main__</tt> block. The advantage of the pattern is that
+tests invoking <tt class="docutils literal">plac.call</tt> and checking the result become trivial:
+had I performed the printing in the main function, the test would have
+involved an ugly hack like redirecting <tt class="docutils literal">sys.stdout</tt> to a
+<tt class="docutils literal">StringIO</tt> object.</p>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+usage: dbcli.py [-h] [-H] [-c SQL] [-d |] db [scripts [scripts ...]]
+
+A script to run queries and SQL scripts on a database
+
+positional arguments:
+  db                    Connection string
+  scripts               SQL scripts
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -H, --header          Header
+  -c SQL, --sqlcmd SQL  SQL command
+  -d |, --delimiter |   Column separator
+
+</pre>
+<p>You can check for yourself that the script works.</p>
+</div>
+<div class="section" id="keyword-arguments">
+<h2><a class="toc-backref" href="#id24">Keyword arguments</a></h2>
+<p>Starting from release 0.4, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> supports keyword arguments.  In
+practice that means that if your main function has keyword arguments,
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> treats specially arguments of the form <tt class="docutils literal">&quot;name=value&quot;</tt> in the
+command line.  Here is an example:</p>
+<pre class="literal-block">
+# example12.py
+import plac
+
+&#64;plac.annotations(
+   opt=('some option', 'option'),
+   args='default arguments',
+   kw='keyword arguments')
+def main(opt, *args, **kw):
+   if opt:
+      yield 'opt=%s' % opt
+   if args:
+      yield 'args=%s' % str(args)
+   if kw:
+      yield 'kw=%s' % kw
+
+if __name__ == '__main__':
+    for output in plac.call(main):
+       print(output)
+
+</pre>
+<p>Here is the generated usage message:</p>
+<pre class="literal-block">
+usage: example12.py [-h] [-opt OPT] [args [args ...]] [kw [kw ...]]
+
+positional arguments:
+  args        default arguments
+  kw          keyword arguments
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -opt OPT    some option
+
+</pre>
+<p>Here is how you call the script:</p>
+<pre class="literal-block">
+$ python example12.py -o X a1 a2 name=value
+opt=X
+args=('a1', 'a2')
+kw={'name': 'value'}
+</pre>
+<p>When using keyword arguments, one must be careful to use names which
+are not alreay taken; for instance in this examples the name <tt class="docutils literal">opt</tt>
+is taken:</p>
+<pre class="literal-block">
+$ python example12.py 1 2 kw1=1 kw2=2 opt=0
+usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
+example12.py: error: colliding keyword arguments: opt
+</pre>
+<p>The names taken are the names of the flags, of the options, and of the
+positional arguments, excepted varargs and keywords. This limitation
+is a consequence of the way the argument names are managed in function calls
+by the Python language.</p>
+</div>
+<div class="section" id="plac-vs-argparse">
+<h2><a class="toc-backref" href="#id25">plac vs argparse</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is opinionated and by design it does not try to make available
+all of the features of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> in an easy way.  In particular you
+should be aware of the following limitations/differences (the
+following assumes knowledge of <a class="reference external" href="http://argparse.googlecode.com">argparse</a>):</p>
+<ul class="simple">
+<li>plac does not support the destination concept: the destination
+coincides with the name of the argument, always. This restriction
+has some drawbacks. For instance, suppose you want to define a long
+option called <tt class="docutils literal"><span class="pre">--yield</span></tt>. In this case the destination would be <tt class="docutils literal">yield</tt>,
+which is a Python keyword, and since you cannot introduce an
+argument with that name in a function definition, it is impossible
+to implement it. Your choices are to change the name of the long
+option, or to use <a class="reference external" href="http://argparse.googlecode.com">argparse</a> with a suitable destination.</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support &quot;required options&quot;. As the <a class="reference external" href="http://argparse.googlecode.com">argparse</a>
+documentation puts it: <em>Required options are generally considered bad
+form - normal users expect options to be optional. You should avoid
+the use of required options whenever possible.</em> Notice that since
+<a class="reference external" href="http://argparse.googlecode.com">argparse</a> supports them, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> can manage them too, but not directly.</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> supports only regular boolean flags. <a class="reference external" href="http://argparse.googlecode.com">argparse</a> has the ability to
+define generalized two-value flags with values different from <tt class="docutils literal">True</tt>
+and <tt class="docutils literal">False</tt>. An earlier version of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> had this feature too, but
+since you can use options with two choices instead, and in any case
+the conversion from <tt class="docutils literal">{True, False}</tt> to any couple of values
+can be trivially implemented with a ternary operator
+(<tt class="docutils literal">value1 if flag else value2</tt>), I have removed it (KISS rules!).</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support <tt class="docutils literal">nargs</tt> options directly (it uses them internally,
+though, to implement flag recognition). The reason it that all the use
+cases of interest to me are covered by <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> and I did not feel the need
+to increase the learning curve by adding direct support for <tt class="docutils literal">nargs</tt>.</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does support subparsers, but you must read the <a class="reference external" href="in-writing">advanced usage
+document</a> to see how it works.</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not support actions directly. This also
+looks like a feature too advanced for the goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. Notice however
+that the ability to define your own annotation objects (again, see
+the  <a class="reference external" href="in-writing">advanced usage document</a>) may mitigate the need for custom actions.</li>
+</ul>
+<p>On the plus side, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> can leverage directly on a number of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> features.</p>
+<p>For instance, you can use <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType">argparse.FileType</a> directly. Moreover,
+it is possible to pass options to the underlying
+<tt class="docutils literal">argparse.ArgumentParser</tt> object (currently it accepts the default
+arguments <tt class="docutils literal">description</tt>, <tt class="docutils literal">epilog</tt>, <tt class="docutils literal">prog</tt>, <tt class="docutils literal">usage</tt>,
+<tt class="docutils literal">add_help</tt>, <tt class="docutils literal">argument_default</tt>, <tt class="docutils literal">parents</tt>, <tt class="docutils literal">prefix_chars</tt>,
+<tt class="docutils literal">fromfile_prefix_chars</tt>, <tt class="docutils literal">conflict_handler</tt>, <tt class="docutils literal">formatter_class</tt>).
+It is enough to set such attributes on the <tt class="docutils literal">main</tt> function.  For
+instance writing</p>
+<pre class="literal-block">
+def main(...):
+    pass
+
+main.add_help = False
+</pre>
+<p>disables the recognition of the help flag <tt class="docutils literal"><span class="pre">-h,</span> <span class="pre">--help</span></tt>. This
+mechanism does not look particularly elegant, but it works well
+enough.  I assume that the typical user of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> will be happy with
+the defaults and would not want to change them; still it is possible
+if she wants to.</p>
+<p>For instance, by setting the <tt class="docutils literal">description</tt> attribute, it is possible
+to add a comment to the usage message (by default the docstring of the
+<tt class="docutils literal">main</tt> function is used as description).</p>
+<p>It is also possible to change the option prefix; for
+instance if your script must run under Windows and you want to use &quot;/&quot;
+as option prefix you can add the line:</p>
+<pre class="literal-block">
+main.prefix_chars='/-'
+</pre>
+<p>The first prefix char (<tt class="docutils literal">/</tt>) is used
+as the default for the recognition of options and flags;
+the second prefix char (<tt class="docutils literal">-</tt>) is kept to keep the <tt class="docutils literal"><span class="pre">-h/--help</span></tt> option
+working: however you can disable it and reimplement it, if you like.</p>
+<p>It is possible to access directly the underlying <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object, by
+invoking the <tt class="docutils literal">plac.parser_from</tt> utility function:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; import plac
+&gt;&gt;&gt; def main(arg):
+...     pass
+...
+&gt;&gt;&gt; print(plac.parser_from(main)) #doctest: +ELLIPSIS
+ArgumentParser(prog=...)
+</pre>
+<p>Internally <tt class="docutils literal">plac.call</tt> uses <tt class="docutils literal">plac.parser_from</tt>. Notice that when
+<tt class="docutils literal">plac.call(func)</tt> is invoked multiple time, the parser is re-used
+and not rebuilt from scratch again.</p>
+<p>I use <tt class="docutils literal">plac.parser_from</tt> in the unit tests of the module, but regular
+users should not need to use it, unless they want to access <em>all</em>
+of the features of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> directly without calling the main function.</p>
+<p>Interested readers should read the documentation of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> to
+understand the meaning of the other options. If there is a set of
+options that you use very often, you may consider writing a decorator
+adding such options to the <tt class="docutils literal">main</tt> function for you. For simplicity,
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not perform any magic.</p>
+</div>
+<div class="section" id="final-example-a-shelve-interface">
+<h2><a class="toc-backref" href="#id26">Final example: a shelve interface</a></h2>
+<p>Here is a nontrivial example showing off many <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> feature, including
+keyword arguments recognition.
+The use case is the following: suppose we have stored the
+configuration parameters of a given application into a Python shelve
+and we need a command-line tool to edit the shelve.
+A possible implementation using <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> could be the following:</p>
+<pre class="literal-block">
+# ishelve.py
+import os, shelve, plac
+
+DEFAULT_SHELVE = os.path.expanduser('~/conf.shelve')
+
+&#64;plac.annotations(
+    help=('show help', 'flag'),
+    showall=('show all parameters in the shelve', 'flag'),
+    clear=('clear the shelve', 'flag'),
+    delete=('delete an element', 'option'),
+    filename=('filename of the shelve', 'option'),
+    params='names of the parameters in the shelve',
+    setters='setters param=value')
+def main(help, showall, clear, delete, filename=DEFAULT_SHELVE,
+         *params, **setters):
+    &quot;A simple interface to a shelve. Use .help to see the available commands.&quot;
+    sh = shelve.open(filename)
+    try:
+        if not any([help, showall, clear, delete, params, setters]):
+            yield 'no arguments passed, use .help to see the available commands'
+        elif help: # custom help
+            yield 'Commands: .help, .showall, .clear, .delete'
+            yield '&lt;param&gt; ...'
+            yield '&lt;param=value&gt; ...'
+        elif showall:
+            for param, name in sh.items():
+                yield '%s=%s' % (param, name)
+        elif clear:
+            sh.clear()
+            yield 'cleared the shelve'
+        elif delete:
+            try:
+                del sh[delete]
+            except KeyError:
+                yield '%s: not found' % delete
+            else:
+                yield 'deleted %s' % delete
+        for param in params:
+            try:
+                yield sh[param]
+            except KeyError:
+                yield '%s: not found' % param           
+        for param, value in setters.items():
+            sh[param] = value
+            yield 'setting %s=%s' % (param, value)
+    finally:
+        sh.close()
+
+main.add_help = False # there is a custom help, remove the default one
+main.prefix_chars = '.' # use dot-prefixed commands
+
+if __name__ == '__main__':
+    for output in plac.call(main):
+        print(output)
+
+</pre>
+<p>A few notes are in order:</p>
+<ol class="arabic simple">
+<li>I have disabled the ordinary help provided by <a class="reference external" href="http://argparse.googlecode.com">argparse</a> and I have
+implemented a custom help command.</li>
+<li>I have changed the prefix character used to recognize the options
+to a dot.</li>
+<li>Keyword arguments recognition (in the <tt class="docutils literal">**setters</tt>) is used to make it
+possible to store a value in the shelve with the syntax
+<tt class="docutils literal">param_name=param_value</tt>.</li>
+<li><tt class="docutils literal">*params</tt> are used to retrieve parameters from the shelve and some
+error checking is performed in the case of missing parameters</li>
+<li>A command to clear the shelve is implemented as a flag (<tt class="docutils literal">.clear</tt>).</li>
+<li>A command to delete a given parameter is implemented as an option
+(<tt class="docutils literal">.delete</tt>).</li>
+<li>There is an option with default (<tt class="docutils literal">.filename=conf.shelve</tt>) to store
+the filename of the shelve.</li>
+<li>All things considered, the code looks like a poor man object oriented
+interface implemented with a chain of elifs instead of methods. Of course,
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> can do better than that, but let me start from a low-level approach
+first.</li>
+</ol>
+<p>If you run <tt class="docutils literal">ishelve.py</tt> without arguments you get the following
+message:</p>
+<pre class="literal-block">
+$ python ishelve.py
+no arguments passed, use .help to see the available commands
+</pre>
+<p>If you run <tt class="docutils literal">ishelve.py</tt> with the option <tt class="docutils literal">.h</tt> (or any abbreviation
+of <tt class="docutils literal">.help</tt>) you get:</p>
+<pre class="literal-block">
+$ python ishelve.py .h
+Commands: .help, .showall, .clear, .delete
+&lt;param&gt; ...
+&lt;param=value&gt; ...
+</pre>
+<p>You can check by hand that the tool work:</p>
+<pre class="literal-block">
+$ python ishelve.py .clear # start from an empty shelve
+cleared the shelve
+$ python ishelve.py a=1 b=2
+setting a=1
+setting b=2
+$ python ishelve.py .showall
+b=2
+a=1
+$ python ishelve.py .del b # abbreviation for .delete
+deleted b
+$ python ishelve.py a
+1
+$ python ishelve.py b
+b: not found
+$ python ishelve.py .cler # mispelled command
+usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
+                  [.filename /home/micheles/conf.shelve]
+                  [params [params ...]] [setters [setters ...]]
+ishelve.py: error: unrecognized arguments: .cler
+</pre>
+</div>
+<div class="section" id="plac-vs-the-rest-of-the-world">
+<h2><a class="toc-backref" href="#id27">plac vs the rest of the world</a></h2>
+<p>Originally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> boasted about being &quot;the easiest command-line
+arguments parser in the world&quot;. Since then, people started pointing
+out to me various projects which are based on the same idea
+(extracting the parser from the main function signature) and are
+arguably even easier than <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://pypi.python.org/pypi/opterator">opterator</a> by Dusty Phillips</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/CLIArgs">CLIArgs</a> by Pavel Panchekha</li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/commandline">commandline</a> by David Laban</li>
+</ul>
+<p>Luckily for me none of such projects had the idea of using
+function annotations and <a class="reference external" href="http://argparse.googlecode.com">argparse</a>; as a consequence, they are
+no match for the capabilities of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p>Of course, there are tons of other libraries to parse the command
+line. For instance <a class="reference external" href="http://pypi.python.org/pypi/Clap/0.7">Clap</a> by Matthew Frazier which appeared on PyPI
+just the day before <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>; <a class="reference external" href="http://pypi.python.org/pypi/Clap/0.7">Clap</a> is fine but it is certainly not
+easier than <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> can also be used as a replacement of the <a class="reference external" href="http://docs.python.org/library/cmd.html">cmd</a> module in the standard
+library and as such it shares many features with the module <a class="reference external" href="http://packages.python.org/cmd2/">cmd2</a> by
+Catherine Devlin. However, this is completely coincidental, since I became
+aware of the <a class="reference external" href="http://packages.python.org/cmd2/">cmd2</a> module only after writing <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<p>Command-line argument parsers keep coming out; between the newcomers I
+will notice <a class="reference external" href="https://github.com/pulp/marrow.script">marrow.script</a> by Alice Bevan-McGregor, which is quite
+similar to <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> in spirit, but does not rely on <a class="reference external" href="http://argparse.googlecode.com">argparse</a> at all.
+<a class="reference external" href="http://packages.python.org/argh">Argh</a> by Andrey Mikhaylenko is also worth mentioning: it is based
+on <a class="reference external" href="http://argparse.googlecode.com">argparse</a>, it came after <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> and I must give credit to the author
+for the choice of the name, much funnier than plac!</p>
+</div>
+<div class="section" id="the-future">
+<h2><a class="toc-backref" href="#id28">The future</a></h2>
+<p>Currently the core of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is around 200 lines of code, not counting blanks,
+comments and docstrings. I do not plan to extend the core much in the
+future. The idea is to keep the module short: it is and it should
+remain a little wrapper over <a class="reference external" href="http://argparse.googlecode.com">argparse</a>. Actually I have thought about
+contributing the core back to <a class="reference external" href="http://argparse.googlecode.com">argparse</a> if <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> becomes successfull
+and gains a reasonable number of users. For the moment it should be
+considered in a frozen status.</p>
+<p>Notice that even if <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> has been designed to be simple to use for
+simple stuff, its power should not be underestimated; it is actually a
+quite advanced tool with a domain of applicability which far exceeds
+the realm of command-line arguments parsers.</p>
+<p>Version 0.5 of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> doubled the code base and the documentation: it is
+based on the idea of using <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> to implement command-line interpreters,
+i.e. something akin to the <tt class="docutils literal">cmd</tt> module in the standard library, only better.
+The new features of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> are described in the <a class="reference external" href="in-writing">advanced usage document</a> .
+They are implemented in a separated module (<tt class="docutils literal">plac_ext.py</tt>), since
+they require Python 2.5 to work, whereas <tt class="docutils literal">plac_core.py</tt> only requires
+Python 2.3.</p>
+</div>
+<div class="section" id="trivia-the-story-behind-the-name">
+<h2><a class="toc-backref" href="#id29">Trivia: the story behind the name</a></h2>
+<p>The <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> project started very humbly: I just wanted to make
+easy_installable my old <a class="reference external" href="http://code.activestate.com/recipes/278844-parsing-the-command-line/">optionparse</a> recipe, and to publish it on PyPI.
+The original name of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> was optionparser and the idea behind it was
+to build an <a class="reference external" href="http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser">OptionParser</a> object from the docstring of the module.
+However, before doing that, I decided to check out the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> module,
+since I knew it was going into Python 2.7 and Python 2.7 was coming out.
+Soon enough I realized two things:</p>
+<ol class="arabic simple">
+<li>the single greatest idea of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> was unifying the positional arguments
+and the options in a single namespace object;</li>
+<li>parsing the docstring was so old-fashioned, considering the existence
+of functions annotations in Python 3.</li>
+</ol>
+<p>Putting together these two observations with the original idea of inferring the
+parser I decided to build an <a class="reference external" href="http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html">ArgumentParser</a> object from function
+annotations. The <tt class="docutils literal">optionparser</tt> name was ruled out, since I was
+now using <a class="reference external" href="http://argparse.googlecode.com">argparse</a>; a name like <tt class="docutils literal">argparse_plus</tt> was also ruled out,
+since the typical usage was completely different from the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> usage.</p>
+<p>I made a research on PyPI and the name <em>clap</em> (Command Line Arguments Parser)
+was not taken, so I renamed everything to clap. After two days
+a <a class="reference external" href="http://pypi.python.org/pypi/Clap/0.7">Clap</a> module appeared on PyPI &lt;expletives deleted&gt;!</p>
+<p>Having little imagination, I decided to rename everything again to plac,
+an anagram of clap: since it is a non-existing English name, I hope nobody
+will steal it from me!</p>
+<p>That concludes the section about the basic usage of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. You are now ready to
+read about the advanced usage.</p>
+</div>
+</div>
+<div class="section" id="advanced-usages-of-plac">
+<h1><a class="toc-backref" href="#id30">Advanced usages of plac</a></h1>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id31">Introduction</a></h2>
+<p>One of the design goals of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is to make it dead easy to write a
+scriptable and testable interface for an application.  You can use
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> whenever you have an API with strings in input and strings in
+output, and that includes a <em>huge</em> domain of applications.</p>
+<p>A string-oriented interface is a scriptable interface by
+construction. That means that you can define a command language for
+your application and that it is possible to write scripts which are
+interpretable by <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> and can be run as batch scripts.</p>
+<p>Actually, at the most general level, you can see <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> as a generic tool to
+write domain specific languages (DSL). With <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> you
+can test your application interactively as well as with batch
+scripts, and even with the analogous of Python doctests for your
+defined language.</p>
+<p>You can easily replace the <tt class="docutils literal">cmd</tt> module of the standard library and
+you could easily write an application like <a class="reference external" href="http://twill.idyll.org/">twill</a> with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. Or you
+could use it to script your building procedure. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> also supports
+parallel execution of multiple commands and can be used as
+task manager. It is also quite easy to build a GUI
+or a Web application on top of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. When speaking of things
+you can do with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>, your imagination is the only limit!</p>
+</div>
+<div class="section" id="from-scripts-to-interactive-applications">
+<h2><a class="toc-backref" href="#id32">From scripts to interactive applications</a></h2>
+<p>Command-line scripts have many advantages, but they are no substitute
+for interactive applications.
+In particular, if you have a script with a large startup time which must be run
+multiple times, it is best to turn it into an interactive application,
+so that the startup is performed only once.  <tt class="docutils literal">plac</tt> provides an
+<tt class="docutils literal">Interpreter</tt> class just for this purpose.</p>
+<p>The <tt class="docutils literal">Interpreter</tt> class wraps the main function of a script and
+provides an <tt class="docutils literal">.interact</tt> method to start an interactive interpreter
+reading commands from the console.</p>
+<p>For instance, you can define an interactive interpreter on top of the
+<tt class="docutils literal">ishelve</tt> script introduced in the <a class="reference external" href="http://plac.googlecode.com/hg/doc/plac.html">basic documentation</a> as
+follows:</p>
+<pre class="literal-block">
+# shelve_interpreter.py
+import plac, ishelve
+
+&#64;plac.annotations(
+    interactive=('start interactive interface', 'flag'),
+    subcommands='the commands of the underlying ishelve interpreter')
+def main(interactive, *subcommands):
+    &quot;&quot;&quot;
+    This script works both interactively and non-interactively.
+    Use .help to see the internal commands.
+    &quot;&quot;&quot;
+    if interactive:
+        plac.Interpreter(ishelve.main).interact()
+    else:
+        for out in plac.call(ishelve.main, subcommands):
+            print(out)
+
+if __name__ == '__main__':
+    plac.call(main)
+
+</pre>
+<p>A trick has been used here: the ishelve command-line interface has been
+hidden inside an external interface. They are distinct: for instance
+the external interface recognizes the <tt class="docutils literal"><span class="pre">-h/--help</span></tt> flag whereas the
+internal interface only recognizes the <tt class="docutils literal">.help</tt> command:</p>
+<pre class="literal-block">
+$ python shelve_interpreter.py -h
+</pre>
+<pre class="literal-block">
+usage: shelve_interpreter.py [-h] [-interactive]
+                             [subcommands [subcommands ...]]
+
+    This script works both interactively and non-interactively.
+    Use .help to see the internal commands.
+    
+
+positional arguments:
+  subcommands   the commands of the underlying ishelve interpreter
+
+optional arguments:
+  -h, --help    show this help message and exit
+  -interactive  start interactive interface
+
+</pre>
+<p>Thanks to this ingenuous trick, the script can be run both interactively
+and non-interactively:</p>
+<pre class="literal-block">
+$ python shelve_interpreter.py .clear # non-interactive use
+cleared the shelve
+</pre>
+<p>Here is an usage session:</p>
+<pre class="literal-block">
+$ python shelve_interpreter.py -i # interactive use
+A simple interface to a shelve. Use .help to see the available commands.
+i&gt; .help
+Commands: .help, .showall, .clear, .delete
+&lt;param&gt; ...
+&lt;param=value&gt; ...
+i&gt; a=1
+setting a=1
+i&gt; a
+1
+i&gt; b=2
+setting b=2
+i&gt; a b
+1
+2
+i&gt; .del a
+deleted a
+i&gt; a
+a: not found
+i&gt; .show
+b=2
+i&gt; [CTRL-D]
+</pre>
+<p>The <tt class="docutils literal">.interact</tt> method
+reads commands from the console and send them to the
+underlying interpreter, until the user send a CTRL-D
+command (CTRL-Z in Windows). There is a default
+argument <tt class="docutils literal"><span class="pre">prompt='i&gt;</span> '</tt> which
+can be used to change the prompt. The text displayed at the beginning
+of the interactive session is the docstring of the main function.
+<tt class="docutils literal">plac</tt> also understands command abbreviations: in this example
+<tt class="docutils literal">del</tt> is an abbreviation for <tt class="docutils literal">delete</tt>. In case of ambiguous
+abbreviations <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> raises a <tt class="docutils literal">NameError</tt>.</p>
+<p>Finally I must notice that <tt class="docutils literal">plac.Interpreter</tt> is available only if you
+are using a recent version of Python (&gt;= 2.5), because it is a context
+manager object which uses extended generators internally.</p>
+</div>
+<div class="section" id="testing-a-plac-application">
+<h2><a class="toc-backref" href="#id33">Testing a plac application</a></h2>
+<p>You can conveniently test your application in interactive mode.
+However manual testing is a poor substitute for automatic testing.</p>
+<p>In principle, one could write automatic tests for the
+<tt class="docutils literal">ishelve</tt> application by using <tt class="docutils literal">plac.call</tt> directly:</p>
+<pre class="literal-block">
+# test_ishelve.py
+import plac, ishelve
+
+def test():
+    assert plac.call(ishelve.main, ['.clear']) == ['cleared the shelve']
+    assert plac.call(ishelve.main, ['a=1']) == ['setting a=1']
+    assert plac.call(ishelve.main, ['a']) == ['1']
+    assert plac.call(ishelve.main, ['.delete=a']) == ['deleted a']
+    assert plac.call(ishelve.main, ['a']) == ['a: not found']
+
+if __name__ == '__main__':
+    test()
+
+</pre>
+<p>However, using <tt class="docutils literal">plac.call</tt> is not especially nice. The big
+issue is that <tt class="docutils literal">plac.call</tt> responds to invalid input by printing an
+error message on stderr and by raising a <tt class="docutils literal">SystemExit</tt>: this is
+certainly not a nice thing to do in a test.</p>
+<p>As a consequence of this behavior it is impossible to test for invalid
+commands, unless you wrap the <tt class="docutils literal">SystemExit</tt> exception by
+hand each time (a possibly you do something with the error message in
+stderr too). Luckily, <tt class="docutils literal">plac</tt> offers a better testing support through
+the <tt class="docutils literal">check</tt> method of <tt class="docutils literal">Interpreter</tt> objects:</p>
+<pre class="literal-block">
+# test_ishelve_more.py
+from __future__ import with_statement
+import plac, ishelve
+
+def test():
+    with plac.Interpreter(ishelve.main) as i:
+        i.check('.clear', 'cleared the shelve')
+        i.check('a=1', 'setting a=1')
+        i.check('a', '1')
+        i.check('.delete=a', 'deleted a')
+        i.check('a', 'a: not found')
+
+</pre>
+<p>The method <tt class="docutils literal">.check(given_input, expected_output)</tt> works on strings
+and raises an <tt class="docutils literal">AssertionError</tt> if the output produced by the
+interpreter is different from the expected output for the given input.
+Notice that <tt class="docutils literal">AssertionError</tt> is catched by tools like <tt class="docutils literal">py.test</tt> and
+<tt class="docutils literal">nosetests</tt> and actually <tt class="docutils literal">plac</tt> tests are intended to be run with
+such tools.</p>
+<p>Interpreters offer a minor syntactic advantage with respect to calling
+<tt class="docutils literal">plac.call</tt> directly, but they offer a <em>major</em> semantic advantage when things
+go wrong (read exceptions): an <tt class="docutils literal">Interpreter</tt> object internally invokes
+something like <tt class="docutils literal">plac.call</tt>, but it wraps all exceptions, so that <tt class="docutils literal">i.check</tt>
+is guaranteed not to raise any exception except <tt class="docutils literal">AssertionError</tt>.</p>
+<p>Even the <tt class="docutils literal">SystemExit</tt> exception is captured and you can write your test as</p>
+<blockquote>
+<tt class="docutils literal"><span class="pre">i.check('-cler',</span> 'SystemExit: unrecognized arguments: <span class="pre">-cler')</span></tt></blockquote>
+<p>without risk of exiting from the Python interpreter.</p>
+<p>There is a second advantage of interpreters: if the main function
+contains some initialization code and finalization code (<tt class="docutils literal">__enter__</tt>
+and <tt class="docutils literal">__exit__</tt> functions) they will be run at the beginning and at
+the end of the interpreter loop, whereas <tt class="docutils literal">plac.call</tt> ignores
+the initialization/finalization code.</p>
+</div>
+<div class="section" id="plac-easy-tests">
+<h2><a class="toc-backref" href="#id34">Plac easy tests</a></h2>
+<p>Writing your tests in terms of <tt class="docutils literal">Interpreter.check</tt> is certainly an
+improvement over writing them in terms of <tt class="docutils literal">plac.call</tt>, but they
+are still too low-level for my taste. The <tt class="docutils literal">Interpreter</tt> class provides
+support for doctest-style tests, a.k.a. <em>plac easy tests</em>.</p>
+<p>By using plac easy tests you can cut and paste your interactive session and
+turn it into a runnable automatics test.
+Consider for instance the following file <tt class="docutils literal">ishelve.placet</tt> (the <tt class="docutils literal">.placet</tt>
+extension is a mnemonic for plac easy tests):</p>
+<pre class="literal-block">
+#!ishelve.py
+i&gt; .clear # start from a clean state
+cleared the shelve
+i&gt; a=1
+setting a=1
+i&gt; a
+1
+i&gt; .del a
+deleted a
+i&gt; a
+a: not found
+i&gt; .cler # spelling error
+.cler: not found
+
+</pre>
+<p>Notice the precence of the shebang line containing the name of the
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> tool to test (a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> tool is just a Python module with a
+function called <tt class="docutils literal">main</tt>). The shebang is ignored by the interpreter
+(it looks like a comment to it) but it is there so that external
+tools (say a test runner) can infer the plac interpreter
+to use to test the file.</p>
+<p>You can run the <tt class="docutils literal">ishelve.placet</tt> file by calling the
+<tt class="docutils literal">.doctest</tt> method of the interpreter, as in this example:</p>
+<pre class="literal-block">
+$ python -c&quot;import plac, ishelve
+plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)&quot;
+</pre>
+<p>Internally <tt class="docutils literal">Interpreter.doctests</tt> invokes something like <tt class="docutils literal">Interpreter.check</tt>
+multiple times inside the same context and compare the output with the
+expected output: if even a check fails, the whole test fail.</p>
+<p>You should realize tha the easy tests supported by <tt class="docutils literal">plac</tt> are <em>not</em>
+unittests: they are functional tests. They model the user interaction and the
+order of the operations generally matters.  The single subtests in a
+<tt class="docutils literal">.placet</tt> file are not independent and it makes sense to exit
+immediately at the first failure.</p>
+<p>The support for doctests in <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> comes nearly for free, thanks to the
+<a class="reference external" href="http://docs.python.org/library/shlex.html">shlex</a> module in the standard library, which is able to parse simple
+languages as the ones you can implement with <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>. In particular,
+thanks to <a class="reference external" href="http://docs.python.org/library/shlex.html">shlex</a>, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to recognize comments (the default
+comment character is <tt class="docutils literal">#</tt>), escape sequences and more. Look at the
+<a class="reference external" href="http://docs.python.org/library/shlex.html">shlex</a> documentation if you need to customize how the language is
+interpreted. For more flexibility, it is even possible to pass to the
+interpreter a custom split function with signature <tt class="docutils literal">split(line,
+commentchar)</tt>.</p>
+<p>In addition, I have implemented some support for line number
+recognition, so that if a test fail you get the line number of the
+failing command. This is especially useful if your tests are
+stored in external files, even if they do not need to be in
+a file: you can just pass to the <tt class="docutils literal">.doctest</tt> method a list of
+strings corresponding to the lines of the file.</p>
+<p>At the present <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not use any code from the doctest
+module, but the situation may change in the future (it would be nice
+if <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> could reuse doctests directives like ELLIPSIS).</p>
+<p>It is straighforward to integrate your <tt class="docutils literal">.placet</tt> tests with standard
+testing tools. For instance, you can integrate your doctests with <tt class="docutils literal">nose</tt>
+or <tt class="docutils literal">py.test</tt> as follow:</p>
+<pre class="literal-block">
+import os, shlex, plac
+
+def test_doct():
+   &quot;&quot;&quot;
+   Find all the doctests in the current directory and run them with the
+   corresponding plac interpreter (the shebang rules!)
+   &quot;&quot;&quot;
+   placets = [f for f in os.listdir('.') if f.endswith('.placet')]
+   for placet in placets:
+       lines = list(open(placet))
+       assert lines[0].startswith('#!'), 'Missing or incorrect shebang line!'
+       firstline = lines[0][2:] # strip the shebang
+       main = plac.import_main(*shlex.split(firstline))
+       yield plac.Interpreter(main).doctest, lines[1:]
+</pre>
+<p>Here you should notice that usage of <tt class="docutils literal">plac.import_main</tt>, an utility
+which is able to import the main function of the script specified in
+the shebang line. You can use both the full path name of the
+tool, or a relative path name. In this case the runner look at the
+environment variable <tt class="docutils literal">PLACPATH</tt> and it searches
+the plac tool in the directories specified there (<tt class="docutils literal">PLACPATH</tt> is just
+a string containing directory names separated by colons). If the variable
+<tt class="docutils literal">PLACPATH</tt> is not defined, it just looks in the current directory.
+If the plac tool is not found, an <tt class="docutils literal">ImportError</tt> is raised.</p>
+</div>
+<div class="section" id="plac-batch-scripts">
+<h2><a class="toc-backref" href="#id35">Plac batch scripts</a></h2>
+<p>It is pretty easy to realize that an interactive interpreter can
+also be used to run batch scripts: instead of reading the commands from
+the console, it is enough to read the commands from a file.
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> interpreters provide an <tt class="docutils literal">.execute</tt> method to perform just that.</p>
+<p>There is just a subtle point to notice: whereas in an interactive loop
+one wants to manage all exceptions, a batch script should not continue in the
+background in case of unexpected errors. The implementation of
+<tt class="docutils literal">Interpreter.execute</tt> makes sure that any error raised by
+<tt class="docutils literal">plac.call</tt> internally is re-raised.  In other words, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>
+interpreters <em>wrap the errors, but does not eat them</em>: the errors are
+always accessible and can be re-raised on demand.</p>
+<p>The exception is the case of invalid commands, which are skipped.
+Consider for instance the following batch file, which contains a
+mispelled command (<tt class="docutils literal">.dl</tt> instead of <tt class="docutils literal">.del</tt>):</p>
+<pre class="literal-block">
+#!ishelve.py
+.clear 
+a=1 b=2
+.show
+.del a
+.dl b
+.show
+
+</pre>
+<p>If you execute the batch file, the interpreter will print a <tt class="docutils literal">.dl: not found</tt>
+at the <tt class="docutils literal">.dl</tt> line and will continue:</p>
+<pre class="literal-block">
+$ python -c &quot;import plac, ishelve
+plac.Interpreter(ishelve.main).execute(open('ishelve.plac'), verbose=True)&quot;
+i&gt; .clear
+cleared the shelve
+i&gt; a=1 b=2
+setting a=1
+setting b=2
+i&gt; .show
+b=2
+a=1
+i&gt; .del a
+deleted a
+i&gt; .dl b
+2
+.dl: not found
+i&gt; .show
+b=2
+</pre>
+<p>The <tt class="docutils literal">verbose</tt> flag is there to show the lines which are being interpreted
+(prefixed by <tt class="docutils literal">i&gt;</tt>). This is done on purpose, so that you can cut and paste
+the output of the batch script and turn it into a <tt class="docutils literal">.placet</tt> test
+(cool, isn't it?).</p>
+</div>
+<div class="section" id="implementing-subcommands">
+<h2><a class="toc-backref" href="#id36">Implementing subcommands</a></h2>
+<p>When I discussed the <tt class="docutils literal">ishelve</tt> implementation in the <a class="reference external" href="http://plac.googlecode.com/hg/doc/plac.html">basic
+documentation</a>, I said that it looked like the poor man implementation
+of an object system as a chain of elifs; I also said that <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> was
+able to do much better than that.  Here I will substantiate my claim.</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is actually able to infer a set of subparsers from a
+generic container of commands.  This is useful if you want to
+implement <em>subcommands</em> (a familiar example of a command-line
+application featuring subcommands is version control system).
+Technically a container of commands is any object with a <tt class="docutils literal">.commands</tt> attribute
+listing a set of functions or methods which are valid commands. A command
+container may have initialization/finalization hooks (<tt class="docutils literal">__enter__/__exit__</tt>)
+and dispatch hooks (<tt class="docutils literal">__missing__</tt>, invoked for invalid command names).
+Moreover, only when using command containers <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is able to provide
+automatic <em>autocompletion</em> of commands.</p>
+<p>The shelve interface can be rewritten in an object-oriented way as follows:</p>
+<pre class="literal-block">
+# ishelve2.py
+import shelve, os, plac
+
+class ShelveInterface(object):
+    &quot;A minimal interface over a shelve object.&quot;
+    commands = 'set', 'show', 'showall', 'delete'
+    &#64;plac.annotations(
+        configfile=('path name of the shelve', 'option'))
+    def __init__(self, configfile):
+        self.configfile = configfile or '~/conf.shelve'
+        self.fname = os.path.expanduser(self.configfile)
+        self.__doc__ += '\nOperating on %s.\nUse help to see '\
+            'the available commands.\n'  % self.fname
+    def __enter__(self):
+        self.sh = shelve.open(self.fname)
+        return self
+    def __exit__(self, etype, exc, tb):
+        self.sh.close()
+    def set(self, name, value):
+        &quot;set name value&quot;
+        yield 'setting %s=%s' % (name, value)
+        self.sh[name] = value
+    def show(self, *names):
+        &quot;show given parameters&quot;
+        for name in names:
+            yield '%s = %s' % (name, self.sh[name]) # no error checking
+    def showall(self):
+        &quot;show all parameters&quot;
+        for name in self.sh:
+            yield '%s = %s' % (name, self.sh[name])
+    def delete(self, name=None):
+        &quot;delete given parameter (or everything)&quot;
+        if name is None:
+            yield 'deleting everything'
+            self.sh.clear()
+        else:
+            yield 'deleting %s' % name
+            del self.sh[name] # no error checking
+
+if __name__ == '__main__':
+    plac.Interpreter(plac.call(ShelveInterface)).interact()
+
+</pre>
+<p><tt class="docutils literal">plac.Interpreter</tt> objects wrap context manager objects
+consistently.  In other words, if you wrap an object with
+<tt class="docutils literal">__enter__</tt> and <tt class="docutils literal">__exit__</tt> methods, they are invoked in the right
+order (<tt class="docutils literal">__enter__</tt> before the interpreter loop starts and
+<tt class="docutils literal">__exit__</tt> after the interpreter loop ends, both in the regular and
+in the exceptional case). In our example, the methods <tt class="docutils literal">__enter__</tt>
+and <tt class="docutils literal">__exit__</tt> make sure the the shelve is opened and closed
+correctly even in the case of exceptions. Notice that I have not
+implemented any error checking in the <tt class="docutils literal">show</tt> and <tt class="docutils literal">delete</tt> methods
+on purpose, to verify that <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> works correctly in the presence of
+exceptions.</p>
+<p>When working with command containers, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> automatically adds two
+special commands to the set of provided commands: <tt class="docutils literal">help</tt>
+and <tt class="docutils literal">.last_tb</tt>. The <tt class="docutils literal">help</tt> command is the easier to understand:
+when invoked without arguments it displays the list of available commands
+with the same formatting of the <a class="reference external" href="http://docs.python.org/library/cmd.html">cmd</a> module; when invoked with the name of
+a command it displays the usage message for that command.
+The <tt class="docutils literal">.last_tb</tt> command is useful when debugging: in case of errors,
+it allows you to display the traceback of the last executed command.</p>
+<p>Here is the usage message:</p>
+<pre class="literal-block">
+usage: ishelve2.py [-h] [-configfile CONFIGFILE]
+
+A minimal interface over a shelve object.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -configfile CONFIGFILE
+                        path name of the shelve
+
+</pre>
+<p>Here is a session of usage on an Unix-like operating system:</p>
+<pre class="literal-block">
+$ python ishelve2.py -c ~/test.shelve
+A minimal interface over a shelve object.
+Operating on /home/micheles/test.shelve.
+Use help to see the available commands.
+i&gt; help
+
+special commands
+================
+.last_tb
+
+custom commands
+===============
+delete  set  show  showall
+
+i&gt; delete
+deleting everything
+i&gt; set a pippo
+setting a=pippo
+i&gt; set b lippo
+setting b=lippo
+i&gt; showall
+b = lippo
+a = pippo
+i&gt; show a b
+a = pippo
+b = lippo
+i&gt; del a
+deleting a
+i&gt; showall
+b = lippo
+i&gt; delete a
+deleting a
+KeyError: 'a'
+i&gt; .last_tb
+ File &quot;/usr/local/lib/python2.6/dist-packages/plac-0.6.0-py2.6.egg/plac_ext.py&quot;, line 190, in _wrap
+    for value in genobj:
+  File &quot;./ishelve2.py&quot;, line 37, in delete
+    del self.sh[name] # no error checking
+  File &quot;/usr/lib/python2.6/shelve.py&quot;, line 136, in __delitem__
+    del self.dict[key]
+i&gt;
+</pre>
+<p>Notice that in interactive mode the traceback is hidden, unless
+you pass the <tt class="docutils literal">verbose</tt> flag to the <tt class="docutils literal">Interpreter.interact</tt> method.</p>
+<p>CHANGED IN VERSION 0.9: if you have an old version of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> the
+<tt class="docutils literal">help</tt> command must be prefixed with a dot, i.e. you must write
+<tt class="docutils literal">.help</tt>. The old behavior was more consistent in my opinion, since
+it made it clear that the <tt class="docutils literal">help</tt> command was special and threated
+differently from the regular commands.
+Notice that if you implement a custom <tt class="docutils literal">help</tt> command in the commander class
+the default help will not be added, as you would expect.</p>
+<p>In version 0.9 an exception <tt class="docutils literal">`plac.Interpreter.Exit</tt> was added. Its
+purpose it to make it easy to define commands to exit from the command
+loop. Just define something like:</p>
+<pre class="literal-block">
+def quit(self):
+   raise plac.Interpreter.Exit
+</pre>
+<p>and the interpreter will be closed properly when the <tt class="docutils literal">quit</tt> command
+is entered.</p>
+</div>
+<div class="section" id="plac-interpreter-call">
+<h2><a class="toc-backref" href="#id37">plac.Interpreter.call</a></h2>
+<p>At the core of <tt class="docutils literal">plac</tt> there is the <tt class="docutils literal">call</tt> function which invokes
+a callable with the list of arguments passed at the command-line
+(<tt class="docutils literal">sys.argv[1:]</tt>). Thanks to <tt class="docutils literal">plac.call</tt> you can launch your module
+by simply adding the lines:</p>
+<pre class="literal-block">
+if __name__ == '__main__':
+    plac.call(main)
+</pre>
+<p>Everything works fine if <tt class="docutils literal">main</tt> is a simple callable performing some
+action; however, in many cases, one has a <tt class="docutils literal">main</tt> &quot;function&quot; which
+is a actually a factory returning a command container object. For
+instance, in my second shelve example the main function is the class
+<tt class="docutils literal">ShelveInterface</tt>, and the two lines needed to run the module are
+a bit ugly:</p>
+<pre class="literal-block">
+if __name__ == '__main__':
+   plac.Interpreter(plac.call(ShelveInterface)).interact()
+</pre>
+<p>Moreover, now the program runs, but only in interactive mode, i.e.
+it is not possible to run it as a script. Instead, it would be nice
+to be able to specify the command to execute on the command-line
+and have the interpreter start, execute the command and finish
+properly (I mean by calling <tt class="docutils literal">__enter__</tt> and <tt class="docutils literal">__exit__</tt>)
+without needing user input. Then the script could be called from
+a batch shell script working in the background.
+In order to provide such functionality <tt class="docutils literal">plac.Interpreter</tt> provides
+a classmethod named <tt class="docutils literal">.call</tt> which takes the factory, instantiates
+it with the arguments read from the command line, wraps the resulting
+container object as an interpreter and runs it with the rest arguments
+found in the command line. Here is the code to turn the <tt class="docutils literal">ShelveInterface</tt>
+into a script</p>
+<pre class="literal-block">
+# ishelve3.py
+from ishelve2 import ShelveInterface
+
+if __name__ == '__main__':
+    import plac; plac.Interpreter.call(ShelveInterface)
+
+## try the following:
+# $ python ishelve3.py delete
+# $ python ishelve3.py set a 1
+# $ python ishelve3.py showall
+
+</pre>
+<p>and here are a few examples of usage:</p>
+<pre class="literal-block">
+$ python ishelve3.py help
+
+special commands
+================
+.last_tb
+
+custom commands
+===============
+delete  set  show  showall
+
+$ python ishelve3.py set a 1
+setting a=1
+$ python ishelve3.py show a
+a = 1
+</pre>
+<p>If you pass the <tt class="docutils literal"><span class="pre">-i</span></tt> flag in the command line, then the
+script will enter in interactive mode and ask the user
+for the commands to execute:</p>
+<pre class="literal-block">
+$ python ishelve3.py -i
+A minimal interface over a shelve object.
+Operating on /home/micheles/conf.shelve.
+Use help to see the available commands.
+
+i&gt;
+</pre>
+<p>In a sense, I have closed the circle: at the beginning of this
+document I discussed how to turn a script into an interactive
+application (the <tt class="docutils literal">shelve_interpreter.py</tt> example), whereas here I
+have show how to turn an interactive application into a script.</p>
+<p>The complete signature of <tt class="docutils literal">plac.Interpreter.call</tt> is the following:</p>
+<pre class="literal-block">
+call(factory, arglist=sys.argv[1:],
+     commentchar='#', split=shlex.split,
+     stdin=sys.stdin, prompt='i&gt; ', verbose=False)
+</pre>
+<p>The factory must have a fixed number of positional arguments (no
+default arguments, no varargs, no kwargs), otherwise a <tt class="docutils literal">TypeError</tt>
+is raised: the reason is that we want to be able to distinguish the
+command-line arguments needed to instantiate the factory from the rest
+arguments that must be sent to the corresponding interpreter object.
+It is also possible to specify a list of arguments different from
+<tt class="docutils literal">sys.argv[1:]</tt> (useful in tests), the character to be recognized as
+a comment, the splitting function, the input source and the prompt to
+use while in interactive mode, and a verbose flag.</p>
+</div>
+<div class="section" id="readline-support">
+<h2><a class="toc-backref" href="#id38">Readline support</a></h2>
+<p>Starting from release 0.6 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> offers full readline support. That
+means that if your Python was compiled with readline support you get
+autocompletion and persistent command history for free.  By default
+all commands are autocomplete in a case sensitive way.  If you want to
+add new words to the autocompletion set, or you want to change the
+location of the <tt class="docutils literal">.history</tt> file, or to change the case sensitivity,
+the way to go is to pass a <tt class="docutils literal">plac.ReadlineInput</tt> object to the
+interpreter.  Here is an example, assuming you want to build a
+database interface understanding SQL commands:</p>
+<pre class="literal-block">
+import os, plac
+from sqlalchemy.ext.sqlsoup import SqlSoup
+
+SQLKEYWORDS = set(['help', 'select', 'from', 
+                   'inner', 'join', 'outer', 'left', 'right']
+                  ) # and many others
+DBTABLES = set(['table1', 'table2']) # you can read them from the db schema
+
+COMPLETIONS = SQLKEYWORDS | DBTABLES
+
+class SqlInterface(object):
+    commands = ['SELECT']
+    def __init__(self, dsn):
+        self.soup = SqlSoup(dsn)
+    def SELECT(self, argstring):
+        sql = 'SELECT ' + argstring
+        for row in self.soup.bind.execute(sql):
+            yield str(row) # the formatting can be much improved
+
+rl_input = plac.ReadlineInput(
+    COMPLETIONS, histfile=os.path.expanduser('~/.sql_interface.history'), 
+    case_sensitive=False)
+
+def split_on_first_space(line, commentchar):
+    return line.strip().split(' ', 1) # ignoring comments
+    
+if __name__ == '__main__':
+    plac.Interpreter.call(SqlInterface, split=split_on_first_space,
+                          stdin=rl_input, prompt='sql&gt; ')
+
+</pre>
+<p>Here is an example of usage:</p>
+<pre class="literal-block">
+$ python sql_interface.py &lt;some dsn&gt;
+sql&gt; SELECT a.* FROM TABLE1 AS a INNER JOIN TABLE2 AS b ON a.id = b.id
+...
+</pre>
+<p>You can check that entering just <tt class="docutils literal">sel</tt> and pressing TAB the readline library
+completes the <tt class="docutils literal">SELECT</tt> keyword for you and makes it upper case; idem for
+<tt class="docutils literal">FROM</tt>, <tt class="docutils literal">INNER</tt>, <tt class="docutils literal">JOIN</tt> and even for the names of the tables. An
+obvious improvement is to read the names of the tables by introspecting
+the database: actually you can even read the names of the views and of
+the columns, and have full autocompletion. All the entered commands
+and recorded and saved in the file <tt class="docutils literal"><span class="pre">~/.sql_interface.history</span></tt> when
+exiting from the command-line interface.</p>
+<p>If the readline library is not available, my suggestion is to use the
+<a class="reference external" href="http://freshmeat.net/projects/rlwrap/">rlwrap</a> tool which provides similar features, at least on Unix-like
+platforms. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> should also work fine on Windows with the <a class="reference external" href="http://ipython.scipy.org/moin/PyReadline/Intro">pyreadline</a>
+library (I do not use Windows, so this part is very little tested: I
+tried it only once and it worked, but your mileage may vary).
+For people worried about licenses, I will notice that <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses the
+readline library only if available, it does not include it and it does
+not rely on it in any fundamental way, so that the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> licence does
+not need to be the GPL (actually it is a BSD
+do-whatever-you-want-with-it licence).</p>
+<p>The interactive mode of <tt class="docutils literal">plac</tt> can be used as a replacement of the
+<a class="reference external" href="http://docs.python.org/library/cmd.html">cmd</a> module in the standard library. It is actually better than <a class="reference external" href="http://docs.python.org/library/cmd.html">cmd</a>:
+for instance, the <tt class="docutils literal">help</tt> command is more powerful, since it
+provides information about the arguments accepted by the given command:</p>
+<pre class="literal-block">
+i&gt; help set
+usage:  set name value
+
+set name value
+
+positional arguments:
+  name
+  value
+
+i&gt; help delete
+usage:  delete [name]
+
+delete given parameter (or everything)
+
+positional arguments:
+  name        [None]
+
+i&gt; help show
+usage:  show [names [names ...]]
+
+show given parameters
+
+positional arguments:
+  names
+</pre>
+<p>As you can imagine, the help message is provided by the underlying <a class="reference external" href="http://argparse.googlecode.com">argparse</a>
+subparser: there is a subparser for each command. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> commands accept
+options, flags, varargs, keyword arguments, arguments with defaults,
+arguments with a fixed number of choices, type conversion and all the
+features provided of <a class="reference external" href="http://argparse.googlecode.com">argparse</a> .</p>
+<p>Moreover at the moment <tt class="docutils literal">plac</tt> also understands command abbreviations.
+However, this feature may disappear in
+future releases. It was meaningful in the past, when <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> did not support
+readline.</p>
+<p>Notice that if an abbreviation is ambiguous, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> warns you:</p>
+<pre class="literal-block">
+i&gt; sh
+NameError: Ambiguous command 'sh': matching ['showall', 'show']
+</pre>
+</div>
+<div class="section" id="the-plac-runner">
+<h2><a class="toc-backref" href="#id39">The plac runner</a></h2>
+<p>The distribution of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> includes a runner script named <tt class="docutils literal">plac_runner.py</tt>,
+which will be installed in a suitable directory in your system by <a class="reference external" href="http://docs.python.org/distutils/">distutils</a>
+(say in <tt class="docutils literal">\usr\local\bin\plac_runner.py</tt> in a Unix-like operative system).
+The runner provides many facilities to run <tt class="docutils literal">.plac</tt> scripts and
+<tt class="docutils literal">.placet</tt> files, as well as Python modules containg a <tt class="docutils literal">main</tt>
+object, which can be a function, a command container object or
+even a command container class.</p>
+<p>For instance, suppose you want to execute a script containing commands
+defined in the <tt class="docutils literal">ishelve2</tt> module like the following one:</p>
+<pre class="literal-block">
+#!ishelve2.py:ShelveInterface -c ~/conf.shelve
+set a 1
+del a
+del a # intentional error
+
+</pre>
+<p>The first line of the <tt class="docutils literal">.plac</tt> script contains the name of the
+python module containing the plac interpreter and the arguments
+which must be passed to its main function in order to be able
+to instantiate an interpreter object. In this case I appended
+<tt class="docutils literal">:ShelveInterface</tt> to the name of the module to specify the
+object that must be imported: if not specified, by default the
+object named 'main' is imported.
+The other lines contains commands.
+You can run the script as follows:</p>
+<pre class="literal-block">
+$ plac_runner.py --batch ishelve2.plac
+setting a=1
+deleting a
+Traceback (most recent call last):
+  ...
+_bsddb.DBNotFoundError: (-30988, 'DB_NOTFOUND: No matching key/data pair found')
+</pre>
+<p>The last command intentionally contained an error, to show that the
+plac runner does not eat the traceback.</p>
+<p>The runner can also be used to run Python modules in interactive
+mode and non-interactive mode. If you put this alias in your bashrc</p>
+<blockquote>
+<tt class="docutils literal">alias <span class="pre">plac=&quot;plac_runner.py&quot;</span></tt></blockquote>
+<p>(or you define a suitable <tt class="docutils literal">plac.bat</tt> script in Windows) you can
+run the <tt class="docutils literal">ishelve2.py</tt> script in interactive mode as
+follows:</p>
+<pre class="literal-block">
+$ plac -i ishelve2.py:ShelveInterface
+A minimal interface over a shelve object.
+Operating on /home/micheles/conf.shelve.
+.help to see the available commands.
+
+i&gt; del
+deleting everything
+i&gt; set a 1
+setting a=1
+i&gt; set b 2
+setting b=2
+i&gt; show b
+b = 2
+</pre>
+<p>Now you can cut and paste the interactive session an turns into into
+a <tt class="docutils literal">.placet</tt> file like the following:</p>
+<pre class="literal-block">
+#!ishelve2.py:ShelveInterface -configfile=~/test.shelve
+# an example of .placet file for the ShelveInterface
+i&gt; del
+deleting everything
+i&gt; set a 1
+setting a=1
+i&gt; set b 2
+setting b=2
+i&gt; show a
+a = 1
+
+</pre>
+<p>Notice that the first line specifies a test database
+<tt class="docutils literal">~/test.shelve</tt>, to avoid clobbering your default shelve. If you
+mispell the arguments in the first line plac will give you an
+<a class="reference external" href="http://argparse.googlecode.com">argparse</a> error message (just try).</p>
+<p>You can run placets following the shebang convention directly with
+the plac runner:</p>
+<pre class="literal-block">
+$ plac --test ishelve2.placet
+run 1 plac test(s)
+</pre>
+<p>If you want to see the output of the tests, pass the <tt class="docutils literal"><span class="pre">-v/--verbose</span></tt> flag.
+Notice that he runner ignore the extension, so you can actually use any
+extension your like, but <em>it relies on the first line of the file to invoke
+the corresponding plac tool with the given arguments</em>.</p>
+<p>The plac runner does not provide any test discovery facility,
+but you can use standard Unix tools to help. For instance, you can
+run all the <tt class="docutils literal">.placet</tt> files into a directory and its subdirectories
+as follows:</p>
+<pre class="literal-block">
+$ find . -name \*.placet | xargs plac_runner.py -t
+</pre>
+<p>The plac runner expects the main function of your script to
+return a plac tool, i.e. a function or an object with a <tt class="docutils literal">.commands</tt>
+attribute. It this is not the case the runner gracefully exits.</p>
+<p>It also works in non-interactive mode, if you call it as</p>
+<blockquote>
+<tt class="docutils literal">$ plac module.py args ...</tt></blockquote>
+<p>Here is an example:</p>
+<pre class="literal-block">
+$ plac ishelve.py a=1
+setting a=1
+$ plac ishelve.py .show
+a=1
+</pre>
+<p>Notice that in non-interactive mode the runner just invokes <tt class="docutils literal">plac.call</tt>
+on the <tt class="docutils literal">main</tt> object of the Python module.</p>
+</div>
+<div class="section" id="a-non-class-based-example">
+<h2><a class="toc-backref" href="#id40">A non class-based example</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> does not force you to use classes to define command containers.
+Even a simple function can be a valid command container, it is
+enough to add to it a <tt class="docutils literal">.commands</tt> attribute and possibly
+<tt class="docutils literal">__enter__</tt> and/or <tt class="docutils literal">__exit__</tt> attributes.</p>
+<p>In particular, a Python module is a perfect container of commands. As an
+example, consider the following module implementing a fake Version
+Control System:</p>
+<pre class="literal-block">
+&quot;A Fake Version Control System&quot;
+
+import plac # this implementation also works with Python 2.4
+
+commands = 'checkout', 'commit', 'status'
+
+&#64;plac.annotations(url='url of the source code')
+def checkout(url):
+    &quot;A fake checkout command&quot;
+    return ('checkout ', url)
+
+&#64;plac.annotations(message=('commit message', 'option'))
+def commit(message):
+    &quot;A fake commit command&quot;
+    return ('commit ', message)
+
+&#64;plac.annotations(quiet=('summary information', 'flag', 'q'))
+def status(quiet):
+    &quot;A fake status command&quot;
+    return ('status ', quiet)
+
+def __missing__(name):
+    return ('Command %r does not exist' % name,)
+
+def __exit__(etype, exc, tb):
+    &quot;Will be called automatically at the end of the intepreter loop&quot;
+    if etype in (None, GeneratorExit): # success
+        print('ok')
+
+main = __import__(__name__) # the module imports itself!
+
+if __name__ == '__main__':
+    import plac
+    for out in plac.call(main): print(out)
+
+</pre>
+<p>Notice that I have defined both an <tt class="docutils literal">__exit__</tt> hook and a <tt class="docutils literal">__missing__</tt>
+hook, invoked for non-existing commands.
+The real trick here is the line <tt class="docutils literal">main = __import__(__name__)</tt>, which
+define <tt class="docutils literal">main</tt> to be an alias for the current module.</p>
+<p>The <tt class="docutils literal">vcs</tt> module can be run through the plac runner
+(try <tt class="docutils literal">plac vcs.py <span class="pre">-h</span></tt>):</p>
+<pre class="literal-block">
+usage: plac_runner.py vcs.py [-h] {status,commit,checkout} ...
+
+A Fake Version Control System
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+subcommands:
+  {status,commit,checkout}
+    checkout            A fake checkout command
+    commit              A fake commit command
+    status              A fake status command
+
+</pre>
+<p>You can get help for the subcommands by inserting an <tt class="docutils literal"><span class="pre">-h</span></tt> close the
+name of the command:</p>
+<pre class="literal-block">
+$ plac vcs.py status -h
+usage: plac_runner.py vcs.py status [-h] [-q]
+
+A fake status command
+
+optional arguments:
+  -h, --help   show this help message and exit
+  -q, --quiet  summary information
+</pre>
+<p>Notice how the docstring of the command is automatically shown in
+usage message, as well as the documentation for the sub flag <tt class="docutils literal"><span class="pre">-q</span></tt>.</p>
+<p>Here is an example of a non-interactive session:</p>
+<pre class="literal-block">
+$ plac vcs.py check url
+checkout
+url
+$ plac vcs.py st -q
+status
+True
+$ plac vcs.py co
+commit
+None
+</pre>
+<p>and here is an interactive session:</p>
+<pre class="literal-block">
+$ plac -i vcs.py
+usage: plac_runner.py vcs.py [-h] {status,commit,checkout} ...
+i&gt; check url
+checkout
+url
+i&gt; st -q
+status
+True
+i&gt; co
+commit
+None
+i&gt; sto
+Command 'sto' does not exist
+i&gt; [CTRL-D]
+ok
+</pre>
+<p>Notice the invocation of the <tt class="docutils literal">__missing__</tt> hook for non-existing commands.
+Notice also that the <tt class="docutils literal">__exit__</tt> hook gets called only in interactive
+mode.</p>
+<p>If the commands are completely independent, a module is a good fit for
+a method container. In other situations, it is best to use a custom
+class.</p>
+</div>
+<div class="section" id="writing-your-own-plac-runner">
+<h2><a class="toc-backref" href="#id41">Writing your own plac runner</a></h2>
+<p>The runner included in the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> distribution is intentionally kept
+small (around 50 lines of code) so that you can study it and write
+your own runner if want to. If you need to go to such level
+of detail, you should know that the most important method of
+the <tt class="docutils literal">Interpreter</tt> class is the <tt class="docutils literal">.send</tt> method, which takes
+strings in input and returns a four-tuple with attributes
+<tt class="docutils literal">.str</tt>, <tt class="docutils literal">.etype</tt>, <tt class="docutils literal">.exc</tt> and <tt class="docutils literal">.tb</tt>:</p>
+<ul class="simple">
+<li><tt class="docutils literal">.str</tt> is the output of the command, if successful (a string);</li>
+<li><tt class="docutils literal">.etype</tt> is the class of the exception, if the command fail;</li>
+<li><tt class="docutils literal">.exc</tt> is the exception instance;</li>
+<li><tt class="docutils literal">.tb</tt> is the traceback.</li>
+</ul>
+<p>Moreover the <tt class="docutils literal">__str__</tt> representation of the output object is redefined
+to return the output string if the command was successful or the error
+message if the command failed (actually it returns the error message
+preceded by the name of the exception class).</p>
+<p>For instance, if you send a mispelled option to
+the interpreter a <tt class="docutils literal">SystemExit</tt> will be trapped:</p>
+<pre class="doctest-block">
+&gt;&gt;&gt; import plac
+&gt;&gt;&gt; from ishelve import ishelve
+&gt;&gt;&gt; with plac.Interpreter(ishelve) as i:
+...     print(i.send('.cler'))
+...
+SystemExit: unrecognized arguments: .cler
+</pre>
+<p>It is important to invoke the <tt class="docutils literal">.send</tt> method inside the context manager,
+otherwise you will get a <tt class="docutils literal">RuntimeError</tt>.</p>
+<p>For instance, suppose you want to implement a graphical runner for a
+plac-based interpreter with two text widgets: one to enter the commands
+and one to display the results. Suppose you want to display the errors
+with tracebacks in red. You will need to code something like that
+(pseudocode follows):</p>
+<pre class="literal-block">
+input_widget = WidgetReadingInput()
+output_widget = WidgetDisplayingOutput()
+
+def send(interpreter, line):
+    out = interpreter.send(line)
+    if out.tb: # there was an error
+        output_widget.display(out.tb, color='red')
+    else:
+        output_widget.display(out.str)
+
+main = plac.import_main(tool_path) # get the main object
+
+with plac.Interpreter(main) as i:
+   def callback(event):
+      if event.user_pressed_ENTER():
+           send(i, input_widget.last_line)
+   input_widget.addcallback(callback)
+   gui_mainloop.start()
+</pre>
+<p>You can adapt the pseudocode to your GUI toolkit of choice and you can
+also change the file associations in such a way that clicking on a
+plac tool file the graphical user interface starts.</p>
+<p>An example of GUI program built on top of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is given later on, in the
+paragraph <em>Managing the output of concurrent commands</em> (using Tkinter
+for simplicity and portability).</p>
+<p>There is a final <em>caveat</em>: since the plac interpreter loop is
+implemented via extended generators, plac interpreters are single threaded: you
+will get an error if you <tt class="docutils literal">.send</tt> commands from separated threads.
+You can circumvent the problem by using a queue. If EXIT is a sentinel
+value to signal exiting from the interpreter look, you can write code
+like this:</p>
+<pre class="literal-block">
+with interpreter:
+    for input_value in iter(input_queue.get, EXIT):
+        output_queue.put(interpreter.send(input_value))
+</pre>
+<p>The same trick also work for processes; you could run the interpreter
+loop in a separate process and send commands to it via the Queue
+class provided by the <a class="reference external" href="http://docs.python.org/library/multiprocessing.html">multiprocessing</a> module.</p>
+</div>
+<div class="section" id="long-running-commands">
+<h2><a class="toc-backref" href="#id42">Long running commands</a></h2>
+<p>As we saw, by default a <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> interpreter blocks until
+the command terminates. This is an issue, in the sense that it makes
+the interactive experience quite painful for long running commands. An
+example is better than a thousand words, so consider the following
+fake importer:</p>
+<pre class="literal-block">
+import time
+import plac
+
+class FakeImporter(object):
+    &quot;A fake importer with an import_file command&quot;
+    commands = ['import_file']
+    def __init__(self, dsn):
+        self.dsn = dsn
+    def import_file(self, fname):
+        &quot;Import a file into the database&quot;
+        try:
+            for n in range(10000):
+                time.sleep(.01)
+                if n % 100 == 99:
+                    yield 'Imported %d lines' % (n+1)
+        finally:
+            print('closing the file')
+
+if __name__ == '__main__':
+    plac.Interpreter.call(FakeImporter)
+
+</pre>
+<p>If you run the <tt class="docutils literal">import_file</tt> command, you will have to wait for 200 seconds
+before entering a new command:</p>
+<pre class="literal-block">
+$ python importer1.py dsn -i
+A fake importer with an import_file command
+i&gt; import_file file1
+... &lt;wait 3+ minutes&gt;
+Imported 100 lines
+Imported 200 lines
+Imported 300 lines
+...
+Imported 10000 lines
+closing the file
+</pre>
+<p>Being unable to enter any other command is quite annoying: in such situation one
+would like to run the long running commands in the background, to keep
+the interface responsive. <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides two ways to reach this goal: threads
+and processes.</p>
+</div>
+<div class="section" id="threaded-commands">
+<h2><a class="toc-backref" href="#id43">Threaded commands</a></h2>
+<p>The most familiar way to execute a task in the background (even if not
+necessarily the best way) is to run it into a separated thread. In our
+example it is sufficient to replace the line</p>
+<blockquote>
+<tt class="docutils literal">commands = ['import_file']</tt></blockquote>
+<p>with</p>
+<blockquote>
+<tt class="docutils literal">thcommands = ['import_file']</tt></blockquote>
+<p>to tell to the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> interpreter that the command <tt class="docutils literal">import_file</tt> should be
+run into a separated thread. Here is an example session:</p>
+<pre class="literal-block">
+i&gt; import_file file1
+&lt;ThreadedTask 1 [import_file file1] RUNNING&gt;
+</pre>
+<p>The import task started in a separated thread. You can see the
+progress of the task by using the special command <tt class="docutils literal">.output</tt>:</p>
+<pre class="literal-block">
+i&gt; .output 1
+&lt;ThreadedTask 1 [import_file file1] RUNNING&gt;
+Imported 100 lines
+Imported 200 lines
+</pre>
+<p>If you look after a while, you will get more lines of output:</p>
+<pre class="literal-block">
+i&gt; .output 1
+&lt;ThreadedTask 1 [import_file file1] RUNNING&gt;
+Imported 100 lines
+Imported 200 lines
+Imported 300 lines
+Imported 400 lines
+</pre>
+<p>If you look after a time long enough, the task will be finished:</p>
+<pre class="literal-block">
+i&gt; .output 1
+&lt;ThreadedTask 1 [import_file file1] FINISHED&gt;
+</pre>
+<p>It is possible to store the output of a task into a file, to be read
+later (this is useful for tasks with a large output):</p>
+<pre class="literal-block">
+i&gt; .output 1 /tmp/out.txt
+saved output of 1 into /tmp/out.txt
+</pre>
+<p>You can even skip the number argument: then <tt class="docutils literal">.output</tt> will the return
+the output of the last launched command (the special commands like .output
+do not count).</p>
+<p>You can launch many tasks one after the other:</p>
+<pre class="literal-block">
+i&gt; import_file file2
+&lt;ThreadedTask 5 [import_file file2] RUNNING&gt;
+i&gt; import_file file3
+&lt;ThreadedTask 6 [import_file file3] RUNNING&gt;
+</pre>
+<p>The <tt class="docutils literal">.list</tt> command displays all the running tasks:</p>
+<pre class="literal-block">
+i&gt; .list
+&lt;ThreadedTask 5 [import_file file2] RUNNING&gt;
+&lt;ThreadedTask 6 [import_file file3] RUNNING&gt;
+</pre>
+<p>It is even possible to kill a task:</p>
+<pre class="literal-block">
+i&gt; .kill 5
+&lt;ThreadedTask 5 [import_file file2] TOBEKILLED&gt;
+# wait a bit ...
+closing the file
+i&gt; .output 5
+&lt;ThreadedTask 5 [import_file file2] KILLED&gt;
+</pre>
+<p>You should notice that since at the Python level it is impossible to kill
+a thread, the <tt class="docutils literal">.kill</tt> commands works by setting the status of the task to
+<tt class="docutils literal">TOBEKILLED</tt>. Internally the generator corresponding to the command
+is executed in the thread and the status is checked at each iteration:
+when the status become <tt class="docutils literal">TOBEKILLED</tt> a <tt class="docutils literal">GeneratorExit</tt> exception is
+raised and the thread terminates (softly, so that the <tt class="docutils literal">finally</tt> clause
+is honored). In our example the generator is yielding
+back control once every 100 iterations, i.e. every two seconds (not much).
+In order to get a responsive interface it is a good idea to yield more
+often, for instance every 10 iterations (i.e. 5 times per second),
+as in the following code:</p>
+<pre class="literal-block">
+import time
+import plac
+
+class FakeImporter(object):
+    &quot;A fake importer with an import_file command&quot;
+    thcommands = ['import_file']
+    def __init__(self, dsn):
+        self.dsn = dsn
+    def import_file(self, fname):
+        &quot;Import a file into the database&quot;
+        try:
+            for n in range(10000):
+                time.sleep(.02)
+                if n % 100 == 99: # every two seconds
+                    yield 'Imported %d lines' % (n+1)
+                if n % 10 == 9: # every 0.2 seconds
+                    yield # go back and check the TOBEKILLED status
+        finally:
+            print('closing the file')
+
+if __name__ == '__main__':
+    plac.Interpreter.call(FakeImporter)
+
+</pre>
+</div>
+<div class="section" id="running-commands-as-external-processes">
+<h2><a class="toc-backref" href="#id44">Running commands as external processes</a></h2>
+<p>Threads are not loved much in the Python world and actually most people
+prefer to use processes instead. For this reason <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides the
+option to execute long running commands as external processes. Unfortunately
+the current implementation only works in Unix-like operating systems
+(including Mac OS X) because it relies on fork via the <a class="reference external" href="http://docs.python.org/library/multiprocessing.html">multiprocessing</a>
+module.</p>
+<p>In our example, to enable the feature it is sufficient to replace the line</p>
+<blockquote>
+<tt class="docutils literal">thcommands = ['import_file']</tt></blockquote>
+<p>with</p>
+<blockquote>
+<tt class="docutils literal">mpcommands = ['import_file']</tt>.</blockquote>
+<p>The user experience is exactly the same as with threads and you will not see any
+difference at the user interface level:</p>
+<pre class="literal-block">
+i&gt; import_file file3
+&lt;MPTask 1 [import_file file3] SUBMITTED&gt;
+i&gt; .kill 1
+&lt;MPTask 1 [import_file file3] RUNNING&gt;
+closing the file
+i&gt; .output 1
+&lt;MPTask 1 [import_file file3] KILLED&gt;
+Imported 100 lines
+Imported 200 lines
+i&gt;
+</pre>
+<p>Still, using processes is quite different than using threads: in
+particular, when using processes you can only yield pickleable values
+and you cannot re-raise an exception first raised in a different
+process, because traceback objects are not pickleable. Moreover,
+you cannot rely on automatic sharing of your objects.</p>
+<p>On the plus side, when using processes you do not need to worry about
+killing a command: they are killed immediately using a SIGTERM signal,
+and there is not a <tt class="docutils literal">TOBEKILLED</tt> mechanism. Moreover, the killing is
+guaranteed to be soft: internally a command receiving a SIGTERM raises
+a <tt class="docutils literal">TerminatedProcess</tt> exception which is trapped in the generator
+loop, so that the command is closed properly.</p>
+<p>Using processes allows to take full advantage of multicore machines
+and it is safer than using threads, so it is the recommended approach
+unless you are working on Windows.</p>
+</div>
+<div class="section" id="managing-the-output-of-concurrent-commands">
+<h2><a class="toc-backref" href="#id45">Managing the output of concurrent commands</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> acts as a command-line task launcher and can be used as the base
+to build a GUI-based task launcher and task monitor. To this aim the
+interpreter class provides a <tt class="docutils literal">.submit</tt> method which returns a task
+object and a <tt class="docutils literal">.tasks</tt> method returning the list of all the tasks
+submitted to the interpreter.  The <tt class="docutils literal">submit</tt> method does not start the task
+and thus it is nonblocking.
+Each task has an <tt class="docutils literal">.outlist</tt> attribute which is a list
+storing the value yielded by the generator underlying the task (the
+<tt class="docutils literal">None</tt> values are skipped though): the <tt class="docutils literal">.outlist</tt> grows as the
+task runs and more values are yielded. Accessing the <tt class="docutils literal">.outlist</tt> is
+nonblocking and can be done freely.
+Finally there is a <tt class="docutils literal">.result</tt>
+property which waits for the task to finish and returns the last yielded
+value or raises an exception. The code below provides an example of
+how you could implement a GUI over the importer example:</p>
+<pre class="literal-block">
+from __future__ import with_statement
+from Tkinter import *
+from importer3 import FakeImporter
+
+def taskwidget(root, task, tick=500):
+    &quot;A Label widget showing the output of a task every 500 ms&quot;
+    sv = StringVar(root)
+    lb = Label(root, textvariable=sv)
+    def show_outlist():
+        try:
+            out = task.outlist[-1]
+        except IndexError: # no output yet
+            out = ''
+        sv.set('%s %s' % (task, out))
+        root.after(tick, show_outlist)
+    root.after(0, show_outlist)
+    return lb
+
+def monitor(tasks):
+    root = Tk()
+    for task in tasks:
+        task.run()
+        taskwidget(root, task).pack()
+    root.mainloop()
+
+if __name__ == '__main__':
+    import plac
+    with plac.Interpreter(plac.call(FakeImporter)) as i:
+        tasks = [i.submit('import_file f1'), i.submit('import_file f2')]
+        monitor(tasks)
+
+</pre>
+</div>
+</div>
+<div class="section" id="experimental-features">
+<h1><a class="toc-backref" href="#id46">Experimental features</a></h1>
+<p>The distribution of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> includes a few experimental features which I am
+not committed to fully support and that may go away in future versions.
+They are included as examples of things that you may build on top of
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>: the aim is to give you ideas. Some of the experimental features
+might grow to become external projects build on <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
+<div class="section" id="parallel-computing-with-plac">
+<h2><a class="toc-backref" href="#id47">Parallel computing with plac</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is certainly not intended as a tool for parallel computing, but
+still you can use it to launch a set of commands and to collect the
+results, similarly to the MapReduce pattern popularized by
+Google.  In order to give an example, I will consider the &quot;Hello
+World&quot; of parallel computing, i.e. the computation of pi with
+independent processes.  There is a huge number of algorithms to
+compute pi; here I will describe a trivial one chosen for simplicity,
+not per efficienty. The trick is to consider the first quadrant of a
+circle with radius 1 and to extract a number of points <tt class="docutils literal">(x, y)</tt> with
+<tt class="docutils literal">x</tt> and <tt class="docutils literal">y</tt> random variables in the interval <tt class="docutils literal">[0,1]</tt>. The
+probability of extracting a number inside the quadrant (i.e. with
+<tt class="docutils literal">x^2 + y^2 &lt; 1</tt>) is proportional to the area of the quadrant
+(i.e. <tt class="docutils literal">pi/4</tt>). The value of <tt class="docutils literal">pi</tt> therefore can be extracted by
+multiplying by 4 the ratio between the number of points in the
+quadrant versus the total number of points <tt class="docutils literal">N</tt>, for <tt class="docutils literal">N</tt> large:</p>
+<pre class="literal-block">
+def calc_pi(N):
+    inside = 0
+    for j in xrange(N):
+        x, y = random(), random()
+        if x*x + y*y &lt; 1:
+            inside += 1
+    return (4.0 * inside) / N
+</pre>
+<p>The algorithm is trivially parallelizable: if you have n CPUs, you can
+compute pi n times with N/n iterations, sum the results and divide the total
+by n. I have a Macbook with two cores, therefore I would expect a speedup
+factor of 2 with respect to a sequential computation. Moreover, I would
+expect a threaded computation to be even slower than a sequential
+computation, due to the GIL and the scheduling overhead.</p>
+<p>Here is a script implementing the algorithm and working in three different
+modes (parallel mode, threaded mode and sequential mode) depending on a
+<tt class="docutils literal">mode</tt> option:</p>
+<pre class="literal-block">
+from __future__ import with_statement
+from random import random
+import multiprocessing
+import plac
+
+class PiCalculator(object):
+    &quot;&quot;&quot;Compute pi in parallel with threads or processes&quot;&quot;&quot;
+    
+    &#64;plac.annotations(
+        npoints=('number of integration points', 'positional', None, int),
+        mode=('sequential|parallel|threaded', 'option', 'm', str, 'SPT'))
+    def __init__(self, npoints, mode='S'):
+        self.npoints = npoints
+        if mode == 'P':
+            self.mpcommands = ['calc_pi']
+        elif mode == 'T':
+            self.thcommands = ['calc_pi']
+        elif mode == 'S':
+            self.commands = ['calc_pi']
+        self.n_cpu = multiprocessing.cpu_count()
+    
+    def submit_tasks(self):
+        self.i = plac.Interpreter(self).__enter__()            
+        return [self.i.submit('calc_pi %d' % (self.npoints / self.n_cpu))
+                for _ in range(self.n_cpu)]
+
+    def close(self):
+        self.i.close()
+
+    &#64;plac.annotations(
+        npoints=('npoints', 'positional', None, int))
+    def calc_pi(self, npoints):
+        counts = 0
+        for j in range(npoints):
+            n, r = divmod(j, 1000000)
+            if r == 0:
+                yield '%dM iterations' % n
+            x, y = random(), random()
+            if x*x + y*y &lt; 1:
+                counts += 1
+        yield (4.0 * counts)/npoints
+
+    def run(self):
+        tasks = self.i.tasks()
+        for t in tasks:
+            t.run()
+        try:
+            total = 0
+            for task in tasks:
+                total += task.result
+        except: # the task was killed
+            print(tasks)
+            return
+        return total / self.n_cpu
+
+if __name__ == '__main__':
+    pc = plac.call(PiCalculator)
+    pc.submit_tasks()
+    try:
+        import time; t0 = time.time()
+        print('%f in %f seconds ' % (pc.run(), time.time() - t0))
+    finally:
+        pc.close()
+
+</pre>
+<p>Notice the <tt class="docutils literal">submit_tasks</tt> method, which instantiates and initializes a
+<tt class="docutils literal">plac.Interpreter</tt> object and submits a number of commands corresponding
+to the number of available CPUs. The <tt class="docutils literal">calc_pi</tt> command yield a log
+message every million of interactions, just to monitor the progress of
+the computation. The <tt class="docutils literal">run</tt> method starts all the submitted commands
+in parallel and sums the results. It returns the average value of <tt class="docutils literal">pi</tt>
+after the slowest CPU has finished its job (if the CPUs are equal and
+equally busy they should finish more or less at the same time).</p>
+<p>Here are the results on my old Macbook with Ubuntu 10.04 and Python 2.6,
+for 10 million of iterations:</p>
+<pre class="literal-block">
+$ python picalculator.py -mP 10000000 # two processes
+3.141904 in 5.744545 seconds
+$ python picalculator.py -mT 10000000 # two threads
+3.141272 in 13.875645 seconds
+$ python picalculator.py -mS 10000000 # sequential
+3.141586 in 11.353841 seconds
+</pre>
+<p>As you see using processes one gets a 2x speedup indeed, where the threaded
+mode is some 20% slower than the sequential mode.</p>
+<p>Since the pattern submit a bunch of tasks, starts them and collect the
+results is so common, <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides an utility function
+<tt class="docutils literal">runp(genseq, <span class="pre">mode='p')</span></tt> to start
+a bunch a generators and return a list of results. By default
+<tt class="docutils literal">runp</tt> use processes, but you can use threads by passing <tt class="docutils literal"><span class="pre">mode='t'</span></tt>.
+With <tt class="docutils literal">runp</tt> the parallel pi calculation becomes a one-liner:</p>
+<pre class="literal-block">
+sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
+</pre>
+<p>The file <tt class="docutils literal">test_runp</tt> in the <tt class="docutils literal">doc</tt> directory of the plac distribution
+shows another example of usage. Notice that if one of the tasks fails
+for some reason, instead of the result you will get the exception object.</p>
+</div>
+<div class="section" id="monitor-support">
+<h2><a class="toc-backref" href="#id48">Monitor support</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides experimental support for monitoring the output of
+concurrent commands, at least for platforms where multiprocessing is
+fully supported. You can define your own monitor class, simply by
+inheriting from <tt class="docutils literal">plac.Monitor</tt> and by overriding the methods
+<tt class="docutils literal">add_listener(self, no)</tt>, <tt class="docutils literal">del_listener(self, taskno)</tt>,
+<tt class="docutils literal">notify_listener(self, taskno, msg)</tt>, <tt class="docutils literal">read_queue(self)</tt>
+<tt class="docutils literal">start(self)</tt> and <tt class="docutils literal">stop(self)</tt>.  Then, you can a monitor object to
+any <tt class="docutils literal">plac.Interpreter</tt> object by simply calling the <tt class="docutils literal">add_monitor</tt>
+method. For convenience, <tt class="docutils literal">plac</tt> comes with a very simple
+<tt class="docutils literal">TkMonitor</tt> based on Tkinter (I chose Tkinter because it is easy to
+use and it is in the standard library, but you can use any GUI): you
+can just look at how the <tt class="docutils literal">TkMonitor</tt> is implemented in
+<tt class="docutils literal">plac_tk.py</tt> and adapt it. Here is an example of usage of the
+<tt class="docutils literal">TkMonitor</tt>:</p>
+<pre class="literal-block">
+from __future__ import with_statement
+import plac
+
+class Hello(object):
+    mpcommands = ['hello', 'quit']
+    def hello(self):
+        yield 'hello'
+    def quit(self):
+        raise plac.Interpreter.Exit
+
+if __name__ == '__main__':
+    i = plac.Interpreter(Hello())
+    i.add_monitor(plac.TkMonitor('tkmon'))
+    i.interact()
+
+    
+
+</pre>
+<p>Try to give the <tt class="docutils literal">hello</tt> command from the interactive interpreter:
+each time a new text widget will be added displaying the output
+of the command. Notice that if <tt class="docutils literal">Tkinter</tt> is not installed correctly
+on your system the <tt class="docutils literal">TkMonitor</tt> class will not be available.</p>
+</div>
+<div class="section" id="the-plac-server">
+<h2><a class="toc-backref" href="#id49">The plac server</a></h2>
+<p>A command-line oriented interface can be easily converted into a
+socket-based interface. Starting from release 0.7 plac features a
+builtin server which is able to accept commands from multiple clients
+and to execute them. The server works by instantiating a separate
+interpreter for each client, so that if a client interpreter dies for
+any reason the other interpreters keep working.  To avoid external
+dependencies the server is based on the <tt class="docutils literal">asynchat</tt> module in the
+standard library, but it would not be difficult to replace the server
+with a different one (for instance, a Twisted server).  Notice that at
+the moment the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> server does not work with to Python 3.2 due to
+changes to <tt class="docutils literal">asynchat</tt>. In time I fill fix this and other known
+issue.  You should consider the server functionality still
+experimental and subject to changes. Also, notice that since
+<tt class="docutils literal">asynchat</tt>-based servers are asynchronous, any blocking command in
+the interpreter should be run in a separated process or thread.  The
+default port for the <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> server is 2199, and the command to signal
+end-of-connection is EOF.  For instance, here is how you could manage
+remote import on a database (say a SQLite db):</p>
+<pre class="literal-block">
+import plac
+from importer2 import FakeImporter
+
+def main(port=2199):
+    main = FakeImporter('dsn')
+    plac.Interpreter(main).start_server(port)
+    
+if __name__ == '__main__':
+   plac.call(main)
+
+</pre>
+<p>You can connect to the server with <tt class="docutils literal">telnet</tt> on port 2199, as follows:</p>
+<pre class="literal-block">
+$ telnet localhost 2199
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+i&gt; import_file f1
+i&gt; .list
+&lt;ThreadedTask 1 [import_file f1] RUNNING&gt;
+i&gt; .out
+Imported 100 lines
+Imported 200 lines
+i&gt; EOF
+Connection closed by foreign host.
+</pre>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id50">Summary</a></h2>
+<p>Once <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> claimed to be the easiest command-line arguments parser
+in the world. Having read this document you may think that it is not
+so easy after all. But it is a false impression. Actually the
+rules are quite simple:</p>
+<ol class="arabic simple">
+<li>if you want to implement a command-line script, use <tt class="docutils literal">plac.call</tt>;</li>
+<li>if you want to implement a command interpreter, use <tt class="docutils literal">plac.Interpreter</tt>:<ul>
+<li>for an interactive interpreter, call the <tt class="docutils literal">.interact</tt> method;</li>
+<li>for an batch interpreter, call the <tt class="docutils literal">.execute</tt> method;</li>
+</ul>
+</li>
+<li>for testing call the <tt class="docutils literal">Interpreter.check</tt> method in the appropriate context
+or use the <tt class="docutils literal">Interpreter.doctest</tt> feature;</li>
+<li>if you need to go at a lower level, you may need to call the
+<tt class="docutils literal">Interpreter.send</tt> method which returns a (finished) <tt class="docutils literal">Task</tt> object.</li>
+<li>long running command can be executed in the background as threads or
+processes: just declare them in the lists <tt class="docutils literal">thcommands</tt> and <tt class="docutils literal">mpcommands</tt>
+respectively.</li>
+<li>the <tt class="docutils literal">.start_server</tt> method starts an asynchronous server on the
+given port number (default 2199)</li>
+</ol>
+<p>Moreover, remember that <tt class="docutils literal">plac_runner.py</tt> is your friend.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="appendix-custom-annotation-objects">
+<h2><a class="toc-backref" href="#id51">Appendix: custom annotation objects</a></h2>
+<p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal">Annotation</tt> class to convert the tuples
+in the function signature into annotation objects, i.e. objects with
+six attributes <tt class="docutils literal">help, kind, short, type, choices, metavar</tt>.</p>
+<p>Advanced users can implement their own annotation objects.
+For instance, here is an example of how you could implement annotations for
+positional arguments:</p>
+<pre class="literal-block">
+# annotations.py
+class Positional(object):
+    def __init__(self, help='', type=None, choices=None, metavar=None):
+        self.help = help
+        self.kind = 'positional'
+        self.abbrev = None
+        self.type = type
+        self.choices = choices
+        self.metavar = metavar
+
+</pre>
+<p>You can use such annotations objects as follows:</p>
+<pre class="literal-block">
+# example11.py
+import plac
+from annotations import Positional
+
+&#64;plac.annotations(
+    i=Positional(&quot;This is an int&quot;, int),
+    n=Positional(&quot;This is a float&quot;, float),
+    rest=Positional(&quot;Other arguments&quot;))
+def main(i, n, *rest):
+    print(i, n, rest)
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here is the usage message you get:</p>
+<pre class="literal-block">
+usage: example11.py [-h] i n [rest [rest ...]]
+
+positional arguments:
+  i           This is an int
+  n           This is a float
+  rest        Other arguments
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+</pre>
+<p>You can go on and define <tt class="docutils literal">Option</tt> and <tt class="docutils literal">Flag</tt> classes, if you like.
+Using custom annotation objects you could do advanced things like extracting the
+annotations from a configuration file or from a database, but I expect such
+use cases to be quite rare: the default mechanism should work
+pretty well for most users.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

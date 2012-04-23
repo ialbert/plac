@@ -1,0 +1,10 @@
+#!ishelve2.py:ShelveInterface -configfile=~/test.shelve
+# an example of .placet file for the ShelveInterface
+i> del
+deleting everything
+i> set a 1
+setting a=1
+i> set b 2
+setting b=2
+i> show a
+a = 1

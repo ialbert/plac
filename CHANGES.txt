@@ -1,0 +1,56 @@
+HISTORY
+----------
+
+0.9.1 Options and flags can now contain dashes (i.e. ``--dry-run`` is valid and
+      translated into dry_run, you are not forced to use ``--dry-run`` anymore); 
+      restored the monitor support temporarily removed in 0.9.0, fixed an issue
+      with tuple defaults and fixed the display of the help command; specified
+      which features are experimental and which features are fully supported
+      (2012-04-23)
+0.9.0 Default values are now displayed in the help message by default;
+      removed .help and introduced help; removed the special dotted
+      commands from the usage message; added an ``Interpreter.Exit``
+      exception; removed the experimental monitor framework because
+      it is too much platform-dependent; added a reference
+      to Argh; now plac has its own space on Google Code (2011-06-19)
+0.8.1 Removed a stray newline in the output of plac, as signaled
+      by Daniele Pighin; fixed a bug in the doctest method raising
+      non-existing exceptions; turned the notification messages into
+      unicode strings; removed an ugly SystemExit message
+      for invalid commands, signaled by Tuk Bredsdorff (2011-04-11)
+0.8.0 Added a monitor framework and a TkMonitor (2011-02-16)
+0.7.6 Fixed the error propagation in ``Interpreter.__exit__``.
+      Added a note about commandline and marrow.script in the documentation
+      (2011-01-13)
+0.7.5 Fixed a bug with the help of subcommands, signaled by Paul Jacobson;
+      added the ability to save the output of a command into a file; postponed
+      the import of the readline module to avoid buffering issues; fixed a
+      bug with the traceback when in multiprocessing mode (2011-01-01)
+0.7.4 Fixed the plac_runner switches -i and -s; fixed a bug with multiline
+      output and issue with nosetest (2010-09-04)
+0.7.3 Put the documentation in a single document; added runp (2010-08-31)
+0.7.2 Interpreter.call does not start an interpreter automagically anymore;
+      better documented and added tests for the metavar concept (2010-08-31)
+0.7.1 A few bug fixes (2010-08-11)
+0.7.0 Improved and documented the support for parallel programming;
+      added an asynchronous server; added plac.Interpreter.call (2010-08-07)
+0.6.1 Fixed the history file location; added the ability to pass a split
+      function; added two forgotten files; added a reference to cmd2 by 
+      Catherine Devlin (2010-07-12)
+0.6.0 Improved the interactive experience with full readline support and
+      custom help. Added support for long running command, via threads and
+      processes (2010-07-11)
+0.5.0 Gigantic release. Introduced smart options, added an Interpreter class
+      and the command container concept. Made the split plac/plac_core/plac_ext
+      and added a plac runner, able to run scripts, batch files and doctests.
+      Removed the default formatter class (2010-06-20)
+0.4.3 Fixed the installation procedure to automatically download argparse
+      if needed (2010-06-11)
+0.4.2 Added missing .help files, made the tests generative and added a
+      note about Clap in the documentation (2010-06-04)
+0.4.1 Changed the default formatter class and fixed a bug in the
+      display of the default arguments. Added more stringent tests. (2010-06-03)
+0.4.0 abbrev is now optional. Added a note about CLIArgs and opterate.
+      Added keyword arguments recognition. ``plac.call`` now returns the
+      the output of the main function. (2010-06-03)
+0.3.0 Initial version. (2010-06-02)

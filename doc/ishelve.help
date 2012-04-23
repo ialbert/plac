@@ -1,0 +1,18 @@
+usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
+                  [.filename /home/micheles/conf.shelve]
+                  [params [params ...]] [setters [setters ...]]
+
+Simple interface to a shelve
+
+positional arguments:
+  params                names of the parameters in the shelve
+  setters               setters param=value
+
+optional arguments:
+  .help                 show help
+  .showall              show all parameters in the shelve
+  .clear                clear the shelve
+  .delete DELETE        delete an element
+  .filename /home/micheles/conf.shelve
+                        filename of the shelve
+
