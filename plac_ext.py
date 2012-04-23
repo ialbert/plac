@@ -143,7 +143,7 @@ class HelpSummary(object):
         c.print_topics('special commands',
                        sorted(specialcommands), 15, 80)
         c.print_topics('custom commands',
-                       sorted(obj.syncommands), 15, 80)
+                       sorted(obj.commands), 15, 80)
         c.print_topics('commands run in external processes',
                        sorted(obj.mpcommands), 15, 80)
         c.print_topics('threaded commands',
@@ -791,23 +791,16 @@ class Interpreter(object):
 
     def _set_commands(self, obj):
         "Make sure obj has the right command attributes as Python sets"
-        for attrname in ('commands', 'syncommands', 'mpcommands', 'thcommands'):
-            try:
-                sequence = getattr(obj, attrname)
-            except AttributeError:
-                sequence = []
-            if not isinstance(sequence, set):
-                sequence = set(sequence)
-            setattr(obj, attrname, sequence)
-        obj.syncommands.update(obj.commands)
+        for attrname in ('commands', 'mpcommands', 'thcommands'):
+            setattr(self, attrname, set(getattr(self.__class__, attrname, [])))
+            setattr(obj, attrname, set(getattr(obj, attrname, [])))
         self.commands = obj.commands
-        self.commands.update(obj.syncommands)
-        self.commands.update(obj.mpcommands)
-        self.commands.update(obj.thcommands)
+        self.mpcommands.update(obj.mpcommands)
+        self.thcommands.update(obj.thcommands)
         if obj.commands and not hasattr(obj, 'help'): # add default help
             obj.help = default_help.__get__(obj, obj.__class__)
             self.commands.add('help')
-            
+
     def __enter__(self):
         "Start the inner interpreter loop"
         self._interpreter = self._make_interpreter()

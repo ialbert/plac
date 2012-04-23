@@ -120,7 +120,7 @@ def parser_from(obj, **confparams):
     parser.obj = obj
     parser.case_sensitive = confparams.get(
         'case_sensitive', getattr(obj, 'case_sensitive', True))
-    if hasattr(obj, 'commands') and obj.commands and not inspect.isclass(obj):
+    if hasattr(obj, 'commands') and not inspect.isclass(obj):
         # a command container instance
         parser.addsubcommands(obj.commands, obj, 'subcommands')
     else:

@@ -36,3 +36,4 @@ def test():
     for cl in clients:
         cl.join()
     server.terminate()
+    # should trap the output and check it
