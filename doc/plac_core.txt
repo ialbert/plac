@@ -3,7 +3,7 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: June 2011
+:Date: May 2012
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: http://plac.googlecode.com/hg/doc/plac.html
 :Requires: Python 2.3+
