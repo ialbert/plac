@@ -777,7 +777,6 @@ class Interpreter(object):
         self.man = self.tm.man
         self.parser =  self.tm.parser
         if self.commands:
-            self.commands.update(self.tm.specialcommands)
             self.parser.addsubcommands(
                 self.tm.specialcommands, self.tm, title='special commands')
         if obj.mpcommands:
@@ -797,7 +796,8 @@ class Interpreter(object):
         self.commands = obj.commands
         self.mpcommands.update(obj.mpcommands)
         self.thcommands.update(obj.thcommands)
-        if obj.commands and not hasattr(obj, 'help'): # add default help
+        if (obj.commands or obj.mpcommands or obj.thcommands
+            ) and not hasattr(obj, 'help'): # add default help
             obj.help = default_help.__get__(obj, obj.__class__)
             self.commands.add('help')
 
@@ -969,7 +969,8 @@ class Interpreter(object):
             readline_present = False
         if stdin is sys.stdin and readline_present: # use readline
             histfile = os.path.expanduser('~/.%s.history' % self.name)
-            completions = list(self.commands) + ['help']
+            completions = list(self.commands) + list(self.mpcommands) + \
+                list(self.thcommands) + list(self.tm.specialcommands)
             self.stdin = ReadlineInput(completions, histfile=histfile)
         else:
             self.stdin = stdin
