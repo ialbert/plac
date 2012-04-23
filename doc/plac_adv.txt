@@ -1043,6 +1043,15 @@ how you could implement a GUI over the importer example:
 .. include:: importer_ui.py
    :literal:
 
+Experimental features
+=========================================================================
+
+The distribution of plac_ includes a few experimental features which I am
+not committed to fully support and that may go away in future versions. 
+They are included as examples of things that you may build on top of
+plac_: the aim is to give you ideas. Some of the experimental features
+might grow to become external projects build on plac_.
+
 Parallel computing with plac
 ---------------------------------------------
 
@@ -1122,21 +1131,20 @@ for some reason, instead of the result you will get the exception object.
 Monitor support
 --------------------------------
 
-Starting from release 0.9.1 plac_ provides builtin support for monitoring the
-output of concurrent commands, at least for platforms where multiprocessing
-is fully supported. You can define your own monitor
-class, simply by inheriting from ``plac.Monitor`` and by
-overriding the methods ``add_listener(self, no)``, 
-``del_listener(self, taskno)``, ``notify_listener(self, taskno, msg)``,
-``read_queue(self)`` ``start(self)`` and ``stop(self)``. 
-Then, you can a monitor object to any ``plac.Interpreter`` object
-by simply calling the ``add_monitor`` method.
-For convenience,
-``plac`` comes with a very simple ``TkMonitor`` based on Tkinter
-(I chose Tkinter because it is easy to use and it is
-in the standard library, but you can use any GUI): you can just
-look at how the ``TkMonitor`` is implemented in ``plac_tk.py``
-and adapt it. Here is an example of usage of the ``TkMonitor``:
+plac_ provides experimental support for monitoring the output of
+concurrent commands, at least for platforms where multiprocessing is
+fully supported. You can define your own monitor class, simply by
+inheriting from ``plac.Monitor`` and by overriding the methods
+``add_listener(self, no)``, ``del_listener(self, taskno)``,
+``notify_listener(self, taskno, msg)``, ``read_queue(self)``
+``start(self)`` and ``stop(self)``.  Then, you can a monitor object to
+any ``plac.Interpreter`` object by simply calling the ``add_monitor``
+method. For convenience, ``plac`` comes with a very simple
+``TkMonitor`` based on Tkinter (I chose Tkinter because it is easy to
+use and it is in the standard library, but you can use any GUI): you
+can just look at how the ``TkMonitor`` is implemented in
+``plac_tk.py`` and adapt it. Here is an example of usage of the
+``TkMonitor``:
 
 .. include:: tkmon.py
    :literal:

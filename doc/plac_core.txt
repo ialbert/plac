@@ -298,6 +298,24 @@ is an abbreviation of ``-z -x -v -f``). I usually do not provide
 the one-character abbreviation for options, since it does not make sense
 to compose them.
 
+Starting from plac_ 0.9.1 dashes in options and flags are
+automatically turned into underscores. This feature was implemented at user
+request, to make it possible to use a more traditional naming. For
+instance now you can have a ``--dry-run`` flag, whereas before you had
+to use ``--dry_run``.
+
+.. include:: dry_run.py
+   :literal:
+
+Here is an example of usage::
+
+ $ python3.2 dry_run.py -h
+ usage: dry_run.py [-h] [-d]
+ 
+ optional arguments:
+   -h, --help     show this help message and exit
+   -d, --dry-run  Dry run
+ 
 plac for Python 2.X users
 --------------------------------------------------
 

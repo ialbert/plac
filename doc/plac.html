@@ -474,11 +474,14 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 <li><a class="reference internal" href="#threaded-commands" id="id43">Threaded commands</a></li>
 <li><a class="reference internal" href="#running-commands-as-external-processes" id="id44">Running commands as external processes</a></li>
 <li><a class="reference internal" href="#managing-the-output-of-concurrent-commands" id="id45">Managing the output of concurrent commands</a></li>
-<li><a class="reference internal" href="#parallel-computing-with-plac" id="id46">Parallel computing with plac</a></li>
-<li><a class="reference internal" href="#monitor-support" id="id47">Monitor support</a></li>
-<li><a class="reference internal" href="#the-plac-server" id="id48">The plac server</a></li>
-<li><a class="reference internal" href="#summary" id="id49">Summary</a></li>
-<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id50">Appendix: custom annotation objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#experimental-features" id="id46">Experimental features</a><ul>
+<li><a class="reference internal" href="#parallel-computing-with-plac" id="id47">Parallel computing with plac</a></li>
+<li><a class="reference internal" href="#monitor-support" id="id48">Monitor support</a></li>
+<li><a class="reference internal" href="#the-plac-server" id="id49">The plac server</a></li>
+<li><a class="reference internal" href="#summary" id="id50">Summary</a></li>
+<li><a class="reference internal" href="#appendix-custom-annotation-objects" id="id51">Appendix: custom annotation objects</a></li>
 </ul>
 </li>
 </ul>
@@ -914,6 +917,31 @@ this way you can use the GNU-style composition of flags (i.e. <tt class="docutil
 is an abbreviation of <tt class="docutils literal"><span class="pre">-z</span> <span class="pre">-x</span> <span class="pre">-v</span> <span class="pre">-f</span></tt>). I usually do not provide
 the one-character abbreviation for options, since it does not make sense
 to compose them.</p>
+<p>Starting from <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> 0.9.1 dashes in options and flags are
+automatically turned into underscores. This feature was implemented at user
+request, to make it possible to use a more traditional naming. For
+instance now you can have a <tt class="docutils literal"><span class="pre">--dry-run</span></tt> flag, whereas before you had
+to use <tt class="docutils literal"><span class="pre">--dry_run</span></tt>.</p>
+<pre class="literal-block">
+def main(dry_run: ('Dry run', 'flag', 'd')):
+    if dry_run:
+        print('Doing nothing')
+    else:
+        print('Doing something')
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
+
+</pre>
+<p>Here is an example of usage:</p>
+<pre class="literal-block">
+$ python3.2 dry_run.py -h
+usage: dry_run.py [-h] [-d]
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -d, --dry-run  Dry run
+</pre>
 </div>
 <div class="section" id="plac-for-python-2-x-users">
 <h2><a class="toc-backref" href="#id21">plac for Python 2.X users</a></h2>
@@ -2745,8 +2773,16 @@ if __name__ == '__main__':
 
 </pre>
 </div>
+</div>
+<div class="section" id="experimental-features">
+<h1><a class="toc-backref" href="#id46">Experimental features</a></h1>
+<p>The distribution of <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> includes a few experimental features which I am
+not committed to fully support and that may go away in future versions.
+They are included as examples of things that you may build on top of
+<a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>: the aim is to give you ideas. Some of the experimental features
+might grow to become external projects build on <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a>.</p>
 <div class="section" id="parallel-computing-with-plac">
-<h2><a class="toc-backref" href="#id46">Parallel computing with plac</a></h2>
+<h2><a class="toc-backref" href="#id47">Parallel computing with plac</a></h2>
 <p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> is certainly not intended as a tool for parallel computing, but
 still you can use it to launch a set of commands and to collect the
 results, similarly to the MapReduce pattern popularized by
@@ -2814,7 +2850,7 @@ class PiCalculator(object):
         npoints=('npoints', 'positional', None, int))
     def calc_pi(self, npoints):
         counts = 0
-        for j in xrange(npoints):
+        for j in range(npoints):
             n, r = divmod(j, 1000000)
             if r == 0:
                 yield '%dM iterations' % n
@@ -2832,7 +2868,7 @@ class PiCalculator(object):
             for task in tasks:
                 total += task.result
         except: # the task was killed
-            print tasks
+            print(tasks)
             return
         return total / self.n_cpu
 
@@ -2841,7 +2877,7 @@ if __name__ == '__main__':
     pc.submit_tasks()
     try:
         import time; t0 = time.time()
-        print '%f in %f seconds ' % (pc.run(), time.time() - t0)
+        print('%f in %f seconds ' % (pc.run(), time.time() - t0))
     finally:
         pc.close()
 
@@ -2880,22 +2916,21 @@ shows another example of usage. Notice that if one of the tasks fails
 for some reason, instead of the result you will get the exception object.</p>
 </div>
 <div class="section" id="monitor-support">
-<h2><a class="toc-backref" href="#id47">Monitor support</a></h2>
-<p>Starting from release 0.9.1 <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides builtin support for monitoring the
-output of concurrent commands, at least for platforms where multiprocessing
-is fully supported. You can define your own monitor
-class, simply by inheriting from <tt class="docutils literal">plac.Monitor</tt> and by
-overriding the methods <tt class="docutils literal">add_listener(self, no)</tt>,
-<tt class="docutils literal">del_listener(self, taskno)</tt>, <tt class="docutils literal">notify_listener(self, taskno, msg)</tt>,
-<tt class="docutils literal">read_queue(self)</tt> <tt class="docutils literal">start(self)</tt> and <tt class="docutils literal">stop(self)</tt>.
-Then, you can a monitor object to any <tt class="docutils literal">plac.Interpreter</tt> object
-by simply calling the <tt class="docutils literal">add_monitor</tt> method.
-For convenience,
-<tt class="docutils literal">plac</tt> comes with a very simple <tt class="docutils literal">TkMonitor</tt> based on Tkinter
-(I chose Tkinter because it is easy to use and it is
-in the standard library, but you can use any GUI): you can just
-look at how the <tt class="docutils literal">TkMonitor</tt> is implemented in <tt class="docutils literal">plac_tk.py</tt>
-and adapt it. Here is an example of usage of the <tt class="docutils literal">TkMonitor</tt>:</p>
+<h2><a class="toc-backref" href="#id48">Monitor support</a></h2>
+<p><a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> provides experimental support for monitoring the output of
+concurrent commands, at least for platforms where multiprocessing is
+fully supported. You can define your own monitor class, simply by
+inheriting from <tt class="docutils literal">plac.Monitor</tt> and by overriding the methods
+<tt class="docutils literal">add_listener(self, no)</tt>, <tt class="docutils literal">del_listener(self, taskno)</tt>,
+<tt class="docutils literal">notify_listener(self, taskno, msg)</tt>, <tt class="docutils literal">read_queue(self)</tt>
+<tt class="docutils literal">start(self)</tt> and <tt class="docutils literal">stop(self)</tt>.  Then, you can a monitor object to
+any <tt class="docutils literal">plac.Interpreter</tt> object by simply calling the <tt class="docutils literal">add_monitor</tt>
+method. For convenience, <tt class="docutils literal">plac</tt> comes with a very simple
+<tt class="docutils literal">TkMonitor</tt> based on Tkinter (I chose Tkinter because it is easy to
+use and it is in the standard library, but you can use any GUI): you
+can just look at how the <tt class="docutils literal">TkMonitor</tt> is implemented in
+<tt class="docutils literal">plac_tk.py</tt> and adapt it. Here is an example of usage of the
+<tt class="docutils literal">TkMonitor</tt>:</p>
 <pre class="literal-block">
 from __future__ import with_statement
 import plac
@@ -2921,7 +2956,7 @@ of the command. Notice that if <tt class="docutils literal">Tkinter</tt> is not 
 on your system the <tt class="docutils literal">TkMonitor</tt> class will not be available.</p>
 </div>
 <div class="section" id="the-plac-server">
-<h2><a class="toc-backref" href="#id48">The plac server</a></h2>
+<h2><a class="toc-backref" href="#id49">The plac server</a></h2>
 <p>A command-line oriented interface can be easily converted into a
 socket-based interface. Starting from release 0.7 plac features a
 builtin server which is able to accept commands from multiple clients
@@ -2970,7 +3005,7 @@ Connection closed by foreign host.
 </pre>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#id49">Summary</a></h2>
+<h2><a class="toc-backref" href="#id50">Summary</a></h2>
 <p>Once <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> claimed to be the easiest command-line arguments parser
 in the world. Having read this document you may think that it is not
 so easy after all. But it is a false impression. Actually the
@@ -2996,7 +3031,7 @@ given port number (default 2199)</li>
 </div>
 <hr class="docutils" />
 <div class="section" id="appendix-custom-annotation-objects">
-<h2><a class="toc-backref" href="#id50">Appendix: custom annotation objects</a></h2>
+<h2><a class="toc-backref" href="#id51">Appendix: custom annotation objects</a></h2>
 <p>Internally <a class="reference external" href="http://pypi.python.org/pypi/plac">plac</a> uses an <tt class="docutils literal">Annotation</tt> class to convert the tuples
 in the function signature into annotation objects, i.e. objects with
 six attributes <tt class="docutils literal">help, kind, short, type, choices, metavar</tt>.</p>
