@@ -31,7 +31,7 @@ class PiCalculator(object):
         npoints=('npoints', 'positional', None, int))
     def calc_pi(self, npoints):
         counts = 0
-        for j in xrange(npoints):
+        for j in range(npoints):
             n, r = divmod(j, 1000000)
             if r == 0:
                 yield '%dM iterations' % n
@@ -49,7 +49,7 @@ class PiCalculator(object):
             for task in tasks:
                 total += task.result
         except: # the task was killed
-            print tasks
+            print(tasks)
             return
         return total / self.n_cpu
 
@@ -58,6 +58,6 @@ if __name__ == '__main__':
     pc.submit_tasks()
     try:
         import time; t0 = time.time()
-        print '%f in %f seconds ' % (pc.run(), time.time() - t0)
+        print('%f in %f seconds ' % (pc.run(), time.time() - t0))
     finally:
         pc.close()

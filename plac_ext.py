@@ -143,7 +143,7 @@ class HelpSummary(object):
         c.print_topics('special commands',
                        sorted(specialcommands), 15, 80)
         c.print_topics('custom commands',
-                       sorted(obj.syncommands), 15, 80)
+                       sorted(obj.commands), 15, 80)
         c.print_topics('commands run in external processes',
                        sorted(obj.mpcommands), 15, 80)
         c.print_topics('threaded commands',
@@ -162,7 +162,8 @@ class HelpSummary(object):
 class PlacFormatter(argparse.RawDescriptionHelpFormatter):
     def _metavar_formatter(self, action, default_metavar):
         'Remove special commands from the usage message'
-        action.choices = dict((n, c) for n, c in action.choices.iteritems()
+        choices = action.choices or {}
+        action.choices = dict((n, c) for n, c in choices.iteritems()
                               if not n.startswith('.'))
         return super(PlacFormatter, self)._metavar_formatter(
             action, default_metavar)
@@ -354,7 +355,10 @@ class BaseTask(object):
     def result(self):
         self.wait()
         if self.exc:
-            raise self.etype, self.exc, self.tb or None
+            if isinstance(self.tb, basestring):
+                raise self.etype(self.tb)
+            else:
+                raise self.etype, self.exc, self.tb or None
         if not self.outlist:
             return None
         return self.outlist[-1]
@@ -432,7 +436,7 @@ class MPTask(BaseTask):
             return []
 
     def notify(self, msg):
-        self.man.send('notify_listener %d %r' % (self.no, msg))
+        self.man.notify_listener(self.no, msg)
 
     def __init__(self, no, arglist, genobj, manager):
         """
@@ -610,14 +614,19 @@ plac.Interpreter(plac.import_main(*%s)).interact(prompt='i>\\n')
         self.stdin.write(line + os.linesep)
         return self.recv()
 
-class Monitor(object):
+class StartStopObject(object):
+    started = False
+    def start(self): pass
+    def stop(self): pass
+
+class Monitor(StartStopObject):
     """
     Base monitor class with methods add_listener/del_listener/notify_listener
-    and start/stop/schedule/slave.
+    read_queue and and start/stop.
     """
-    commands = 'add_listener', 'del_listener', 'notify_listener'
-    def __init__(self, name):
+    def __init__(self, name, queue=None):
         self.name = name
+        self.queue = queue or multiprocessing.Queue()
     def add_listener(self, taskno):
         pass
     def del_listener(self, taskno):
@@ -628,51 +637,8 @@ class Monitor(object):
         pass
     def stop(self):
         pass
-    def schedule(self, seconds, display, arg):
+    def read_queue(self):
         pass
-
-import Queue
-
-class SlaveProcess(object):
-    """
-    Spawn a slave process reading from an input queue and displaying
-    on a monitor object. Methods are start/send/stop.
-    """
-    def __init__(self, mon):
-        self.mon= mon
-        self.queue = multiprocessing.Queue()
-        self.proc = multiprocessing.Process(None, self._run)
-
-    def start(self):
-        self.proc.start()
-
-    def send(self, line):
-        self.queue.put(line)
-
-    def stop(self):
-        self.queue.close()
-        self.proc.terminate()
-
-    def _sendline(self, i):
-        "Send a line to the underlying monitor"
-        try:
-            line = self.queue.get_nowait()
-        except Queue.Empty:
-            pass
-        else:
-            i.send(line)
-        self.mon.schedule(.1, self._sendline, i)
-
-    def _run(self):
-        with Interpreter(self.mon) as i:
-            # .schedule() must be invoked inside the with block
-            self.mon.schedule(.1, self._sendline, i)
-            self.mon.run()
-
-class StartStopObject(object):
-    started = False
-    def start(self): pass
-    def stop(self): pass
 
 class Manager(StartStopObject):
     """
@@ -687,9 +653,9 @@ class Manager(StartStopObject):
 
     def add(self, monitor):
         'Add or replace a monitor in the registry'
-        slave = SlaveProcess(monitor)
-        slave.name = monitor.name
-        self.registry[slave.name] = slave
+        proc = multiprocessing.Process(None, monitor.start, monitor.name)
+        proc.queue = monitor.queue
+        self.registry[monitor.name] = proc
 
     def delete(self, name):
         'Remove a named monitor from the registry'
@@ -699,21 +665,26 @@ class Manager(StartStopObject):
     def start(self):
         if self.mp is None:
             self.mp = multiprocessing.Manager()
-        for slave in self.registry.itervalues():
-            slave.start()
+        for monitor in self.registry.itervalues():
+            monitor.start()
         self.started = True
 
     def stop(self):
-        for slave in self.registry.itervalues():
-            slave.stop()
+        for monitor in self.registry.itervalues():
+            monitor.queue.close()
+            monitor.terminate()
         if self.mp:
             self.mp.shutdown()
             self.mp = None
         self.started = False
 
-    def send(self, line):
-        for slave in self.registry.itervalues():
-            slave.send(line)
+    def notify_listener(self, taskno, msg):
+        for monitor in self.registry.itervalues():
+            monitor.queue.put(('notify_listener', taskno, msg))
+
+    def add_listener(self, no):
+        for monitor in self.registry.itervalues():
+            monitor.queue.put(('add_listener', no))
 
 ########################## plac server ##############################
 
@@ -806,7 +777,6 @@ class Interpreter(object):
         self.man = self.tm.man
         self.parser =  self.tm.parser
         if self.commands:
-            self.commands.update(self.tm.specialcommands)
             self.parser.addsubcommands(
                 self.tm.specialcommands, self.tm, title='special commands')
         if obj.mpcommands:
@@ -820,23 +790,17 @@ class Interpreter(object):
 
     def _set_commands(self, obj):
         "Make sure obj has the right command attributes as Python sets"
-        for attrname in ('commands', 'syncommands', 'mpcommands', 'thcommands'):
-            try:
-                sequence = getattr(obj, attrname)
-            except AttributeError:
-                sequence = []
-            if not isinstance(sequence, set):
-                sequence = set(sequence)
-            setattr(obj, attrname, sequence)
-        obj.syncommands.update(obj.commands)
+        for attrname in ('commands', 'mpcommands', 'thcommands'):
+            setattr(self, attrname, set(getattr(self.__class__, attrname, [])))
+            setattr(obj, attrname, set(getattr(obj, attrname, [])))
         self.commands = obj.commands
-        self.commands.update(obj.syncommands)
-        self.commands.update(obj.mpcommands)
-        self.commands.update(obj.thcommands)
-        if obj.commands and not hasattr(obj, 'help'): # add default help
+        self.mpcommands.update(obj.mpcommands)
+        self.thcommands.update(obj.thcommands)
+        if (obj.commands or obj.mpcommands or obj.thcommands
+            ) and not hasattr(obj, 'help'): # add default help
             obj.help = default_help.__get__(obj, obj.__class__)
             self.commands.add('help')
-            
+
     def __enter__(self):
         "Start the inner interpreter loop"
         self._interpreter = self._make_interpreter()
@@ -865,7 +829,7 @@ class Interpreter(object):
         if not plac_core._match_cmd(arglist[0], self.tm.specialcommands):
             self.tm.registry[task.no] = task
             if m:
-                m.send('add_listener %d' % task.no)
+                m.add_listener(task.no)
         return task
 
     def send(self, line):
@@ -1005,7 +969,8 @@ class Interpreter(object):
             readline_present = False
         if stdin is sys.stdin and readline_present: # use readline
             histfile = os.path.expanduser('~/.%s.history' % self.name)
-            completions = list(self.commands) + ['help']
+            completions = list(self.commands) + list(self.mpcommands) + \
+                list(self.thcommands) + list(self.tm.specialcommands)
             self.stdin = ReadlineInput(completions, histfile=histfile)
         else:
             self.stdin = stdin
@@ -1093,17 +1058,20 @@ class _TaskLauncher(object):
         for out in self.genlist[int(i) - 1]:
             yield out
 
-def runp(genseq, mode='p', start=True):
+def runp(genseq, mode='p'):
     """Run a sequence of generators in parallel. Mode can be 'p' (use processes)
-    or 't' (use threads). Return a list of running task objects. If start is
-    False, the tasks are only submitted and not automatically started.
+    or 't' (use threads). After all of them are finished, return a list of 
+    task objects.
     """
     assert mode in 'pt', mode
     launcher = _TaskLauncher(genseq, mode)
-    inter = Interpreter(launcher).__enter__()
-    for i in range(len(launcher.genlist)):
-        inter.submit('rungen %d' % (i + 1))
-    if start:
+    res = []
+    with Interpreter(launcher) as inter:
+        for i in range(len(launcher.genlist)):
+            inter.submit('rungen %d' % (i + 1)).run()
         for task in inter.tasks():
-            task.run()
-    return inter.tasks()
+            try:
+                res.append(task.result)
+            except Exception, e:
+                res.append(e)
+    return res

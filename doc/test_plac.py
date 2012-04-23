@@ -108,6 +108,12 @@ def test_p4():
     arg = p4.parse_args(['--color=red'])
     assert arg.color == 'red'
 
+p5 = parser_from(lambda dry_run=False: None, dry_run=('Dry run', 'flag', 'x'))
+
+def test_p5():
+    arg = p5.parse_args(['--dry-run'])
+    assert arg.dry_run is True,  arg.dry_run
+
 def test_flag_with_default():
     expect(TypeError, parser_from, lambda yes_or_no='no': None,
            yes_or_no=('A yes/no flag', 'flag', 'f'))

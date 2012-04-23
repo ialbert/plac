@@ -120,7 +120,7 @@ def parser_from(obj, **confparams):
     parser.obj = obj
     parser.case_sensitive = confparams.get(
         'case_sensitive', getattr(obj, 'case_sensitive', True))
-    if hasattr(obj, 'commands') and obj.commands and not inspect.isclass(obj):
+    if hasattr(obj, 'commands') and not inspect.isclass(obj):
         # a command container instance
         parser.addsubcommands(obj.commands, obj, 'subcommands')
     else:
@@ -249,12 +249,12 @@ class ArgumentParser(argparse.ArgumentParser):
             else:
                 dflt = default
                 if a.help is None:
-                    a.help = '[%s]' % dflt
+                    a.help = '[%s]' % str(dflt) # dflt can be a tuple
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
-                    shortlong = (prefix + a.abbrev, prefix*2 + name)
+                    shortlong = (prefix + a.abbrev, prefix*2 + name.replace('_', '-'))
                 else:
-                    shortlong = (prefix + name,)
+                    shortlong = (prefix + name.replace('_', '-'),)
             elif default is NONE: # required argument
                 self.add_argument(name, help=a.help, type=a.type, 
                                    choices=a.choices, metavar=metavar)

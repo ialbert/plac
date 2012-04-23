@@ -19,7 +19,7 @@ def telnet(commands, port):
                           stdin=subprocess.PIPE)
     try:
         for cmd in commands.splitlines():
-            po.stdin.write(cmd + '\n')
+            po.stdin.write((cmd + '\n').encode('ascii'))
             time.sleep(.1) # wait a bit for the server to answer
     finally:
         po.stdin.close()
@@ -36,3 +36,4 @@ def test():
     for cl in clients:
         cl.join()
     server.terminate()
+    # should trap the output and check it
