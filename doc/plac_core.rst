@@ -6,7 +6,7 @@ Plac: Parsing the Command Line the Easy Way
 :Date: June 2016
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: https://github.com/micheles/plac
-:Requires: Python 2.3+
+:Requires: Python 2.6+
 :Installation: ``pip install plac``
 :License: BSD license
 
