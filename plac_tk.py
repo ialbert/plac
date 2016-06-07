@@ -1,7 +1,11 @@
-import os, sys, Queue, plac_core
+import os
+import sys
+import Queue
+import plac_core
 from Tkinter import Tk
 from ScrolledText import ScrolledText
 from plac_ext import Monitor, TerminatedProcess
+
 
 class TkMonitor(Monitor):
     """

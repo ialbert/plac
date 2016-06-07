@@ -2,8 +2,8 @@
 import plac
 
 @plac.annotations(
-operator=("The name of an operator", 'positional', None, str, ['add', 'mul']),
-numbers=("A number", 'positional', None, float, None, "n"))
+    operator=("The name of an operator", 'positional', None, str, ['add', 'mul']),
+    numbers=("A number", 'positional', None, float, None, "n"))
 def main(operator, *numbers):
     "A script to add and multiply numbers"
     if operator == 'mul':

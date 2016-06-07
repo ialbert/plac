@@ -1,8 +1,8 @@
 Advanced usages of plac
-=========================================================
+=======================
 
 Introduction
------------------------------------------------------
+------------
 
 One of the design goals of plac_ is to make it dead easy to write a
 scriptable and testable interface for an application.  You can use
@@ -29,10 +29,11 @@ or a Web application on top of plac_. When speaking of things
 you can do with plac_, your imagination is the only limit!
 
 From scripts to interactive applications
-------------------------------------------------------------
+----------------------------------------
 
 Command-line scripts have many advantages, but they are no substitute
 for interactive applications.
+
 In particular, if you have a script with a large startup time which must be run
 multiple times, it is best to turn it into an interactive application,
 so that the startup is performed only once.  ``plac`` provides an
@@ -106,7 +107,7 @@ are using a recent version of Python (>= 2.5), because it is a context
 manager object which uses extended generators internally.
 
 Testing a plac application
------------------------------------------------------------
+--------------------------
 
 You can conveniently test your application in interactive mode.
 However manual testing is a poor substitute for automatic testing.
@@ -124,7 +125,7 @@ certainly not a nice thing to do in a test.
 
 As a consequence of this behavior it is impossible to test for invalid
 commands, unless you wrap the ``SystemExit`` exception by
-hand each time (a possibly you do something with the error message in
+hand each time (and possibly you do something with the error message in
 stderr too). Luckily, ``plac`` offers a better testing support through
 the ``check`` method of ``Interpreter`` objects:
 
@@ -157,7 +158,7 @@ the end of the interpreter loop, whereas ``plac.call`` ignores
 the initialization/finalization code.
 
 Plac easy tests
----------------------------------------------------------
+---------------
 
 Writing your tests in terms of ``Interpreter.check`` is certainly an
 improvement over writing them in terms of ``plac.call``, but they
@@ -167,12 +168,12 @@ support for doctest-style tests, a.k.a. *plac easy tests*.
 By using plac easy tests you can cut and paste your interactive session and
 turn it into a runnable automatics test.
 Consider for instance the following file ``ishelve.placet`` (the ``.placet``
-extension is a mnemonic for plac easy tests):
+extension is a mnemonic for "plac easy tests"):
 
 .. include:: ishelve.placet
    :literal:
 
-Notice the precence of the shebang line containing the name of the
+Notice the presence of the shebang line containing the name of the
 plac_ tool to test (a plac_ tool is just a Python module with a
 function called ``main``). The shebang is ignored by the interpreter
 (it looks like a comment to it) but it is there so that external
@@ -182,14 +183,14 @@ to use to test the file.
 You can run the ``ishelve.placet`` file by calling the
 ``.doctest`` method of the interpreter, as in this example::
 
- $ python -c"import plac, ishelve
+ $ python -c "import plac, ishelve
  plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)"
 
 Internally ``Interpreter.doctests`` invokes something like ``Interpreter.check``
-multiple times inside the same context and compare the output with the
-expected output: if even a check fails, the whole test fail. 
+multiple times inside the same context and compares the output with the
+expected output: if even one check fails, the whole test fail. 
 
-You should realize tha the easy tests supported by ``plac`` are *not*
+You should realize that the easy tests supported by ``plac`` are *not*
 unittests: they are functional tests. They model the user interaction and the
 order of the operations generally matters.  The single subtests in a
 ``.placet`` file are not independent and it makes sense to exit
@@ -201,14 +202,14 @@ languages as the ones you can implement with plac_. In particular,
 thanks to shlex_, plac_ is able to recognize comments (the default
 comment character is ``#``), escape sequences and more. Look at the
 shlex_ documentation if you need to customize how the language is
-interpreted. For more flexibility, it is even possible to pass to the
+interpreted. For more flexibility, it is even possible to pass the
 interpreter a custom split function with signature ``split(line,
 commentchar)``.
 
 In addition, I have implemented some support for line number
-recognition, so that if a test fail you get the line number of the
+recognition, so that if a test fails you get the line number of the
 failing command. This is especially useful if your tests are
-stored in external files, even if they do not need to be in
+stored in external files, though they do not need to be in
 a file: you can just pass to the ``.doctest`` method a list of
 strings corresponding to the lines of the file.
 
@@ -238,7 +239,7 @@ or ``py.test`` as follow::
 Here you should notice that usage of ``plac.import_main``, an utility
 which is able to import the main function of the script specified in
 the shebang line. You can use both the full path name of the
-tool, or a relative path name. In this case the runner look at the
+tool, or a relative path name. In this case the runner looks at the
 environment variable ``PLACPATH`` and it searches
 the plac tool in the directories specified there (``PLACPATH`` is just
 a string containing directory names separated by colons). If the variable
@@ -246,7 +247,7 @@ a string containing directory names separated by colons). If the variable
 If the plac tool is not found, an ``ImportError`` is raised.
 
 Plac batch scripts
---------------------------------------------------
+------------------
 
 It is pretty easy to realize that an interactive interpreter can
 also be used to run batch scripts: instead of reading the commands from
@@ -294,8 +295,8 @@ The ``verbose`` flag is there to show the lines which are being interpreted
 the output of the batch script and turn it into a ``.placet`` test
 (cool, isn't it?).
 
-Implementing subcommands 
-----------------------------------------
+Implementing subcommands
+------------------------
 
 When I discussed the ``ishelve`` implementation in the `basic
 documentation`_, I said that it looked like the poor man implementation
@@ -401,7 +402,7 @@ Notice that if you implement a custom ``help`` command in the commander class
 the default help will not be added, as you would expect.
 
 In version 0.9 an exception ```plac.Interpreter.Exit`` was added. Its
-purpose it to make it easy to define commands to exit from the command
+purpose is to make it easy to define commands to exit from the command
 loop. Just define something like::
 
   def quit(self):
@@ -411,7 +412,7 @@ and the interpreter will be closed properly when the ``quit`` command
 is entered.
 
 plac.Interpreter.call
---------------------------------------------
+---------------------
 
 At the core of ``plac`` there is the ``call`` function which invokes
 a callable with the list of arguments passed at the command-line
@@ -441,7 +442,7 @@ a batch shell script working in the background.
 In order to provide such functionality ``plac.Interpreter`` provides
 a classmethod named ``.call`` which takes the factory, instantiates
 it with the arguments read from the command line, wraps the resulting
-container object as an interpreter and runs it with the rest arguments
+container object as an interpreter and runs it with the remaining arguments
 found in the command line. Here is the code to turn the ``ShelveInterface``
 into a script
 
@@ -490,20 +491,20 @@ The complete signature of ``plac.Interpreter.call`` is the following::
 The factory must have a fixed number of positional arguments (no
 default arguments, no varargs, no kwargs), otherwise a ``TypeError``
 is raised: the reason is that we want to be able to distinguish the
-command-line arguments needed to instantiate the factory from the rest
+command-line arguments needed to instantiate the factory from the remaining
 arguments that must be sent to the corresponding interpreter object.
 It is also possible to specify a list of arguments different from
 ``sys.argv[1:]`` (useful in tests), the character to be recognized as
-a comment, the splitting function, the input source and the prompt to
+a comment, the splitting function, the input source, the prompt to
 use while in interactive mode, and a verbose flag.
 
 Readline support
----------------------------------------
+----------------
 
 Starting from release 0.6 plac_ offers full readline support. That
 means that if your Python was compiled with readline support you get
 autocompletion and persistent command history for free.  By default
-all commands are autocomplete in a case sensitive way.  If you want to
+all commands autocomplete in a case sensitive way.  If you want to
 add new words to the autocompletion set, or you want to change the
 location of the ``.history`` file, or to change the case sensitivity,
 the way to go is to pass a ``plac.ReadlineInput`` object to the
@@ -523,9 +524,9 @@ You can check that entering just ``sel`` and pressing TAB the readline library
 completes the ``SELECT`` keyword for you and makes it upper case; idem for 
 ``FROM``, ``INNER``, ``JOIN`` and even for the names of the tables. An
 obvious improvement is to read the names of the tables by introspecting
-the database: actually you can even read the names of the views and of
-the columns, and have full autocompletion. All the entered commands
-and recorded and saved in the file ``~/.sql_interface.history`` when
+the database: actually you can even read the names of the views and
+the columns, and get full autocompletion. All the entered commands
+are recorded and saved in the file ``~/.sql_interface.history`` when
 exiting from the command-line interface.
 
 If the readline library is not available, my suggestion is to use the
@@ -586,11 +587,11 @@ Notice that if an abbreviation is ambiguous, plac_ warns you::
  NameError: Ambiguous command 'sh': matching ['showall', 'show']
 
 The plac runner
---------------------------------------------------------
+---------------
 
 The distribution of plac_ includes a runner script named ``plac_runner.py``,
 which will be installed in a suitable directory in your system by distutils_
-(say in ``\usr\local\bin\plac_runner.py`` in a Unix-like operative system).
+(say in ``/usr/local/bin/plac_runner.py`` in a Unix-like operative system).
 The runner provides many facilities to run ``.plac`` scripts and
 ``.placet`` files, as well as Python modules containg a ``main``
 object, which can be a function, a command container object or
@@ -645,7 +646,7 @@ follows::
  i> show b
  b = 2
 
-Now you can cut and paste the interactive session an turns into into
+Now you can cut and paste the interactive session and turn it into
 a ``.placet`` file like the following:
 
 .. include:: ishelve2.placet
@@ -663,7 +664,7 @@ the plac runner::
  run 1 plac test(s)
 
 If you want to see the output of the tests, pass the ``-v/--verbose`` flag.
-Notice that he runner ignore the extension, so you can actually use any
+Notice that he runner ignores the extension, so you can actually use any
 extension your like, but *it relies on the first line of the file to invoke
 the corresponding plac tool with the given arguments*.
 
@@ -676,7 +677,7 @@ as follows::
 
 The plac runner expects the main function of your script to
 return a plac tool, i.e. a function or an object with a ``.commands``
-attribute. It this is not the case the runner gracefully exits.
+attribute. If this is not the case the runner exits gracefully.
 
 It also works in non-interactive mode, if you call it as
 
@@ -693,12 +694,12 @@ Notice that in non-interactive mode the runner just invokes ``plac.call``
 on the ``main`` object of the Python module.
 
 A non class-based example
---------------------------------------------------------
+-------------------------
 
 plac_ does not force you to use classes to define command containers.
 Even a simple function can be a valid command container, it is
-enough to add to it a ``.commands`` attribute and possibly
-``__enter__`` and/or ``__exit__`` attributes.
+enough to add a ``.commands`` attribute to it, and possibly
+``__enter__`` and/or ``__exit__`` attributes too.
 
 In particular, a Python module is a perfect container of commands. As an
 example, consider the following module implementing a fake Version
@@ -718,7 +719,7 @@ The ``vcs`` module can be run through the plac runner
 .. include:: vcs.help
    :literal:
 
-You can get help for the subcommands by inserting an ``-h`` close the
+You can get help for the subcommands by inserting an ``-h`` after the
 name of the command::
  
  $ plac vcs.py status -h
@@ -730,7 +731,7 @@ name of the command::
    -h, --help   show this help message and exit
    -q, --quiet  summary information
 
-Notice how the docstring of the command is automatically shown in
+Notice how the docstring of the command is automatically shown in the
 usage message, as well as the documentation for the sub flag ``-q``.
 
 Here is an example of a non-interactive session::
@@ -772,25 +773,24 @@ a method container. In other situations, it is best to use a custom
 class. 
 
 Writing your own plac runner
-----------------------------------------------------------
+----------------------------
 
 The runner included in the plac_ distribution is intentionally kept
 small (around 50 lines of code) so that you can study it and write
-your own runner if want to. If you need to go to such level
+your own runner if you want to. If you need to go to such level
 of detail, you should know that the most important method of
 the ``Interpreter`` class is the ``.send`` method, which takes
-strings in input and returns a four-tuple with attributes
+strings as input and returns a four elements tuple with attributes
 ``.str``, ``.etype``, ``.exc`` and ``.tb``:
 
 - ``.str`` is the output of the command, if successful (a string);
-- ``.etype`` is the class of the exception, if the command fail;
+- ``.etype`` is the class of the exception, if the command fails;
 - ``.exc`` is the exception instance;
 - ``.tb`` is the traceback.
 
-Moreover the ``__str__`` representation of the output object is redefined
-to return the output string if the command was successful or the error
-message if the command failed (actually it returns the error message
-preceded by the name of the exception class).
+Moreover, the ``__str__`` representation of the output object is redefined
+to return the output string if the command was successful, or the error
+message (preceded by the name of the exception class) if the command failed.
 
 For instance, if you send a mispelled option to
 the interpreter a ``SystemExit`` will be trapped:
@@ -831,10 +831,10 @@ with tracebacks in red. You will need to code something like that
      gui_mainloop.start()
 
 You can adapt the pseudocode to your GUI toolkit of choice and you can
-also change the file associations in such a way that clicking on a
-plac tool file the graphical user interface starts.
+also change the file associations in such a way that the graphical user
+interface starts when clicking on a plac tool file.
 
-An example of GUI program built on top of plac_ is given later on, in the
+An example of a GUI program built on top of plac_ is given later on, in the
 paragraph *Managing the output of concurrent commands* (using Tkinter
 for simplicity and portability).
 
@@ -842,19 +842,19 @@ There is a final *caveat*: since the plac interpreter loop is
 implemented via extended generators, plac interpreters are single threaded: you
 will get an error if you ``.send`` commands from separated threads. 
 You can circumvent the problem by using a queue. If EXIT is a sentinel
-value to signal exiting from the interpreter look, you can write code
+value to signal exiting from the interpreter loop, you can write code
 like this::
 
     with interpreter:
         for input_value in iter(input_queue.get, EXIT):
             output_queue.put(interpreter.send(input_value))
 
-The same trick also work for processes; you could run the interpreter
+The same trick also works for processes; you could run the interpreter
 loop in a separate process and send commands to it via the Queue
 class provided by the multiprocessing_ module.
 
 Long running commands
----------------------------------------
+---------------------
 
 As we saw, by default a plac_ interpreter blocks until 
 the command terminates. This is an issue, in the sense that it makes
@@ -885,10 +885,10 @@ the interface responsive. plac_ provides two ways to reach this goal: threads
 and processes.
 
 Threaded commands
------------------------------------------
+-----------------
 
 The most familiar way to execute a task in the background (even if not
-necessarily the best way) is to run it into a separated thread. In our
+necessarily the best way) is to run it into a separate thread. In our
 example it is sufficient to replace the line
 
    ``commands = ['import_file']``
@@ -957,11 +957,11 @@ It is even possible to kill a task::
  i> .output 5
  <ThreadedTask 5 [import_file file2] KILLED>
 
-You should notice that since at the Python level it is impossible to kill 
-a thread, the ``.kill`` commands works by setting the status of the task to
+Note that since at the Python level it is impossible to kill 
+a thread, the ``.kill`` command works by setting the status of the task to
 ``TOBEKILLED``. Internally the generator corresponding to the command
 is executed in the thread and the status is checked at each iteration:
-when the status become ``TOBEKILLED`` a ``GeneratorExit`` exception is
+when the status becomes ``TOBEKILLED``, a ``GeneratorExit`` exception is
 raised and the thread terminates (softly, so that the ``finally`` clause
 is honored). In our example the generator is yielding
 back control once every 100 iterations, i.e. every two seconds (not much).
@@ -973,13 +973,13 @@ as in the following code:
    :literal:
 
 Running commands as external processes
------------------------------------------
+--------------------------------------
 
 Threads are not loved much in the Python world and actually most people
 prefer to use processes instead. For this reason plac_ provides the
 option to execute long running commands as external processes. Unfortunately
-the current implementation only works in Unix-like operating systems
-(including Mac OS X) because it relies on fork via the multiprocessing_
+the current implementation only works on Unix-like operating systems
+(including Mac OS/X) because it relies on fork via the multiprocessing_
 module. 
 
 In our example, to enable the feature it is sufficient to replace the line
@@ -1012,17 +1012,17 @@ you cannot rely on automatic sharing of your objects.
 
 On the plus side, when using processes you do not need to worry about
 killing a command: they are killed immediately using a SIGTERM signal,
-and there is not a ``TOBEKILLED`` mechanism. Moreover, the killing is
+and there is no ``TOBEKILLED`` mechanism. Moreover, the killing is
 guaranteed to be soft: internally a command receiving a SIGTERM raises
 a ``TerminatedProcess`` exception which is trapped in the generator
 loop, so that the command is closed properly.
 
-Using processes allows to take full advantage of multicore machines
+Using processes allows one to take full advantage of multicore machines
 and it is safer than using threads, so it is the recommended approach
 unless you are working on Windows.
 
 Managing the output of concurrent commands
----------------------------------------------
+------------------------------------------
 
 plac_ acts as a command-line task launcher and can be used as the base
 to build a GUI-based task launcher and task monitor. To this aim the
@@ -1044,25 +1044,25 @@ how you could implement a GUI over the importer example:
    :literal:
 
 Experimental features
-=========================================================================
+=====================
 
 The distribution of plac_ includes a few experimental features which I am
 not committed to fully support and that may go away in future versions. 
 They are included as examples of things that you may build on top of
 plac_: the aim is to give you ideas. Some of the experimental features
-might grow to become external projects build on plac_.
+might grow to become external projects built on plac_.
 
 Parallel computing with plac
----------------------------------------------
+----------------------------
 
 plac_ is certainly not intended as a tool for parallel computing, but
-still you can use it to launch a set of commands and to collect the
+still you can use it to launch a set of commands and collect the
 results, similarly to the MapReduce pattern popularized by
 Google.  In order to give an example, I will consider the "Hello
 World" of parallel computing, i.e. the computation of pi with
 independent processes.  There is a huge number of algorithms to
 compute pi; here I will describe a trivial one chosen for simplicity,
-not per efficienty. The trick is to consider the first quadrant of a
+not for efficiency. The trick is to consider the first quadrant of a
 circle with radius 1 and to extract a number of points ``(x, y)`` with
 ``x`` and ``y`` random variables in the interval ``[0,1]``. The
 probability of extracting a number inside the quadrant (i.e. with
@@ -1095,8 +1095,8 @@ modes (parallel mode, threaded mode and sequential mode) depending on a
 
 Notice the ``submit_tasks`` method, which instantiates and initializes a
 ``plac.Interpreter`` object and submits a number of commands corresponding
-to the number of available CPUs. The ``calc_pi`` command yield a log
-message every million of interactions, just to monitor the progress of
+to the number of available CPUs. The ``calc_pi`` command yields a log
+message for each million interactions, in order to monitor the progress of
 the computation. The ``run`` method starts all the submitted commands
 in parallel and sums the results. It returns the average value of ``pi``
 after the slowest CPU has finished its job (if the CPUs are equal and
@@ -1115,60 +1115,60 @@ for 10 million of iterations::
 As you see using processes one gets a 2x speedup indeed, where the threaded
 mode is some 20% slower than the sequential mode.
 
-Since the pattern submit a bunch of tasks, starts them and collect the
-results is so common, plac_ provides an utility function 
+Since the pattern "submit a bunch of tasks, start them and collect the
+results" is so common, plac_ provides an utility function 
 ``runp(genseq, mode='p')`` to start
-a bunch a generators and return a list of results. By default
+a bunch of generators and return a list of results. By default
 ``runp`` use processes, but you can use threads by passing ``mode='t'``.
 With ``runp`` the parallel pi calculation becomes a one-liner::
 
  sum(task.result for task in plac.runp(calc_pi(N) for i in range(ncpus)))/ncpus
 
 The file ``test_runp`` in the ``doc`` directory of the plac distribution
-shows another example of usage. Notice that if one of the tasks fails
-for some reason, instead of the result you will get the exception object.
+shows another usage example. Note that if one of the tasks fails
+for some reason, you will get the exception object instead of the result.
 
 Monitor support
---------------------------------
+---------------
 
 plac_ provides experimental support for monitoring the output of
 concurrent commands, at least for platforms where multiprocessing is
 fully supported. You can define your own monitor class, simply by
-inheriting from ``plac.Monitor`` and by overriding the methods
-``add_listener(self, no)``, ``del_listener(self, taskno)``,
-``notify_listener(self, taskno, msg)``, ``read_queue(self)``
-``start(self)`` and ``stop(self)``.  Then, you can a monitor object to
-any ``plac.Interpreter`` object by simply calling the ``add_monitor``
+inheriting from ``plac.Monitor`` and overriding the methods
+``add_listener(self, taskno)``, ``del_listener(self, taskno)``,
+``notify_listener(self, taskno, msg)``, ``read_queue(self)``,
+``start(self)`` and ``stop(self)``.  Then you can add a monitor object to
+any ``plac.Interpreter`` object by calling the ``add_monitor``
 method. For convenience, ``plac`` comes with a very simple
 ``TkMonitor`` based on Tkinter (I chose Tkinter because it is easy to
-use and it is in the standard library, but you can use any GUI): you
-can just look at how the ``TkMonitor`` is implemented in
-``plac_tk.py`` and adapt it. Here is an example of usage of the
+use and in the standard library, but you can use any GUI): you
+can look at how the ``TkMonitor`` is implemented in
+``plac_tk.py`` and adapt it. Here is an usage example of the
 ``TkMonitor``:
 
 .. include:: tkmon.py
    :literal:
 
-Try to give the ``hello`` command from the interactive interpreter:
-each time a new text widget will be added displaying the output
-of the command. Notice that if ``Tkinter`` is not installed correctly
-on your system the ``TkMonitor`` class will not be available.
+Try to run the ``hello`` command in the interactive interpreter:
+each time, a new text widget will be added displaying the output
+of the command. Note that if ``Tkinter`` is not installed correctly
+on your system, the ``TkMonitor`` class will not be available.
 
 The plac server
--------------------------------------------------------
+---------------
 
 A command-line oriented interface can be easily converted into a
-socket-based interface. Starting from release 0.7 plac features a
-builtin server which is able to accept commands from multiple clients
-and to execute them. The server works by instantiating a separate
+socket-based interface. Starting from release 0.7 plac_ features a
+built-in server which is able to accept commands from multiple clients
+and execute them. The server works by instantiating a separate
 interpreter for each client, so that if a client interpreter dies for
-any reason the other interpreters keep working.  To avoid external
+any reason, the other interpreters keep working.  To avoid external
 dependencies the server is based on the ``asynchat`` module in the
 standard library, but it would not be difficult to replace the server
 with a different one (for instance, a Twisted server).  Notice that at
-the moment the plac_ server does not work with to Python 3.2 due to
-changes to ``asynchat``. In time I fill fix this and other known
-issue.  You should consider the server functionality still
+the moment the plac_ server does not work with to Python 3.2+ due to
+changes to ``asynchat``. In time I will fix this and other known
+issues.  You should consider the server functionality still
 experimental and subject to changes. Also, notice that since
 ``asynchat``-based servers are asynchronous, any blocking command in
 the interpreter should be run in a separated process or thread.  The
@@ -1196,7 +1196,7 @@ You can connect to the server with ``telnet`` on port 2199, as follows::
  Connection closed by foreign host.
 
 Summary
--------------------------------------------------------
+-------
 
 Once plac_ claimed to be the easiest command-line arguments parser
 in the world. Having read this document you may think that it is not
@@ -1210,31 +1210,31 @@ rules are quite simple:
    if you want to implement a command interpreter, use ``plac.Interpreter``:
 
    - for an interactive interpreter, call the ``.interact`` method;
-   - for an batch interpreter, call the ``.execute`` method;
+   - for a batch interpreter, call the ``.execute`` method;
 
 3. for testing call the ``Interpreter.check`` method in the appropriate context
    or use the ``Interpreter.doctest`` feature;
 
-4. if you need to go at a lower level, you may need to call the
-   ``Interpreter.send`` method which returns a (finished) ``Task`` object.
+4. if you need to go to a lower level, you may need to call the
+   ``Interpreter.send`` method which returns a (finished) ``Task`` object;
 
-5. long running command can be executed in the background as threads or
+5. long running commands can be executed in the background as threads or
    processes: just declare them in the lists ``thcommands`` and ``mpcommands``
-   respectively.
+   respectively;
 
 6. the ``.start_server`` method starts an asynchronous server on the
-   given port number (default 2199)
+   given port number (default 2199).
 
 Moreover, remember that ``plac_runner.py`` is your friend.
 
-------
+----
 
 Appendix: custom annotation objects
---------------------------------------------------------
+-----------------------------------
 
 Internally plac_ uses an ``Annotation`` class to convert the tuples
-in the function signature into annotation objects, i.e. objects with
-six attributes ``help, kind, short, type, choices, metavar``.
+in the function signature to annotation objects, i.e. objects with
+six attributes: ``help, kind, short, type, choices, metavar``.
 
 Advanced users can implement their own annotation objects.
 For instance, here is an example of how you could implement annotations for
@@ -1243,7 +1243,7 @@ positional arguments:
 .. include:: annotations.py
    :literal:
 
-You can use such annotations objects as follows:
+You can use such annotation objects as follows:
 
 .. include:: example11.py
    :literal:
@@ -1267,7 +1267,7 @@ pretty well for most users.
 .. _scaling down: http://www.welton.it/articles/scalable_systems
 .. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
 .. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
-.. _Clap: http://pypi.python.org/pypi/Clap/0.7
+.. _Clap: http://pypi.python.org/pypi/Clap
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
 .. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html

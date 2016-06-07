@@ -1,7 +1,10 @@
-#!python
+#!/usr/bin/env python
 from __future__ import with_statement
-import os, sys, shlex
+import os
+import sys
+import shlex
 import plac
+
 
 def run(fnames, cmd, verbose):
     "Run batch scripts and tests"
@@ -10,13 +13,14 @@ def run(fnames, cmd, verbose):
             lines = list(f)
         if not lines[0].startswith('#!'):
             sys.exit('Missing or incorrect shebang line!')
-        firstline = lines[0][2:] # strip the shebang
+        firstline = lines[0][2:]  # strip the shebang
         init_args = shlex.split(firstline)
         tool = plac.import_main(*init_args)
-        command = getattr(plac.Interpreter(tool), cmd) # doctest or execute
+        command = getattr(plac.Interpreter(tool), cmd)  # doctest or execute
         if verbose:
             sys.stdout.write('Running %s with %s' % (fname, firstline))
         command(lines[1:], verbose=verbose)
+
 
 @plac.annotations(
     verbose=('verbose mode', 'flag', 'v'),
@@ -34,7 +38,7 @@ def main(verbose, interactive, multiline, serve, batch, test, fname=None,
     baseparser = plac.parser_from(main)
     if fname is None:
         baseparser.print_help()
-    elif sys.argv[1] == fname: # script mode
+    elif sys.argv[1] == fname:  # script mode
         plactool = plac.import_main(fname)
         plactool.prog = os.path.basename(sys.argv[0]) + ' ' + fname
         out = plac.call(plactool, sys.argv[2:], eager=False)

@@ -5,11 +5,10 @@ If you are lazy, just perform
 
 ::
 
- $ easy_install -U plac
+ $ pip install plac
 
 which will install the module on your system (and possibly argparse
-too, if it is not already installed). Notice that Python 3 requires
-the easy_install version of the distribute_ project.
+too, if it is not already installed).
 
 If you prefer to install the full distribution from source, including
 the documentation, download the tarball_, unpack it and run
@@ -44,8 +43,8 @@ or
 
  $ py.test doc
 
-Some tests will fail if sqlalchemy is not installed. 
-Run an ``easy_install -U sqlalchemy`` or just ignore them.
+Some tests will fail if sqlsoup is not installed. 
+Run an ``pip install sqlsoup`` or just ignore them.
 
 Documentation
 --------------
