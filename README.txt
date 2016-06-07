@@ -48,7 +48,7 @@ Run a ``pip install sqlsoup`` or just ignore them.
 Documentation
 --------------
 
-The source code and the documentation are hosted on Google code.
+The source code and the documentation are hosted on GitHub.
 Here is the full documentation:
 
 https://github.com/micheles/plac/blob/0.9.2/doc/plac.pdf
