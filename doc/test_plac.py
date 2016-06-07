@@ -232,7 +232,7 @@ def test_yield():
 
 
 def test_doctest():
-    failure, tot = doctest.testfile('plac.txt', module_relative=False)
+    failure, tot = doctest.testfile('plac.rst', module_relative=False)
     assert not failure, failure
 
 failing_scripts = set(['ishelve2.plac'])

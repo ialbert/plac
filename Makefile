@@ -1,7 +1,7 @@
 default:
 	make doc/plac.pdf
-doc/plac.pdf: doc/plac.txt doc/plac_core.txt doc/plac_adv.txt
-	cd doc; rst2pdf --footer=###Page### plac.txt; rst2html --stylesheet=$(HOME)/plac/df.css plac.txt plac.html
+doc/plac.pdf: doc/plac.rst doc/plac_core.rst doc/plac_adv.rst
+	cd doc; rst2pdf --footer=###Page### plac.rst; rst2html --stylesheet=$(HOME)/plac/df.css plac.rst plac.html
 upload:
 	python3 setup.py register sdist upload 
 2:
