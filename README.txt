@@ -20,7 +20,6 @@ the documentation, download the tarball_, unpack it and run
 in the main directory, possibly as superuser.
 
 .. _tarball: http://pypi.python.org/pypi/plac
-.. _distribute: http://packages.python.org/distribute/
 
 Testing
 --------
@@ -44,7 +43,7 @@ or
  $ py.test doc
 
 Some tests will fail if sqlsoup is not installed. 
-Run an ``pip install sqlsoup`` or just ignore them.
+Run a ``pip install sqlsoup`` or just ignore them.
 
 Documentation
 --------------
