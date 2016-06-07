@@ -1,4 +1,6 @@
 from __future__ import with_statement
+from __future__ import division
+import math
 from random import random
 import multiprocessing
 import plac
@@ -18,11 +20,12 @@ class PiCalculator(object):
             self.thcommands = ['calc_pi']
         elif mode == 'S':
             self.commands = ['calc_pi']
-        self.n_cpu = multiprocessing.cpu_count() or 1
+        self.n_cpu = multiprocessing.cpu_count()
 
     def submit_tasks(self):
+        npoints = math.ceil(self.npoints / self.n_cpu)
         self.i = plac.Interpreter(self).__enter__()
-        return [self.i.submit('calc_pi %d' % (self.npoints / self.n_cpu))
+        return [self.i.submit('calc_pi %d' % npoints)
                 for _ in range(self.n_cpu)]
 
     def close(self):
