@@ -1,2 +1,2 @@
-.. include:: plac_core.txt
-.. include:: plac_adv.txt
+.. include:: plac_core.rst
+.. include:: plac_adv.rst

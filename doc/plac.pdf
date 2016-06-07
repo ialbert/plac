@@ -224,10 +224,10 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 308 0 R /XYZ 62.69291 765.0236 0 ] /Rect [ 521.4627 147.7736 532.5827 159.7736 ] /Subtype /Link /Type /Annot >>
 endobj
 75 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 312 0 R /XYZ 62.69291 609.8236 0 ] /Rect [ 82.69291 129.0236 152.1629 141.0236 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 312 0 R /XYZ 62.69291 564.6236 0 ] /Rect [ 82.69291 129.0236 152.1629 141.0236 ] /Subtype /Link /Type /Annot >>
 endobj
 76 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 312 0 R /XYZ 62.69291 609.8236 0 ] /Rect [ 521.4627 129.7736 532.5827 141.7736 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 312 0 R /XYZ 62.69291 564.6236 0 ] /Rect [ 521.4627 129.7736 532.5827 141.7736 ] /Subtype /Link /Type /Annot >>
 endobj
 77 0 obj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 317 0 R /XYZ 62.69291 765.0236 0 ] /Rect [ 82.69291 111.0236 151.6029 123.0236 ] /Subtype /Link /Type /Annot >>
@@ -985,10 +985,10 @@ endobj
   /Type /Page >>
 endobj
 310 0 obj
-<< /A << /S /URI /Type /Action /URI (http://pypi.python.org/pypi/plac) >> /Border [ 0 0 0 ] /Rect [ 473.6216 723.0236 492.0127 735.0236 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (http://pypi.python.org/pypi/plac) >> /Border [ 0 0 0 ] /Rect [ 473.6216 677.8236 492.0127 689.8236 ] /Subtype /Link /Type /Annot >>
 endobj
 311 0 obj
-<< /A << /S /URI /Type /Action /URI (http://pypi.python.org/pypi/plac) >> /Border [ 0 0 0 ] /Rect [ 62.69291 573.8236 84.00136 585.8236 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (http://pypi.python.org/pypi/plac) >> /Border [ 0 0 0 ] /Rect [ 62.69291 528.6236 84.00136 540.6236 ] /Subtype /Link /Type /Annot >>
 endobj
 312 0 obj
 << /Annots [ 310 0 R 311 0 R ] /Contents 404 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 361 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
@@ -1025,7 +1025,7 @@ endobj
 << /Outlines 323 0 R /PageLabels 408 0 R /PageMode /UseNone /Pages 361 0 R /Type /Catalog >>
 endobj
 322 0 obj
-<< /Author () /CreationDate (D:20160607090622-01'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20160607090622-01'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+<< /Author () /CreationDate (D:20160607094358-01'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20160607094358-01'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title () /Trapped /False >>
 endobj
 323 0 obj
@@ -1134,7 +1134,7 @@ endobj
 << /Dest [ 308 0 R /XYZ 62.69291 765.0236 0 ] /Next 357 0 R /Parent 355 0 R /Title (Parallel computing with plac) >>
 endobj
 357 0 obj
-<< /Dest [ 312 0 R /XYZ 62.69291 609.8236 0 ] /Next 358 0 R /Parent 355 0 R /Prev 356 0 R /Title (Monitor support) >>
+<< /Dest [ 312 0 R /XYZ 62.69291 564.6236 0 ] /Next 358 0 R /Parent 355 0 R /Prev 356 0 R /Title (Monitor support) >>
 endobj
 358 0 obj
 << /Dest [ 317 0 R /XYZ 62.69291 765.0236 0 ] /Next 359 0 R /Parent 355 0 R /Prev 357 0 R /Title (The plac server) >>
@@ -7157,7 +7157,7 @@ Q
 endstream
 endobj
 402 0 obj
-<< /Length 4875 >>
+<< /Length 4766 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -7219,7 +7219,7 @@ q
 n -6 -6 468.6898 324 re B*
 Q
 q
-BT 1 0 0 1 0 302 Tm 12 TL /F3 10 Tf 0 0 0 rg (from __future__ import with_statement) Tj T* (from random import random) Tj T* (import multiprocessing) Tj T* (import plac) Tj T*  T* (class PiCalculator\(object\):) Tj T* (    """Compute pi in parallel with threads or processes""") Tj T* (    ) Tj T* (    @plac.annotations\() Tj T* (        npoints=\('number of integration points', 'positional', None, int\),) Tj T* (        mode=\('sequential|parallel|threaded', 'option', 'm', str, 'SPT'\)\)) Tj T* (    def __init__\(self, npoints, mode='S'\):) Tj T* (        self.npoints = npoints) Tj T* (        if mode == 'P':) Tj T* (            self.mpcommands = ['calc_pi']) Tj T* (        elif mode == 'T':) Tj T* (            self.thcommands = ['calc_pi']) Tj T* (        elif mode == 'S':) Tj T* (            self.commands = ['calc_pi']) Tj T* (        self.n_cpu = multiprocessing.cpu_count\(\)) Tj T* (    ) Tj T* (    def submit_tasks\(self\):) Tj T* (        self.i = plac.Interpreter\(self\).__enter__\(\)            ) Tj T* (        return [self.i.submit\('calc_pi %d' % \(self.npoints / self.n_cpu\)\)) Tj T* (                for _ in range\(self.n_cpu\)]) Tj T*  T* ET
+BT 1 0 0 1 0 302 Tm 12 TL /F3 10 Tf 0 0 0 rg (from __future__ import with_statement) Tj T* (from __future__ import division) Tj T* (import math) Tj T* (from random import random) Tj T* (import multiprocessing) Tj T* (import plac) Tj T*  T*  T* (class PiCalculator\(object\):) Tj T* (    """Compute pi in parallel with threads or processes""") Tj T*  T* (    @plac.annotations\() Tj T* (        npoints=\('number of integration points', 'positional', None, int\),) Tj T* (        mode=\('sequential|parallel|threaded', 'option', 'm', str, 'SPT'\)\)) Tj T* (    def __init__\(self, npoints, mode='S'\):) Tj T* (        self.npoints = npoints) Tj T* (        if mode == 'P':) Tj T* (            self.mpcommands = ['calc_pi']) Tj T* (        elif mode == 'T':) Tj T* (            self.thcommands = ['calc_pi']) Tj T* (        elif mode == 'S':) Tj T* (            self.commands = ['calc_pi']) Tj T* (        self.n_cpu = multiprocessing.cpu_count\(\)) Tj T*  T* (    def submit_tasks\(self\):) Tj T* (        npoints = math.ceil\(self.npoints / self.n_cpu\)) Tj T* ET
 Q
 Q
 Q
@@ -7236,11 +7236,11 @@ Q
 endstream
 endobj
 403 0 obj
-<< /Length 3487 >>
+<< /Length 3577 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 307.8236 cm
+1 0 0 1 62.69291 259.8236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -7250,30 +7250,30 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 456 re B*
+n -6 -6 468.6898 504 re B*
 Q
 q
-BT 1 0 0 1 0 434 Tm 12 TL /F3 10 Tf 0 0 0 rg (    def close\(self\):) Tj T* (        self.i.close\(\)) Tj T*  T* (    @plac.annotations\() Tj T* (        npoints=\('npoints', 'positional', None, int\)\)) Tj T* (    def calc_pi\(self, npoints\):) Tj T* (        counts = 0) Tj T* (        for j in range\(npoints\):) Tj T* (            n, r = divmod\(j, 1000000\)) Tj T* (            if r == 0:) Tj T* (                yield '%dM iterations' % n) Tj T* (            x, y = random\(\), random\(\)) Tj T* (            if x*x + y*y ) Tj (<) Tj ( 1:) Tj T* (                counts += 1) Tj T* (        yield \(4.0 * counts\)/npoints) Tj T*  T* (    def run\(self\):) Tj T* (        tasks = self.i.tasks\(\)) Tj T* (        for t in tasks:) Tj T* (            t.run\(\)) Tj T* (        try:) Tj T* (            total = 0) Tj T* (            for task in tasks:) Tj T* (                total += task.result) Tj T* (        except: # the task was killed) Tj T* (            print\(tasks\)) Tj T* (            return) Tj T* (        return total / self.n_cpu) Tj T*  T* (if __name__ == '__main__':) Tj T* (    pc = plac.call\(PiCalculator\)) Tj T* (    pc.submit_tasks\(\)) Tj T* (    try:) Tj T* (        import time; t0 = time.time\(\)) Tj T* (        print\('%f in %f seconds ' % \(pc.run\(\), time.time\(\) - t0\)\)) Tj T* (    finally:) Tj T* (        pc.close\(\)) Tj T* ET
+BT 1 0 0 1 0 482 Tm 12 TL /F3 10 Tf 0 0 0 rg (        self.i = plac.Interpreter\(self\).__enter__\(\)) Tj T* (        return [self.i.submit\('calc_pi %d' % npoints\)) Tj T* (                for _ in range\(self.n_cpu\)]) Tj T*  T* (    def close\(self\):) Tj T* (        self.i.close\(\)) Tj T*  T* (    @plac.annotations\(npoints=\('npoints', 'positional', None, int\)\)) Tj T* (    def calc_pi\(self, npoints\):) Tj T* (        counts = 0) Tj T* (        for j in range\(npoints\):) Tj T* (            n, r = divmod\(j, 1000000\)) Tj T* (            if r == 0:) Tj T* (                yield '%dM iterations' % n) Tj T* (            x, y = random\(\), random\(\)) Tj T* (            if x*x + y*y ) Tj (<) Tj ( 1:) Tj T* (                counts += 1) Tj T* (        yield \(4.0 * counts\) / npoints) Tj T*  T* (    def run\(self\):) Tj T* (        tasks = self.i.tasks\(\)) Tj T* (        for t in tasks:) Tj T* (            t.run\(\)) Tj T* (        try:) Tj T* (            total = 0) Tj T* (            for task in tasks:) Tj T* (                total += task.result) Tj T* (        except:  # the task was killed) Tj T* (            print\(tasks\)) Tj T* (            return) Tj T* (        return total / self.n_cpu) Tj T*  T* (if __name__ == '__main__':) Tj T* (    pc = plac.call\(PiCalculator\)) Tj T* (    pc.submit_tasks\(\)) Tj T* (    try:) Tj T* (        import time) Tj T* (        t0 = time.time\(\)) Tj T* (        print\('%f in %f seconds ' % \(pc.run\(\), time.time\(\) - t0\)\)) Tj T* (    finally:) Tj T* (        pc.close\(\)) Tj T* ET
 Q
 Q
 Q
 Q
 Q
 q
-1 0 0 1 62.69291 227.8236 cm
+1 0 0 1 62.69291 179.8236 cm
 q
 BT 1 0 0 1 0 62 Tm .381797 Tw 12 TL /F1 10 Tf 0 0 0 rg (Notice the ) Tj /F3 10 Tf 0 0 0 rg (submit_tasks ) Tj /F1 10 Tf 0 0 0 rg (method, which instantiates and initializes a ) Tj /F3 10 Tf 0 0 0 rg (plac.Interpreter ) Tj /F1 10 Tf 0 0 0 rg (object and) Tj T* 0 Tw 3.38152 Tw (submits a number of commands corresponding to the number of available CPUs. The ) Tj /F3 10 Tf 0 0 0 rg (calc_pi) Tj T* 0 Tw 2.06561 Tw /F1 10 Tf 0 0 0 rg (command yields a log message for each million interactions, in order to monitor the progress of the) Tj T* 0 Tw 1.751318 Tw (computation. The ) Tj /F3 10 Tf 0 0 0 rg (run ) Tj /F1 10 Tf 0 0 0 rg (method starts all the submitted commands in parallel and sums the results. It) Tj T* 0 Tw 1.17104 Tw (returns the average value of ) Tj /F3 10 Tf 0 0 0 rg (pi ) Tj /F1 10 Tf 0 0 0 rg (after the slowest CPU has finished its job \(if the CPUs are equal and) Tj T* 0 Tw (equally busy they should finish more or less at the same time\).) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 209.8236 cm
+1 0 0 1 62.69291 161.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Here are the results on my old Macbook with Ubuntu 10.04 and Python 2.6, for 10 million of iterations:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 116.6236 cm
+1 0 0 1 62.69291 92.62362 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -7283,11 +7283,11 @@ q
 .662745 .662745 .662745 RG
 .5 w
 .960784 .960784 .862745 rg
-n -6 -6 468.6898 84 re B*
+n -6 -6 468.6898 60 re B*
 Q
 q
 0 0 0 rg
-BT 1 0 0 1 0 62 Tm /F3 10 Tf 12 TL ($ python picalculator.py -mP 10000000 # two processes) Tj T* (3.141904 in 5.744545 seconds) Tj T* ($ python picalculator.py -mT 10000000 # two threads) Tj T* (3.141272 in 13.875645 seconds) Tj T* ($ python picalculator.py -mS 10000000 # sequential) Tj T* (3.141586 in 11.353841 seconds) Tj T* ET
+BT 1 0 0 1 0 38 Tm /F3 10 Tf 12 TL ($ python picalculator.py -mP 10000000 # two processes) Tj T* (3.141904 in 5.744545 seconds) Tj T* ($ python picalculator.py -mT 10000000 # two threads) Tj T* (3.141272 in 13.875645 seconds) Tj T* ET
 Q
 Q
 Q
@@ -7304,24 +7304,45 @@ Q
 endstream
 endobj
 404 0 obj
-<< /Length 5120 >>
+<< /Length 5457 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
-1 0 0 1 62.69291 741.0236 cm
+1 0 0 1 62.69291 727.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 36 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F3 10 Tf 12 TL ($ python picalculator.py -mS 10000000 # sequential) Tj T* (3.141586 in 11.353841 seconds) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 695.8236 cm
 q
 0 0 0 rg
 BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.711751 Tw (As you see using processes one gets a 2x speedup indeed, where the threaded mode is some 20%) Tj T* 0 Tw (slower than the sequential mode.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 687.0236 cm
+1 0 0 1 62.69291 641.8236 cm
 q
 BT 1 0 0 1 0 38 Tm .051098 Tw 12 TL /F1 10 Tf 0 0 0 rg (Since the pattern "submit a bunch of tasks, start them and collect the results" is so common, ) Tj 0 0 .501961 rg (plac ) Tj 0 0 0 rg (provides) Tj T* 0 Tw .38561 Tw (an utility function ) Tj /F3 10 Tf 0 0 0 rg (runp\(genseq,) Tj ( ) Tj (mode='p'\) ) Tj /F1 10 Tf 0 0 0 rg (to start a bunch of generators and return a list of results.) Tj T* 0 Tw .45436 Tw (By default ) Tj /F3 10 Tf 0 0 0 rg (runp ) Tj /F1 10 Tf 0 0 0 rg (use processes, but you can use threads by passing ) Tj /F3 10 Tf 0 0 0 rg (mode='t') Tj /F1 10 Tf 0 0 0 rg (. With ) Tj /F3 10 Tf 0 0 0 rg (runp ) Tj /F1 10 Tf 0 0 0 rg (the parallel) Tj T* 0 Tw (pi calculation becomes a one-liner:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 653.8236 cm
+1 0 0 1 62.69291 608.6236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -7342,25 +7363,25 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 621.8236 cm
+1 0 0 1 62.69291 576.6236 cm
 q
 BT 1 0 0 1 0 14 Tm .00936 Tw 12 TL /F1 10 Tf 0 0 0 rg (The file ) Tj /F3 10 Tf 0 0 0 rg (test_runp ) Tj /F1 10 Tf 0 0 0 rg (in the ) Tj /F3 10 Tf 0 0 0 rg (doc ) Tj /F1 10 Tf 0 0 0 rg (directory of the plac distribution shows another usage example. Note that) Tj T* 0 Tw (if one of the tasks fails for some reason, you will get the exception object instead of the result.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 591.8236 cm
+1 0 0 1 62.69291 546.6236 cm
 q
 BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf 0 0 0 rg (Monitor support) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 477.8236 cm
+1 0 0 1 62.69291 432.6236 cm
 q
 BT 1 0 0 1 0 98 Tm 2.968443 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (plac ) Tj 0 0 0 rg (provides experimental support for monitoring the output of concurrent commands, at least for) Tj T* 0 Tw 1.727126 Tw (platforms where multiprocessing is fully supported. You can define your own monitor class, simply by) Tj T* 0 Tw 5.37872 Tw (inheriting from ) Tj /F3 10 Tf 0 0 0 rg (plac.Monitor ) Tj /F1 10 Tf 0 0 0 rg (and overriding the methods ) Tj /F3 10 Tf 0 0 0 rg (add_listener\(self,) Tj ( ) Tj (taskno\)) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* 0 Tw 25.38744 Tw /F3 10 Tf 0 0 0 rg (del_listener\(self,) Tj ( ) Tj (taskno\)) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F3 10 Tf 0 0 0 rg (notify_listener\(self,) Tj ( ) Tj (taskno,) Tj ( ) Tj (msg\)) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* 0 Tw 2.276647 Tw /F3 10 Tf 0 0 0 rg (read_queue\(self\)) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F3 10 Tf 0 0 0 rg (start\(self\) ) Tj /F1 10 Tf 0 0 0 rg (and ) Tj /F3 10 Tf 0 0 0 rg (stop\(self\)) Tj /F1 10 Tf 0 0 0 rg (. Then you can add a monitor object to any) Tj T* 0 Tw .14748 Tw /F3 10 Tf 0 0 0 rg (plac.Interpreter ) Tj /F1 10 Tf 0 0 0 rg (object by calling the ) Tj /F3 10 Tf 0 0 0 rg (add_monitor ) Tj /F1 10 Tf 0 0 0 rg (method. For convenience, ) Tj /F3 10 Tf 0 0 0 rg (plac ) Tj /F1 10 Tf 0 0 0 rg (comes with a) Tj T* 0 Tw .539431 Tw (very simple ) Tj /F3 10 Tf 0 0 0 rg (TkMonitor ) Tj /F1 10 Tf 0 0 0 rg (based on Tkinter \(I chose Tkinter because it is easy to use and in the standard) Tj T* 0 Tw .383516 Tw (library, but you can use any GUI\): you can look at how the ) Tj /F3 10 Tf 0 0 0 rg (TkMonitor ) Tj /F1 10 Tf 0 0 0 rg (is implemented in ) Tj /F3 10 Tf 0 0 0 rg (plac_tk.py) Tj T* 0 Tw /F1 10 Tf 0 0 0 rg (and adapt it. Here is an usage example of the ) Tj /F3 10 Tf 0 0 0 rg (TkMonitor) Tj /F1 10 Tf 0 0 0 rg (:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 288.6236 cm
+1 0 0 1 62.69291 243.4236 cm
 q
 q
 1 0 0 1 0 0 cm
@@ -7381,7 +7402,7 @@ Q
 Q
 Q
 q
-1 0 0 1 62.69291 244.6236 cm
+1 0 0 1 62.69291 199.4236 cm
 q
 BT 1 0 0 1 0 26 Tm .607209 Tw 12 TL /F1 10 Tf 0 0 0 rg (Try to run the ) Tj /F3 10 Tf 0 0 0 rg (hello ) Tj /F1 10 Tf 0 0 0 rg (command in the interactive interpreter: each time, a new text widget will be added) Tj T* 0 Tw .295868 Tw (displaying the output of the command. Note that if ) Tj /F3 10 Tf 0 0 0 rg (Tkinter ) Tj /F1 10 Tf 0 0 0 rg (is not installed correctly on your system, the) Tj T* 0 Tw /F3 10 Tf 0 0 0 rg (TkMonitor ) Tj /F1 10 Tf 0 0 0 rg (class will not be available.) Tj T* ET
 Q
@@ -8393,63 +8414,63 @@ xref
 0000266675 00000 n
 0000271406 00000 n
 0000276094 00000 n
-0000281027 00000 n
-0000284572 00000 n
-0000289750 00000 n
-0000296079 00000 n
-0000301117 00000 n
-0000302226 00000 n
-0000302794 00000 n
-0000302832 00000 n
-0000302870 00000 n
-0000302908 00000 n
-0000302946 00000 n
-0000302984 00000 n
-0000303022 00000 n
-0000303060 00000 n
-0000303098 00000 n
-0000303136 00000 n
-0000303175 00000 n
-0000303214 00000 n
-0000303253 00000 n
-0000303292 00000 n
-0000303331 00000 n
-0000303370 00000 n
-0000303409 00000 n
-0000303448 00000 n
-0000303487 00000 n
-0000303526 00000 n
-0000303565 00000 n
-0000303604 00000 n
-0000303643 00000 n
-0000303682 00000 n
-0000303721 00000 n
-0000303760 00000 n
-0000303799 00000 n
-0000303838 00000 n
-0000303877 00000 n
-0000303916 00000 n
-0000303955 00000 n
-0000303994 00000 n
-0000304033 00000 n
-0000304072 00000 n
-0000304111 00000 n
-0000304150 00000 n
-0000304189 00000 n
-0000304228 00000 n
-0000304267 00000 n
-0000304306 00000 n
-0000304345 00000 n
-0000304384 00000 n
-0000304423 00000 n
-0000304462 00000 n
-0000304501 00000 n
-0000304540 00000 n
+0000280918 00000 n
+0000284553 00000 n
+0000290068 00000 n
+0000296397 00000 n
+0000301435 00000 n
+0000302544 00000 n
+0000303112 00000 n
+0000303150 00000 n
+0000303188 00000 n
+0000303226 00000 n
+0000303264 00000 n
+0000303302 00000 n
+0000303340 00000 n
+0000303378 00000 n
+0000303416 00000 n
+0000303454 00000 n
+0000303493 00000 n
+0000303532 00000 n
+0000303571 00000 n
+0000303610 00000 n
+0000303649 00000 n
+0000303688 00000 n
+0000303727 00000 n
+0000303766 00000 n
+0000303805 00000 n
+0000303844 00000 n
+0000303883 00000 n
+0000303922 00000 n
+0000303961 00000 n
+0000304000 00000 n
+0000304039 00000 n
+0000304078 00000 n
+0000304117 00000 n
+0000304156 00000 n
+0000304195 00000 n
+0000304234 00000 n
+0000304273 00000 n
+0000304312 00000 n
+0000304351 00000 n
+0000304390 00000 n
+0000304429 00000 n
+0000304468 00000 n
+0000304507 00000 n
+0000304546 00000 n
+0000304585 00000 n
+0000304624 00000 n
+0000304663 00000 n
+0000304702 00000 n
+0000304741 00000 n
+0000304780 00000 n
+0000304819 00000 n
+0000304858 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com)
- [(\017\260\317E\373\310ry1\236<\204*zI\377) (\017\260\317E\373\310ry1\236<\204*zI\377)]
+ [(\\\266p\256\011:\177qbu\354\231+\334\265\306) (\\\266p\256\011:\177qbu\354\231+\334\265\306)]
  /Info 322 0 R /Root 321 0 R /Size 455 >>
 startxref
-304579
+304897
 %%EOF
