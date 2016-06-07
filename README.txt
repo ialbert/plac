@@ -49,8 +49,6 @@ Documentation
 --------------
 
 The source code and the documentation are hosted on Google code.
-Here is the full documentation in HTML and PDF form:
+Here is the full documentation:
 
-http://plac.googlecode.com/hg/doc/plac.html
-
-http://plac.googlecode.com/hg/doc/plac.pdf
+https://github.com/micheles/plac/blob/0.9.2/doc/plac.pdf
