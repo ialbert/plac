@@ -28,7 +28,7 @@ def expect(errclass, func, *args, **kw):
     except errclass:
         pass
     else:
-        raise RuntimeError('%s expected, got none!', errclass.__name__)
+        raise RuntimeError('%s expected, got none!' % errclass.__name__)
 
 
 def parser_from(f, **kw):
