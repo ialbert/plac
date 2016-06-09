@@ -51,4 +51,4 @@ Documentation
 The source code and the documentation are hosted on GitHub.
 Here is the full documentation:
 
-https://github.com/micheles/plac/blob/0.9.4/doc/plac.pdf
+https://github.com/micheles/plac/blob/0.9.5/doc/plac.pdf

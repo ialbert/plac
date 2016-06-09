@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import sys
 import Queue
@@ -43,7 +44,7 @@ class TkMonitor(Monitor):
         try:
             self.root.mainloop()
         except KeyboardInterrupt:
-            print >> sys.stderr, 'Process %d killed by CTRL-C' % os.getpid()
+            print('Process %d killed by CTRL-C' % os.getpid(), file=sys.stderr)
         except TerminatedProcess:
             pass
 

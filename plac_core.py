@@ -3,6 +3,7 @@ import re
 import sys
 import inspect
 import argparse
+from gettext import gettext as _
 if sys.version >= '3':
     from inspect import getfullargspec
 else:
@@ -12,11 +13,6 @@ else:
             self.args, self.varargs, self.varkw, self.defaults = \
                 inspect.getargspec(f)
             self.annotations = getattr(f, '__annotations__', {})
-try:
-    set
-except NameError: # Python 2.3
-    from sets import Set as set
-from gettext import gettext as _
 
 
 def getargspec(callableobj):
