@@ -28,7 +28,7 @@ See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
 import sys
 from plac_core import *
 
-__version__ = '0.9.2'
+__version__ = '0.9.4'
 
 
 if sys.version >= '2.5':

@@ -37,7 +37,6 @@ if __name__ == '__main__':
           py_modules=['plac_core', 'plac_ext', 'plac_tk', 'plac'],
           scripts=['plac_runner.py'],
           install_requires=require('argparse', 'multiprocessing'),
-          use_2to3=True,
           keywords="command line arguments parser",
           platforms=["All"],
           classifiers=['Development Status :: 4 - Beta',
