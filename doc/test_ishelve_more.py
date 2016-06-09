@@ -1,6 +1,8 @@
 # test_ishelve_more.py
 from __future__ import with_statement
-import plac, ishelve
+import ishelve
+import plac
+
 
 def test():
     with plac.Interpreter(ishelve.main) as i:

@@ -149,7 +149,7 @@ class ReadlineInput(object):
         self.case_sensitive = case_sensitive
         self.histfile = histfile
         if not case_sensitive:
-            self.completions = map(str.upper, completions)
+            self.completions = [c.upper() for c in completions]
         import readline
         self.rl = readline
         readline.parse_and_bind("tab: complete")
@@ -206,7 +206,7 @@ class HelpSummary(object):
                        sorted(obj.mpcommands), 15, 80)
         c.print_topics('threaded commands',
                        sorted(obj.thcommands), 15, 80)
-        p.helpsummary = unicode(c.stdout)
+        p.helpsummary = str(c.stdout)
 
     def __init__(self):
         self._ls = []
@@ -222,7 +222,7 @@ class PlacFormatter(argparse.RawDescriptionHelpFormatter):
     def _metavar_formatter(self, action, default_metavar):
         'Remove special commands from the usage message'
         choices = action.choices or {}
-        action.choices = dict((n, c) for n, c in choices.iteritems()
+        action.choices = dict((n, c) for n, c in choices.items()
                               if not n.startswith('.'))
         return super(PlacFormatter, self)._metavar_formatter(
             action, default_metavar)
@@ -371,7 +371,7 @@ class BaseTask(object):
                     raise GeneratorExit
                 if value is not None:  # add output
                     self.outlist.append(value)
-                    self.notify(unicode(value))
+                    self.notify(str(value))
                 yield
         except Interpreter.Exit:  # wanted exit
             self._regular_exit()
@@ -389,7 +389,7 @@ class BaseTask(object):
     def _regular_exit(self):
         self.status = 'FINISHED'
         try:
-            self.str = '\n'.join(map(unicode, self.outlist))
+            self.str = '\n'.join(map(str, self.outlist))
         except IndexError:
             self.str = 'no result'
 
@@ -448,7 +448,7 @@ class SynTask(BaseTask):
         if self.etype:  # there was an error
             return '%s: %s' % (self.etype.__name__, self.exc)
         else:
-            return '\n'.join(map(unicode, self.outlist))
+            return '\n'.join(map(str, self.outlist))
 
 
 class ThreadedTask(BaseTask):
@@ -560,7 +560,7 @@ class TaskManager(object):
 
     def close(self):
         "Kill all the running tasks"
-        for task in self.registry.itervalues():
+        for task in self.registry.values():
             try:
                 if task.status == 'RUNNING':
                     task.kill()
@@ -574,10 +574,10 @@ class TaskManager(object):
         "Get the latest submitted task from the registry"
         assert taskno < 0, 'You must pass a negative number'
         if status:
-            tasks = [t for t in self.registry.itervalues()
+            tasks = [t for t in self.registry.values()
                      if t.status == status]
         else:
-            tasks = [t for t in self.registry.itervalues()]
+            tasks = [t for t in self.registry.values()]
         tasks.sort(key=attrgetter('no'))
         if len(tasks) >= abs(taskno):
             return tasks[taskno]
@@ -626,7 +626,7 @@ class TaskManager(object):
             return
         else:
             task = self.registry[taskno]
-        outstr = '\n'.join(map(unicode, task.outlist))
+        outstr = '\n'.join(map(str, task.outlist))
         if fname:
             open(fname, 'w').write(outstr)
             yield 'saved output of %d into %s' % (taskno, fname)
@@ -750,12 +750,12 @@ class Manager(StartStopObject):
     def start(self):
         if self.mp is None:
             self.mp = multiprocessing.Manager()
-        for monitor in self.registry.itervalues():
+        for monitor in self.registry.values():
             monitor.start()
         self.started = True
 
     def stop(self):
-        for monitor in self.registry.itervalues():
+        for monitor in self.registry.values():
             monitor.queue.close()
             monitor.terminate()
         if self.mp:
@@ -764,11 +764,11 @@ class Manager(StartStopObject):
         self.started = False
 
     def notify_listener(self, taskno, msg):
-        for monitor in self.registry.itervalues():
+        for monitor in self.registry.values():
             monitor.queue.put(('notify_listener', taskno, msg))
 
     def add_listener(self, no):
-        for monitor in self.registry.itervalues():
+        for monitor in self.registry.values():
             monitor.queue.put(('add_listener', no))
 
 ########################## plac server ##############################

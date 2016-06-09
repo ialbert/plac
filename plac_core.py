@@ -183,7 +183,7 @@ class ArgumentParser(argparse.ArgumentParser):
     def consume(self, args):
         """Call the underlying function with the args. Works also for
         command containers, by dispatching to the right subparser."""
-        arglist = map(self.alias, args)
+        arglist = [self.alias(a) for a in args]
         cmd = None
         if hasattr(self, 'subparsers'):
             subp, cmd = self._extract_subparser_cmd(arglist)
@@ -200,6 +200,8 @@ class ArgumentParser(argparse.ArgumentParser):
             ns, extraopts = self.parse_known_args(arglist)
         else:
             ns, extraopts = self.parse_args(arglist), []  # may raise an exit
+        if not hasattr(self, 'argspec'):
+            raise SystemExit
         args = [getattr(ns, a) for a in self.argspec.args]
         varargs = getattr(ns, self.argspec.varargs or '', [])
         collision = set(self.argspec.args) & set(kwargs)
