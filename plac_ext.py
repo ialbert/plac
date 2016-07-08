@@ -54,6 +54,17 @@ else:
         raise exc
 
 
+def decode(val):
+    """
+    Decode an object assuming the encoding is UTF-8.
+    """
+    try:
+        # assume it is an encoded bytes object
+        return val.decode('utf-8')
+    except AttributeError:
+        # it was an already decoded unicode object
+        return val
+
 # ############################ generic utils ############################### #
 
 
@@ -371,7 +382,7 @@ class BaseTask(object):
                     raise GeneratorExit
                 if value is not None:  # add output
                     self.outlist.append(value)
-                    self.notify(str(value))
+                    self.notify(decode(value))
                 yield
         except Interpreter.Exit:  # wanted exit
             self._regular_exit()
@@ -389,7 +400,7 @@ class BaseTask(object):
     def _regular_exit(self):
         self.status = 'FINISHED'
         try:
-            self.str = '\n'.join(map(str, self.outlist))
+            self.str = '\n'.join(map(decode, self.outlist))
         except IndexError:
             self.str = 'no result'
 
@@ -442,7 +453,7 @@ class SynTask(BaseTask):
     """
     Synchronous task running in the interpreter loop and displaying its
     output as soon as available.
-    """    
+    """
     def __str__(self):
         "Return the output string or the error message"
         if self.etype:  # there was an error
@@ -468,7 +479,7 @@ class ThreadedTask(BaseTask):
         self.thread.join()
 
 
-######################### multiprocessing tasks ##########################
+# ######################## multiprocessing tasks ######################### #
 
 def sharedattr(name, on_error):
     "Return a property to be attached to an MPTask"
@@ -710,7 +721,7 @@ class Monitor(StartStopObject):
         pass
 
     def del_listener(self, taskno):
-        pass    
+        pass
 
     def notify_listener(self, taskno, msg):
         pass
@@ -771,7 +782,7 @@ class Manager(StartStopObject):
         for monitor in self.registry.values():
             monitor.queue.put(('add_listener', no))
 
-########################## plac server ##############################
+# ######################### plac server ############################# #
 
 import asyncore
 import asynchat

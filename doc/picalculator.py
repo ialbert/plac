@@ -1,3 +1,5 @@
+#  -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from __future__ import with_statement
 from __future__ import division
 import math
@@ -7,7 +9,7 @@ import plac
 
 
 class PiCalculator(object):
-    """Compute pi in parallel with threads or processes"""
+    """Compute \u03C0 in parallel with threads or processes"""
 
     @plac.annotations(
         npoints=('number of integration points', 'positional', None, int),
