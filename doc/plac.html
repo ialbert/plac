@@ -2829,6 +2829,8 @@ computation, due to the GIL and the scheduling overhead.</p>
 modes (parallel mode, threaded mode and sequential mode) depending on a
 <tt class="docutils literal">mode</tt> option:</p>
 <pre class="literal-block">
+#  -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from __future__ import with_statement
 from __future__ import division
 import math
@@ -2838,7 +2840,7 @@ import plac
 
 
 class PiCalculator(object):
-    &quot;&quot;&quot;Compute pi in parallel with threads or processes&quot;&quot;&quot;
+    &quot;&quot;&quot;Compute \u03C0 in parallel with threads or processes&quot;&quot;&quot;
 
     &#64;plac.annotations(
         npoints=('number of integration points', 'positional', None, int),
