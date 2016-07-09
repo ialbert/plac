@@ -29,7 +29,7 @@ if __name__ == '__main__':
             os.path.join(os.path.dirname(__file__), 'plac.py')),
           description=('The smartest command line arguments parser '
                        'in the world'),
-          long_description=open('README.txt').read(),
+          long_description=open('README.rst').read(),
           author='Michele Simionato',
           author_email='michele.simionato@gmail.com',
           url='https://github.com/micheles/plac',

@@ -2,7 +2,7 @@ HISTORY
 ----------
 
 0.9.6 Solved an issue with non-ASCII characters; now any UTF-8 character
-      can go in the help message (2016-07-08)
+      can go in the help message (2016-07-09)
 0.9.5 Removed an usage of `print >>` that was breaking Python 3, signaled
       by Quentin Pradet (2016-06-09)
 0.9.4 Removed use_2to3 in setup.py which was breaking Python 2, signaled
