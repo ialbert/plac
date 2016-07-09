@@ -6,7 +6,8 @@ HISTORY
 ## 0.9.6  (2016-07-09)
 
 Solved an issue with non-ASCII characters; now any UTF-8 character
-can go in the help message. Modernized the changelog http://keepachangelog.com/
+can go in the help message. Added support for `--version` in plac.call.
+Modernized the changelog http://keepachangelog.com/
 
 ## 0.9.5 (2016-06-09)
 

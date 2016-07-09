@@ -313,7 +313,7 @@ def iterable(obj):
     return hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes))
 
 
-def call(obj, arglist=sys.argv[1:], eager=True):
+def call(obj, arglist=sys.argv[1:], eager=True, version=None):
     """
     If obj is a function or a bound method, parse the given arglist
     by using the parser inferred from the annotations of obj
@@ -321,7 +321,11 @@ def call(obj, arglist=sys.argv[1:], eager=True):
     If obj is an object with attribute .commands, dispatch to the
     associated subparser.
     """
-    cmd, result = parser_from(obj).consume(arglist)
+    parser = parser_from(obj)
+    if version:
+        parser.add_argument(
+            '--version', '-v', action='version', version=version)
+    cmd, result = parser.consume(arglist)
     if iterable(result) and eager:  # listify the result
         return list(result)
     return result
