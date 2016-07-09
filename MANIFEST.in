@@ -1,1 +1,1 @@
-include *.rst doc/*.py doc/*.help doc/*.txt doc/*.html doc/*.pdf
+include *.md *.rst doc/*.py doc/*.help doc/*.txt doc/*.html doc/*.pdf
