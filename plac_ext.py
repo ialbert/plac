@@ -191,7 +191,12 @@ class ReadlineInput(object):
 
     def readline(self, prompt=''):
         try:
-            return raw_input(prompt) + '\n'
+            global input
+            input = raw_input
+        except NameError:
+            pass
+        try:
+            return input(prompt) + '\n'
         except EOFError:
             return ''
 
