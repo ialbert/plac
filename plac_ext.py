@@ -53,6 +53,10 @@ else:
             raise exc.with_traceback(tb)
         raise exc
 
+try:
+    raw_input
+except NameError: # python 3
+    raw_input = input
 
 def decode(val):
     """
