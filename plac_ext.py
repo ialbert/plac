@@ -53,6 +53,10 @@ else:
             raise exc.with_traceback(tb)
         raise exc
 
+try:
+    raw_input
+except NameError: # python 3
+    raw_input = input
 
 def decode(val):
     """
@@ -191,12 +195,7 @@ class ReadlineInput(object):
 
     def readline(self, prompt=''):
         try:
-            global input
-            input = raw_input
-        except NameError:
-            pass
-        try:
-            return input(prompt) + '\n'
+            return raw_input(prompt) + '\n'
         except EOFError:
             return ''
 
