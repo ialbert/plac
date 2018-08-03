@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
-<title></title>
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>plac.rst</title>
 <style type="text/css">
 
 .first {
@@ -424,13 +424,13 @@ h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
 </tr>
 <tr class="field"><th class="field-name">E-mail:</th><td class="field-body"><a class="reference external" href="mailto:michele.simionato&#64;gmail.com">michele.simionato&#64;gmail.com</a></td>
 </tr>
-<tr class="field"><th class="field-name">Date:</th><td class="field-body">June 2016</td>
+<tr class="field"><th class="field-name">Date:</th><td class="field-body">August 2018</td>
 </tr>
 <tr class="field"><th class="field-name">Download page:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></td>
 </tr>
 <tr class="field"><th class="field-name">Project page:</th><td class="field-body"><a class="reference external" href="https://github.com/micheles/plac">https://github.com/micheles/plac</a></td>
 </tr>
-<tr class="field"><th class="field-name">Requires:</th><td class="field-body">Python 2.6+</td>
+<tr class="field"><th class="field-name">Requires:</th><td class="field-body">Python from 2.6 to 3.6</td>
 </tr>
 <tr class="field"><th class="field-name">Installation:</th><td class="field-body"><tt class="docutils literal">pip install plac</tt></td>
 </tr>
@@ -1376,6 +1376,7 @@ def main(help, showall, clear, delete, filename=DEFAULT_SHELVE,
     finally:
         sh.close()
 
+
 main.add_help = False  # there is a custom help, remove the default one
 main.prefix_chars = '.'  # use dot-prefixed commands
 
@@ -1660,7 +1661,9 @@ However manual testing is a poor substitute for automatic testing.</p>
 <tt class="docutils literal">ishelve</tt> application by using <tt class="docutils literal">plac.call</tt> directly:</p>
 <pre class="literal-block">
 # test_ishelve.py
-import plac, ishelve
+import plac
+import ishelve
+
 
 def test():
     assert plac.call(ishelve.main, ['.clear']) == ['cleared the shelve']
@@ -1668,6 +1671,7 @@ def test():
     assert plac.call(ishelve.main, ['a']) == ['1']
     assert plac.call(ishelve.main, ['.delete=a']) == ['deleted a']
     assert plac.call(ishelve.main, ['a']) == ['a: not found']
+
 
 if __name__ == '__main__':
     test()
@@ -1883,43 +1887,54 @@ automatic <em>autocompletion</em> of commands.</p>
 <p>The shelve interface can be rewritten in an object-oriented way as follows:</p>
 <pre class="literal-block">
 # ishelve2.py
-import shelve, os, plac
+import os
+import shelve
+import plac
+
 
 class ShelveInterface(object):
     &quot;A minimal interface over a shelve object.&quot;
     commands = 'set', 'show', 'showall', 'delete'
+
     &#64;plac.annotations(
         configfile=('path name of the shelve', 'option'))
     def __init__(self, configfile):
         self.configfile = configfile or '~/conf.shelve'
         self.fname = os.path.expanduser(self.configfile)
-        self.__doc__ += '\nOperating on %s.\nUse help to see '\
-            'the available commands.\n'  % self.fname
+        self.__doc__ += ('\nOperating on %s.\nUse help to see '
+                         'the available commands.\n' % self.fname)
+
     def __enter__(self):
         self.sh = shelve.open(self.fname)
         return self
+
     def __exit__(self, etype, exc, tb):
         self.sh.close()
+
     def set(self, name, value):
         &quot;set name value&quot;
         yield 'setting %s=%s' % (name, value)
         self.sh[name] = value
+
     def show(self, *names):
         &quot;show given parameters&quot;
         for name in names:
-            yield '%s = %s' % (name, self.sh[name]) # no error checking
+            yield '%s = %s' % (name, self.sh[name])  # no error checking
+
     def showall(self):
         &quot;show all parameters&quot;
         for name in self.sh:
             yield '%s = %s' % (name, self.sh[name])
-    def delete(self, name=None):
+
+    def delete(self, name=''):
         &quot;delete given parameter (or everything)&quot;
-        if name is None:
+        if name == '':
             yield 'deleting everything'
             self.sh.clear()
         else:
             yield 'deleting %s' % name
-            del self.sh[name] # no error checking
+            del self.sh[name]  # no error checking
+
 
 if __name__ == '__main__':
     plac.Interpreter(plac.call(ShelveInterface)).interact()
@@ -2354,38 +2369,44 @@ Control System:</p>
 <pre class="literal-block">
 &quot;A Fake Version Control System&quot;
 
-import plac # this implementation also works with Python 2.4
+import plac  # this implementation also works with Python 2.4
 
 commands = 'checkout', 'commit', 'status'
+
 
 &#64;plac.annotations(url='url of the source code')
 def checkout(url):
     &quot;A fake checkout command&quot;
     return ('checkout ', url)
 
+
 &#64;plac.annotations(message=('commit message', 'option'))
 def commit(message):
     &quot;A fake commit command&quot;
     return ('commit ', message)
+
 
 &#64;plac.annotations(quiet=('summary information', 'flag', 'q'))
 def status(quiet):
     &quot;A fake status command&quot;
     return ('status ', quiet)
 
+
 def __missing__(name):
     return ('Command %r does not exist' % name,)
 
+
 def __exit__(etype, exc, tb):
     &quot;Will be called automatically at the end of the intepreter loop&quot;
-    if etype in (None, GeneratorExit): # success
+    if etype in (None, GeneratorExit):  # success
         print('ok')
 
-main = __import__(__name__) # the module imports itself!
+main = __import__(__name__)  # the module imports itself!
 
 if __name__ == '__main__':
     import plac
-    for out in plac.call(main): print(out)
+    for out in plac.call(main, version='0.1.0'):
+        print(out)
 
 </pre>
 <p>Notice that I have defined both an <tt class="docutils literal">__exit__</tt> hook and a <tt class="docutils literal">__missing__</tt>
@@ -2830,7 +2851,6 @@ modes (parallel mode, threaded mode and sequential mode) depending on a
 <tt class="docutils literal">mode</tt> option:</p>
 <pre class="literal-block">
 #  -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 from __future__ import with_statement
 from __future__ import division
 import math
