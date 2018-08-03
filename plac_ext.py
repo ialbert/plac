@@ -55,8 +55,9 @@ else:
 
 try:
     raw_input
-except NameError: # python 3
+except NameError:  # python 3
     raw_input = input
+
 
 def decode(val):
     """
@@ -67,7 +68,7 @@ def decode(val):
         return val.decode('utf-8')
     except AttributeError:
         # it was an already decoded unicode object
-        return val
+        return str(val)
 
 # ############################ generic utils ############################### #
 
@@ -110,6 +111,7 @@ def less(text):
         pass
     po.stdin.close()
     po.wait()
+
 
 use_less = (sys.platform != 'win32')  # unices
 
@@ -394,7 +396,7 @@ class BaseTask(object):
         except (GeneratorExit, TerminatedProcess, KeyboardInterrupt):
             # soft termination
             self.status = 'KILLED'
-        except:  # unexpected exception
+        except Exception:  # unexpected exception
             self.etype, self.exc, tb = sys.exc_info()
             self.tb = ''.join(traceback.format_tb(tb)) if stringify_tb else tb
             self.status = 'ABORTED'

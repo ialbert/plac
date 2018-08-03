@@ -64,6 +64,7 @@ def test_expected_help():
             if name not in ('vcs', 'ishelve'):
                 yield check_help, fname[:-5]
 
+
 p1 = parser_from(lambda delete, *args: None,
                  delete=('delete a file', 'option'))
 
@@ -76,6 +77,7 @@ def test_p1():
     arg = p1.parse_args([])
     assert arg.delete is None, arg.delete
     assert arg.args == [], arg.args
+
 
 p2 = parser_from(lambda arg1, delete, *args: None,
                  delete=('delete a file', 'option', 'd'))
@@ -94,6 +96,7 @@ def test_p2():
 
     expect(SystemExit, p2.parse_args, [])
 
+
 p3 = parser_from(lambda arg1, delete: None,
                  delete=('delete a file', 'option', 'd'))
 
@@ -106,6 +109,7 @@ def test_p3():
     expect(SystemExit, p3.parse_args, ['arg1', 'arg2'])
     expect(SystemExit, p3.parse_args, [])
 
+
 p4 = parser_from(lambda delete, delete_all, color="black": None,
                  delete=('delete a file', 'option', 'd'),
                  delete_all=('delete all files', 'flag', 'a'),
@@ -117,12 +121,13 @@ def test_p4():
     assert arg.delete_all is True, arg.delete_all
 
     arg = p4.parse_args([])
-   
+
     arg = p4.parse_args(['--color=black'])
     assert arg.color == 'black'
 
     arg = p4.parse_args(['--color=red'])
     assert arg.color == 'red'
+
 
 p5 = parser_from(lambda dry_run=False: None, dry_run=('Dry run', 'flag', 'x'))
 
@@ -156,6 +161,7 @@ def test_metavar_no_defaults():
                     x=('first argument', 'option', None, str, [], 'METAVAR'))
     assert_usage(p, 'usage: test_plac.py [-h] [-x METAVAR]\n')
     sys.argv[0] = sys_argv0
+
 
 def test_metavar_with_defaults():
     sys.argv[0] = 'test_plac.py'
@@ -203,6 +209,7 @@ class Cmds(object):
     def commit(self):
         return 'commit'
 
+
 cmds = Cmds()
 
 
@@ -235,6 +242,7 @@ def test_doctest():
     failure, tot = doctest.testfile('plac.rst', module_relative=False)
     assert not failure, failure
 
+
 failing_scripts = set(['ishelve2.plac'])
 
 
@@ -256,6 +264,7 @@ def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
             yield check_script, [PLAC_RUNNER, '-t', placet]
+
 
 if __name__ == '__main__':
     n = 0

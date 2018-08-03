@@ -32,7 +32,7 @@ def run(fnames, cmd, verbose):
     fname='script to run (.py or .plac or .placet)',
     extra='additional arguments',
     )
-def main(verbose, interactive, multiline, serve, batch, test, fname=None,
+def main(verbose, interactive, multiline, serve, batch, test, fname,
          *extra):
     "Runner for plac tools, plac batch files and plac tests"
     baseparser = plac.parser_from(main)
@@ -64,6 +64,8 @@ def main(verbose, interactive, multiline, serve, batch, test, fname=None,
         print('run %s plac test(s)' % (len(extra) + 1))
     else:
         baseparser.print_usage()
+
+
 main.add_help = False
 
 if __name__ == '__main__':

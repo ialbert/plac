@@ -50,6 +50,7 @@ def main(help, showall, clear, delete, filename=DEFAULT_SHELVE,
     finally:
         sh.close()
 
+
 main.add_help = False  # there is a custom help, remove the default one
 main.prefix_chars = '.'  # use dot-prefixed commands
 
