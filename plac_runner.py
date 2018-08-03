@@ -32,11 +32,11 @@ def run(fnames, cmd, verbose):
     fname='script to run (.py or .plac or .placet)',
     extra='additional arguments',
     )
-def main(verbose, interactive, multiline, serve, batch, test, fname,
+def main(verbose, interactive, multiline, serve, batch, test, fname='',
          *extra):
     "Runner for plac tools, plac batch files and plac tests"
     baseparser = plac.parser_from(main)
-    if fname is None:
+    if not fname:
         baseparser.print_help()
     elif sys.argv[1] == fname:  # script mode
         plactool = plac.import_main(fname)

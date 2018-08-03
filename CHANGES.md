@@ -3,6 +3,7 @@ HISTORY
 
 ## 1.0.0 (2018-08-03)
 
+Fixed a bug caused by arguments with default None in newer versions of argparse.
 Added a `gh-pages` branch with the documentation, as suggested by Ryan Gonzalez.
 Extended the Travis testing to Python 3.6. Python 2.6 still works but it is
 untested and therefore deprecated.
