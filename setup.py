@@ -40,7 +40,7 @@ if __name__ == '__main__':
           install_requires=require('argparse', 'multiprocessing'),
           keywords="command line arguments parser",
           platforms=["All"],
-          classifiers=['Development Status :: 5 - Stable',
+          classifiers=['Development Status :: 5 - Production/Stable',
                        'Intended Audience :: Developers',
                        'License :: OSI Approved :: BSD License',
                        'Natural Language :: English',
