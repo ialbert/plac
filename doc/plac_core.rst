@@ -3,10 +3,10 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: June 2016
+:Date: August 2018
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: https://github.com/micheles/plac
-:Requires: Python 2.6+
+:Requires: Python from 2.6 to 3.6
 :Installation: ``pip install plac``
 :License: BSD license
 

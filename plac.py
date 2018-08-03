@@ -1,6 +1,6 @@
 # #########################     LICENCE     ###############################
 #
-#   Copyright (c) 2010-2016, Michele Simionato
+#   Copyright (c) 2010-2018, Michele Simionato
 #   All rights reserved.
 #
 #   Redistributions of source code must retain the above copyright
@@ -25,16 +25,13 @@
 """
 See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
 """
-import sys
 from plac_core import *
+from plac_ext import (Interpreter, import_main, ReadlineInput, 
+                      stdout, runp, Monitor, default_help)
 
-__version__ = '0.9.6'
+__version__ = '1.0.0'
 
-
-if sys.version >= '2.5':
-    from plac_ext import (Interpreter, import_main, ReadlineInput, 
-                          stdout, runp, Monitor, default_help)
-    try:
-        from plac_tk import TkMonitor
-    except ImportError:
-        pass
+try:
+    from plac_tk import TkMonitor
+except ImportError:
+    pass

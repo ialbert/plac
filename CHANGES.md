@@ -1,9 +1,9 @@
 HISTORY
 -------
 
-## Unreleased
+## 1.0.0 (2018-08-03)
 
-Added a `gh-pages` branch with the documentation, as suggested by Ryan Gonzalez
+Added a `gh-pages` branch with the documentation, as suggested by Ryan Gonzalez.
 Extended the Travis testing to Python 3.6.
 
 ## 0.9.6  (2016-07-09)

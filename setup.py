@@ -23,6 +23,7 @@ def getversion(fname):
         if line.startswith('__version__'):
             return eval(line[13:])
 
+
 if __name__ == '__main__':
     setup(name='plac',
           version=getversion(
@@ -39,7 +40,7 @@ if __name__ == '__main__':
           install_requires=require('argparse', 'multiprocessing'),
           keywords="command line arguments parser",
           platforms=["All"],
-          classifiers=['Development Status :: 4 - Beta',
+          classifiers=['Development Status :: 5 - Stable',
                        'Intended Audience :: Developers',
                        'License :: OSI Approved :: BSD License',
                        'Natural Language :: English',
