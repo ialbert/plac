@@ -37,7 +37,7 @@ if __name__ == '__main__':
           license="BSD License",
           py_modules=['plac_core', 'plac_ext', 'plac_tk', 'plac'],
           scripts=['plac_runner.py'],
-          install_requires=require('argparse', 'multiprocessing'),
+          install_requires=require('argparse'),
           keywords="command line arguments parser",
           platforms=["All"],
           classifiers=['Development Status :: 5 - Production/Stable',
