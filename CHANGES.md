@@ -1,9 +1,12 @@
 HISTORY
 -------
 
-Removed a deprecation warning happening with Python 3.7+. Now plac is tested
+It is now possible to run plac scripts from Jupyter notebooks with the
+`%run` command. The bug was signaled by https://github.com/ursachi.
+Moreover, at user request, I removed a Python 3.7 deprecation warning,
+added a LICENSE.txt file and a Quickstart section to the README. plac is tested
 on Travis for Python 2.7 and 3.4+ but it should work also for all the other
-3.X releases. Added an explicit LICENSE.txt file.
+3.X releases.
 
 ## 1.0.0 (2018-08-03)
 
