@@ -2,7 +2,8 @@ HISTORY
 -------
 
 Removed a deprecation warning happening with Python 3.7+. Now plac is tested
-on Travis for Python 2.7 and 3.5+.
+on Travis for Python 2.7 and 3.4+ but it should work also for all the other
+3.X releases. Added an explicit LICENSE.txt file.
 
 ## 1.0.0 (2018-08-03)
 
