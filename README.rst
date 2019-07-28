@@ -72,4 +72,4 @@ The source code and the documentation are hosted on GitHub.
 Here is the full documentation in both HTML and PDF formats:
 
 - http://micheles.github.io/plac/
-- https://github.com/micheles/plac/blob/1.0.0/doc/plac.pdf
+- https://github.com/micheles/plac/blob/1.1.0/doc/plac.pdf
