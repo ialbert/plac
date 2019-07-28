@@ -1,12 +1,18 @@
 HISTORY
 -------
 
-It is now possible to run plac scripts from Jupyter notebooks with the
-`%run` command. The bug was signaled by https://github.com/ursachi.
+## 1.1.0 (2018-07-28)
+
+There is a new feature, requested by John Didion: if the type of an
+argument is not specified but there is a default, the type is inferred from
+the default value. This works for Python literal types, including date
+and datetime in ISO format.  It is now possible to run plac scripts
+from Jupyter notebooks with the `%run` command. The bug was signaled
+by https://github.com/ursachi and https://github.com/rkpatel33.
 Moreover, at user request, I removed a Python 3.7 deprecation warning,
-added a LICENSE.txt file and a Quickstart section to the README. plac is tested
-on Travis for Python 2.7 and 3.4+ but it should work also for all the other
-3.X releases.
+added a LICENSE.txt file and a Quickstart section to the README. plac
+is tested on Travis for Python 2.7 and 3.4+ but it should work also
+for all the other 3.X releases.
 
 ## 1.0.0 (2018-08-03)
 

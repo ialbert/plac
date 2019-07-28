@@ -1,8 +1,10 @@
 # this module should be kept Python 2.3 compatible
 import re
 import sys
+import time
 import inspect
 import argparse
+from datetime import datetime, date
 from gettext import gettext as _
 if sys.version >= '3':
     from inspect import getfullargspec
@@ -13,6 +15,14 @@ else:
             self.args, self.varargs, self.varkw, self.defaults = \
                 inspect.getargspec(f)
             self.annotations = getattr(f, '__annotations__', {})
+
+
+def to_date(s):
+    return date(*time.strptime(s, "%Y-%m-%d")[0:3])
+
+
+def to_datetime(s):
+    return datetime(*time.strptime(s, "%Y-%m-%d %H-%M-%S")[0:6])
 
 
 def getargspec(callableobj):
@@ -263,7 +273,13 @@ class ArgumentParser(argparse.ArgumentParser):
                 if a.help is None:
                     a.help = '[%s]' % str(dflt)  # dflt can be a tuple
                 if a.type is None:
-                    a.type = type(default)
+                    # try to infer the type from the default argument
+                    if isinstance(default, datetime):
+                        a.type = to_datetime
+                    elif isinstance(default, date):
+                        a.type = to_date
+                    else:
+                        a.type = type(default)
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
                     shortlong = (prefix + a.abbrev,

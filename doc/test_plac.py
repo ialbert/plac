@@ -1,5 +1,5 @@
 """
-The tests are runnable with nose, with py.test, or even as standalone script
+The tests should be run as standalone script
 """
 
 import os
@@ -197,6 +197,12 @@ def test_kwargs():
     assert argskw == [('arg2',), {'a': '1'}], argskw
 
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
+
+
+def test_date_default():
+    p = parser_from(lambda day=datetime.date.today(): day)
+    arg = p.parse_args(['2019-11-19'])
+    assert arg.day == datetime.date(2019, 11, 19)
 
 
 class Cmds(object):
