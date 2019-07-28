@@ -17,9 +17,21 @@ import signal
 import threading
 import plac_core
 
-if sys.version < '3':
-    from imp import load_source
+version = sys.version_info[:2]
 
+if version < (3, 5):
+    from imp import load_source
+else:
+    import importlib.util
+
+    def load_source(dotname, path):
+        spec = importlib.util.spec_from_file_location(dotname, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
+
+if sys.version < '3':
     def exec_(_code_, _globs_=None, _locs_=None):
         if _globs_ is None:
             frame = sys._getframe(1)
@@ -36,15 +48,6 @@ def raise_(tp, value=None, tb=None):
     raise tp, value, tb
 ''')
 else:
-
-    import importlib.util
-
-    def load_source(dotname, path):
-        spec = importlib.util.spec_from_file_location(dotname, path)
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        return mod
-
     exec_ = eval('exec')
 
     def raise_(tp, value=None, tb=None):

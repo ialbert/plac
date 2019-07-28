@@ -1,6 +1,6 @@
 # #########################     LICENCE     ###############################
 #
-#   Copyright (c) 2010-2018, Michele Simionato
+#   Copyright (c) 2010-2019, Michele Simionato
 #   All rights reserved.
 #
 #   Redistributions of source code must retain the above copyright

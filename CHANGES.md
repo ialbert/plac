@@ -1,6 +1,9 @@
 HISTORY
 -------
 
+Removed a deprecation warning happening with Python 3.7+. Now plac is tested
+on Travis for Python 2.7 and 3.5+.
+
 ## 1.0.0 (2018-08-03)
 
 Fixed a bug caused by arguments with default None in newer versions of argparse.
