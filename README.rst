@@ -29,6 +29,11 @@ Run
 
  $ python doc/test_plac.py
 
+You will see several apparent errors, but this is right, since the tests
+are checking for several error conditions. The important thing is that
+you get at the a line like
+
+``Executed XX tests OK``
 
 Quickstart
 ----------
