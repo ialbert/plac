@@ -3,7 +3,6 @@ from __future__ import with_statement
 from contextlib import contextmanager
 from operator import attrgetter
 from gettext import gettext as _
-import imp
 import inspect
 import os
 import sys
@@ -19,6 +18,8 @@ import threading
 import plac_core
 
 if sys.version < '3':
+    from imp import load_source
+
     def exec_(_code_, _globs_=None, _locs_=None):
         if _globs_ is None:
             frame = sys._getframe(1)
@@ -35,6 +36,15 @@ def raise_(tp, value=None, tb=None):
     raise tp, value, tb
 ''')
 else:
+
+    import importlib.util
+
+    def load_source(dotname, path):
+        spec = importlib.util.spec_from_file_location(dotname, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        return mod
+
     exec_ = eval('exec')
 
     def raise_(tp, value=None, tb=None):
@@ -336,7 +346,7 @@ def import_main(path, *args):
     else:
         fullpath = path
     name, ext = os.path.splitext(os.path.basename(fullpath))
-    module = imp.load_module(name, open(fullpath), fullpath, (ext, 'U', 1))
+    module = load_source(name, fullpath)
     if factory_name:
         tool = partial_call(getattr(module, factory_name), args)
     else:
