@@ -278,7 +278,7 @@ class ArgumentParser(argparse.ArgumentParser):
                         a.type = to_datetime
                     elif isinstance(default, date):
                         a.type = to_date
-                    else:
+                    elif default is not None:
                         a.type = type(default)
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
