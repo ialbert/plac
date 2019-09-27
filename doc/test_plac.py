@@ -205,6 +205,22 @@ def test_date_default():
     assert arg.day == datetime.date(2019, 11, 19)
 
 
+def test_int_default():
+    p = parser_from(lambda number=42: number)
+    arg = p.parse_args([])
+    assert arg.number == 42
+    arg = p.parse_args(['424242'])
+    assert arg.number == 424242
+
+
+def test_none_default():
+    p = parser_from(lambda nonable=None: arg)
+    arg = p.parse_args([])
+    assert arg.nonable is None
+    arg = p.parse_args(['somestring'])
+    assert arg.nonable == 'somestring'
+
+
 class Cmds(object):
     add_help = False
     commands = 'help', 'commit'
