@@ -295,6 +295,8 @@ class ArgumentParser(argparse.ArgumentParser):
                         a.type = to_date
                     elif default is not None:
                         a.type = type(default)
+                if not metavar and default == '':
+                    metavar = "''"
             if a.kind in ('option', 'flag'):
                 if a.abbrev:
                     shortlong = (prefix + a.abbrev,
