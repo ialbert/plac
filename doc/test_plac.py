@@ -189,8 +189,10 @@ def test_metavar_empty_string():
     # see https://github.com/micheles/plac/issues/36
     def main(arg=''):
         pass
+    sys.argv[0] = 'test_plac.py'
     p = parser_from(main)
     assert_usage(p, "usage: test_plac.py [-h] ['']\n")
+    sys.argv[0] = sys_argv0
 
 
 def test_kwargs():
