@@ -210,10 +210,12 @@ def test_kwargs2():
 
 def test_kwargs3():
     # see https://github.com/micheles/plac/issues/38
-    def main(opt: ('opt', 'option', 'o') = 'foo', **kw):
+    def main(opt='foo', **kw):
         return opt, kw
+    main.__annotations__ = dict(opt=('Option', 'option'))
     assert plac.call(main, ['-o', 'abc=']) == ['abc=', {}]
     assert plac.call(main, ['-o', 'abc=', 'z=1']) == ['abc=', {'z': '1'}]
+    assert plac.call(main, ['z=1']) == ['foo', {'z': '1'}]
 
 
 def test_date_default():

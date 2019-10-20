@@ -118,6 +118,7 @@ def pconf(obj):
             cfg[name] = getattr(obj, name)
     return cfg
 
+
 _parser_registry = {}
 
 
