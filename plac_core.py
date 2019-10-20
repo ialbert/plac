@@ -197,13 +197,6 @@ class ArgumentParser(argparse.ArgumentParser):
                 return cmd, self.missing(cmd)
             elif subp is not None:  # use the subparser
                 self = subp
-        if hasattr(self, 'argspec') and self.argspec.varkw:
-            arglist, kwargs = _extract_kwargs(arglist)  # modify arglist!
-            if (len(arglist) != len(self.argspec.args) and not
-                    self.argspec.varargs):
-                self.error(_('Unrecognized arguments: %s') % arglist)
-        else:
-            kwargs = {}
         if hasattr(self, 'argspec') and self.argspec.varargs:
             # ignore unrecognized arguments
             ns, extraopts = self.parse_known_args(arglist)
@@ -211,12 +204,27 @@ class ArgumentParser(argparse.ArgumentParser):
             ns, extraopts = self.parse_args(arglist), []  # may raise an exit
         if not hasattr(self, 'argspec'):
             raise SystemExit
-        args = [getattr(ns, a) for a in self.argspec.args]
-        varargs = getattr(ns, self.argspec.varargs or '', [])
+        if hasattr(self, 'argspec') and self.argspec.varkw:
+            v = self.argspec.varargs
+            varkw = self.argspec.varkw
+            if v in ns.__dict__:
+                lst = ns.__dict__.pop(v)
+                lst, kwargs = _extract_kwargs(lst)
+                ns.__dict__[v] = lst
+            elif varkw in ns.__dict__:
+                lst = ns.__dict__.pop(varkw)
+                lst, kwargs = _extract_kwargs(lst)
+                ns.__dict__[varkw] = lst
+            if lst and not v:
+                self.error(_('Unrecognized arguments: %s') % arglist)
+        else:
+            kwargs = {}
         collision = set(self.argspec.args) & set(kwargs)
         if collision:
             self.error(
                 _('colliding keyword arguments: %s') % ' '.join(collision))
+        args = [getattr(ns, a) for a in self.argspec.args]
+        varargs = getattr(ns, self.argspec.varargs or '', [])
         return cmd, self.func(*(args + varargs + extraopts), **kwargs)
 
     def _extract_subparser_cmd(self, arglist):

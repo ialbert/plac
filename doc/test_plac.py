@@ -200,12 +200,20 @@ def test_kwargs():
 
 
 def test_kwargs2():
-    # see https://github.com/isaacto
+    # see https://github.com/micheles/plac/issues/39
     def main(**kw):
         return kw.items()
     assert plac.call(main, ['a=1']) == [('a', '1')]
     expect(SystemExit, plac.call, main, ['foo'])
     expect(SystemExit, plac.call, main, ['foo', 'a=1'])
+
+
+def test_kwargs3():
+    # see https://github.com/micheles/plac/issues/38
+    def main(opt: ('opt', 'option', 'o') = 'foo', **kw):
+        return opt, kw
+    assert plac.call(main, ['-o', 'abc=']) == ['abc=', {}]
+    assert plac.call(main, ['-o', 'abc=', 'z=1']) == ['abc=', {'z': '1'}]
 
 
 def test_date_default():
