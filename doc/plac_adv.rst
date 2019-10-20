@@ -135,7 +135,7 @@ the ``check`` method of ``Interpreter`` objects:
 The method ``.check(given_input, expected_output)`` works on strings
 and raises an ``AssertionError`` if the output produced by the
 interpreter is different from the expected output for the given input.
-Notice that ``AssertionError`` is catched by tools like ``py.test`` and
+Notice that ``AssertionError`` is catched by tools like ``pytest`` and
 ``nosetests`` and actually ``plac`` tests are intended to be run with
 such tools.
 

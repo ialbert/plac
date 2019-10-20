@@ -14,4 +14,4 @@ install:
   - python setup.py install
 
 script:
-  nosetests -vx doc
+  pytest -v doc

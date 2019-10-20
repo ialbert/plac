@@ -37,7 +37,7 @@ def parser_from(f, **kw):
 
 
 def check_help(name):
-    sys.argv[0] = name + '.py'  # avoid issue with nosetests
+    sys.argv[0] = name + '.py'  # avoid issue with pytest
     plac_core._parser_registry.clear()  # makes different imports independent
     try:
         try:
@@ -62,7 +62,7 @@ def test_expected_help():
         if fname.endswith('.help'):
             name = fname[:-5]
             if name not in ('vcs', 'ishelve'):
-                yield check_help, fname[:-5]
+                check_help(fname[:-5])
 
 
 p1 = parser_from(lambda delete, *args: None,
@@ -308,13 +308,13 @@ def check_script(args):
 def test_batch():
     for batch in os.listdir('.'):
         if batch.endswith('.plac'):
-            yield check_script, [PLAC_RUNNER, '-b', batch]
+            check_script([PLAC_RUNNER, '-b', batch])
 
 
 def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
-            yield check_script, [PLAC_RUNNER, '-t', placet]
+            check_script([PLAC_RUNNER, '-t', placet])
 
 
 if __name__ == '__main__':
