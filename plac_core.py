@@ -199,6 +199,8 @@ class ArgumentParser(argparse.ArgumentParser):
                 self = subp
         if hasattr(self, 'argspec') and self.argspec.varkw:
             arglist, kwargs = _extract_kwargs(arglist)  # modify arglist!
+            if arglist and not self.argspec.varargs:
+                self.error(_('Unrecognized arguments: %s') % arglist)
         else:
             kwargs = {}
         if hasattr(self, 'argspec') and self.argspec.varargs:

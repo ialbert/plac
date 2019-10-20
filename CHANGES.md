@@ -1,6 +1,10 @@
 HISTORY
 -------
 
+## master
+
+Fixed https://github.com/micheles/plac/issues/39
+
 ## 1.1.0 (2018-07-28)
 
 Extended the recognition of default types to date and datetime in ISO
