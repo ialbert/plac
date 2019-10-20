@@ -1,9 +1,10 @@
 HISTORY
 -------
 
-## master
+## Not released
 
-Fixed https://github.com/micheles/plac/issues/39
+Fixed some issue with kwargs parsing and docstring formatting reported by
+the user https://github.com/isaacto.
 
 ## 1.1.0 (2018-07-28)
 

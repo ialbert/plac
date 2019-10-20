@@ -3,6 +3,7 @@ import re
 import sys
 import time
 import inspect
+import textwrap
 import argparse
 from datetime import datetime, date
 from gettext import gettext as _
@@ -251,8 +252,10 @@ class ArgumentParser(argparse.ArgumentParser):
         add_help = getattr(obj, 'add_help', True)
         for cmd in commands:
             func = getattr(obj, cmd[prefixlen:])  # strip the prefix
+            doc = (textwrap.dedent(func.__doc__.rstrip())
+                   if func.__doc__ else None)
             self.subparsers.add_parser(
-                cmd, add_help=add_help, help=func.__doc__, **pconf(func)
+                cmd, add_help=add_help, help=doc, **pconf(func)
                 ).populate_from(func)
 
     def _set_func_argspec(self, obj):
