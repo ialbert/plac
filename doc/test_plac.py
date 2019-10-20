@@ -199,6 +199,15 @@ def test_kwargs():
     expect(SystemExit, plac.call, main, ['arg1', 'arg2', 'a=1', 'opt=2'])
 
 
+def test_kwargs2():
+    # see https://github.com/isaacto
+    def main(**kw):
+        return kw.items()
+    assert plac.call(main, ['a=1']) == [('a', '1')]
+    expect(SystemExit, plac.call, main, ['foo'])
+    expect(SystemExit, plac.call, main, ['foo', 'a=1'])
+
+
 def test_date_default():
     p = parser_from(lambda day=datetime.date.today(): day)
     arg = p.parse_args(['2019-11-19'])
