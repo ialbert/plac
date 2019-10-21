@@ -40,7 +40,7 @@ Quickstart
 
 Here is a script that does some processing on a database table:
 
-.. code-block::
+.. code-block:: python
 
    # updatedb.py
    from datetime import datetime
