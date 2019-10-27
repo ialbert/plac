@@ -29,7 +29,7 @@ from plac_core import *
 from plac_ext import (Interpreter, import_main, ReadlineInput, 
                       stdout, runp, Monitor, default_help)
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
 
 try:
     from plac_tk import TkMonitor
