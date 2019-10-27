@@ -19,10 +19,12 @@ else:
 
 
 def to_date(s):
+    """Returns year-month-day"""
     return date(*time.strptime(s, "%Y-%m-%d")[0:3])
 
 
 def to_datetime(s):
+    """Returns year-month-day hour-minute-second"""
     return datetime(*time.strptime(s, "%Y-%m-%d %H-%M-%S")[0:6])
 
 
