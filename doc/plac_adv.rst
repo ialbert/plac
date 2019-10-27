@@ -343,7 +343,7 @@ it allows you to display the traceback of the last executed command.
 
 Here is the usage message:
 
-.. include:: ishelve2.help
+.. include:: ishelve2.hel
    :literal:
 
 Here is a session of usage on an Unix-like operating system::
