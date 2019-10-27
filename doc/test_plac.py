@@ -290,7 +290,7 @@ def test_yield():
 
 
 def test_doctest():
-    failure, tot = doctest.testfile('plac.rst', module_relative=False)
+    failure, tot = doctest.testfile('index.rst', module_relative=False)
     assert not failure, failure
 
 
