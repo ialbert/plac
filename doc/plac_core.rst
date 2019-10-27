@@ -319,14 +319,9 @@ Here is an example of usage::
 plac for Python 2.X users
 -------------------------
 
-While plac runs great on Python 3, I do not personally use it.
-At work we migrated to Python 2.7 in 2011. It will take a few more
-years before we consider migrating to Python 3. I am pretty much
-sure many Pythonistas are in the same situation. Therefore plac_
-provides a way to work with function annotations even in Python 2.X
-(including Python 2.3).  There is no magic involved; you just need to
-add the annotations by hand. For instance the annotated function
-declaration
+Even if Python 2 has reached its end of life, plac_
+still provides a way to work with function annotations by means of
+decorators. For instance the annotated function declaration
 
 ::
 
@@ -334,17 +329,6 @@ declaration
       ...
 
 is equivalent to the following code::
-
-  def main(dsn, *scripts):
-      ...
-  main.__annotations__ = dict(
-      dsn="Database dsn",
-      scripts="SQL scripts")
-
-One should be careful to match the keys of the annotation dictionary
-with the names of the arguments in the annotated function; for lazy
-people with Python 2.4 available the simplest way is to use the
-``plac.annotations`` decorator that performs the check for you::
 
   @plac.annotations(
       dsn="Database dsn",
