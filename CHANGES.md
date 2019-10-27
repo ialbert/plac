@@ -1,7 +1,7 @@
 HISTORY
 -------
 
-##  1.1.1 (2018-10-27)
+##  1.1.3 (2018-10-27)
 
 Fixed some issues with kwargs parsing, docstring formatting and empty
 string defaults reported by the user https://github.com/isaacto. Changed
