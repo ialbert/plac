@@ -1,7 +1,7 @@
 .PHONY: default
 
 default:
-	cd doc && rst2html.py --stylesheet=../df.css plac.rst plac.html && rst2pdf --footer=###Page### plac.rst
+	sphinx-build doc docs
 dist:
 	python3 setup.py build sdist bdist_wheel
 upload:
