@@ -5,8 +5,8 @@ HISTORY
 
 Fixed some issues with kwargs parsing, docstring formatting and empty
 string defaults reported by the user https://github.com/isaacto. Changed
-the testing framework on travis from nosetest to pytest. Removed the
-documentation from gh-pages and kept it only in github.
+the testing framework on travis from nosetest to pytest. Ported the
+documentation to sphinx.
 
 ## 1.1.0 (2018-07-28)
 
