@@ -18,7 +18,7 @@ the documentation, download the tarball_, unpack it and run
 
 in the main directory, possibly as superuser.
 
-.. _tarball: http://pypi.python.org/pypi/plac
+.. _tarball: https://pypi.org/project/plac/#files
 
 Testing
 --------
