@@ -1,7 +1,10 @@
 from __future__ import print_function
 import os
 import sys
-import Queue
+if sys.version_info < (3,):
+    import Queue as queue
+else:
+    import queue
 import plac_core
 from Tkinter import Tk
 from ScrolledText import ScrolledText
@@ -54,7 +57,7 @@ class TkMonitor(Monitor):
     def read_queue(self):
         try:
             cmd_args = self.queue.get_nowait()
-        except Queue.Empty:
+        except queue.Empty:
             pass
         else:
             getattr(self, cmd_args[0])(*cmd_args[1:])
