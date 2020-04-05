@@ -113,8 +113,11 @@ PARSER_CFG = getfullargspec(argparse.ArgumentParser.__init__).args[1:]
 
 
 def pconf(obj):
-    "Extracts the configuration of the underlying ArgumentParser from obj"
-    cfg = dict(description=obj.__doc__,
+    """
+    Extracts the configuration of the underlying ArgumentParser from obj
+    """
+    cfg = dict(description=(textwrap.dedent(obj.__doc__.rstrip())
+                            if obj.__doc__ else None),
                formatter_class=argparse.RawDescriptionHelpFormatter)
     for name in dir(obj):
         if name in PARSER_CFG:  # argument of ArgumentParser
@@ -149,7 +152,9 @@ def parser_from(obj, **confparams):
 
 
 def _extract_kwargs(args):
-    "Returns two lists: regular args and name=value args"
+    """
+    Returns two lists: regular args and name=value args
+    """
     arglist = []
     kwargs = {}
     for arg in args:
@@ -163,7 +168,9 @@ def _extract_kwargs(args):
 
 
 def _match_cmd(abbrev, commands, case_sensitive=True):
-    "Extract the command name from an abbreviation or raise a NameError"
+    """
+    Extract the command name from an abbreviation or raise a NameError
+    """
     if not case_sensitive:
         abbrev = abbrev.upper()
         commands = [c.upper() for c in commands]
@@ -191,8 +198,10 @@ class ArgumentParser(argparse.ArgumentParser):
         return arg
 
     def consume(self, args):
-        """Call the underlying function with the args. Works also for
-        command containers, by dispatching to the right subparser."""
+        """
+        Call the underlying function with the args. Works also for
+        command containers, by dispatching to the right subparser.
+        """
         arglist = [self.alias(a) for a in args]
         cmd = None
         if hasattr(self, 'subparsers'):
@@ -232,7 +241,9 @@ class ArgumentParser(argparse.ArgumentParser):
         return cmd, self.func(*(args + varargs + extraopts), **kwargs)
 
     def _extract_subparser_cmd(self, arglist):
-        "Extract the right subparser from the first recognized argument"
+        """
+        Extract the right subparser from the first recognized argument
+        """
         optprefix = self.prefix_chars[0]
         name_parser_map = self.subparsers._name_parser_map
         for i, arg in enumerate(arglist):
@@ -243,7 +254,9 @@ class ArgumentParser(argparse.ArgumentParser):
         return None, None
 
     def addsubcommands(self, commands, obj, title=None, cmdprefix=''):
-        "Extract a list of subcommands from obj and add them to the parser"
+        """
+        Extract a list of subcommands from obj and add them to the parser
+        """
         if hasattr(obj, cmdprefix) and obj.cmdprefix in self.prefix_chars:
             raise ValueError(_('The prefix %r is already taken!' % cmdprefix))
         if not hasattr(self, 'subparsers'):
@@ -261,8 +274,10 @@ class ArgumentParser(argparse.ArgumentParser):
                 ).populate_from(func)
 
     def _set_func_argspec(self, obj):
-        """Extracts the signature from a callable object and adds an .argspec
-        attribute to the parser. Also adds a .func reference to the object."""
+        """
+        Extracts the signature from a callable object and adds an .argspec
+        attribute to the parser. Also adds a .func reference to the object.
+        """
         self.func = obj
         self.argspec = getargspec(obj)
         _parser_registry[obj] = self
