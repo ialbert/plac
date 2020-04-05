@@ -4,6 +4,7 @@ HISTORY
 ## [Unreleased]
 
 Added dedenting of usage docstrings, as requested by Istvan Albert.
+Added tests on travis for Python 3.8.
 
 ##  1.1.3 (2018-10-27)
 
