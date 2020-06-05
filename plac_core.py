@@ -82,15 +82,15 @@ def _annotate(arg, ann, f):
     return f
 
 
-def pos(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+def pos(arg, help=None, type=None, choices=None, metavar=None):
     """
     Decorator for annotating positional arguments
     """
     return functools.partial(
-        _annotate, arg, (help, 'positional', abbrev, type, choices, metavar))
+        _annotate, arg, (help, 'positional', None, type, choices, metavar))
 
 
-def opt(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+def opt(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
     """
     Decorator for annotating optional arguments
     """
@@ -99,7 +99,7 @@ def opt(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
         _annotate, arg, (help, 'option', abbrev, type, choices, metavar))
 
 
-def flg(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+def flg(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
     """
     Decorator for annotating flags
     """
