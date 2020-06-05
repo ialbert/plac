@@ -3,10 +3,10 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
-:Date: July 2019
+:Date: June 2020
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: https://github.com/micheles/plac
-:Requires: Python from 2.6 to 3.7
+:Requires: Python from 2.6 to 3.8
 :Installation: ``pip install plac``
 :License: BSD license
 
@@ -28,6 +28,7 @@ the following help message:
 .. include:: example_all.help
    :literal:
 
+The patient readers will find all the explanations in the sections below.
 
 The importance of scaling down
 ------------------------------

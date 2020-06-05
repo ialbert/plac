@@ -3,7 +3,11 @@ HISTORY
 
 ## [Unreleased]
 
+##  1.2.0 (2020-06-05)
+
 Added dedenting of usage docstrings, as requested by Istvan Albert.
+Added new decorators `plac.pos`, `plac.opt`, `plac.flg` and an example
+using them in a section "For the impatient".
 Added tests on travis for Python 3.8.
 
 ##  1.1.3 (2018-10-27)
