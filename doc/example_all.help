@@ -1,0 +1,12 @@
+usage: example_all.py [-h] [-o .] [-n 100] [-d] {A,B,C}
+
+A script for machine learning
+
+positional arguments:
+  {A,B,C}               Model name
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o ., --output-dir .  Optional output directory
+  -n 100, --n-iter 100  Number of training iterations
+  -d, --debug           Enable debug mode

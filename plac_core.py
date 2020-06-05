@@ -4,6 +4,7 @@ import sys
 import time
 import inspect
 import textwrap
+import functools
 import argparse
 from datetime import datetime, date
 from gettext import gettext as _
@@ -71,6 +72,37 @@ def annotations(**ann):
         f.__annotations__ = ann
         return f
     return annotate
+
+
+def _annotate(arg, ann, f):
+    f.__annotations__[arg] = ann
+    return f
+
+
+def pos(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+    """
+    Decorator for annotating positional arguments
+    """
+    return functools.partial(
+        _annotate, arg, (help, 'positional', abbrev, type, choices, metavar))
+
+
+def opt(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+    """
+    Decorator for annotating optional arguments
+    """
+    abbrev = abbrev or arg[0]
+    return functools.partial(
+        _annotate, arg, (help, 'option', abbrev, type, choices, metavar))
+
+
+def flg(arg, help=None, abbrev=None, type=None, choices=None, metavar=None):
+    """
+    Decorator for annotating flags
+    """
+    abbrev = abbrev or arg[0]
+    return functools.partial(
+        _annotate, arg, (help, 'flag', abbrev, type, choices, metavar))
 
 
 def is_annotation(obj):
