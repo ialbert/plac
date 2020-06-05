@@ -75,9 +75,10 @@ def annotations(**ann):
 
 
 def _annotate(arg, ann, f):
-    if '__annotations__' not in f.__dict__:  # Python 2.7
-        f.__annotations__ = {}
-    f.__annotations__[arg] = ann
+    try:
+        f.__annotations__[arg] = ann
+    except AttributeError:  # Python 2.7
+        f.__annotations__ = {arg: ann}
     return f
 
 

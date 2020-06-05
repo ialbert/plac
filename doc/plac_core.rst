@@ -12,6 +12,23 @@ Plac: Parsing the Command Line the Easy Way
 
 .. contents::
 
+For the impatient
+------------------------------
+
+Here is how you would write a command-line script with plac, taken from
+a real life machine learning script that I found on the net:
+
+.. include:: example_all.py
+   :literal:
+
+
+Running the script with ``$ python example_all.py -h`` will give you
+the following help message:
+
+.. include:: example_all.help
+   :literal:
+
+
 The importance of scaling down
 ------------------------------
 
