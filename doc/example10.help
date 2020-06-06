@@ -4,7 +4,7 @@ A script to add and multiply numbers
 
 positional arguments:
   {add,mul}   The name of an operator
-  n           A number
+  n           Zero or more numbers
 
 optional arguments:
   -h, --help  show this help message and exit

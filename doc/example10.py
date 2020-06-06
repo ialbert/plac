@@ -2,11 +2,11 @@
 import plac
 
 
-# example with nearly full annotations (help, kind, abbrev, type, choices)
+# example with full annotations (help, kind, abbrev, type, choices, metavar)
 @plac.annotations(
     operator=("The name of an operator", 'positional', None, str,
               ['add', 'mul']),
-    numbers=("A number", 'positional', None, float))
+    numbers=("Zero or more numbers", 'positional', None, float, None, 'n'))
 def main(operator, *numbers):
     "A script to add and multiply numbers"
     if operator == 'mul':

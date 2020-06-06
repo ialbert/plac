@@ -394,8 +394,8 @@ then it is equal to the uppercased name of the argument, unless the
 argument has a default: then it is equal to the stringified
 form of the default.
 
-Here is an example showing many of the features (copied from the
-argparse_ documentation):
+Here is an example showing all of the features, including the metavar,
+copied from the argparse_ documentation:
 
 .. include:: example10.py
    :literal:
@@ -407,7 +407,7 @@ or the alternative decoration syntax introduced in version 1.2:
 .. code-block:: python
 
   @plac.pos('operator', "The name of an operator", choices=['add', 'mul'])
-  @plac.pos('numbers', "A number", float)
+  @plac.pos('numbers', "Zero or more numbers", float, metavar='n')
   def main(operator, *numbers):
       ...
 
