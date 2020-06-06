@@ -39,23 +39,26 @@
 <dt class="field-even">E-mail</dt>
 <dd class="field-even"><p><a class="reference external" href="mailto:michele&#46;simionato&#37;&#52;&#48;gmail&#46;com">michele<span>&#46;</span>simionato<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 </dd>
-<dt class="field-odd">Date</dt>
-<dd class="field-odd"><p>July 2019</p>
+<dt class="field-odd">Version</dt>
+<dd class="field-odd"><p>1.2.0</p>
 </dd>
-<dt class="field-even">Download page</dt>
-<dd class="field-even"><p><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></p>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>June 2020</p>
 </dd>
-<dt class="field-odd">Project page</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://github.com/micheles/plac">https://github.com/micheles/plac</a></p>
+<dt class="field-odd">Download page</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://pypi.python.org/pypi/plac">http://pypi.python.org/pypi/plac</a></p>
 </dd>
-<dt class="field-even">Requires</dt>
-<dd class="field-even"><p>Python from 2.6 to 3.7</p>
+<dt class="field-even">Project page</dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/micheles/plac">https://github.com/micheles/plac</a></p>
 </dd>
-<dt class="field-odd">Installation</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">plac</span></code></p>
+<dt class="field-odd">Requires</dt>
+<dd class="field-odd"><p>Python from 2.6 to 3.8</p>
 </dd>
-<dt class="field-even">License</dt>
-<dd class="field-even"><p>BSD license</p>
+<dt class="field-even">Installation</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">plac</span></code></p>
+</dd>
+<dt class="field-odd">License</dt>
+<dd class="field-odd"><p>BSD license</p>
 </dd>
 </dl>
 <div class="contents topic" id="contents">
@@ -149,6 +152,7 @@ the following help message:</p>
   <span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">debug</span>           <span class="n">Enable</span> <span class="n">debug</span> <span class="n">mode</span>
 </pre></div>
 </div>
+<p>The patient readers will find all the explanations in the sections below.</p>
 </div>
 <div class="section" id="the-importance-of-scaling-down">
 <h2><a class="toc-backref" href="#id17">The importance of scaling down</a><a class="headerlink" href="#the-importance-of-scaling-down" title="Permalink to this headline">¶</a></h2>
@@ -480,8 +484,8 @@ $ python3 example6.py -command=&quot;select&quot; dsn
 executing &#39;select&#39; on dsn
 </pre></div>
 </div>
-<p>Notice that the form <code class="docutils literal notranslate"><span class="pre">-command=SQL</span></code> is recognized only for the full
-option, not for its abbreviations:</p>
+<p>Notice that the form <code class="docutils literal notranslate"><span class="pre">-command=SQL</span></code> (with the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign) is recognized
+only for the full option, not for its abbreviations:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 example6.py -com=&quot;select&quot; dsn
 usage: example6.py [-h] [-command COMMAND] dsn
 example6.py: error: unrecognized arguments: -com=select
@@ -644,25 +648,40 @@ form of the default.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example10.py</span>
 <span class="kn">import</span> <span class="nn">plac</span>
 
+
+<span class="c1"># example with nearly full annotations (help, kind, abbrev, type, choices)</span>
 <span class="nd">@plac</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span>
-    <span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;The name of an operator&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">]),</span>
-    <span class="n">numbers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;A number&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">))</span>
+    <span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;The name of an operator&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span>
+              <span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">]),</span>
+    <span class="n">numbers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;A number&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
     <span class="s2">&quot;A script to add and multiply numbers&quot;</span>
     <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;mul&#39;</span><span class="p">:</span>
         <span class="n">op</span> <span class="o">=</span> <span class="nb">float</span><span class="o">.</span><span class="fm">__mul__</span>
         <span class="n">result</span> <span class="o">=</span> <span class="mf">1.0</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># operator == &#39;add&#39;</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># operator == &#39;add&#39;</span>
         <span class="n">op</span> <span class="o">=</span> <span class="nb">float</span><span class="o">.</span><span class="fm">__add__</span>
         <span class="n">result</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">result</span>
 
+
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">plac</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">main</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>If you cannot remember the order of the annotations you can use
+the <code class="docutils literal notranslate"><span class="pre">plac.Annotation</span></code> class (there is an example in the next section)
+or the alternative decoration syntax introduced in version 1.2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@plac</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s1">&#39;operator&#39;</span><span class="p">,</span> <span class="s2">&quot;The name of an operator&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">])</span>
+<span class="nd">@plac</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s2">&quot;A number&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>which is more compact. There are also a <code class="docutils literal notranslate"><span class="pre">plac.opt</span></code> decorator for options
+and <code class="docutils literal notranslate"><span class="pre">plac.flg</span></code> decorator for flags and they can be stacked together at will.</p>
 <p>Here is the usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">example10</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">{</span><span class="n">add</span><span class="p">,</span><span class="n">mul</span><span class="p">}</span> <span class="p">[</span><span class="n">n</span> <span class="p">[</span><span class="n">n</span> <span class="o">...</span><span class="p">]]</span>
 
@@ -757,6 +776,7 @@ string into a <a class="reference external" href="http://www.sqlalchemy.org/docs
     <span class="k">for</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">scripts</span><span class="p">:</span>
         <span class="n">db</span><span class="o">.</span><span class="n">bind</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">script</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         <span class="k">yield</span> <span class="s1">&#39;executed </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">script</span>
+
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">plac</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">main</span><span class="p">):</span>

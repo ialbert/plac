@@ -24,6 +24,7 @@ def main(db, header, sqlcmd, delimiter="|", *scripts):
         db.bind.execute(open(script).read())
         yield 'executed %s' % script
 
+
 if __name__ == '__main__':
     for output in plac.call(main):
         print(output)

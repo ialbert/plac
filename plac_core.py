@@ -99,13 +99,12 @@ def opt(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
         _annotate, arg, (help, 'option', abbrev, type, choices, metavar))
 
 
-def flg(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
+def flg(arg, help=None, abbrev=None):
     """
     Decorator for annotating flags
     """
-    abbrev = abbrev or arg[0]
     return functools.partial(
-        _annotate, arg, (help, 'flag', abbrev, type, choices, metavar))
+        _annotate, arg, (help, 'flag', abbrev or arg[0], None, None, None))
 
 
 def is_annotation(obj):

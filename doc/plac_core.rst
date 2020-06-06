@@ -3,6 +3,7 @@ Plac: Parsing the Command Line the Easy Way
 
 :Author: Michele Simionato
 :E-mail: michele.simionato@gmail.com
+:Version: 1.2.0
 :Date: June 2020
 :Download page: http://pypi.python.org/pypi/plac
 :Project page: https://github.com/micheles/plac
@@ -254,8 +255,8 @@ The following are all valid invocations ot the script::
   $ python3 example6.py -command="select" dsn
   executing 'select' on dsn
 
-Notice that the form ``-command=SQL`` is recognized only for the full
-option, not for its abbreviations::
+Notice that the form ``-command=SQL`` (with the ``=`` sign) is recognized
+only for the full option, not for its abbreviations::
 
   $ python3 example6.py -com="select" dsn
   usage: example6.py [-h] [-command COMMAND] dsn
@@ -398,6 +399,20 @@ argparse_ documentation):
 
 .. include:: example10.py
    :literal:
+
+If you cannot remember the order of the annotations you can use
+the ``plac.Annotation`` class (there is an example in the next section)
+or the alternative decoration syntax introduced in version 1.2:
+
+.. code-block:: python
+
+  @plac.pos('operator', "The name of an operator", choices=['add', 'mul'])
+  @plac.pos('numbers', "A number", float)
+  def main(operator, *numbers):
+      ...
+
+which is more compact. There are also a ``plac.opt`` decorator for options
+and ``plac.flg`` decorator for flags and they can be stacked together at will.
 
 Here is the usage:
 
