@@ -643,17 +643,17 @@ now the form <code class="docutils literal notranslate"><span class="pre">[--opt
 then it is equal to the uppercased name of the argument, unless the
 argument has a default: then it is equal to the stringified
 form of the default.</p>
-<p>Here is an example showing many of the features (copied from the
-<a class="reference external" href="http://argparse.googlecode.com">argparse</a> documentation):</p>
+<p>Here is an example showing all of the features, including the metavar,
+copied from the <a class="reference external" href="http://argparse.googlecode.com">argparse</a> documentation:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># example10.py</span>
 <span class="kn">import</span> <span class="nn">plac</span>
 
 
-<span class="c1"># example with nearly full annotations (help, kind, abbrev, type, choices)</span>
+<span class="c1"># example with full annotations (help, kind, abbrev, type, choices, metavar)</span>
 <span class="nd">@plac</span><span class="o">.</span><span class="n">annotations</span><span class="p">(</span>
     <span class="n">operator</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;The name of an operator&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span>
               <span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">]),</span>
-    <span class="n">numbers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;A number&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
+    <span class="n">numbers</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Zero or more numbers&quot;</span><span class="p">,</span> <span class="s1">&#39;positional&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">))</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
     <span class="s2">&quot;A script to add and multiply numbers&quot;</span>
     <span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s1">&#39;mul&#39;</span><span class="p">:</span>
@@ -675,7 +675,7 @@ form of the default.</p>
 the <code class="docutils literal notranslate"><span class="pre">plac.Annotation</span></code> class (there is an example in the next section)
 or the alternative decoration syntax introduced in version 1.2:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@plac</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s1">&#39;operator&#39;</span><span class="p">,</span> <span class="s2">&quot;The name of an operator&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="s1">&#39;mul&#39;</span><span class="p">])</span>
-<span class="nd">@plac</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s2">&quot;A number&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="nd">@plac</span><span class="o">.</span><span class="n">pos</span><span class="p">(</span><span class="s1">&#39;numbers&#39;</span><span class="p">,</span> <span class="s2">&quot;Zero or more numbers&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
@@ -689,7 +689,7 @@ and <code class="docutils literal notranslate"><span class="pre">plac.flg</span>
 
 <span class="n">positional</span> <span class="n">arguments</span><span class="p">:</span>
   <span class="p">{</span><span class="n">add</span><span class="p">,</span><span class="n">mul</span><span class="p">}</span>   <span class="n">The</span> <span class="n">name</span> <span class="n">of</span> <span class="n">an</span> <span class="n">operator</span>
-  <span class="n">n</span>           <span class="n">A</span> <span class="n">number</span>
+  <span class="n">n</span>           <span class="n">Zero</span> <span class="ow">or</span> <span class="n">more</span> <span class="n">numbers</span>
 
 <span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>  <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
