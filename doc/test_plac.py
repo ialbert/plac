@@ -136,6 +136,12 @@ def test_p5():
     arg = p5.parse_args(['--dry-run'])
     assert arg.dry_run is True,  arg.dry_run
 
+p_global = parser_from(lambda reserved_=False: None, reserved_=('Reserved word', 'flag', 'g'))
+
+def test_global():
+    arg = p_global.parse_args(['--reserved'])
+    assert arg.reserved is True,  arg.reserved
+
 
 def test_flag_with_default():
     expect(TypeError, parser_from, lambda yes_or_no='no': None,

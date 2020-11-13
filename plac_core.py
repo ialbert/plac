@@ -270,7 +270,8 @@ class ArgumentParser(argparse.ArgumentParser):
         if collision:
             self.error(
                 _('colliding keyword arguments: %s') % ' '.join(collision))
-        args = [getattr(ns, a) for a in self.argspec.args]
+        # Correct options with trailing undescores
+        args = [getattr(ns, a.rstrip('_')) for a in self.argspec.args]
         varargs = getattr(ns, self.argspec.varargs or '', [])
         return cmd, self.func(*(args + varargs + extraopts), **kwargs)
 
@@ -349,11 +350,19 @@ class ArgumentParser(argparse.ArgumentParser):
                 if not metavar and default == '':
                     metavar = "''"
             if a.kind in ('option', 'flag'):
+
+                if name.endswith("_"):
+                    # Allows reserved words to be specified with underscore in name.
+                    suffix = name.rstrip('_')
+                else:
+                    # Convert undescores to dashes.
+                    suffix = name.replace('_', '-')
+
                 if a.abbrev:
                     shortlong = (prefix + a.abbrev,
-                                 prefix*2 + name.replace('_', '-'))
+                                 prefix*2 + suffix)
                 else:
-                    shortlong = (prefix + name.replace('_', '-'),)
+                    shortlong = (prefix + suffix,)
             elif default is NONE:  # required argument
                 self.add_argument(name, help=a.help, type=a.type,
                                   choices=a.choices, metavar=metavar)
