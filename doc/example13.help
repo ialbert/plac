@@ -1,0 +1,7 @@
+usage: example13.py [-h] [-d] [-g] [-s 100]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -d, --dry-run      [False]
+  -g, --global       [False]
+  -s 100, --sys 100  [100]
