@@ -3,6 +3,10 @@ HISTORY
 
 ## [Unreleased]
 
+Thanks to Istvan Albert, it is now possible to use language keywords and
+builtins as option/flag names.
+Moved the tests from Travis to GitHub actions.
+
 ##  1.2.0 (2020-06-05)
 
 Added dedenting of usage docstrings, as requested by Istvan Albert.
