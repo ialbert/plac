@@ -568,8 +568,8 @@ following assumes knowledge of argparse_):
   cases of interest to me are covered by plac_ and I did not feel the need
   to increase the learning curve by adding direct support for ``nargs``.
 
-- plac_ does support subparsers, but you must read the `advanced usage
-  document`_ to see how it works.
+- plac_ does support subparsers, but you must read the section
+  :ref:`Implementing subcommands` to see how it works.
 
 - plac_ does not support actions directly. This also
   looks like a feature too advanced for the goals of plac_. Notice however
@@ -800,12 +800,12 @@ will steal it from me!
 That concludes the section about the basic usage of plac_. You are now ready to
 read about the advanced usage.
 
-.. _argparse: http://argparse.googlecode.com
+.. _argparse: https://docs.python.org/3/library/argparse.html
 .. _optparse: http://docs.python.org/library/optparse.html
 .. _getopt: http://docs.python.org/library/getopt.html
 .. _optionparse: http://code.activestate.com/recipes/278844-parsing-the-command-line/
 .. _plac: http://pypi.python.org/pypi/plac
-.. _scaling down: http://www.welton.it/articles/scalable_systems
+.. _scaling down: https://www.welton.it/articles/scalable_systems.html
 .. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
 .. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
 .. _Clap: http://pypi.python.org/pypi/Clap
@@ -814,7 +814,6 @@ read about the advanced usage.
 .. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html
 .. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
 .. _opterator: http://pypi.python.org/pypi/opterator
-.. _advanced usage document: in-writing
 .. _cmd2: http://packages.python.org/cmd2/
 .. _cmd: http://docs.python.org/library/cmd.html
 .. _marrow.script: https://github.com/pulp/marrow.script 

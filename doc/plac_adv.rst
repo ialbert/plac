@@ -1259,12 +1259,9 @@ annotations from a configuration file or from a database, but I expect such
 use cases to be quite rare: the default mechanism should work 
 pretty well for most users.
 
-.. _argparse: http://argparse.googlecode.com
 .. _optparse: http://docs.python.org/library/optparse.html
 .. _getopt: http://docs.python.org/library/getopt.html
 .. _optionparse: http://code.activestate.com/recipes/278844-parsing-the-command-line/
-.. _plac: http://pypi.python.org/pypi/plac
-.. _scaling down: http://www.welton.it/articles/scalable_systems
 .. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
 .. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
 .. _Clap: http://pypi.python.org/pypi/Clap

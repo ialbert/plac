@@ -352,10 +352,10 @@ class ArgumentParser(argparse.ArgumentParser):
             if a.kind in ('option', 'flag'):
 
                 if name.endswith("_"):
-                    # Allows reserved words to be specified with underscore in name.
+                    # allows reserved words to be specified with underscores
                     suffix = name.rstrip('_')
                 else:
-                    # Convert undescores to dashes.
+                    # convert undescores to dashes.
                     suffix = name.replace('_', '-')
 
                 if a.abbrev:
