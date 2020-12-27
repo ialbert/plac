@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'plac'
-copyright = '2019, Michele Simionato'
+copyright = '2010-2021, Michele Simionato'
 author = 'Michele Simionato'
 
 
