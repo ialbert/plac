@@ -470,6 +470,28 @@ If ``main`` returns a generator object this example will print each
 line as soon as available, whereas the default behaviour is to print
 all the lines together and the end of the computation.
 
+What to do if an argument name clashes with a Python builtin/keyword?
+----------------------------------------------------------------------
+
+Since version 1.3, thanks to a contribution of `Istvan Albert`_, plac_
+manages such cases easily. The trick is to add one (or more) trailing
+underscores to the arguments that would clash; plac_ will automatically
+strip the underscores:
+
+.. include:: example13.py
+   :literal:
+
+The usage message will be as you would expect::
+
+  $ python doc/example13.py -h
+  usage: example13.py [-h] [-l] [-y] [-s 100]
+  
+  optional arguments:
+    -h, --help         show this help message and exit
+    -l, --list
+    -y, --yield        [False]
+    -s 100, --sys 100  [100]
+
 A realistic example
 -------------------
 
@@ -571,10 +593,10 @@ following assumes knowledge of argparse_):
 - plac_ does support subparsers, but you must read the section
   :ref:`Implementing subcommands` to see how it works.
 
-- plac_ does not support actions directly. This also
-  looks like a feature too advanced for the goals of plac_. Notice however
-  that the ability to define your own annotation objects (again, see
-  the  `advanced usage document`_) may mitigate the need for custom actions.
+- plac_ does not support actions directly. This also looks like a feature too
+  advanced for the goals of plac_. Notice, however, that the ability to define
+  your own annotation objects (again, see the section
+  :ref:`Implementing subcommand`_) may mitigate the need for custom actions.
 
 On the plus side, plac_ can leverage directly on a number of argparse_ features.
 
@@ -762,8 +784,7 @@ the realm of command-line arguments parsers.
 Version 0.5 of plac_ doubled the code base and the documentation: it is
 based on the idea of using plac_ to implement command-line interpreters,
 i.e. something akin to the ``cmd`` module in the standard library, only better.
-The new features of plac_ are described in the `advanced usage document`_ .
-They are implemented in a separated module (``plac_ext.py``), since
+The new features are implemented in a separated module (``plac_ext.py``), since
 they require Python 2.5 to work, whereas ``plac_core.py`` only requires
 Python 2.3.
 
@@ -819,3 +840,4 @@ read about the advanced usage.
 .. _marrow.script: https://github.com/pulp/marrow.script 
 .. _commandline: http://pypi.python.org/pypi/commandline
 .. _argh: http://packages.python.org/argh
+.. _Istvan Albert: https://github.com/ialbert
