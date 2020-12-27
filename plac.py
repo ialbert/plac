@@ -1,6 +1,6 @@
-# #########################     LICENCE     ###############################
+# #########################     LICENSE     ###############################
 #
-#   Copyright (c) 2010-2019, Michele Simionato
+#   Copyright (c) 2010-2021, Michele Simionato
 #   All rights reserved.
 #
 #   Redistributions of source code must retain the above copyright
@@ -23,13 +23,13 @@
 #   USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 #   DAMAGE.
 """
-See doc/plac.pdf, doc/plac_adv.pdf for the documentation.
+See docs/index.html for the documentation.
 """
 from plac_core import *
 from plac_ext import (Interpreter, import_main, ReadlineInput, 
                       stdout, runp, Monitor, default_help)
 
-__version__ = '1.2.0'
+__version__ = '1.3.0'
 
 try:
     from plac_tk import TkMonitor
