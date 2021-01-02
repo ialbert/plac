@@ -109,7 +109,7 @@ domain-specific languages(!). See the full documentation for more details.
 Avoiding name clashes
 ---------------------
 
-Python syntax, or your variable naming may impose constraints on what words may be used as parameters. The circumvent that limitation append a trailing underscore to the name. ``plac`` will strip that underscore from the command line parameter name:
+Python syntax, or your variable naming may impose constraints on what words may be used as parameters. To circumvent that limitation append a trailing underscore to the name. ``plac`` will strip that underscore from the command line parameter name:
 
 .. code-block:: python
 
