@@ -45,15 +45,42 @@ Advanced features
 
 Sometimes we need more control over how parameters are handled. ``plac`` offers simple decorator helpers for positional, option and flag type parameters:
 
-.. include:: doc/example_all.py
-   :literal:
+.. code-block:: python
 
+    import plac
+    try:
+        from pathlib import Path
+    except ImportError:  # in Python 2.7
+        Path = str
+
+
+    @plac.pos('model', "Model name", choices=['A', 'B', 'C'])
+    @plac.opt('output_dir', "Optional output directory", type=Path)
+    @plac.opt('n_iter', "Number of training iterations", type=int)
+    @plac.flg('debug', "Enable debug mode")
+    def main(model, output_dir='.', n_iter=100, debug=False):
+        """A script for machine learning"""
+
+
+    if __name__ == '__main__':
+        plac.call(main)
 
 Running the script with ``$ python example_all.py -h`` will give you
-the following help message:
+the following help message: ::
 
-.. include:: doc/example_all.help
-   :literal:
+    usage: example_all.py [-h] [-o .] [-n 100] [-d] {A,B,C}
+
+    A script for machine learning
+
+    positional arguments:
+      {A,B,C}               Model name
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -o ., --output-dir .  Optional output directory
+      -n 100, --n-iter 100  Number of training iterations
+      -d, --debug           Enable debug mode
+
 
 Nevertheless to say, plac can do a lot more, up to the creation of
 domain-specific languages(!). See the full documentation for more details.
