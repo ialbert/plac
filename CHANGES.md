@@ -6,8 +6,9 @@ HISTORY
 ## 1.3.0 (200-12-27)
 
 Thanks to Istvan Albert, it is now possible to use language keywords and
-builtins as option/flag names. Some broken links in the documentations
-were fixed and the tests were moved from Travis to GitHub actions.
+builtins as option/flag names. Some broken links were fixed and the
+documentation has been moved to https://plac.readthedocs.io,
+while the CI framework has changed from Travis to GitHub actions.
 
 ##  1.2.0 (2020-06-05)
 
