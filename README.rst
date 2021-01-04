@@ -3,9 +3,11 @@ Plac: Parsing the Command Line the Easy Way
 
 ``plac`` is a Python package that can generate command line parameters from function signatures.
 
-``plac`` works on versions of Python from 2.6 through 3.X.
+``plac`` works on Python 2.6 through all versions of Python 3
 
 ``plac`` has no dependencies beyond modules already present in the Python standard library.
+
+``plac`` implements most if its functionality in a single file that may be included in your source code.
 
 Quickstart
 ----------
@@ -48,25 +50,24 @@ Often we need more control over how parameters are handled. ``plac`` offers simp
 .. code-block:: python
 
     import plac
-    try:
-        from pathlib import Path
-    except ImportError:  # in Python 2.7
-        Path = str
-
+    
+    from pathlib import Path
+    
     @plac.pos('model', "Model name", choices=['A', 'B', 'C'])
     @plac.opt('output_dir', "Optional output directory", type=Path)
     @plac.opt('n_iter', "Number of training iterations", type=int)
     @plac.flg('debug', "Enable debug mode")
     def main(model, output_dir='.', n_iter=100, debug=False):
         """A script for machine learning"""
-
+        pass
+        
     if __name__ == '__main__':
         plac.call(main)
 
 Running the script with ``$ python example_all.py -h`` will give you
 the following help message: ::
 
-    usage: example_all.py [-h] [-o .] [-n 100] [-d] {A,B,C}
+    usage: example.py [-h] [-o .] [-n 100] [-d] {A,B,C}
 
     A script for machine learning
 
