@@ -64,7 +64,7 @@ Often we need more control over how parameters are handled. ``plac`` offers simp
     if __name__ == '__main__':
         plac.call(main)
 
-Running the script with ``$ python example_all.py -h`` will give you
+Running the script with ``$ python example.py -h`` will give you
 the following help message: ::
 
     usage: example.py [-h] [-o .] [-n 100] [-d] {A,B,C}
