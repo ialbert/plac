@@ -155,7 +155,7 @@ Your `plac` enabled program may accept multiple positional arguments and even ad
 ```python
 import plac
 
-@plac.pos('args', help="words", choices=[ "A", "B" ])
+@plac.pos('args', help="words")
 @plac.opt('kwds', help="key=value", )
 def main(*args, **kwds):
     print(args)
@@ -178,11 +178,11 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-running it as:
+when running it as:
 
     python example15.py A B x=10 y=20
 
-prints:
+the program prints:
 
     ('A', 'B')
     {'x': '10', 'y': '20'}
