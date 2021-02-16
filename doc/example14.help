@@ -1,0 +1,7 @@
+usage: example14.py [-h] [words [words ...]]
+
+positional arguments:
+  words       Input words
+
+optional arguments:
+  -h, --help  show this help message and exit

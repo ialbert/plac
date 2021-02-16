@@ -10,3 +10,8 @@ upload:
 	rm -rf build/* dist/*
 	python setup.py sdist bdist_wheel
 	python -m twine upload --repository pypi dist/*
+
+test:
+	#pip install -q sqlsoup
+	python doc/test_plac.py
+
