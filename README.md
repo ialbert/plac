@@ -47,8 +47,8 @@ positional arguments:
   table       [product]
   today       [2019-07-28 07:18:20.054708]
 
-    optional arguments:
-      -h, --help  show this help message and exit
+optional arguments:
+   -h, --help  show this help message and exit
 ```
 
 # Next steps
