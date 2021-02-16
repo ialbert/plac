@@ -117,7 +117,7 @@ Your program may accept multiple positional arguments using the variable argumen
 
 ::
 
-   python code.py -h
+   $ python code.py -h
    usage: code.py [-h] [words [words ...]]
 
    positional arguments:
