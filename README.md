@@ -16,7 +16,7 @@ included in your source code.
 Here is how to turn a script that does some processing on a database
 table into a full, command-line enabled program:
 
-```
+```python
 # updatedb.py
 from datetime import datetime
 
@@ -57,7 +57,7 @@ The automatic inference takes us only so far, usually we need more
 control over the parameters. `plac` offers simple decorator helpers for
 positional, option and flag type parameters:
 
-```
+```python
 import plac
 
 from pathlib import Path
@@ -97,7 +97,7 @@ optional arguments:
 The following decorator reference helps you recall what parameters are
 valid for each decorator type:
 
-```
+```python
 # Positional parameters.
 def pos(arg, help=None, type=None, choices=None, metavar=None):
 
@@ -120,7 +120,7 @@ words may be used as parameters. To circumvent that limitation append a
 trailing underscore to the name. `plac` will strip that underscore from
 the command line parameter name:
 
-```
+```python
 import plac
 
 @plac.flg('list_')  # avoid clash with builtin
@@ -152,7 +152,7 @@ optional arguments:
 
 Your `plac` enabled program may accept multiple positional arguments and even additional key=value pairs:
 
-```
+```python
 import plac
 
 @plac.pos('args', help="words", choices=[ "A", "B" ])
