@@ -99,13 +99,33 @@ The following decorator reference helps you recall what parameters are valid for
 
 Notably, the main functionality of ``plac`` is implemented in a single module called ``plac_core.py`` that, if necessary, may be included and distributed with your source code thus reducing external dependencies in your code.
 
-Documentation
---------------
+Multiple arguments
+------------------
 
-In addition, plac can do a lot more, up to the creation of
-domain-specific languages(!). See the full documentation for more details.
+Your program may accept multiple positional arguments using the variable argument definition:
 
-* https://plac.readthedocs.io/en/latest/
+.. code-block:: python
+
+   import plac
+
+   @plac.pos('words', help="Input words")
+   def run(*words):
+       print(words)
+
+   if __name__ == '__main__':
+       plac.call(run)
+
+::
+
+   python code.py -h
+   usage: code.py [-h] [words [words ...]]
+
+   positional arguments:
+     words       Input words
+
+   optional arguments:
+     -h, --help  show this help message and exit
+
 
 Avoiding name clashes
 ---------------------
@@ -137,6 +157,15 @@ Python syntax, or your variable naming may impose constraints on what words may 
       -l, --list
       -y, --yield        [False]
       -s 100, --sys 100  [100]
+
+Documentation
+--------------
+
+In addition, plac can do a lot more, up to the creation of
+domain-specific languages(!). See the full documentation for more details.
+
+* https://plac.readthedocs.io/en/latest/
+
 
 Installation
 -------------
