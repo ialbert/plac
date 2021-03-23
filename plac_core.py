@@ -134,7 +134,9 @@ class Annotation(object):
         "Helper to convert an object into an annotation, if needed"
         if is_annotation(obj):
             return obj  # do nothing
-        elif hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes)):
+        elif inspect.isclass(obj):
+            obj = str(obj)
+        elif iterable(obj):
             return cls(*obj)
         return cls(obj)
     from_ = classmethod(from_)
@@ -404,8 +406,8 @@ class ArgumentParser(argparse.ArgumentParser):
 
 
 def iterable(obj):
-    "Any object with an __iter__ method which is not a string"
-    return hasattr(obj, '__iter__') and not isinstance(obj, (str, bytes))
+    "Any object with an __iter__ method which is not a string or class"
+    return hasattr(obj, '__iter__') and not inspect.isclass(obj) and not isinstance(obj, (str, bytes))
 
 
 def call(obj, arglist=None, eager=True, version=None):
