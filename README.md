@@ -162,7 +162,7 @@ def main(*args, **kwds):
     print(kwds)
 
 if __name__ == '__main__':
-    plac.call(mai
+    plac.call(main)
 ```
 
 the usage will be:
