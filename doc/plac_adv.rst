@@ -138,9 +138,9 @@ You can run the ``ishelve.placet`` file by calling the
  $ python -c "import plac, ishelve
  plac.Interpreter(ishelve.main).doctest(open('ishelve.placet'), verbose=True)"
 
-Internally ``Interpreter.doctests`` invokes something like ``Interpreter.check``
+Internally ``Interpreter.doctests`` invokes things like ``Interpreter.check``
 multiple times inside the same context and compares the output with the
-expected output: if even one check fails, the whole test fail.
+expected output: if even one check fails, the whole test fails.
 
 You should realize that the easy tests supported by ``plac`` are *not*
 unittests: they are functional tests. They model the user interaction and the
@@ -260,12 +260,12 @@ generic container of commands.  This is useful if you want to
 implement *subcommands* (a familiar example of a command-line
 application featuring subcommands is version control system).
 \
-Technically a container of commands is any object with a ``.commands`` attribute
-listing a set of functions or methods which are valid commands. A command
-container may have initialization/finalization hooks (``__enter__/__exit__``)
-and dispatch hooks (``__missing__``, invoked for invalid command names).
-Moreover, only when using command containers plac_ is able to provide
-automatic *autocompletion* of commands.
+Technically a container of commands is any object with a ``.commands``
+attribute listing a set of functions or methods which are valid commands.
+A command container may have initialization/finalization hooks
+(``__enter__/__exit__``) and dispatch hooks (``__missing__``, invoked for
+invalid command names). Moreover, only when using command containers is plac_
+able to provide automatic *autocompletion* of commands.
 
 The shelve interface can be rewritten in an object-oriented way as follows:
 
@@ -812,8 +812,8 @@ before entering a new command::
  Imported 10000 lines
  closing the file
 
-Being unable to enter any other command is quite annoying: in such situation one
-would like to run the long running commands in the background, to keep
+Being unable to enter any other command is quite annoying: in those situations
+one would like to run the long running commands in the background, to keep
 the interface responsive. plac_ provides two ways to reach this goal: threads
 and processes.
 

@@ -572,7 +572,7 @@ following assumes knowledge of argparse_):
   your own annotation objects (again, see the section
   :ref:`Implementing subcommand`_) may mitigate the need for custom actions.
 
-On the plus side, plac_ can leverage directly on a number of argparse_ features.
+On the plus side, plac_ can directly leverage a number of argparse_ features.
 
 For instance, you can use argparse.FileType_ directly. Moreover,
 it is possible to pass options to the underlying
