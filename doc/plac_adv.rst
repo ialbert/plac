@@ -1192,12 +1192,12 @@ the annotations from a configuration file or from a database, but I expect
 such use cases to be quite rare: the default mechanism should work
 pretty well for most users.
 
-.. _plac: http://pypi.python.org/pypi/plac
-.. _argparse: https://docs.python.org/3/library/argparse.html
-.. _twill: http://twill.idyll.org/
-.. _shlex: http://docs.python.org/library/shlex.html
-.. _multiprocessing: http://docs.python.org/library/multiprocessing.html
-.. _distutils: http://docs.python.org/distutils/
-.. _cmd: http://docs.python.org/library/cmd.html
-.. _rlwrap: http://freshmeat.net/projects/rlwrap/
-.. _pyreadline: http://ipython.scipy.org/moin/PyReadline/Intro
+.. _plac: https://pypi.org/project/plac/
+.. _argparse: https://docs.python.org/library/argparse.html
+.. _twill: https://github.com/twill-tools/twill
+.. _shlex: https://docs.python.org/library/shlex.html
+.. _multiprocessing: https://docs.python.org/library/multiprocessing.html
+.. _distutils: https://docs.python.org/distutils/
+.. _cmd: https://docs.python.org/library/cmd.html
+.. _rlwrap: https://github.com/hanslub42/rlwrap
+.. _pyreadline: https://ipython.org/pyreadline.html

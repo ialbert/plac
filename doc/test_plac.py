@@ -192,7 +192,7 @@ def test_metavar_with_defaults():
 
 
 def test_metavar_empty_string():
-    # see https://github.com/micheles/plac/issues/36
+    # see https://github.com/ialbert/plac/issues/36
     def main(arg=''):
         pass
     sys.argv[0] = 'test_plac.py'
@@ -216,7 +216,7 @@ def test_kwargs():
 
 
 def test_kwargs2():
-    # see https://github.com/micheles/plac/issues/39
+    # see https://github.com/ialbert/plac/issues/39
     def main(**kw):
         return kw.items()
     assert plac.call(main, ['a=1']) == [('a', '1')]
@@ -225,7 +225,7 @@ def test_kwargs2():
 
 
 def test_kwargs3():
-    # see https://github.com/micheles/plac/issues/38
+    # see https://github.com/ialbert/plac/issues/38
     def main(opt='foo', **kw):
         return opt, kw
     main.__annotations__ = dict(opt=('Option', 'option'))

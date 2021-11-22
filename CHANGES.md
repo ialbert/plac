@@ -48,7 +48,7 @@ untested and therefore deprecated.
 
 Solved an issue with non-ASCII characters; now any UTF-8 character
 can go in the help message. Added support for `--version` in plac.call.
-Modernized the changelog http://keepachangelog.com/
+Modernized the changelog https://keepachangelog.com/
 
 ## 0.9.5 (2016-06-09)
 

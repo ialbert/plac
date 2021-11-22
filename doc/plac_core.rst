@@ -5,8 +5,8 @@ Plac: Parsing the Command Line the Easy Way
 :E-mail: michele.simionato@gmail.com
 :Version: 1.3.0
 :Date: December 2020
-:Download page: http://pypi.python.org/pypi/plac
-:Project page: https://github.com/micheles/plac
+:Download page: https://pypi.org/project/plac/
+:Project page: https://github.com/ialbert/plac
 :Requires: Python from 2.6 up
 :Installation: ``pip install plac``
 :License: BSD license
@@ -795,21 +795,21 @@ will steal it from me!
 That concludes the section about the basic usage of plac_. You are now ready to
 read about the advanced usage.
 
-.. _argparse: https://docs.python.org/3/library/argparse.html
-.. _optparse: http://docs.python.org/library/optparse.html
-.. _getopt: http://docs.python.org/library/getopt.html
-.. _optionparse: http://code.activestate.com/recipes/278844-parsing-the-command-line/
-.. _plac: http://pypi.python.org/pypi/plac
+.. _argparse: https://docs.python.org/library/argparse.html
+.. _optparse: https://docs.python.org/library/optparse.html
+.. _getopt: https://docs.python.org/library/getopt.html
+.. _optionparse: https://code.activestate.com/recipes/278844-parsing-the-command-line/
+.. _plac: https://pypi.org/project/plac/
 .. _scaling down: https://www.welton.it/articles/scalable_systems.html
-.. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
-.. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
-.. _Clap: http://pypi.python.org/pypi/Clap
-.. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
-.. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
-.. _opterator: http://pypi.python.org/pypi/opterator
-.. _cmd2: http://packages.python.org/cmd2/
-.. _cmd: http://docs.python.org/library/cmd.html
-.. _marrow.script: https://github.com/pulp/marrow.script
-.. _commandline: http://pypi.python.org/pypi/commandline
-.. _argh: http://packages.python.org/argh
+.. _ArgumentParser: https://docs.python.org/library/argparse.html#argparse.ArgumentParser
+.. _argparse.FileType: https://docs.python.org/library/argparse.html#argparse.FileType
+.. _Clap: https://pypi.org/project/Clap/
+.. _OptionParser: https://docs.python.org/library/optparse.html#optparse.OptionParser
+.. _CLIArgs: https://pypi.org/project/CLIArgs/
+.. _opterator: https://pypi.org/project/opterator/
+.. _cmd2: https://github.com/python-cmd2/cmd2
+.. _cmd: https://docs.python.org/library/cmd.html
+.. _commandline: https://pypi.org/project/commandline/
+.. _marrow.script: https://github.com/marrow/script
+.. _argh: https://pythonhosted.org/argh/
 .. _Istvan Albert: https://github.com/ialbert
