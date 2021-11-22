@@ -565,7 +565,7 @@ following assumes knowledge of argparse_):
   to increase the learning curve by adding direct support for ``nargs``.
 
 - plac_ does support subparsers, but you must read the section
-  :ref:`Implementing subcommands` to see how it works.
+  :ref:`Implementing subcommands`_ to see how it works.
 
 - plac_ does not support actions directly. This also looks like a feature too
   advanced for the goals of plac_. Notice, however, that the ability to define
