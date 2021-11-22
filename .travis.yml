@@ -9,7 +9,6 @@ python:
  - "3.8"
 
 install:
-  - pip install sqlsoup
   - python setup.py install
 
 script:

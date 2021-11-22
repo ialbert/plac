@@ -311,6 +311,8 @@ def check_script(args):
         assert subprocess.call(args) == 0, 'Failed %s' % ' '.join(args)
 
 
+'''
+# Disabling unused functionality
 def test_batch():
     for batch in os.listdir('.'):
         if batch.endswith('.plac'):
@@ -321,7 +323,7 @@ def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
             check_script([PLAC_RUNNER, '-t', placet])
-
+'''
 
 if __name__ == '__main__':
     n = 0

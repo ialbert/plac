@@ -492,32 +492,6 @@ The usage message will be as you would expect::
     -y, --yield        [False]
     -s 100, --sys 100  [100]
 
-A realistic example
--------------------
-
-Here is a more realistic script using most of the features of plac_ to
-run SQL queries on a database by relying on SQLAlchemy_. Notice the usage
-of the ``type`` feature to automagically convert a SQLAlchemy connection
-string into a SqlSoup_ object:
-
-.. include:: dbcli.py
-   :literal:
-
-You can see the *yield-is-print* pattern here: instead of using
-``print`` in the main function, I use ``yield``, and I perform the
-print in the ``__main__`` block. The advantage of the pattern is that
-tests invoking ``plac.call`` and checking the result become trivial:
-had I performed the printing in the main function, the test would have
-involved an ugly hack like redirecting ``sys.stdout`` to a
-``StringIO`` object.
-
-Here is the usage message:
-
-.. include:: dbcli.help
-   :literal:
-
-You can check for yourself that the script works.
-
 Keyword arguments
 -----------------
 
@@ -832,7 +806,6 @@ read about the advanced usage.
 .. _Clap: http://pypi.python.org/pypi/Clap
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
 .. _SQLAlchemy: http://www.sqlalchemy.org/
-.. _SqlSoup: http://www.sqlalchemy.org/docs/reference/ext/sqlsoup.html
 .. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
 .. _opterator: http://pypi.python.org/pypi/opterator
 .. _cmd2: http://packages.python.org/cmd2/

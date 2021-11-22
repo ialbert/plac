@@ -12,6 +12,5 @@ upload:
 	python -m twine upload --repository pypi dist/*
 
 test:
-	#pip install -q sqlsoup
 	python doc/test_plac.py
 
