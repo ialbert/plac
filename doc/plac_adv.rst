@@ -861,8 +861,8 @@ If you look after a time long enough, the task will be finished::
 It is possible to store the output of a task into a file, to be read
 later (this is useful for tasks with a large output)::
 
- i> .output 1 /tmp/out.txt
- saved output of 1 into /tmp/out.txt
+ i> .output 1 out.txt
+ saved output of 1 into out.txt
 
 You can even skip the number argument: then ``.output`` will the return
 the output of the last launched command (the special commands like .output
