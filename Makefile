@@ -14,3 +14,5 @@ upload:
 test:
 	python doc/test_plac.py
 
+clean:
+	rm -rf docs/
