@@ -332,7 +332,7 @@ def partial_call(factory, arglist):
 
 def import_main(path, *args):
     """
-    An utility to import the main function of a plac tool. It also
+    A utility to import the main function of a plac tool. It also
     works with command container factories.
     """
     if ':' in path:  # importing a factory

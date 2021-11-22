@@ -188,7 +188,7 @@ or ``py.test`` as follow::
         main = plac.import_main(*shlex.split(firstline))
         yield plac.Interpreter(main).doctest, lines[1:]
 
-Here you should notice that usage of ``plac.import_main``, an utility
+Here you should notice that usage of ``plac.import_main``, a utility
 which is able to import the main function of the script specified in
 the shebang line. You can use both the full path name of the
 tool, or a relative path name. In this case the runner looks at the
@@ -298,7 +298,7 @@ Here is the usage message:
 .. include:: ishelve2.hel
    :literal:
 
-Here is a session of usage on an Unix-like operating system::
+Here is a session of usage on a Unix-like operating system::
 
  $ python ishelve2.py -c ~/test.shelve
  A minimal interface over a shelve object.
@@ -376,7 +376,7 @@ by simply adding the lines::
 
 Everything works fine if ``main`` is a simple callable performing some
 action; however, in many cases, one has a ``main`` "function" which
-is a actually a factory returning a command container object. For
+is actually a factory returning a command container object. For
 instance, in my second shelve example the main function is the class
 ``ShelveInterface``, and the two lines needed to run the module are
 a bit ugly::
@@ -1049,7 +1049,7 @@ As you see using processes one gets a 2x speedup indeed, where the threaded
 mode is some 20% slower than the sequential mode.
 
 Since the pattern "submit a bunch of tasks, start them and collect the
-results" is so common, plac_ provides an utility function
+results" is so common, plac_ provides a utility function
 ``runp(genseq, mode='p')`` to start
 a bunch of generators and return a list of results. By default
 ``runp`` use processes, but you can use threads by passing ``mode='t'``.
@@ -1076,7 +1076,7 @@ method. For convenience, ``plac`` comes with a very simple
 ``TkMonitor`` based on Tkinter (I chose Tkinter because it is easy to
 use and in the standard library, but you can use any GUI): you
 can look at how the ``TkMonitor`` is implemented in
-``plac_tk.py`` and adapt it. Here is an usage example of the
+``plac_tk.py`` and adapt it. Here is a usage example of the
 ``TkMonitor``:
 
 .. include:: tkmon.py
@@ -1107,7 +1107,7 @@ experimental and subject to changes. Also, notice that since
 the interpreter should be run in a separated process or thread.  The
 default port for the plac_ server is 2199, and the command to signal
 end-of-connection is EOF.  For instance, here is how you could manage
-remote import on a database (say a SQLite db):
+remote import on a database (say an SQLite db):
 
 .. include:: server_ex.py
    :literal:

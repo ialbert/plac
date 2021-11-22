@@ -52,7 +52,7 @@ Modernized the changelog http://keepachangelog.com/
 
 ## 0.9.5 (2016-06-09)
 
-Removed an usage of `print >>` that was breaking Python 3, signaled
+Removed a usage of `print >>` that was breaking Python 3, signaled
 by Quentin Pradet
 
 ## 0.9.4 (2016-06-09)
@@ -62,7 +62,7 @@ by Quentin Pradet
 
 ## 0.9.3 (2016-06-07)
 
-Fixed the tests on Python 3 and produced an universal wheel instead of
+Fixed the tests on Python 3 and produced a universal wheel instead of
 relying on 2to3. Enabled Travis builds for Python 3.3, 3.4, 3.5
 
 ## 0.9.2 (2016-06-07)
