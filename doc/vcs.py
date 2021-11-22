@@ -28,7 +28,7 @@ def __missing__(name):
 
 
 def __exit__(etype, exc, tb):
-    "Will be called automatically at the end of the intepreter loop"
+    "Will be called automatically at the end of the interpreter loop"
     if etype in (None, GeneratorExit):  # success
         print('ok')
 

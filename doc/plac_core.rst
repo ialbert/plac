@@ -63,7 +63,7 @@ it is extremely unlikely that you will ever need to go beyond the
 features provided by the declarative interface of plac_: they should
 be more than enough for 99.9% of the use cases.
 
-plac_ is targetting especially unsophisticated users,
+plac_ is targeting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
 throw-away scripts for themselves, choosing the command-line
 interface because it is quick and simple. Such users are not
@@ -94,7 +94,7 @@ writing by hand for years:
 As you see the whole ``if __name__ == '__main__'`` block (nine lines)
 is essentially boilerplate that should not exist.  Actually I think
 the language should recognize the main function and pass the
-command-line arguments automatically; unfortunaly this is unlikely to
+command-line arguments automatically; unfortunately this is unlikely to
 happen. I have been writing boilerplate like this in hundreds of
 scripts for years, and every time I *hate* it. The purpose of using a
 scripting language is convenience and trivial things should be
@@ -188,7 +188,7 @@ it is:
    :literal:
 
 Here the arguments of the ``main`` function have been annotated with
-strings which are intented to be used in the help message:
+strings which are intended to be used in the help message:
 
 .. include:: example7_.help
    :literal:
@@ -246,7 +246,7 @@ they can be abbreviated. Here is an example featuring smart options:
 .. include:: example6.help
    :literal:
 
-The following are all valid invocations ot the script::
+The following are all valid invocations of the script::
 
   $ python3 example6.py -c "select" dsn
   executing 'select' on dsn
@@ -426,7 +426,7 @@ to the usage message. Here are a couple of examples of usage::
  10.0
  $ python example10.py mul 1 2 3 4
  24.0
- $ python example10.py ad 1 2 3 4 # a mispelling error
+ $ python example10.py ad 1 2 3 4 # a misspelling error
  usage: example10.py [-h] {add,mul} [n [n ...]]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
@@ -460,7 +460,7 @@ errors visible early, and avoids mistakes in code like the following::
 
 Without eagerness, a main function returning a generator object would
 not raise any exception until the generator is iterated over.
-If you are a fan of lazyness, you can still have it by setting the ``eager``
+If you are a fan of laziness, you can still have it by setting the ``eager``
 flag to ``False``, as in the following example::
 
    for line in plac.call(main, args, eager=False):
@@ -516,7 +516,7 @@ Here is how you call the script::
   kw={'name': 'value'}
 
 When using keyword arguments, one must be careful to use names which
-are not alreay taken; for instance in this examples the name ``opt``
+are not already taken; for instance in this examples the name ``opt``
 is taken::
 
  $ python example12.py 1 2 kw1=1 kw2=2 opt=0
@@ -699,7 +699,7 @@ You can check by hand that the tool works::
  1
  $ python ishelve.py b
  b: not found
- $ python ishelve.py .cler # mispelled command
+ $ python ishelve.py .cler # misspelled command
  usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
                    [.filename /home/micheles/conf.shelve]
                    [params [params ...]] [setters [setters ...]]

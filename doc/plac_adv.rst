@@ -87,7 +87,7 @@ the ``check`` method of ``Interpreter`` objects:
 The method ``.check(given_input, expected_output)`` works on strings
 and raises an ``AssertionError`` if the output produced by the
 interpreter is different from the expected output for the given input.
-Notice that ``AssertionError`` is catched by tools like ``pytest`` and
+Notice that ``AssertionError`` is caught by tools like ``pytest`` and
 ``nosetests`` and actually ``plac`` tests are intended to be run with
 such tools.
 
@@ -169,7 +169,7 @@ At the present plac_ does not use any code from the doctest
 module, but the situation may change in the future (it would be nice
 if plac_ could reuse doctests directives like ELLIPSIS).
 
-It is straighforward to integrate your ``.placet`` tests with standard
+It is straightforward to integrate your ``.placet`` tests with standard
 testing tools. For instance, you can integrate your doctests with ``nose``
 or ``py.test`` as follow::
 
@@ -216,7 +216,7 @@ always accessible and can be re-raised on demand.
 
 The exception is the case of invalid commands, which are skipped.
 Consider for instance the following batch file, which contains a
-mispelled command (``.dl`` instead of ``.del``):
+misspelled command (``.dl`` instead of ``.del``):
 
 .. include:: ishelve.plac
    :literal:
@@ -526,7 +526,7 @@ The distribution of plac_ includes a runner script named ``plac_runner.py``,
 which will be installed in a suitable directory in your system by distutils_
 (say in ``/usr/local/bin/plac_runner.py`` in a Unix-like operative system).
 The runner provides many facilities to run ``.plac`` scripts and
-``.placet`` files, as well as Python modules containg a ``main``
+``.placet`` files, as well as Python modules containing a ``main``
 object, which can be a function, a command container object or
 even a command container class.
 
@@ -587,7 +587,7 @@ a ``.placet`` file like the following:
 
 Notice that the first line specifies a test database
 ``~/test.shelve``, to avoid clobbering your default shelve. If you
-mispell the arguments in the first line plac will give you an
+misspell the arguments in the first line plac will give you an
 argparse_ error message (just try).
 
 You can run placets following the shebang convention directly with
@@ -725,7 +725,7 @@ Moreover, the ``__str__`` representation of the output object is redefined
 to return the output string if the command was successful, or the error
 message (preceded by the name of the exception class) if the command failed.
 
-For instance, if you send a mispelled option to
+For instance, if you send a misspelled option to
 the interpreter a ``SystemExit`` will be trapped:
 
 >>> import plac

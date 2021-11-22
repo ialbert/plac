@@ -68,7 +68,7 @@ else:
 
 try:
     raw_input
-except NameError:  # python 3
+except NameError:  # Python 3
     raw_input = input
 
 
@@ -1083,7 +1083,7 @@ class Interpreter(object):
                 pass
 
     def interact(self, stdin=sys.stdin, prompt='i> ', verbose=False):
-        "Starts an interactive command loop reading commands from the consolle"
+        "Starts an interactive command loop reading commands from the console"
         try:
             import readline
             readline_present = True
