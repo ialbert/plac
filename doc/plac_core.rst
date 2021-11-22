@@ -245,7 +245,7 @@ they can be abbreviated. Here is an example featuring smart options:
 
 .. include:: example6.help
    :literal:
- 
+
 The following are all valid invocations ot the script::
 
   $ python3 example6.py -c "select" dsn
@@ -284,7 +284,7 @@ Scripts with flags
 ------------------
 
 plac_ is able to recognize flags, i.e. boolean options which are
-``True`` if they are passed to the command line and ``False`` 
+``True`` if they are passed to the command line and ``False``
 if they are absent. Here is an example:
 
 .. include:: example9.py
@@ -330,11 +330,11 @@ Here is an example of usage::
 
  $ python3.2 dry_run.py -h
  usage: dry_run.py [-h] [-d]
- 
+
  optional arguments:
    -h, --help     show this help message and exit
    -d, --dry-run  Dry run
- 
+
 plac for Python 2.X users
 -------------------------
 
@@ -373,7 +373,7 @@ general an annotation is a 6-tuple of the form
 
 where ``help`` is the help message, ``kind`` is a string in the set {
 ``"flag"``, ``"option"``, ``"positional"``}, ``abbrev`` is a
-one-character string or ``None``, ``type`` is a callable taking a 
+one-character string or ``None``, ``type`` is a callable taking a
 string in input,
 ``choices`` is a discrete sequence of values and ``metavar`` is a string.
 
@@ -446,7 +446,7 @@ to the usage message. Here are a couple of examples of usage::
 
 Internally ``plac.call`` tries to convert the output of the main function
 into a list, if possible. If the output is not iterable or it is a
-string, it is left unchanged, but if it is iterable it is converted. 
+string, it is left unchanged, but if it is iterable it is converted.
 In particular, generator objects are exhausted by ``plac.call``.
 
 This behavior avoids mistakes like forgetting of applying
@@ -485,7 +485,7 @@ The usage message will be as you would expect::
 
   $ python doc/example13.py -h
   usage: example13.py [-h] [-l] [-y] [-s 100]
-  
+
   optional arguments:
     -h, --help         show this help message and exit
     -l, --list
@@ -518,7 +518,7 @@ Here is how you call the script::
 When using keyword arguments, one must be careful to use names which
 are not alreay taken; for instance in this examples the name ``opt``
 is taken::
- 
+
  $ python example12.py 1 2 kw1=1 kw2=2 opt=0
  usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
  example12.py: error: colliding keyword arguments: opt
@@ -551,9 +551,9 @@ following assumes knowledge of argparse_):
   the use of required options whenever possible.* Notice that since
   argparse_ supports them, plac_ can manage them too, but not directly.
 
-- plac_ supports only regular boolean flags. argparse_ has the ability to 
-  define generalized two-value flags with values different from ``True`` 
-  and ``False``. An earlier version of plac_ had this feature too, but 
+- plac_ supports only regular boolean flags. argparse_ has the ability to
+  define generalized two-value flags with values different from ``True``
+  and ``False``. An earlier version of plac_ had this feature too, but
   since you can use options with two choices instead, and in any case
   the conversion from ``{True, False}`` to any couple of values
   can be trivially implemented with a ternary operator
@@ -594,7 +594,7 @@ disables the recognition of the help flag ``-h, --help``. This
 mechanism does not look particularly elegant, but it works well
 enough.  I assume that the typical user of plac_ will be happy with
 the defaults and would not want to change them; still it is possible
-if she wants to. 
+if she wants to.
 
 For instance, by setting the ``description`` attribute, it is possible
 to add a comment to the usage message (by default the docstring of the
@@ -650,12 +650,12 @@ A possible implementation using plac_ could be the following:
 
 A few notes are in order:
 
-1. I have disabled the ordinary help provided by argparse_ and I have 
+1. I have disabled the ordinary help provided by argparse_ and I have
    implemented a custom help command.
 2. I have changed the prefix character used to recognize the options
    to a dot.
 3. Keyword arguments recognition (in the ``**setters``) is used to make it
-   possible to store a value in the shelve with the syntax 
+   possible to store a value in the shelve with the syntax
    ``param_name=param_value``.
 4. ``*params`` are used to retrieve parameters from the shelve and some
    error checking is performed in the case of missing parameters
@@ -718,7 +718,7 @@ arguably even easier than plac_:
 - CLIArgs_ by Pavel Panchekha
 - commandline_ by David Laban
 
-Luckily for me none of such projects had the idea of using 
+Luckily for me none of such projects had the idea of using
 function annotations and argparse_; as a consequence, they are
 no match for the capabilities of plac_.
 
@@ -765,7 +765,7 @@ Python 2.3.
 Trivia: the story behind the name
 ---------------------------------
 
-The plac_ project started very humbly: I just wanted to make 
+The plac_ project started very humbly: I just wanted to make
 my old optionparse_ recipe easy_installable, and to publish it on PyPI.
 The original name of plac_ was optionparser and the idea behind it was
 to build an OptionParser_ object from the docstring of the module.
@@ -785,7 +785,7 @@ now using argparse_; a name like ``argparse_plus`` was also ruled out,
 since the typical usage was completely different from the argparse_ usage.
 
 I made a research on PyPI and the name *clap* (Command Line Arguments Parser)
-was not taken, so I renamed everything to clap. After two days 
+was not taken, so I renamed everything to clap. After two days
 a Clap_ module appeared on PyPI <expletives deleted>!
 
 Having little imagination, I decided to rename everything again to plac,
@@ -809,7 +809,7 @@ read about the advanced usage.
 .. _opterator: http://pypi.python.org/pypi/opterator
 .. _cmd2: http://packages.python.org/cmd2/
 .. _cmd: http://docs.python.org/library/cmd.html
-.. _marrow.script: https://github.com/pulp/marrow.script 
+.. _marrow.script: https://github.com/pulp/marrow.script
 .. _commandline: http://pypi.python.org/pypi/commandline
 .. _argh: http://packages.python.org/argh
 .. _Istvan Albert: https://github.com/ialbert

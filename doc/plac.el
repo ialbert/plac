@@ -6,7 +6,7 @@
   nil
   '(".plac\\'"); file extensions
   nil)
- 
+
 (add-hook 'plac-mode-hook (lambda () (local-set-key [f4]  'plac-start)))
 (add-hook 'plac-mode-hook (lambda () (local-set-key [f5]  'plac-send)))
 (add-hook 'plac-mode-hook (lambda () (local-set-key [f6]  'plac-stop)))
@@ -15,10 +15,10 @@
 (defvar *plac-process* nil)
 
 (defun plac-start ()
-  "Start an inferior plac process by inferring the script to use from the 
+  "Start an inferior plac process by inferring the script to use from the
   shebang line"
   (interactive)
-  (let ((shebang-line 
+  (let ((shebang-line
          (save-excursion
            (goto-line 1) (end-of-line)
            (buffer-substring-no-properties 3 (point)))))
@@ -55,7 +55,7 @@
       (if (= 59 (following-char))
           (setq end (1+ end)))
       (list beg end))))
- 
+
 (defun plac-send ()
   "Send the current region to the inferior plac process"
   (interactive)
@@ -64,7 +64,7 @@
     (message p)
     (process-send-string *plac-process* (concat p "\n"))))
     ;(switch-to-buffer-other-window "*plac*")))
-    ;(save-excursion (set-buffer "*plac*") 
+    ;(save-excursion (set-buffer "*plac*")
     ;  (set-window-start (selected-window) 1 nil))))
 
 (defun plac-stop ()

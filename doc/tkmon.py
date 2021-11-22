@@ -12,5 +12,3 @@ if __name__ == '__main__':
     i = plac.Interpreter(Hello())
     i.add_monitor(plac.TkMonitor('tkmon'))
     i.interact()
-
-    

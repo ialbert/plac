@@ -186,7 +186,7 @@ the program prints:
 
     ('A', 'B')
     {'x': '10', 'y': '20'}
-    
+
 # Documentation
 
 In addition, plac can do a lot more, up to the creation of

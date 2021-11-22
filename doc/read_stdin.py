@@ -1,6 +1,6 @@
 """
-You can run this script as 
-$ python read_stdin.py < ishelve.bat 
+You can run this script as
+$ python read_stdin.py < ishelve.bat
 """
 from __future__ import with_statement
 import sys

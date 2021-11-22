@@ -74,7 +74,7 @@ Enabled Travis builds for Python 2.6 and 2.7
 ## 0.9.1 (2012-04-23)
 
 Options and flags can now contain dashes (i.e. ``--dry-run`` is valid and
-translated into dry_run, you are not forced to use ``--dry-run`` anymore); 
+translated into dry_run, you are not forced to use ``--dry-run`` anymore);
 restored the monitor support temporarily removed in 0.9.0, fixed an issue
 with tuple defaults and fixed the display of the help command; specified
 which features are experimental and which features are fully supported
@@ -138,7 +138,7 @@ added an asynchronous server; added plac.Interpreter.call
 ## 0.6.1 (2010-07-12)
 
 Fixed the history file location; added the ability to pass a split
-function; added two forgotten files; added a reference to cmd2 by 
+function; added two forgotten files; added a reference to cmd2 by
 Catherine Devlin
 
 ## 0.6.0 (2010-07-11)

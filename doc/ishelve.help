@@ -15,4 +15,3 @@ optional arguments:
   .delete DELETE        delete an element
   .filename /home/micheles/conf.shelve
                         filename of the shelve
-

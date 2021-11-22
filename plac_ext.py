@@ -829,7 +829,7 @@ class _AsynHandler(asynchat.async_chat):
         if data.endswith('\n') and not data.endswith(self.terminator):
             data = data[:-1] + self.terminator  # fix newlines
         self.push(data)
-    
+
     def collect_incoming_data(self, data):
         "Collect one character at the time"
         self.data.append(data)
