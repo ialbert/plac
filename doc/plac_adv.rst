@@ -43,53 +43,6 @@ The ``Interpreter`` class wraps the main function of a script and
 provides an ``.interact`` method to start an interactive interpreter
 reading commands from the console.
 
-For instance, you can define an interactive interpreter on top of the
-``ishelve`` script introded before as follows:
-
-.. include:: shelve_interpreter.py
-   :literal:
-
-A trick has been used here: the ishelve command-line interface has been
-hidden inside an external interface. They are distinct: for instance
-the external interface recognizes the ``-h/--help`` flag whereas the
-internal interface only recognizes the ``.help`` command::
-
- $ python shelve_interpreter.py -h
-
-.. include:: shelve_interpreter.help
-   :literal:
-
-Thanks to this ingenuous trick, the script can be run both interactively
-and non-interactively::
-
- $ python shelve_interpreter.py .clear # non-interactive use
- cleared the shelve
-
-Here is an usage session::
-
- $ python shelve_interpreter.py -i # interactive use
- A simple interface to a shelve. Use .help to see the available commands.
- i> .help
- Commands: .help, .showall, .clear, .delete
- <param> ...
- <param=value> ...
- i> a=1
- setting a=1
- i> a
- 1
- i> b=2
- setting b=2
- i> a b
- 1
- 2
- i> .del a
- deleted a
- i> a
- a: not found
- i> .show
- b=2
- i> [CTRL-D]
-
 The ``.interact`` method 
 reads commands from the console and send them to the
 underlying interpreter, until the user send a CTRL-D
@@ -507,26 +460,7 @@ all commands autocomplete in a case sensitive way.  If you want to
 add new words to the autocompletion set, or you want to change the
 location of the ``.history`` file, or to change the case sensitivity,
 the way to go is to pass a ``plac.ReadlineInput`` object to the
-interpreter.  Here is an example, assuming you want to build a
-database interface understanding SQL commands:
-
-.. include:: sql_interface.py
-   :literal:
-
-Here is an example of usage::
-
- $ python sql_interface.py <some dsn>
- sql> SELECT a.* FROM TABLE1 AS a INNER JOIN TABLE2 AS b ON a.id = b.id 
- ...
-
-You can check that entering just ``sel`` and pressing TAB the readline library
-completes the ``SELECT`` keyword for you and makes it upper case; idem for 
-``FROM``, ``INNER``, ``JOIN`` and even for the names of the tables. An
-obvious improvement is to read the names of the tables by introspecting
-the database: actually you can even read the names of the views and
-the columns, and get full autocompletion. All the entered commands
-are recorded and saved in the file ``~/.sql_interface.history`` when
-exiting from the command-line interface.
+interpreter.
 
 If the readline library is not available, my suggestion is to use the
 rlwrap_ tool which provides similar features, at least on Unix-like
