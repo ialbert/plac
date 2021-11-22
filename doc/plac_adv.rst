@@ -923,8 +923,8 @@ with
 
    ``mpcommands = ['import_file']``.
 
-The user experience is exactly the same as with threads and you will not see any
-difference at the user interface level::
+The user experience is exactly the same as with threads and you will not see
+any difference at the user interface level::
 
  i> import_file file3
  <MPTask 1 [import_file file3] SUBMITTED>
@@ -1187,9 +1187,9 @@ Here is the usage message you get:
    :literal:
 
 You can go on and define ``Option`` and ``Flag`` classes, if you like.
-Using custom annotation objects you could do advanced things like extracting the
-annotations from a configuration file or from a database, but I expect such
-use cases to be quite rare: the default mechanism should work
+Using custom annotation objects you could do advanced things like extracting
+the annotations from a configuration file or from a database, but I expect
+such use cases to be quite rare: the default mechanism should work
 pretty well for most users.
 
 .. _plac: http://pypi.python.org/pypi/plac
