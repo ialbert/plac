@@ -4,5 +4,5 @@ positional arguments:
   args        words
   kwds        key=value
 
-optional arguments:
+options:
   -h, --help  show this help message and exit

@@ -1,6 +1,6 @@
 usage: example13.py [-h] [-l] [-y] [-s 100]
 
-optional arguments:
+options:
   -h, --help         show this help message and exit
   -l, --list
   -y, --yield        [False]

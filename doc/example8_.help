@@ -3,7 +3,7 @@ usage: example8_.py [-h] [-c select * from table] dsn
 positional arguments:
   dsn
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -c select * from table, --command select * from table
                         SQL query

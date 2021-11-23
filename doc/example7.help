@@ -6,5 +6,5 @@ positional arguments:
   dsn
   scripts
 
-optional arguments:
+options:
   -h, --help  show this help message and exit

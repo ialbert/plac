@@ -8,6 +8,9 @@ import functools
 import argparse
 from datetime import datetime, date
 from gettext import gettext as _
+
+version = sys.version_info[:2]
+
 if sys.version >= '3':
     from inspect import getfullargspec
 else:
@@ -228,6 +231,12 @@ class ArgumentParser(argparse.ArgumentParser):
     .commands and .subparsers.
     """
     case_sensitive = True
+
+    if version < (3, 10):
+        def __init__(self, *args, **kwargs):
+            super(ArgumentParser, self).__init__(*args, **kwargs)
+            if self._action_groups[1].title == _('optional arguments'):
+                self._action_groups[1].title = _('options')
 
     def alias(self, arg):
         "Can be overridden to preprocess command-line arguments"

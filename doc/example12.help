@@ -4,6 +4,6 @@ positional arguments:
   args        default arguments
   kw          keyword arguments
 
-optional arguments:
+options:
   -h, --help  show this help message and exit
   -opt OPT    some option

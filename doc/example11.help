@@ -5,5 +5,5 @@ positional arguments:
   n           This is a float
   rest        Other arguments
 
-optional arguments:
+options:
   -h, --help  show this help message and exit
