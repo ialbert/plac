@@ -496,7 +496,7 @@ provides information about the arguments accepted by the given command::
    name        [None]
 
  i> help show
- usage:  show [names [names ...]]
+ usage:  show [names ...]
 
  show given parameters
 

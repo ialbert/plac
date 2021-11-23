@@ -1,4 +1,4 @@
-usage: example10.py [-h] {add,mul} [n [n ...]]
+usage: example10.py [-h] {add,mul} [n ...]
 
 A script to add and multiply numbers
 

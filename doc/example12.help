@@ -1,4 +1,4 @@
-usage: example12.py [-h] [-opt OPT] [args [args ...]] [kw [kw ...]]
+usage: example12.py [-h] [-opt OPT] [args ...] [kw ...]
 
 positional arguments:
   args        default arguments

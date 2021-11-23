@@ -1,6 +1,6 @@
 usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
                   [.filename conf.shelve]
-                  [params [params ...]] [setters [setters ...]]
+                  [params ...] [setters ...]
 
 Simple interface to a shelve
 

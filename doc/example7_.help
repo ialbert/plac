@@ -1,4 +1,4 @@
-usage: example7_.py [-h] dsn [scripts [scripts ...]]
+usage: example7_.py [-h] dsn [scripts ...]
 
 Run the given scripts on the database
 

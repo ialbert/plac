@@ -1,4 +1,4 @@
-usage: example11.py [-h] i n [rest [rest ...]]
+usage: example11.py [-h] i n [rest ...]
 
 positional arguments:
   i           This is an int

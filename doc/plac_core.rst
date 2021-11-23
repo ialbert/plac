@@ -427,7 +427,7 @@ to the usage message. Here are a couple of examples of usage::
  $ python example10.py mul 1 2 3 4
  24.0
  $ python example10.py ad 1 2 3 4 # a misspelling error
- usage: example10.py [-h] {add,mul} [n [n ...]]
+ usage: example10.py [-h] {add,mul} [n ...]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
 ``plac.call`` can also be used in doctests like this:
@@ -520,7 +520,7 @@ are not already taken; for instance in this examples the name ``opt``
 is taken::
 
  $ python example12.py 1 2 kw1=1 kw2=2 opt=0
- usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
+ usage: example12.py [-h] [-o OPT] [args ...] [kw ...]
  example12.py: error: colliding keyword arguments: opt
 
 The names taken are the names of the flags, of the options, and of the
@@ -702,7 +702,7 @@ You can check by hand that the tool works::
  $ python ishelve.py .cler # misspelled command
  usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
                    [.filename conf.shelve]
-                   [params [params ...]] [setters [setters ...]]
+                   [params ...] [setters ...]
  ishelve.py: error: unrecognized arguments: .cler
 
 plac vs the rest of the world

@@ -168,7 +168,7 @@ if __name__ == '__main__':
 the usage will be:
 
 ```
-usage: example15.py [-h] [args [args ...]] [kwds [kwds ...]]
+usage: example15.py [-h] [args ...] [kwds ...]
 
 positional arguments:
   args        words

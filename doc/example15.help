@@ -1,4 +1,4 @@
-usage: example15.py [-h] [args [args ...]] [kwds [kwds ...]]
+usage: example15.py [-h] [args ...] [kwds ...]
 
 positional arguments:
   args        words
