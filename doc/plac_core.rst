@@ -805,7 +805,6 @@ read about the advanced usage.
 .. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
 .. _Clap: http://pypi.python.org/pypi/Clap
 .. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
-.. _SQLAlchemy: http://www.sqlalchemy.org/
 .. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
 .. _opterator: http://pypi.python.org/pypi/opterator
 .. _cmd2: http://packages.python.org/cmd2/
