@@ -300,9 +300,9 @@ Here is the usage message:
 
 Here is a session of usage on a Unix-like operating system::
 
- $ python ishelve2.py -c ~/test.shelve
+ $ python ishelve2.py -c test.shelve
  A minimal interface over a shelve object.
- Operating on /home/micheles/test.shelve.
+ Operating on test.shelve.
  Use help to see the available commands.
  i> help
 
@@ -424,7 +424,7 @@ for the commands to execute::
 
  $ python ishelve3.py -i
  A minimal interface over a shelve object.
- Operating on /home/micheles/conf.shelve.
+ Operating on conf.shelve.
  Use help to see the available commands.
 
  i> 
@@ -567,7 +567,7 @@ follows::
 
  $ plac -i ishelve2.py:ShelveInterface
  A minimal interface over a shelve object.
- Operating on /home/micheles/conf.shelve.
+ Operating on conf.shelve.
  .help to see the available commands.
 
  i> del
@@ -586,7 +586,7 @@ a ``.placet`` file like the following:
    :literal:
 
 Notice that the first line specifies a test database
-``~/test.shelve``, to avoid clobbering your default shelve. If you
+``test.shelve``, to avoid clobbering your default shelve. If you
 misspell the arguments in the first line plac will give you an
 argparse_ error message (just try).
 

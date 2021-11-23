@@ -701,7 +701,7 @@ You can check by hand that the tool works::
  b: not found
  $ python ishelve.py .cler # misspelled command
  usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
-                   [.filename /home/micheles/conf.shelve]
+                   [.filename conf.shelve]
                    [params [params ...]] [setters [setters ...]]
  ishelve.py: error: unrecognized arguments: .cler
 
