@@ -1,4 +1,9 @@
-.PHONY: default
+.PHONY: \
+  default \
+  dist \
+  upload \
+  test \
+  clean
 
 default:
 	sphinx-build doc docs
