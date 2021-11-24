@@ -336,13 +336,13 @@ def check_script(args):
 def test_batch():
     for batch in os.listdir('.'):
         if batch.endswith('.plac'):
-            check_script([PLAC_RUNNER, '-b', batch])
+            check_script([sys.executable, PLAC_RUNNER, '-b', batch])
 
 
 def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
-            check_script([PLAC_RUNNER, '-t', placet])
+            check_script([sys.executable, PLAC_RUNNER, '-t', placet])
 '''
 
 if __name__ == '__main__':
