@@ -1,6 +1,6 @@
 usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
-                  [.filename /home/micheles/conf.shelve]
-                  [params [params ...]] [setters [setters ...]]
+                  [.filename conf.shelve]
+                  [params ...] [setters ...]
 
 Simple interface to a shelve
 
@@ -13,6 +13,5 @@ optional arguments:
   .showall              show all parameters in the shelve
   .clear                clear the shelve
   .delete DELETE        delete an element
-  .filename /home/micheles/conf.shelve
+  .filename conf.shelve
                         filename of the shelve
-

@@ -1,4 +1,9 @@
-.PHONY: default
+.PHONY: \
+  default \
+  dist \
+  upload \
+  test \
+  clean
 
 default:
 	sphinx-build doc docs
@@ -14,3 +19,5 @@ upload:
 test:
 	python doc/test_plac.py
 
+clean:
+	rm -rf docs/

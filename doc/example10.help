@@ -1,4 +1,4 @@
-usage: example10.py [-h] {add,mul} [n [n ...]]
+usage: example10.py [-h] {add,mul} [n ...]
 
 A script to add and multiply numbers
 
@@ -6,5 +6,5 @@ positional arguments:
   {add,mul}   The name of an operator
   n           Zero or more numbers
 
-optional arguments:
+options:
   -h, --help  show this help message and exit

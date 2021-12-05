@@ -5,8 +5,8 @@ Plac: Parsing the Command Line the Easy Way
 :E-mail: michele.simionato@gmail.com
 :Version: 1.3.0
 :Date: December 2020
-:Download page: http://pypi.python.org/pypi/plac
-:Project page: https://github.com/micheles/plac
+:Download page: https://pypi.org/project/plac/
+:Project page: https://github.com/ialbert/plac
 :Requires: Python from 2.6 up
 :Installation: ``pip install plac``
 :License: BSD license
@@ -63,7 +63,7 @@ it is extremely unlikely that you will ever need to go beyond the
 features provided by the declarative interface of plac_: they should
 be more than enough for 99.9% of the use cases.
 
-plac_ is targetting especially unsophisticated users,
+plac_ is targeting especially unsophisticated users,
 programmers, sys-admins, scientists and in general people writing
 throw-away scripts for themselves, choosing the command-line
 interface because it is quick and simple. Such users are not
@@ -94,7 +94,7 @@ writing by hand for years:
 As you see the whole ``if __name__ == '__main__'`` block (nine lines)
 is essentially boilerplate that should not exist.  Actually I think
 the language should recognize the main function and pass the
-command-line arguments automatically; unfortunaly this is unlikely to
+command-line arguments automatically; unfortunately this is unlikely to
 happen. I have been writing boilerplate like this in hundreds of
 scripts for years, and every time I *hate* it. The purpose of using a
 scripting language is convenience and trivial things should be
@@ -188,7 +188,7 @@ it is:
    :literal:
 
 Here the arguments of the ``main`` function have been annotated with
-strings which are intented to be used in the help message:
+strings which are intended to be used in the help message:
 
 .. include:: example7_.help
    :literal:
@@ -245,8 +245,8 @@ they can be abbreviated. Here is an example featuring smart options:
 
 .. include:: example6.help
    :literal:
- 
-The following are all valid invocations ot the script::
+
+The following are all valid invocations of the script::
 
   $ python3 example6.py -c "select" dsn
   executing 'select' on dsn
@@ -284,7 +284,7 @@ Scripts with flags
 ------------------
 
 plac_ is able to recognize flags, i.e. boolean options which are
-``True`` if they are passed to the command line and ``False`` 
+``True`` if they are passed to the command line and ``False``
 if they are absent. Here is an example:
 
 .. include:: example9.py
@@ -330,11 +330,11 @@ Here is an example of usage::
 
  $ python3.2 dry_run.py -h
  usage: dry_run.py [-h] [-d]
- 
+
  optional arguments:
    -h, --help     show this help message and exit
    -d, --dry-run  Dry run
- 
+
 plac for Python 2.X users
 -------------------------
 
@@ -373,7 +373,7 @@ general an annotation is a 6-tuple of the form
 
 where ``help`` is the help message, ``kind`` is a string in the set {
 ``"flag"``, ``"option"``, ``"positional"``}, ``abbrev`` is a
-one-character string or ``None``, ``type`` is a callable taking a 
+one-character string or ``None``, ``type`` is a callable taking a
 string in input,
 ``choices`` is a discrete sequence of values and ``metavar`` is a string.
 
@@ -426,8 +426,8 @@ to the usage message. Here are a couple of examples of usage::
  10.0
  $ python example10.py mul 1 2 3 4
  24.0
- $ python example10.py ad 1 2 3 4 # a mispelling error
- usage: example10.py [-h] {add,mul} [n [n ...]]
+ $ python example10.py ad 1 2 3 4 # a misspelling error
+ usage: example10.py [-h] {add,mul} [n ...]
  example10.py: error: argument operator: invalid choice: 'ad' (choose from 'add', 'mul')
 
 ``plac.call`` can also be used in doctests like this:
@@ -446,7 +446,7 @@ to the usage message. Here are a couple of examples of usage::
 
 Internally ``plac.call`` tries to convert the output of the main function
 into a list, if possible. If the output is not iterable or it is a
-string, it is left unchanged, but if it is iterable it is converted. 
+string, it is left unchanged, but if it is iterable it is converted.
 In particular, generator objects are exhausted by ``plac.call``.
 
 This behavior avoids mistakes like forgetting of applying
@@ -460,7 +460,7 @@ errors visible early, and avoids mistakes in code like the following::
 
 Without eagerness, a main function returning a generator object would
 not raise any exception until the generator is iterated over.
-If you are a fan of lazyness, you can still have it by setting the ``eager``
+If you are a fan of laziness, you can still have it by setting the ``eager``
 flag to ``False``, as in the following example::
 
    for line in plac.call(main, args, eager=False):
@@ -485,7 +485,7 @@ The usage message will be as you would expect::
 
   $ python doc/example13.py -h
   usage: example13.py [-h] [-l] [-y] [-s 100]
-  
+
   optional arguments:
     -h, --help         show this help message and exit
     -l, --list
@@ -516,11 +516,11 @@ Here is how you call the script::
   kw={'name': 'value'}
 
 When using keyword arguments, one must be careful to use names which
-are not alreay taken; for instance in this examples the name ``opt``
+are not already taken; for instance in this examples the name ``opt``
 is taken::
- 
+
  $ python example12.py 1 2 kw1=1 kw2=2 opt=0
- usage: example12.py [-h] [-o OPT] [args [args ...]] [kw [kw ...]]
+ usage: example12.py [-h] [-o OPT] [args ...] [kw ...]
  example12.py: error: colliding keyword arguments: opt
 
 The names taken are the names of the flags, of the options, and of the
@@ -551,9 +551,9 @@ following assumes knowledge of argparse_):
   the use of required options whenever possible.* Notice that since
   argparse_ supports them, plac_ can manage them too, but not directly.
 
-- plac_ supports only regular boolean flags. argparse_ has the ability to 
-  define generalized two-value flags with values different from ``True`` 
-  and ``False``. An earlier version of plac_ had this feature too, but 
+- plac_ supports only regular boolean flags. argparse_ has the ability to
+  define generalized two-value flags with values different from ``True``
+  and ``False``. An earlier version of plac_ had this feature too, but
   since you can use options with two choices instead, and in any case
   the conversion from ``{True, False}`` to any couple of values
   can be trivially implemented with a ternary operator
@@ -565,14 +565,14 @@ following assumes knowledge of argparse_):
   to increase the learning curve by adding direct support for ``nargs``.
 
 - plac_ does support subparsers, but you must read the section
-  :ref:`Implementing subcommands` to see how it works.
+  :ref:`Implementing subcommands`_ to see how it works.
 
 - plac_ does not support actions directly. This also looks like a feature too
   advanced for the goals of plac_. Notice, however, that the ability to define
   your own annotation objects (again, see the section
   :ref:`Implementing subcommand`_) may mitigate the need for custom actions.
 
-On the plus side, plac_ can leverage directly on a number of argparse_ features.
+On the plus side, plac_ can directly leverage a number of argparse_ features.
 
 For instance, you can use argparse.FileType_ directly. Moreover,
 it is possible to pass options to the underlying
@@ -594,7 +594,7 @@ disables the recognition of the help flag ``-h, --help``. This
 mechanism does not look particularly elegant, but it works well
 enough.  I assume that the typical user of plac_ will be happy with
 the defaults and would not want to change them; still it is possible
-if she wants to. 
+if she wants to.
 
 For instance, by setting the ``description`` attribute, it is possible
 to add a comment to the usage message (by default the docstring of the
@@ -650,12 +650,12 @@ A possible implementation using plac_ could be the following:
 
 A few notes are in order:
 
-1. I have disabled the ordinary help provided by argparse_ and I have 
+1. I have disabled the ordinary help provided by argparse_ and I have
    implemented a custom help command.
 2. I have changed the prefix character used to recognize the options
    to a dot.
 3. Keyword arguments recognition (in the ``**setters``) is used to make it
-   possible to store a value in the shelve with the syntax 
+   possible to store a value in the shelve with the syntax
    ``param_name=param_value``.
 4. ``*params`` are used to retrieve parameters from the shelve and some
    error checking is performed in the case of missing parameters
@@ -699,10 +699,10 @@ You can check by hand that the tool works::
  1
  $ python ishelve.py b
  b: not found
- $ python ishelve.py .cler # mispelled command
+ $ python ishelve.py .cler # misspelled command
  usage: ishelve.py [.help] [.showall] [.clear] [.delete DELETE]
-                   [.filename /home/micheles/conf.shelve]
-                   [params [params ...]] [setters [setters ...]]
+                   [.filename conf.shelve]
+                   [params ...] [setters ...]
  ishelve.py: error: unrecognized arguments: .cler
 
 plac vs the rest of the world
@@ -718,7 +718,7 @@ arguably even easier than plac_:
 - CLIArgs_ by Pavel Panchekha
 - commandline_ by David Laban
 
-Luckily for me none of such projects had the idea of using 
+Luckily for me none of such projects had the idea of using
 function annotations and argparse_; as a consequence, they are
 no match for the capabilities of plac_.
 
@@ -765,7 +765,7 @@ Python 2.3.
 Trivia: the story behind the name
 ---------------------------------
 
-The plac_ project started very humbly: I just wanted to make 
+The plac_ project started very humbly: I just wanted to make
 my old optionparse_ recipe easy_installable, and to publish it on PyPI.
 The original name of plac_ was optionparser and the idea behind it was
 to build an OptionParser_ object from the docstring of the module.
@@ -785,7 +785,7 @@ now using argparse_; a name like ``argparse_plus`` was also ruled out,
 since the typical usage was completely different from the argparse_ usage.
 
 I made a research on PyPI and the name *clap* (Command Line Arguments Parser)
-was not taken, so I renamed everything to clap. After two days 
+was not taken, so I renamed everything to clap. After two days
 a Clap_ module appeared on PyPI <expletives deleted>!
 
 Having little imagination, I decided to rename everything again to plac,
@@ -795,22 +795,21 @@ will steal it from me!
 That concludes the section about the basic usage of plac_. You are now ready to
 read about the advanced usage.
 
-.. _argparse: https://docs.python.org/3/library/argparse.html
-.. _optparse: http://docs.python.org/library/optparse.html
-.. _getopt: http://docs.python.org/library/getopt.html
-.. _optionparse: http://code.activestate.com/recipes/278844-parsing-the-command-line/
-.. _plac: http://pypi.python.org/pypi/plac
+.. _argparse: https://docs.python.org/library/argparse.html
+.. _optparse: https://docs.python.org/library/optparse.html
+.. _getopt: https://docs.python.org/library/getopt.html
+.. _optionparse: https://code.activestate.com/recipes/278844-parsing-the-command-line/
+.. _plac: https://pypi.org/project/plac/
 .. _scaling down: https://www.welton.it/articles/scalable_systems.html
-.. _ArgumentParser: http://argparse.googlecode.com/svn/tags/r11/doc/ArgumentParser.html
-.. _argparse.FileType: http://argparse.googlecode.com/svn/tags/r11/doc/other-utilities.html?highlight=filetype#FileType
-.. _Clap: http://pypi.python.org/pypi/Clap
-.. _OptionParser: http://docs.python.org/library/optparse.html?highlight=optionparser#optparse.OptionParser
-.. _SQLAlchemy: http://www.sqlalchemy.org/
-.. _CLIArgs: http://pypi.python.org/pypi/CLIArgs
-.. _opterator: http://pypi.python.org/pypi/opterator
-.. _cmd2: http://packages.python.org/cmd2/
-.. _cmd: http://docs.python.org/library/cmd.html
-.. _marrow.script: https://github.com/pulp/marrow.script 
-.. _commandline: http://pypi.python.org/pypi/commandline
-.. _argh: http://packages.python.org/argh
+.. _ArgumentParser: https://docs.python.org/library/argparse.html#argparse.ArgumentParser
+.. _argparse.FileType: https://docs.python.org/library/argparse.html#argparse.FileType
+.. _Clap: https://pypi.org/project/Clap/
+.. _OptionParser: https://docs.python.org/library/optparse.html#optparse.OptionParser
+.. _CLIArgs: https://pypi.org/project/CLIArgs/
+.. _opterator: https://pypi.org/project/opterator/
+.. _cmd2: https://github.com/python-cmd2/cmd2
+.. _cmd: https://docs.python.org/library/cmd.html
+.. _commandline: https://pypi.org/project/commandline/
+.. _marrow.script: https://github.com/marrow/script
+.. _argh: https://pythonhosted.org/argh/
 .. _Istvan Albert: https://github.com/ialbert

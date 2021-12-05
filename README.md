@@ -168,7 +168,7 @@ if __name__ == '__main__':
 the usage will be:
 
 ```
-usage: example15.py [-h] [args [args ...]] [kwds [kwds ...]]
+usage: example15.py [-h] [args ...] [kwds ...]
 
 positional arguments:
   args        words
@@ -186,7 +186,7 @@ the program prints:
 
     ('A', 'B')
     {'x': '10', 'y': '20'}
-    
+
 # Documentation
 
 In addition, plac can do a lot more, up to the creation of

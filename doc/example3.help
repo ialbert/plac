@@ -5,5 +5,5 @@ Do something with the database
 positional arguments:
   dsn
 
-optional arguments:
+options:
   -h, --help  show this help message and exit

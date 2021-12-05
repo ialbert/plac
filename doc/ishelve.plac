@@ -1,5 +1,5 @@
 #!ishelve.py
-.clear 
+.clear
 a=1 b=2
 .show
 .del a

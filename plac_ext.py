@@ -68,7 +68,7 @@ else:
 
 try:
     raw_input
-except NameError:  # python 3
+except NameError:  # Python 3
     raw_input = input
 
 
@@ -332,7 +332,7 @@ def partial_call(factory, arglist):
 
 def import_main(path, *args):
     """
-    An utility to import the main function of a plac tool. It also
+    A utility to import the main function of a plac tool. It also
     works with command container factories.
     """
     if ':' in path:  # importing a factory
@@ -829,7 +829,7 @@ class _AsynHandler(asynchat.async_chat):
         if data.endswith('\n') and not data.endswith(self.terminator):
             data = data[:-1] + self.terminator  # fix newlines
         self.push(data)
-    
+
     def collect_incoming_data(self, data):
         "Collect one character at the time"
         self.data.append(data)
@@ -1083,7 +1083,7 @@ class Interpreter(object):
                 pass
 
     def interact(self, stdin=sys.stdin, prompt='i> ', verbose=False):
-        "Starts an interactive command loop reading commands from the consolle"
+        "Starts an interactive command loop reading commands from the console"
         try:
             import readline
             readline_present = True

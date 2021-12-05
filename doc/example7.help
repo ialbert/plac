@@ -1,4 +1,4 @@
-usage: example7.py [-h] dsn [scripts [scripts ...]]
+usage: example7.py [-h] dsn [scripts ...]
 
 Run the given scripts on the database
 
@@ -6,5 +6,5 @@ positional arguments:
   dsn
   scripts
 
-optional arguments:
+options:
   -h, --help  show this help message and exit

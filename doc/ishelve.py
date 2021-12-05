@@ -3,7 +3,7 @@ import os
 import shelve
 import plac
 
-DEFAULT_SHELVE = os.path.expanduser('~/conf.shelve')
+DEFAULT_SHELVE = 'conf.shelve'
 
 
 @plac.annotations(

@@ -7,4 +7,3 @@ p = plac.parser_from(main)
 
 if __name__ == '__main__':
     plac.call(main)
-

@@ -11,7 +11,7 @@ class ShelveInterface(object):
     @plac.annotations(
         configfile=('path name of the shelve', 'option'))
     def __init__(self, configfile):
-        self.configfile = configfile or '~/conf.shelve'
+        self.configfile = configfile or 'conf.shelve'
         self.fname = os.path.expanduser(self.configfile)
         self.__doc__ += ('\nOperating on %s.\nUse help to see '
                          'the available commands.\n' % self.fname)

@@ -48,11 +48,11 @@ untested and therefore deprecated.
 
 Solved an issue with non-ASCII characters; now any UTF-8 character
 can go in the help message. Added support for `--version` in plac.call.
-Modernized the changelog http://keepachangelog.com/
+Modernized the changelog https://keepachangelog.com/
 
 ## 0.9.5 (2016-06-09)
 
-Removed an usage of `print >>` that was breaking Python 3, signaled
+Removed a usage of `print >>` that was breaking Python 3, signaled
 by Quentin Pradet
 
 ## 0.9.4 (2016-06-09)
@@ -62,7 +62,7 @@ by Quentin Pradet
 
 ## 0.9.3 (2016-06-07)
 
-Fixed the tests on Python 3 and produced an universal wheel instead of
+Fixed the tests on Python 3 and produced a universal wheel instead of
 relying on 2to3. Enabled Travis builds for Python 3.3, 3.4, 3.5
 
 ## 0.9.2 (2016-06-07)
@@ -74,7 +74,7 @@ Enabled Travis builds for Python 2.6 and 2.7
 ## 0.9.1 (2012-04-23)
 
 Options and flags can now contain dashes (i.e. ``--dry-run`` is valid and
-translated into dry_run, you are not forced to use ``--dry-run`` anymore); 
+translated into dry_run, you are not forced to use ``--dry-run`` anymore);
 restored the monitor support temporarily removed in 0.9.0, fixed an issue
 with tuple defaults and fixed the display of the help command; specified
 which features are experimental and which features are fully supported
@@ -138,7 +138,7 @@ added an asynchronous server; added plac.Interpreter.call
 ## 0.6.1 (2010-07-12)
 
 Fixed the history file location; added the ability to pass a split
-function; added two forgotten files; added a reference to cmd2 by 
+function; added two forgotten files; added a reference to cmd2 by
 Catherine Devlin
 
 ## 0.6.0 (2010-07-11)

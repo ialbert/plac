@@ -4,11 +4,14 @@ The tests should be run as standalone script
 
 import os
 import sys
+import argparse
 import datetime
 import doctest
 import subprocess
 import plac
 import plac_core
+
+version = sys.version_info[:2]
 
 sys_argv0 = sys.argv[0]
 docdir = os.path.dirname(os.path.abspath(__file__))
@@ -36,6 +39,23 @@ def parser_from(f, **kw):
     return plac.parser_from(f)
 
 
+# FIXME: Remove this when removing support for Python 3.8
+class PlacTestFormatter(argparse.RawDescriptionHelpFormatter):
+    if version < (3, 9):
+        def _format_args(self, action, default_metavar):
+            get_metavar = self._metavar_formatter(action, default_metavar)
+            if action.nargs == argparse.ZERO_OR_MORE:
+                metavar = get_metavar(1)
+                if len(metavar) == 2:
+                    result = '[%s [%s ...]]' % metavar
+                else:
+                    result = '[%s ...]' % metavar
+            else:
+                result = super(PlacTestFormatter, self)._format_args(
+                    action, default_metavar)
+            return result
+
+
 def check_help(name):
     sys.argv[0] = name + '.py'  # avoid issue with pytest
     plac_core._parser_registry.clear()  # makes different imports independent
@@ -47,7 +67,7 @@ def check_help(name):
                 return
             else:  # not expected for Python 3.X
                 raise
-        p = plac.parser_from(main)
+        p = plac.parser_from(main, formatter_class=PlacTestFormatter)
         expected = fix_today(open(name + '.help').read()).strip()
         got = p.format_help().strip()
         assert got == expected, got
@@ -192,7 +212,7 @@ def test_metavar_with_defaults():
 
 
 def test_metavar_empty_string():
-    # see https://github.com/micheles/plac/issues/36
+    # see https://github.com/ialbert/plac/issues/36
     def main(arg=''):
         pass
     sys.argv[0] = 'test_plac.py'
@@ -216,7 +236,7 @@ def test_kwargs():
 
 
 def test_kwargs2():
-    # see https://github.com/micheles/plac/issues/39
+    # see https://github.com/ialbert/plac/issues/39
     def main(**kw):
         return kw.items()
     assert plac.call(main, ['a=1']) == [('a', '1')]
@@ -225,7 +245,7 @@ def test_kwargs2():
 
 
 def test_kwargs3():
-    # see https://github.com/micheles/plac/issues/38
+    # see https://github.com/ialbert/plac/issues/38
     def main(opt='foo', **kw):
         return opt, kw
     main.__annotations__ = dict(opt=('Option', 'option'))
@@ -316,13 +336,13 @@ def check_script(args):
 def test_batch():
     for batch in os.listdir('.'):
         if batch.endswith('.plac'):
-            check_script([PLAC_RUNNER, '-b', batch])
+            check_script([sys.executable, PLAC_RUNNER, '-b', batch])
 
 
 def test_placet():
     for placet in os.listdir('.'):
         if placet.endswith('.placet'):
-            check_script([PLAC_RUNNER, '-t', placet])
+            check_script([sys.executable, PLAC_RUNNER, '-t', placet])
 '''
 
 if __name__ == '__main__':
