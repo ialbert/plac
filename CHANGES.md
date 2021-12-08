@@ -3,7 +3,18 @@ HISTORY
 
 ## [Unreleased]
 
-## 1.3.0 (200-12-27)
+## 1.3.4 (2021-12-06)
+
+Ensured tests using plac_runner use the same version of Python as them.
+Fixed the tests on Python 3.9 and 3.10 and enabled Travis for them.
+Prevent the tests from cluttering the test user's home directory.
+Removed the pre-generated documentation, please use Read the Docs.
+Cleaned up many minor issues in the documentation.
+Removed use of obsolete SQLSoup library and features that used it.
+Fixed issue with str as type hint.
+Added more tests/examples.
+
+## 1.3.0 (2021-01-02)
 
 Thanks to Istvan Albert, it is now possible to use language keywords and
 builtins as option/flag names. Some broken links were fixed and the
