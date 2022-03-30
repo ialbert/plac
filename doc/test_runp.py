@@ -20,7 +20,3 @@ def test2():
     result, error = plac.runp([gen(3), err()])
     assert result == '3' and error.__class__ == ZeroDivisionError
 
-def test3():
-    t0 = time.time()
-    plac.runp([gen(9), gen(9)])
-    assert int(time.time() - t0) == 1 # it must take 1 second, not 2
