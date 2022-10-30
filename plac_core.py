@@ -432,7 +432,7 @@ def call(obj, arglist=None, eager=True, version=None):
     parser = parser_from(obj)
     if version:
         parser.add_argument(
-            '--version', '-v', action='version', version=version)
+            '-V', '--version', action='version', version=version)
     cmd, result = parser.consume(arglist)
     if iterable(result) and eager:  # listify the result
         return list(result)
