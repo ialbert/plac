@@ -35,7 +35,7 @@ Running the script with `$ python example.py -h` will give you the
 following help message: :
 
 ```
-usage: test.py [-h] [-i 100] [-d] {A,B,C}
+usage: example.py [-h] [-i 100] [-d] {A,B,C}
 
 A script for machine learning
 
