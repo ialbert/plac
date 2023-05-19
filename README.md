@@ -48,11 +48,11 @@ options:
   -d, --debug         debug mode
 ```
 
-Runnin the script with no parameters would print:
+Runnin the script with no parameters `$ python example.py -h` would print:
 
 ```
-usage: script.py [-h] [-i 100] [-d] {A,B,C}
-script.py: error: the following arguments are required: model
+usage: example.py [-h] [-i 100] [-d] {A,B,C}
+example.py: error: the following arguments are required: model
 ```
 
 ## Decorator reference
