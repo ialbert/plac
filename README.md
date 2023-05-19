@@ -1,4 +1,4 @@
-# Plac: Parsing the Command Line the Easy Way
+# Plac: parsing the command line the easy way
 
 `plac` is a Python package that can generate command line parameters
 from function signatures.
@@ -150,15 +150,7 @@ the program prints:
 
 ## Installation
 
-If you wish to install the package do
-
     pip install plac
-
-If you prefer to install the full distribution from source, including
-the documentation, download the
-[tarball](https://pypi.org/project/plac/#files), unpack it and run
-
-    python setup.py install
 
 ## Testing
 
