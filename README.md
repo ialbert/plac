@@ -20,7 +20,7 @@ import plac
 
 # Add decorators to the function
 @plac.pos('model', "model name", choices=['A', 'B', 'C'])
-@plac.opt('iter', "training iterations", type=int)
+@plac.opt('iter', "iterations", type=int)
 @plac.flg('debug', "debug mode")
 def main(model, iter=100, debug=False):
     """A script for machine learning"""
@@ -44,7 +44,7 @@ positional arguments:
 
 options:
   -h, --help          show this help message and exit
-  -i 100, --iter 100  training iterations
+  -i 100, --iter 100  iterations
   -d, --debug         debug mode
 ```
 
