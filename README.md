@@ -48,7 +48,7 @@ options:
   -d, --debug         debug mode
 ```
 
-Runnin the script with no parameters `$ python example.py -h` would print:
+Running the script with no parameters `$ python example.py` would print:
 
 ```
 usage: example.py [-h] [-i 100] [-d] {A,B,C}
