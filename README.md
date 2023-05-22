@@ -13,7 +13,9 @@ included in your source code.
 
 ## Quickstart
 
-`plac` offers three decorators to mark positional, option and flag type parameters:
+`plac` automatically generates the command line parameters from the function signature. 
+        
+It offers three decorators to describe positional, option and flag type parameters:
 
 ```python
 import plac
@@ -30,6 +32,10 @@ if __name__ == '__main__':
     # Execute function via plac.call()
     plac.call(main)
 ```
+
+And that's it! The program can now take parameters from the command line like so:
+
+    python example.py -i 10 B 
 
 Running the script with `$ python example.py -h` will give you the
 following help message: :
