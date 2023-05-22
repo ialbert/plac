@@ -63,23 +63,31 @@ example.py: error: the following arguments are required: model
 
 ## Decorator reference
 
-To use `plac` all you need are the following decorators:
+To use `plac` all you need are the following `@plac.pos`, `@plac.opt` and @`plac.flg` decorators that have the following signatures:
 
 ```python
 # Positional parameters.
-def pos(arg, help=None, type=None, choices=None, metavar=None):
+pos(arg, help=None, type=None, choices=None, metavar=None):
 
 # Option parameters.
-def opt(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
+opt(arg, help=None, type=None, abbrev=None, choices=None, metavar=None):
 
 # Flag parameters.
-def flg(arg, help=None, abbrev=None):
+flg(arg, help=None, abbrev=None):
 ```
+
+## Zero dependencies ... not even plac :-)
 
 Notably, the main functionality of `plac` is implemented in a single
 module called `plac_core.py` that, if necessary, may be included and
 distributed with your source code thus reducing external dependencies in
 your code.
+
+Copy `plac_core.py` to your package then use it like so:
+
+```python
+from mypackage import plac_core as plac
+```
 
 ## Avoiding name clashes
 
