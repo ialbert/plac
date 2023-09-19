@@ -70,7 +70,7 @@ To use `plac` all you need to know are the following three decorators:
 * `@plac.opt` - for key value options `--iter 100`
 * `@plac.flg` - for flags `--debug`
 
-* that have the following signatures:
+that have the following signatures:
 
 ```python
 # Positional parameters.
