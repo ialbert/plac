@@ -11,13 +11,13 @@ default:
 dist: plac_core.py plac_ext.py
 	python setup.py build sdist bdist_wheel
 
-upload:
+pypi:
 	rm -rf build/* dist/*
 	python setup.py sdist bdist_wheel
 	python -m twine upload --repository pypi dist/*
 
 test:
-	python doc/test_plac.py
+	python -W error doc/test_plac.py
 
 clean:
 	rm -rf docs/

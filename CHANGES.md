@@ -3,6 +3,10 @@ HISTORY
 
 ## [Unreleased]
 
+## 1.4.0 (2023-09-19)
+
+Removed plac server based functionality which were asyncore based and as such deprecated in Python 3.10.
+
 ## 1.3.4 (2021-12-06)
 
 Ensured tests using plac_runner use the same version of Python as them.

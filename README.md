@@ -21,12 +21,14 @@ It offers three decorators to describe positional, option and flag type paramete
 import plac
 
 # Add decorators to the function
-@plac.pos('model', "model name", choices=['A', 'B', 'C'])
-@plac.opt('iter', "iterations", type=int)
-@plac.flg('debug', "debug mode")
+@plac.pos('model', help="model name", choices=['A', 'B', 'C'])
+@plac.opt('iter', help="iterations", type=int)
+@plac.flg('debug', help="debug mode")
 def main(model, iter=100, debug=False):
-    """A script for machine learning"""
-    pass
+    """
+    A script for machine learning
+    """
+    print (model, iter, debug)
 
 if __name__ == '__main__':
     # Execute function via plac.call()
@@ -35,10 +37,9 @@ if __name__ == '__main__':
 
 And that's it! The program can now take parameters from the command line like so:
 
-    python example.py -i 10 B 
+    python example.py -d -i 1000 B 
 
-Running the script with `$ python example.py -h` will give you the
-following help message: :
+Running the script with `python example.py -h` will give you the following help message: :
 
 ```
 usage: example.py [-h] [-i 100] [-d] {A,B,C}
@@ -63,7 +64,13 @@ example.py: error: the following arguments are required: model
 
 ## Decorator reference
 
-To use `plac` all you need are the following `@plac.pos`, `@plac.opt` and @`plac.flg` decorators that have the following signatures:
+To use `plac` all you need to know are the following three decorators:
+
+* `@plac.pos` - for positional parameters `model`
+* `@plac.opt` - for key value options `--iter 100`
+* `@plac.flg` - for flags `--debug`
+
+* that have the following signatures:
 
 ```python
 # Positional parameters.
@@ -79,7 +86,7 @@ flg(arg, help=None, abbrev=None):
 ## Zero dependencies ... not even plac :-)
 
 Notably, the main functionality of `plac` is implemented in a single
-module called `plac_core.py` that, if necessary, may be included and
+Python module called `plac_core.py` that, if necessary, may be included and
 distributed with your source code thus reducing external dependencies in
 your code.
 
@@ -99,9 +106,9 @@ the command line parameter name:
 ```python
 import plac
 
-@plac.flg('list_')  # avoid clash with builtin
+@plac.flg('list_')   # avoid clash with builtin
 @plac.flg('yield_')  # avoid clash with keyword
-@plac.opt('sys_')  # avoid clash with a very common name
+@plac.opt('sys_')    # avoid clash with a very common name
 def main(list_, yield_=False, sys_=100):
     print(list_)
     print(yield_)
@@ -174,7 +181,7 @@ Run
 
 You will see several apparent errors, but this is right, since the tests
 are checking for several error conditions. The important thing is that
-you get at the a line like
+you get a line like
 
 `Executed XX tests OK`
 

@@ -803,10 +803,13 @@ class Manager(StartStopObject):
 
 # ######################### plac server ############################# #
 
+#
+# Removed in version 1.4.0 due to incompatibility with Python 3.12
+#
+'''
 import asyncore
 import asynchat
 import socket
-
 
 class _AsynHandler(asynchat.async_chat):
     "asynchat handler starting a new interpreter loop for each connection"
@@ -1199,3 +1202,4 @@ def runp(genseq, mode='p'):
             except Exception as e:
                 res.append(e)
     return res
+'''

@@ -26,10 +26,10 @@
 See docs/index.html for the documentation.
 """
 from plac_core import *
-from plac_ext import (Interpreter, import_main, ReadlineInput,
-                      stdout, runp, Monitor, default_help)
+from plac_ext import (import_main, ReadlineInput,
+                      stdout,  Monitor, default_help)
 
-__version__ = '1.3.5'
+__version__ = '1.4.0'
 
 try:
     from plac_tk import TkMonitor
