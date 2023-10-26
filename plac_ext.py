@@ -876,6 +876,7 @@ class _AsynServer(asyncore.dispatcher):
         i = self.interpreter.__class__(self.interpreter.obj)  # new interpreter
         self.newhandler(clientsock, i)  # spawn a new handler
 
+'''
 
 # ########################## the Interpreter ############################ #
 
@@ -1202,4 +1203,3 @@ def runp(genseq, mode='p'):
             except Exception as e:
                 res.append(e)
     return res
-'''
