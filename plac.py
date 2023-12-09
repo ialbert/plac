@@ -27,7 +27,7 @@ See docs/index.html for the documentation.
 """
 from plac_core import *
 from plac_ext import (import_main, ReadlineInput, Interpreter,
-                      stdout,  Monitor, default_help)
+                      stdout, runp, Monitor, default_help)
 
 __version__ = '1.4.1'
 
