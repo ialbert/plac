@@ -1,7 +1,7 @@
 usage: example13.py [-h] [-l] [-y] [-s 100]
 
 options:
-  -h, --help         show this help message and exit
+  -h, --help     show this help message and exit
   -l, --list
-  -y, --yield        [False]
-  -s 100, --sys 100  [100]
+  -y, --yield    [False]
+  -s, --sys 100  [100]

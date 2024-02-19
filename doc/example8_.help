@@ -5,5 +5,5 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-  -c select * from table, --command select * from table
+  -c, --command select * from table
                         SQL query
