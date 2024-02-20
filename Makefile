@@ -20,7 +20,7 @@ test:
 	python -W error doc/test_plac.py
 
 generate:
-	python -W error doc/test_generate.py
+	python -W error doc/generate_help.py
 
 clean:
 	rm -rf docs/
