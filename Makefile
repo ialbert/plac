@@ -19,5 +19,8 @@ pypi:
 test:
 	python -W error doc/test_plac.py
 
+generate:
+	python -W error doc/test_generate.py
+
 clean:
 	rm -rf docs/

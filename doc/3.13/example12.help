@@ -1,0 +1,9 @@
+usage: example12.py [-h] [-opt OPT] [args ...] [kw ...]
+
+positional arguments:
+  args        default arguments
+  kw          keyword arguments
+
+options:
+  -h, --help  show this help message and exit
+  -opt OPT    some option

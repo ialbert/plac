@@ -1,0 +1,7 @@
+usage: example16.py [-h] a
+
+positional arguments:
+  a           <class 'str'>
+
+options:
+  -h, --help  show this help message and exit

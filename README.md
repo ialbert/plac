@@ -13,9 +13,57 @@ included in your source code.
 
 ## Quickstart
 
-`plac` automatically generates the command line parameters from the function signature. 
-        
-It offers three decorators to describe positional, option and flag type parameters:
+`plac` can automatically generate command line parameters from a function signature. 
+       
+```python
+import plac
+
+def main(model, iter=100, debug=False):
+    """
+    A script for machine learning
+    """
+    print (model, iter, debug)
+
+if __name__ == '__main__':
+    # Execute function via plac.call()
+    plac.call(main)
+```
+
+The program above can now take parameters from the command line like so:
+
+    python example.py -d -i 1000 B
+
+Running the script with no parameters as `python example.py` would print:
+
+```
+usage: example.py [-h] [-i 100] [-d] {A,B,C}
+example.py: error: the following arguments are required: model
+```
+
+In addition, the program can also generate a help message:
+
+```python
+python example.py -h
+```
+
+Produces the following output:
+
+```
+
+usage: example.py [-h] model [iter] [debug]
+
+A script for machine learning
+
+positional arguments:
+  model
+  iter        [100]
+  debug       [False]
+
+options:
+  -h, --help  show this help message and exit
+```
+
+When you need more control `plac` offers three decorators to describe positional, option and flag type parameters:
 
 ```python
 import plac
@@ -31,15 +79,11 @@ def main(model, iter=100, debug=False):
     print (model, iter, debug)
 
 if __name__ == '__main__':
-    # Execute function via plac.call()
+    # Execute function via plac.call().
     plac.call(main)
 ```
 
-And that's it! The program can now take parameters from the command line like so:
-
-    python example.py -d -i 1000 B 
-
-Running the script with `python example.py -h` will give you the following help message: :
+That will produce the following help:
 
 ```
 usage: example.py [-h] [-i 100] [-d] {A,B,C}
@@ -53,13 +97,6 @@ options:
   -h, --help          show this help message and exit
   -i 100, --iter 100  iterations
   -d, --debug         debug mode
-```
-
-Running the script with no parameters `python example.py` would print:
-
-```
-usage: example.py [-h] [-i 100] [-d] {A,B,C}
-example.py: error: the following arguments are required: model
 ```
 
 ## Decorator reference

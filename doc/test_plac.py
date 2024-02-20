@@ -10,8 +10,12 @@ import doctest
 import subprocess
 import plac
 import plac_core
+import difflib
 
 version = sys.version_info[:2]
+
+# The name of the directory that will store version specific outputs.
+dirname = "3.13"
 
 sys_argv0 = sys.argv[0]
 docdir = os.path.dirname(os.path.abspath(__file__))
@@ -59,6 +63,7 @@ class PlacTestFormatter(argparse.RawDescriptionHelpFormatter):
 def check_help(name):
     sys.argv[0] = name + '.py'  # avoid issue with pytest
     plac_core._parser_registry.clear()  # makes different imports independent
+
     try:
         try:
             main = plac.import_main(name + '.py')
@@ -68,9 +73,24 @@ def check_help(name):
             else:  # not expected for Python 3.X
                 raise
         p = plac.parser_from(main, formatter_class=PlacTestFormatter)
-        expected = fix_today(open(name + '.help').read()).strip()
+
+        # Different format for Python > 3.13
+        hname = name
+        if version >= (3, 13):
+            hname = dirname + '/' + hname
+
+        print (hname)
+
+        expected = fix_today(open(hname + '.help').read()).strip()
+
         got = p.format_help().strip()
-        assert got == expected, got
+
+        print (got)
+
+        diff = list(difflib.unified_diff(expected.splitlines(),
+                                         got.splitlines()))
+        diff = '\n'.join(diff)
+        assert got == expected, diff
     finally:
         sys.argv[0] = sys_argv0
 

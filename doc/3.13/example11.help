@@ -1,0 +1,9 @@
+usage: example11.py [-h] i n [rest ...]
+
+positional arguments:
+  i           This is an int
+  n           This is a float
+  rest        Other arguments
+
+options:
+  -h, --help  show this help message and exit

@@ -1,0 +1,8 @@
+usage: example15.py [-h] [args ...] [kwds ...]
+
+positional arguments:
+  args        words
+  kwds        key=value
+
+options:
+  -h, --help  show this help message and exit

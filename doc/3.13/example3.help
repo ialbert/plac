@@ -1,0 +1,9 @@
+usage: example3.py [-h] dsn
+
+Do something with the database
+
+positional arguments:
+  dsn
+
+options:
+  -h, --help  show this help message and exit
