@@ -26,7 +26,10 @@ PLAC_RUNNER = os.path.join(os.path.dirname(docdir), 'plac_runner.py')
 # ####################### helpers ###################### #
 
 def fix_today(text):
-    return text.replace('YYYY-MM-DD', str(datetime.date.today()))
+    text = text.replace('YYYY-MM-DD', str(datetime.date.today()))
+    text = text.replace('2024-02-20', str(datetime.date.today()))
+
+    return text
 
 
 def expect(errclass, func, *args, **kw):
@@ -79,13 +82,13 @@ def check_help(name):
         if version >= (3, 13):
             hname = dirname + '/' + hname
 
-        print (hname)
+        #print (hname)
 
         expected = fix_today(open(hname + '.help').read()).strip()
 
         got = p.format_help().strip()
 
-        print (got)
+        #print (got)
 
         diff = list(difflib.unified_diff(expected.splitlines(),
                                          got.splitlines()))
