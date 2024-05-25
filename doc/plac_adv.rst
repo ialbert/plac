@@ -348,7 +348,7 @@ you pass the ``verbose`` flag to the ``Interpreter.interact`` method.
 CHANGED IN VERSION 0.9: if you have an old version of plac_ the
 ``help`` command must be prefixed with a dot, i.e. you must write
 ``.help``. The old behavior was more consistent in my opinion, since
-it made it clear that the ``help`` command was special and threated
+it made it clear that the ``help`` command was special and threaded
 differently from the regular commands.
 Notice that if you implement a custom ``help`` command in the commander class
 the default help will not be added, as you would expect.

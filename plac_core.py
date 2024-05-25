@@ -281,7 +281,7 @@ class ArgumentParser(argparse.ArgumentParser):
         if collision:
             self.error(
                 _('colliding keyword arguments: %s') % ' '.join(collision))
-        # Correct options with trailing undescores
+        # Correct options with trailing underscores
         args = [getattr(ns, a.rstrip('_')) for a in self.argspec.args]
         varargs = getattr(ns, self.argspec.varargs or '', [])
         return cmd, self.func(*(args + varargs + extraopts), **kwargs)
@@ -366,7 +366,7 @@ class ArgumentParser(argparse.ArgumentParser):
                     # allows reserved words to be specified with underscores
                     suffix = name.rstrip('_')
                 else:
-                    # convert undescores to dashes.
+                    # convert underscores to dashes.
                     suffix = name.replace('_', '-')
 
                 if a.abbrev:
