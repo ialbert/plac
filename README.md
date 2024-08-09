@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
 The program above can now take parameters from the command line like so:
 
-    python example.py -d -i 1000 B
+    python example.py A 1000 
 
 Running the script with no parameters as `python example.py` would print:
 
