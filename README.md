@@ -36,7 +36,7 @@ The program above can now take parameters from the command line like so:
 Running the script with no parameters as `python example.py` would print:
 
 ```
-usage: example.py [-h] [-i 100] [-d] {A,B,C}
+usage: example.py [-h] model [iter] [debug]
 example.py: error: the following arguments are required: model
 ```
 
