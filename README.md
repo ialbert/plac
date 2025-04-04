@@ -49,7 +49,6 @@ python example.py -h
 Produces the following output:
 
 ```
-
 usage: example.py [-h] model [iter] [debug]
 
 A script for machine learning
