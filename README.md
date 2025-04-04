@@ -63,6 +63,8 @@ options:
   -h, --help  show this help message and exit
 ```
 
+## Additional customization
+
 When you need more control `plac` offers three decorators to describe positional, option and flag type parameters:
 
 ```python
