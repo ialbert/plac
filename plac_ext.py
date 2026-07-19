@@ -297,7 +297,7 @@ def default_help(obj, cmd=None):
 
 try:
     PLACDIRS = os.environ.get('PLACPATH', '.').split(':')
-except:
+except Exception:
     raise ValueError(_('Ill-formed PLACPATH: got %PLACPATHs') % os.environ)
 
 
@@ -505,13 +505,13 @@ def sharedattr(name, on_error):
     def get(self):
         try:
             return getattr(self.ns, name)
-        except:  # the process was killed or died hard
+        except AttributeError:  # the process was killed or died hard
             return on_error
 
     def set(self, value):
         try:
             setattr(self.ns, name, value)
-        except:  # the process was killed or died hard
+        except AttributeError:  # the process was killed or died hard
             pass
     return property(get, set)
 
@@ -531,7 +531,7 @@ class MPTask(BaseTask):
     def outlist(self):
         try:
             return self._outlist
-        except:  # the process died hard
+        except AttributeError:  # the process died hard
             return []
 
     def notify(self, msg):
@@ -595,7 +595,7 @@ class TaskManager(object):
                 if task.status == 'RUNNING':
                     task.kill()
                     task.wait()
-            except:  # task killed, nothing to wait
+            except Exception:  # task killed, nothing to wait
                 pass
         if self.man:
             self.man.stop()
@@ -994,7 +994,7 @@ class Interpreter(object):
                         errlist = [str(e)]
                     task = SynTask(no, arglist, iter(errlist))
                     continue
-                except:  # anything else
+                except Exception:  # anything else
                     task = SynTask(no, arglist, gen_exc(*sys.exc_info()))
                     continue
                 if not plac_core.iterable(result):  # atomic result
@@ -1007,7 +1007,7 @@ class Interpreter(object):
                     task = SynTask(no, arglist, result)
         except GeneratorExit:  # regular exit
             exit(None, None, None)
-        except:  # exceptional exit
+        except Exception:  # exceptional exit
             exit(*sys.exc_info())
             raise
 

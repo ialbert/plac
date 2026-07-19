@@ -1,4 +1,4 @@
-# this module should be kept Python 2.3 compatible
+# Python 3+ module
 import re
 import sys
 import time
@@ -11,15 +11,7 @@ from gettext import gettext as _
 
 version = sys.version_info[:2]
 
-if sys.version >= '3':
-    from inspect import getfullargspec
-else:
-    class getfullargspec(object):
-        "A quick and dirty replacement for getfullargspec for Python 2.X"
-        def __init__(self, f):
-            self.args, self.varargs, self.varkw, self.defaults = \
-                inspect.getargspec(f)
-            self.annotations = getattr(f, '__annotations__', {})
+from inspect import getfullargspec
 
 
 def to_date(s):

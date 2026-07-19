@@ -52,7 +52,7 @@ class PiCalculator(object):
             total = 0
             for task in tasks:
                 total += task.result
-        except:  # the task was killed
+        except Exception:  # the task was killed
             print(tasks)
             return
         return total / self.n_cpu
