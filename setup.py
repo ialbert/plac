@@ -40,7 +40,6 @@ if __name__ == '__main__':
           platforms=["All"],
           classifiers=['Development Status :: 5 - Production/Stable',
                        'Intended Audience :: Developers',
-                       'License :: OSI Approved :: BSD License',
                        'Natural Language :: English',
                        'Operating System :: OS Independent',
                        'Programming Language :: Python',
